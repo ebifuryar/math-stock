@@ -2,14 +2,26 @@
 import { useLiveQuery } from 'dexie-react-hooks';
 import { Card, LinkButton } from '@/components/ui';
 import { db } from '@/data/db';
+import { getSetting, setSetting, SETTING_QUICK_LEVEL } from '@/data/progressRepository';
 import { toDeviation } from '@/domain/irt';
 import { MIN_RESPONSES_FOR_STABLE, rankOf } from '@/domain/rank';
+import { LEVEL_LABEL, LEVELS, type Level } from '@/domain/schema';
+
+// 「おまかせ」の難易度。random は難易度を絞らず全レベルから出題する
+type QuickLevel = Level | 'random';
+const QUICK_LEVELS: { value: QuickLevel; label: string }[] = [
+  { value: 'random', label: 'ランダム' },
+  ...LEVELS.map((l) => ({ value: l, label: LEVEL_LABEL[l] })),
+];
 
 export function HomePage() {
   const now = new Date();
   const dueCount = useLiveQuery(() => db.reviewCards.where('due').belowOrEqual(now).count(), []);
   const overall = useLiveQuery(() => db.abilities.get('overall'), []);
   const totalAttempts = useLiveQuery(() => db.attempts.count(), []);
+  // 選んだ難易度は次回も引き継ぐ
+  const quickLevel = useLiveQuery(() => getSetting<QuickLevel>(SETTING_QUICK_LEVEL, 'random'), []) ?? 'random';
+  const quickHref = quickLevel === 'random' ? '/practice?count=10' : `/practice?count=10&level=${quickLevel}`;
 
   const deviation = overall ? toDeviation(overall.theta) : undefined;
   const rank = deviation !== undefined ? rankOf(deviation) : undefined;
@@ -51,14 +63,38 @@ export function HomePage() {
         )}
       </Card>
 
-      <div className="grid grid-cols-2 gap-3">
-        <LinkButton to="/practice?count=10" className="min-h-16">
-          おまかせ10問
+      <Card className="space-y-3">
+        <fieldset>
+          <legend className="mb-2 text-sm text-slate-500">おまかせの難易度</legend>
+          <div className="grid grid-cols-4 gap-1 rounded-xl bg-slate-100 p-1 dark:bg-slate-800">
+            {QUICK_LEVELS.map(({ value, label }) => (
+              <label
+                key={value}
+                className={`flex min-h-11 cursor-pointer items-center justify-center rounded-lg text-sm font-semibold has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-blue-500 ${
+                  quickLevel === value ? 'bg-white text-blue-800 shadow-sm dark:bg-slate-900 dark:text-blue-300' : 'text-slate-600 dark:text-slate-400'
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="quick-level"
+                  value={value}
+                  checked={quickLevel === value}
+                  onChange={() => void setSetting(SETTING_QUICK_LEVEL, value)}
+                  className="sr-only"
+                />
+                {label}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+        <LinkButton to={quickHref} className="min-h-14 w-full">
+          おまかせ10問（{QUICK_LEVELS.find((q) => q.value === quickLevel)?.label}）
         </LinkButton>
-        <LinkButton to="/units" variant="secondary" className="min-h-16">
-          単元を選ぶ
-        </LinkButton>
-      </div>
+      </Card>
+
+      <LinkButton to="/units" variant="secondary" className="min-h-14 w-full">
+        単元を選ぶ
+      </LinkButton>
       <p className="text-center text-xs text-slate-500">累計解答数 {totalAttempts ?? 0}</p>
     </div>
   );

@@ -193,3 +193,4 @@ export async function setSetting(key: string, value: unknown): Promise<void> {
 
 export const SETTING_GRADER_TOKEN = 'graderToken';
 export const SETTING_DAILY_LIMIT = 'dailyReviewLimit';
+export const SETTING_QUICK_LEVEL = 'quickPracticeLevel';

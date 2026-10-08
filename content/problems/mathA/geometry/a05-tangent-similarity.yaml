@@ -1,0 +1,65 @@
+id: ma-gm-a05
+level: applied
+format: written
+title: 接線と相似・方べき
+stem: |
+  $\triangle\mathrm{ABC}$ において $\mathrm{AB}=4,\ \mathrm{BC}=5,\ \mathrm{CA}=6$ とする。$\triangle\mathrm{ABC}$ の外接円の点 $\mathrm{A}$ における接線と直線 $\mathrm{BC}$ の交点を $\mathrm{P}$ とする。点 $\mathrm{P}$ は辺 $\mathrm{BC}$ の $\mathrm{B}$ の側の延長上にある（$\mathrm{P},\ \mathrm{B},\ \mathrm{C}$ の順に並ぶ）。
+
+  (1) $\triangle\mathrm{PAB}\backsim\triangle\mathrm{PCA}$ であることを証明せよ。
+
+  (2) 線分 $\mathrm{PB}$ と $\mathrm{PA}$ の長さを求めよ。
+modelAnswer: |
+  (1) $\triangle\mathrm{PAB}$ と $\triangle\mathrm{PCA}$ において、
+
+  $\angle\mathrm{APB}=\angle\mathrm{CPA}$（共通）……①
+
+  $\mathrm{P}$ は辺 $\mathrm{BC}$ の $\mathrm{B}$ の側の延長上にあるので、接線 $\mathrm{PA}$ と弦 $\mathrm{AB}$ のなす角 $\angle\mathrm{PAB}$ の内部には、$\mathrm{C}$ を含まない方の弧 $\mathrm{AB}$ がある。接弦定理より
+  $$\angle\mathrm{PAB}=\angle\mathrm{ACB}=\angle\mathrm{PCA}\quad\cdots②$$
+  （$\mathrm{B}$ は線分 $\mathrm{PC}$ 上にあるので $\angle\mathrm{ACB}=\angle\mathrm{ACP}$。）
+
+  ①、② より、2組の角がそれぞれ等しいので $\triangle\mathrm{PAB}\backsim\triangle\mathrm{PCA}$。（終）
+
+  (2) (1) の相似で $\mathrm{P}\leftrightarrow\mathrm{P},\ \mathrm{A}\leftrightarrow\mathrm{C},\ \mathrm{B}\leftrightarrow\mathrm{A}$ が対応するから
+  $$\frac{\mathrm{PA}}{\mathrm{PC}}=\frac{\mathrm{PB}}{\mathrm{PA}}=\frac{\mathrm{AB}}{\mathrm{CA}}=\frac{4}{6}=\frac{2}{3}$$
+  $\mathrm{PB}=x$ とおくと $\mathrm{PA}=\dfrac{3}{2}x$、$\mathrm{PC}=x+5$。$\dfrac{\mathrm{PA}}{\mathrm{PC}}=\dfrac{2}{3}$ より
+  $$\frac{3}{2}x=\frac{2}{3}(x+5)\quad\Longrightarrow\quad 9x=4x+20\quad\Longrightarrow\quad x=4$$
+  よって $\mathrm{PB}=4,\ \mathrm{PA}=6$。
+
+  （検算: 方べきの定理 $\mathrm{PA}^2=\mathrm{PB}\cdot\mathrm{PC}$ について $36=4\cdot 9$ で成り立つ。）
+
+  **答え: $\mathrm{PB}=4,\ \mathrm{PA}=6$**
+rubric:
+  - id: r1
+    criterion: $\angle\mathrm{P}$ が共通であることを述べている
+    points: 1
+    keywords: ["共通"]
+  - id: r2
+    criterion: 接弦定理を用いて $\angle\mathrm{PAB}=\angle\mathrm{ACB}\ (=\angle\mathrm{PCA})$ を正しい対応で導き、2角相等で相似を結論している
+    points: 3
+    keywords: ["接弦定理", "∠PAB=∠ACB", "2角"]
+  - id: r3
+    criterion: 相似の対応する辺を正しくとり、相似比 $\mathrm{AB}:\mathrm{CA}=2:3$ を用いた式を立てている
+    points: 2
+    keywords: ["2:3", "相似比"]
+  - id: r4
+    criterion: $\mathrm{PC}=\mathrm{PB}+5$ として方程式を解き、$\mathrm{PB}=4$ を得ている
+    points: 2
+    keywords: ["PB=4", "x+5"]
+  - id: r5
+    criterion: $\mathrm{PA}=6$ を求めている（方べきの定理による検算・導出も可）
+    points: 2
+    keywords: ["PA=6", "36"]
+solution: |
+  接弦定理で「接線と弦の角 = 弦の向こう側の円周角」を使えば、$\angle\mathrm{P}$ 共通と合わせて2角相等。相似比 $\mathrm{AB}:\mathrm{CA}=2:3$ を2回使うと $\mathrm{PB}:\mathrm{PA}:\mathrm{PC}=4:6:9$ となり、$\mathrm{PC}-\mathrm{PB}=\mathrm{BC}=5$ から長さが決まる。これは方べきの定理 $\mathrm{PA}^2=\mathrm{PB}\cdot\mathrm{PC}$ の証明そのもの。
+concepts: [gm-circle-angles, gm-power-of-point]
+misconceptions: [mc-gm-tangent-chord-angle, mc-gm-power-segment]
+targetSeconds: 600
+irt: { expectedCorrectRate: 0.45, discrimination: 1.3 }
+author:
+  intent: |
+    接弦定理を「どの角とどの角が等しいか」まで正確に述べて相似の証明に使えるか、相似の対応を崩さずに比の式を立てられるかをみる。(2) は相似比を2回使う（$\mathrm{PB}/\mathrm{PA}$ と $\mathrm{PA}/\mathrm{PC}$）発想が要り、方べきの定理だけでは未知数が2つ残る点で、定理を「形」でなく「相似の帰結」として理解しているかを識別する。$\mathrm{PA}^2=\mathrm{PB}\cdot\mathrm{BC}$ と線分を取り違えると $\mathrm{PB}=\dfrac{20}{9}$ となる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学A (1) ア(イ) 円に関する基本的な性質（接弦定理、方べきの定理）]
+  variations:
+    - 一般に $\dfrac{\mathrm{PB}}{\mathrm{PC}}=\left(\dfrac{\mathrm{AB}}{\mathrm{AC}}\right)^2$ が成り立つことを証明させる。
+    - $\angle\mathrm{A}$ の外角の二等分線と直線 $\mathrm{BC}$ の交点 $\mathrm{E}$ を加え、$\mathrm{P}$ と $\mathrm{E}$ の位置関係を比べさせる。

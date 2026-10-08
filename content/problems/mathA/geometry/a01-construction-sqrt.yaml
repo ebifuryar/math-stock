@@ -1,0 +1,49 @@
+id: ma-gm-a01
+level: applied
+format: choice
+title: 長さ√aの作図の読み取り
+stem: |
+  長さ $1$ の線分 $\mathrm{AB}$ と、長さ $a$ の線分が与えられている（$a>0$）。次の手順で点 $\mathrm{D}$ を作図する。
+
+  1. 直線 $\mathrm{AB}$ の、点 $\mathrm{B}$ に関して $\mathrm{A}$ と反対側に、$\mathrm{BC}=a$ となる点 $\mathrm{C}$ をとる。
+  2. 線分 $\mathrm{AC}$ の垂直二等分線を作図して $\mathrm{AC}$ の中点 $\mathrm{M}$ を求め、$\mathrm{M}$ を中心とする半径 $\mathrm{MA}$ の円をかく。
+  3. 点 $\mathrm{B}$ を通り直線 $\mathrm{AC}$ に垂直な直線を作図し、手順 2 の円との交点の1つを $\mathrm{D}$ とする。
+
+  このとき、線分 $\mathrm{BD}$ の長さを $a$ で表したものとして正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\sqrt{a+1}$
+    misconception: mc-gm-power-segment
+    rationale: |
+      方べきの定理を $\mathrm{BD}^2=\mathrm{AB}\cdot\mathrm{AC}=1\cdot(a+1)$ としている。点 $\mathrm{B}$ を通る弦 $\mathrm{AC}$ について掛けるのは $\mathrm{B}$ から両端までの長さ $\mathrm{BA}$ と $\mathrm{BC}$ であり、弦全体の長さ $\mathrm{AC}$ ではない。
+  - id: "2"
+    text: $\dfrac{a+1}{2}$
+    rationale: |
+      $\mathrm{BD}$ を円の半径 $\mathrm{MD}=\dfrac{a+1}{2}$ と同じとしている。$\mathrm{B}$ は一般には中心 $\mathrm{M}$ と一致しない（$a=1$ のときだけ一致する）。
+  - id: "3"
+    text: $\dfrac{\sqrt{2(a^2+1)}}{2}$
+    rationale: |
+      $\triangle\mathrm{MBD}$ で三平方の定理を $\mathrm{BD}^2=\mathrm{MD}^2+\mathrm{MB}^2$ としている。直角は $\mathrm{B}$ にあるので斜辺は $\mathrm{MD}$ であり、$\mathrm{BD}^2=\mathrm{MD}^2-\mathrm{MB}^2$。
+  - id: "4"
+    text: $\sqrt{a}$
+    rationale: |
+      正解。$\mathrm{AC}$ は円の直径で、$\mathrm{DB}$ を延長した弦は $\mathrm{B}$ で二等分される。方べきの定理より $\mathrm{BD}^2=\mathrm{BA}\cdot\mathrm{BC}=1\cdot a$。
+answer: "4"
+solution: |
+  直線 $\mathrm{DB}$ が円と再び交わる点を $\mathrm{D}'$ とすると、直径 $\mathrm{AC}$ に垂直な弦 $\mathrm{DD}'$ は $\mathrm{B}$ で二等分されるので $\mathrm{BD}'=\mathrm{BD}$。方べきの定理より
+  $$\mathrm{BD}\cdot\mathrm{BD}'=\mathrm{BA}\cdot\mathrm{BC}\quad\Longrightarrow\quad\mathrm{BD}^2=1\cdot a$$
+  よって $\mathrm{BD}=\sqrt{a}$。
+
+  別解: $\mathrm{AC}$ は直径なので $\angle\mathrm{ADC}=90^\circ$。$\triangle\mathrm{ABD}\backsim\triangle\mathrm{DBC}$ より $\mathrm{AB}:\mathrm{BD}=\mathrm{BD}:\mathrm{BC}$。あるいは $\mathrm{MB}=\left|\dfrac{a+1}{2}-1\right|=\dfrac{|a-1|}{2}$ として、三平方の定理で $\mathrm{BD}^2=\left(\dfrac{a+1}{2}\right)^2-\left(\dfrac{a-1}{2}\right)^2=a$。
+concepts: [gm-construction, gm-power-of-point, gm-circle-angles]
+misconceptions: [mc-gm-power-segment]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.55, discrimination: 1.1 }
+author:
+  intent: |
+    作図の手順を文章から図に起こし、どの定理でその手順が正当化されるかを判断できるかをみる（共通テストで頻出の「手順を読んで性質を答える」形式）。方べきの定理、直角三角形の相似、三平方の定理のいずれでも解けるが、誤答は各ルートで起きやすい誤り（弦全体を掛ける、半径と混同、斜辺の取り違え）に対応させた。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学A (1) ア(ウ) 作図, 数学A (1) ア(イ) 円に関する基本的な性質]
+  variations:
+    - 長さ $a,\ b$ の線分から長さ $\sqrt{ab}$ の線分を作図する手順を記述させ、その正当性を証明させる。
+    - 手順 1 で $\mathrm{C}$ を $\mathrm{A}$ と同じ側にとった（$a>1$）場合に、同じ手順で何が作図されるかを問う（$\mathrm{B}$ が円外になり、接線を用いる必要がある）。

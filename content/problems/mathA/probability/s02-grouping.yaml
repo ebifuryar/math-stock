@@ -1,0 +1,42 @@
+id: ma-pr-s02
+level: school
+format: choice
+title: 人数の異なる組への組分け
+stem: |
+  $8$ 人を $4$ 人、$2$ 人、$2$ 人の $3$ つの組に分ける。組には名前などの区別はないものとする。分け方の総数として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $420$ 通り
+    misconception: mc-pr-group-overcount
+    rationale: |
+      ${}_8\mathrm{C}_4\times{}_4\mathrm{C}_2=420$ で止めている。これは $2$ 人の組2つを「1組目・2組目」と区別した数。$2$ 人組どうしを入れかえても同じ分け方なので $2!$ で割る。
+  - id: "2"
+    text: $70$ 通り
+    misconception: mc-pr-group-overcount
+    rationale: |
+      組が $3$ つあるので $3!$ で割っている（$420\div 6=70$）。$4$ 人の組は人数で他と区別できるので、入れかえ可能なのは $2$ 人組どうしだけ。割るのは $2!$。
+  - id: "3"
+    text: $76$ 通り
+    rationale: |
+      ${}_8\mathrm{C}_4+{}_4\mathrm{C}_2=76$ と、和の法則を使っている。「$4$ 人を選び、**そのそれぞれに対して** 残りから $2$ 人を選ぶ」のだから積の法則。
+  - id: "4"
+    text: $210$ 通り
+    rationale: |
+      正解。$\dfrac{{}_8\mathrm{C}_4\times{}_4\mathrm{C}_2\times{}_2\mathrm{C}_2}{2!}=\dfrac{70\times 6\times 1}{2}=210$。
+answer: "4"
+solution: |
+  まず組に名前があると考え、$4$ 人の組を ${}_8\mathrm{C}_4=70$ 通り、残り $4$ 人から $2$ 人組を ${}_4\mathrm{C}_2=6$ 通り選ぶ（最後の $2$ 人は自動的に決まる）。$70\times 6=420$ 通り。
+
+  実際には $2$ 人の組2つは区別がないので、その入れかえ $2!$ 通りずつが同じ分け方になる。よって $420\div 2=210$（通り）。
+concepts: [pr-grouping, pr-combination]
+misconceptions: [mc-pr-group-overcount]
+targetSeconds: 120
+irt: { expectedCorrectRate: 0.62, discrimination: 1.2 }
+author:
+  intent: |
+    組分けで「何で割るか」を、組の数ではなく「入れかえても同じになる組の数」で判断できるかをみる。人数の異なる組と同じ組を混在させ、割り忘れ（①）と割りすぎ（②）を同じ誤答パターンの両側として識別する。③は積の法則と和の法則の混同。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学A (2) ア(イ) 順列・組合せ"]
+  variations:
+    - $9$ 人を $3$ 人ずつ $3$ 組に分ける（$3!$ で割る）場合と、部屋 $A,\ B,\ C$ に $3$ 人ずつ入れる場合を対比させる。
+    - 「特定の2人 $P,\ Q$ が同じ組になる分け方」を問い、条件付きの組分けに発展させる。

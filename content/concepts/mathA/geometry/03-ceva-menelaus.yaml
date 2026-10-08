@@ -1,0 +1,14 @@
+id: gm-ceva-menelaus
+kind: theorem
+title: チェバの定理・メネラウスの定理
+body: |
+  **チェバの定理**: $\triangle\mathrm{ABC}$ の内部の点 $\mathrm{O}$ と頂点を結ぶ直線 $\mathrm{AO},\ \mathrm{BO},\ \mathrm{CO}$ が対辺と $\mathrm{P},\ \mathrm{Q},\ \mathrm{R}$ で交わるとき（$\mathrm{P}$ は $\mathrm{BC}$ 上、$\mathrm{Q}$ は $\mathrm{CA}$ 上、$\mathrm{R}$ は $\mathrm{AB}$ 上）
+  $$\frac{\mathrm{AR}}{\mathrm{RB}}\cdot\frac{\mathrm{BP}}{\mathrm{PC}}\cdot\frac{\mathrm{CQ}}{\mathrm{QA}}=1$$
+
+  **メネラウスの定理**: 三角形の頂点を通らない直線 $\ell$ が $\triangle\mathrm{ABC}$ の辺 $\mathrm{BC},\ \mathrm{CA},\ \mathrm{AB}$ またはその延長と $\mathrm{P},\ \mathrm{Q},\ \mathrm{R}$ で交わるとき
+  $$\frac{\mathrm{AR}}{\mathrm{RB}}\cdot\frac{\mathrm{BP}}{\mathrm{PC}}\cdot\frac{\mathrm{CQ}}{\mathrm{QA}}=1$$
+
+  - たどり方: 頂点 $\to$ 分点 $\to$ 頂点 $\to$ 分点 $\to\cdots$ と、**三角形の頂点と直線上の点を交互に**通って出発点に戻る。メネラウスでは、どの三角形とどの直線を使うかを最初に決める（例: $\triangle\mathrm{ABR}$ と直線 $\mathrm{PC}$）。
+  - 逆も成り立つ。メネラウスの逆では、3点のうち辺の延長上にあるものが1個または3個であることを確認する（チェバの逆では3点とも辺上、または1個が辺上）。
+  - 面積比は「高さが共通なら底辺の比」で、チェバ・メネラウスで出した比から求める。
+prerequisites: [gm-angle-bisector]

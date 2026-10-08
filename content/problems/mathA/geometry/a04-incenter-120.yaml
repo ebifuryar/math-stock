@@ -1,0 +1,50 @@
+id: ma-gm-a04
+level: applied
+format: mark
+title: 120°の三角形の内心と外接円
+stem: |
+  $\triangle\mathrm{ABC}$ において、$\mathrm{AB}=3,\ \mathrm{BC}=7,\ \mathrm{CA}=5$ とする。$\triangle\mathrm{ABC}$ の内心を $\mathrm{I}$ とし、直線 $\mathrm{AI}$ と辺 $\mathrm{BC}$ の交点を $\mathrm{D}$ とする。
+
+  (1) $\cos\angle\mathrm{BAC}=\dfrac{\boxed{\text{アイ}}}{\boxed{\text{ウ}}}$ であり、$\angle\mathrm{BAC}=\boxed{\text{エオカ}}^\circ$ である。
+
+  (2) $\triangle\mathrm{ABC}$ の面積は $\dfrac{\boxed{\text{キク}}\sqrt{\boxed{\text{ケ}}}}{\boxed{\text{コ}}}$ であり、内接円の半径は $\dfrac{\sqrt{\boxed{\text{サ}}}}{\boxed{\text{シ}}}$ である。また、外接円の半径は $\dfrac{\boxed{\text{ス}}\sqrt{\boxed{\text{セ}}}}{\boxed{\text{ソ}}}$ である。
+
+  (3) $\angle\mathrm{BIC}=\boxed{\text{タチツ}}^\circ$ である。
+
+  (4) $\mathrm{AI}:\mathrm{ID}=\boxed{\text{テ}}:\boxed{\text{ト}}$ である。
+blanks:
+  - { label: アイ, answer: "-1" }
+  - { label: ウ, answer: "2" }
+  - { label: エオカ, answer: "120" }
+  - { label: キク, answer: "15" }
+  - { label: ケ, answer: "3" }
+  - { label: コ, answer: "4" }
+  - { label: サ, answer: "3" }
+  - { label: シ, answer: "2" }
+  - { label: ス, answer: "7" }
+  - { label: セ, answer: "3" }
+  - { label: ソ, answer: "3" }
+  - { label: タチツ, answer: "150" }
+  - { label: テ, answer: "8" }
+  - { label: ト, answer: "7" }
+solution: |
+  (1) 余弦定理より $\cos\angle\mathrm{BAC}=\dfrac{3^2+5^2-7^2}{2\cdot 3\cdot 5}=-\dfrac{1}{2}$、$\angle\mathrm{BAC}=120^\circ$。
+
+  (2) $S=\dfrac{1}{2}\cdot 3\cdot 5\sin 120^\circ=\dfrac{15\sqrt{3}}{4}$。$s=\dfrac{3+7+5}{2}=\dfrac{15}{2}$ として $S=rs$ より $r=\dfrac{\sqrt{3}}{2}$。正弦定理 $\dfrac{7}{\sin 120^\circ}=2R$ より $R=\dfrac{7}{\sqrt{3}}=\dfrac{7\sqrt{3}}{3}$。
+
+  (3) $\mathrm{I}$ は内角の二等分線の交点なので $\angle\mathrm{IBC}+\angle\mathrm{ICB}=\dfrac{1}{2}(\angle\mathrm{B}+\angle\mathrm{C})=\dfrac{1}{2}\cdot 60^\circ=30^\circ$。よって $\angle\mathrm{BIC}=150^\circ$（$=90^\circ+\dfrac{1}{2}\angle\mathrm{A}$）。
+
+  (4) 角の二等分線の定理より $\mathrm{BD}:\mathrm{DC}=3:5$、$\mathrm{BD}=\dfrac{21}{8}$。$\triangle\mathrm{ABD}$ で $\mathrm{BI}$ は $\angle\mathrm{B}$ の二等分線だから
+  $$\mathrm{AI}:\mathrm{ID}=\mathrm{BA}:\mathrm{BD}=3:\frac{21}{8}=8:7$$
+concepts: [gm-triangle-centers, gm-angle-bisector, tg-law-of-cosines, tg-law-of-sines, tg-area]
+misconceptions: [mc-gm-center-confusion, mc-gm-bisector-ratio]
+targetSeconds: 600
+irt: { expectedCorrectRate: 0.45, discrimination: 1.2 }
+author:
+  intent: |
+    三角比（数学I）と三角形の五心（数学A）の融合問題。共通テストの「図形と計量」「図形の性質」の大問を想定し、余弦定理 → 面積 → 内接円・外接円 → 内心の角 → 角の二等分線の定理の2回使用、と小問が連鎖する。$\angle\mathrm{A}=120^\circ$ とし、$\angle\mathrm{BIC}$ を外心の $2\angle\mathrm{A}$ や垂心の $180^\circ-\angle\mathrm{A}$ と混同すると異なる値になるようにした（$\angle\mathrm{A}=60^\circ$ ではすべて $120^\circ$ で一致してしまい識別できない）。(4) は $\triangle\mathrm{ABD}$ に角の二等分線の定理をもう一度適用できるかをみる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学A (1) ア(ア) 三角形に関する基本的な性質, 数学I (2) ア(ウ) 正弦定理・余弦定理]
+  variations:
+    - 線分 $\mathrm{AD}$ の長さ（$\dfrac{15}{8}$）を面積の分割から求めさせ、$\mathrm{AI}=\dfrac{8}{15}\mathrm{AD}=1$ を導かせる。
+    - 外心 $\mathrm{O}$ が辺 $\mathrm{BC}$ に関して $\mathrm{A}$ と反対側にあることを確認させ、$\angle\mathrm{BOC}=120^\circ$ を求めさせる（鈍角三角形の外心）。

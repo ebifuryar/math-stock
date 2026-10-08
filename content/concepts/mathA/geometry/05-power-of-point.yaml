@@ -1,0 +1,14 @@
+id: gm-power-of-point
+kind: theorem
+title: 方べきの定理
+body: |
+  点 $\mathrm{P}$ を通る2直線が円とそれぞれ $\mathrm{A},\ \mathrm{B}$ と $\mathrm{C},\ \mathrm{D}$ で交わるとき（$\mathrm{P}$ は円の内部でも外部でもよい）
+  $$\mathrm{PA}\cdot\mathrm{PB}=\mathrm{PC}\cdot\mathrm{PD}$$
+  $\mathrm{P}$ が円の外部にあり、$\mathrm{P}$ から引いた接線の接点を $\mathrm{T}$ とすると
+  $$\mathrm{PA}\cdot\mathrm{PB}=\mathrm{PT}^2$$
+
+  - 掛けるのはどちらも「$\mathrm{P}$ から交点までの長さ」。外部の点では $\mathrm{PB}=\mathrm{PA}+\mathrm{AB}$ であって、弦の長さ $\mathrm{AB}$ をそのまま使わない。
+  - 証明は相似: 内部なら $\triangle\mathrm{PAC}\backsim\triangle\mathrm{PDB}$（円周角）、外部の接線なら $\triangle\mathrm{PTA}\backsim\triangle\mathrm{PBT}$（接弦定理）。
+  - 2円が2点 $\mathrm{A},\ \mathrm{B}$ で交わるとき、直線 $\mathrm{AB}$ 上（線分 $\mathrm{AB}$ の外側）の点から2円に引いた接線の長さは等しい（両方とも $\sqrt{\mathrm{PA}\cdot\mathrm{PB}}$）。
+  - 逆: $\mathrm{PA}\cdot\mathrm{PB}=\mathrm{PC}\cdot\mathrm{PD}$ なら4点 $\mathrm{A},\ \mathrm{B},\ \mathrm{C},\ \mathrm{D}$ は同一円周上（$\mathrm{P}$ が線分 $\mathrm{AB},\ \mathrm{CD}$ の両方の内部にあるか、両方の延長上にあるとき）。
+prerequisites: [gm-circle-angles]

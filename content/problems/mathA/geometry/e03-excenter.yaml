@@ -1,0 +1,40 @@
+id: ma-gm-e03
+level: exam
+format: mark
+title: 内心と傍心を通る円
+stem: |
+  $\triangle\mathrm{ABC}$ において、$\mathrm{AB}=13,\ \mathrm{BC}=14,\ \mathrm{CA}=15$ とする。$\triangle\mathrm{ABC}$ の内心を $\mathrm{I}$ とし、$\angle\mathrm{A}$ 内の傍心（辺 $\mathrm{BC}$ と、辺 $\mathrm{AB},\ \mathrm{AC}$ の延長に接する円の中心）を $\mathrm{J}$ とする。
+
+  (1) $\triangle\mathrm{ABC}$ の面積は $\boxed{\text{アイ}}$ であり、内接円の半径は $\boxed{\text{ウ}}$、中心 $\mathrm{J}$ の傍接円の半径は $\boxed{\text{エオ}}$ である。
+
+  (2) $\mathrm{AI}=\sqrt{\boxed{\text{カキ}}}$、$\mathrm{AJ}=\boxed{\text{ク}}\sqrt{\boxed{\text{ケコ}}}$ である。
+
+  (3) $\angle\mathrm{IBJ}=\boxed{\text{サシ}}^\circ$ である。同様に $\angle\mathrm{ICJ}$ も同じ大きさであるから、4点 $\mathrm{B},\ \mathrm{I},\ \mathrm{C},\ \mathrm{J}$ は線分 $\mathrm{IJ}$ を直径とする円の周上にあり、この円の半径は $\sqrt{\boxed{\text{スセ}}}$ である。
+blanks:
+  - { label: アイ, answer: "84" }
+  - { label: ウ, answer: "4" }
+  - { label: エオ, answer: "12" }
+  - { label: カキ, answer: "65" }
+  - { label: ク, answer: "3" }
+  - { label: ケコ, answer: "65" }
+  - { label: サシ, answer: "90" }
+  - { label: スセ, answer: "65" }
+solution: |
+  (1) $s=\dfrac{13+14+15}{2}=21$。ヘロンの公式（または $\cos B=\dfrac{5}{13}$ から $\sin B=\dfrac{12}{13}$）で $S=\sqrt{21\cdot 7\cdot 6\cdot 8}=84$。内接円 $r=\dfrac{S}{s}=4$、傍接円 $r_{\mathrm{A}}=\dfrac{S}{s-a}=\dfrac{84}{7}=12$。
+
+  (2) $\mathrm{A}$ から内接円への接線の長さは $s-a=7$、傍接円への接線の長さ（$\mathrm{AB}$ の延長上の接点まで）は $s=21$。接点と中心を結ぶ半径は接線に垂直なので
+  $$\mathrm{AI}=\sqrt{7^2+4^2}=\sqrt{65},\qquad\mathrm{AJ}=\sqrt{21^2+12^2}=\sqrt{585}=3\sqrt{65}$$
+
+  (3) $\mathrm{BI}$ は $\angle\mathrm{B}$ の二等分線、$\mathrm{BJ}$ は $\angle\mathrm{B}$ の外角の二等分線なので $\angle\mathrm{IBJ}=\dfrac{1}{2}\cdot 180^\circ=90^\circ$。$\mathrm{A},\ \mathrm{I},\ \mathrm{J}$ は $\angle\mathrm{A}$ の二等分線上に並ぶので、$\mathrm{IJ}=\mathrm{AJ}-\mathrm{AI}=2\sqrt{65}$、半径は $\sqrt{65}$。
+concepts: [gm-triangle-centers, tg-area]
+misconceptions: [mc-gm-center-confusion]
+targetSeconds: 720
+irt: { expectedCorrectRate: 0.3, discrimination: 1.4 }
+author:
+  intent: |
+    傍心の定義（1つの内角と2つの外角の二等分線の交点）と、接線の長さ $s-a,\ s$ を使った距離の計算ができるかをみる。$\mathrm{AI},\ \mathrm{AJ}$ は三角比でも求まるが、接線の長さで直角三角形をつくる見方が最短。(3) は「内角と外角の二等分線は直交する」ことから円周角の定理の逆につなげる論証で、難関大の誘導付き問題の典型。傍接円の半径を $\dfrac{S}{s}$（内接円と同じ式）や $\dfrac{S}{s-b}=14$ とする誤りは (1) で表面化する。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学A (1) ア(ア) 三角形に関する基本的な性質（三角形の五心）]
+  variations:
+    - 線分 $\mathrm{IJ}$ の中点 $\mathrm{N}$ が $\triangle\mathrm{ABC}$ の外接円上にあることを示させ、$\mathrm{NB}=\mathrm{NI}=\mathrm{NC}$（いわゆるトリリウムの定理）を導かせる。
+    - $\mathrm{AI}\cdot\mathrm{AJ}=\mathrm{AB}\cdot\mathrm{AC}\ (=195)$ を $\triangle\mathrm{ABJ}\backsim\triangle\mathrm{AIC}$ から証明させる。

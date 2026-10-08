@@ -1,0 +1,45 @@
+id: ma-gm-a02
+level: applied
+format: choice
+title: 交差させたベルトと共通内接線
+stem: |
+  半径 $5$ の円板 $C_1$ と半径 $2$ の円板 $C_2$ が、中心間の距離 $9$ で同じ平面上に置かれている。2つの円板にベルトを「たすき掛け」（2本の直線部分が2円の間で交差するかけ方）にかける。ベルトの直線部分は、2円の共通内接線（2円が直線の反対側にある共通接線）に沿っている。
+
+  共通内接線の1つが $C_1$ と点 $\mathrm{P}$ で、$C_2$ と点 $\mathrm{Q}$ で接するとき、ベルトの直線部分 1 本の長さ $\mathrm{PQ}$ として正しいものを、次の①〜④のうちから一つ選べ。ただし、ベルトの厚さは考えない。
+choices:
+  - id: "1"
+    text: $4\sqrt{2}$
+    rationale: |
+      正解。中心を $\mathrm{O}_1,\ \mathrm{O}_2$ とする。$\mathrm{O}_2$ を通り $\mathrm{PQ}$ に平行な直線と直線 $\mathrm{O}_1\mathrm{P}$ の交点を $\mathrm{H}$ とすると、$\mathrm{O}_1\mathrm{H}=5+2=7$、斜辺 $\mathrm{O}_1\mathrm{O}_2=9$ の直角三角形ができ、$\mathrm{PQ}=\mathrm{O}_2\mathrm{H}=\sqrt{81-49}=4\sqrt{2}$。
+  - id: "2"
+    text: $6\sqrt{2}$
+    misconception: mc-gm-common-tangent
+    rationale: |
+      $\sqrt{9^2-(5-2)^2}$ は共通外接線（ベルトを交差させない普通のかけ方）の長さ。内接線では2つの半径が接線の反対側に向くので、直角三角形の1辺は $5-2$ でなく $5+2$。
+  - id: "3"
+    text: $2\sqrt{13}$
+    misconception: mc-gm-common-tangent
+    rationale: |
+      $\sqrt{9^2-5^2-2^2}$ として、$(5+2)^2$ を $5^2+2^2$ と展開し損ねている。直角三角形の辺は半径の和 $7$ そのもの。
+  - id: "4"
+    text: $\sqrt{130}$
+    misconception: mc-gm-common-tangent
+    rationale: |
+      $\sqrt{9^2+7^2}$ として、中心間の距離 $9$ を直角をはさむ辺として扱っている。中心間の距離は直角三角形の斜辺であり、$\mathrm{PQ}$ は $9$ より短い。
+answer: "1"
+solution: |
+  $\mathrm{O}_1\mathrm{P}\perp\mathrm{PQ},\ \mathrm{O}_2\mathrm{Q}\perp\mathrm{PQ}$ で、内接線では $\mathrm{O}_1,\ \mathrm{O}_2$ が $\mathrm{PQ}$ の反対側にある。$\mathrm{O}_2$ から直線 $\mathrm{O}_1\mathrm{P}$ に垂線 $\mathrm{O}_2\mathrm{H}$ を下ろすと、四角形 $\mathrm{PQO_2H}$ は長方形で $\mathrm{PH}=\mathrm{QO}_2=2$、$\mathrm{O}_1\mathrm{H}=5+2=7$。
+  $$\mathrm{PQ}=\mathrm{O}_2\mathrm{H}=\sqrt{9^2-7^2}=\sqrt{32}=4\sqrt{2}$$
+  $9>5+2$ で2円は離れているので、共通内接線は確かに存在する。
+concepts: [gm-two-circles]
+misconceptions: [mc-gm-common-tangent]
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.55, discrimination: 1.1 }
+author:
+  intent: |
+    日常の文脈（たすき掛けのベルト）を共通内接線という数学の対象に翻訳し、外接線との違いを図から判断できるかをみる。公式の暗記では外接線の式と混同しやすいので、半径の和・差を直角三角形の辺として図示できるかを識別する。誤答は外接線の式、展開ミス、斜辺の取り違えに対応させた。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学A (1) ア(イ) 円に関する基本的な性質（2つの円の位置関係）]
+  variations:
+    - 普通のかけ方（共通外接線）のベルトの直線部分の長さと比較させ、どちらが長いかを問う。
+    - ベルト全体の長さ（円弧部分を含む）を求めさせる（三角比と弧の長さの融合、数学II の弧度法の後で）。

@@ -1,0 +1,12 @@
+id: pr-combination
+kind: formula
+title: 組合せ・同じものを含む順列・重複組合せ
+body: |
+  - **組合せ**: 異なる $n$ 個から順序を考えずに $r$ 個を選ぶ選び方は
+  $${}_n\mathrm{C}_r=\frac{{}_n\mathrm{P}_r}{r!}=\frac{n!}{r!\,(n-r)!},\qquad {}_n\mathrm{C}_r={}_n\mathrm{C}_{n-r}$$
+  順列は「選んでから並べる」ので ${}_n\mathrm{P}_r={}_n\mathrm{C}_r\times r!$。
+  - **同じものを含む順列**: $a$ が $p$ 個、$b$ が $q$ 個、$c$ が $r$ 個（$p+q+r=n$）を1列に並べる並べ方は
+  $$\frac{n!}{p!\,q!\,r!}={}_n\mathrm{C}_p\times{}_{n-p}\mathrm{C}_q$$
+  （$n$ か所のうち $a$ を置く場所を選び、残りから $b$ を置く場所を選ぶ。）最短経路の数え上げもこれに帰着する。
+  - **重複組合せ**（発展）: $n$ 種類のものから重複を許して $r$ 個選ぶ選び方は ${}_n\mathrm{H}_r={}_{n+r-1}\mathrm{C}_r$ 通り。$r$ 個の○と $n-1$ 本の仕切り｜の並べ方と1対1に対応する。$1\leqq x_1\leqq x_2\leqq\cdots\leqq x_r\leqq n$ を満たす整数の組の個数もこれに等しい。
+prerequisites: [pr-permutation]

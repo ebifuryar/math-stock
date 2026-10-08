@@ -201,7 +201,11 @@ function main() {
 
   for (const subject of curriculum.subjects) {
     for (const unit of subject.units) {
-      const shortUnit = unit.id.replace(`${subject.id}-`, '');
+      // 単元IDは小文字のみなので、科目ID（mathA など）との照合は大文字小文字を区別しない
+      const shortUnit = unit.id.slice(subject.id.length + 1);
+      if (unit.id.slice(0, subject.id.length + 1).toLowerCase() !== `${subject.id.toLowerCase()}-`) {
+        errors.push(`curriculum.yaml: 単元ID ${unit.id} は「${subject.id.toLowerCase()}-」で始めてください`);
+      }
       for (const file of yamlFiles(join(CONTENT, 'concepts', subject.id, shortUnit))) {
         const where = relative(ROOT, file);
         const c = parseOrReport(sourceConceptSchema, loadYaml(file), where);

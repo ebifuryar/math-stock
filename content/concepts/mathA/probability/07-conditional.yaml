@@ -1,0 +1,14 @@
+id: pr-conditional
+kind: formula
+title: 条件付き確率と乗法定理
+body: |
+  事象 $A$ が起こったときに事象 $B$ が起こる確率を、$A$ が起こったときの $B$ が起こる **条件付き確率** といい $P_A(B)$ で表す。
+  $$P_A(B)=\frac{n(A\cap B)}{n(A)}=\frac{P(A\cap B)}{P(A)}$$
+  分母は「起こったとわかっている事象 $A$」であり、全事象 $U$ ではない。一般に $P_A(B)\neq P_B(A)$。
+
+  **乗法定理**: $P(A\cap B)=P(A)\,P_A(B)$。くじを戻さずに順に引く場合などに使う。
+
+  **原因の確率**: 結果 $E$ が起こったとき、それが原因 $A$ によるものである確率は、$E$ に至る経路を原因ごとに分けて
+  $$P_E(A)=\frac{P(A\cap E)}{P(E)}=\frac{P(A)P_A(E)}{P(A)P_A(E)+P(\overline{A})P_{\overline{A}}(E)}$$
+  樹形図や「全体を例えば $1000$ 人とした表」で、$E$ に当てはまる部分だけを取り出して比をとると誤りにくい。
+prerequisites: [pr-probability-basics, pr-independent-repeated]

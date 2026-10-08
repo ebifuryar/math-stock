@@ -1,4 +1,4 @@
-# 科目 → 単元の階層。単元IDは「科目ID-単元名」で一意にする。
+# 科目 → 単元の階層。単元IDは「科目ID（小文字）-単元名」で一意にする。
 subjects:
   - id: math1
     title: 数学I
@@ -23,3 +23,18 @@ subjects:
         title: データの分析
         curriculumCode: 数学I (4) データの分析
         summary: 代表値と四分位数・箱ひげ図、分散と標準偏差、相関係数、仮説検定の考え方
+  - id: mathA
+    title: 数学A
+    units:
+      - id: matha-probability
+        title: 場合の数と確率
+        curriculumCode: 数学A (2) 場合の数と確率
+        summary: 集合の要素の個数、順列・組合せ、確率とその基本性質、独立な試行と反復試行、条件付き確率、期待値
+      - id: matha-geometry
+        title: 図形の性質
+        curriculumCode: 数学A (1) 図形の性質
+        summary: 三角形の五心、チェバ・メネラウスの定理、円の性質（方べきの定理・接弦定理）、作図、空間図形
+      - id: matha-integers
+        title: 整数の性質
+        curriculumCode: 数学A (3) 数学と人間の活動
+        summary: 約数と倍数、素因数分解、ユークリッドの互除法、1次不定方程式、記数法（n進法）

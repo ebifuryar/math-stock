@@ -1,0 +1,12 @@
+id: it-prime-factorization
+kind: formula
+title: 素因数分解と約数の個数・総和
+body: |
+  $2$ 以上の自然数は素数の積に（積の順序を除いて）ただ1通りに分解できる（**素因数分解の一意性**）。
+
+  $N=p^{a}q^{b}r^{c}$（$p,\ q,\ r$ は異なる素数）のとき、$N$ の正の約数は $p^{i}q^{j}r^{k}$（$0\leqq i\leqq a,\ 0\leqq j\leqq b,\ 0\leqq k\leqq c$）と表せるので
+  - 正の約数の **個数** は $(a+1)(b+1)(c+1)$（指数が $0$ の場合も数えるので $+1$）
+  - 正の約数の **総和** は $(1+p+\cdots+p^{a})(1+q+\cdots+q^{b})(1+r+\cdots+r^{c})$
+
+  例: $72=2^3\cdot 3^2$ の正の約数は $(3+1)(2+1)=12$ 個、総和は $(1+2+4+8)(1+3+9)=195$。
+prerequisites: [it-divisor-prime]

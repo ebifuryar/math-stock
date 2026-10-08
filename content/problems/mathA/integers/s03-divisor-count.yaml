@@ -1,0 +1,34 @@
+id: ma-it-s03
+level: school
+format: mark
+title: 約数の個数と総和
+stem: |
+  $504$ を素因数分解すると
+  $$504=2^{\boxed{\text{ア}}}\cdot 3^{\boxed{\text{イ}}}\cdot\boxed{\text{ウ}}$$
+  である。$504$ の正の約数は $\boxed{\text{エオ}}$ 個あり、その総和は $\boxed{\text{カキクケ}}$ である。
+
+  また、$504$ の正の約数のうち奇数であるものは $\boxed{\text{コ}}$ 個ある。
+blanks:
+  - { label: ア, answer: "3" }
+  - { label: イ, answer: "2" }
+  - { label: ウ, answer: "7" }
+  - { label: エオ, answer: "24" }
+  - { label: カキクケ, answer: "1560" }
+  - { label: コ, answer: "6" }
+solution: |
+  $504=2^3\cdot 3^2\cdot 7$。正の約数は $2^{i}\cdot 3^{j}\cdot 7^{k}$（$0\leqq i\leqq 3,\ 0\leqq j\leqq 2,\ 0\leqq k\leqq 1$）なので
+  - 個数: $(3+1)(2+1)(1+1)=24$
+  - 総和: $(1+2+4+8)(1+3+9)(1+7)=15\cdot 13\cdot 8=1560$
+  - 奇数の約数は $i=0$ のもの: $(2+1)(1+1)=6$ 個
+concepts: [it-prime-factorization]
+misconceptions: [mc-it-divisor-count-exponent]
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.72, discrimination: 1.0 }
+author:
+  intent: |
+    素因数分解から約数の個数・総和を求める基本公式を、「約数は $2^{i}3^{j}7^{k}$ の形」という構造に基づいて使えるかをみる。奇数の約数の個数は公式の丸暗記では対応できず、「指数 $i$ を $0$ に固定する」と考えられるかで理解の深さを分ける。指数に $1$ を足し忘れると エオ が $6$ になる。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学A (3) ア(ア) 整数の性質（約数と倍数・素因数分解）]
+  variations:
+    - 正の約数の個数が $12$ 個である最小の自然数を求めさせる（逆向きの問題）。
+    - "$504$ の約数のうち $6$ の倍数の個数・総和を問う。"

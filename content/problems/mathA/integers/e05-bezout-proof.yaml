@@ -1,0 +1,63 @@
+id: ma-it-e05
+level: exam
+format: written
+title: 互いに素な2数と1次不定方程式の解の存在
+stem: |
+  $a,\ b$ を互いに素な自然数とし、$b\geqq 2$ とする。
+
+  (1) $a,\ 2a,\ 3a,\ \ldots,\ ba$ の $b$ 個の数を $b$ で割った余りは、すべて異なることを証明せよ。
+
+  (2) $ax+by=1$ を満たす整数 $x,\ y$ が存在することを証明せよ。
+modelAnswer: |
+  **(1)** 背理法で示す。$1\leqq j<i\leqq b$ を満たす整数 $i,\ j$ で、$ia$ と $ja$ を $b$ で割った余りが等しいものがあると仮定する。
+
+  このとき、$ia-ja=(i-j)a$ は $b$ の倍数である。$a$ と $b$ は互いに素なので、$i-j$ が $b$ の倍数となる。
+
+  ところが $1\leqq j<i\leqq b$ より $1\leqq i-j\leqq b-1$ であり、この範囲に $b$ の倍数は存在しない。これは矛盾である。
+
+  よって、$a,\ 2a,\ \ldots,\ ba$ を $b$ で割った余りはすべて異なる。
+
+  **(2)** $b$ で割った余りは $0,\ 1,\ \ldots,\ b-1$ の $b$ 通りしかない。(1) より $b$ 個の数 $a,\ 2a,\ \ldots,\ ba$ の余りはすべて異なるので、余りは $0$ から $b-1$ までの値をちょうど1回ずつとる。
+
+  $b\geqq 2$ より余り $1$ もその中に含まれるから、ある整数 $k\ (1\leqq k\leqq b)$ と整数 $q$ を用いて
+  $$ka=bq+1$$
+  と表せる。$x=k,\ y=-q$ とおくと $ax+by=ka-bq=1$ となる。
+
+  よって $ax+by=1$ を満たす整数 $x,\ y$ が存在する。$\blacksquare$
+rubric:
+  - id: r1
+    criterion: (1) 余りが等しい2数 $ia,\ ja\ (j<i)$ が存在すると仮定し、$(i-j)a$ が $b$ の倍数であることを導いている
+    points: 2
+    keywords: ["仮定", "(i-j)a"]
+  - id: r2
+    criterion: $a$ と $b$ が互いに素であることを根拠に $b\mid (i-j)$ を導いている（根拠の明示が必須）
+    points: 3
+    keywords: ["互いに素", "i-j"]
+  - id: r3
+    criterion: $1\leqq i-j\leqq b-1$ と範囲を押さえ、矛盾を指摘している
+    points: 2
+    keywords: ["b-1", "矛盾"]
+  - id: r4
+    criterion: (2) 余りが $b$ 通りしかないことと (1) から、余りが $0$ から $b-1$ をちょうど1回ずつとり、余り $1$ となる $ka$ があると述べている
+    points: 2
+    keywords: ["余り", "1回ずつ"]
+  - id: r5
+    criterion: $ka=bq+1$ から $x=k,\ y=-q$ を構成して結論している
+    points: 1
+    keywords: ["x=k", "y=-q"]
+solution: |
+  (1) 余りが等しい2数の差 $(i-j)a$ は $b$ の倍数。$a,\ b$ が互いに素なので $b\mid i-j$ だが、$0<i-j<b$ に矛盾。
+
+  (2) $b$ 個の数の余りが相異なり、余りの候補もちょうど $b$ 通りなので、余り $1$ が必ず現れる。$ka=bq+1$ から $(x,y)=(k,-q)$ が解。
+concepts: [it-linear-diophantine, it-gcd-lcm, it-remainder-classification, sp-proof-contradiction]
+misconceptions: [mc-it-coprime-ignored]
+targetSeconds: 720
+irt: { expectedCorrectRate: 0.2, discrimination: 1.5 }
+author:
+  intent: |
+    1次不定方程式の解の存在定理を、余りの「鳩の巣」的な議論で証明させる国公立二次の定番。(1) で「互いに素」をどこで使うかを明示できるか（$b\mid (i-j)a\Rightarrow b\mid i-j$）が最大の識別点で、ここを根拠なしに書く答案は配点の大部分を失う。(2) は「$b$ 個が相異なり、候補も $b$ 通り」から全余りが現れると結論する論理の明確さをみる。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学A (3) ア(ア) 整数の性質（1次不定方程式・ユークリッドの互除法）, 数学I (1) イ 命題と証明（背理法）]
+  variations:
+    - '(2) の後に「$ax+by$（$x,\ y$ は $0$ 以上の整数）で表せない最大の整数は $ab-a-b$」を示させる発展問題につなげる。'
+    - 互除法を用いた構成的な証明（$ax+by$ の形の数全体が $\gcd$ の倍数全体と一致する）と比較させる。

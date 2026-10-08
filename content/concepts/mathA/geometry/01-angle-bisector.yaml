@@ -1,0 +1,13 @@
+id: gm-angle-bisector
+kind: theorem
+title: 内分・外分と角の二等分線の定理
+body: |
+  **内分・外分**: 点 $\mathrm{P}$ が線分 $\mathrm{AB}$ 上にあって $\mathrm{AP}:\mathrm{PB}=m:n$ のとき、$\mathrm{P}$ は $\mathrm{AB}$ を $m:n$ に**内分**するという。点 $\mathrm{Q}$ が線分 $\mathrm{AB}$ の延長上にあって $\mathrm{AQ}:\mathrm{QB}=m:n\ (m\neq n)$ のとき、$\mathrm{Q}$ は $\mathrm{AB}$ を $m:n$ に**外分**するという（$m>n$ なら $\mathrm{B}$ の外側、$m<n$ なら $\mathrm{A}$ の外側）。
+
+  **角の二等分線の定理**: $\triangle\mathrm{ABC}$ の $\angle\mathrm{A}$ の二等分線と辺 $\mathrm{BC}$ の交点を $\mathrm{D}$ とすると
+  $$\mathrm{BD}:\mathrm{DC}=\mathrm{AB}:\mathrm{AC}$$
+  $\mathrm{AB}\neq\mathrm{AC}$ のとき、$\angle\mathrm{A}$ の外角の二等分線と直線 $\mathrm{BC}$ の交点 $\mathrm{E}$ は、$\mathrm{BC}$ を $\mathrm{AB}:\mathrm{AC}$ に外分する。
+
+  - 比をつくるのは「二等分する角をはさむ2辺」。分けられる辺 $\mathrm{BC}$ の各部分 $\mathrm{BD}$ は、同じ端点 $\mathrm{B}$ をもつ辺 $\mathrm{AB}$ と対応する。
+  - 証明: $\mathrm{C}$ を通り $\mathrm{AD}$ に平行な直線と直線 $\mathrm{AB}$ の交点を $\mathrm{E}$ とすると、同位角・錯角から $\triangle\mathrm{ACE}$ は $\mathrm{AC}=\mathrm{AE}$ の二等辺三角形。平行線と線分の比より $\mathrm{BD}:\mathrm{DC}=\mathrm{BA}:\mathrm{AE}=\mathrm{AB}:\mathrm{AC}$。
+prerequisites: []

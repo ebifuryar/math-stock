@@ -1,0 +1,56 @@
+- id: mc-gm-bisector-ratio
+  title: 角の二等分線の比の取り違え
+  description: |
+    $\angle\mathrm{A}$ の二等分線と辺 $\mathrm{BC}$ の交点 $\mathrm{D}$ について、$\mathrm{BD}:\mathrm{DC}=\mathrm{AC}:\mathrm{AB}$ と逆にする、あるいは $\mathrm{BD}:\mathrm{DC}=\mathrm{AB}:\mathrm{BC}$ のように二等分する角をはさまない辺（対辺）を比に使う。
+  cause: |
+    「$\mathrm{BD}$ は端点 $\mathrm{B}$ を共有する辺 $\mathrm{AB}$ に対応する」という対応関係を、図で確かめずに「比が出てくる定理」として形だけ覚えている。証明（平行線を引いて二等辺三角形をつくる）を一度も追っていないことが根本原因。作問では、$\mathrm{AB}$ と $\mathrm{AC}$ の大小をはっきりさせ、逆の比で出る値を誤答に入れると識別できる。
+  remedyConcepts: [gm-angle-bisector]
+- id: mc-gm-centroid-ratio
+  title: 重心が中線を分ける比の向きの誤り
+  description: |
+    重心 $\mathrm{G}$ が中線 $\mathrm{AM}$ を $\mathrm{AG}:\mathrm{GM}=1:2$ に分けると考える（正しくは頂点側が長く $2:1$）。
+  cause: |
+    「$2:1$」という数字だけを覚え、どちら側が $2$ かを図と結びつけていない。中点連結定理から $\mathrm{GM}$ が $\mathrm{AG}$ の半分になる理由を確認していない。作問では、$\mathrm{AG}$ と $\mathrm{GM}$ の両方が問われる設定や、$\mathrm{AM}$ の長さから $\mathrm{AG}$ を求めさせる設定で表面化する。
+  remedyConcepts: [gm-triangle-centers]
+- id: mc-gm-center-confusion
+  title: 五心の定義・性質の混同
+  description: |
+    外心を「3辺から等距離な点」、内心を「3頂点から等距離な点」とする、垂心を垂直二等分線の交点とするなど、五心の定義と性質を入れ替える。$\angle\mathrm{BIC}$（内心）を $2\angle\mathrm{A}$（外心の中心角）や $180^\circ-\angle\mathrm{A}$（垂心）で計算するのも同じ誤り。
+  cause: |
+    五心を名前と公式の一覧で覚え、「角の二等分線上の点は2辺から等距離」「垂直二等分線上の点は2端点から等距離」という出発点の性質から導いていない。作問では、角度が $\angle\mathrm{A}=60^\circ$ のように $90^\circ+\dfrac{A}{2},\ 2A,\ 180^\circ-A$ が一致する値を避けると、どの心と混同したかを識別できる。
+  remedyConcepts: [gm-triangle-centers]
+- id: mc-gm-menelaus-order
+  title: メネラウスの定理での辺のたどり方の誤り
+  description: |
+    メネラウスの定理で、三角形の頂点と直線上の交点を交互にたどらずに比を並べる（例: 頂点から頂点へ進む、使う三角形と直線を決めないまま比を掛ける）。チェバの定理と使い分けられない。
+  cause: |
+    公式を「3つの比を掛けると $1$」という形でしか覚えておらず、どの三角形のどの辺（延長）を直線が横切っているかを図で特定していない。延長上の点（三角形の外にある分点）が入ると崩れやすい。作問では、同じ図で使う三角形を変えると比が変わる設定にすると、たどり方の理解を識別できる。
+  remedyConcepts: [gm-ceva-menelaus]
+- id: mc-gm-power-segment
+  title: 方べきの定理で掛ける線分の取り違え
+  description: |
+    円外の点 $\mathrm{P}$ から引いた直線が円と $\mathrm{A},\ \mathrm{B}$ で交わるとき、$\mathrm{PA}\cdot\mathrm{PB}$ の代わりに $\mathrm{PA}\cdot\mathrm{AB}$（弦の長さ）を使う。あるいは、点の並び方を考えずに $\mathrm{PB}$ に別の線分を当てる。
+  cause: |
+    「2つの線分の積が等しい」とだけ覚え、どちらも「$\mathrm{P}$ から交点までの距離」であることを、定理の証明（相似な三角形の対応する辺）と結びつけていない。問題文で弦の長さが与えられると、それをそのまま使いたくなる。作問では、$\mathrm{PA}$ と $\mathrm{AB}$ を与えて $\mathrm{PB}=\mathrm{PA}+\mathrm{AB}$ を自分で作らせると識別できる。
+  remedyConcepts: [gm-power-of-point]
+- id: mc-gm-tangent-chord-angle
+  title: 接弦定理で等しい角の取り違え
+  description: |
+    接線 $\mathrm{AT}$ と弦 $\mathrm{AB}$ のなす角 $\angle\mathrm{TAB}$ を、弦の端点 $\mathrm{B}$ における角 $\angle\mathrm{ABC}$ や、反対側の角（$\angle\mathrm{TAB}$ の補角側の弧に対する円周角）と等しいとする。
+  cause: |
+    「接線と弦の角 = 円周角」とだけ覚え、「角の内部にある弧に対する円周角」すなわち弦 $\mathrm{AB}$ の向こう側の点 $\mathrm{C}$ の角だという対応を確認していない。接線上の点がどちら側にとられているか（$\mathrm{T}$ と $\mathrm{C}$ が直線 $\mathrm{AB}$ の反対側か）を問題文から読み取れていない。
+  remedyConcepts: [gm-circle-angles]
+- id: mc-gm-common-tangent
+  title: 共通接線の長さの公式の混同
+  description: |
+    共通内接線の長さを $\sqrt{d^2-(r-r')^2}$（共通外接線の式）で計算する、$(r+r')^2$ を $r^2+r'^2$ とする、あるいは中心間の距離 $d$ を直角三角形の斜辺でなく直角をはさむ辺として $\sqrt{d^2+(r+r')^2}$ とする。
+  cause: |
+    公式を暗記で済ませ、「半径は接線に垂直 → 一方の中心から平行移動した接線を引いて直角三角形をつくる」という導出を毎回描いていない。内接線では半径の向きが逆になるので、直角三角形の1辺が $r+r'$ になることが図なしでは分からない。
+  remedyConcepts: [gm-two-circles]
+- id: mc-gm-polyhedron-count
+  title: 多面体の辺・頂点の重複した数え方
+  description: |
+    多面体の辺の数を「各面の辺数の合計」、頂点の数を「各面の頂点数の合計」のまま答える（共有の重複で割らない）。あるいは、辺を2で割るべきところを3で割るなど、重複の回数を取り違える。
+  cause: |
+    「1本の辺は必ず2つの面に共有される」「1つの頂点には $k$ 個の面が集まる」という図形的な事実から割る数を決めず、割る操作だけを覚えている。オイラーの多面体定理 $v-e+f=2$ で検算する習慣がない。
+  remedyConcepts: [gm-solid-figures]

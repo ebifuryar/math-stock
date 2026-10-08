@@ -1,0 +1,46 @@
+id: ma-gm-s02
+level: school
+format: choice
+title: 三角形の五心の性質
+stem: |
+  正三角形でない $\triangle\mathrm{ABC}$ の五心について述べた文として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: 外心は、$\triangle\mathrm{ABC}$ の3辺から等しい距離にある点である。
+    misconception: mc-gm-center-confusion
+    rationale: |
+      3辺から等距離にあるのは内心（内接円の中心）。外心は3辺の垂直二等分線の交点で、3つの **頂点** から等距離にある（外接円の中心）。
+  - id: "2"
+    text: 内心は、3つの内角の二等分線の交点であり、3辺から等しい距離にある。
+    rationale: |
+      正解。角の二等分線上の点は角をつくる2辺から等距離なので、2本の二等分線の交点は3辺から等距離になる（3本目の二等分線も通る）。
+  - id: "3"
+    text: 辺 $\mathrm{BC}$ の中点を $\mathrm{M}$、重心を $\mathrm{G}$ とすると、$\mathrm{AG}:\mathrm{GM}=1:2$ である。
+    misconception: mc-gm-centroid-ratio
+    rationale: |
+      比の向きが逆。重心は中線を **頂点の側から** $2:1$ に内分するので $\mathrm{AG}:\mathrm{GM}=2:1$。
+  - id: "4"
+    text: 垂心は、3辺の垂直二等分線の交点である。
+    misconception: mc-gm-center-confusion
+    rationale: |
+      3辺の垂直二等分線の交点は外心。垂心は各頂点から対辺（またはその延長）に下ろした **垂線** の交点。正三角形でなければ外心と垂心は一致しない。
+answer: "2"
+solution: |
+  - 重心: 3本の中線の交点。中線を頂点側から $2:1$ に内分する。
+  - 内心: 3つの内角の二等分線の交点。3辺から等距離（内接円の中心）。
+  - 外心: 3辺の垂直二等分線の交点。3頂点から等距離（外接円の中心）。
+  - 垂心: 3頂点から対辺に下ろした垂線の交点。
+
+  「辺から等距離」は角の二等分線、「頂点から等距離」は垂直二等分線、と出発点の性質に戻ると混同しない。
+concepts: [gm-triangle-centers]
+misconceptions: [mc-gm-center-confusion, mc-gm-centroid-ratio]
+targetSeconds: 60
+irt: { expectedCorrectRate: 0.75, discrimination: 0.9 }
+author:
+  intent: |
+    五心の定義（何の交点か）と性質（何から等距離か、比の向き）を区別して覚えているかをみる。誤答はそれぞれ外心と内心の入れ替え、重心の比の逆転、垂心と外心の入れ替えに対応する。「正三角形でない」と断ったのは、正三角形では五心が一致して④などが成り立ってしまうため。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学A (1) ア(ア) 三角形に関する基本的な性質]
+  variations:
+    - $\angle\mathrm{A}=70^\circ$ の鋭角三角形で、内心 $\mathrm{I}$・外心 $\mathrm{O}$・垂心 $\mathrm{H}$ について $\angle\mathrm{BIC},\ \angle\mathrm{BOC},\ \angle\mathrm{BHC}$ を求めさせ、値の違い（$125^\circ,\ 140^\circ,\ 110^\circ$）で混同を識別する。
+    - 直角三角形で外心が斜辺の中点、垂心が直角の頂点になることを問う。

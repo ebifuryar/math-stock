@@ -1,0 +1,46 @@
+id: ma-pr-e01
+level: exam
+format: choice
+title: 出た目が広義単調増加となる確率（重複組合せ）
+stem: |
+  $1$ 個のさいころを $4$ 回投げ、出た目を順に $a,\ b,\ c,\ d$ とする。$a\leqq b\leqq c\leqq d$ となる確率として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\dfrac{1}{24}$
+    misconception: mc-pr-equally-likely
+    rationale: |
+      「4つの目の並べ方 $4!$ 通りのうち小さい順は1通り」と考えている。これは4つの目がすべて異なる場合にしか成り立たない。同じ目を含むと並べかえの数が $4!$ より少なくなり、各「目の組」は同様に確からしい $4!$ 通りに分かれない。
+  - id: "2"
+    text: $\dfrac{5}{432}$
+    misconception: mc-pr-order-confusion
+    rationale: |
+      異なる $4$ つの目を選ぶ ${}_6\mathrm{C}_4=15$ 通りだけを数えている。これは $a<b<c<d$ の場合の数で、等号（同じ目が続く場合）を許すなら重複を許して選ぶ重複組合せ ${}_6\mathrm{H}_4$ を使う。
+  - id: "3"
+    text: $\dfrac{7}{108}$
+    rationale: |
+      重複組合せを ${}_6\mathrm{H}_4={}_9\mathrm{C}_3=84$ と計算している。○ $4$ 個と仕切り $5$ 本の並べ方なので ${}_9\mathrm{C}_4=126$（あるいは ${}_9\mathrm{C}_5$）であり、${}_9\mathrm{C}_3$ ではない。
+  - id: "4"
+    text: $\dfrac{7}{72}$
+    rationale: |
+      正解。$a\leqq b\leqq c\leqq d$ を満たす $(a,b,c,d)$ は、$1\sim 6$ から重複を許して $4$ 個選ぶ選び方と1対1に対応し ${}_6\mathrm{H}_4={}_9\mathrm{C}_4=126$ 通り。$\dfrac{126}{6^4}=\dfrac{126}{1296}=\dfrac{7}{72}$。
+answer: "4"
+solution: |
+  目の出方は $6^4=1296$ 通りで同様に確からしい。
+
+  $a\leqq b\leqq c\leqq d$ を満たす組は、$1$ から $6$ の目から重複を許して $4$ 個を選べば、小さい順に並べることでただ1通りに定まる。よってその個数は重複組合せ
+  $${}_6\mathrm{H}_4={}_{6+4-1}\mathrm{C}_4={}_9\mathrm{C}_4=126$$
+  （○ $4$ 個と仕切り｜$5$ 本の並べ方）。求める確率は $\dfrac{126}{1296}=\dfrac{7}{72}$。
+
+  （別解）$a'=a,\ b'=b+1,\ c'=c+2,\ d'=d+3$ とおくと $1\leqq a'<b'<c'<d'\leqq 9$ となり、${}_9\mathrm{C}_4$ 通り。
+concepts: [pr-combination, pr-probability-basics]
+misconceptions: [mc-pr-equally-likely, mc-pr-order-confusion]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.35, discrimination: 1.3 }
+author:
+  intent: |
+    「大小関係で決まる列」を「選び方」に読みかえる発想と、重複の有無で組合せと重複組合せを使い分けられるかをみる。①は対称性による議論を同じ目を含む場合にまで適用する誤りで、同様に確からしさの理解を識別する。②は等号の扱い、③は重複組合せの公式の運用ミス。難関私大の小問として、短時間で発想の有無を判定できる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学A (2) ア(イ) 順列・組合せ（重複組合せは発展）", "数学A (2) イ(ア) 確率とその基本的な法則"]
+  variations:
+    - '$a<b\leqq c<d$ のように等号と不等号を混ぜ、変数変換で狭義単調に直させる。'
+    - $a+b+c+d=12$ を満たす目の出方の数を求めさせ、重複組合せと上限の包除原理を組み合わせる。

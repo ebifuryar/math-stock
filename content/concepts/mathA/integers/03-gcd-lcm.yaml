@@ -1,0 +1,14 @@
+id: it-gcd-lcm
+kind: property
+title: 最大公約数・最小公倍数と互いに素
+body: |
+  2つの自然数 $a,\ b$ の最大公約数を $G$、最小公倍数を $L$ とすると
+  $$a=Ga',\quad b=Gb'\quad(a',\ b'\ \text{は互いに素}),\qquad L=Ga'b',\qquad ab=GL$$
+  $\gcd(a,b)=1$ のとき $a,\ b$ は **互いに素** であるという。$L=ab$ が成り立つのは互いに素のときに限る。
+
+  **互いに素の基本性質**（$a,\ b,\ c$ は整数）
+  - $a$ と $b$ が互いに素で $a\mid bc$ ならば $a\mid c$
+  - $a$ と $b$ が互いに素で $a\mid c$ かつ $b\mid c$ ならば $ab\mid c$
+
+  互いに素の条件がないと成り立たない（例: $4\mid 2\cdot 6$ だが $4\nmid 2,\ 4\nmid 6$）。
+prerequisites: [it-prime-factorization]

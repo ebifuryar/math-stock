@@ -1,0 +1,56 @@
+id: ma-pr-a04
+level: applied
+format: mark
+title: 9枚のカードから3枚取り出すときの最大・積・最小の期待値
+stem: |
+  $1$ から $9$ までの数字が1つずつ書かれた $9$ 枚のカードが袋に入っている。この袋から $3$ 枚のカードを同時に取り出す。
+
+  (1) カードの取り出し方は全部で $\boxed{\text{アイ}}$ 通りあり、これらは同様に確からしい。
+
+  (2) 取り出した $3$ 枚に書かれた数の最大値が $7$ 以下である確率は $\dfrac{\boxed{\text{ウ}}}{\boxed{\text{エオ}}}$、最大値がちょうど $7$ である確率は $\dfrac{\boxed{\text{カ}}}{\boxed{\text{キク}}}$ である。
+
+  (3) 取り出した $3$ 枚に書かれた数の積が偶数である確率は $\dfrac{\boxed{\text{ケコ}}}{\boxed{\text{サシ}}}$ である。
+
+  (4) 取り出した $3$ 枚に書かれた数の最小値を $X$ とする。$X$ のとりうる値は $1$ 以上 $\boxed{\text{ス}}$ 以下の整数であり、$X=k$ となる確率は $\dfrac{{}_{\boxed{\text{セ}}-k}\mathrm{C}_2}{\boxed{\text{アイ}}}$ である。したがって、$X$ の期待値は $\dfrac{\boxed{\text{ソ}}}{\boxed{\text{タ}}}$ である。
+
+  ただし、(2)〜(4) の確率・期待値は既約分数で答えよ。
+blanks:
+  - { label: アイ, answer: "84" }
+  - { label: ウ, answer: "5" }
+  - { label: エオ, answer: "12" }
+  - { label: カ, answer: "5" }
+  - { label: キク, answer: "28" }
+  - { label: ケコ, answer: "37" }
+  - { label: サシ, answer: "42" }
+  - { label: ス, answer: "7" }
+  - { label: セ, answer: "9" }
+  - { label: ソ, answer: "5" }
+  - { label: タ, answer: "2" }
+solution: |
+  (1) ${}_9\mathrm{C}_3=84$（通り）。
+
+  (2) 最大値が $7$ 以下 $\iff$ $3$ 枚とも $1\sim 7$ から選ぶ：$\dfrac{{}_7\mathrm{C}_3}{84}=\dfrac{35}{84}=\dfrac{5}{12}$。
+  最大値がちょうど $7$ $\iff$ $7$ を含み、残り $2$ 枚を $1\sim 6$ から選ぶ：$\dfrac{{}_6\mathrm{C}_2}{84}=\dfrac{15}{84}=\dfrac{5}{28}$（$=\dfrac{{}_7\mathrm{C}_3-{}_6\mathrm{C}_3}{84}$ とも求まる）。
+
+  (3) 余事象は「$3$ 枚とも奇数」：$\dfrac{{}_5\mathrm{C}_3}{84}=\dfrac{10}{84}$。よって $1-\dfrac{10}{84}=\dfrac{74}{84}=\dfrac{37}{42}$。
+
+  (4) 最小値が $k$ $\iff$ $k$ を含み、残り $2$ 枚を $k+1\sim 9$ の $9-k$ 枚から選ぶ。$X\leqq 7$ で、$P(X=k)=\dfrac{{}_{9-k}\mathrm{C}_2}{84}$。
+
+  | $k$ | $1$ | $2$ | $3$ | $4$ | $5$ | $6$ | $7$ |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | ${}_{9-k}\mathrm{C}_2$ | $28$ | $21$ | $15$ | $10$ | $6$ | $3$ | $1$ |
+
+  （和は $84$ で確率の和は $1$。）
+  $$E=\frac{28+42+45+40+30+18+7}{84}=\frac{210}{84}=\frac{5}{2}$$
+concepts: [pr-combination, pr-probability-basics, pr-expected-value]
+misconceptions: [mc-pr-complement, mc-pr-order-confusion, mc-pr-expectation-incomplete]
+targetSeconds: 600
+irt: { expectedCorrectRate: 0.5, discrimination: 1.1 }
+author:
+  intent: |
+    カードの取り出しを題材に、組合せによる確率計算・「最大値が $k$ 以下」と「ちょうど $k$」の区別・余事象・期待値を誘導付きで一通り確認する共通テスト型の問題。(2) は2つの値を並べて「以下」と「ちょうど」の差を意識させる。(4) で確率の和が $1$（${}_{9-k}\mathrm{C}_2$ の和が $84$）となることを確認できるかが、期待値の検算習慣を識別する。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学A (2) ア(イ) 順列・組合せ", "数学A (2) イ(ア) 確率とその基本的な法則", "数学A (2) イ(エ) 期待値"]
+  variations:
+    - カードを1枚ずつ戻しながら3回取り出す（重複順列）設定に変え、最大値が $7$ である確率 $\dfrac{7^3-6^3}{9^3}$ と比較させる。
+    - 最大値と最小値の差が $4$ 以上である確率を問う。

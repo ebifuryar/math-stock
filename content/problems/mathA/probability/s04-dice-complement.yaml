@@ -1,0 +1,36 @@
+id: ma-pr-s04
+level: school
+format: mark
+title: 3個のさいころと余事象・最大値の確率
+stem: |
+  $3$ 個のさいころを同時に投げる。
+
+  (1) 出た目の積が偶数になる確率は $\dfrac{\boxed{\text{ア}}}{\boxed{\text{イ}}}$ である。
+
+  (2) 出た目の最大値が $5$ である確率は $\dfrac{\boxed{\text{ウエ}}}{\boxed{\text{オカキ}}}$ である。
+
+  ただし、分数は既約分数で答えよ。
+blanks:
+  - { label: ア, answer: "7" }
+  - { label: イ, answer: "8" }
+  - { label: ウエ, answer: "61" }
+  - { label: オカキ, answer: "216" }
+solution: |
+  $3$ 個のさいころを区別すると、目の出方は $6^3=216$ 通りで同様に確からしい。
+
+  (1) 積が偶数でない（奇数になる）のは $3$ 個とも奇数の目のときで、確率は $\left(\dfrac{1}{2}\right)^3=\dfrac{1}{8}$。余事象を考えて $1-\dfrac{1}{8}=\dfrac{7}{8}$。
+
+  (2) 「最大値が $5$」$=$「すべて $5$ 以下」から「すべて $4$ 以下」を除いたもの。
+  $$\frac{5^3-4^3}{6^3}=\frac{125-64}{216}=\frac{61}{216}$$
+concepts: [pr-probability-basics]
+misconceptions: [mc-pr-complement, mc-pr-equally-likely]
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.62, discrimination: 1.1 }
+author:
+  intent: |
+    「少なくとも1つ」型の余事象と、「最大値が $k$」を差で表す考え方を使えるかをみる。(1) を「$1$ 個以上が偶数」と場合分けで数えるか余事象で処理するかで速度差が出る。(2) では「すべて $5$ 以下」の $\dfrac{125}{216}$ や「$5$ が少なくとも1つ」の $\dfrac{91}{216}$（$6$ が出る場合を含む）とする誤りを想定している。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: ["数学A (2) イ(ア) 確率とその基本的な法則"]
+  variations:
+    - 最小値が $2$ である確率 $\dfrac{5^3-4^3}{6^3}$ と比較させ、対称性に気づかせる。
+    - 「最大値が $5$ かつ最小値が $2$」に拡張し、包除原理を使わせる（入試レベル）。

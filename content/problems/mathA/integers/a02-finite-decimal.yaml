@@ -1,0 +1,48 @@
+id: ma-it-a02
+level: applied
+format: choice
+title: 6進法で有限小数にならない分数
+stem: |
+  6進法で表すと有限小数にならない（循環小数になる）分数を、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\dfrac{1}{20}$
+    rationale: |
+      正解。分母 $20=2^2\cdot 5$ は $6$ の素因数でない $5$ を含む。$\dfrac{1}{20}=\dfrac{m}{6^k}$ とすると $20m=6^k$ となり、右辺は $5$ で割り切れないので矛盾。よって有限小数にならない。
+  - id: "2"
+    text: $\dfrac{21}{56}$
+    misconception: mc-it-finite-decimal-condition
+    rationale: |
+      約分前の分母 $56=2^3\cdot 7$ に $7$ が含まれるので有限小数にならないと判断している。$\dfrac{21}{56}=\dfrac{3}{8}$ と約分すると分母は $2^3$ だけで、$\dfrac{3}{8}=\dfrac{81}{6^3}=0.213_{(6)}$ と有限小数になる。
+  - id: "3"
+    text: $\dfrac{5}{48}$
+    misconception: mc-it-finite-decimal-condition
+    rationale: |
+      10進法の条件（分母の素因数が $2$ と $5$ だけ）を使い、分母 $48=2^4\cdot 3$ の $3$ を理由に循環すると判断している。6進法では素因数 $2,\ 3$ だけなら有限小数で、$\dfrac{5}{48}=\dfrac{135}{6^4}=0.0343_{(6)}$。
+  - id: "4"
+    text: $\dfrac{7}{54}$
+    misconception: mc-it-finite-decimal-condition
+    rationale: |
+      分母が $6$ の累乗やその約数の形に見えないことから循環すると判断している。$54=2\cdot 3^3$ は $6^3=216$ の約数なので $\dfrac{7}{54}=\dfrac{28}{6^3}=0.044_{(6)}$ と有限小数になる。10進法の感覚（分母に $3$ があると循環）の影響もある。
+answer: "1"
+solution: |
+  既約分数 $\dfrac{q}{p}$ が6進法で有限小数になる $\iff$ $p$ の素因数が $2$ と $3$ だけ（$\iff p$ がある $6^k$ の約数）。
+
+  ① $20=2^2\cdot 5$ → $5$ を含むので循環小数。
+  ② $\dfrac{21}{56}=\dfrac{3}{8}$、$8=2^3$ → 有限。
+  ③ $48=2^4\cdot 3$ → 有限。
+  ④ $54=2\cdot 3^3$ → 有限。
+
+  判定は **約分してから** 行うこと。
+concepts: [it-base-n, it-prime-factorization]
+misconceptions: [mc-it-finite-decimal-condition]
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.5, discrimination: 1.2 }
+author:
+  intent: |
+    共通テストで頻出の「$n$ 進法の有限小数」の条件を、10進法の知識の単純な流用ではなく $\dfrac{m}{n^k}$ という表示から理解しているかをみる。②は約分前の分母で判定する誤り、③④は10進法の条件を持ち込む誤りに対応する。10進法で考えると正解の①だけが有限小数になるという逆転の構造にし、条件を丸暗記した受験者を確実に誤答へ誘導する。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学A (3) ア(イ) 記数法（n 進法・有限小数）]
+  variations:
+    - '「$\dfrac{1}{n}$ が 6進法でも 10進法でも有限小数となる $100$ 以下の自然数 $n$ の個数」を問う（$n$ は $2^a$ の形）。'
+    - 実際に $0.213_{(6)}$ のような6進小数を10進法の分数に直させ、条件と計算を結び付ける。

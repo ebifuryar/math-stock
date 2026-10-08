@@ -1,0 +1,11 @@
+id: gm-construction
+kind: method
+title: 基本的な作図
+body: |
+  定規（2点を結ぶ直線を引くだけ）とコンパス（円をかく・長さを写す）だけを用いる。
+
+  - **基本作図**: 線分の垂直二等分線、角の二等分線、直線上・直線外の点を通る垂線、点を通る平行線。
+  - **内分点・外分点**: 線分 $\mathrm{AB}$ の端点 $\mathrm{A}$ から半直線を引き、等間隔に点をとる。$m+n$ 番目の点と $\mathrm{B}$ を結び、$m$ 番目の点を通ってこれに平行な直線を引くと、$\mathrm{AB}$ との交点が $m:n$ の内分点（平行線と線分の比）。
+  - **長さ $\sqrt{a}$**: 長さ $1$ と $a$ の線分を一直線につなげて $\mathrm{AB}=1,\ \mathrm{BC}=a$ とし、$\mathrm{AC}$ を直径とする円をかく。$\mathrm{B}$ で $\mathrm{AC}$ に立てた垂線と円の交点を $\mathrm{D}$ とすると、方べきの定理（または直角三角形の相似）より $\mathrm{BD}^2=\mathrm{AB}\cdot\mathrm{BC}=a$。
+  - 作図の問題では「手順」と「その手順で正しく作図できる理由（証明）」の両方を書く。
+prerequisites: [gm-angle-bisector, gm-power-of-point]

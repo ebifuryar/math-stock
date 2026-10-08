@@ -1,0 +1,51 @@
+id: ma-gm-s05
+level: school
+format: written
+title: 内心の存在の証明
+stem: |
+  $\triangle\mathrm{ABC}$ の3つの内角の二等分線は1点で交わることを証明せよ。
+
+  ただし、「角の二等分線上の点は、その角をつくる2辺から等しい距離にある」こと、およびその逆「角の内部にあって、その角をつくる2辺から等しい距離にある点は、その角の二等分線上にある」ことは用いてよい。
+modelAnswer: |
+  $\angle\mathrm{B}$ の二等分線と $\angle\mathrm{C}$ の二等分線の交点を $\mathrm{I}$ とする。（$\angle\mathrm{B}$ の二等分線は辺 $\mathrm{CA}$ と、$\angle\mathrm{C}$ の二等分線は辺 $\mathrm{AB}$ と交わるから、頂点 $\mathrm{B},\ \mathrm{C}$ からそれぞれ対辺へ引いたこの2本の線分は $\triangle\mathrm{ABC}$ の内部で交わる。よって $\mathrm{I}$ は $\triangle\mathrm{ABC}$ の内部にある。）
+
+  点 $\mathrm{I}$ から辺 $\mathrm{BC},\ \mathrm{CA},\ \mathrm{AB}$ に下ろした垂線の長さを、それぞれ $d_a,\ d_b,\ d_c$ とする。
+
+  $\mathrm{I}$ は $\angle\mathrm{B}$ の二等分線上にあるから、$\angle\mathrm{B}$ をつくる2辺 $\mathrm{BA},\ \mathrm{BC}$ から等距離であり $d_c=d_a$。
+
+  $\mathrm{I}$ は $\angle\mathrm{C}$ の二等分線上にあるから、$\angle\mathrm{C}$ をつくる2辺 $\mathrm{CA},\ \mathrm{CB}$ から等距離であり $d_b=d_a$。
+
+  よって $d_b=d_c$。$\mathrm{I}$ は $\triangle\mathrm{ABC}$ の内部、したがって $\angle\mathrm{A}$ の内部にあり、$\angle\mathrm{A}$ をつくる2辺 $\mathrm{AB},\ \mathrm{AC}$ から等距離にあるので、$\mathrm{I}$ は $\angle\mathrm{A}$ の二等分線上にある。
+
+  ゆえに、3つの内角の二等分線はすべて点 $\mathrm{I}$ を通り、1点で交わる。（終）
+rubric:
+  - id: r1
+    criterion: 2つの角（たとえば $\angle\mathrm{B},\ \angle\mathrm{C}$）の二等分線の交点を $\mathrm{I}$ とおき、議論の出発点を明示している
+    points: 2
+    keywords: ["交点", "I"]
+  - id: r2
+    criterion: $\mathrm{I}$ が $\angle\mathrm{B}$ の二等分線上にあることから、辺 $\mathrm{AB}$ と $\mathrm{BC}$ から等距離であることを述べている
+    points: 2
+    keywords: ["等距離", "BC"]
+  - id: r3
+    criterion: 同様に $\angle\mathrm{C}$ の二等分線から辺 $\mathrm{CA}$ と $\mathrm{BC}$ から等距離であることを述べ、$\mathrm{AB}$ と $\mathrm{AC}$ からの距離が等しいことを導いている
+    points: 3
+    keywords: ["AB", "AC"]
+  - id: r4
+    criterion: $\mathrm{I}$ が $\angle\mathrm{A}$ の内部にあることを確認したうえで、逆の性質を用いて $\angle\mathrm{A}$ の二等分線上にあると結論している
+    points: 3
+    keywords: ["内部", "二等分線上"]
+solution: |
+  「2本で交点をつくり、3本目がその点を通ることを示す」が、3直線が1点で交わることの証明の型。距離が等しいという性質を2回使って $\mathrm{AB}$ と $\mathrm{AC}$ からの距離が等しいことを導き、逆の性質で3本目に乗せる。逆を使うには、点が $\angle\mathrm{A}$ の **内部** にあることの確認が要る（外部なら外角の二等分線上の点＝傍心になりうる）。
+concepts: [gm-triangle-centers, gm-angle-bisector]
+misconceptions: [mc-gm-center-confusion]
+targetSeconds: 420
+irt: { expectedCorrectRate: 0.6, discrimination: 1.1 }
+author:
+  intent: |
+    教科書の基本的な証明を、論理の順序（2本の交点を定義 → 等距離を2回 → 逆で3本目）を守って再現できるかをみる。「3辺から等距離だから」とだけ書いて逆の性質や内部条件を使わない答案、外心の証明（頂点からの距離）と混同する答案を識別する。r4 の「内部」の確認は、傍心との違いを意識しているかの判定に使う。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学A (1) ア(ア) 三角形に関する基本的な性質]
+  variations:
+    - 外心の存在（3辺の垂直二等分線が1点で交わる）を、同じ型で証明させる。
+    - チェバの定理の逆と角の二等分線の定理を用いて、同じ命題を別証明させる。

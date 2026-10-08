@@ -1,0 +1,45 @@
+id: ma-pr-a01
+level: applied
+format: choice
+title: さいころで箱を選ぶくじと原因の確率
+stem: |
+  箱 $A$ には当たりくじ $2$ 本とはずれくじ $3$ 本、箱 $B$ には当たりくじ $1$ 本とはずれくじ $3$ 本が入っている。$1$ 個のさいころを投げ、$1$ または $2$ の目が出たら箱 $A$ から、それ以外の目が出たら箱 $B$ から、くじを $1$ 本引く。
+
+  引いたくじが当たりであったとき、それが箱 $A$ から引いたものである確率として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\dfrac{4}{9}$
+    rationale: |
+      正解。当たりを引く事象を $W$ とすると $P(A\cap W)=\dfrac{1}{3}\cdot\dfrac{2}{5}=\dfrac{2}{15}$、$P(B\cap W)=\dfrac{2}{3}\cdot\dfrac{1}{4}=\dfrac{1}{6}$。$P_W(A)=\dfrac{2}{15}\div\left(\dfrac{2}{15}+\dfrac{1}{6}\right)=\dfrac{4}{9}$。
+  - id: "2"
+    text: $\dfrac{2}{15}$
+    misconception: mc-pr-conditional-denominator
+    rationale: |
+      $P(A\cap W)$（箱 $A$ を選び、かつ当たりを引く確率）を答えている。「当たりであった」とわかっているので、分母は全体ではなく $P(W)=\dfrac{3}{10}$ にとり直す。
+  - id: "3"
+    text: $\dfrac{2}{5}$
+    misconception: mc-pr-conditional-denominator
+    rationale: |
+      $P_A(W)$（箱 $A$ を選んだとき当たりを引く確率）を答えている。問われているのは条件と結果を入れかえた $P_W(A)$ である。
+  - id: "4"
+    text: $\dfrac{2}{3}$
+    misconception: mc-pr-equally-likely
+    rationale: |
+      当たりくじ $3$ 本のうち $2$ 本が箱 $A$ にあるとして本数の比をとっている。箱 $A$ が選ばれる確率は $\dfrac{1}{3}$、箱 $A$ の各くじが引かれる確率は $\dfrac{1}{3}\cdot\dfrac{1}{5}=\dfrac{1}{15}$、箱 $B$ の各くじは $\dfrac{2}{3}\cdot\dfrac{1}{4}=\dfrac{1}{6}$ で、くじ1本1本は同様に確からしくない。
+answer: "1"
+solution: |
+  箱 $A$ を選ぶ事象を $A$、当たりを引く事象を $W$ とする。$P(A)=\dfrac{1}{3},\ P(\overline{A})=\dfrac{2}{3}$。
+  $$P(A\cap W)=\frac{1}{3}\cdot\frac{2}{5}=\frac{2}{15},\qquad P(\overline{A}\cap W)=\frac{2}{3}\cdot\frac{1}{4}=\frac{1}{6}$$
+  $$P(W)=\frac{2}{15}+\frac{1}{6}=\frac{3}{10},\qquad P_W(A)=\frac{P(A\cap W)}{P(W)}=\frac{2}{15}\cdot\frac{10}{3}=\frac{4}{9}$$
+concepts: [pr-conditional]
+misconceptions: [mc-pr-conditional-denominator, mc-pr-equally-likely]
+targetSeconds: 210
+irt: { expectedCorrectRate: 0.5, discrimination: 1.3 }
+author:
+  intent: |
+    原因の確率で、条件付き確率の分母を「結果 $W$」にとり直せるかをみる。誤答は「分母を全体のまま」（②）、「条件と結果の逆転」（③）、「同様に確からしくないくじを本数で数える」（④）に対応させた。箱 $A$ は選ばれにくいが当たりやすい設定にして、直感（$\dfrac{1}{3}$ 程度）や本数比（$\dfrac{2}{3}$）と正解 $\dfrac{4}{9}$ がずれるよう数値を選んでいる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学A (2) イ(ウ) 条件付き確率"]
+  variations:
+    - 引いたくじを戻さずに同じ箱からもう1本引き、「2本とも当たりであったとき箱 $A$ である確率」を問う。
+    - 「はずれであったとき箱 $B$ である確率」を問い、表（全体を $60$ 回とした度数）で整理させる。

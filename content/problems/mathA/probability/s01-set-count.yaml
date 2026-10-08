@@ -1,0 +1,43 @@
+id: ma-pr-s01
+level: school
+format: choice
+title: 包除原理と補集合の要素の個数
+stem: |
+  $1$ から $200$ までの整数のうち、$4$ でも $6$ でも割り切れない数の個数として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $117$ 個
+    misconception: mc-pr-add-mult-condition
+    rationale: |
+      $200-50-33=117$ と、$4$ の倍数と $6$ の倍数を単純に足して引いている。$12$ の倍数 $16$ 個は両方に含まれるので二重に引かれている。正しくは $n(A\cup B)=50+33-16=67$。
+  - id: "2"
+    text: $184$ 個
+    misconception: mc-pr-complement
+    rationale: |
+      $200-16=184$ は「$4$ と $6$ の **両方では** 割り切れない」数（$\overline{A\cap B}$）の個数。「$4$ でも $6$ でも割り切れない」はどちらでも割り切れない $\overline{A}\cap\overline{B}=\overline{A\cup B}$ である。
+  - id: "3"
+    text: $133$ 個
+    rationale: |
+      正解。$4$ の倍数の集合を $A$、$6$ の倍数の集合を $B$ とすると $n(A)=50,\ n(B)=33,\ n(A\cap B)=16$（$12$ の倍数）。$n(\overline{A}\cap\overline{B})=200-(50+33-16)=133$。
+  - id: "4"
+    text: $125$ 個
+    rationale: |
+      $4$ でも $6$ でも割り切れる数を $24$（$=4\times 6$）の倍数 $8$ 個としている。$4$ と $6$ の両方で割り切れる数は最小公倍数 $12$ の倍数であり、$16$ 個ある。
+answer: "3"
+solution: |
+  $4$ の倍数の集合を $A$、$6$ の倍数の集合を $B$ とする。$A\cap B$ は $12$ の倍数の集合。
+  $$n(A)=50,\quad n(B)=33,\quad n(A\cap B)=16$$
+  $$n(A\cup B)=50+33-16=67$$
+  求めるのは $\overline{A}\cap\overline{B}=\overline{A\cup B}$ の要素の個数なので $200-67=133$（個）。
+concepts: [pr-set-count]
+misconceptions: [mc-pr-add-mult-condition, mc-pr-complement]
+targetSeconds: 120
+irt: { expectedCorrectRate: 0.72, discrimination: 1.0 }
+author:
+  intent: |
+    包除原理とド・モルガンの法則を組み合わせて、「どちらでもない」要素の個数を求められるかをみる。誤答は「共通部分を引き戻さない」（①）、「否定の範囲を取り違える」（②）、「共通部分を最小公倍数でなく積で求める」（④）の3段階に対応させ、どこでつまずいたかを分離できるようにした。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: ["数学A (2) ア(ア) 集合の要素の個数"]
+  variations:
+    - 「$4$ または $6$ で割り切れるが、$12$ では割り切れない数」の個数を問い、ベン図の領域の読み取りを求める。
+    - 3つの集合（$2,\ 3,\ 5$ の倍数）に拡張し、3集合の包除原理を使わせる。

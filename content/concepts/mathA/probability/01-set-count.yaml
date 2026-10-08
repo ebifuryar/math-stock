@@ -1,0 +1,18 @@
+id: pr-set-count
+kind: formula
+title: 集合の要素の個数と和の法則・積の法則
+body: |
+  有限集合 $A$ の要素の個数を $n(A)$ で表す。全体集合を $U$ とする。
+
+  - **和集合の要素の個数（包除原理）**
+  $$n(A\cup B)=n(A)+n(B)-n(A\cap B)$$
+  $$n(A\cup B\cup C)=n(A)+n(B)+n(C)-n(A\cap B)-n(B\cap C)-n(C\cap A)+n(A\cap B\cap C)$$
+  特に $A\cap B=\varnothing$ のときに限り $n(A\cup B)=n(A)+n(B)$。
+  - **補集合の要素の個数**: $n(\overline{A})=n(U)-n(A)$。ド・モルガンの法則と組み合わせて $n(\overline{A}\cap\overline{B})=n(U)-n(A\cup B)$。
+
+  **和の法則**: 同時には起こらない（排反な）2つの事柄 $A,\ B$ の起こり方が $a$ 通り、$b$ 通りなら、$A$ または $B$ の起こり方は $a+b$ 通り。
+
+  **積の法則**: $A$ の起こり方が $a$ 通りあり、そのそれぞれに対して $B$ の起こり方が $b$ 通りずつあるなら、$A$ と $B$ がともに起こる起こり方は $ab$ 通り。
+
+  「$4$ でも $6$ でも割り切れない」は $\overline{A}\cap\overline{B}$（どちらでも割り切れない）であり、「$4$ と $6$ の両方では割り切れない」$\overline{A\cap B}$ とは異なる。
+prerequisites: [sp-set-operations, sp-de-morgan]

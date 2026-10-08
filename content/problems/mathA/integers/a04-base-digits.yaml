@@ -1,0 +1,41 @@
+id: ma-it-a04
+level: applied
+format: mark
+title: n 進法の桁数と数字の並び
+stem: |
+  (1) 5進法で表すとちょうど4桁になる自然数は全部で $\boxed{\text{アイウ}}$ 個ある。
+
+  (2) ある自然数 $N$ を5進法で表すと3桁の数 $abc_{(5)}$ となり、9進法で表すと数字の並びが逆の3桁の数 $cba_{(9)}$ となる。ただし $a,\ b,\ c$ は $0$ 以上 $4$ 以下の整数で、$a\neq 0,\ c\neq 0$ である。
+
+  $N$ を2通りに表して整理すると
+  $$6a=b+\boxed{\text{エオ}}\,c$$
+  が成り立つ。$a\leqq 4$ に注意すると $c=\boxed{\text{カ}}$ であり、$a=\boxed{\text{キ}},\ b=\boxed{\text{ク}}$ となる。
+
+  したがって、$N$ を10進法で表すと $N=\boxed{\text{ケコサ}}$ である。
+blanks:
+  - { label: アイウ, answer: "500" }
+  - { label: エオ, answer: "20" }
+  - { label: カ, answer: "1" }
+  - { label: キ, answer: "4" }
+  - { label: ク, answer: "4" }
+  - { label: ケコサ, answer: "121" }
+solution: |
+  (1) 5進法で4桁 $\iff 5^3\leqq N<5^4$、すなわち $125\leqq N\leqq 624$ なので $624-125+1=500$ 個（$4\cdot 5^3$ と数えてもよい）。
+
+  (2) $N=25a+5b+c=81c+9b+a$ より $24a=4b+80c$、すなわち $6a=b+20c$。
+
+  $a\leqq 4$ より $b+20c=6a\leqq 24$。$c\geqq 1$ なので $c=1$ に限られ、$6a=b+20$。$0\leqq b\leqq 4$ より $20\leqq 6a\leqq 24$ なので $a=4$、$b=4$。
+
+  $N=441_{(5)}=4\cdot 25+4\cdot 5+1=121$（検算: $144_{(9)}=81+36+4=121$）。
+concepts: [it-base-n, it-integer-solutions]
+misconceptions: [mc-it-base-weight-reversed]
+targetSeconds: 360
+irt: { expectedCorrectRate: 0.5, discrimination: 1.2 }
+author:
+  intent: |
+    $n$ 進法の数を位の重みで式に直す力（(2) の立式）と、桁数を不等式 $n^{k-1}\leqq N<n^k$ に翻訳する力をみる。(2) は数字の範囲（$0\leqq b\leqq 4$ など）が不等式評価の条件として効く構成にしており、桁の重みを逆にすると $6a=b+20c$ が得られず以降がすべて崩れる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学A (3) ア(イ) 記数法（n 進法）, 数学A (3) ア(ア) 整数の性質（整数解の絞り込み）]
+  variations:
+    - 7進法で $abc_{(7)}$、9進法で $cba_{(9)}$ となる数（$248$、中央の数字が $0$）を求めさせる。
+    - 2進法で表すと10桁、3進法で表すと7桁になる自然数の個数を問う。

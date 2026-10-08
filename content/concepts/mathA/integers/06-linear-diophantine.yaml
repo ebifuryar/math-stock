@@ -1,0 +1,16 @@
+id: it-linear-diophantine
+kind: method
+title: 1次不定方程式 ax+by=c の整数解
+body: |
+  $a,\ b,\ c$ を整数とする。$ax+by=c$ が整数解をもつ $\iff$ $\gcd(a,b)\mid c$。
+
+  **解き方**
+  1. 両辺を $g=\gcd(a,b)$ で割り、係数を互いに素にする: $a'x+b'y=c'$
+  2. 特殊解 $(x_0,\ y_0)$ を1組見つける（見つからなければ互除法を逆にたどる）
+  3. $a'(x-x_0)=-b'(y-y_0)$ と変形し、$a'$ と $b'$ が互いに素であることから $b'\mid x-x_0$
+  4. 一般解: $x=x_0+b'k,\ y=y_0-a'k$（$k$ は整数）
+
+  手順1を省いて $x=x_0+bk$ とすると、解の一部しか表せない。$ax-by=c$ の形では $x,\ y$ が **同じ向き** に動く（$x=x_0+b'k,\ y=y_0+a'k$）。
+
+  解の個数や最小の正の解は、一般解を不等式に代入して $k$ の範囲を求める。
+prerequisites: [it-euclidean-algorithm, it-gcd-lcm]

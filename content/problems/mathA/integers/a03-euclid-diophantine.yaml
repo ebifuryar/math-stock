@@ -1,0 +1,43 @@
+id: ma-it-a03
+level: applied
+format: mark
+title: 互除法と不定方程式の正の整数解
+stem: |
+  (1) $67$ と $29$ にユークリッドの互除法を用いると
+  $$67=29\cdot 2+9,\qquad 29=9\cdot 3+2,\qquad 9=2\cdot 4+1$$
+  となる。これを逆にたどると
+  $$67\cdot\boxed{\text{アイ}}-29\cdot\boxed{\text{ウエ}}=1$$
+  が得られる。ただし、アイ は $29$ 未満の自然数とする。
+
+  (2) 方程式 $67x+29y=5000$ を満たす正の整数 $x,\ y$ の組は $\boxed{\text{オ}}$ 個あり、そのうち $x$ が最小であるものは
+  $$x=\boxed{\text{カキ}},\qquad y=\boxed{\text{クケコ}}$$
+  である。
+blanks:
+  - { label: アイ, answer: "13" }
+  - { label: ウエ, answer: "30" }
+  - { label: オ, answer: "3" }
+  - { label: カキ, answer: "11" }
+  - { label: クケコ, answer: "147" }
+solution: |
+  (1) 余りを順に表して代入する。
+  $$1=9-2\cdot 4=9-(29-9\cdot 3)\cdot 4=9\cdot 13-29\cdot 4$$
+  $$=(67-29\cdot 2)\cdot 13-29\cdot 4=67\cdot 13-29\cdot 30$$
+  （$67\cdot(13+29t)-29\cdot(30+67t)=1$ も成り立つが、アイ $<29$ の条件から $t=0$ の組に定まる。）
+
+  (2) (1) の両辺を $5000$ 倍すると $67\cdot 65000+29\cdot(-150000)=5000$。元の式と辺々引いて
+  $$67(x-65000)=-29(y+150000)$$
+  $67$ と $29$ は互いに素なので、$k$ を整数として $x=29k+65000,\ y=-67k-150000$。$x$ を小さくする向きに調整し、$k=m-2241$ とおき直すと $x=29m+11,\ y=147-67m$（$m$ は整数）。
+
+  $x>0$ より $m\geqq 0$、$y>0$ より $67m<147$ すなわち $m\leqq 2$。よって $m=0,\ 1,\ 2$ の **3個**。$x$ が最小なのは $m=0$ のときで $(x,\ y)=(11,\ 147)$。
+concepts: [it-euclidean-algorithm, it-linear-diophantine]
+misconceptions: [mc-it-particular-sign]
+targetSeconds: 360
+irt: { expectedCorrectRate: 0.45, discrimination: 1.3 }
+author:
+  intent: |
+    共通テストの典型的な誘導（互除法の逆算 → 特殊解 → 一般解 → 不等式で $k$ の範囲）に沿って処理できるかをみる。(2) は特殊解を $5000$ 倍すると値が大きくなるため、一般解の $k$ をずらして扱いやすい形に直す判断が要る。$y>0$ の不等式で $m$ の上限を正しく求められるかで解の個数が決まる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学A (3) ア(ア) 整数の性質（ユークリッドの互除法・1次不定方程式）]
+  variations:
+    - "$67x+29y=1$ の解のうち $|x|$ が最小のもの（$x=13$ と $x=-16$ の比較）を問う。"
+    - 右辺を $1940$（正の整数解1個）や $1943=67\cdot 29$（0個）に変え、解の個数の変化を比較させる。

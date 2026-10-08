@@ -1,0 +1,38 @@
+id: ma-it-s04
+level: school
+format: mark
+title: n 進法の変換
+stem: |
+  (1) 10進法で表された数 $200$ を3進法で表すと $\boxed{\text{アイウエオ}}_{(3)}$ である。
+
+  (2) 2進法で表された数 $110101_{(2)}$ を10進法で表すと $\boxed{\text{カキ}}$ である。
+
+  (3) 5進法で表された小数 $0.32_{(5)}$ を10進法の既約分数で表すと $\dfrac{\boxed{\text{クケ}}}{\boxed{\text{コサ}}}$ である。
+
+  (4) 10進法で表された小数 $0.375$ を2進法で表すと $0.\boxed{\text{シスセ}}_{(2)}$ である。
+blanks:
+  - { label: アイウエオ, answer: "21102" }
+  - { label: カキ, answer: "53" }
+  - { label: クケ, answer: "17" }
+  - { label: コサ, answer: "25" }
+  - { label: シスセ, answer: "011" }
+solution: |
+  (1) $3$ で割り続けると $200=3\cdot 66+2,\ 66=3\cdot 22+0,\ 22=3\cdot 7+1,\ 7=3\cdot 2+1,\ 2=3\cdot 0+2$。余りを **下から** 読んで $21102_{(3)}$。（検算: $2\cdot 81+1\cdot 27+1\cdot 9+0\cdot 3+2=200$）
+
+  (2) $1\cdot 2^5+1\cdot 2^4+0\cdot 2^3+1\cdot 2^2+0\cdot 2+1=32+16+4+1=53$
+
+  (3) $\dfrac{3}{5}+\dfrac{2}{5^2}=\dfrac{15+2}{25}=\dfrac{17}{25}$
+
+  (4) $2$ を掛け続けて整数部分を **上から** 読む: $0.375\times 2=0.75$（整数部分 $0$）、$0.75\times 2=1.5$（$1$）、$0.5\times 2=1$（$1$）。よって $0.011_{(2)}$。（検算: $\frac{1}{4}+\frac{1}{8}=\frac{3}{8}$）
+concepts: [it-base-n]
+misconceptions: [mc-it-base-weight-reversed]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.68, discrimination: 1.0 }
+author:
+  intent: |
+    整数部分・小数部分の両方向の変換を一通り確認する。(1) は回文にならない数を選び、余りを上から読む誤り（$20112$）を検出できるようにした。(3)(4) で小数の位の重み $n^{-1},\ n^{-2}$ を理解しているか、整数部分と小数部分で読む向きが逆になることを区別できているかをみる。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学A (3) ア(イ) 記数法（n 進法）]
+  variations:
+    - "$2$ 進法と $8$ 進法・$16$ 進法の対応（3桁・4桁ずつ区切る）を問う。"
+    - "$n$ 進法の数どうしの足し算・掛け算を $n$ 進法のまま計算させる。"

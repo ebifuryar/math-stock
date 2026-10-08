@@ -1,0 +1,47 @@
+id: ma-gm-a03
+level: applied
+format: mark
+title: チェバ・メネラウスと面積比
+stem: |
+  $\triangle\mathrm{ABC}$ において、辺 $\mathrm{AB}$ を $2:1$ に内分する点を $\mathrm{P}$、辺 $\mathrm{AC}$ を $3:4$ に内分する点を $\mathrm{Q}$ とする。線分 $\mathrm{BQ}$ と線分 $\mathrm{CP}$ の交点を $\mathrm{O}$ とし、直線 $\mathrm{AO}$ と辺 $\mathrm{BC}$ の交点を $\mathrm{R}$ とする。
+
+  (1) チェバの定理により $\mathrm{BR}:\mathrm{RC}=\boxed{\text{ア}}:\boxed{\text{イ}}$ である。
+
+  (2) $\triangle\mathrm{APC}$ と直線 $\mathrm{BQ}$ にメネラウスの定理を用いると、$\mathrm{PO}:\mathrm{OC}=\boxed{\text{ウ}}:\boxed{\text{エ}}$ である。
+
+  (3) $\triangle\mathrm{OBC}$ の面積は $\triangle\mathrm{ABC}$ の面積の $\dfrac{\boxed{\text{オ}}}{\boxed{\text{カキ}}}$ 倍である。
+
+  (4) $\triangle\mathrm{ABR}$ と直線 $\mathrm{PC}$ にメネラウスの定理を用いると、$\mathrm{AO}:\mathrm{OR}=\boxed{\text{クケ}}:\boxed{\text{コ}}$ である。
+blanks:
+  - { label: ア, answer: "3" }
+  - { label: イ, answer: "8" }
+  - { label: ウ, answer: "1" }
+  - { label: エ, answer: "4" }
+  - { label: オ, answer: "4" }
+  - { label: カキ, answer: "15" }
+  - { label: クケ, answer: "11" }
+  - { label: コ, answer: "4" }
+solution: |
+  (1) $\dfrac{\mathrm{AP}}{\mathrm{PB}}\cdot\dfrac{\mathrm{BR}}{\mathrm{RC}}\cdot\dfrac{\mathrm{CQ}}{\mathrm{QA}}=1$ より $\dfrac{2}{1}\cdot\dfrac{\mathrm{BR}}{\mathrm{RC}}\cdot\dfrac{4}{3}=1$、$\dfrac{\mathrm{BR}}{\mathrm{RC}}=\dfrac{3}{8}$。
+
+  (2) 直線 $\mathrm{BQ}$ は $\triangle\mathrm{APC}$ の辺 $\mathrm{AP}$ の延長と $\mathrm{B}$、辺 $\mathrm{PC}$ と $\mathrm{O}$、辺 $\mathrm{CA}$ と $\mathrm{Q}$ で交わる。$\mathrm{A}\to\mathrm{B}\to\mathrm{P}\to\mathrm{O}\to\mathrm{C}\to\mathrm{Q}\to\mathrm{A}$ とたどって
+  $$\frac{\mathrm{AB}}{\mathrm{BP}}\cdot\frac{\mathrm{PO}}{\mathrm{OC}}\cdot\frac{\mathrm{CQ}}{\mathrm{QA}}=1\quad\Longrightarrow\quad\frac{3}{1}\cdot\frac{\mathrm{PO}}{\mathrm{OC}}\cdot\frac{4}{3}=1$$
+  より $\mathrm{PO}:\mathrm{OC}=1:4$。
+
+  (3) $\triangle\mathrm{PBC}=\dfrac{\mathrm{PB}}{\mathrm{AB}}\triangle\mathrm{ABC}=\dfrac{1}{3}\triangle\mathrm{ABC}$。$\triangle\mathrm{OBC}=\dfrac{\mathrm{OC}}{\mathrm{PC}}\triangle\mathrm{PBC}=\dfrac{4}{5}\cdot\dfrac{1}{3}\triangle\mathrm{ABC}=\dfrac{4}{15}\triangle\mathrm{ABC}$。
+
+  (4) 直線 $\mathrm{PC}$ は $\triangle\mathrm{ABR}$ の辺 $\mathrm{AB}$ と $\mathrm{P}$、辺 $\mathrm{BR}$ の延長と $\mathrm{C}$、辺 $\mathrm{RA}$ と $\mathrm{O}$ で交わる。$\mathrm{BC}:\mathrm{CR}=11:8$ だから
+  $$\frac{\mathrm{AP}}{\mathrm{PB}}\cdot\frac{\mathrm{BC}}{\mathrm{CR}}\cdot\frac{\mathrm{RO}}{\mathrm{OA}}=1\quad\Longrightarrow\quad 2\cdot\frac{11}{8}\cdot\frac{\mathrm{RO}}{\mathrm{OA}}=1$$
+  より $\mathrm{AO}:\mathrm{OR}=11:4$。（検算: $\dfrac{\triangle\mathrm{OBC}}{\triangle\mathrm{ABC}}=\dfrac{\mathrm{OR}}{\mathrm{AR}}=\dfrac{4}{15}$ と (3) に一致。）
+concepts: [gm-ceva-menelaus]
+misconceptions: [mc-gm-menelaus-order]
+targetSeconds: 540
+irt: { expectedCorrectRate: 0.5, discrimination: 1.2 }
+author:
+  intent: |
+    チェバとメネラウスを、使う三角形と直線を指定された誘導に従って正しく使い分けられるかをみる。(2)(4) は延長上の点（$\mathrm{B}$、$\mathrm{C}$）を含むメネラウスで、たどる順序を誤ると $1:4$ や $11:4$ が別の値になる。(3) は高さ共通の三角形の面積比を2段階で使う問題で、(4) の結果と矛盾しないかで自己検算できる構成にした。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学A (1) ア(ア) 三角形に関する基本的な性質（チェバの定理、メネラウスの定理）]
+  variations:
+    - 四角形 $\mathrm{APOQ}$ の面積比（$\dfrac{\triangle\mathrm{APQ}+\triangle\mathrm{OPQ}}{\triangle\mathrm{ABC}}$）を求めさせる。
+    - $\mathrm{AQ}:\mathrm{QC}=t:(1-t)$ と文字にし、$\mathrm{R}$ が辺 $\mathrm{BC}$ の中点になる $t$（$t=\dfrac{2}{3}$、このとき $\mathrm{PQ}\parallel\mathrm{BC}$）を求めさせる。

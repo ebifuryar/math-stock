@@ -1,0 +1,44 @@
+id: ma-gm-s01
+level: school
+format: choice
+title: 角の二等分線と対辺の比
+stem: |
+  $\triangle\mathrm{ABC}$ において、$\mathrm{AB}=6,\ \mathrm{BC}=5,\ \mathrm{CA}=4$ とする。$\angle\mathrm{BAC}$ の二等分線と辺 $\mathrm{BC}$ の交点を $\mathrm{D}$ とするとき、線分 $\mathrm{BD}$ の長さとして正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $2$
+    misconception: mc-gm-bisector-ratio
+    rationale: |
+      $\mathrm{BD}:\mathrm{DC}=\mathrm{AC}:\mathrm{AB}=4:6$ と比を逆にしている（これは $\mathrm{DC}$ の長さ）。$\mathrm{BD}$ は端点 $\mathrm{B}$ を共有する辺 $\mathrm{AB}$ に対応する。
+  - id: "2"
+    text: $\dfrac{5}{2}$
+    rationale: |
+      $\mathrm{D}$ を辺 $\mathrm{BC}$ の中点としている。角の二等分線と中線を混同している。$\mathrm{AB}=\mathrm{AC}$ の二等辺三角形でない限り、二等分線は対辺を二等分しない。
+  - id: "3"
+    text: $3$
+    rationale: |
+      正解。$\mathrm{BD}:\mathrm{DC}=\mathrm{AB}:\mathrm{AC}=6:4=3:2$ より $\mathrm{BD}=5\cdot\dfrac{3}{5}=3$。
+  - id: "4"
+    text: $\dfrac{30}{11}$
+    misconception: mc-gm-bisector-ratio
+    rationale: |
+      $\mathrm{BD}:\mathrm{DC}=\mathrm{AB}:\mathrm{BC}=6:5$ として、二等分する角 $\angle\mathrm{A}$ をはさまない辺 $\mathrm{BC}$ を比に使っている。比に使うのは $\angle\mathrm{A}$ をはさむ2辺 $\mathrm{AB},\ \mathrm{AC}$。
+answer: "3"
+solution: |
+  角の二等分線の定理より
+  $$\mathrm{BD}:\mathrm{DC}=\mathrm{AB}:\mathrm{AC}=6:4=3:2$$
+  よって $\mathrm{BD}=\mathrm{BC}\cdot\dfrac{3}{3+2}=5\cdot\dfrac{3}{5}=3$（$\mathrm{DC}=2$）。
+
+  長い辺 $\mathrm{AB}$ の側の部分 $\mathrm{BD}$ のほうが長くなる、と図で確かめると比の向きを間違えにくい。
+concepts: [gm-angle-bisector]
+misconceptions: [mc-gm-bisector-ratio]
+targetSeconds: 60
+irt: { expectedCorrectRate: 0.8, discrimination: 0.8 }
+author:
+  intent: |
+    角の二等分線の定理を、比の向き（$\mathrm{BD}$ と $\mathrm{AB}$ が対応する）まで含めて正しく使えるかをみる。$\mathrm{AB}\neq\mathrm{AC}$ とし、誤答①は比の逆転、②は中線との混同、④は対辺を比に入れる誤りに対応させ、どの取り違えかを特定できるようにした。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学A (1) ア(ア) 三角形に関する基本的な性質]
+  variations:
+    - 同じ三角形で $\angle\mathrm{A}$ の外角の二等分線と直線 $\mathrm{BC}$ の交点 $\mathrm{E}$ をとり、$\mathrm{BE}=15$（外分）を求めさせる。
+    - $\mathrm{BD}$ を与えて $\mathrm{AC}$ を求める逆向きの問題にする。

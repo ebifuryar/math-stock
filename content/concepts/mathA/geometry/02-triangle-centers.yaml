@@ -1,0 +1,16 @@
+id: gm-triangle-centers
+kind: definition
+title: 三角形の五心
+body: |
+  | 名称 | 何の交点か | 性質 |
+  | --- | --- | --- |
+  | 重心 $\mathrm{G}$ | 3本の中線 | 各中線を頂点の側から $2:1$ に内分する |
+  | 内心 $\mathrm{I}$ | 3つの内角の二等分線 | 3辺から等距離（内接円の中心）。$\angle\mathrm{BIC}=90^\circ+\dfrac{1}{2}\angle\mathrm{A}$ |
+  | 外心 $\mathrm{O}$ | 3辺の垂直二等分線 | 3頂点から等距離（外接円の中心）。$\angle\mathrm{A}$ が鋭角なら $\angle\mathrm{BOC}=2\angle\mathrm{A}$ |
+  | 垂心 $\mathrm{H}$ | 3頂点から対辺（またはその延長）に下ろした垂線 | 鋭角三角形では $\angle\mathrm{BHC}=180^\circ-\angle\mathrm{A}$ |
+  | 傍心 $\mathrm{J}$ | 1つの内角の二等分線と、他の2つの外角の二等分線 | 1辺と他の2辺の延長に接する円（傍接円）の中心。1つの三角形に3個ある |
+
+  - 「辺から等距離」は内心・傍心、「頂点から等距離」は外心。角の二等分線上の点は角の2辺から等距離、垂直二等分線上の点は線分の両端から等距離、という性質から導かれる。
+  - $\triangle\mathrm{ABC}$ の面積を $S$、$s=\dfrac{a+b+c}{2}$ とすると、内接円の半径は $r=\dfrac{S}{s}$、辺 $\mathrm{BC}$ に接する傍接円の半径は $r_{\mathrm{A}}=\dfrac{S}{s-a}$。
+  - 頂点 $\mathrm{A}$ から内接円・傍接円への接線の長さはそれぞれ $s-a,\ s$ になる。
+prerequisites: [gm-angle-bisector, tg-area]

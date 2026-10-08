@@ -1,0 +1,53 @@
+id: ma-pr-s05
+level: school
+format: written
+title: 反復試行で3回以上起こる確率
+stem: |
+  $1$ 個のさいころを $5$ 回続けて投げるとき、$3$ の倍数の目が $3$ 回以上出る確率を求めよ。
+modelAnswer: |
+  $1$ 回の試行で $3$ の倍数の目（$3$ または $6$）が出る確率は $\dfrac{2}{6}=\dfrac{1}{3}$、出ない確率は $\dfrac{2}{3}$ である。各回の試行は独立なので、$5$ 回のうち $3$ の倍数の目がちょうど $r$ 回出る確率は反復試行の確率より
+  $${}_5\mathrm{C}_r\left(\frac{1}{3}\right)^r\left(\frac{2}{3}\right)^{5-r}$$
+
+  $3$ 回以上出るのは $r=3,\ 4,\ 5$ の場合で、これらは互いに排反である。
+
+  - $r=3$: ${}_5\mathrm{C}_3\left(\dfrac{1}{3}\right)^3\left(\dfrac{2}{3}\right)^2=10\cdot\dfrac{4}{243}=\dfrac{40}{243}$
+  - $r=4$: ${}_5\mathrm{C}_4\left(\dfrac{1}{3}\right)^4\left(\dfrac{2}{3}\right)=5\cdot\dfrac{2}{243}=\dfrac{10}{243}$
+  - $r=5$: $\left(\dfrac{1}{3}\right)^5=\dfrac{1}{243}$
+
+  よって求める確率は
+  $$\frac{40+10+1}{243}=\frac{51}{243}=\frac{17}{81}$$
+rubric:
+  - id: r1
+    criterion: 1回で $3$ の倍数の目が出る確率を $\dfrac{1}{3}$ と正しく求めている
+    points: 2
+    keywords: ["1/3"]
+  - id: r2
+    criterion: 反復試行の確率 ${}_5\mathrm{C}_r\left(\dfrac{1}{3}\right)^r\left(\dfrac{2}{3}\right)^{5-r}$ を、係数 ${}_5\mathrm{C}_r$ を含めて正しく立式している
+    points: 3
+    keywords: ["5C3", "反復試行"]
+  - id: r3
+    criterion: $r=3,\ 4,\ 5$ の3つの場合を（排反であることを踏まえて）すべて考えて足し合わせている
+    points: 2
+    keywords: ["3回", "4回", "5回"]
+  - id: r4
+    criterion: 各確率 $\dfrac{40}{243},\ \dfrac{10}{243},\ \dfrac{1}{243}$ を正しく計算している
+    points: 2
+    keywords: ["40/243", "10/243"]
+  - id: r5
+    criterion: 約分して $\dfrac{17}{81}$ と結論している
+    points: 1
+    keywords: ["17/81"]
+solution: |
+  $3$ の倍数の目が出る確率は $\dfrac{1}{3}$。$5$ 回中ちょうど $r$ 回出る確率は ${}_5\mathrm{C}_r\left(\dfrac{1}{3}\right)^r\left(\dfrac{2}{3}\right)^{5-r}$。$r=3,4,5$ を足して $\dfrac{40+10+1}{243}=\dfrac{17}{81}$。
+concepts: [pr-independent-repeated, pr-probability-basics]
+misconceptions: [mc-pr-repeated-coefficient]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.65, discrimination: 1.0 }
+author:
+  intent: |
+    反復試行の公式を、係数 ${}_n\mathrm{C}_r$ の意味を含めて答案に書けるかをみる。${}_5\mathrm{C}_r$ を落とすと $\dfrac{4+2+1}{243}=\dfrac{7}{243}$ となり、「特定の順番の確率」と「起こり方の総数」の区別ができているかを識別できる。「3回以上」を $r=3$ のみと読む誤りも採点基準 r3 で拾う。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学A (2) イ(イ) 独立な試行と確率（反復試行）"]
+  variations:
+    - 「$3$ 回以下」に変えて、余事象（$r=4,5$）で計算する方が速いことに気づかせる。
+    - $5$ 回目にちょうど3回目の $3$ の倍数が出る確率（${}_4\mathrm{C}_2$ を使う）を問い、終了条件のある反復試行に接続する。

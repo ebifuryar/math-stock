@@ -1,0 +1,37 @@
+id: ma-gm-s03
+level: school
+format: mark
+title: 方べきの定理（内部の点・外部の点）
+stem: |
+  (1) 円の2つの弦 $\mathrm{AB},\ \mathrm{CD}$ が円の内部の点 $\mathrm{P}$ で交わっている。$\mathrm{PA}=4,\ \mathrm{PB}=3,\ \mathrm{CD}=8$ であり、$\mathrm{PC}<\mathrm{PD}$ とする。このとき
+  $$\mathrm{PC}=\boxed{\text{ア}},\quad \mathrm{PD}=\boxed{\text{イ}}$$
+  である。
+
+  (2) 別の円 $K$ の外部の点 $\mathrm{P}$ から引いた直線が、$K$ と2点 $\mathrm{A},\ \mathrm{B}$ で交わっている。ここで $\mathrm{A}$ は線分 $\mathrm{PB}$ 上にあり、$\mathrm{PA}=4,\ \mathrm{AB}=5$ である。また、$\mathrm{P}$ から $K$ に引いた接線の接点を $\mathrm{T}$ とする。このとき $\mathrm{PT}=\boxed{\text{ウ}}$ である。
+
+  さらに、$\mathrm{P}$ を通る別の直線が $K$ と2点 $\mathrm{C},\ \mathrm{D}$ で交わり、$\mathrm{C}$ は線分 $\mathrm{PD}$ 上にあって $\mathrm{PC}=3$ であるとき、弦 $\mathrm{CD}$ の長さは $\boxed{\text{エ}}$ である。
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イ, answer: "6" }
+  - { label: ウ, answer: "6" }
+  - { label: エ, answer: "9" }
+solution: |
+  (1) 方べきの定理より $\mathrm{PC}\cdot\mathrm{PD}=\mathrm{PA}\cdot\mathrm{PB}=12$。$\mathrm{PC}+\mathrm{PD}=8$ だから、$\mathrm{PC},\ \mathrm{PD}$ は $t^2-8t+12=0$ の2解 $t=2,\ 6$。$\mathrm{PC}<\mathrm{PD}$ より $\mathrm{PC}=2,\ \mathrm{PD}=6$。
+
+  (2) $\mathrm{PB}=\mathrm{PA}+\mathrm{AB}=9$。$\mathrm{PT}^2=\mathrm{PA}\cdot\mathrm{PB}=4\cdot 9=36$ より $\mathrm{PT}=6$。
+
+  $\mathrm{PC}\cdot\mathrm{PD}=36$ より $\mathrm{PD}=12$。よって $\mathrm{CD}=\mathrm{PD}-\mathrm{PC}=9$。
+
+  掛けるのはどちらも「$\mathrm{P}$ から交点までの長さ」。弦の長さ $\mathrm{AB}$ をそのまま掛けない。
+concepts: [gm-power-of-point]
+misconceptions: [mc-gm-power-segment]
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.7, discrimination: 1.0 }
+author:
+  intent: |
+    方べきの定理を、点が円の内部にある場合・外部にある場合（割線と接線、割線と割線）の両方で使えるかをみる。(2) では $\mathrm{PB}$ でなく弦の長さ $\mathrm{AB}$ を与えて、$\mathrm{PA}\cdot\mathrm{AB}=20$ と誤る（$\mathrm{PT}=2\sqrt{5}$）答案を識別する。最後の空欄は $\mathrm{PD}$ でなく $\mathrm{CD}$ を問い、求めた量と問われた量の区別もみる。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学A (1) ア(イ) 円に関する基本的な性質]
+  variations:
+    - (1) で $\mathrm{PC}:\mathrm{PD}=1:3$ を与えて $\mathrm{CD}$ を求めさせる。
+    - 2円が2点 $\mathrm{A},\ \mathrm{B}$ で交わる図で、直線 $\mathrm{AB}$ 上の点から2円に引いた接線の長さが等しいことを示させる。

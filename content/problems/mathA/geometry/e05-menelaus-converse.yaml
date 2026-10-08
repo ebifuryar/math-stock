@@ -1,0 +1,62 @@
+id: ma-gm-e05
+level: exam
+format: written
+title: 角の二等分線と3点の共線
+stem: |
+  $\mathrm{AB}\neq\mathrm{AC}$ である $\triangle\mathrm{ABC}$ において、$\angle\mathrm{A}$ の外角の二等分線と直線 $\mathrm{BC}$ の交点を $\mathrm{D}$、$\angle\mathrm{B}$ の二等分線と辺 $\mathrm{CA}$ の交点を $\mathrm{E}$、$\angle\mathrm{C}$ の二等分線と辺 $\mathrm{AB}$ の交点を $\mathrm{F}$ とする。
+
+  3点 $\mathrm{D},\ \mathrm{E},\ \mathrm{F}$ は一直線上にあることを証明せよ。
+modelAnswer: |
+  $a=\mathrm{BC},\ b=\mathrm{CA},\ c=\mathrm{AB}$ とする。
+
+  $\mathrm{AB}\neq\mathrm{AC}$ なので、$\angle\mathrm{A}$ の外角の二等分線は直線 $\mathrm{BC}$ と平行でなく、交点 $\mathrm{D}$ は辺 $\mathrm{BC}$ の延長上にあって $\mathrm{BC}$ を $\mathrm{AB}:\mathrm{AC}$ に外分する。よって
+  $$\frac{\mathrm{BD}}{\mathrm{DC}}=\frac{c}{b}$$
+  $\mathrm{E}$ は $\angle\mathrm{B}$ の二等分線と辺 $\mathrm{CA}$ の交点なので、角の二等分線の定理より $\dfrac{\mathrm{CE}}{\mathrm{EA}}=\dfrac{\mathrm{BC}}{\mathrm{BA}}=\dfrac{a}{c}$。
+
+  同様に $\dfrac{\mathrm{AF}}{\mathrm{FB}}=\dfrac{\mathrm{CA}}{\mathrm{CB}}=\dfrac{b}{a}$。
+
+  したがって
+  $$\frac{\mathrm{AF}}{\mathrm{FB}}\cdot\frac{\mathrm{BD}}{\mathrm{DC}}\cdot\frac{\mathrm{CE}}{\mathrm{EA}}=\frac{b}{a}\cdot\frac{c}{b}\cdot\frac{a}{c}=1$$
+
+  ここで、$\mathrm{E},\ \mathrm{F}$ は辺上（内分点）、$\mathrm{D}$ は辺の延長上（外分点）にあり、辺の延長上にある点は1個である。
+
+  直線 $\mathrm{EF}$ と直線 $\mathrm{BC}$ の交点を $\mathrm{D}'$ とする（$\mathrm{EF}\parallel\mathrm{BC}$ とすると $\dfrac{\mathrm{AF}}{\mathrm{FB}}=\dfrac{\mathrm{AE}}{\mathrm{EC}}$ より $\dfrac{b}{a}=\dfrac{c}{a}$ となり $b\neq c$ に反するので、交点は存在する）。$\mathrm{E},\ \mathrm{F}$ がともに辺上にあるので、直線 $\mathrm{EF}$ は辺 $\mathrm{BC}$ とは交わらず、$\mathrm{D}'$ は辺 $\mathrm{BC}$ の延長上にある。$\triangle\mathrm{ABC}$ と直線 $\mathrm{EF}$ にメネラウスの定理を用いると
+  $$\frac{\mathrm{AF}}{\mathrm{FB}}\cdot\frac{\mathrm{BD}'}{\mathrm{D}'\mathrm{C}}\cdot\frac{\mathrm{CE}}{\mathrm{EA}}=1$$
+  先の式と比べて $\dfrac{\mathrm{BD}'}{\mathrm{D}'\mathrm{C}}=\dfrac{\mathrm{BD}}{\mathrm{DC}}=\dfrac{c}{b}$。$\mathrm{D},\ \mathrm{D}'$ はともに線分 $\mathrm{BC}$ を $c:b$ に外分する点であり、そのような点はただ1つなので $\mathrm{D}'=\mathrm{D}$。
+
+  ゆえに $\mathrm{D}$ は直線 $\mathrm{EF}$ 上にあり、3点 $\mathrm{D},\ \mathrm{E},\ \mathrm{F}$ は一直線上にある。（終）
+rubric:
+  - id: r1
+    criterion: $\mathrm{AB}\neq\mathrm{AC}$ から $\mathrm{D}$ が存在して $\mathrm{BC}$ を $\mathrm{AB}:\mathrm{AC}$ に外分すること（外角の二等分線の定理）を述べている
+    points: 2
+    keywords: ["外分", "外角"]
+  - id: r2
+    criterion: 内角の二等分線の定理から $\dfrac{\mathrm{CE}}{\mathrm{EA}}=\dfrac{a}{c},\ \dfrac{\mathrm{AF}}{\mathrm{FB}}=\dfrac{b}{a}$ を、対応を誤らずに導いている
+    points: 2
+    keywords: ["角の二等分線", "CE/EA", "AF/FB"]
+  - id: r3
+    criterion: 3つの比を頂点と分点が交互になる順に掛け、積が $1$ になることを示している
+    points: 2
+    keywords: ["=1", "積"]
+  - id: r4
+    criterion: メネラウスの定理の逆を用いる根拠として、延長上の点が1個（$\mathrm{D}$ のみ）であることを確認している
+    points: 2
+    keywords: ["延長上", "1個"]
+  - id: r5
+    criterion: 直線 $\mathrm{EF}$ と $\mathrm{BC}$ の交点 $\mathrm{D}'$ を考えて $\mathrm{D}'=\mathrm{D}$ を示す（外分点の一意性）など、逆の証明を完結させて結論している
+    points: 2
+    keywords: ["D'", "一致", "一直線上"]
+solution: |
+  内角・外角の二等分線の定理で3つの比をすべて辺の長さ $a,\ b,\ c$ で表すと、メネラウスの比の積が $1$ になる。結論はメネラウスの定理の **逆**。逆を使うには、3点の配置（延長上の点が1個または3個）を確認する必要がある。教科書で逆を定理として扱っていない場合に備え、直線 $\mathrm{EF}$ と $\mathrm{BC}$ の交点 $\mathrm{D}'$ をとって $\mathrm{D}'=\mathrm{D}$ を示す形で書くと完全な答案になる。
+concepts: [gm-ceva-menelaus, gm-angle-bisector]
+misconceptions: [mc-gm-menelaus-order, mc-gm-bisector-ratio]
+targetSeconds: 900
+irt: { expectedCorrectRate: 0.25, discrimination: 1.4 }
+author:
+  intent: |
+    3点の共線をメネラウスの定理の逆で示す、という論証の型を使いこなせるかをみる。比の計算自体は角の二等分線の定理（内角2回・外角1回）で機械的に出るが、(i) 外角の場合の外分、(ii) 頂点と分点を交互にたどる順序、(iii) 逆を使うための配置の確認と $\mathrm{D}'$ による一意性の論証、の3点で答案の完成度に差がつく。$\mathrm{AB}\neq\mathrm{AC}$ の条件が $\mathrm{D}$ の存在にどう効くかを書けるかも見る。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学A (1) ア(ア) 三角形に関する基本的な性質（チェバの定理、メネラウスの定理）]
+  variations:
+    - 3つの外角の二等分線と対辺の延長との交点が一直線上にあることを証明させる（$\triangle\mathrm{ABC}$ が二等辺三角形でないとき）。
+    - チェバの定理の逆を用いて、3つの内角の二等分線が1点で交わること（内心の存在）を証明させる。

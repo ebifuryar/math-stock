@@ -1,0 +1,43 @@
+id: ma-gm-e04
+level: exam
+format: mark
+title: 三垂線の定理と点と平面の距離
+stem: |
+  四面体 $\mathrm{OABC}$ において、$\mathrm{AB}=10,\ \mathrm{BC}=21,\ \mathrm{CA}=17$ であり、辺 $\mathrm{OA}$ は平面 $\mathrm{ABC}$ に垂直で $\mathrm{OA}=6$ である。点 $\mathrm{A}$ から直線 $\mathrm{BC}$ に下ろした垂線を $\mathrm{AH}$（$\mathrm{H}$ は直線 $\mathrm{BC}$ 上）とする。
+
+  (1) $\triangle\mathrm{ABC}$ の面積は $\boxed{\text{アイ}}$ であり、$\mathrm{AH}=\boxed{\text{ウ}}$ である。
+
+  (2) 三垂線の定理より $\mathrm{OH}\perp\mathrm{BC}$ であり、$\mathrm{OH}=\boxed{\text{エオ}}$、$\triangle\mathrm{OBC}$ の面積は $\boxed{\text{カキク}}$ である。
+
+  (3) 点 $\mathrm{A}$ と平面 $\mathrm{OBC}$ の距離は $\dfrac{\boxed{\text{ケコ}}}{\boxed{\text{サ}}}$ である。
+
+  (4) 平面 $\mathrm{OBC}$ と平面 $\mathrm{ABC}$ のなす角を $\theta$ とすると、$\cos\theta=\dfrac{\boxed{\text{シ}}}{\boxed{\text{ス}}}$ である。
+blanks:
+  - { label: アイ, answer: "84" }
+  - { label: ウ, answer: "8" }
+  - { label: エオ, answer: "10" }
+  - { label: カキク, answer: "105" }
+  - { label: ケコ, answer: "24" }
+  - { label: サ, answer: "5" }
+  - { label: シ, answer: "4" }
+  - { label: ス, answer: "5" }
+solution: |
+  (1) $\mathrm{BH}=x$ とすると $10^2-x^2=17^2-(21-x)^2$ より $x=6$、$\mathrm{AH}=8$（$\mathrm{H}$ は辺 $\mathrm{BC}$ 上）。面積は $\dfrac{1}{2}\cdot 21\cdot 8=84$。
+
+  (2) $\mathrm{OA}\perp$ 平面 $\mathrm{ABC}$、$\mathrm{AH}\perp\mathrm{BC}$ だから三垂線の定理より $\mathrm{OH}\perp\mathrm{BC}$。$\triangle\mathrm{OAH}$ は $\angle\mathrm{OAH}=90^\circ$ の直角三角形なので $\mathrm{OH}=\sqrt{6^2+8^2}=10$。$\triangle\mathrm{OBC}=\dfrac{1}{2}\cdot 21\cdot 10=105$。
+
+  (3) 四面体の体積は $V=\dfrac{1}{3}\cdot 84\cdot 6=168$。求める距離を $d$ とすると $\dfrac{1}{3}\cdot 105\cdot d=168$ より $d=\dfrac{24}{5}$。（$\mathrm{BC}\perp$ 平面 $\mathrm{OAH}$ なので、$\triangle\mathrm{OAH}$ で $\mathrm{A}$ から $\mathrm{OH}$ に下ろした垂線の長さ $\dfrac{6\cdot 8}{10}$ としてもよい。）
+
+  (4) 交線 $\mathrm{BC}$ に対して $\mathrm{OH}\perp\mathrm{BC},\ \mathrm{AH}\perp\mathrm{BC}$ なので $\theta=\angle\mathrm{OHA}$。$\cos\theta=\dfrac{\mathrm{AH}}{\mathrm{OH}}=\dfrac{4}{5}$。
+concepts: [gm-solid-figures, tg-area]
+misconceptions: []
+targetSeconds: 720
+irt: { expectedCorrectRate: 0.38, discrimination: 1.3 }
+author:
+  intent: |
+    空間で「直線と平面の垂直」を平面図形に落とし込めるかをみる。三垂線の定理で $\mathrm{OH}$ が $\triangle\mathrm{OBC}$ の高さになることを見抜き、さらに「平面 $\mathrm{OAH}$ が $\mathrm{BC}$ に垂直」という見方から、点と平面の距離・2平面のなす角を同じ直角三角形 $\mathrm{OAH}$ で処理できるかを識別する。$\triangle\mathrm{ABC}$ は $\mathrm{AH}$ が整数になる三角形にして、計算量でなく空間把握で差がつくようにした。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学A (1) ア(エ) 空間図形（直線と平面の位置関係）, 数学I (2) イ(イ) 図形の計量]
+  variations:
+    - $\mathrm{OA}$ を $t$ として、点 $\mathrm{A}$ と平面 $\mathrm{OBC}$ の距離が $\mathrm{AH}$ の半分になる $t$ を求めさせる。
+    - 三垂線の定理そのもの（$\mathrm{OA}\perp\alpha,\ \mathrm{AH}\perp\ell\Rightarrow\mathrm{OH}\perp\ell$）を記述式で証明させる。

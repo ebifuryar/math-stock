@@ -1,0 +1,43 @@
+id: ma-it-a01
+level: applied
+format: choice
+title: 1次不定方程式の一般解
+stem: |
+  $k$ を整数とする。方程式 $24x-42y=18$ を満たす整数 $x,\ y$ の組をすべて表したものとして正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $x=42k+6,\quad y=24k+3$
+    misconception: mc-it-general-solution-gcd
+    rationale: |
+      両辺を $\gcd(24,42)=6$ で割らずに、元の係数で一般解を作っている。これらはすべて解だが、例えば $(x,y)=(-1,-1)$ や $(13,7)$ が表されず、解の一部（$7$ 個に $1$ 個）しか表していない。
+  - id: "2"
+    text: $x=7k+6,\quad y=-4k+3$
+    misconception: mc-it-particular-sign
+    rationale: |
+      $ax+by=c$ 型の「$x$ と $y$ が逆向きに動く」形をそのまま当てはめている。$4x-7y=3$ は引き算の形なので、$4(x-6)=7(y-3)$ より $x,\ y$ は **同じ向き** に増減する。$k=1$ を代入すると $4\cdot 13-7\cdot(-1)=59\neq 3$。
+  - id: "3"
+    text: $x=7k+6,\quad y=4k+3$
+    rationale: |
+      正解。両辺を $6$ で割った $4x-7y=3$ の特殊解 $(6,\ 3)$ から、$4(x-6)=7(y-3)$。$4$ と $7$ は互いに素なので $x-6=7k$、$y-3=4k$。
+  - id: "4"
+    text: $x=4k+6,\quad y=7k+3$
+    rationale: |
+      $x$ と $y$ に付く係数の対応を取り違えている。$4(x-6)=7(y-3)$ から $7\mid x-6$ となるので、$x$ の周期は $7$。$k=1$ では $4\cdot 10-7\cdot 10=-30\neq 3$。
+answer: "3"
+solution: |
+  両辺を $\gcd(24,42)=6$ で割って $4x-7y=3$。特殊解 $(x,y)=(6,3)$（または $(-1,-1)$）をとると
+  $$4(x-6)=7(y-3)$$
+  $4$ と $7$ は互いに素なので、$x-6$ は $7$ の倍数。$x-6=7k$ とおくと $y-3=4k$。よって
+  $$x=7k+6,\quad y=4k+3\quad(k\ \text{は整数})$$
+concepts: [it-linear-diophantine, it-gcd-lcm]
+misconceptions: [mc-it-general-solution-gcd, mc-it-particular-sign]
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.55, discrimination: 1.2 }
+author:
+  intent: |
+    一般解の導出の3つの要点（gcd で割る・引き算型での符号の向き・どちらの変数にどの周期が付くか）を、それぞれ1つの誤答に対応させた。①は「解ではあるがすべてではない」ため代入による検算では見抜けず、一般解の導出の論理（互いに素の利用）を理解しているかを鋭く識別する。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学A (3) ア(ア) 整数の性質（1次不定方程式）]
+  variations:
+    - 解の範囲 $0<x<100$ を付けて解の個数を問い、①を選ぶ誤りが個数の差として表れるようにする。
+    - '$24x-42y=20$ のように $\gcd$ が $c$ を割り切らない場合を混ぜ、「解なし」を判断させる。'

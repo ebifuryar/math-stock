@@ -1,0 +1,14 @@
+id: gm-circle-angles
+kind: theorem
+title: 円周角・円に内接する四角形・接弦定理
+body: |
+  **円周角の定理**: 1つの弧に対する円周角は一定で、その弧に対する中心角の半分である。
+
+  **円に内接する四角形**: 対角の和は $180^\circ$。1つの内角は、その対角の外角に等しい。逆に、対角の和が $180^\circ$ の四角形は円に内接する。また、2点 $\mathrm{P},\ \mathrm{Q}$ が直線 $\mathrm{AB}$ の同じ側にあって $\angle\mathrm{APB}=\angle\mathrm{AQB}$ なら、4点 $\mathrm{A},\ \mathrm{B},\ \mathrm{P},\ \mathrm{Q}$ は同一円周上にある（円周角の定理の逆）。
+
+  **接弦定理**: 円の接線 $\mathrm{AT}$ と、接点 $\mathrm{A}$ を通る弦 $\mathrm{AB}$ のつくる角 $\angle\mathrm{TAB}$ は、その角の**内部にある弧 $\mathrm{AB}$** に対する円周角に等しい。すなわち、弧 $\mathrm{AB}$ の反対側の円周上の点 $\mathrm{C}$ について
+  $$\angle\mathrm{TAB}=\angle\mathrm{ACB}$$
+
+  - 接弦定理で等しくなるのは、接線と弦のなす角と「その弦の**向こう側**の頂点の角」。弦の端点 $\mathrm{B}$ の角 $\angle\mathrm{ABC}$ ではない。
+  - 中心 $\mathrm{O}$ と接点を結ぶ半径は接線に垂直。
+prerequisites: []

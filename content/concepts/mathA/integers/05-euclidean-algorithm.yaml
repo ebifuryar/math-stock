@@ -1,0 +1,15 @@
+id: it-euclidean-algorithm
+kind: theorem
+title: ユークリッドの互除法
+body: |
+  自然数 $a,\ b$ について、$a$ を $b$ で割った余りを $r$ とすると
+  $$\gcd(a,\ b)=\gcd(b,\ r)$$
+  （$a=bq+r$ より、$a$ と $b$ の公約数と $b$ と $r$ の公約数は一致する。）
+
+  これを余りが $0$ になるまで繰り返し、最後に割った数が最大公約数である。
+
+  例: $\gcd(1147,\ 899)$ は
+  $1147=899\cdot 1+248,\ 899=248\cdot 3+155,\ 248=155\cdot 1+93,\ 155=93\cdot 1+62,\ 93=62\cdot 1+31,\ 62=31\cdot 2$ より $31$。
+
+  互除法の式を下から逆にたどると、$ax+by=\gcd(a,b)$ を満たす整数 $x,\ y$ が1組求まる。
+prerequisites: [it-remainder-classification, it-gcd-lcm]

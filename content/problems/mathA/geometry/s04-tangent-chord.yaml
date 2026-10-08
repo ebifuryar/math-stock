@@ -1,0 +1,37 @@
+id: ma-gm-s04
+level: school
+format: mark
+title: 接弦定理と円に内接する四角形
+stem: |
+  $\triangle\mathrm{ABC}$ は中心 $\mathrm{O}$ の円に内接しており、$\angle\mathrm{ABC}=45^\circ$ である。点 $\mathrm{A}$ におけるこの円の接線上に、直線 $\mathrm{AB}$ に関して点 $\mathrm{C}$ と反対側にある点 $\mathrm{T}$ をとると、$\angle\mathrm{BAT}=70^\circ$ であった。
+
+  (1) $\angle\mathrm{ACB}=\boxed{\text{アイ}}^\circ$、$\angle\mathrm{BAC}=\boxed{\text{ウエ}}^\circ$ である。
+
+  (2) $\angle\mathrm{BOC}=\boxed{\text{オカキ}}^\circ$ である。
+
+  (3) 点 $\mathrm{A}$ を含まない方の弧 $\mathrm{BC}$ 上に点 $\mathrm{D}$ をとると、$\angle\mathrm{BDC}=\boxed{\text{クケコ}}^\circ$ である。
+blanks:
+  - { label: アイ, answer: "70" }
+  - { label: ウエ, answer: "65" }
+  - { label: オカキ, answer: "130" }
+  - { label: クケコ, answer: "115" }
+solution: |
+  (1) 接線 $\mathrm{AT}$ と弦 $\mathrm{AB}$ のなす角 $\angle\mathrm{BAT}$ の内部にある弧 $\mathrm{AB}$ に対する円周角は、弦の向こう側の点 $\mathrm{C}$ における $\angle\mathrm{ACB}$。接弦定理より $\angle\mathrm{ACB}=\angle\mathrm{BAT}=70^\circ$。
+
+  内角の和より $\angle\mathrm{BAC}=180^\circ-45^\circ-70^\circ=65^\circ$。
+
+  (2) 弧 $\mathrm{BC}$（$\mathrm{A}$ を含まない方）に対する中心角は円周角 $\angle\mathrm{BAC}$ の2倍で、$\angle\mathrm{BOC}=130^\circ$。
+
+  (3) 四角形 $\mathrm{ABDC}$ は円に内接するので、対角の和が $180^\circ$。$\angle\mathrm{BDC}=180^\circ-65^\circ=115^\circ$。
+concepts: [gm-circle-angles]
+misconceptions: [mc-gm-tangent-chord-angle]
+targetSeconds: 150
+irt: { expectedCorrectRate: 0.7, discrimination: 1.0 }
+author:
+  intent: |
+    接弦定理で「どの角と等しいか」を正しく対応させられるかを中心に、円周角と中心角、円に内接する四角形の対角までを一続きで確認する。$\angle\mathrm{ABC}=45^\circ$ と $\angle\mathrm{BAT}=70^\circ$ を異なる値にしたので、接線と弦の角を弦の端点の角 $\angle\mathrm{ABC}$ と取り違えると (1) 以降がすべてずれる。$\mathrm{T}$ の位置（$\mathrm{C}$ と反対側）を明示し、図を正しく描けるかも含めてみる。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学A (1) ア(イ) 円に関する基本的な性質]
+  variations:
+    - $\mathrm{T}$ を直線 $\mathrm{AB}$ に関して $\mathrm{C}$ と同じ側にとり、$\angle\mathrm{CAT}$ と $\angle\mathrm{ABC}$ の対応を問う。
+    - 接線と直線 $\mathrm{BC}$ の交点を $\mathrm{P}$ として $\angle\mathrm{APB}$ を求めさせる。

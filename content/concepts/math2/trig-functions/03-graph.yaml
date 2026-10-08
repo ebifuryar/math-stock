@@ -1,0 +1,14 @@
+id: tf-graph
+kind: property
+title: 三角関数のグラフ・周期・平行移動と拡大
+body: |
+  $y=\sin\theta$、$y=\cos\theta$ は周期 $2\pi$、$y=\tan\theta$ は周期 $\pi$ の周期関数。$y=\cos\theta$ のグラフは $y=\sin\theta$ のグラフを $\theta$ 軸方向に $-\dfrac{\pi}{2}$ だけ平行移動したもの。
+
+  **周期** $k>0$ のとき、$y=\sin k\theta$、$y=\cos k\theta$ の周期は $\dfrac{2\pi}{k}$、$y=\tan k\theta$ の周期は $\dfrac{\pi}{k}$。$\theta$ が $\dfrac{2\pi}{k}$ 進むと $k\theta$ がちょうど $2\pi$ 進むから。
+
+  **平行移動** $y=a\sin(k\theta-b)$ は、まず $\theta$ の係数でくくって
+  $$y=a\sin k\left(\theta-\frac{b}{k}\right)$$
+  と変形する。$y=a\sin k\theta$ のグラフを $\theta$ 軸方向に $\dfrac{b}{k}$（$b$ ではない）だけ平行移動したもの。
+
+  **拡大・縮小** $y=a\sin\theta$ は $y$ 軸方向に $a$ 倍（値域は $-|a|\leqq y\leqq|a|$）、$y=\sin k\theta$ は $\theta$ 軸方向に $\dfrac{1}{k}$ 倍。
+prerequisites: [tf-definition]

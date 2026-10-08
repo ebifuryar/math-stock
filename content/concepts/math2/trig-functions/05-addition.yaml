@@ -1,0 +1,14 @@
+id: tf-addition
+kind: theorem
+title: 加法定理と2直線のなす角
+body: |
+  **加法定理**（複号同順）
+  $$\sin(\alpha\pm\beta)=\sin\alpha\cos\beta\pm\cos\alpha\sin\beta$$
+  $$\cos(\alpha\pm\beta)=\cos\alpha\cos\beta\mp\sin\alpha\sin\beta$$
+  $$\tan(\alpha\pm\beta)=\frac{\tan\alpha\pm\tan\beta}{1\mp\tan\alpha\tan\beta}$$
+  $\cos$ の式は符号が **逆転** する（$\cos(\alpha+\beta)$ には $-\sin\alpha\sin\beta$）。$\beta=\alpha$ や $\beta=\dfrac{\pi}{2}$ を代入して、知っている値と一致するかで確かめられる。
+
+  **2直線のなす角** 直線 $y=m_1x+n_1,\ y=m_2x+n_2$ と $x$ 軸の正の向きとのなす角を $\alpha,\ \beta$ とすると $\tan\alpha=m_1,\ \tan\beta=m_2$。2直線のなす鋭角 $\theta$ は
+  $$\tan\theta=\left|\tan(\alpha-\beta)\right|=\left|\frac{m_1-m_2}{1+m_1m_2}\right|\qquad(m_1m_2\neq -1)$$
+  $m_1m_2=-1$ のときは垂直。$x$ 軸上の点から2点を見込む角なども、それぞれの直線の傾きを使えば同じ形で表せる。
+prerequisites: [tf-definition]

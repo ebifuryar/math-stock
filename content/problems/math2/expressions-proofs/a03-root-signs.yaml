@@ -1,0 +1,49 @@
+id: m2-ep-a03
+level: applied
+format: choice
+title: 2つの正の解をもつ条件
+stem: |
+  $x$ の2次方程式 $x^2-2mx+m+6=0$ が異なる2つの正の解をもつような定数 $m$ の値の範囲として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $m>3$
+    rationale: |
+      正解。$\dfrac{D}{4}>0$ から $m<-2,\ 3<m$、和 $2m>0$ から $m>0$、積 $m+6>0$ から $m>-6$。共通範囲は $m>3$。
+  - id: "2"
+    text: $m>0$
+    misconception: mc-ep-root-sign-conditions
+    rationale: |
+      和 $>0$ と積 $>0$ だけで判断し、判別式の条件を落としている。例えば $m=1$ では $x^2-2x+7=0$ で、解は虚数 $1\pm\sqrt{6}i$ になる。
+  - id: "3"
+    text: $-6<m<-2,\ 3<m$
+    misconception: mc-ep-root-sign-conditions
+    rationale: |
+      判別式と積の条件だけで、和 $>0$ を落としている。例えば $m=-3$ では $x^2+6x+3=0$ で、2つの解はともに負になる。
+  - id: "4"
+    text: $m\geqq 3$
+    misconception: mc-discriminant-equality
+    rationale: |
+      「異なる2つの解」なのに $D\geqq 0$ としている。$m=3$ のときは $x^2-6x+9=(x-3)^2=0$ で重解になる。
+answer: "1"
+solution: |
+  2つの解を $\alpha,\ \beta$ とする。$\alpha,\ \beta$ が異なる2つの正の実数であるための条件は
+  $$D>0,\qquad \alpha+\beta>0,\qquad \alpha\beta>0$$
+  - $\dfrac{D}{4}=m^2-(m+6)=(m+2)(m-3)>0$ より $m<-2,\ 3<m$
+  - 解と係数の関係より $\alpha+\beta=2m>0$ から $m>0$
+  - $\alpha\beta=m+6>0$ から $m>-6$
+
+  共通範囲を求めて $m>3$。
+
+  和と積の符号だけでは、解が虚数の場合を除けない（虚数解でも和・積は実数になる）。判別式の条件は必ず加える。
+concepts: [ep-complex-quadratic, qf-discriminant]
+misconceptions: [mc-ep-root-sign-conditions, mc-discriminant-equality]
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.55, discrimination: 1.2 }
+author:
+  intent: |
+    解の符号の条件を「判別式・和・積」の3つで正しく立て、共通範囲をとれるかをみる。誤答②・③はそれぞれ判別式・和の条件の欠落に対応し、④は判別式の等号の扱いに対応する。判別式の条件と和の条件がそれぞれ範囲を実際に削るように係数を設計したので、どちらを落としても正解と異なる選択肢に至り、欠けた条件を特定できる（積の条件はこの係数では結果的に他の2条件から従うが、答案では確認させたい）。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学II (1) ア(エ) 二次方程式の解の種類の判別及び解と係数の関係]
+  variations:
+    - 「異符号の解をもつ」条件に変え、積 $<0$ だけで十分である理由を説明させる。
+    - 「2つの解がともに $1$ より大きい」条件を、$\alpha-1,\ \beta-1$ の和と積で考えさせる。

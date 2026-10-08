@@ -1,0 +1,45 @@
+id: m2-ep-s04
+level: school
+format: mark
+title: 解と係数の関係と対称式
+stem: |
+  2次方程式 $x^2-3x+5=0$ の2つの解を $\alpha,\ \beta$ とする。
+
+  (1) $\alpha^2+\beta^2=\boxed{\text{アイ}}$、$\alpha^3+\beta^3=\boxed{\text{ウエオ}}$ である。
+
+  (2) $\dfrac{\beta}{\alpha}+\dfrac{\alpha}{\beta}=\dfrac{\boxed{\text{カキ}}}{\boxed{\text{ク}}}$ である。
+
+  (3) $\alpha^2,\ \beta^2$ を2つの解とする2次方程式の1つは
+  $$x^2+\boxed{\text{ケ}}\,x+\boxed{\text{コサ}}=0$$
+  である。
+blanks:
+  - { label: アイ, answer: "-1" }
+  - { label: ウエオ, answer: "-18" }
+  - { label: カキ, answer: "-1" }
+  - { label: ク, answer: "5" }
+  - { label: ケ, answer: "1" }
+  - { label: コサ, answer: "25" }
+solution: |
+  解と係数の関係より $\alpha+\beta=3,\ \alpha\beta=5$。
+
+  (1) $\alpha^2+\beta^2=(\alpha+\beta)^2-2\alpha\beta=9-10=-1$
+  $$\alpha^3+\beta^3=(\alpha+\beta)^3-3\alpha\beta(\alpha+\beta)=27-45=-18$$
+
+  (2) $\dfrac{\beta}{\alpha}+\dfrac{\alpha}{\beta}=\dfrac{\alpha^2+\beta^2}{\alpha\beta}=\dfrac{-1}{5}$
+
+  (3) $\alpha^2+\beta^2=-1,\ \alpha^2\beta^2=(\alpha\beta)^2=25$ なので、求める方程式は
+  $$x^2-(-1)x+25=0\quad\text{すなわち}\quad x^2+x+25=0$$
+
+  $\alpha,\ \beta$ は虚数（判別式 $9-20<0$）なので $\alpha^2+\beta^2$ が負になってもおかしくない。
+concepts: [ep-complex-quadratic, ne-symmetric-expression]
+misconceptions: [mc-ep-vieta-sign]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.65, discrimination: 1.1 }
+author:
+  intent: |
+    解と係数の関係で基本対称式を求め、2次・3次の対称式や「2数を解とする方程式」に正しくつなげられるかをみる。虚数解をもつ方程式にしてあり、$\alpha^2+\beta^2=-1<0$ という実数の感覚に反する値が出ることで、「2乗の和は正」という思い込みで符号を書き換える受験者を検出できる。(3) は $x^2-(\text{和})x+(\text{積})$ の符号を逆にすると ケ が合わない。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学II (1) ア(エ) 二次方程式の解の種類の判別及び解と係数の関係]
+  variations:
+    - $\alpha+1,\ \beta+1$ や $\dfrac{1}{\alpha},\ \dfrac{1}{\beta}$ を解とする方程式を作らせる。
+    - $\alpha^4+\beta^4$ や $(\alpha-\beta)^2$ を求めさせ、虚数解のときに $(\alpha-\beta)^2<0$ となることを確認させる。

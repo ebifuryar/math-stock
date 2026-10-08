@@ -1,0 +1,15 @@
+id: cl-integral
+kind: formula
+title: 不定積分と定積分
+body: |
+  $F'(x)=f(x)$ のとき $\displaystyle\int f(x)\,dx=F(x)+C$（$C$ は積分定数）。$n=0,1,2,\dots$ について
+  $$\int x^n\,dx=\frac{x^{n+1}}{n+1}+C$$
+
+  定積分は
+  $$\int_a^b f(x)\,dx=\Big[F(x)\Big]_a^b=F(b)-F(a)$$
+  で、次の性質がある。
+  - $\displaystyle\int_a^a f(x)\,dx=0,\qquad \int_b^a f(x)\,dx=-\int_a^b f(x)\,dx$
+  - $\displaystyle\int_a^c f(x)\,dx+\int_c^b f(x)\,dx=\int_a^b f(x)\,dx$
+
+  定積分の値は **符号付き** の量で、$f(x)<0$ の部分は負として加わる。
+prerequisites: [cl-derivative]

@@ -1,0 +1,56 @@
+id: m2-tf-s05
+level: school
+format: written
+title: 2倍角を含む方程式・不等式
+stem: |
+  $0\leqq\theta<2\pi$ とする。
+
+  (1) 方程式 $\cos 2\theta+3\sin\theta-2=0$ を解け。
+
+  (2) 不等式 $\cos 2\theta+3\sin\theta-2>0$ を解け。
+modelAnswer: |
+  $\cos 2\theta=1-2\sin^2\theta$ を用いると
+  $$\cos 2\theta+3\sin\theta-2=-2\sin^2\theta+3\sin\theta-1=-(2\sin\theta-1)(\sin\theta-1)$$
+
+  (1) 与えられた方程式は $(2\sin\theta-1)(\sin\theta-1)=0$ となるから
+  $$\sin\theta=\frac{1}{2}\quad\text{または}\quad\sin\theta=1$$
+  $0\leqq\theta<2\pi$ において、$\sin\theta=\dfrac{1}{2}$ より $\theta=\dfrac{\pi}{6},\ \dfrac{5}{6}\pi$、$\sin\theta=1$ より $\theta=\dfrac{\pi}{2}$。
+
+  よって $\theta=\dfrac{\pi}{6},\ \dfrac{\pi}{2},\ \dfrac{5}{6}\pi$。
+
+  (2) 与えられた不等式は $(2\sin\theta-1)(\sin\theta-1)<0$ となるから
+  $$\frac{1}{2}<\sin\theta<1$$
+  単位円で $y$ 座標が $\dfrac{1}{2}$ より大きい部分は $\dfrac{\pi}{6}<\theta<\dfrac{5}{6}\pi$ であり、そのうち $\sin\theta=1$ となる $\theta=\dfrac{\pi}{2}$ を除く。
+
+  よって $\dfrac{\pi}{6}<\theta<\dfrac{\pi}{2},\ \dfrac{\pi}{2}<\theta<\dfrac{5}{6}\pi$。
+rubric:
+  - id: r1
+    criterion: $\cos 2\theta=1-2\sin^2\theta$ を用いて $\sin\theta$ だけの2次式にし、$(2\sin\theta-1)(\sin\theta-1)$ と因数分解している
+    points: 3
+    keywords: ["1-2sin^2", "(2sinθ-1)(sinθ-1)"]
+  - id: r2
+    criterion: (1) で $\sin\theta=\dfrac{1}{2}$ から2つ、$\sin\theta=1$ から1つの解を得て、$\theta=\dfrac{\pi}{6},\ \dfrac{\pi}{2},\ \dfrac{5}{6}\pi$ と答えている
+    points: 2
+    keywords: ["π/6", "5π/6"]
+  - id: r3
+    criterion: (2) で不等式を $\dfrac{1}{2}<\sin\theta<1$ と正しく言い換えている（$\sin\theta\leqq 1$ が常に成り立つことから上側の条件を $\sin\theta\neq 1$ と捉えている）
+    points: 3
+    keywords: ["1/2<sinθ<1", "sinθ≠1"]
+  - id: r4
+    criterion: $\theta=\dfrac{\pi}{2}$ を除外して、$\dfrac{\pi}{6}<\theta<\dfrac{\pi}{2},\ \dfrac{\pi}{2}<\theta<\dfrac{5}{6}\pi$ と答えている
+    points: 2
+    keywords: ["π/2を除く", "π/2<θ<5π/6"]
+solution: |
+  $\cos 2\theta$ と $\sin\theta$ が混じっているので、$\cos 2\theta=1-2\sin^2\theta$ で $\sin\theta$ にそろえて2次式にする。(2) では $(2\sin\theta-1)(\sin\theta-1)<0$ から $\dfrac{1}{2}<\sin\theta<1$。$\sin\theta<1$ は「$\sin\theta\neq 1$」と同じなので、$\theta=\dfrac{\pi}{2}$ だけが除かれる。
+concepts: [tf-double-half, tf-equation]
+misconceptions: [mc-tf-half-angle-sign, mc-tf-solution-count]
+targetSeconds: 360
+irt: { expectedCorrectRate: 0.6, discrimination: 1.1 }
+author:
+  intent: |
+    $\cos 2\theta$ の3つの形から $\sin$ にそろえるものを選べるか、そして2次不等式の解を三角関数の範囲に正しく戻せるかをみる。(2) の $\sin\theta<1$ が $\theta=\dfrac{\pi}{2}$ の1点除外になる処理は、答えを $\dfrac{\pi}{6}<\theta<\dfrac{5}{6}\pi$ と書いてしまう答案との差を記述で評価するポイント。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学II (4) イ(ア) 2倍角の公式, 数学II (4) ア(イ) 三角関数を含む方程式・不等式]
+  variations:
+    - $\cos 2\theta-3\cos\theta+2=0$ にして、$\cos 2\theta=2\cos^2\theta-1$ の形を選ばせる。
+    - 右辺を定数 $k$ にして、解の個数が $k$ によってどう変わるかを問う（置き換えの範囲の扱い）。

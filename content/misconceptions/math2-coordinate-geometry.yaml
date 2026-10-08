@@ -1,0 +1,56 @@
+- id: mc-cg-division-sign
+  title: 外分点の公式の符号・比の順序の誤り
+  description: |
+    線分 $\mathrm{AB}$ を $m:n$ に外分する点を、内分点の公式で求める、$-n$ の符号を落として $\dfrac{nx_1+mx_2}{m-n}$ とする、あるいは $m:n$ と $n:m$ を逆にして反対側の外分点を答える。
+  cause: |
+    外分を「内分の $n$ を $-n$ に置き換えたもの」と理解しておらず、公式を形だけで覚えている。外分点が $\mathrm{A}$ 側・$\mathrm{B}$ 側のどちらの外にあるかを数直線で確かめていない。
+  remedyConcepts: [cg-distance-division]
+- id: mc-cg-perpendicular-slope
+  title: 垂直条件の傾きの誤り
+  description: |
+    傾き $m$ の直線に垂直な直線の傾きを、$\dfrac{1}{m}$（逆数だけ）、$-m$（符号だけ）、あるいは $m$（平行と混同）とする。垂直条件を $m_1m_2=1$ と覚えている。
+  cause: |
+    $m_1m_2=-1$ を「逆数にして符号を変える」操作として図で確かめていない。直線を $90^\circ$ 回転すると、方向 $(1,\ m)$ が $(-m,\ 1)$ になり傾きが $-\dfrac{1}{m}$ になることと結びついていない。
+  remedyConcepts: [cg-line-equation]
+- id: mc-cg-distance-formula
+  title: 点と直線の距離の公式の誤用
+  description: |
+    直線を $y=mx+n$ の形のまま公式に当てはめる、分子の絶対値を外して負の距離を出す、分母を $a^2+b^2$（根号なし）にする、などの誤り。
+  cause: |
+    公式 $\dfrac{|ax_1+by_1+c|}{\sqrt{a^2+b^2}}$ が一般形 $ax+by+c=0$ を前提にしていることを意識していない。距離は長さなので $0$ 以上、分母は法線ベクトル $(a,\ b)$ の大きさだという意味づけがない。
+  remedyConcepts: [cg-point-line-distance]
+- id: mc-cg-symmetric-point
+  title: 対称点を垂線の足と混同する
+  description: |
+    直線 $\ell$ に関する点 $\mathrm{A}$ の対称点として、$\mathrm{A}$ から $\ell$ に下ろした垂線の足 $\mathrm{H}$ を答える。あるいは $\mathrm{H}$ と $\mathrm{A}$ の役割を逆にして、$\ell$ から遠ざかる側の点 $2\mathrm{A}-\mathrm{H}$ を答える。
+  cause: |
+    対称点の2条件「$\mathrm{AB}\perp\ell$」「$\mathrm{AB}$ の中点が $\ell$ 上」のうち中点条件を正しく立てていない。求めた点が $\ell$ をはさんで $\mathrm{A}$ と反対側にあるかを確かめていない。
+  remedyConcepts: [cg-point-line-distance, cg-line-equation]
+- id: mc-cg-tangent-vertical
+  title: y軸に平行な接線の見落とし
+  description: |
+    円外の点から引いた接線を、傾きを $m$ とおいて求め、$m$ が1つしか出なかったときにそのまま「接線は1本」と答える。$x=p$ の形の接線を落としている。
+  cause: |
+    $y-q=m(x-p)$ という置き方が $y$ 軸に平行な直線を表せないことを意識していない。「円外の点からの接線は必ず2本」という図形的な事実で検算していない。
+  remedyConcepts: [cg-circle-line, cg-line-equation]
+- id: mc-cg-locus-excluded
+  title: 軌跡の除外点・範囲の見落とし
+  description: |
+    媒介変数を消去して得た方程式の図形全体を、そのまま軌跡として答える。媒介変数の条件（判別式 $D>0$ など）から生じる $x$ の範囲の制限や、実現されない点（除外点）を落とす。
+  cause: |
+    「条件を満たす点 ⇒ 図形上の点」だけを示し、逆に「図形上の点 ⇒ 条件を満たす点」を確かめていない。割り算で媒介変数を消去したときの分母 $=0$ の場合を調べていない。
+  remedyConcepts: [cg-locus]
+- id: mc-cg-region-boundary
+  title: 領域の上下・境界の扱いの誤り
+  description: |
+    $y<2x$ を直線の上側とするなど、不等号と領域の上下（円の内外）を取り違える。$\leqq$ と $<$ の違いを無視して、境界線を含むかどうかを誤る。
+  cause: |
+    不等式を $y$ について解いた形と図の位置関係を結びつけておらず、領域内の1点を代入して確かめる習慣がない。$ax+by+c>0$ の形で $b<0$ のとき、$y$ について解くと不等号の向きが変わることを見落とす。
+  remedyConcepts: [cg-region]
+- id: mc-cg-extremum-vertex-only
+  title: 領域の最大・最小で頂点だけ調べる
+  description: |
+    領域における最大・最小を、境界どうしの交点（頂点）での値の比較だけで決める。境界に円弧があるときの接点や、$x^2+y^2$ の最小を与える垂線の足を見落とす。逆に、接点が領域に含まれるかを確かめずに採用する。
+  cause: |
+    線形計画法の「多角形なら頂点で最大・最小」を、境界が曲線の場合や目的関数が1次式でない場合にも一般化している。$F(x,y)=k$ のグラフを動かして領域と共有点をもつ範囲を調べる、という原理に戻っていない。
+  remedyConcepts: [cg-region, cg-circle-line]

@@ -1,0 +1,46 @@
+id: m2-el-e03
+level: exam
+format: mark
+title: 2^x+2^{-x} の置き換えと最小値
+stem: |
+  $a$ を定数とし、
+  $$f(x)=4^x+4^{-x}-2a\left(2^x+2^{-x}\right)$$
+  とする。$t=2^x+2^{-x}$ とおく。
+
+  (1) $t$ は $x=\boxed{\text{ア}}$ のとき最小値 $\boxed{\text{イ}}$ をとる。
+
+  (2) $4^x+4^{-x}=t^2-\boxed{\text{ウ}}$ であるから、$f(x)=t^2-2at-\boxed{\text{エ}}$ と表される。
+
+  (3) $a=3$ のとき、$f(x)$ の最小値は $\boxed{\text{オカキ}}$ であり、最小値をとる $x$ の値は $\boxed{\text{ク}}$ 個ある。
+
+  (4) $a=1$ のとき、$f(x)$ の最小値は $\boxed{\text{ケコ}}$ である。
+blanks:
+  - { label: ア, answer: "0" }
+  - { label: イ, answer: "2" }
+  - { label: ウ, answer: "2" }
+  - { label: エ, answer: "2" }
+  - { label: オカキ, answer: "-11" }
+  - { label: ク, answer: "2" }
+  - { label: ケコ, answer: "-2" }
+solution: |
+  (1) $2^x>0,\ 2^{-x}>0$ なので、相加平均と相乗平均の関係より
+  $$t=2^x+2^{-x}\geqq 2\sqrt{2^x\cdot 2^{-x}}=2$$
+  等号は $2^x=2^{-x}$、すなわち $x=0$ のとき。また $x\to\infty$ で $t\to\infty$ なので、$t$ は $2$ 以上のすべての値をとる。
+
+  (2) $t^2=4^x+2+4^{-x}$ より $4^x+4^{-x}=t^2-2$。よって $f(x)=t^2-2at-2=(t-a)^2-a^2-2\ (t\geqq 2)$。
+
+  (3) $a=3$ のとき $f=(t-3)^2-11$。$t=3$ は $t\geqq 2$ の範囲にあるので、最小値は $-11$。$2^x+2^{-x}=3$ は $u=2^x$ とおくと $u^2-3u+1=0$、$u=\dfrac{3\pm\sqrt{5}}{2}$ でどちらも正なので、$x$ は **2個**。
+
+  (4) $a=1$ のとき $f=(t-1)^2-3$。軸 $t=1$ は範囲 $t\geqq 2$ の外（左側）にあるので、$t=2$（$x=0$）で最小となり、最小値は $4-4-2=-2$。
+concepts: [el-substitution, el-exponent-laws, qf-max-min]
+misconceptions: [mc-el-substitution-range]
+targetSeconds: 420
+irt: { expectedCorrectRate: 0.3, discrimination: 1.4 }
+author:
+  intent: |
+    $2^x+2^{-x}$ という対称な形の置き換えで、$t$ の範囲が「$t>0$」ではなく「$t\geqq 2$」になることを見抜けるかをみる。(3) は軸が範囲内、(4) は範囲外になるよう $a$ を選び、範囲を $t>0$ と誤ると (4) が $-3$ になって検出できる。(3) の個数は、1つの $t$ に $x$ が2つ対応するという「置き換えの対応関係」の理解を問う。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学II (3) ア(イ) 指数関数の値の変化やグラフの特徴, 数学II (3) イ(イ) 指数関数及び対数関数の式とグラフの関係]
+  variations:
+    - 最小値を $a$ の関数 $m(a)$ として場合分けで求めさせる記述式にする。
+    - 方程式 $f(x)=0$ の実数解の個数を $a$ で分類させ、$t$ と $x$ の対応（$t=2$ で1個、$t>2$ で2個）を使わせる。

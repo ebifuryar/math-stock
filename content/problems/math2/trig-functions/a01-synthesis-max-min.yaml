@@ -1,0 +1,47 @@
+id: m2-tf-a01
+level: applied
+format: choice
+title: 合成と範囲つきの最大・最小
+stem: |
+  関数 $y=\sin\theta-\sqrt{3}\cos\theta\ \left(0\leqq\theta\leqq\dfrac{\pi}{2}\right)$ の最大値 $M$ と最小値 $m$ の組として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $M=1,\quad m=-\sqrt{3}$
+    rationale: |
+      正解。$y=2\sin\left(\theta-\dfrac{\pi}{3}\right)$ で、$-\dfrac{\pi}{3}\leqq\theta-\dfrac{\pi}{3}\leqq\dfrac{\pi}{6}$ における $\sin$ の範囲は $-\dfrac{\sqrt{3}}{2}$ 以上 $\dfrac{1}{2}$ 以下。
+  - id: "2"
+    text: $M=2,\quad m=1$
+    misconception: mc-tf-synthesis-angle
+    rationale: |
+      $\tan\alpha=-\sqrt{3}$ の符号を誤って $y=2\sin\left(\theta+\dfrac{\pi}{3}\right)$ と合成している。点 $(1,\ -\sqrt{3})$ は第4象限なので $\alpha=-\dfrac{\pi}{3}$。展開すると $2\sin\left(\theta+\dfrac{\pi}{3}\right)=\sin\theta+\sqrt{3}\cos\theta$ となり、元の式に戻らない。
+  - id: "3"
+    text: $M=\sqrt{3},\quad m=-1$
+    misconception: mc-tf-synthesis-angle
+    rationale: |
+      $\tan\alpha$ を $\dfrac{\sin\theta\text{ の係数}}{\cos\theta\text{ の係数}}=\dfrac{1}{-\sqrt{3}}$ と分子・分母を逆にして $\alpha=-\dfrac{\pi}{6}$ とし、$y=2\sin\left(\theta-\dfrac{\pi}{6}\right)$ としている。正しくは点 $(1,\ -\sqrt{3})$ から $\cos\alpha=\dfrac{1}{2},\ \sin\alpha=-\dfrac{\sqrt{3}}{2}$ で $\alpha=-\dfrac{\pi}{3}$。
+  - id: "4"
+    text: $M=2,\quad m=-2$
+    misconception: mc-tf-angle-range
+    rationale: |
+      合成は正しいが、$\theta$ の範囲を考えずに $-1\leqq\sin\left(\theta-\dfrac{\pi}{3}\right)\leqq 1$ としている。$\theta-\dfrac{\pi}{3}$ は $-\dfrac{\pi}{3}$ から $\dfrac{\pi}{6}$ までしか動かないので、$\pm 2$ には届かない。
+answer: "1"
+solution: |
+  点 $(1,\ -\sqrt{3})$ をとると、原点からの距離は $2$、動径の角は $-\dfrac{\pi}{3}$ なので
+  $$y=2\sin\left(\theta-\frac{\pi}{3}\right)$$
+  $0\leqq\theta\leqq\dfrac{\pi}{2}$ より $-\dfrac{\pi}{3}\leqq\theta-\dfrac{\pi}{3}\leqq\dfrac{\pi}{6}$。この範囲で $\sin$ は単調に増加するので
+  - 最大: $\theta-\dfrac{\pi}{3}=\dfrac{\pi}{6}$（$\theta=\dfrac{\pi}{2}$）で $M=2\cdot\dfrac{1}{2}=1$
+  - 最小: $\theta-\dfrac{\pi}{3}=-\dfrac{\pi}{3}$（$\theta=0$）で $m=2\cdot\left(-\dfrac{\sqrt{3}}{2}\right)=-\sqrt{3}$
+
+  検算: $\theta=0$ で $y=-\sqrt{3}$、$\theta=\dfrac{\pi}{2}$ で $y=1$ と直接代入しても一致する。
+concepts: [tf-synthesis, tf-equation]
+misconceptions: [mc-tf-synthesis-angle, mc-tf-angle-range]
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.5, discrimination: 1.2 }
+author:
+  intent: |
+    合成の角 $\alpha$ を象限まで含めて決められるか、そして合成後の角 $\theta+\alpha$ の範囲で最大・最小を読めるかの2段階をみる。誤答は「$\alpha$ の符号ミス」「係数の入れ替え」「範囲の無視」に対応させた。範囲の端点で値を代入すれば検算できるので、検算の習慣の有無も差になる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学II (4) イ(ア) 三角関数の合成]
+  variations:
+    - 範囲を $0\leqq\theta\leqq\pi$ に広げ、最大値をとる $\theta$ が範囲の内部に来る場合を問う。
+    - $y=\sqrt{3}\sin\theta+\cos\theta=k$ の解の個数を $k$ で分類させる。

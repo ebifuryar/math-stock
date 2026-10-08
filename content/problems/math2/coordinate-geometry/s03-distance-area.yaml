@@ -1,0 +1,47 @@
+id: m2-cg-s03
+level: school
+format: mark
+title: 点と直線の距離と三角形の面積
+stem: |
+  3点 $\mathrm{A}(4,\ -1),\ \mathrm{B}(1,\ 1),\ \mathrm{C}(3,\ 5)$ を頂点とする $\triangle\mathrm{ABC}$ について考える。
+
+  (1) 直線 $\mathrm{BC}$ の方程式は $y=\boxed{\text{ア}}x-\boxed{\text{イ}}$ である。
+
+  (2) 点 $\mathrm{A}$ と直線 $\mathrm{BC}$ の距離は $\dfrac{\boxed{\text{ウ}}\sqrt{\boxed{\text{エ}}}}{\boxed{\text{オ}}}$ である。
+
+  (3) $\triangle\mathrm{ABC}$ の面積は $\boxed{\text{カ}}$ である。
+
+  (4) $\triangle\mathrm{ABC}$ の重心の座標は $\left(\dfrac{\boxed{\text{キ}}}{\boxed{\text{ク}}},\ \dfrac{\boxed{\text{ケ}}}{\boxed{\text{コ}}}\right)$ である。
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イ, answer: "1" }
+  - { label: ウ, answer: "8" }
+  - { label: エ, answer: "5" }
+  - { label: オ, answer: "5" }
+  - { label: カ, answer: "8" }
+  - { label: キ, answer: "8" }
+  - { label: ク, answer: "3" }
+  - { label: ケ, answer: "5" }
+  - { label: コ, answer: "3" }
+solution: |
+  (1) 傾きは $\dfrac{5-1}{3-1}=2$。$y-1=2(x-1)$ より $y=2x-1$。
+
+  (2) 一般形 $2x-y-1=0$ に直してから公式を使う。
+  $$d=\frac{|2\cdot 4-(-1)-1|}{\sqrt{2^2+(-1)^2}}=\frac{8}{\sqrt{5}}=\frac{8\sqrt{5}}{5}$$
+
+  (3) $\mathrm{BC}=\sqrt{2^2+4^2}=2\sqrt{5}$ なので
+  $$\triangle\mathrm{ABC}=\frac{1}{2}\cdot 2\sqrt{5}\cdot\frac{8}{\sqrt{5}}=8$$
+
+  (4) 重心は $\left(\dfrac{4+1+3}{3},\ \dfrac{-1+1+5}{3}\right)=\left(\dfrac{8}{3},\ \dfrac{5}{3}\right)$。
+concepts: [cg-point-line-distance, cg-line-equation, cg-distance-division]
+misconceptions: [mc-cg-distance-formula]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.7, discrimination: 1.0 }
+author:
+  intent: |
+    「直線の方程式 → 点と直線の距離 → 面積」という座標を用いた計量の基本の流れを確認する。$y=2x-1$ の形のまま公式に入れたり、分母の根号を落としたりすると (2) の値が変わり、(3) で面積が整数にならないので自己検算もできる設計。(4) で重心の公式も合わせて確認する。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学II (2) ア(イ) 直線の方程式・点と直線の距離, 数学II (2) ア(ア) 座標を用いた点の表し方]
+  variations:
+    - 3頂点の座標から $\dfrac{1}{2}|x_1y_2-x_2y_1|$ の公式で面積を求め、結果を比べさせる。
+    - 面積が与えられた値になるように頂点の1つを直線上で動かし、その座標を求めさせる。

@@ -1,0 +1,56 @@
+- id: mc-el-exponent-meaning
+  title: 負の指数・分数の指数の意味の誤解
+  description: |
+    $a^{-n}$ を $-a^n$ と負の数にしたり、$a^{\frac{m}{n}}$ を $a\times\dfrac{m}{n}$ と掛け算にしたり、$\sqrt[n]{a^m}$ を $a^{\frac{n}{m}}$ と分母・分子を逆にしたりする。例: $8^{-\frac{2}{3}}=-4$、$4^{\frac{3}{2}}=6$。
+  cause: |
+    指数の拡張を「指数法則が成り立つように決めた定義」として理解せず、記号の見た目（マイナス符号・分数）から意味を推測している。
+  remedyConcepts: [el-rational-exponent]
+- id: mc-el-exponent-law
+  title: 指数法則の取り違え
+  description: |
+    $(a^m)^n$ を $a^{m^n}$ や $a^{m+n}$ にする、$a^ma^n=a^{mn}$ とする、$a^m\div a^{-n}$ を $a^{m-n}$ とするなど、指数どうしの演算を取り違える。例: $(2^3)^2=2^9$。
+  cause: |
+    $a^ma^n$ は「$a$ を $m+n$ 個掛ける」、$(a^m)^n$ は「$a^m$ を $n$ 個掛ける」という意味に戻って確かめる習慣がない。負の指数の割り算で符号を二重に処理する。
+  remedyConcepts: [el-exponent-laws, el-rational-exponent]
+- id: mc-el-base-less-than-one
+  title: 底が1より小さいときの増減の取り違え
+  description: |
+    底が $0<a<1$ の指数・対数の不等式や大小比較で、不等号の向きを反転しない。また、$y=\log_{\frac{1}{2}}x$ のグラフを $y=\log_2 x$ と $y$ 軸に関して対称と考えるなど、底を逆数にしたときのグラフの対称性を取り違える。
+  cause: |
+    「指数（真数）が大きいほど値が大きい」を底によらず成り立つと思い込んでいる。底が $1$ より小さいと関数が減少することを、グラフで確認していない。
+  remedyConcepts: [el-exp-function, el-log-function]
+- id: mc-el-substitution-range
+  title: 置き換えた文字の範囲の無視
+  description: |
+    $t=2^x$ とおいたのに $t>0$ を考えず、$t=-2$ などを解として残す。$x$ に範囲があるときの $t$ の範囲や、$t=2^x+2^{-x}\geqq 2$ を考えずに最大・最小や解の個数を求める。
+  cause: |
+    置き換えを「式を短くする記号の付け替え」とだけ捉え、$t$ が $x$ の関数として取りうる値（値域）を求める手順が抜けている。
+  remedyConcepts: [el-substitution, el-exp-function]
+- id: mc-el-antilog-condition
+  title: 真数条件の確認漏れ
+  description: |
+    対数方程式・不等式で、真数が正であるという条件を最初に求めず、変形後の式から得た解をそのまま答える。例: $\log_2(x-1)+\log_2(x+2)=2$ で $x=-3$ も解とする。
+  cause: |
+    $\log_a M+\log_a N=\log_a MN$ と変形すると、$M<0,\ N<0$ でも $MN>0$ となり条件が緩くなることに気づいていない。対数を含む式を見たら真数条件を書く習慣がない。
+  remedyConcepts: [el-log-function, el-log-definition]
+- id: mc-el-log-sum
+  title: 対数の性質の誤用（和・積の取り違え）
+  description: |
+    $\log(M+N)=\log M+\log N$ と和を分けたり、$\log MN=\log M\cdot\log N$ と積を積のまま扱ったりする。例: $\log_{10}12=\log_{10}10+\log_{10}2$。
+  cause: |
+    対数の性質が「真数の積 $\leftrightarrow$ 対数の和」という指数法則の言いかえであることを理解せず、分配法則のような形の類推で変形している。
+  remedyConcepts: [el-log-definition]
+- id: mc-el-change-of-base-inverted
+  title: 底の変換公式の分母・分子の逆転
+  description: |
+    $\log_a b$ を $\dfrac{\log_c a}{\log_c b}$ と、底と真数を逆にして変換する。例: $\log_4 8=\dfrac{\log_2 4}{\log_2 8}=\dfrac{2}{3}$。
+  cause: |
+    公式を形だけで覚えており、$\log_a b=p\iff a^p=b$ から導き直したり、$\log_2 8=3$ のような簡単な値で確かめたりしていない。
+  remedyConcepts: [el-change-of-base]
+- id: mc-el-digit-count
+  title: 常用対数からの桁数・首位の読み取りの誤り
+  description: |
+    $\log_{10}N=21.58$ から $21$ 桁とするなど、$n-1\leqq\log_{10}N<n$ の $n$ と $n-1$ を取り違える。小数首位では $-5.28$ から小数第 $5$ 位とする。最高位の数字を、仮数 $0.58$ の数字をそのまま読んで $5$ とする、負の対数の小数部分を $0.28$ と取るなどの誤りも含む。
+  cause: |
+    $10^{n-1}\leqq N<10^n$ という定義に戻らず、「対数の整数部分＝桁数」と覚えている。$10^1=10$ が $2$ 桁であるような具体例で確かめていない。
+  remedyConcepts: [el-common-log]

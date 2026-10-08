@@ -1,0 +1,17 @@
+id: ep-complex-quadratic
+kind: theorem
+title: 複素数と2次方程式（判別式・解と係数の関係）
+body: |
+  **複素数** $i^2=-1$ となる $i$ を虚数単位とし、$a+bi$（$a,\ b$ は実数）を複素数という。$a+bi=c+di\iff a=c,\ b=d$。$a+bi$ の共役複素数は $a-bi$。
+
+  - $a>0$ のとき $\sqrt{-a}=\sqrt{a}\,i$。**計算の前に必ず $i$ を使った形に直す。** $\sqrt{-2}\sqrt{-8}=\sqrt{2}i\cdot 2\sqrt{2}i=-4$ であり、$\sqrt{(-2)(-8)}=4$ ではない。$\sqrt{A}\sqrt{B}=\sqrt{AB}$、$\dfrac{\sqrt{A}}{\sqrt{B}}=\sqrt{\dfrac{A}{B}}$ は $A,\ B$ が負のとき一般には成り立たない。
+  - 分母に $i$ があるときは共役複素数を掛ける。$\dfrac{1}{i}=-i$。
+
+  **解の判別**（実数係数の $ax^2+bx+c=0$、$D=b^2-4ac$）: $D>0$ 異なる2つの実数解、$D=0$ 重解、$D<0$ 異なる2つの虚数解（互いに共役）。
+
+  **解と係数の関係** 2つの解を $\alpha,\ \beta$ とすると
+  $$\alpha+\beta=-\frac{b}{a},\qquad \alpha\beta=\frac{c}{a}$$
+  - $\alpha,\ \beta$ の対称式は $\alpha+\beta,\ \alpha\beta$ で表せる（$\alpha^3+\beta^3=(\alpha+\beta)^3-3\alpha\beta(\alpha+\beta)$ など）。
+  - **2数を解とする2次方程式**: $p,\ q$ を解とする方程式は $x^2-(p+q)x+pq=0$。
+  - **解の符号**（実数解の場合）: 2つとも正 $\iff D\geqq 0,\ \alpha+\beta>0,\ \alpha\beta>0$。和と積だけでは虚数解の場合を除けないので、**判別式の条件を必ず加える**。異符号 $\iff \alpha\beta<0$（このとき $D>0$ は自動的に成り立つ）。
+prerequisites: [qf-discriminant, ne-symmetric-expression]

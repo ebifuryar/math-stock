@@ -1,0 +1,33 @@
+id: m2-ep-s02
+level: school
+format: mark
+title: 二項定理による項の係数
+stem: |
+  $\left(2x-\dfrac{1}{x}\right)^6$ の展開式の一般項は
+  $${}_6\mathrm{C}_r\,(2x)^{6-r}\left(-\frac{1}{x}\right)^r\qquad (r=0,\ 1,\ \cdots,\ 6)$$
+  である。
+
+  この展開式における定数項は $\boxed{\text{アイウエ}}$ であり、$x^2$ の項の係数は $\boxed{\text{オカキ}}$ である。
+blanks:
+  - { label: アイウエ, answer: "-160" }
+  - { label: オカキ, answer: "240" }
+solution: |
+  一般項を係数と $x$ の部分に分けると
+  $${}_6\mathrm{C}_r\,(2x)^{6-r}\left(-\frac{1}{x}\right)^r={}_6\mathrm{C}_r\,2^{6-r}(-1)^r\,x^{6-2r}$$
+
+  - 定数項: $6-2r=0$ より $r=3$。${}_6\mathrm{C}_3\cdot 2^3\cdot(-1)^3=20\cdot 8\cdot(-1)=-160$
+  - $x^2$ の項: $6-2r=2$ より $r=2$。${}_6\mathrm{C}_2\cdot 2^4\cdot(-1)^2=15\cdot 16=240$
+
+  $2^{6-r}$ を落とすと定数項は $-20$、$(-1)^r$ を落とすと $160$ になってしまう。
+concepts: [ep-binomial-theorem]
+misconceptions: [mc-ep-binomial-coefficient]
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.65, discrimination: 1.1 }
+author:
+  intent: |
+    二項定理の一般項から、指数の条件で $r$ を決め、係数 ${}_n\mathrm{C}_r$・数係数の累乗・符号の3つをすべて掛けられるかをみる。$x$ と $\dfrac{1}{x}$ の組合せで「$x$ の指数 $=6-2r$」を立式させ、定数項（符号が負）と $x^2$ の係数（符号が正）を並べて問うことで、$(-1)^r$ の処理を確実に確認できる。マーク欄の桁数（4桁と3桁）から符号の有無が推測できる点は、共通テスト形式に合わせている。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学II (1) ア(ア) 三次の乗法公式及び因数分解の公式（二項定理）]
+  variations:
+    - $\left(x^2+\dfrac{2}{x}\right)^6$ の定数項など、$x$ の指数が $12-3r$ になる形にする。
+    - $(1+x)^n$ に $x=1,\ -1$ を代入して二項係数の和・交代和を求めさせる。

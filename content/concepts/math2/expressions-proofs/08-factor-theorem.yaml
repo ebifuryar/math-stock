@@ -1,0 +1,19 @@
+id: ep-factor-theorem
+kind: theorem
+title: 剰余の定理・因数定理と高次方程式
+body: |
+  **剰余の定理** 整式 $P(x)$ を $x-\alpha$ で割った余りは $P(\alpha)$。（$ax+b$ で割った余りは $P\left(-\dfrac{b}{a}\right)$）
+
+  **因数定理** $P(\alpha)=0\iff P(x)$ は $x-\alpha$ で割り切れる。
+
+  **2次式で割った余り** 余りは1次以下なので $px+q$ とおく。
+  - $(x-\alpha)(x-\beta)$ で割った余り（$\alpha\neq\beta$）: $P(\alpha)=p\alpha+q,\ P(\beta)=p\beta+q$ から求める。
+  - $(x-\alpha)^2$ で割った余り: $x=\alpha$ の代入だけでは条件が1つしか出ない。$x=(x-\alpha)+\alpha$ として二項定理で展開する、商まで含めて考えるなどの工夫が要る。
+  - 3次式 $(x-\alpha)^2(x-\beta)$ で割った余りは、$(x-\alpha)^2$ で割った余りを使って $a(x-\alpha)^2+(px+q)$ とおける。
+
+  **高次方程式** 因数定理で1次の因数を見つけ（定数項の約数を代入して探す）、組立除法で次数を下げる。実数係数の方程式が虚数解 $a+bi$ をもてば、共役 $a-bi$ も解である。
+
+  **1の3乗根** $x^3=1$ すなわち $(x-1)(x^2+x+1)=0$ の虚数解の1つを $\omega$ とすると、もう1つは $\omega^2$（$=\overline{\omega}$）で
+  $$\omega^3=1,\qquad \omega^2+\omega+1=0$$
+  $\omega^n$ は指数を3で割った余りで次数を下げる（$\omega^{3m+1}=\omega,\ \omega^{3m+2}=\omega^2$）。$x^2+x+1$ で割った余りは $x=\omega$ を代入して調べられる。
+prerequisites: [ep-division-fraction, ep-complex-quadratic]

@@ -1,0 +1,38 @@
+id: m2-tf-e03
+level: exam
+format: mark
+title: 2点を見込む角の最大
+stem: |
+  座標平面上に2点 $\mathrm{A}(0,\ 1),\ \mathrm{B}(0,\ 3)$ がある。$x$ 軸上の点 $\mathrm{P}(x,\ 0)\ (x>0)$ に対し、$\theta=\angle\mathrm{APB}$ とする。
+
+  (1) $\tan\theta=\dfrac{\boxed{\text{ア}}x}{x^2+\boxed{\text{イ}}}$ である。
+
+  (2) $\theta$ が最大となるのは $x=\sqrt{\boxed{\text{ウ}}}$ のときであり、このとき $\tan\theta=\dfrac{\sqrt{\boxed{\text{エ}}}}{\boxed{\text{オ}}}$、$\theta=\dfrac{\pi}{\boxed{\text{カ}}}$ である。
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イ, answer: "3" }
+  - { label: ウ, answer: "3" }
+  - { label: エ, answer: "3" }
+  - { label: オ, answer: "3" }
+  - { label: カ, answer: "6" }
+solution: |
+  (1) $\angle\mathrm{OPA}=\alpha,\ \angle\mathrm{OPB}=\beta$（$\mathrm{O}$ は原点）とおくと $\tan\alpha=\dfrac{1}{x},\ \tan\beta=\dfrac{3}{x}$ で、$\theta=\beta-\alpha\ \left(0<\theta<\dfrac{\pi}{2}\right)$。加法定理より
+  $$\tan\theta=\frac{\dfrac{3}{x}-\dfrac{1}{x}}{1+\dfrac{3}{x^2}}=\frac{2x}{x^2+3}$$
+
+  (2) $\tan\theta=\dfrac{2}{x+\dfrac{3}{x}}$。相加平均・相乗平均の関係より $x+\dfrac{3}{x}\geqq 2\sqrt{3}$（等号は $x=\sqrt{3}$）なので
+  $$\tan\theta\leqq\frac{2}{2\sqrt{3}}=\frac{\sqrt{3}}{3}$$
+  $0<\theta<\dfrac{\pi}{2}$ で $\tan\theta$ は増加関数だから、$\tan\theta$ が最大のとき $\theta$ も最大。$x=\sqrt{3}$ で $\theta=\dfrac{\pi}{6}$。
+
+  （図形的には、$\mathrm{A},\ \mathrm{B}$ を通り $x$ 軸に接する円の接点が $\mathrm{P}$ のとき最大で、方べきの定理から $\mathrm{OP}^2=\mathrm{OA}\cdot\mathrm{OB}=3$ とも一致する。）
+concepts: [tf-addition]
+misconceptions: [mc-tf-addition-sign]
+targetSeconds: 360
+irt: { expectedCorrectRate: 0.35, discrimination: 1.3 }
+author:
+  intent: |
+    「見込む角」を2つの角の差ととらえ、$\tan$ の加法定理で $x$ の関数にできるかをみる。最大化では「$\tan\theta$ の最大 ⇔ $\theta$ の最大」（$\tan$ の単調性）を使うことと、分母・分子を $x$ で割って相加・相乗平均にもちこむ処理が要る。2直線のなす角の公式の応用として、入試で頻出の型を共通テスト形式の誘導で出題した。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学II (4) イ(ア) 加法定理（2直線のなす角）]
+  variations:
+    - $\mathrm{A}(0,\ a),\ \mathrm{B}(0,\ b)$ で一般化し、最大となる $x=\sqrt{ab}$ を導かせる。
+    - 絵画を見る位置の最適化（壁の絵の上端・下端と目の高さ）という文脈で出題する。

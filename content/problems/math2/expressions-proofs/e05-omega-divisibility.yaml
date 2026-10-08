@@ -1,0 +1,74 @@
+id: m2-ep-e05
+level: exam
+format: written
+title: 1の3乗根を用いた整除性の証明
+stem: |
+  $n$ を正の整数とし、$P(x)=x^{2n}+x^n+1$ とする。
+
+  (1) $n$ が3の倍数でないとき、$P(x)$ は $x^2+x+1$ で割り切れることを証明せよ。
+
+  (2) $n$ が3の倍数のとき、$P(x)$ を $x^2+x+1$ で割った余りを求めよ。
+modelAnswer: |
+  $x^2+x+1=0$ の2つの解を $\omega,\ \omega^2$ とする。$x^3-1=(x-1)(x^2+x+1)$ であるから
+  $$\omega^3=1,\qquad \omega^2+\omega+1=0$$
+  であり、$\omega$ は虚数で、$\omega\neq\omega^2$ である。（実際 $\omega=\dfrac{-1\pm\sqrt{3}i}{2}$ の一方で、もう一方の解は $\omega^2$ である。）
+
+  $P(x)$ を2次式 $x^2+x+1$ で割った商を $Q(x)$、余りを $px+q$（$p,\ q$ は実数）とおくと
+  $$x^{2n}+x^n+1=(x^2+x+1)Q(x)+px+q$$
+  $x=\omega,\ \omega^2$ を代入すると
+  $$P(\omega)=p\omega+q,\qquad P(\omega^2)=p\omega^2+q\quad\cdots\text{①}$$
+
+  (1) $n$ を3で割った余りで場合を分ける。$m$ を0以上の整数とする。
+  - $n=3m+1$ のとき: $\omega^n=(\omega^3)^m\omega=\omega$、$\omega^{2n}=(\omega^3)^{2m}\omega^2=\omega^2$
+  - $n=3m+2$ のとき: $\omega^n=(\omega^3)^m\omega^2=\omega^2$、$\omega^{2n}=(\omega^3)^{2m+1}\omega=\omega$
+
+  いずれの場合も $P(\omega)=\omega^2+\omega+1=0$。同様に $(\omega^2)^n,\ (\omega^2)^{2n}$ も $\omega,\ \omega^2$ を入れかえたものになり、$P(\omega^2)=0$。
+
+  ①より $p\omega+q=0,\ p\omega^2+q=0$。辺々引くと $p(\omega-\omega^2)=0$ で、$\omega\neq\omega^2$ より $p=0$、さらに $q=0$。
+
+  よって余りは $0$ であり、$P(x)$ は $x^2+x+1$ で割り切れる。$\blacksquare$
+
+  (2) $n=3m$ のとき $\omega^n=(\omega^3)^m=1$、$\omega^{2n}=1$ なので $P(\omega)=3$。同様に $P(\omega^2)=3$。
+
+  ①より $p\omega+q=3,\ p\omega^2+q=3$。辺々引いて $p=0$、よって $q=3$。
+
+  したがって、余りは **$3$**。
+rubric:
+  - id: r1
+    criterion: $x^2+x+1=0$ の解 $\omega$ について $\omega^3=1,\ \omega^2+\omega+1=0$ を示し（$x^3-1=(x-1)(x^2+x+1)$ など）、もう1つの解が $\omega^2$ であることを述べている
+    points: 2
+    keywords: ["ω^3=1", "ω^2+ω+1=0"]
+  - id: r2
+    criterion: 余りを $px+q$ とおいて恒等式を立て、$x=\omega$（および $\omega^2$）を代入している
+    points: 2
+    keywords: ["px+q", "P(ω)"]
+  - id: r3
+    criterion: $n=3m+1,\ 3m+2$ で場合分けし、いずれも $P(\omega)=0$（$P(\omega^2)=0$）となることを示している
+    points: 3
+    keywords: ["3m+1", "3m+2"]
+  - id: r4
+    criterion: $\omega\neq\omega^2$（または $\omega$ が虚数で $p,\ q$ が実数）であることを根拠に $p=q=0$ を導き、割り切れると結論している
+    points: 2
+    keywords: ["p=q=0", "p=0", "割り切れる"]
+  - id: r5
+    criterion: (2) で $P(\omega)=3$ から余りが $3$ であることを導いている
+    points: 1
+    keywords: ["余りは3", "P(ω)=3"]
+solution: |
+  $x^2+x+1$ で割った余りは、その解 $\omega$（1の3乗根）を代入して調べられる。$\omega^3=1$ より $\omega^n$ は $n$ を3で割った余りだけで決まるので、$n=3m,\ 3m+1,\ 3m+2$ の場合分けが自然に現れる。
+
+  $P(\omega)=0$ だけでは $p\omega+q=0$ という1つの式しか得られないので、$p=q=0$ を言うには「$\omega$ が虚数で $p,\ q$ は実数」または「$\omega^2$ も代入して2式を連立」という一言が必要になる。
+
+  （別解）$x^3\equiv 1$（$x^3-1$ は $x^2+x+1$ で割り切れる）を使い、$x^{3m}-1$ が $x^3-1$ で割り切れることから $x^{3m+k}$ を $x^k$ に置き換えてもよい。
+concepts: [ep-factor-theorem, ep-identity, ep-complex-quadratic]
+misconceptions: [mc-ep-remainder-degree]
+targetSeconds: 600
+irt: { expectedCorrectRate: 0.25, discrimination: 1.4 }
+author:
+  intent: |
+    1の3乗根 $\omega$ を「$x^2+x+1$ で割った余りを調べる道具」として使えるかをみる証明問題。$\omega$ の性質の導出（r1）、余りの次数の設定（r2）、指数の3による場合分け（r3）、$p\omega+q=0$ から $p=q=0$ を導く論理の詰め（r4）を分けて採点できるように設計した。r4 の「$\omega$ が虚数なので」の一言を欠く答案は上位層にも多く、論証の完成度で差がつく。(2) は (1) の議論が「$n$ が3の倍数でない」ことをどこで使ったかを確認させる役割をもつ。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学II (1) ア(オ) 因数定理と簡単な高次方程式（1の3乗根）, 数学II (1) イ(イ) 等式や不等式が成り立つことの証明]
+  variations:
+    - $x^{2n}+x^n+1$ を $x^2-x+1$ で割り切れるための $n$ の条件を、$-\omega$ を用いて調べさせる。
+    - $x^{100}$ を $x^2+x+1$ で割った余り（$x$）を求めさせる。

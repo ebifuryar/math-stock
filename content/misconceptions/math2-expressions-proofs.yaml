@@ -1,0 +1,56 @@
+- id: mc-ep-cubic-formula
+  title: 3次の公式の符号・係数の取り違え
+  description: |
+    $a^3-b^3=(a-b)(a^2-ab+b^2)$ のように2つめの因数の符号を誤る、$a^2+2ab+b^2$ と2乗の公式の係数を持ち込む、$a^3-b^3=(a-b)^3$ や $(a+b)^3=a^3+b^3$ とするなど、3次の乗法公式・因数分解の公式を崩して使う。
+  cause: |
+    公式を展開で確かめず、見た目の形だけで覚えている。$a^3\pm b^3$ と $(a\pm b)^3$、$a^2\pm ab+b^2$ と $(a\pm b)^2$ の区別があいまいで、$b=a$ などを代入して検算する習慣もない。
+  remedyConcepts: [ep-cubic-formulas]
+- id: mc-ep-binomial-coefficient
+  title: 二項定理の一般項で係数・符号を落とす
+  description: |
+    $(2x-\frac{1}{x})^6$ の一般項を ${}_6\mathrm{C}_r\,x^{6-r}\left(\frac{1}{x}\right)^r$ として、$2^{6-r}$ や $(-1)^r$ を掛け忘れる。多項定理で、条件を満たす $(p,\ q,\ r)$ の組の一部しか数えない。
+  cause: |
+    「$a$ と $b$ を累乗する」ことを「文字部分だけを累乗する」と誤解している。一般項を係数ごと書き出してから整理する手順を踏んでいない。
+  remedyConcepts: [ep-binomial-theorem]
+- id: mc-ep-negative-sqrt
+  title: 負の数の平方根に正の数の計算規則を使う
+  description: |
+    $\sqrt{-2}\sqrt{-8}=\sqrt{16}=4$、$\dfrac{\sqrt{12}}{\sqrt{-3}}=\sqrt{-4}=2i$ のように、$\sqrt{A}\sqrt{B}=\sqrt{AB}$ や $\dfrac{\sqrt{A}}{\sqrt{B}}=\sqrt{\dfrac{A}{B}}$ を負の数にもそのまま当てはめる。
+  cause: |
+    これらの規則が $A,\ B\geqq 0$（商では $B>0$）のもとで成り立つことを意識していない。$\sqrt{-a}$ を先に $\sqrt{a}\,i$ と書き直す手順を省いている。
+  remedyConcepts: [ep-complex-quadratic]
+- id: mc-ep-vieta-sign
+  title: 解と係数の関係の符号の誤り
+  description: |
+    $ax^2+bx+c=0$ の2解について $\alpha+\beta=\dfrac{b}{a}$ とする。また、$p,\ q$ を解とする2次方程式を $x^2+(p+q)x+pq=0$ とする。
+  cause: |
+    $a(x-\alpha)(x-\beta)=ax^2-a(\alpha+\beta)x+a\alpha\beta$ と係数を比べて関係式を導く経験がなく、符号を記憶に頼っている。
+  remedyConcepts: [ep-complex-quadratic]
+- id: mc-ep-root-sign-conditions
+  title: 解の符号の条件の不足
+  description: |
+    「2つの正の解をもつ」条件を、和 $>0$ と積 $>0$ だけで表し、判別式の条件を落とす。あるいは判別式と積だけ、判別式と和だけで済ませる。
+  cause: |
+    和と積の符号から解の符号が分かるのは「解が実数のとき」に限ることを理解していない。虚数解でも和と積は実数になりうるので、和 $>0$、積 $>0$ だけでは実数解の存在が保証されない。3条件がそれぞれ何を排除しているかを確かめていない。
+  remedyConcepts: [ep-complex-quadratic, qf-discriminant]
+- id: mc-ep-remainder-degree
+  title: 余りの次数の取り違え
+  description: |
+    2次式で割った余りを定数 $r$ とおく、3次式で割った余りを1次式とおくなど、余りの次数を誤る。$(x-\alpha)^2$ で割った余りを $x=\alpha$ の代入だけで決めようとする。
+  cause: |
+    「余りの次数は割る式の次数より小さい」を、1次式で割る場合（余りは定数）からの類推で覚えている。$A=BQ+R$ を恒等式として扱い、未知数の個数と得られる条件の個数を比べる意識がない。
+  remedyConcepts: [ep-factor-theorem, ep-division-fraction]
+- id: mc-ep-amgm-equality
+  title: 相加・相乗平均で等号成立条件を確認しない
+  description: |
+    相加平均と相乗平均の関係で「$\geqq 8$」を得ただけで「最小値は $8$」と結論する。特に、不等式を2回使って掛け合わせたとき、2つの等号成立条件が同時には満たされないのに、その値を最小値としてしまう。逆に、等号が成り立たないことから「最小値は存在しない」と飛躍することもある。
+  cause: |
+    「$A\geqq m$」と「$A$ の最小値は $m$」の違い（後者は $A=m$ となる値の存在が必要）を区別していない。相加・相乗平均を最小値を求める公式として暗記しており、等号が成り立つ値を具体的に求める手順を持っていない。
+  remedyConcepts: [ep-am-gm]
+- id: mc-ep-zero-division
+  title: 0 になりうる式で割る・場合を落とす
+  description: |
+    比例式で分子・分母をそれぞれ足して $\dfrac{a+b+c}{2(a+b+c)}=\dfrac{1}{2}$ とし、$a+b+c=0$ の場合を見落とす。$(a-b)(1+k)=0$ を $a-b$ で割って $k=-1$ だけを答えるなど、文字式で割るときにその式が $0$ になる場合を考えない。
+  cause: |
+    数の計算と同じ感覚で文字式を約分・除算しており、「$0$ で割れない」ことを場合分けの必要性として意識していない。$AB=0\iff A=0$ または $B=0$ という形で処理する習慣がない。
+  remedyConcepts: [ep-proof-methods]

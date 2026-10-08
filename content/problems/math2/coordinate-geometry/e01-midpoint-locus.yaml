@@ -1,0 +1,50 @@
+id: m2-cg-e01
+level: exam
+format: choice
+title: 2交点の中点の軌跡
+stem: |
+  $m$ を実数の定数とする。直線 $y=mx$ が放物線 $y=x^2-2x+2$ と異なる2点で交わるとき、その2つの交点を結ぶ線分の中点を $\mathrm{M}$ とする。$m$ がこの条件を満たしながら変化するとき、点 $\mathrm{M}$ の軌跡として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: 放物線 $y=2x^2-2x$ 全体
+    misconception: mc-cg-locus-excluded
+    rationale: |
+      $m$ を消去して得た方程式をそのまま答えている。$m$ は「異なる2点で交わる」条件 $D>0$ を満たす値に限られ、それが $x$ の範囲を制限する。
+  - id: "2"
+    text: 放物線 $y=2x^2-2x$ の $-\sqrt{2}<x<\sqrt{2}$ の部分
+    misconception: mc-cg-locus-excluded
+    rationale: |
+      範囲の制限には気づいているが、不等式の向きを誤っている。この範囲は $D<0$（交点をもたない）場合に対応する。
+  - id: "3"
+    text: 放物線 $y=2x^2-2x$ の $x<-\sqrt{2},\ \sqrt{2}<x$ の部分
+    rationale: |
+      正解。$x=\dfrac{m+2}{2}$ と $D>0$ から $x$ の範囲が決まる。
+  - id: "4"
+    text: 放物線 $y=x^2-2x+2$ の $x<-\sqrt{2},\ \sqrt{2}<x$ の部分
+    rationale: |
+      中点も放物線上にあるとして、$y$ 座標をもとの放物線の式で求めている。放物線は下に凸なので、2交点を結ぶ線分（弦）の中点は放物線より上にあり、放物線上にはない。中点は直線 $y=mx$ 上にある。
+answer: "3"
+solution: |
+  $y$ を消去して $x^2-2x+2=mx$、すなわち
+  $$x^2-(m+2)x+2=0\qquad\cdots(*)$$
+  異なる2点で交わる条件は、判別式 $D=(m+2)^2-8>0$。
+
+  $(*)$ の2解を $\alpha,\ \beta$ とすると、解と係数の関係より $\alpha+\beta=m+2$。中点 $\mathrm{M}(X,\ Y)$ は直線 $y=mx$ 上にあるので
+  $$X=\frac{\alpha+\beta}{2}=\frac{m+2}{2},\qquad Y=mX$$
+  第1式より $m=2X-2$。これを第2式に代入して $Y=(2X-2)X=2X^2-2X$。
+
+  また $D>0$ は $(m+2)^2>8$、$m+2=2X$ より $4X^2>8$、すなわち $X^2>2$ なので $X<-\sqrt{2},\ \sqrt{2}<X$。逆にこの範囲の $X$ に対して $m=2X-2$ とおけば条件を満たす。
+
+  よって軌跡は放物線 $y=2x^2-2x$ の $x<-\sqrt{2},\ \sqrt{2}<x$ の部分。
+concepts: [cg-locus, qf-discriminant]
+misconceptions: [mc-cg-locus-excluded]
+targetSeconds: 360
+irt: { expectedCorrectRate: 0.35, discrimination: 1.4 }
+author:
+  intent: |
+    媒介変数 $m$ の消去と、$m$ に付いた条件（$D>0$）を $x$ の変域に移す処理を両方できるかをみる。①は変域を落とした答案、②は変域の不等式を逆にした答案に対応し、変域に気づいているかどうかと正しく処理できるかを分けて識別する。④は中点の意味（直線上の点）を理解しているかを問う。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学II (2) ア(エ) 軌跡, 数学II (1) ア(エ) 解と係数の関係]
+  variations:
+    - 直線を定点 $(0,\ -1)$ を通る $y=mx-1$ に変え、中点の軌跡と変域を求めさせる。
+    - 2交点と原点を結ぶ三角形の重心の軌跡を求めさせる。

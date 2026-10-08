@@ -1,0 +1,47 @@
+id: m2-cl-s03
+level: school
+format: choice
+title: f'(a)=0 と極値
+stem: |
+  関数 $f(x)=x^3-3x^2+3x+1$ について述べた文として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $x=1$ で極大値 $2$ をとる。
+    misconception: mc-cl-stationary-not-extremum
+    rationale: |
+      $f'(1)=0$ だけで極値と判断している。$f'(x)=3(x-1)^2\geqq 0$ なので $x=1$ の前後で $f'(x)$ は正のままであり、極値ではない。
+  - id: "2"
+    text: $x=1$ で極小値 $2$ をとる。
+    misconception: mc-cl-stationary-not-extremum
+    rationale: |
+      ①と同じく、$f'(1)=0$ だけで極値と判断している。$x=1$ の前後で $f'(x)$ の符号は負から正に変わっていない（どちらも正）。
+  - id: "3"
+    text: 常に減少し、極値をもたない。
+    rationale: |
+      極値をもたない点は正しいが、増減の向きが逆。$f'(x)=3(x-1)^2\geqq 0$ であり、$f(x)$ は常に増加する。
+  - id: "4"
+    text: 常に増加し、極値をもたない。
+    rationale: |
+      正解。$f'(x)=3(x-1)^2\geqq 0$ で、等号は $x=1$ のときだけなので、$f(x)$ は常に増加し、極値をもたない。
+answer: "4"
+solution: |
+  $$f'(x)=3x^2-6x+3=3(x-1)^2\geqq 0$$
+  $f'(x)=0$ となるのは $x=1$ のみで、その前後で $f'(x)>0$ のまま符号が変わらない。
+
+  | $x$ | $\cdots$ | $1$ | $\cdots$ |
+  | --- | --- | --- | --- |
+  | $f'(x)$ | $+$ | $0$ | $+$ |
+  | $f(x)$ | $\nearrow$ | $2$ | $\nearrow$ |
+
+  よって $f(x)$ は常に増加し、極値をもたない（グラフは点 $(1,\ 2)$ で接線の傾きが $0$ になるが、そこで向きを変えずに上り続ける）。
+concepts: [cl-extremum]
+misconceptions: [mc-cl-stationary-not-extremum]
+targetSeconds: 120
+irt: { expectedCorrectRate: 0.65, discrimination: 1.1 }
+author:
+  intent: |
+    「$f'(a)=0$ ならば極値」という誤った逆の命題を使っていないかをみる。$f'(x)$ が完全平方になる関数を選び、増減表を書かずに $f'(x)=0$ の解だけで判断すると①か②を選ぶように設計している。①と②の両方が誤りであること自体が「極大か極小かを決める根拠がない」ことの手がかりになる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学II (5) ア(イ) 関数の値の増減と極大・極小"]
+  variations:
+    - $f(x)=x^4-4x^3$ のように、$f'(x)=0$ の解のうち一方だけが極値になる関数で判定させる（数学IIの範囲では整式なので扱える）。

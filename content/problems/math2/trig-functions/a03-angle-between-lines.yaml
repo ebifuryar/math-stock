@@ -1,0 +1,39 @@
+id: m2-tf-a03
+level: applied
+format: mark
+title: 2直線のなす角
+stem: |
+  (1) 2直線 $y=\sqrt{3}x$ と $y=-x$ のなす鋭角は
+  $$\frac{\boxed{\text{ア}}}{\boxed{\text{イウ}}}\pi$$
+  である。
+
+  (2) 原点を通り、直線 $y=2x$ とのなす角が $\dfrac{\pi}{4}$ である直線は2本あり、その傾きは小さい順に
+  $$\boxed{\text{エオ}},\qquad \frac{\boxed{\text{カ}}}{\boxed{\text{キ}}}$$
+  である。
+blanks:
+  - { label: ア, answer: "5" }
+  - { label: イウ, answer: "12" }
+  - { label: エオ, answer: "-3" }
+  - { label: カ, answer: "1" }
+  - { label: キ, answer: "3" }
+solution: |
+  (1) $y=\sqrt{3}x$ と $x$ 軸の正の向きとのなす角は $\dfrac{\pi}{3}$、$y=-x$ は $\dfrac{3}{4}\pi$。その差は $\dfrac{3}{4}\pi-\dfrac{\pi}{3}=\dfrac{5}{12}\pi$ で、これは $\dfrac{\pi}{2}$ より小さいので鋭角。
+
+  公式でも $\tan\theta=\left|\dfrac{\sqrt{3}-(-1)}{1+\sqrt{3}\cdot(-1)}\right|=\dfrac{\sqrt{3}+1}{\sqrt{3}-1}=2+\sqrt{3}=\tan\dfrac{5}{12}\pi$。
+
+  (2) 求める直線を $y=mx$ とすると（$y$ 軸は $y=2x$ とのなす角が $\dfrac{\pi}{4}$ でないので除外してよい）
+  $$\left|\frac{m-2}{1+2m}\right|=\tan\frac{\pi}{4}=1$$
+  $m-2=1+2m$ より $m=-3$、$m-2=-(1+2m)$ より $m=\dfrac{1}{3}$。
+  （$y=2x$ の傾き角を $\beta$ として $\tan\left(\beta\pm\dfrac{\pi}{4}\right)=\dfrac{2\pm 1}{1\mp 2}$ と加法定理で求めても同じ。）
+concepts: [tf-addition]
+misconceptions: [mc-tf-addition-sign, mc-tf-solution-count]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.5, discrimination: 1.1 }
+author:
+  intent: |
+    直線の傾きを $\tan$ と見て、2直線のなす角を加法定理で処理できるかをみる。(1) は傾き角の差が直接読める組にして、公式に頼らない図形的な把握でも解けるようにした。(2) は絶対値を外すときの2通りを漏れなく扱えるかで、片方（$m=\dfrac{1}{3}$ または $m=-3$）だけの答案を識別する。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学II (4) イ(ア) 加法定理（2直線のなす角）]
+  variations:
+    - 点 $(1,\ 2)$ を通り直線 $x-3y=0$ とのなす角が $\dfrac{\pi}{4}$ の直線の方程式を求めさせる。
+    - $x$ 軸上の点から2点を見込む角を、なす角の公式で表して最大化させる（e03 への橋渡し）。

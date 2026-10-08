@@ -1,0 +1,51 @@
+id: m2-tf-e02
+level: exam
+format: choice
+title: sin3θ=sinθ の一般解
+stem: |
+  方程式 $\sin 3\theta=\sin\theta$ を満たす実数 $\theta$ 全体を表すものとして正しいものを、次の①〜④のうちから一つ選べ。ただし、$n$ は任意の整数を表す。
+choices:
+  - id: "1"
+    text: $\theta=n\pi,\quad \theta=\dfrac{\pi}{4}+\dfrac{n}{2}\pi$
+    rationale: |
+      正解。$\sin 3\theta-\sin\theta=2\cos 2\theta\sin\theta=0$ より $\sin\theta=0$ または $\cos 2\theta=0$。$\sin\theta=0$ から $\theta=n\pi$、$2\theta=\dfrac{\pi}{2}+n\pi$ から $\theta=\dfrac{\pi}{4}+\dfrac{n}{2}\pi$。
+  - id: "2"
+    text: $\theta=n\pi$
+    misconception: mc-tf-solution-count
+    rationale: |
+      $\sin A=\sin B$ を $A=B+2n\pi$ だけで解いている（$3\theta=\theta+2n\pi$ から $\theta=n\pi$）。$A=\pi-B+2n\pi$、すなわち $3\theta=\pi-\theta+2n\pi$ の場合を落としている。たとえば $\theta=\dfrac{\pi}{4}$ で両辺はともに $\dfrac{\sqrt{2}}{2}$。
+  - id: "3"
+    text: $\theta=\dfrac{\pi}{4}+\dfrac{n}{2}\pi$
+    misconception: mc-tf-solution-count
+    rationale: |
+      3倍角の公式で $3\sin\theta-4\sin^3\theta=\sin\theta$ としたあと、両辺を $\sin\theta$ で割っている。$\sin\theta=0$ となる $\theta=n\pi$ も解（両辺 $0$）なのに、割ったことで失われた。
+  - id: "4"
+    text: $\theta=n\pi,\quad \theta=\dfrac{\pi}{4}+n\pi$
+    misconception: mc-tf-solution-count
+    rationale: |
+      $\cos 2\theta=0$ の一般解を $2\theta=\dfrac{\pi}{2}+2n\pi$ と、$\cos x=0$ の解のうち $x=\dfrac{\pi}{2}$ の系列だけにしている。$\cos x=0$ の解は $x=\dfrac{\pi}{2}+n\pi$（$x=\dfrac{3}{2}\pi$ の系列も含む）なので $\theta=\dfrac{\pi}{4}+\dfrac{n}{2}\pi$。$\theta=\dfrac{3}{4}\pi$ などが漏れる（$\sin\dfrac{9}{4}\pi=\sin\dfrac{3}{4}\pi=\dfrac{\sqrt{2}}{2}$）。
+answer: "1"
+solution: |
+  **和積で** $\sin 3\theta-\sin\theta=2\cos\dfrac{3\theta+\theta}{2}\sin\dfrac{3\theta-\theta}{2}=2\cos 2\theta\sin\theta$。
+
+  **3倍角で** $\sin 3\theta=3\sin\theta-4\sin^3\theta$ より $\sin 3\theta-\sin\theta=2\sin\theta(1-2\sin^2\theta)=2\sin\theta\cos 2\theta$（同じ式になる）。
+
+  よって $\sin\theta=0$ または $\cos 2\theta=0$。
+  - $\sin\theta=0\iff\theta=n\pi$
+  - $\cos 2\theta=0\iff 2\theta=\dfrac{\pi}{2}+n\pi\iff\theta=\dfrac{\pi}{4}+\dfrac{n}{2}\pi$
+
+  （$0\leqq\theta<2\pi$ では $0,\ \dfrac{\pi}{4},\ \dfrac{3}{4}\pi,\ \pi,\ \dfrac{5}{4}\pi,\ \dfrac{7}{4}\pi$ の6個。）
+concepts: [tf-equation, tf-double-half, tf-addition]
+misconceptions: [mc-tf-solution-count]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.35, discrimination: 1.3 }
+author:
+  intent: |
+    $\sin A=\sin B$ 型の方程式を、和積または3倍角で積の形にし、一般解を漏れなく書けるかをみる。誤答はいずれも「解の取りこぼし」だが、落とし方（$\pi-\alpha$ の系列、割り算による消失、一般解の周期の誤り）が異なり、どの段階で取りこぼしたかを特定できる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学II (4) イ(ア) 加法定理とその応用（2倍角・和積）, 数学II (4) ア(イ) 三角関数を含む方程式]
+  variations:
+    - $\cos 3\theta=\cos\theta$ の一般解を問う（$\cos A=\cos B\iff A=\pm B+2n\pi$）。
+    - $\sin 3\theta=\cos\theta$ にして、$\cos\theta=\sin\left(\dfrac{\pi}{2}-\theta\right)$ と直す一手間を加える。
+  notes: |
+    和積の公式は発展扱いだが、3倍角（加法定理から導ける）でも同じ因数分解に到達できるので、数学IIの範囲で解ける。

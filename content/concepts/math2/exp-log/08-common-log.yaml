@@ -1,0 +1,12 @@
+id: el-common-log
+kind: method
+title: 常用対数と桁数・最高位・小数首位
+body: |
+  $10$ を底とする対数 $\log_{10}M$ を **常用対数** という。
+
+  - **桁数**: 正の数 $N$ の整数部分が $n$ 桁 $\iff 10^{n-1}\leqq N<10^n\iff n-1\leqq\log_{10}N<n$。$\log_{10}N=21.58$ なら $22$ 桁（$n-1$ との取り違えに注意）。
+  - **小数首位**: $0<N<1$ が小数第 $n$ 位に初めて $0$ でない数字が現れる $\iff 10^{-n}\leqq N<10^{-n+1}\iff -n\leqq\log_{10}N<-n+1$。
+  - **最高位の数字**: $\log_{10}N=k+\alpha\ (k\text{ は整数},\ 0\leqq\alpha<1)$ と分けると $N=10^{\alpha}\times 10^k$。$\log_{10}m\leqq\alpha<\log_{10}(m+1)$ となる整数 $m$ が最高位の数字。負の値は $-5.283=-6+0.717$ のように **小数部分が $0$ 以上** になるよう分ける。
+
+  $\log_{10}5=1-\log_{10}2$、$\log_{10}6=\log_{10}2+\log_{10}3$ のように、与えられた値から必要な対数を組み立てる。
+prerequisites: [el-log-definition, el-exp-function]

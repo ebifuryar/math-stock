@@ -1,0 +1,39 @@
+id: m2-tf-s03
+level: school
+format: mark
+title: 0≦θ<2π での方程式・不等式
+stem: |
+  $0\leqq\theta<2\pi$ とする。
+
+  (1) 方程式 $2\cos\theta+\sqrt{3}=0$ の解は、小さい順に
+  $$\theta=\frac{\boxed{\text{ア}}}{\boxed{\text{イ}}}\pi,\quad \frac{\boxed{\text{ウ}}}{\boxed{\text{エ}}}\pi$$
+  である。
+
+  (2) 不等式 $2\sin\theta+1<0$ の解は
+  $$\frac{\boxed{\text{オ}}}{\boxed{\text{カ}}}\pi<\theta<\frac{\boxed{\text{キク}}}{\boxed{\text{ケ}}}\pi$$
+  である。
+blanks:
+  - { label: ア, answer: "5" }
+  - { label: イ, answer: "6" }
+  - { label: ウ, answer: "7" }
+  - { label: エ, answer: "6" }
+  - { label: オ, answer: "7" }
+  - { label: カ, answer: "6" }
+  - { label: キク, answer: "11" }
+  - { label: ケ, answer: "6" }
+solution: |
+  (1) $\cos\theta=-\dfrac{\sqrt{3}}{2}$。単位円と直線 $x=-\dfrac{\sqrt{3}}{2}$ の交点は第2象限と第3象限に1つずつあり、$\theta=\dfrac{5}{6}\pi,\ \dfrac{7}{6}\pi$。
+
+  (2) $\sin\theta<-\dfrac{1}{2}$。単位円で $y$ 座標が $-\dfrac{1}{2}$ より小さい部分は、$\theta=\dfrac{7}{6}\pi$ の点から $\theta=\dfrac{11}{6}\pi$ の点までの下側の弧（端点を除く）。よって $\dfrac{7}{6}\pi<\theta<\dfrac{11}{6}\pi$。
+concepts: [tf-equation, tf-definition]
+misconceptions: [mc-tf-solution-count]
+targetSeconds: 120
+irt: { expectedCorrectRate: 0.75, discrimination: 1.0 }
+author:
+  intent: |
+    範囲を $0\leqq\theta<2\pi$ に広げたとき、第3・第4象限の解を単位円から正しく拾えるかをみる。(1) は第3象限の解 $\dfrac{7}{6}\pi$ の取りこぼし、(2) は「下側の弧」を読む力と、$-\dfrac{\pi}{6}$ のような範囲外の表記を $\dfrac{11}{6}\pi$ に直せるかを識別する。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学II (4) ア(イ) 三角関数を含む方程式・不等式]
+  variations:
+    - (2) を $\tan\theta\geqq-1$ に変え、$\theta=\dfrac{\pi}{2},\ \dfrac{3}{2}\pi$ を除く処理を問う。
+    - 範囲を $-\pi\leqq\theta<\pi$ に変えて、同じ不等式の解の表し方の違いを確認させる。

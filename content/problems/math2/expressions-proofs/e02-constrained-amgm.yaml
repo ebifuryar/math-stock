@@ -1,0 +1,47 @@
+id: m2-ep-e02
+level: exam
+format: choice
+title: 条件付きの最小値と相加・相乗平均
+stem: |
+  正の実数 $x,\ y$ が $x+2y=1$ を満たすとき、$\dfrac{1}{x}+\dfrac{1}{y}$ の最小値として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $6$
+    rationale: |
+      「$x=y$ のとき最小」と決めつけ、$x=y=\dfrac{1}{3}$ を代入している。条件 $x+2y=1$ は $x,\ y$ について対称でないので、最小となる点も $x=y$ とは限らない。
+  - id: "2"
+    text: $3+2\sqrt{2}$
+    rationale: |
+      正解。$\left(\dfrac{1}{x}+\dfrac{1}{y}\right)(x+2y)=3+\dfrac{2y}{x}+\dfrac{x}{y}\geqq 3+2\sqrt{2}$ で、等号は $x=\sqrt{2}\,y$ のとき、すなわち $x=\sqrt{2}-1,\ y=\dfrac{2-\sqrt{2}}{2}$ で成り立つ。
+  - id: "3"
+    text: $4\sqrt{2}$
+    misconception: mc-ep-amgm-equality
+    rationale: |
+      $\dfrac{1}{x}+\dfrac{1}{y}\geqq\dfrac{2}{\sqrt{xy}}$（等号 $x=y$）と $1=x+2y\geqq 2\sqrt{2xy}$（等号 $x=2y$）を組み合わせて $\geqq 4\sqrt{2}$ としている。2つの等号成立条件が同時に満たされないので、$4\sqrt{2}$ は下界にすぎず、最小値ではない。
+  - id: "4"
+    text: $1+2\sqrt{2}$
+    rationale: |
+      $\left(\dfrac{1}{x}+\dfrac{1}{y}\right)(x+2y)$ の展開で、$\dfrac{1}{y}\cdot 2y=2$ を落としている。
+answer: "2"
+solution: |
+  $x+2y=1$ を掛けても値は変わらないので
+  $$\frac{1}{x}+\frac{1}{y}=\left(\frac{1}{x}+\frac{1}{y}\right)(x+2y)=1+\frac{2y}{x}+\frac{x}{y}+2=3+\frac{2y}{x}+\frac{x}{y}$$
+  $\dfrac{2y}{x}>0,\ \dfrac{x}{y}>0$ なので、相加平均と相乗平均の関係より
+  $$3+\frac{2y}{x}+\frac{x}{y}\geqq 3+2\sqrt{\frac{2y}{x}\cdot\frac{x}{y}}=3+2\sqrt{2}$$
+  等号は $\dfrac{2y}{x}=\dfrac{x}{y}$ すなわち $x^2=2y^2$、$x=\sqrt{2}\,y$ のとき。$x+2y=1$ と合わせて
+  $$y=\frac{1}{2+\sqrt{2}}=\frac{2-\sqrt{2}}{2},\qquad x=\sqrt{2}-1$$
+  これらは正なので等号は実際に成り立ち、最小値は $3+2\sqrt{2}$。
+
+  （$4\sqrt{2}\approx 5.66<3+2\sqrt{2}\approx 5.83<6$ であり、$4\sqrt{2}$ は値として一度もとられない。）
+concepts: [ep-am-gm]
+misconceptions: [mc-ep-amgm-equality]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.3, discrimination: 1.4 }
+author:
+  intent: |
+    相加・相乗平均を2回使うと等号成立条件が食い違う典型的な状況で、それに気づいて「条件式を掛けて1回で済む形にする」発想に切り替えられるかをみる。誤答③ $4\sqrt{2}$ は正解より小さく、不等式としては正しいため、等号確認をしない受験者ほど自信をもって選ぶ。①は対称性による当て推量、④は展開の計算ミスを拾う。正解と③・①の数値が近接しているので、概算で選ぶことも難しい。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学II (1) イ(イ) 等式や不等式が成り立つことの証明（相加平均と相乗平均の関係）]
+  variations:
+    - 条件を $2x+3y=1$ に変え、最小値 $5+2\sqrt{6}$ を求めさせる。
+    - 同じ条件のもとで $xy$ の最大値（$\dfrac{1}{8}$）を求めさせ、こちらは1回の相加・相乗平均で等号が成立することと対比させる。

@@ -1,0 +1,41 @@
+id: m2-el-e04
+level: exam
+format: mark
+title: 小数首位が指定された位になる条件
+stem: |
+  $\log_{10}2=0.3010,\ \log_{10}3=0.4771$ とする。
+
+  (1) $\log_{10}\dfrac{3}{5}=-0.\boxed{\text{アイウエ}}$ である。
+
+  (2) $\left(\dfrac{3}{5}\right)^n$ を小数で表したとき、小数第 $10$ 位に初めて $0$ でない数字が現れるような自然数 $n$ の範囲は
+  $$\boxed{\text{オカ}}\leqq n\leqq\boxed{\text{キク}}$$
+  である。
+
+  (3) $\left(\dfrac{3}{5}\right)^{45}$ を小数で表したとき、小数第 $10$ 位の数字は $\boxed{\text{ケ}}$ である。
+blanks:
+  - { label: アイウエ, answer: "2219" }
+  - { label: オカ, answer: "41" }
+  - { label: キク, answer: "45" }
+  - { label: ケ, answer: "1" }
+solution: |
+  (1) $\log_{10}5=1-\log_{10}2=0.6990$ なので $\log_{10}\dfrac{3}{5}=0.4771-0.6990=-0.2219$。
+
+  (2) 小数第 $10$ 位に初めて $0$ でない数字が現れる $\iff 10^{-10}\leqq\left(\frac{3}{5}\right)^n<10^{-9}$
+  $$\iff -10\leqq -0.2219n<-9\iff \frac{9}{0.2219}<n\leqq\frac{10}{0.2219}$$
+  $\dfrac{9}{0.2219}=40.5\cdots$、$\dfrac{10}{0.2219}=45.0\cdots$ より $41\leqq n\leqq 45$。
+
+  (3) $\log_{10}\left(\frac{3}{5}\right)^{45}=-9.9855=-10+0.0145$。$0\leqq 0.0145<\log_{10}2$ より $1\leqq 10^{0.0145}<2$ なので
+  $$\left(\frac{3}{5}\right)^{45}=10^{0.0145}\times 10^{-10}$$
+  の小数第 $10$ 位の数字は $1$。
+concepts: [el-common-log, el-log-definition]
+misconceptions: [mc-el-digit-count, mc-ne-inequality-direction]
+targetSeconds: 360
+irt: { expectedCorrectRate: 0.3, discrimination: 1.4 }
+author:
+  intent: |
+    $1$ より小さい数の小数首位を常用対数で扱う力をみる。不等式を負の数で割るときの向きの反転、$-n\leqq\log_{10}N<-n+1$ の境界の向き、負の対数を「整数 $+$ $0$ 以上の小数」に分ける操作の3点を、オカ・キク・ケで独立に検出できるよう設計した。$n=45$ は境界のすぐ内側にあり、等号の扱いを誤ると答えが変わる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学II (3) ア(ウ) 対数の意味とその基本的な性質, 数学II (3) イ(ア) 指数と対数を相互に関連付けて考察すること]
+  variations:
+    - $\left(\frac{3}{5}\right)^{n}<10^{-10}$ を満たす最小の $n$ を問い、小数首位の条件との違いを比較させる。
+    - $\left(\frac{2}{3}\right)^{30}$ について、小数首位の位置と首位の数字を両方問う。

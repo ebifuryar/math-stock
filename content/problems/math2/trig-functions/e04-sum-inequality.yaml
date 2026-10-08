@@ -1,0 +1,52 @@
+id: m2-tf-e04
+level: exam
+format: mark
+title: sinθ+sin2θ+sin3θ>0 を解く
+stem: |
+  $0\leqq\theta<2\pi$ とする。
+
+  (1) $\sin\theta+\sin 3\theta$ を積の形に変形することにより
+  $$\sin\theta+\sin 2\theta+\sin 3\theta=\sin 2\theta\left(\boxed{\text{ア}}\cos\theta+\boxed{\text{イ}}\right)$$
+  となる。
+
+  (2) 不等式 $\sin\theta+\sin 2\theta+\sin 3\theta>0$ の解は
+  $$0<\theta<\frac{\pi}{\boxed{\text{ウ}}},\qquad \frac{\boxed{\text{エ}}}{\boxed{\text{オ}}}\pi<\theta<\pi,\qquad \frac{\boxed{\text{カ}}}{\boxed{\text{キ}}}\pi<\theta<\frac{\boxed{\text{ク}}}{\boxed{\text{ケ}}}\pi$$
+  である。
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イ, answer: "1" }
+  - { label: ウ, answer: "2" }
+  - { label: エ, answer: "2" }
+  - { label: オ, answer: "3" }
+  - { label: カ, answer: "4" }
+  - { label: キ, answer: "3" }
+  - { label: ク, answer: "3" }
+  - { label: ケ, answer: "2" }
+solution: |
+  (1) $\sin 3\theta+\sin\theta=\sin(2\theta+\theta)+\sin(2\theta-\theta)=2\sin 2\theta\cos\theta$（加法定理で展開して加える）。よって
+  $$\sin\theta+\sin 2\theta+\sin 3\theta=2\sin 2\theta\cos\theta+\sin 2\theta=\sin 2\theta(2\cos\theta+1)$$
+
+  (2) $\sin 2\theta=2\sin\theta\cos\theta$ より、左辺 $=2\sin\theta\cos\theta(2\cos\theta+1)$。各因数が $0$ になるのは $\theta=0,\ \pi$（$\sin\theta$）、$\dfrac{\pi}{2},\ \dfrac{3}{2}\pi$（$\cos\theta$）、$\dfrac{2}{3}\pi,\ \dfrac{4}{3}\pi$（$2\cos\theta+1$）。符号を区間ごとに調べる。
+
+  | 区間 | $\sin\theta$ | $\cos\theta$ | $2\cos\theta+1$ | 積 |
+  | --- | --- | --- | --- | --- |
+  | $0<\theta<\frac{\pi}{2}$ | $+$ | $+$ | $+$ | $+$ |
+  | $\frac{\pi}{2}<\theta<\frac{2}{3}\pi$ | $+$ | $-$ | $+$ | $-$ |
+  | $\frac{2}{3}\pi<\theta<\pi$ | $+$ | $-$ | $-$ | $+$ |
+  | $\pi<\theta<\frac{4}{3}\pi$ | $-$ | $-$ | $-$ | $-$ |
+  | $\frac{4}{3}\pi<\theta<\frac{3}{2}\pi$ | $-$ | $-$ | $+$ | $+$ |
+  | $\frac{3}{2}\pi<\theta<2\pi$ | $-$ | $+$ | $+$ | $-$ |
+
+  よって $0<\theta<\dfrac{\pi}{2},\ \dfrac{2}{3}\pi<\theta<\pi,\ \dfrac{4}{3}\pi<\theta<\dfrac{3}{2}\pi$。
+concepts: [tf-double-half, tf-addition, tf-equation]
+misconceptions: [mc-tf-solution-count, mc-tf-angle-range]
+targetSeconds: 420
+irt: { expectedCorrectRate: 0.3, discrimination: 1.3 }
+author:
+  intent: |
+    角が等差に並ぶ和を、加法定理（和積）で因数分解できるか、そして3つの因数の符号を区間ごとに整理して不等式を解けるかをみる。$\sin 2\theta$ のまま「$\sin 2\theta>0$ かつ $2\cos\theta+1>0$」のように片方の符号の組合せだけを考えたり、$2\theta$ の範囲を $0\leqq 2\theta<2\pi$ としたりすると区間を落とすので、符号表を正しく作れるかで上位層を識別する。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学II (4) イ(ア) 加法定理とその応用, 数学II (4) ア(イ) 三角関数を含む不等式]
+  variations:
+    - $\cos\theta+\cos 2\theta+\cos 3\theta>0$ に変える（$\cos 2\theta(2\cos\theta+1)$ と同じ因数が現れる）。
+    - 方程式 $\sin\theta+\sin 2\theta+\sin 3\theta=0$ の $0\leqq\theta<2\pi$ における解の個数を問う。

@@ -1,0 +1,44 @@
+id: m2-el-a04
+level: applied
+format: mark
+title: 底の異なる対数不等式
+stem: |
+  (1) 不等式 $\log_2(x-2)<\log_4(x+10)$ を解く。
+
+  底の変換公式より
+  $$\log_4(x+10)=\frac{\log_2(x+10)}{\boxed{\text{ア}}}$$
+  である。真数は正であるから $x>\boxed{\text{イ}}$ である。不等式を変形すると
+  $$x^2-\boxed{\text{ウ}}\,x-\boxed{\text{エ}}<0$$
+  となり、真数の条件とあわせて、解は $\boxed{\text{オ}}<x<\boxed{\text{カ}}$ である。
+
+  (2) 方程式 $\log_2(x-2)=\log_4(x+10)$ の解は $x=\boxed{\text{キ}}$ である。
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イ, answer: "2" }
+  - { label: ウ, answer: "5" }
+  - { label: エ, answer: "6" }
+  - { label: オ, answer: "2" }
+  - { label: カ, answer: "6" }
+  - { label: キ, answer: "6" }
+solution: |
+  (1) $\log_4(x+10)=\dfrac{\log_2(x+10)}{\log_2 4}=\dfrac{\log_2(x+10)}{2}$。
+
+  真数条件は $x-2>0$ かつ $x+10>0$ なので $x>2$。
+
+  不等式の両辺を $2$ 倍すると $2\log_2(x-2)<\log_2(x+10)$、すなわち $\log_2(x-2)^2<\log_2(x+10)$。底 $2$ は $1$ より大きいので
+  $$(x-2)^2<x+10,\qquad x^2-5x-6<0,\qquad (x+1)(x-6)<0,\qquad -1<x<6$$
+  $x>2$ との共通部分をとって $2<x<6$。
+
+  (2) 同様に $(x-2)^2=x+10$ から $x=-1,\ 6$。真数条件 $x>2$ を満たすのは $x=6$。
+concepts: [el-change-of-base, el-log-function]
+misconceptions: [mc-el-antilog-condition, mc-el-change-of-base-inverted]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.5, discrimination: 1.2 }
+author:
+  intent: |
+    底の異なる対数を、底の変換公式でそろえてから真数の不等式に直す一連の手順をみる。$2\log_2(x-2)=\log_2(x-2)^2$ とした段階で真数条件が $x\neq 2$ に緩むため、最初に立てた $x>2$ と共通部分をとれるかが識別のポイント。真数条件を落とすと (1) が $-1<x<6$、(2) が $x=-1,\ 6$ となり、オとキで検出できる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学II (3) ア(ウ) 対数の意味とその基本的な性質, 数学II (3) ア(エ) 対数関数の値の変化やグラフの特徴]
+  variations:
+    - 底を $\frac{1}{4}$ にした $\log_2(x-2)<-\log_{\frac{1}{4}}(x+10)$ などで、底の変換と符号処理を同時に問う。
+    - 不等号を逆にして、解が真数条件の端点から始まる場合（$x\geqq 6$）を問う。

@@ -1,0 +1,12 @@
+id: cg-distance-division
+kind: formula
+title: 2点間の距離・内分点・外分点・重心
+body: |
+  $\mathrm{A}(x_1,y_1),\ \mathrm{B}(x_2,y_2)$ について
+
+  - 距離: $\mathrm{AB}=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$
+  - 線分 $\mathrm{AB}$ を $m:n$ に **内分** する点: $\left(\dfrac{nx_1+mx_2}{m+n},\ \dfrac{ny_1+my_2}{m+n}\right)$
+  - 線分 $\mathrm{AB}$ を $m:n$ に **外分** する点（$m\neq n$）: $\left(\dfrac{-nx_1+mx_2}{m-n},\ \dfrac{-ny_1+my_2}{m-n}\right)$
+  - $\triangle\mathrm{ABC}$ の重心: 3頂点の座標の平均 $\left(\dfrac{x_1+x_2+x_3}{3},\ \dfrac{y_1+y_2+y_3}{3}\right)$
+
+  外分は内分の式で $n$ を $-n$ に置き換えたものと覚えるとよい。$m>n$ なら外分点は $\mathrm{B}$ の先（$\mathrm{A}$ から見て $\mathrm{B}$ の向こう側）に、$m<n$ なら $\mathrm{A}$ の手前側にある。答えが出たら「$\mathrm{AP}:\mathrm{PB}=m:n$ で、線分の外側にあるか」を確かめる。

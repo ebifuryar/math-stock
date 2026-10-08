@@ -1,0 +1,40 @@
+id: m2-cl-s04
+level: school
+format: mark
+title: 不定積分・定積分と面積
+stem: |
+  (1) $F'(x)=3x^2-4x+1,\ F(1)=3$ を満たす関数 $F(x)$ は
+  $$F(x)=x^3-\boxed{\text{ア}}\,x^2+x+\boxed{\text{イ}}$$
+  である。
+
+  (2) 定積分 $\displaystyle\int_{-1}^{2}(x^2-x-2)\,dx$ の値は $\dfrac{\boxed{\text{ウエ}}}{\boxed{\text{オ}}}$ である。
+
+  (3) 放物線 $y=x^2-x-2$ と $x$ 軸で囲まれた部分の面積は $\dfrac{\boxed{\text{カ}}}{\boxed{\text{キ}}}$ である。
+
+  ただし、分数は既約分数で答えよ。
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イ, answer: "3" }
+  - { label: ウエ, answer: "-9" }
+  - { label: オ, answer: "2" }
+  - { label: カ, answer: "9" }
+  - { label: キ, answer: "2" }
+solution: |
+  (1) $F(x)=\displaystyle\int(3x^2-4x+1)\,dx=x^3-2x^2+x+C$。$F(1)=1-2+1+C=C=3$ より $F(x)=x^3-2x^2+x+3$。
+
+  (2) $$\int_{-1}^{2}(x^2-x-2)\,dx=\left[\frac{x^3}{3}-\frac{x^2}{2}-2x\right]_{-1}^{2}=\left(\frac{8}{3}-2-4\right)-\left(-\frac{1}{3}-\frac{1}{2}+2\right)=-\frac{9}{2}$$
+
+  (3) $x^2-x-2=(x+1)(x-2)$ なので、放物線は $x=-1,\ 2$ で $x$ 軸と交わり、$-1<x<2$ では $x$ 軸より下にある。よって面積は
+  $$S=\int_{-1}^{2}\{0-(x^2-x-2)\}\,dx=\frac{9}{2}$$
+  （1/6 公式でも $\dfrac{1}{6}\{2-(-1)\}^3=\dfrac{9}{2}$。）
+concepts: [cl-integral, cl-area]
+misconceptions: [mc-cl-area-sign]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.7, discrimination: 1.0 }
+author:
+  intent: |
+    同じ被積分関数・同じ区間で「定積分の値」と「面積」を続けて問い、符号付きの量と正の量を区別できるかをみる。(2) で $\dfrac{9}{2}$、(3) で $-\dfrac{9}{2}$ と答える（あるいは両方同じ符号にする）受験者を、空欄の符号で識別できる。(1) は積分定数を条件から決める基本操作の確認。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: ["数学II (5) ア(ウ) 不定積分と定積分", "数学II (5) イ(イ) 定積分を用いた面積"]
+  variations:
+    - 区間を $-1\leqq x\leqq 3$ にして、$x$ 軸の上下にまたがる部分の面積（分けて積分）を問う。

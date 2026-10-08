@@ -1,0 +1,61 @@
+id: m2-ep-s05
+level: school
+format: written
+title: 条件付き等式の証明
+stem: |
+  $a+b+c=0$ のとき、等式
+  $$a^2(b+c)+b^2(c+a)+c^2(a+b)+3abc=0$$
+  が成り立つことを証明せよ。
+modelAnswer: |
+  $a+b+c=0$ より
+  $$b+c=-a,\qquad c+a=-b,\qquad a+b=-c$$
+  であるから
+  $$(\text{左辺})=a^2(-a)+b^2(-b)+c^2(-c)+3abc=-(a^3+b^3+c^3)+3abc\quad\cdots\text{①}$$
+
+  ここで、$a+b=-c$ を用いると
+  $$a^3+b^3=(a+b)^3-3ab(a+b)=(-c)^3-3ab\cdot(-c)=-c^3+3abc$$
+  よって
+  $$a^3+b^3+c^3=3abc$$
+
+  これを①に代入すると
+  $$(\text{左辺})=-3abc+3abc=0$$
+  したがって、$a+b+c=0$ のとき与えられた等式は成り立つ。$\blacksquare$
+
+  （別解）左辺は条件を使わずに $(a+b+c)(ab+bc+ca)$ と因数分解できるので、$a+b+c=0$ のとき $0$ である。
+rubric:
+  - id: r1
+    criterion: 条件から $b+c=-a,\ c+a=-b,\ a+b=-c$（または $c=-a-b$）を導き、左辺に代入する方針を立てている
+    points: 2
+    keywords: ["b+c=-a", "c=-a-b"]
+  - id: r2
+    criterion: 左辺を $-(a^3+b^3+c^3)+3abc$ に整理している（別解では $(a+b+c)(ab+bc+ca)$ と因数分解している）
+    points: 2
+    keywords: ["a^3+b^3+c^3", "(a+b+c)(ab+bc+ca)"]
+  - id: r3
+    criterion: $a^3+b^3=(a+b)^3-3ab(a+b)$ などの3次の公式を正しく用いている（展開して直接計算してもよい）
+    points: 3
+    keywords: ["(a+b)^3-3ab(a+b)", "3abc"]
+  - id: r4
+    criterion: $a+b+c=0$ のとき $a^3+b^3+c^3=3abc$ であることを導いている
+    points: 2
+    keywords: ["a^3+b^3+c^3=3abc"]
+  - id: r5
+    criterion: 左辺が $0$ になることを示し、等式が成り立つと結論している
+    points: 1
+    keywords: ["=0", "成り立つ"]
+solution: |
+  条件付き等式は、条件を使って文字を減らすか、条件に現れる式のかたまりを作って代入する。ここでは $b+c=-a$ などの置き換えで左辺が $-(a^3+b^3+c^3)+3abc$ となり、$a+b+c=0$ のとき $a^3+b^3+c^3=3abc$ という有名な関係に帰着する。この関係は $a^3+b^3+c^3-3abc=(a+b+c)(a^2+b^2+c^2-ab-bc-ca)$ からも分かる。
+
+  証明では「左辺 $=\cdots=$ 右辺」の形で書き、結論の等式 $=0$ を出発点にして変形しないこと。
+concepts: [ep-proof-methods, ep-cubic-formulas]
+misconceptions: [mc-ep-cubic-formula]
+targetSeconds: 360
+irt: { expectedCorrectRate: 0.62, discrimination: 1.2 }
+author:
+  intent: |
+    条件付き等式の証明で、条件式を「かたまりの置き換え」として使えるかと、3次の公式 $a^3+b^3=(a+b)^3-3ab(a+b)$ を道具として運用できるかをみる。$c=-a-b$ を代入して力ずくで展開しても証明できるため、方針の選び方で答案の長さに差が出る。採点では、結論 $=0$ から逆向きに変形する答案を r5 で減点できるよう、論理の向きを明示させる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学II (1) イ(イ) 等式や不等式が成り立つことの証明, 数学II (1) ア(ア) 三次の乗法公式及び因数分解の公式]
+  variations:
+    - $a+b+c=0$ のとき $(a+b)(b+c)(c+a)+abc=0$ を証明させる。
+    - 比例式 $\dfrac{a}{b}=\dfrac{c}{d}$ のとき $\dfrac{a^2+c^2}{b^2+d^2}=\dfrac{ac}{bd}$ を、$=k$ とおく方法で証明させる。

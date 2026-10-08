@@ -1,0 +1,46 @@
+id: m2-tf-a04
+level: applied
+format: mark
+title: sinθ+cosθ の値から半角へ
+stem: |
+  $0<\theta<\pi$ とし、$\sin\theta+\cos\theta=\dfrac{1}{2}$ とする。
+
+  (1) $\sin\theta\cos\theta=-\dfrac{\boxed{\text{ア}}}{\boxed{\text{イ}}}$ である。
+
+  (2) $\sin\theta-\cos\theta=\dfrac{\sqrt{\boxed{\text{ウ}}}}{\boxed{\text{エ}}}$ である。
+
+  (3) $\cos 2\theta=-\dfrac{\sqrt{\boxed{\text{オ}}}}{\boxed{\text{カ}}}$ である。
+
+  (4) $\tan\dfrac{\theta}{2}=\dfrac{\boxed{\text{キ}}+\sqrt{\boxed{\text{ク}}}}{\boxed{\text{ケ}}}$ である。
+blanks:
+  - { label: ア, answer: "3" }
+  - { label: イ, answer: "8" }
+  - { label: ウ, answer: "7" }
+  - { label: エ, answer: "2" }
+  - { label: オ, answer: "7" }
+  - { label: カ, answer: "4" }
+  - { label: キ, answer: "2" }
+  - { label: ク, answer: "7" }
+  - { label: ケ, answer: "3" }
+solution: |
+  (1) 両辺を2乗して $1+2\sin\theta\cos\theta=\dfrac{1}{4}$、$\sin\theta\cos\theta=-\dfrac{3}{8}$。
+
+  (2) $(\sin\theta-\cos\theta)^2=1-2\sin\theta\cos\theta=\dfrac{7}{4}$。$0<\theta<\pi$ より $\sin\theta>0$ で、$\sin\theta\cos\theta<0$ だから $\cos\theta<0$。よって $\sin\theta-\cos\theta>0$ で、$\sin\theta-\cos\theta=\dfrac{\sqrt{7}}{2}$。
+
+  (3) $\cos 2\theta=(\cos\theta+\sin\theta)(\cos\theta-\sin\theta)=\dfrac{1}{2}\cdot\left(-\dfrac{\sqrt{7}}{2}\right)=-\dfrac{\sqrt{7}}{4}$。
+
+  (4) (2) と条件から $\sin\theta=\dfrac{1+\sqrt{7}}{4},\ \cos\theta=\dfrac{1-\sqrt{7}}{4}$。半角の公式 $\tan\dfrac{\theta}{2}=\dfrac{\sin\theta}{1+\cos\theta}$ より
+  $$\tan\frac{\theta}{2}=\frac{1+\sqrt{7}}{5-\sqrt{7}}=\frac{(1+\sqrt{7})(5+\sqrt{7})}{18}=\frac{12+6\sqrt{7}}{18}=\frac{2+\sqrt{7}}{3}$$
+  $0<\dfrac{\theta}{2}<\dfrac{\pi}{2}$ なので正の値になることとも合う。
+concepts: [tf-double-half, tf-definition]
+misconceptions: [mc-tf-half-angle-sign]
+targetSeconds: 360
+irt: { expectedCorrectRate: 0.45, discrimination: 1.2 }
+author:
+  intent: |
+    対称式の値から差 $\sin\theta-\cos\theta$ を求めるとき、角の範囲から符号を判定できるかをみる。(2) の符号を誤ると $\sin\theta=\dfrac{1-\sqrt{7}}{4}<0$ となって (4) が $\dfrac{2-\sqrt{7}}{3}$ にずれるので、(4) の空欄の形 $\boxed{\text{キ}}+\sqrt{\boxed{\text{ク}}}$ にはまらず、符号判断の誤りが後半で顕在化する設計にした。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学II (4) イ(ア) 2倍角・半角の公式]
+  variations:
+    - 条件を $\sin\theta-\cos\theta=\dfrac{1}{2}$ に変え、$\sin^3\theta+\cos^3\theta$ を求めさせる。
+    - $\tan\dfrac{\theta}{2}=t$ として $\sin\theta=\dfrac{2t}{1+t^2}$ を導かせ、(4) の値から $\sin\theta$ を逆算して検算させる。

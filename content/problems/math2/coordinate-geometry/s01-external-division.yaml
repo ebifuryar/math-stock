@@ -1,0 +1,45 @@
+id: m2-cg-s01
+level: school
+format: choice
+title: 外分点の座標
+stem: |
+  2点 $\mathrm{A}(1,\ 2),\ \mathrm{B}(5,\ -2)$ に対して、線分 $\mathrm{AB}$ を $3:1$ に外分する点の座標として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $(4,\ -1)$
+    misconception: mc-cg-division-sign
+    rationale: |
+      これは $3:1$ に **内分** する点 $\left(\dfrac{1\cdot 1+3\cdot 5}{4},\ \dfrac{1\cdot 2+3\cdot(-2)}{4}\right)$。外分では分母が $m-n=2$ になり、$n$ に負号が付く。
+  - id: "2"
+    text: $(7,\ -4)$
+    rationale: |
+      正解。$\left(\dfrac{-1\cdot 1+3\cdot 5}{3-1},\ \dfrac{-1\cdot 2+3\cdot(-2)}{3-1}\right)=(7,\ -4)$。
+  - id: "3"
+    text: $(8,\ -2)$
+    misconception: mc-cg-division-sign
+    rationale: |
+      分母だけ $m-n$ にして、分子を内分と同じ $nx_1+mx_2$ のまま $\left(\dfrac{1+15}{2},\ \dfrac{2-6}{2}\right)$ としている。分子の $-n$ の符号を落とした誤り。この点は直線 $\mathrm{AB}$ 上にすらない。
+  - id: "4"
+    text: $(-1,\ 4)$
+    misconception: mc-cg-division-sign
+    rationale: |
+      比を逆にして $1:3$ に外分する点を求めている。$\mathrm{AP}:\mathrm{PB}=3:1$ なら $\mathrm{AP}>\mathrm{PB}$ なので、外分点は $\mathrm{A}$ から見て $\mathrm{B}$ の先にある。
+answer: "2"
+solution: |
+  $m:n$ に外分する点は、内分点の公式で $n$ を $-n$ に置き換えて
+  $$\left(\frac{-nx_1+mx_2}{m-n},\ \frac{-ny_1+my_2}{m-n}\right)$$
+  $m=3,\ n=1$ を代入すると
+  $$\left(\frac{-1+15}{2},\ \frac{-2-6}{2}\right)=(7,\ -4)$$
+  検算: $\overrightarrow{\mathrm{AB}}=(4,\ -4)$ で、$(7,\ -4)$ は $\mathrm{A}$ から $\overrightarrow{\mathrm{AB}}$ の $\dfrac{3}{2}$ 倍進んだ点なので、$\mathrm{AP}:\mathrm{PB}=\dfrac{3}{2}:\dfrac{1}{2}=3:1$。
+concepts: [cg-distance-division]
+misconceptions: [mc-cg-division-sign]
+targetSeconds: 90
+irt: { expectedCorrectRate: 0.75, discrimination: 1.0 }
+author:
+  intent: |
+    外分点の公式を正確に運用できるかをみる。誤答は「内分と混同」「分子の符号を落とす」「比の順序を逆にする」の3つに1対1で対応させており、選ばれた選択肢から公式のどこで崩れたかを特定できる。③は直線 $\mathrm{AB}$ 上にない点で、図による検算の習慣があるかも識別できる。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学II (2) ア(ア) 座標を用いた点の表し方（内分点・外分点）]
+  variations:
+    - 外分点を与えて、もとの端点の座標を逆算させる。
+    - 3点 $\mathrm{A},\ \mathrm{B}$ と外分点を頂点とする三角形の重心を求めさせる。

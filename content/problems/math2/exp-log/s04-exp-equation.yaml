@@ -1,0 +1,35 @@
+id: m2-el-s04
+level: school
+format: mark
+title: 指数方程式と指数不等式
+stem: |
+  (1) 方程式 $4^x-3\cdot 2^{x+1}-16=0$ について、$t=2^x$ とおくと
+  $$t^2-\boxed{\text{ア}}\,t-\boxed{\text{イウ}}=0$$
+  となる。$t>0$ より $t=\boxed{\text{エ}}$ であり、方程式の解は $x=\boxed{\text{オ}}$ である。
+
+  (2) 不等式 $\left(\dfrac{1}{3}\right)^{x-1}>9$ の解は $x<\boxed{\text{カキ}}$ である。
+blanks:
+  - { label: ア, answer: "6" }
+  - { label: イウ, answer: "16" }
+  - { label: エ, answer: "8" }
+  - { label: オ, answer: "3" }
+  - { label: カキ, answer: "-1" }
+solution: |
+  (1) $4^x=(2^x)^2=t^2$、$2^{x+1}=2\cdot 2^x=2t$ なので
+  $$t^2-6t-16=0,\qquad (t-8)(t+2)=0$$
+  $t=2^x>0$ より $t=-2$ は不適で $t=8$。$2^x=2^3$ より $x=3$。
+
+  (2) $9=\left(\dfrac{1}{3}\right)^{-2}$ なので $\left(\dfrac{1}{3}\right)^{x-1}>\left(\dfrac{1}{3}\right)^{-2}$。底 $\dfrac{1}{3}$ は $1$ より小さいので不等号の向きが逆になり
+  $$x-1<-2,\qquad x<-1$$
+concepts: [el-substitution, el-exp-function]
+misconceptions: [mc-el-substitution-range, mc-el-base-less-than-one]
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.7, discrimination: 1.0 }
+author:
+  intent: |
+    (1) は $2^{x+1}=2\cdot 2^x$ の変形と、$t>0$ による解の取捨をみる。(2) は底が $1$ より小さい指数不等式で、不等号の向きを逆にできるかをみる。向きを変えないと $x>-1$ になるが、解答欄を「$x<$」に固定して、符号の誤りとして現れるようにしている。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学II (3) ア(イ) 指数関数の値の変化やグラフの特徴]
+  variations:
+    - $9^x-4\cdot 3^x+3<0$ のように、置き換えた後に2次不等式を解く形にする。
+    - 底を $3$ にそろえて解く方法と、底 $\dfrac{1}{3}$ のまま解く方法を比較させる。

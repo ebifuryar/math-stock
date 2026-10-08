@@ -1,0 +1,39 @@
+id: m2-cl-a03
+level: applied
+format: mark
+title: 定積分を含む関数の決定と面積
+stem: |
+  関数 $f(x)$ が、等式
+  $$f(x)=3x^2+x\int_0^1 f(t)\,dt-2$$
+  を満たしている。
+
+  (1) $\displaystyle\int_0^1 f(t)\,dt=k$ とおくと、$f(x)=3x^2+kx-2$ と表せる。これを $0\leqq x\leqq 1$ で積分した値が $k$ に等しいことから、$k$ についての1次方程式が得られる。これを解くと $k=\boxed{\text{アイ}}$ であり、
+  $$f(x)=3x^2-\boxed{\text{ウ}}\,x-\boxed{\text{エ}}$$
+  である。
+
+  (2) 放物線 $y=f(x)$ と直線 $y=4x-2$ の交点の $x$ 座標は $0$ と $\boxed{\text{オ}}$ であり、放物線 $y=f(x)$ と直線 $y=4x-2$ で囲まれた部分の面積は $\boxed{\text{カ}}$ である。
+blanks:
+  - { label: アイ, answer: "-2" }
+  - { label: ウ, answer: "2" }
+  - { label: エ, answer: "2" }
+  - { label: オ, answer: "2" }
+  - { label: カ, answer: "4" }
+solution: |
+  (1) $\displaystyle\int_0^1 f(t)\,dt$ は $x$ を含まない定数なので $k$ とおける。
+  $$k=\int_0^1(3t^2+kt-2)\,dt=1+\frac{k}{2}-2=\frac{k}{2}-1$$
+  よって $\dfrac{k}{2}=-1$ より $k=-2$、$f(x)=3x^2-2x-2$。
+
+  (2) $3x^2-2x-2=4x-2$ より $3x^2-6x=3x(x-2)=0$、$x=0,\ 2$。$0<x<2$ では直線が放物線の上にあるので
+  $$S=\int_0^2\{(4x-2)-(3x^2-2x-2)\}\,dx=\int_0^2(-3x^2+6x)\,dx=\Big[-x^3+3x^2\Big]_0^2=4$$
+  1/6 公式なら、差の $x^2$ の係数が $3$ なので $\dfrac{3}{6}(2-0)^3=4$。
+concepts: [cl-integral-function, cl-area]
+misconceptions: [mc-cl-integral-function-constant, mc-cl-one-sixth-coef]
+targetSeconds: 360
+irt: { expectedCorrectRate: 0.5, discrimination: 1.1 }
+author:
+  intent: |
+    共通テスト型の誘導問題。$\displaystyle\int_0^1 f(t)\,dt$ を定数とみて $k$ とおく発想を、誘導つきで正しく処理できるかをみる。$x\cdot k$ の項の積分で $\dfrac{1}{2}$ を付け忘れると $k$ が定まらず（$k=k-1$）、誤りに自分で気づけるかも問える。(2) では差の $x^2$ の係数が $3$ になるようにし、1/6 公式で係数を掛け忘れる受験者は $\dfrac{4}{3}$ と答えるので識別できる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学II (5) ア(ウ) 不定積分と定積分", "数学II (5) イ(イ) 定積分を用いた面積"]
+  variations:
+    - $f(x)=x^2+\displaystyle\int_0^1(x-t)f(t)\,dt$ のように、2つの定数 $\displaystyle\int_0^1 f(t)\,dt,\ \int_0^1 tf(t)\,dt$ をおく形にする。

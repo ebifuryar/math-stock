@@ -1,0 +1,44 @@
+id: m2-cl-s01
+level: school
+format: choice
+title: 平均変化率と微分係数
+stem: |
+  関数 $f(x)=2x^2-x$ について、$x$ が $1$ から $1+h$ まで変化するときの平均変化率と、$x=1$ における微分係数 $f'(1)$ の組として正しいものを、次の①〜④のうちから一つ選べ。ただし $h\neq 0$ とする。
+choices:
+  - id: "1"
+    text: 平均変化率 $3$、微分係数 $3$
+    misconception: mc-cl-average-vs-derivative
+    rationale: |
+      平均変化率を求める段階で $h\to 0$ の極限までとってしまっている。平均変化率は $h$ を含む式 $3+2h$ であり、その極限が微分係数 $3$ である。
+  - id: "2"
+    text: 平均変化率 $3+2h$、微分係数 $3$
+    rationale: |
+      正解。$f(1+h)-f(1)=\{2(1+h)^2-(1+h)\}-1=3h+2h^2$ を $h$ で割って $3+2h$。$h\to 0$ として $f'(1)=3$。
+  - id: "3"
+    text: 平均変化率 $3h+2h^2$、微分係数 $0$
+    misconception: mc-cl-average-vs-derivative
+    rationale: |
+      変化量 $f(1+h)-f(1)$ を $h$ で割り忘れている。平均変化率は「変化量 $\div$ $x$ の増分」であり、割り忘れたまま極限をとると $0$ になってしまう。
+  - id: "4"
+    text: 平均変化率 $2h-1$、微分係数 $-1$
+    misconception: mc-ne-expansion-error
+    rationale: |
+      $(1+h)^2=1+h^2$ と中間項 $2h$ を落として展開している。$f(1+h)=2(1+2h+h^2)-(1+h)=1+3h+2h^2$ が正しい。
+answer: "2"
+solution: |
+  $$f(1+h)=2(1+h)^2-(1+h)=1+3h+2h^2,\qquad f(1)=1$$
+  平均変化率は
+  $$\frac{f(1+h)-f(1)}{h}=\frac{3h+2h^2}{h}=3+2h$$
+  微分係数はその極限で $f'(1)=\displaystyle\lim_{h\to 0}(3+2h)=3$。導関数 $f'(x)=4x-1$ に $x=1$ を代入しても $3$ となり一致する。
+concepts: [cl-derivative]
+misconceptions: [mc-cl-average-vs-derivative, mc-ne-expansion-error]
+targetSeconds: 120
+irt: { expectedCorrectRate: 0.75, discrimination: 0.9 }
+author:
+  intent: |
+    平均変化率（$h$ を含む式）と微分係数（その極限値）を区別できているかをみる。①は極限を先取り、③は $h$ で割り忘れ、④は展開ミスと、つまずいた段階を選択肢で特定できるように設計している。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: ["数学II (5) ア(ア) 微分係数と導関数の意味"]
+  variations:
+    - 3次関数 $f(x)=x^3$ で同じことを問い、$(1+h)^3$ の展開を含めて難度を上げる。
+    - 「$x$ が $a$ から $b$ までの平均変化率が $x=c$ における微分係数に等しい $c$ を求めよ」（平均値の定理の素朴な形）。

@@ -1,0 +1,13 @@
+id: el-log-definition
+kind: definition
+title: 対数の定義と性質
+body: |
+  $a>0,\ a\neq 1,\ M>0$ のとき
+  $$a^p=M\iff p=\log_a M$$
+  $a$ を **底**、$M$ を **真数** という。真数は常に正（**真数条件**）。$\log_a 1=0$、$\log_a a=1$、$a^{\log_a M}=M$。
+
+  $M>0,\ N>0$、$r$ を実数とするとき
+  $$\log_a MN=\log_a M+\log_a N,\qquad \log_a\frac{M}{N}=\log_a M-\log_a N,\qquad \log_a M^r=r\log_a M$$
+
+  これは指数法則 $a^pa^q=a^{p+q}$ を言いかえたもの。**積** が **和** になる性質であり、$\log_a(M+N)$ を $\log_a M+\log_a N$ に分けることはできない。また $\log_a M\cdot\log_a N$ は $\log_a MN$ とは別物。
+prerequisites: [el-exponent-laws]

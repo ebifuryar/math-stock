@@ -1,0 +1,41 @@
+id: m2-cl-a01
+level: applied
+format: choice
+title: 3次関数が極値をもつ条件
+stem: |
+  $a$ を定数とする。関数 $f(x)=x^3+ax^2+3x+1$ が極大値と極小値をもつような $a$ の値の範囲として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $a\leqq -3,\ 3\leqq a$
+    misconception: mc-cl-extremum-condition-equality
+    rationale: |
+      $D\geqq 0$ としている。$a=\pm 3$ のとき $f'(x)=3(x\pm 1)^2\geqq 0$ となり、$f'(x)$ は符号を変えないので極値をもたない。
+  - id: "2"
+    text: $-3<a<3$
+    rationale: |
+      $\dfrac{D}{4}=a^2-9$ の不等式の向きを取り違えている。$-3<a<3$ は $f'(x)>0$ が常に成り立つ範囲で、$f(x)$ が単調増加になり極値をもたない。
+  - id: "3"
+    text: $a<-3,\ 3<a$
+    rationale: |
+      正解。$f'(x)=3x^2+2ax+3=0$ が異なる2つの実数解をもつ条件 $\dfrac{D}{4}=a^2-9>0$ から得られる。
+  - id: "4"
+    text: $a<-\sqrt{3},\ \sqrt{3}<a$
+    rationale: |
+      $f'(x)=3x^2+2ax+3$ の $x^2$ の係数 $3$ を落とし、$x^2+2ax+3$ の判別式 $a^2-3>0$ を解いている。判別式は $a^2-3\cdot 3$ である。
+answer: "3"
+solution: |
+  $f'(x)=3x^2+2ax+3$。$f(x)$ が極大値と極小値をもつ $\iff$ $f'(x)=0$ が異なる2つの実数解をもち、その前後で $f'(x)$ の符号が変わる $\iff$ 判別式 $D>0$。
+  $$\frac{D}{4}=a^2-3\cdot 3=(a+3)(a-3)>0$$
+  よって $a<-3,\ 3<a$。$a=\pm 3$ のときは $f'(x)=3(x\pm 1)^2\geqq 0$ で極値をもたないので、等号は含まない。
+concepts: [cl-extremum, qf-discriminant]
+misconceptions: [mc-cl-extremum-condition-equality]
+targetSeconds: 150
+irt: { expectedCorrectRate: 0.55, discrimination: 1.2 }
+author:
+  intent: |
+    「極値をもつ」を「$f'(x)$ が符号を変える」と捉え、$D>0$（等号なし）と翻訳できるかをみる。①は2次関数の「共有点をもつ $\iff D\geqq 0$」の機械的な流用、④は判別式の係数ミスで、どこでつまずいたかを分離できる。共通テストでは、この条件が誘導の途中の一段として問われることが多い。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学II (5) ア(イ) 関数の値の増減と極大・極小"]
+  variations:
+    - 「極値をもたない」条件（$-3\leqq a\leqq 3$）を問い、等号の扱いを反対側から確認させる。
+    - 「$x>0$ の範囲で極大値と極小値をもつ」として、$f'(x)=0$ の解の配置（数学Iの内容）と組み合わせる。

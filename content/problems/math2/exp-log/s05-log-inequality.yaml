@@ -1,0 +1,53 @@
+id: m2-el-s05
+level: school
+format: written
+title: 底が1より小さい対数不等式
+stem: |
+  不等式 $\log_{\frac{1}{2}}(x-1)+\log_{\frac{1}{2}}(x+2)\geqq -2$ を解け。
+modelAnswer: |
+  真数は正であるから $x-1>0$ かつ $x+2>0$、すなわち
+  $$x>1\quad\cdots\text{①}$$
+
+  左辺をまとめ、右辺も底 $\dfrac{1}{2}$ の対数で表すと、$-2=\log_{\frac{1}{2}}\left(\dfrac{1}{2}\right)^{-2}=\log_{\frac{1}{2}}4$ より
+  $$\log_{\frac{1}{2}}(x-1)(x+2)\geqq\log_{\frac{1}{2}}4$$
+
+  底 $\dfrac{1}{2}$ は $1$ より小さいので、真数の大小は逆になり
+  $$(x-1)(x+2)\leqq 4$$
+  $$x^2+x-6\leqq 0,\qquad (x+3)(x-2)\leqq 0,\qquad -3\leqq x\leqq 2\quad\cdots\text{②}$$
+
+  ①、② の共通部分をとって **$1<x\leqq 2$**。
+rubric:
+  - id: r1
+    criterion: 真数条件 $x-1>0,\ x+2>0$ から $x>1$ を求めている
+    points: 2
+    keywords: ["真数", "x>1"]
+  - id: r2
+    criterion: 左辺を $\log_{\frac{1}{2}}(x-1)(x+2)$ にまとめ、$-2=\log_{\frac{1}{2}}4$ と底をそろえている
+    points: 2
+    keywords: ["(x-1)(x+2)", "4"]
+  - id: r3
+    criterion: 底が $1$ より小さいことを根拠に不等号の向きを逆にし、$(x-1)(x+2)\leqq 4$ としている
+    points: 3
+    keywords: ["(x-1)(x+2)≦4", "(x-1)(x+2)<=4", "逆"]
+  - id: r4
+    criterion: 2次不等式を解いて $-3\leqq x\leqq 2$ を得ている
+    points: 1
+    keywords: ["-3≦x≦2", "-3<=x<=2"]
+  - id: r5
+    criterion: 真数条件との共通部分をとり $1<x\leqq 2$ と結論している
+    points: 2
+    keywords: ["1<x≦2", "1<x<=2"]
+solution: |
+  対数不等式は「真数条件 → 底をそろえて1つの対数にまとめる → 底と $1$ の大小で向きを決める → 真数条件と共通部分」の順で処理する。底 $\dfrac{1}{2}$ では $\log_{\frac{1}{2}}x$ が減少関数なので、真数の不等号は逆向きになる。真数条件を忘れると $-3\leqq x\leqq 2$、向きを変え忘れると $x\geqq 2$ と誤る。
+concepts: [el-log-function, el-log-definition]
+misconceptions: [mc-el-antilog-condition, mc-el-base-less-than-one]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.6, discrimination: 1.2 }
+author:
+  intent: |
+    真数条件と「底が1より小さいときの向きの反転」という、対数不等式で最も多い2つの誤りを1問で同時に見る。どちらか一方を落とすと答えが変わるように設計し、採点基準をそれぞれ独立させて、どこで誤ったかを部分点から読み取れるようにしている。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学II (3) ア(エ) 対数関数の値の変化やグラフの特徴]
+  variations:
+    - 等号にした方程式 $\log_{\frac{1}{2}}(x-1)+\log_{\frac{1}{2}}(x+2)=-2$ を解かせ、$x=-3$ を除く理由を書かせる。
+    - 底を $2$ に変換して解く方法でも同じ答えになることを確認させる。

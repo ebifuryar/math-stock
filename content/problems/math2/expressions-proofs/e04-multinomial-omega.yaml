@@ -1,0 +1,43 @@
+id: m2-ep-e04
+level: exam
+format: mark
+title: 多項定理と1の3乗根による係数の和
+stem: |
+  $(x^2+x+1)^{10}$ を展開して
+  $$(x^2+x+1)^{10}=a_0+a_1x+a_2x^2+\cdots+a_{20}x^{20}$$
+  と表す。
+
+  (1) $a_3=\boxed{\text{アイウ}}$ である。
+
+  (2) $a_0+a_1+a_2+\cdots+a_{20}=3^{\boxed{\text{エオ}}}$ である。
+
+  (3) $\omega$ を $x^3=1$ の虚数解の1つとする。$x=\omega$ を代入した値は $(\omega^2+\omega+1)^{10}=\boxed{\text{カ}}$ である。このことを利用すると
+  $$a_0+a_3+a_6+\cdots+a_{18}=3^{\boxed{\text{キ}}}$$
+  である。
+blanks:
+  - { label: アイウ, answer: "210" }
+  - { label: エオ, answer: "10" }
+  - { label: カ, answer: "0" }
+  - { label: キ, answer: "9" }
+solution: |
+  (1) 多項定理より、$(x^2)^p\,x^q\,1^r$（$p+q+r=10$）の係数は $\dfrac{10!}{p!\,q!\,r!}$。$x^3$ となるのは $2p+q=3$ のときで、$(p,\ q,\ r)=(0,\ 3,\ 7),\ (1,\ 1,\ 8)$ の2組。
+  $$a_3=\frac{10!}{0!\,3!\,7!}+\frac{10!}{1!\,1!\,8!}=120+90=210$$
+
+  (2) $x=1$ を代入して $a_0+a_1+\cdots+a_{20}=3^{10}$。
+
+  (3) $\omega^2+\omega+1=0$ なので値は $0$。$f(x)=(x^2+x+1)^{10}$ とすると $f(1)=3^{10},\ f(\omega)=0,\ f(\omega^2)=0$（$\omega^2$ も $x^2+x+1=0$ の解）。
+  $$f(1)+f(\omega)+f(\omega^2)=\sum_{k=0}^{20}a_k(1+\omega^k+\omega^{2k})$$
+  ここで $1+\omega^k+\omega^{2k}$ は、$k$ が3の倍数なら $3$、そうでなければ $1+\omega+\omega^2=0$ である。よって
+  $$3(a_0+a_3+\cdots+a_{18})=3^{10}+0+0\quad\text{より}\quad a_0+a_3+\cdots+a_{18}=3^9$$
+concepts: [ep-binomial-theorem, ep-factor-theorem]
+misconceptions: [mc-ep-binomial-coefficient]
+targetSeconds: 480
+irt: { expectedCorrectRate: 0.25, discrimination: 1.4 }
+author:
+  intent: |
+    多項定理で条件 $2p+q=3$ を満たす組をすべて数え上げられるか（片方の組だけで $120$ や $90$ とする誤りを検出）と、$\omega$ の性質 $1+\omega^k+\omega^{2k}$ が $k$ を3で割った余りで決まることを、係数の和の抽出に応用できるかをみる。(2) の $x=1$ の代入を誘導として置き、(3) で「1の3乗根を代入して足し合わせる」という入試頻出の発想につなげる構成にした。最後の値は (2) の $3$ 分の $1$ になるので、検算もしやすい。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学II (1) ア(ア) 三次の乗法公式及び因数分解の公式（二項定理）, 数学II (1) ア(オ) 簡単な高次方程式（1の3乗根）]
+  variations:
+    - $(1+x)^{12}$ で ${}_{12}\mathrm{C}_0+{}_{12}\mathrm{C}_3+\cdots+{}_{12}\mathrm{C}_{12}$ を、$\omega$ を用いて求めさせる（$(1+\omega)^{12}=1$ に注意）。
+    - $a_1+a_4+a_7+\cdots+a_{19}$ を、$f(1)+\omega^2f(\omega)+\omega f(\omega^2)$ を考えて求めさせる。

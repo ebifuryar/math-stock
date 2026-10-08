@@ -1,0 +1,43 @@
+id: m2-el-s03
+level: school
+format: mark
+title: 対数の計算と底の変換
+stem: |
+  次の値を求めよ。
+
+  (1) $\log_3 18+\log_3 6-2\log_3 2=\boxed{\text{ア}}$
+
+  (2) $\log_2 9\cdot\log_3 8=\boxed{\text{イ}}$
+
+  (3) $\log_4 8=\dfrac{\boxed{\text{ウ}}}{\boxed{\text{エ}}}$
+
+  (4) $\log_2\sqrt{\dfrac{1}{8}}=\dfrac{\boxed{\text{オカ}}}{\boxed{\text{キ}}}$
+blanks:
+  - { label: ア, answer: "3" }
+  - { label: イ, answer: "6" }
+  - { label: ウ, answer: "3" }
+  - { label: エ, answer: "2" }
+  - { label: オカ, answer: "-3" }
+  - { label: キ, answer: "2" }
+solution: |
+  (1) 真数をまとめると
+  $$\log_3\frac{18\cdot 6}{2^2}=\log_3 27=3$$
+
+  (2) 底を $2$ にそろえると $\log_3 8=\dfrac{\log_2 8}{\log_2 3}=\dfrac{3}{\log_2 3}$、$\log_2 9=2\log_2 3$ なので
+  $$\log_2 9\cdot\log_3 8=2\log_2 3\cdot\frac{3}{\log_2 3}=6$$
+
+  (3) $\log_4 8=\dfrac{\log_2 8}{\log_2 4}=\dfrac{3}{2}$
+
+  (4) $\sqrt{\dfrac{1}{8}}=2^{-\frac{3}{2}}$ なので $\log_2 2^{-\frac{3}{2}}=-\dfrac{3}{2}$
+concepts: [el-log-definition, el-change-of-base]
+misconceptions: [mc-el-log-sum, mc-el-change-of-base-inverted]
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.7, discrimination: 1.0 }
+author:
+  intent: |
+    対数の基本性質（積・商・累乗）と底の変換公式を正しく使えるかをみる。(3) は分母・分子を逆にすると $\dfrac{2}{3}$ になり、底の変換公式の向きを確かめているかを判定できる。(4) は負の値と根号を含み、$\log_a a^r=r$ の理解を確認する。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学II (3) ア(ウ) 対数の意味とその基本的な性質]
+  variations:
+    - $\log_2 3\cdot\log_3 5\cdot\log_5 8$ のように底の変換を連鎖させる。
+    - $2^{\log_2 5}$ や $9^{\log_3 2}$ のように $a^{\log_a M}=M$ を使う計算にする。

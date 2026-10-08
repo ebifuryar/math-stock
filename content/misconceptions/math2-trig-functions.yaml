@@ -1,0 +1,56 @@
+- id: mc-tf-degree-radian
+  title: 度数法と弧度法の混在
+  description: |
+    中心角が $150^\circ$ の扇形で、$l=r\theta$、$S=\dfrac{1}{2}r^2\theta$ に $\theta=150$ をそのまま代入する。あるいは「円全体の値 × 中心角」と考えて $S=\pi r^2\theta$ のように、円に対する割合 $\dfrac{\theta}{2\pi}$ でなく $\theta$ そのものを掛ける。
+  cause: |
+    $l=r\theta$ が「弧度の定義（弧の長さ ÷ 半径）」そのものであることを理解しておらず、公式を角の単位と切り離して覚えている。扇形の量が円全体の $\dfrac{\theta}{2\pi}$ 倍（度数なら $\dfrac{\theta}{360}$ 倍）であるという比の見方に戻って検算していない。
+  remedyConcepts: [tf-radian]
+- id: mc-tf-period-shift
+  title: 周期・平行移動量の読み違え
+  description: |
+    $y=2\sin\left(2\theta-\dfrac{\pi}{3}\right)$ の周期を $2\pi$ のまま答える、または平行移動量を $\theta$ の係数でくくらずに $\dfrac{\pi}{3}$ と読む。移動の向き（正負）を逆にする。
+  cause: |
+    「$\sin$ の周期は $2\pi$」「かっこの中の定数が移動量」という形だけの記憶で処理している。$\theta$ がいくら進めば $2\theta$ が $2\pi$ 進むか、$y$ の値が $y=2\sin 2\theta$ と同じになる $\theta$ はどれだけずれているか、という具体的な対応で確かめていない。
+  remedyConcepts: [tf-graph]
+- id: mc-tf-angle-range
+  title: 2θ や θ+α の範囲を変えずに解く
+  description: |
+    $0\leqq\theta<2\pi$ で $\sin\left(2\theta+\dfrac{\pi}{3}\right)=\dfrac{1}{2}$ を解くとき、$u=2\theta+\dfrac{\pi}{3}$ の範囲を $0\leqq u<2\pi$ のままにして解を落とす。合成した後に $\theta+\alpha$ の範囲を考えず、最大値・最小値を $\pm r$ とする。
+  cause: |
+    置き換えた角についての方程式・関数を、もとの $\theta$ と同じ範囲で考えてよいと思い込んでいる。「$\theta$ の範囲 → 新しい角の範囲 → その範囲で解く → $\theta$ に戻す」という手順を固定していない。
+  remedyConcepts: [tf-equation, tf-synthesis]
+- id: mc-tf-solution-count
+  title: 解の取りこぼし・解の個数の誤認
+  description: |
+    $\sin\theta=\sin\alpha$ の一般解を $\theta=\alpha+2n\pi$ だけにする、両辺を $\sin\theta$ で割って $\sin\theta=0$ の解を落とす、$\cos 2\theta=0$ の一般解の周期を $\dfrac{\pi}{2}$ でなく $\pi$ とする。また置き換えた $t=\sin\theta$ の値 $t=\pm 1$ にも $\theta$ が2つ対応すると数える、重解の $t$ を2つと数える。
+  cause: |
+    単位円上で「$y=k$ の直線と円の交点がいくつあるか」を図で確かめず、1つの値を求めたら終わりにしている。方程式を割り算で簡単にするときに「割る式が $0$ の場合」を別に調べる習慣がない。
+  remedyConcepts: [tf-equation, tf-substitution]
+- id: mc-tf-addition-sign
+  title: 加法定理の符号の誤り
+  description: |
+    $\cos(\alpha+\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta$ のように $\cos$ の加法定理の符号を誤る。また、象限の情報（$\beta$ が鈍角など）を無視して $\cos\beta,\ \sin\beta$ の符号を正にしたまま代入する。
+  cause: |
+    $\sin$ と $\cos$ の加法定理を同じ形で丸暗記しており、$\cos$ では符号が逆転する理由（単位円上の回転）を持っていない。$\beta=\alpha$ を代入して $\cos 2\alpha=\cos^2\alpha-\sin^2\alpha$ になるか、といった検算をしていない。
+  remedyConcepts: [tf-addition, tf-definition]
+- id: mc-tf-half-angle-sign
+  title: 2倍角・半角・対称式で符号の判断を誤る
+  description: |
+    $\sin\theta+\cos\theta=\dfrac{1}{2}$ から $\sin\theta-\cos\theta=\pm\dfrac{\sqrt{7}}{2}$ の符号を決めずに進む、$\cos\dfrac{\theta}{2}=\sqrt{\dfrac{1+\cos\theta}{2}}$ を $\dfrac{\theta}{2}$ の象限を確かめずに使う。$\cos 2\theta=1-2\sin^2\theta$ を $2\sin^2\theta-1$ とするなど、形を取り違える。
+  cause: |
+    2乗して得た値の平方根をとる段階で、もとの角の範囲（$\sin\theta\cos\theta<0$ なら $\sin\theta,\ \cos\theta$ は異符号、など）から符号を絞る手順が抜けている。公式を導出（$\cos 2\theta$ に $\sin^2\theta+\cos^2\theta=1$ を使う）と結びつけて覚えていない。
+  remedyConcepts: [tf-double-half, tf-definition]
+- id: mc-tf-synthesis-angle
+  title: 合成で角の決め方を誤る（atan の象限）
+  description: |
+    $a\sin\theta+b\cos\theta$ の合成で、$\tan\alpha=\dfrac{b}{a}$ の値だけから $\alpha$ を決めて象限を誤る（例: $-\sin\theta+\sqrt{3}\cos\theta$ を $2\sin\left(\theta-\dfrac{\pi}{3}\right)$ とする。点 $(-1,\ \sqrt{3})$ は第2象限なので正しくは $2\sin\left(\theta+\dfrac{2}{3}\pi\right)$）。また、符号を無視して $\sin\theta-\sqrt{3}\cos\theta=2\sin\left(\theta+\dfrac{\pi}{3}\right)$ としたり、$\tan\alpha=\dfrac{a}{b}$ と分子・分母を逆にして $2\sin\left(\theta-\dfrac{\pi}{6}\right)$ としたりする。
+  cause: |
+    合成の角を「$\tan^{-1}$ で求める角」として覚え、点 $(a,\ b)$（$\sin\theta$ の係数が $x$ 座標）を図示して象限を確かめていない。結果を加法定理で展開して元の式に戻るかという検算をしていない。
+  remedyConcepts: [tf-synthesis, tf-addition]
+- id: mc-tf-substitution-range
+  title: 置き換えた t の範囲を確認しない
+  description: |
+    $t=\sin\theta+\cos\theta$ や $t=\sin\theta$ とおいて2次関数にしたあと、$-\sqrt{2}\leqq t\leqq\sqrt{2}$ や $-1\leqq t\leqq 1$ を考えずに頂点や判別式だけで最大・最小や解の存在を判断する。
+  cause: |
+    置き換えを「式を簡単にする計算テクニック」としか見ておらず、$t$ が $\theta$ によって決まる量で、とりうる値に制限があることを意識していない。2次関数の「定義域つきの最大・最小」と結びついていない。
+  remedyConcepts: [tf-substitution, qf-max-min]

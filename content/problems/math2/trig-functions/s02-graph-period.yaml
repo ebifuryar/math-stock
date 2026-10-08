@@ -1,0 +1,45 @@
+id: m2-tf-s02
+level: school
+format: choice
+title: グラフの平行移動と周期
+stem: |
+  関数 $y=2\sin\left(2\theta-\dfrac{\pi}{3}\right)$ のグラフは、$y=2\sin 2\theta$ のグラフを $\theta$ 軸方向に $p$ だけ平行移動したものであり、その周期（正の周期のうち最小のもの）は $T$ である。$p,\ T$ の組として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $p=\dfrac{\pi}{3},\quad T=\pi$
+    misconception: mc-tf-period-shift
+    rationale: |
+      かっこの中の $\dfrac{\pi}{3}$ をそのまま移動量としている。$2\theta-\dfrac{\pi}{3}=2\left(\theta-\dfrac{\pi}{6}\right)$ と $\theta$ の係数でくくると、移動量は $\dfrac{\pi}{6}$。
+  - id: "2"
+    text: $p=\dfrac{\pi}{6},\quad T=\pi$
+    rationale: |
+      正解。$y=2\sin 2\left(\theta-\dfrac{\pi}{6}\right)$ なので $\theta$ 軸方向に $\dfrac{\pi}{6}$ の平行移動。周期は $\dfrac{2\pi}{2}=\pi$。
+  - id: "3"
+    text: $p=\dfrac{\pi}{6},\quad T=2\pi$
+    misconception: mc-tf-period-shift
+    rationale: |
+      移動量は正しいが、周期を $\sin$ の基本周期 $2\pi$ のまま答えている。$\theta$ が $\pi$ 進むと $2\theta$ が $2\pi$ 進むので、周期は $\pi$。
+  - id: "4"
+    text: $p=-\dfrac{\pi}{6},\quad T=\pi$
+    misconception: mc-tf-period-shift
+    rationale: |
+      移動の向きを逆にしている。$y=f(\theta-p)$ は $y=f(\theta)$ を $\theta$ 軸方向に $+p$ 移動したもの。$\theta=\dfrac{\pi}{6}$ で $2\theta-\dfrac{\pi}{3}=0$ となり、もとのグラフの $\theta=0$ の点が右へ $\dfrac{\pi}{6}$ ずれている。
+answer: "2"
+solution: |
+  $\theta$ の係数でくくると
+  $$y=2\sin\left(2\theta-\frac{\pi}{3}\right)=2\sin 2\left(\theta-\frac{\pi}{6}\right)$$
+  よって $y=2\sin 2\theta$ のグラフを $\theta$ 軸方向に $\dfrac{\pi}{6}$ だけ平行移動したもの。
+
+  周期は、$2\theta$ が $2\pi$ 進む $\theta$ の幅なので $T=\dfrac{2\pi}{2}=\pi$（平行移動では周期は変わらない）。
+concepts: [tf-graph]
+misconceptions: [mc-tf-period-shift]
+targetSeconds: 75
+irt: { expectedCorrectRate: 0.7, discrimination: 1.0 }
+author:
+  intent: |
+    $y=a\sin(k\theta-b)$ の形から、周期 $\dfrac{2\pi}{k}$ と平行移動量 $\dfrac{b}{k}$ を正しく読めるかをみる。誤答の3つは「くくらない」「周期を $2\pi$ のまま」「向きの逆転」というグラフの読み違いの典型にそれぞれ対応し、どこでつまずいたかを特定できる。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学II (4) ア(イ) 三角関数のグラフ（周期・平行移動）]
+  variations:
+    - $y=\cos\left(\dfrac{\theta}{2}+\dfrac{\pi}{4}\right)$ の周期と移動量を問う（係数が $1$ より小さい場合）。
+    - グラフの最大点・周期の情報から $a,\ k,\ b$ を決めさせる（逆向きの問題）。

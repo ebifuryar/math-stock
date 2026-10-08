@@ -1,0 +1,16 @@
+id: cg-point-line-distance
+kind: formula
+title: 点と直線の距離・直線に関する対称点
+body: |
+  点 $(x_1,y_1)$ と直線 $ax+by+c=0$ の距離 $d$ は
+  $$d=\frac{|ax_1+by_1+c|}{\sqrt{a^2+b^2}}$$
+
+  - 直線が $y=mx+n$ の形で与えられたら、まず $mx-y+n=0$ と **一般形に直してから** 使う。
+  - 分子は絶対値（距離は $0$ 以上）、分母は $\sqrt{a^2+b^2}$（根号を忘れない）。
+
+  **直線 $\ell$ に関する点 $\mathrm{A}$ の対称点 $\mathrm{B}$** は、次の2条件で決まる。
+  1. 直線 $\mathrm{AB}$ が $\ell$ に垂直（傾きの積が $-1$）
+  2. 線分 $\mathrm{AB}$ の中点が $\ell$ 上にある
+
+  $\mathrm{A}$ から $\ell$ に下ろした垂線の足 $\mathrm{H}$ は線分 $\mathrm{AB}$ の中点であり、$\mathrm{B}=2\mathrm{H}-\mathrm{A}$（座標ごとに $2\times\mathrm{H}-\mathrm{A}$）として求めてもよい。
+prerequisites: [cg-line-equation]

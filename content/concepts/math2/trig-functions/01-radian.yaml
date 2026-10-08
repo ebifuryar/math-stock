@@ -1,0 +1,14 @@
+id: tf-radian
+kind: definition
+title: 一般角と弧度法・扇形の弧長と面積
+body: |
+  **一般角** 動径 $\mathrm{OP}$ が始線 $\mathrm{O}x$ から回転した角を、反時計回りを正、時計回りを負として回転の量まで含めて表す。動径の位置が同じ角は $\theta+2n\pi$（$n$ は整数）と表せる。
+
+  **弧度法** 半径 $r$ の円で、長さ $r$ の弧に対する中心角を $1$ ラジアンとする。
+  $$180^\circ=\pi\ (\text{ラジアン}),\qquad 1^\circ=\frac{\pi}{180},\qquad 1\ (\text{ラジアン})=\frac{180^\circ}{\pi}$$
+  弧度は「弧の長さ ÷ 半径」という **比** なので単位をつけずに書く。
+
+  **扇形** 半径 $r$、中心角 $\theta$（**弧度**）の扇形の弧の長さ $l$ と面積 $S$ は
+  $$l=r\theta,\qquad S=\frac{1}{2}r^2\theta=\frac{1}{2}rl$$
+  これは円全体（中心角 $2\pi$、周 $2\pi r$、面積 $\pi r^2$）を $\dfrac{\theta}{2\pi}$ 倍したもの。中心角が度数で与えられたら、**先に弧度に直してから** 代入する。
+prerequisites: [tg-unit-circle]

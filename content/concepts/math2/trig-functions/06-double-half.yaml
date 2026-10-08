@@ -1,0 +1,16 @@
+id: tf-double-half
+kind: formula
+title: 2倍角・半角の公式（積和・和積は発展）
+body: |
+  **2倍角の公式** 加法定理で $\beta=\alpha$ とおくと
+  $$\sin 2\alpha=2\sin\alpha\cos\alpha,\qquad \cos 2\alpha=\cos^2\alpha-\sin^2\alpha=1-2\sin^2\alpha=2\cos^2\alpha-1$$
+  $\cos 2\alpha$ は3つの形を、方程式に合わせて（$\sin$ だけにそろえる、$\cos$ だけにそろえる）使い分ける。
+
+  **半角の公式（次数下げ）**
+  $$\sin^2\frac{\alpha}{2}=\frac{1-\cos\alpha}{2},\qquad \cos^2\frac{\alpha}{2}=\frac{1+\cos\alpha}{2},\qquad \tan\frac{\alpha}{2}=\frac{\sin\alpha}{1+\cos\alpha}$$
+  平方根をとるときは $\dfrac{\alpha}{2}$ の属する象限で符号を決める。$\sin^2\theta,\ \sin\theta\cos\theta,\ \cos^2\theta$ の2次の同次式は、次数下げで $\sin 2\theta,\ \cos 2\theta$ の1次式になる。
+
+  **（発展）積和・和積の公式**
+  $$\sin A+\sin B=2\sin\frac{A+B}{2}\cos\frac{A-B}{2},\qquad \sin\alpha\cos\beta=\frac{1}{2}\{\sin(\alpha+\beta)+\sin(\alpha-\beta)\}$$
+  $\sin\theta+\sin 3\theta$ のように角が等差に並ぶ和は、和積で積の形にすると因数がそろう。
+prerequisites: [tf-addition]

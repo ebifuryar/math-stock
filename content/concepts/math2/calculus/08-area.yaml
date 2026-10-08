@@ -1,0 +1,15 @@
+id: cl-area
+kind: formula
+title: 面積と 1/6 公式・1/12 公式
+body: |
+  $\alpha\leqq x\leqq\beta$ で $f(x)\geqq g(x)$ のとき、2曲線の間の面積は
+  $$S=\int_\alpha^\beta\{f(x)-g(x)\}\,dx\quad(\text{上}-\text{下})$$
+  上下が入れ替わる区間があれば分けて積分する。面積は常に正である。
+
+  **1/6 公式**: 放物線と直線（または2つの放物線）が $x=\alpha,\ \beta\ (\alpha<\beta)$ で交わるとき、間の部分の面積は、2式の差の $x^2$ の係数を $a$ として（$a$ を掛け忘れないこと）
+  $$\int_\alpha^\beta |a|(x-\alpha)(\beta-x)\,dx=\frac{|a|}{6}(\beta-\alpha)^3$$
+
+  **放物線と2本の接線**: $y=ax^2+\cdots$ の $x=\alpha,\ \beta$ における接線は $x=\dfrac{\alpha+\beta}{2}$ で交わり、放物線と2接線で囲まれる部分の面積は $\dfrac{|a|}{12}(\beta-\alpha)^3$（同じ2点を結ぶ弦との間の面積 $\dfrac{|a|}{6}(\beta-\alpha)^3$ の半分）。
+
+  **（発展）3次関数と接線**: $y=ax^3+\cdots$ が $x=\alpha$ で直線に接し、$x=\beta$ で交わるとき、間の面積は $\dfrac{|a|}{12}(\beta-\alpha)^4$。
+prerequisites: [cl-integral]

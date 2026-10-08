@@ -1,0 +1,35 @@
+id: m2-cl-s02
+level: school
+format: mark
+title: 曲線上の点における接線
+stem: |
+  曲線 $C:\ y=x^3-2x^2+1$ 上の点 $\mathrm{A}(2,\ 1)$ における接線を $\ell$ とする。
+
+  (1) $\ell$ の方程式は
+  $$y=\boxed{\text{ア}}\,x-\boxed{\text{イ}}$$
+  である。
+
+  (2) $C$ と $\ell$ の共有点のうち、$\mathrm{A}$ 以外の点の $x$ 座標は $\boxed{\text{ウエ}}$ である。
+blanks:
+  - { label: ア, answer: "4" }
+  - { label: イ, answer: "7" }
+  - { label: ウエ, answer: "-2" }
+solution: |
+  (1) $y'=3x^2-4x$ より、$x=2$ における接線の傾きは $3\cdot 4-8=4$。
+  $$y-1=4(x-2)\quad\text{すなわち}\quad y=4x-7$$
+
+  (2) $x^3-2x^2+1=4x-7$ より $x^3-2x^2-4x+8=0$。接点 $x=2$ は重解になるので $(x-2)^2$ を因数にもつ。
+  $$x^3-2x^2-4x+8=(x-2)^2(x+2)=0$$
+  よって $\mathrm{A}$ 以外の共有点の $x$ 座標は $-2$。
+concepts: [cl-tangent, cl-derivative]
+misconceptions: []
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.78, discrimination: 0.9 }
+author:
+  intent: |
+    接線の方程式を正しく立て、さらに「接点は重解になる」ことを使って3次方程式を因数分解できるかをみる。(2) は後の面積（1/12 公式）や「点を通る接線」の問題につながる基本操作であり、因数 $(x-2)^2$ を見抜けるかで理解の深さを識別する。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: ["数学II (5) ア(ア) 微分係数と導関数（接線の方程式）"]
+  variations:
+    - 接線ではなく法線（接点で接線に垂直な直線）の方程式を求めさせる。
+    - 共有点のうち $\mathrm{A}$ 以外の点における接線と $\ell$ の交点を求めさせる。

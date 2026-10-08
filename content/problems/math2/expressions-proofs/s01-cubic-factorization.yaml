@@ -1,0 +1,45 @@
+id: m2-ep-s01
+level: school
+format: choice
+title: 3次式の因数分解
+stem: |
+  $8x^3-27y^3$ を因数分解した結果として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $(2x-3y)(4x^2+12xy+9y^2)$
+    misconception: mc-ep-cubic-formula
+    rationale: |
+      2つめの因数を $(2x+3y)^2=4x^2+12xy+9y^2$ としている。$a^3-b^3=(a-b)(a^2+ab+b^2)$ の中央の項は $ab$ で、係数は $2$ ではなく $1$。
+  - id: "2"
+    text: $(2x-3y)(4x^2-6xy+9y^2)$
+    misconception: mc-ep-cubic-formula
+    rationale: |
+      中央の項の符号を誤っている。$(a-b)(a^2-ab+b^2)$ を展開すると $a^3-2a^2b+2ab^2-b^3$ となり、$a^3-b^3$ にならない。$a^3+b^3=(a+b)(a^2-ab+b^2)$ との混同。
+  - id: "3"
+    text: $(2x-3y)(4x^2+6xy+9y^2)$
+    rationale: |
+      正解。$8x^3-27y^3=(2x)^3-(3y)^3$ に $a^3-b^3=(a-b)(a^2+ab+b^2)$ を $a=2x,\ b=3y$ で用いる。
+  - id: "4"
+    text: $(2x-3y)^3$
+    misconception: mc-ep-cubic-formula
+    rationale: |
+      $a^3-b^3$ を $(a-b)^3$ と混同している。$(2x-3y)^3=8x^3-36x^2y+54xy^2-27y^3$ で、中間の項が残る。
+answer: "3"
+solution: |
+  $8x^3=(2x)^3,\ 27y^3=(3y)^3$ なので、$a=2x,\ b=3y$ として
+  $$a^3-b^3=(a-b)(a^2+ab+b^2)$$
+  を用いると
+  $$8x^3-27y^3=(2x-3y)\{(2x)^2+2x\cdot 3y+(3y)^2\}=(2x-3y)(4x^2+6xy+9y^2)$$
+  検算: 右辺を展開すると $8x^3+12x^2y+18xy^2-12x^2y-18xy^2-27y^3=8x^3-27y^3$。
+concepts: [ep-cubic-formulas]
+misconceptions: [mc-ep-cubic-formula]
+targetSeconds: 90
+irt: { expectedCorrectRate: 0.75, discrimination: 1.0 }
+author:
+  intent: |
+    $a^3-b^3$ の因数分解公式を正確に使えるかをみる。誤答はいずれも3次の公式の典型的な崩れ方（2乗の公式の $2ab$ を持ち込む・$a^3+b^3$ の符号と混同・$(a-b)^3$ と混同）に対応させた。$a=2x,\ b=3y$ と係数付きにしたことで、$(2x)^2=4x^2$ のような係数処理も同時に確認できる。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学II (1) ア(ア) 三次の乗法公式及び因数分解の公式]
+  variations:
+    - $x^6-64y^6$ を、$a^2-b^2$ と $a^3\pm b^3$ の両方を使って完全に因数分解させる。
+    - $(x+1)^3-8$ のように、ひとまとまりを1文字とみる形にする。

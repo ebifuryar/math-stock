@@ -1,0 +1,61 @@
+id: m2-cl-e05
+level: exam
+format: written
+title: 3次方程式が異なる3つの実数解をもつ条件
+stem: |
+  $a$ を実数の定数とする。$x$ の3次方程式
+  $$x^3-3ax+2=0$$
+  が異なる3つの実数解をもつような $a$ の値の範囲を求めよ。また、そのとき正の解はいくつあるか答えよ。
+modelAnswer: |
+  $f(x)=x^3-3ax+2$ とおく。方程式が異なる3つの実数解をもつ $\iff$ $y=f(x)$ のグラフが $x$ 軸と異なる3点で交わる $\iff$ $f(x)$ が極大値と極小値をもち、（極大値）$\times$（極小値）$<0$。
+
+  $f'(x)=3x^2-3a$。
+
+  $a\leqq 0$ のとき $f'(x)\geqq 0$ で $f(x)$ は増加するので、実数解は1個のみ。
+
+  $a>0$ のとき $f'(x)=3(x+\sqrt{a})(x-\sqrt{a})$ で、$x=-\sqrt{a}$ で極大、$x=\sqrt{a}$ で極小となる。
+  $$f(-\sqrt{a})=-a\sqrt{a}+3a\sqrt{a}+2=2+2a\sqrt{a},\qquad f(\sqrt{a})=2-2a\sqrt{a}$$
+  極大値 $2+2a\sqrt{a}>0$ は常に成り立つので、条件は極小値 $2-2a\sqrt{a}<0$、すなわち $a\sqrt{a}=(\sqrt{a})^3>1$。よって $\sqrt{a}>1$、すなわち $a>1$。
+
+  したがって求める範囲は **$a>1$**。
+
+  このとき $f(0)=2>0$ であり、$f(-\sqrt{a})>0,\ f(\sqrt{a})<0$、また $x\to-\infty$ で $f(x)\to-\infty$、$x\to\infty$ で $f(x)\to\infty$ である。中間値の考え（グラフが連続であること）により、3つの解は
+  $$x<-\sqrt{a},\qquad 0<x<\sqrt{a},\qquad \sqrt{a}<x$$
+  の範囲に1つずつある（$-\sqrt{a}<x<0$ では $f(x)$ は減少しながら $f(0)=2>0$ より大きいので解はない）。
+
+  よって **正の解は2個**（負の解は1個）。
+rubric:
+  - id: r1
+    criterion: 異なる3つの実数解をもつ条件を「極値をもち、極大値と極小値が異符号」と正しく言い換えている
+    points: 2
+    keywords: ["極大値", "極小値", "<0"]
+  - id: r2
+    criterion: $a\leqq 0$ では極値をもたず条件を満たさないことを、$a=0$ の場合も含めて示している（$a\geqq 0$ や $D\geqq 0$ としていない）
+    points: 2
+    keywords: ["a>0", "増加"]
+  - id: r3
+    criterion: 極値 $f(\pm\sqrt{a})=2\pm 2a\sqrt{a}$ を正しく計算している
+    points: 2
+    keywords: ["2+2a√a", "2-2a√a"]
+  - id: r4
+    criterion: 極小値 $<0$ から $a>1$ を導いている
+    points: 2
+    keywords: ["a>1"]
+  - id: r5
+    criterion: $f(0)=2>0$ などを根拠に、3つの解の位置を示して正の解が2個であると結論している
+    points: 2
+    keywords: ["f(0)=2", "2個"]
+solution: |
+  文字 $a$ が $x$ の1次の項に付いているので、定数分離よりも「3次関数の極値の積 $<0$」で処理するほうが整式の範囲で完結する。$a\leqq 0$ では単調増加で解は1個。$a>0$ では極大値 $2+2a\sqrt{a}$ が常に正なので、極小値 $2-2a\sqrt{a}<0$ から $a>1$。正の解の個数は $f(0)=2>0$ を手がかりに、解が $(-\infty,-\sqrt{a}),\ (0,\sqrt{a}),\ (\sqrt{a},\infty)$ に1つずつあることから2個。
+concepts: [cl-equation-inequality, cl-extremum]
+misconceptions: [mc-cl-extremum-condition-equality, mc-cl-stationary-not-extremum]
+targetSeconds: 720
+irt: { expectedCorrectRate: 0.3, discrimination: 1.4 }
+author:
+  intent: |
+    「異なる3つの実数解」を「極値をもち、極値が異符号」と翻訳し、極値をもつ条件（$a>0$、等号なし）を落とさずに論証できるかをみる。$a=0$ のとき $f'(0)=0$ だが極値ではないこと、極大値が常に正なので条件が極小値だけに帰着することを、答案として明確に書けるかで上位層を識別する。後半の正の解の個数は $f(0)$ の符号という追加の観察を要求し、グラフの概形を正確に描けているかを確かめる。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: ["数学II (5) イ(ア) 導関数を用いた関数の考察（方程式の実数解の個数）"]
+  variations:
+    - 「ちょうど2つの異なる実数解をもつ」とき（$a=1$、解は $x=1$（重解）と $x=-2$）を問う。
+    - $x^3-3ax+2=0$ の3つの解がすべて $-2$ 以上となる条件など、解の配置と組み合わせる。

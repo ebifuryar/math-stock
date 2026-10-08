@@ -1,0 +1,13 @@
+id: el-exp-function
+kind: property
+title: 指数関数のグラフと大小関係
+body: |
+  $a>0,\ a\neq 1$ のとき $y=a^x$ を $a$ を底とする **指数関数** という。グラフは点 $(0,\ 1)$ を通り、値域は $y>0$（$x$ 軸が漸近線）。
+
+  - $a>1$ のとき **増加関数**: $p<q\iff a^p<a^q$
+  - $0<a<1$ のとき **減少関数**: $p<q\iff a^p>a^q$
+
+  $y=\left(\frac{1}{a}\right)^x=a^{-x}$ のグラフは、$y=a^x$ のグラフと $y$ 軸に関して対称。
+
+  底をそろえれば、方程式 $a^p=a^q\iff p=q$ が使え、不等式は指数の大小に直せる。ただし底が $1$ より小さいときは **不等号の向きが逆** になる。
+prerequisites: [el-exponent-laws]

@@ -1,0 +1,58 @@
+id: m2-ep-a01
+level: applied
+format: choice
+title: 相加・相乗平均の等号成立条件
+stem: |
+  $a>0,\ b>0$ のとき、$\left(a+\dfrac{1}{b}\right)\left(b+\dfrac{4}{a}\right)$ の最小値を求める問題について、太郎さんは次のように解答した。
+
+  > 相加平均と相乗平均の関係から
+  > $$a+\frac{1}{b}\geqq 2\sqrt{\frac{a}{b}},\qquad b+\frac{4}{a}\geqq 2\sqrt{\frac{4b}{a}}$$
+  > 両辺は正であるから、辺々掛けて
+  > $$\left(a+\frac{1}{b}\right)\left(b+\frac{4}{a}\right)\geqq 4\sqrt{\frac{a}{b}\cdot\frac{4b}{a}}=8$$
+  > よって、最小値は $8$ である。
+
+  太郎さんの解答についての記述として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: 太郎さんの解答は正しく、最小値は $8$ である。
+    misconception: mc-ep-amgm-equality
+    rationale: |
+      不等式 $\geqq 8$ が成り立つことと、値 $8$ をとることを区別していない。1つめの等号は $ab=1$、2つめの等号は $ab=4$ のときで、同時には成り立たないので、式の値が $8$ になることはない。
+  - id: "2"
+    text: 不等式 $\left(a+\frac{1}{b}\right)\left(b+\frac{4}{a}\right)\geqq 8$ は成り立つが、等号が成り立つ $a,\ b$ が存在しないので、$8$ は最小値ではない。正しい最小値は $9$ である。
+    rationale: |
+      正解。展開すると $ab+\dfrac{4}{ab}+5\geqq 2\sqrt{4}+5=9$ で、等号は $ab=2$（例えば $a=1,\ b=2$）のとき成り立つ。
+  - id: "3"
+    text: 不等式どうしを辺々掛けることはできないので、$\left(a+\frac{1}{b}\right)\left(b+\frac{4}{a}\right)\geqq 8$ は成り立たない。正しい最小値は $9$ である。
+    rationale: |
+      最小値は合っているが、理由が誤り。$A\geqq B>0,\ C\geqq D>0$ ならば $AC\geqq BD$ なので、両辺が正の不等式は辺々掛けてよく、$\geqq 8$ 自体は正しい（最小値が $9$ なので当然 $8$ 以上でもある）。
+  - id: "4"
+    text: 2つの等号が同時には成り立たないので、この式には最小値が存在しない。
+    misconception: mc-ep-amgm-equality
+    rationale: |
+      「この方法では最小値が求まらない」ことを「最小値が存在しない」と取り違えている。別の変形（展開してから相加・相乗平均を用いる）をすれば、等号が成り立つ最小値 $9$ が得られる。
+answer: "2"
+solution: |
+  太郎さんの2つの不等式の等号成立条件は
+  - $a=\dfrac{1}{b}$ すなわち $ab=1$
+  - $b=\dfrac{4}{a}$ すなわち $ab=4$
+
+  で、同時には成り立たない。したがって $\geqq 8$ は正しいが、値 $8$ はとらない。
+
+  正しくは、先に展開する。
+  $$\left(a+\frac{1}{b}\right)\left(b+\frac{4}{a}\right)=ab+4+1+\frac{4}{ab}=ab+\frac{4}{ab}+5$$
+  $ab>0$ なので、相加平均と相乗平均の関係より
+  $$ab+\frac{4}{ab}+5\geqq 2\sqrt{ab\cdot\frac{4}{ab}}+5=9$$
+  等号は $ab=\dfrac{4}{ab}$ すなわち $ab=2$ のとき（例えば $a=1,\ b=2$ で値は $\dfrac{3}{2}\cdot 6=9$）。よって最小値は $9$。
+concepts: [ep-am-gm]
+misconceptions: [mc-ep-amgm-equality]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.5, discrimination: 1.3 }
+author:
+  intent: |
+    相加・相乗平均で最小値を求めるとき、等号成立の確認が必要な理由を理解しているかを、他者の解答の評価という共通テスト型の設定でみる。「$\geqq 8$ は正しいが最小値ではない」という、不等式の真偽と最小値の区別を問う選択肢②を正解とし、①（等号を確認しない）、③（不等式の性質の誤解）、④（求められないことと存在しないことの混同）で、どの段階の理解が欠けているかを分離する。最小値 $9$ を知っているだけでは③と②を区別できないようにしている。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学II (1) イ(イ) 等式や不等式が成り立つことの証明（相加平均と相乗平均の関係）]
+  variations:
+    - $x>0$ のとき $\left(x+\dfrac{1}{x}\right)\left(x+\dfrac{9}{x}\right)$ の最小値で、同じ誤りを扱う（正しい最小値は $16$）。
+    - $x>1$ のとき $x+\dfrac{4}{x-1}$ の最小値を、$x-1$ を1つのかたまりとみて求めさせる。

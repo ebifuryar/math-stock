@@ -1,0 +1,48 @@
+id: m2-cg-a01
+level: applied
+format: choice
+title: 直線に関する対称点
+stem: |
+  直線 $\ell:\ x+2y-5=0$ に関して、点 $\mathrm{A}(-2,\ -4)$ と対称な点 $\mathrm{B}$ の座標として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $(4,\ 8)$
+    rationale: |
+      正解。$\mathrm{AB}$ の傾きは $\dfrac{12}{6}=2$ で $\ell$（傾き $-\dfrac{1}{2}$）に垂直、中点 $(1,\ 2)$ は $\ell$ 上にある。
+  - id: "2"
+    text: $(1,\ 2)$
+    misconception: mc-cg-symmetric-point
+    rationale: |
+      これは $\mathrm{A}$ から $\ell$ に下ろした **垂線の足** $\mathrm{H}$。対称点は $\mathrm{H}$ をさらに同じだけ越えた点で、$\mathrm{H}$ は線分 $\mathrm{AB}$ の中点になる。
+  - id: "3"
+    text: $(-12,\ 16)$
+    misconception: mc-cg-perpendicular-slope
+    rationale: |
+      中点が $\ell$ 上にある条件は正しいが、$\mathrm{AB}$ の傾きを $-2$（$m_1m_2=1$）としている。実際、$(-2,\ -4)$ と $(-12,\ 16)$ を結ぶ直線の傾きは $-2$ で、$\ell$ に垂直ではない。
+  - id: "4"
+    text: $(-5,\ -10)$
+    misconception: mc-cg-symmetric-point
+    rationale: |
+      垂線の足 $\mathrm{H}(1,\ 2)$ と $\mathrm{A}$ の役割を逆にして、$\mathrm{A}$ が線分 $\mathrm{HB}$ の中点になる点 $2\mathrm{A}-\mathrm{H}$ を求めている。この点は $\ell$ に関して $\mathrm{A}$ と同じ側にある。
+answer: "1"
+solution: |
+  $\mathrm{B}(p,\ q)$ とおく。$\ell$ の傾きは $-\dfrac{1}{2}$。
+
+  1. $\mathrm{AB}\perp\ell$: $\dfrac{q+4}{p+2}\cdot\left(-\dfrac{1}{2}\right)=-1$ より $q+4=2(p+2)$、すなわち $q=2p$
+  2. 中点 $\left(\dfrac{p-2}{2},\ \dfrac{q-4}{2}\right)$ が $\ell$ 上: $\dfrac{p-2}{2}+(q-4)-5=0$、すなわち $p+2q=20$
+
+  $q=2p$ を代入して $5p=20$、$p=4,\ q=8$。よって $\mathrm{B}(4,\ 8)$。
+
+  （別解）垂線の足 $\mathrm{H}$ を先に求めると $\mathrm{H}(1,\ 2)$。$\mathrm{H}$ は $\mathrm{AB}$ の中点なので $\mathrm{B}=(2\cdot 1-(-2),\ 2\cdot 2-(-4))=(4,\ 8)$。
+concepts: [cg-point-line-distance, cg-line-equation]
+misconceptions: [mc-cg-symmetric-point, mc-cg-perpendicular-slope]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.55, discrimination: 1.2 }
+author:
+  intent: |
+    対称点の2条件（垂直・中点）を両方正しく立てられるかをみる。誤答②④は中点条件の取り違え、③は垂直条件の傾きの誤りに対応させ、2条件のどちらで崩れたかを分離できるようにした。③は「中点が $\ell$ 上」という条件だけは満たしているので、片方の条件だけの検算では誤答に気づけない。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学II (2) ア(イ) 直線の方程式・2直線の垂直]
+  variations:
+    - 「$\ell$ 上の点 $\mathrm{P}$ について $\mathrm{AP}+\mathrm{PC}$ を最小にする $\mathrm{P}$」を求めさせ、対称点の活用につなげる。
+    - 直線 $\ell$ に関して直線 $m$ と対称な直線の方程式を求めさせる。

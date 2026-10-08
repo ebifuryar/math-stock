@@ -1,0 +1,44 @@
+id: m2-el-s01
+level: school
+format: choice
+title: 有理数の指数の計算
+stem: |
+  $4^{\frac{3}{2}}\times 8^{-\frac{2}{3}}\div 2^{-2}$ の値として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\dfrac{1}{2}$
+    misconception: mc-el-exponent-law
+    rationale: |
+      $\div 2^{-2}$ を $\times 2^{-2}$ と同じに扱い、指数を $3+(-2)+(-2)=-1$ と足している。割り算では指数を **引く** ので $3+(-2)-(-2)=3$。
+  - id: "2"
+    text: $8$
+    rationale: |
+      正解。底を $2$ にそろえると $2^{3}\times 2^{-2}\div 2^{-2}=2^{3-2+2}=2^3=8$。
+  - id: "3"
+    text: $-128$
+    misconception: mc-el-exponent-meaning
+    rationale: |
+      $8^{-\frac{2}{3}}=-4$ と、負の指数を負の数にしている。$8^{-\frac{2}{3}}=\dfrac{1}{8^{\frac{2}{3}}}=\dfrac{1}{4}$ で正の数。
+  - id: "4"
+    text: $6$
+    misconception: mc-el-exponent-meaning
+    rationale: |
+      $4^{\frac{3}{2}}=4\times\dfrac{3}{2}=6$ と、分数の指数を掛け算にしている。$4^{\frac{3}{2}}=\left(\sqrt{4}\right)^3=8$。
+answer: "2"
+solution: |
+  $4=2^2,\ 8=2^3$ なので
+  $$4^{\frac{3}{2}}=2^{2\cdot\frac{3}{2}}=2^3,\qquad 8^{-\frac{2}{3}}=2^{3\cdot\left(-\frac{2}{3}\right)}=2^{-2}$$
+  よって
+  $$4^{\frac{3}{2}}\times 8^{-\frac{2}{3}}\div 2^{-2}=2^{3+(-2)-(-2)}=2^3=8$$
+concepts: [el-rational-exponent, el-exponent-laws]
+misconceptions: [mc-el-exponent-meaning, mc-el-exponent-law]
+targetSeconds: 90
+irt: { expectedCorrectRate: 0.75, discrimination: 1.0 }
+author:
+  intent: |
+    底を素数 $2$ にそろえて指数の計算に帰着できるかをみる。誤答は「負の指数を負の数とみる」「分数の指数を掛け算とみる」「負の指数での割り算の符号処理」の3つに対応させ、指数の拡張の定義と指数法則のどちらでつまずいたかを区別できるようにしている。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学II (3) ア(ア) 指数を正の整数から有理数へ拡張する意味]
+  variations:
+    - 累乗根の形 $\sqrt[3]{54}\times\sqrt[6]{4}\div\sqrt{2}$ で出題し、有理数の指数に直す過程を問う。
+    - 文字式 $\left(a^{\frac{2}{3}}\right)^{3}\times a^{-\frac{1}{2}}\div\sqrt[4]{a^2}\ (a>0)$ の簡単化にする。

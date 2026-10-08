@@ -1,0 +1,12 @@
+id: tf-synthesis
+kind: method
+title: 三角関数の合成
+body: |
+  $a\sin\theta+b\cos\theta$（$(a,\ b)\neq(0,\ 0)$）は
+  $$a\sin\theta+b\cos\theta=r\sin(\theta+\alpha),\qquad r=\sqrt{a^2+b^2},\quad \cos\alpha=\frac{a}{r},\quad \sin\alpha=\frac{b}{r}$$
+  と1つの $\sin$ にまとめられる（右辺を加法定理で展開して係数を比べれば確かめられる）。
+
+  **$\alpha$ の決め方** 座標平面上に点 $(a,\ b)$ をとり、動径 $\mathrm{O}(a,\ b)$ の表す角が $\alpha$。$\sin\theta$ の係数が $x$ 座標、$\cos\theta$ の係数が $y$ 座標である。$\tan\alpha=\dfrac{b}{a}$ だけで決めると、象限を誤る（例: $\sin\theta-\sqrt{3}\cos\theta$ は点 $(1,\ -\sqrt{3})$ が第4象限なので $\alpha=-\dfrac{\pi}{3}$）。
+
+  **最大・最小** $\theta$ の範囲から $\theta+\alpha$ の範囲を求め、その範囲での $\sin$ の最大・最小を単位円で読む。$\theta$ が全実数を動くときに限り、最大値 $r$、最小値 $-r$。
+prerequisites: [tf-addition, tf-graph]

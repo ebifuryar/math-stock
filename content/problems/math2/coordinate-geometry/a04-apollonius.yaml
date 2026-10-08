@@ -1,0 +1,38 @@
+id: m2-cg-a04
+level: applied
+format: mark
+title: アポロニウスの円と三角形の面積
+stem: |
+  座標平面上に2点 $\mathrm{A}(0,\ 0),\ \mathrm{B}(6,\ 0)$ がある。$\mathrm{AP}:\mathrm{PB}=2:1$ を満たす点 $\mathrm{P}$ の軌跡を $C$ とする。
+
+  (1) $C$ の方程式は
+  $$x^2+y^2-\boxed{\text{アイ}}x+\boxed{\text{ウエ}}=0$$
+  である。$C$ は中心 $(\boxed{\text{オ}},\ 0)$、半径 $\boxed{\text{カ}}$ の円である。
+
+  (2) 点 $\mathrm{P}$ が $C$ 上の点のうち $x$ 軸上にない点を動くとき、$\triangle\mathrm{PAB}$ の面積の最大値は $\boxed{\text{キク}}$ である。
+blanks:
+  - { label: アイ, answer: "16" }
+  - { label: ウエ, answer: "48" }
+  - { label: オ, answer: "8" }
+  - { label: カ, answer: "4" }
+  - { label: キク, answer: "12" }
+solution: |
+  (1) $\mathrm{P}(x,\ y)$ とする。$\mathrm{AP}:\mathrm{PB}=2:1$ より $\mathrm{AP}=2\mathrm{PB}$、両辺を2乗して $\mathrm{AP}^2=4\mathrm{PB}^2$。
+  $$x^2+y^2=4\{(x-6)^2+y^2\}\iff 3x^2+3y^2-48x+144=0\iff x^2+y^2-16x+48=0$$
+  $(x-8)^2+y^2=16$ より中心 $(8,\ 0)$、半径 $4$。逆に、この円上の点はすべて $\mathrm{AP}=2\mathrm{PB}$ を満たす（2乗する前後で同値）ので、軌跡はこの円全体。
+
+  （確認）$\mathrm{AB}$ を $2:1$ に内分する点 $(4,\ 0)$ と外分する点 $(12,\ 0)$ を直径の両端とする円になっている。
+
+  (2) 底辺 $\mathrm{AB}=6$ は一定なので、高さ $|y|$ が最大のときに面積が最大。$C$ 上で $|y|$ の最大値は半径 $4$（点 $(8,\ \pm 4)$）だから、最大値は $\dfrac{1}{2}\cdot 6\cdot 4=12$。
+concepts: [cg-locus, cg-circle-equation, cg-distance-division]
+misconceptions: []
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.55, discrimination: 1.2 }
+author:
+  intent: |
+    距離の比の条件を2乗して式にし、円の方程式として読み取れるか（アポロニウスの円）をみる。$\mathrm{AP}:\mathrm{PB}=2:1$ を $2\mathrm{AP}=\mathrm{PB}$ と逆に立てると中心 $(-2,\ 0)$ の円になり、(1) の空欄で識別できる。(2) は軌跡を図形として活用する一歩目。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学II (2) ア(エ) 軌跡]
+  variations:
+    - $\angle\mathrm{APB}$ の二等分線が $\mathrm{AB}$ と交わる点が常に $(4,\ 0)$ であることを示させ、角の二等分線の定理と結びつける。
+    - 比を $k:1$ として、$k$ を変えたときの円の中心・半径の変化を考察させる。

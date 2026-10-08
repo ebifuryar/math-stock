@@ -1,0 +1,13 @@
+id: tf-substitution
+kind: method
+title: 置き換えによる最大・最小（t の範囲）
+body: |
+  三角関数の式を1つの文字の2次関数に直して、最大・最小や解の個数を調べる。
+
+  - $\cos 2\theta$ と $\sin\theta$ を含む式は $\cos 2\theta=1-2\sin^2\theta$ で $t=\sin\theta$ の2次式に。範囲は $-1\leqq t\leqq 1$（$\theta$ の範囲が制限されていればそれに応じて狭まる）。
+  - $\sin\theta\cos\theta$ と $\sin\theta+\cos\theta$ を含む式は $t=\sin\theta+\cos\theta$ とおく。$t^2=1+2\sin\theta\cos\theta$ より $\sin\theta\cos\theta=\dfrac{t^2-1}{2}$、$\sin 2\theta=t^2-1$。合成により $t=\sqrt{2}\sin\left(\theta+\dfrac{\pi}{4}\right)$ なので $-\sqrt{2}\leqq t\leqq\sqrt{2}$。
+
+  **注意点**
+  1. 置き換えたら、**必ず $t$ の範囲を求めてから** 2次関数の最大・最小を考える（軸が範囲の外にあれば端点で最大・最小）。
+  2. 方程式の解の個数では、$t$ の1つの値に対応する $\theta$ の個数を数える。$t=\sin\theta$ で $0\leqq\theta<2\pi$ なら、$-1<t<1$ に $\theta$ は2個、$t=\pm 1$ に1個。
+prerequisites: [tf-synthesis, tf-double-half, qf-max-min]

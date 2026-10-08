@@ -1,0 +1,14 @@
+id: tf-equation
+kind: method
+title: 三角関数を含む方程式・不等式と一般解
+body: |
+  **$0\leqq\theta<2\pi$ で解く** 単位円で考える。$\sin\theta=k$ は直線 $y=k$、$\cos\theta=k$ は直線 $x=k$ との交点。$-1<k<1$ なら解は **2つ**、$k=\pm 1$ なら1つ。不等式は条件を満たす弧を図で確かめて読む。
+
+  **一般解**（$n$ は整数）
+  $$\sin\theta=\sin\alpha\iff\theta=\alpha+2n\pi\ \text{または}\ \theta=\pi-\alpha+2n\pi$$
+  $$\cos\theta=\cos\alpha\iff\theta=\pm\alpha+2n\pi,\qquad \tan\theta=\tan\alpha\iff\theta=\alpha+n\pi$$
+
+  **角が $2\theta$ や $2\theta+\alpha$ のとき** $u=2\theta+\alpha$ とおき、まず $u$ の範囲を求める。$0\leqq\theta<2\pi$ なら $\alpha\leqq u<4\pi+\alpha$ で、単位円を **2周** するので解の個数も増える。$u$ の範囲で解いてから $\theta=\dfrac{u-\alpha}{2}$ に戻す。
+
+  **2次式・積の形** $\sin\theta$ などで割らずに、因数分解して「積 $=0$」や各因数の符号で考える。割ると、割った式が $0$ になる解を落とす。
+prerequisites: [tf-definition, tf-graph]

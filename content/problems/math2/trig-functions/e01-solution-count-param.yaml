@@ -1,0 +1,49 @@
+id: m2-tf-e01
+level: exam
+format: choice
+title: 解がちょうど4個となる定数の範囲
+stem: |
+  $a$ を定数とする。$\theta$ についての方程式
+  $$\cos 2\theta-2\sin\theta=a\qquad(0\leqq\theta<2\pi)$$
+  が異なる4個の解をもつような $a$ の値の範囲として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $1<a\leqq\dfrac{3}{2}$
+    misconception: mc-tf-solution-count
+    rationale: |
+      $a=\dfrac{3}{2}$ のとき $t=\sin\theta=-\dfrac{1}{2}$ は重解で、$t$ の値は1つだけ。対応する $\theta$ は $\dfrac{7}{6}\pi,\ \dfrac{11}{6}\pi$ の2個なので、解は4個ではなく2個。重解を2つの $t$ と数えている。
+  - id: "2"
+    text: $1\leqq a<\dfrac{3}{2}$
+    misconception: mc-tf-solution-count
+    rationale: |
+      $a=1$ のとき $t=0,\ -1$。$t=0$ には $\theta=0,\ \pi$ の2個が対応するが、$t=-1$ には $\theta=\dfrac{3}{2}\pi$ の1個しか対応しないので、解は3個。$t=\pm 1$ にも $\theta$ が2個あると数えている。
+  - id: "3"
+    text: $a<\dfrac{3}{2}$
+    misconception: mc-tf-substitution-range
+    rationale: |
+      $t$ の2次方程式 $-2t^2-2t+1=a$ が異なる2実数解をもつ条件（判別式 $>0$）だけで判断し、$-1\leqq t\leqq 1$ を考えていない。たとえば $a=0$ では解の一方 $t=\dfrac{-1-\sqrt{3}}{2}$ が $-1$ より小さく、$\theta$ は2個しかない。
+  - id: "4"
+    text: $1<a<\dfrac{3}{2}$
+    rationale: |
+      正解。$y=-2t^2-2t+1\ (-1\leqq t\leqq 1)$ と直線 $y=a$ が $-1<t<1$ の範囲で異なる2点で交わる条件で、$1<a<\dfrac{3}{2}$。
+answer: "4"
+solution: |
+  $t=\sin\theta$ とおくと $\cos 2\theta=1-2t^2$ より、方程式は
+  $$-2t^2-2t+1=a,\qquad -1\leqq t\leqq 1$$
+  $g(t)=-2t^2-2t+1=-2\left(t+\dfrac{1}{2}\right)^2+\dfrac{3}{2}$ とおくと $g(-1)=1,\ g(1)=-3$。
+
+  $0\leqq\theta<2\pi$ では、$-1<t<1$ を満たす $t$ の1つの値に $\theta$ は2個、$t=\pm 1$ には1個対応する。$\theta$ が4個となるのは、$y=g(t)$ と $y=a$ が $-1<t<1$ で異なる2点で交わるときで、グラフ（頂点 $\left(-\dfrac{1}{2},\ \dfrac{3}{2}\right)$、左端 $(-1,\ 1)$）より
+  $$1<a<\frac{3}{2}$$
+  参考: $a=\dfrac{3}{2}$ で2個、$a=1$ で3個、$-3<a<1$ で2個、$a=-3$ で1個。
+concepts: [tf-substitution, tf-equation]
+misconceptions: [mc-tf-solution-count, mc-tf-substitution-range]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.35, discrimination: 1.3 }
+author:
+  intent: |
+    置き換え $t=\sin\theta$ による解の個数の問題で、(i) $t$ の範囲、(ii) $t$ と $\theta$ の対応の個数（$t=\pm 1$ は1個）、(iii) 重解の扱い、の3点をすべて正しく処理できるかをみる。誤答3つはそれぞれ1点だけを誤ったときの答えにしてあり、境界の扱いの精度で上位層を識別する。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学II (4) イ(ア) 2倍角の公式, 数学II (4) ア(イ) 三角関数を含む方程式]
+  variations:
+    - 解の個数が3個となる $a$ を答えさせ、端点 $t=-1$ が効く場合を問う。
+    - 解の個数を $a$ のすべての値について分類させる記述問題にする。

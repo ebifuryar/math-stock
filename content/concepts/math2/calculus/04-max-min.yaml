@@ -1,0 +1,8 @@
+id: cl-max-min
+kind: method
+title: 区間における最大・最小
+body: |
+  区間 $\alpha\leqq x\leqq\beta$ における $f(x)$ の最大値・最小値は、**区間内の極値と、両端の値 $f(\alpha),\ f(\beta)$** をすべて比べて決める。極大値が最大値とは限らず、端点の値のほうが大きいこともある。
+
+  文字定数を含むときは、極値をとる $x$ が区間に入るかどうか、また極値と端点の値の大小がどこで入れ替わるかで場合分けする。境界は $f(\text{極値をとる点})=f(\text{端点})$ となる値を方程式で求める。
+prerequisites: [cl-extremum, qf-max-min]

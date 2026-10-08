@@ -1,0 +1,51 @@
+id: m2-cg-e02
+level: exam
+format: choice
+title: 円と直線で囲まれた領域での最大・最小
+stem: |
+  $x,\ y$ が2つの不等式
+  $$x^2+y^2\leqq 10,\qquad y\leqq 2x$$
+  を同時に満たすとき、$x+y$ の最大値と最小値の組として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: 最大値 $2\sqrt{5}$、最小値 $-3\sqrt{2}$
+    rationale: |
+      正解。最大は直線 $x+y=k$ が円弧に接する点 $(\sqrt{5},\ \sqrt{5})$、最小は円と直線 $y=2x$ の交点 $(-\sqrt{2},\ -2\sqrt{2})$ でとる。
+  - id: "2"
+    text: 最大値 $3\sqrt{2}$、最小値 $-3\sqrt{2}$
+    misconception: mc-cg-extremum-vertex-only
+    rationale: |
+      円と直線 $y=2x$ の2つの交点（領域の「角」）での値だけを比べている。境界の円弧上で直線 $x+y=k$ が接する点 $(\sqrt{5},\ \sqrt{5})$ が領域に含まれ、そこで $2\sqrt{5}>3\sqrt{2}$ となる。
+  - id: "3"
+    text: 最大値 $2\sqrt{5}$、最小値 $-2\sqrt{5}$
+    misconception: mc-cg-extremum-vertex-only
+    rationale: |
+      円 $x^2+y^2\leqq 10$ だけを考え、接点 $(-\sqrt{5},\ -\sqrt{5})$ が領域に含まれるかを確かめていない。$-\sqrt{5}\leqq 2\cdot(-\sqrt{5})$ は成り立たないので、この点は $y\leqq 2x$ を満たさない。
+  - id: "4"
+    text: 最大値 $3\sqrt{2}$、最小値 $-2\sqrt{5}$
+    misconception: mc-cg-region-boundary
+    rationale: |
+      $y\leqq 2x$ を直線 $y=2x$ の **上側** と取り違え、$x^2+y^2\leqq 10,\ y\geqq 2x$ の領域での最大・最小を求めている。
+answer: "1"
+solution: |
+  領域 $D$ は、円 $x^2+y^2=10$ の周および内部のうち、直線 $y=2x$ の下側（境界を含む）の部分。円と直線 $y=2x$ の交点は $5x^2=10$ より $(\sqrt{2},\ 2\sqrt{2}),\ (-\sqrt{2},\ -2\sqrt{2})$。
+
+  $x+y=k$ とおくと、直線 $y=-x+k$ が $D$ と共有点をもつような $k$ の範囲を考える。
+
+  **最大**: 直線が円に接するのは、中心との距離 $\dfrac{|k|}{\sqrt{2}}=\sqrt{10}$ より $k=\pm 2\sqrt{5}$。$k=2\sqrt{5}$ のときの接点は $(\sqrt{5},\ \sqrt{5})$ で、$\sqrt{5}\leqq 2\sqrt{5}$ より $D$ に含まれる。よって最大値 $2\sqrt{5}$。
+
+  **最小**: $k=-2\sqrt{5}$ のときの接点 $(-\sqrt{5},\ -\sqrt{5})$ は $-\sqrt{5}>-2\sqrt{5}$ なので $y\leqq 2x$ を満たさず、$D$ に含まれない。円弧のうち $D$ に含まれる部分は、点 $(\sqrt{2},\ 2\sqrt{2})$ から時計回りに $(\sqrt{5},\ \sqrt{5})$、$(\sqrt{10},\ 0)$、$(0,\ -\sqrt{10})$ を経て $(-\sqrt{2},\ -2\sqrt{2})$ に至る部分で、この上で $x+y$ は $(\sqrt{5},\ \sqrt{5})$ を過ぎると減少し続ける。直線 $y=-x+k$ を下げていくと、最後に $D$ と共有点をもつのは点 $(-\sqrt{2},\ -2\sqrt{2})$。よって最小値 $-\sqrt{2}-2\sqrt{2}=-3\sqrt{2}$。
+
+  （$2\sqrt{5}=\sqrt{20}>\sqrt{18}=3\sqrt{2}$ に注意。）
+concepts: [cg-region, cg-circle-line]
+misconceptions: [mc-cg-extremum-vertex-only, mc-cg-region-boundary]
+targetSeconds: 420
+irt: { expectedCorrectRate: 0.35, discrimination: 1.4 }
+author:
+  intent: |
+    境界に円弧を含む領域で、1次式の最大・最小の候補（接点・円弧の端点）を正しく選べるかをみる。最大は接点、最小は端点となるように設計し、「頂点だけ調べる」（②）、「接点を無条件に採用する」（③）、「領域の上下を誤る」（④）の3種の誤りを、最大値・最小値の組合せで判別できるようにした。$2\sqrt{5}$ と $3\sqrt{2}$ が近い値なので、大小比較を怠ると誤答を選びやすい。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学II (2) ア(エ) 不等式の表す領域, 数学II (2) イ(イ) 領域を用いた最大・最小]
+  variations:
+    - 目的関数を $x^2+y^2-2y$ や $\dfrac{y+4}{x}$ に変え、円や傾きの図形的な意味で考えさせる。
+    - 直線を $y\leqq ax$ とし、最小値が接点でとられるような $a$ の範囲を求めさせる。

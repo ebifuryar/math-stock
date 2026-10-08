@@ -1,0 +1,56 @@
+- id: mc-cl-average-vs-derivative
+  title: 平均変化率と微分係数の混同
+  description: |
+    $x$ が $a$ から $a+h$ まで変化するときの平均変化率を問われて、極限をとった後の値 $f'(a)$ を答える。あるいは $f(a+h)-f(a)$（変化量）を $h$ で割り忘れる。
+  cause: |
+    平均変化率（2点を結ぶ直線の傾き、$h$ を含む式）と微分係数（その $h\to 0$ の極限、接線の傾き）を、図形的な意味で区別していない。公式 $f'(a)$ だけを覚え、定義の式を計算する経験が少ない。
+  remedyConcepts: [cl-derivative]
+- id: mc-cl-stationary-not-extremum
+  title: f'(a)=0 だけで極値と判断する
+  description: |
+    $f'(a)=0$ となる $x=a$ があれば、そこで必ず極値をとると判断する。例: $f'(x)=3(x-1)^2$ のとき「$x=1$ で極小値をとる」とする。
+  cause: |
+    「極値 $\Rightarrow f'(a)=0$」を逆向きにも成り立つと思っている。増減表を書かずに $f'(x)=0$ の解だけで結論を出しており、前後での $f'(x)$ の符号の変化を確認していない。
+  remedyConcepts: [cl-extremum]
+- id: mc-cl-extremum-condition-equality
+  title: 極値をもつ条件を D≧0 とする
+  description: |
+    3次関数が極値をもつ条件を、$f'(x)=0$ の判別式について $D\geqq 0$ とする（正しくは $D>0$）。
+  cause: |
+    「$f'(x)=0$ が実数解をもつ」ことと「$f'(x)$ が符号を変える」ことを同一視している。$D=0$ のとき $f'(x)$ は重解の前後で符号を変えないので極値をもたないことを、グラフで確かめていない。2次方程式の「共有点をもつ $\iff D\geqq 0$」の機械的な流用でもある。
+  remedyConcepts: [cl-extremum, qf-discriminant]
+- id: mc-cl-tangent-external-point
+  title: 「点における接線」と「点を通る接線」の混同
+  description: |
+    曲線外の点 $(p,\ q)$ から引く接線を、傾き $f'(p)$ で点 $(p,\ q)$ を通る直線として求める。また曲線上の点 $\mathrm{P}$ を「通る」接線を、$\mathrm{P}$ における接線1本だけと考え、別の点で接して $\mathrm{P}$ を通る接線を見落とす。
+  cause: |
+    接線の公式 $y-f(a)=f'(a)(x-a)$ の $a$ が「接点の $x$ 座標」であることを意識せず、与えられた点の座標を機械的に代入している。接点を文字 $t$ でおく手順が身についていない。
+  remedyConcepts: [cl-tangent]
+- id: mc-cl-endpoint-missing
+  title: 区間の最大・最小で端点を比較しない
+  description: |
+    区間における最大値・最小値を、極大値・極小値だけで決めてしまい、区間の端の値と比べない。例: $-1\leqq x\leqq 4$ で極小値 $1$ を最小値とするが、実際は左端の値 $-15$ が最小。
+  cause: |
+    「最大値 = 極大値、最小値 = 極小値」と思い込んでいる。極値は「その近くで」最大・最小という局所的な概念であり、区間全体では端点と比べる必要があることを、グラフで確かめていない。文字定数を含む問題では、端点と極値の大小が入れ替わる場合分けが抜ける。
+  remedyConcepts: [cl-max-min]
+- id: mc-cl-integral-function-constant
+  title: 定積分で表された関数の定数部分の扱いの誤り
+  description: |
+    $\displaystyle\int_0^1 f(t)\,dt$（$x$ を含まない定数）を $x$ の関数とみなして微分したり、$f(1)-f(0)$ に置き換えたりする。あるいは $\displaystyle\frac{d}{dx}\int_a^x f(t)\,dt$ を $f(x)-f(a)$ とし、定数である下端の項まで残してしまう。
+  cause: |
+    「積分区間の端に $x$ があるか」で定数か関数かが決まることを区別していない。$\displaystyle\int_a^x f(t)\,dt=F(x)-F(a)$ の $F(a)$ が定数で、微分すると $0$ になることを確認していない。
+  remedyConcepts: [cl-integral-function, cl-integral]
+- id: mc-cl-area-sign
+  title: 面積で上下を入れ替えて負の値にする
+  description: |
+    面積を求めるのに「下 $-$ 上」で積分して負の値を答える。また、$x$ 軸より下にある部分の定積分（負の値）をそのまま面積とする。逆に、定積分の値を求める問題で面積（正の値）を答える。
+  cause: |
+    定積分は符号付きの量、面積は常に正の量であることを区別していない。グラフの上下関係を確認せずに式を立てている。
+  remedyConcepts: [cl-area, cl-integral]
+- id: mc-cl-one-sixth-coef
+  title: 面積公式（1/6 公式など）の誤用
+  description: |
+    1/6 公式で、2式の差の $x^2$ の係数 $|a|$ を掛け忘れる。また、放物線と2本の接線で囲まれた部分のように、公式が使えない図形にそのまま $\dfrac{1}{6}(\beta-\alpha)^3$ を当てはめる。
+  cause: |
+    公式を $\displaystyle\int_\alpha^\beta(x-\alpha)(x-\beta)\,dx=-\frac{1}{6}(\beta-\alpha)^3$ の形で導いたことがなく、「どの2つのグラフの間の面積か」「被積分関数の係数は何か」を確認せずに数字だけを当てはめている。
+  remedyConcepts: [cl-area]

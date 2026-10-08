@@ -1,0 +1,47 @@
+id: m2-el-s02
+level: school
+format: choice
+title: 底が1より小さい累乗の大小
+stem: |
+  3つの数
+  $$a=\sqrt[3]{\frac{1}{4}},\qquad b=\left(\frac{1}{2}\right)^{0.6},\qquad c=\frac{1}{\sqrt[4]{8}}$$
+  の大小関係として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $c<a<b$
+    rationale: |
+      正解。底 $\dfrac{1}{2}$ でそろえると指数は $a:\dfrac{2}{3},\ b:0.6,\ c:\dfrac{3}{4}$。底が $1$ より小さいので、指数が大きいほど値は小さい。
+  - id: "2"
+    text: $b<a<c$
+    misconception: mc-el-base-less-than-one
+    rationale: |
+      指数の大小 $0.6<\dfrac{2}{3}<\dfrac{3}{4}$ をそのまま値の大小にしている。$y=\left(\frac{1}{2}\right)^x$ は減少関数なので、大小は逆になる。
+  - id: "3"
+    text: $a<b<c$
+    misconception: mc-el-exponent-meaning
+    rationale: |
+      $c=\dfrac{1}{\sqrt[4]{8}}$ を $\left(\dfrac{1}{2}\right)^{-\frac{3}{4}}$（$1$ より大きい数）としている。$\dfrac{1}{\sqrt[4]{8}}=\dfrac{1}{2^{\frac{3}{4}}}=\left(\dfrac{1}{2}\right)^{\frac{3}{4}}$ で、$1$ より小さい。
+  - id: "4"
+    text: $a<c<b$
+    misconception: mc-el-exponent-meaning
+    rationale: |
+      $a=\sqrt[3]{\dfrac{1}{4}}$ を $\left(\dfrac{1}{2}\right)^{\frac{3}{2}}$ と、累乗根の指数と累乗の指数を逆にしている。$\sqrt[3]{\left(\frac{1}{2}\right)^2}=\left(\dfrac{1}{2}\right)^{\frac{2}{3}}$。
+answer: "1"
+solution: |
+  すべて底 $\dfrac{1}{2}$ の累乗で表す。
+  $$a=\left(\frac{1}{2}\right)^{\frac{2}{3}},\qquad b=\left(\frac{1}{2}\right)^{\frac{3}{5}},\qquad c=\frac{1}{2^{\frac{3}{4}}}=\left(\frac{1}{2}\right)^{\frac{3}{4}}$$
+  指数は $\dfrac{3}{5}<\dfrac{2}{3}<\dfrac{3}{4}$（通分すると $\dfrac{36}{60}<\dfrac{40}{60}<\dfrac{45}{60}$）。
+
+  $y=\left(\dfrac{1}{2}\right)^x$ は減少関数なので、指数が大きいほど値は小さい。よって $c<a<b$。
+concepts: [el-exp-function, el-rational-exponent]
+misconceptions: [mc-el-base-less-than-one, mc-el-exponent-meaning]
+targetSeconds: 120
+irt: { expectedCorrectRate: 0.65, discrimination: 1.1 }
+author:
+  intent: |
+    累乗根・小数の指数・逆数という異なる見かけの数を、同じ底の累乗にそろえられるかと、底が $1$ より小さいときに大小が逆転することを理解しているかを同時にみる。誤答②は増減の取り違え、③④は指数への書き換えの誤りに対応させ、どちらの段階でつまずいたかを分離できる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学II (3) ア(イ) 指数関数の値の変化やグラフの特徴]
+  variations:
+    - 底を $2$ にそろえる版（$\sqrt[3]{4},\ 2^{0.6},\ \sqrt[4]{8}$）と比べ、底によって答えが逆になることを確認させる。
+    - '底がそろわない数（例として $\sqrt{2},\ \sqrt[3]{3},\ \sqrt[6]{6}$）を6乗して比べる問題にする。'

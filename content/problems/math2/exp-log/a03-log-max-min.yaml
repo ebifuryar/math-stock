@@ -1,0 +1,45 @@
+id: m2-el-a03
+level: applied
+format: mark
+title: 対数を含む関数の最大・最小
+stem: |
+  関数
+  $$y=\left(\log_2\frac{x}{2}\right)\left(\log_2\frac{x}{8}\right)\qquad (1\leqq x\leqq 16)$$
+  を考える。
+
+  $t=\log_2 x$ とおくと、$t$ のとりうる値の範囲は $\boxed{\text{ア}}\leqq t\leqq\boxed{\text{イ}}$ であり、
+  $$y=t^2-\boxed{\text{ウ}}\,t+\boxed{\text{エ}}$$
+  と表される。
+
+  したがって、$y$ は $x=\boxed{\text{オ}}$ のとき最小値 $\boxed{\text{カキ}}$ をとる。また、$y$ の最大値は $\boxed{\text{ク}}$ であり、最大値をとるのは $x=\boxed{\text{ケ}}$ と $x=\boxed{\text{コサ}}$ のときである。ただし $\boxed{\text{ケ}}<\boxed{\text{コサ}}$ とする。
+blanks:
+  - { label: ア, answer: "0" }
+  - { label: イ, answer: "4" }
+  - { label: ウ, answer: "4" }
+  - { label: エ, answer: "3" }
+  - { label: オ, answer: "4" }
+  - { label: カキ, answer: "-1" }
+  - { label: ク, answer: "3" }
+  - { label: ケ, answer: "1" }
+  - { label: コサ, answer: "16" }
+solution: |
+  $\log_2 x$ は増加関数なので、$1\leqq x\leqq 16$ より $\log_2 1\leqq t\leqq\log_2 16$、すなわち $0\leqq t\leqq 4$。
+
+  $\log_2\dfrac{x}{2}=t-1$、$\log_2\dfrac{x}{8}=t-3$ なので
+  $$y=(t-1)(t-3)=t^2-4t+3=(t-2)^2-1$$
+
+  $0\leqq t\leqq 4$ において
+  - 最小値: $t=2$、すなわち $x=4$ のとき $-1$
+  - 最大値: 軸 $t=2$ は区間の中央なので両端で最大。$t=0,\ 4$、すなわち $x=1,\ 16$ のとき $3$
+concepts: [el-substitution, el-log-definition, qf-max-min]
+misconceptions: [mc-el-substitution-range, mc-el-log-sum]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.5, discrimination: 1.2 }
+author:
+  intent: |
+    $\log_2\dfrac{x}{2}=\log_2 x-1$ という商の性質を使って $t$ の2次関数に直し、$x$ の範囲から $t$ の範囲を求めて最大・最小を処理できるかをみる。軸が区間の中央にくるよう設計し、最大値を両端の2点でとることに気づけるか（ケ・コサ）まで問う。$t$ の範囲を考えないと最大値が求まらない。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学II (3) ア(エ) 対数関数の値の変化やグラフの特徴, 数学II (3) イ(イ) 指数関数及び対数関数の式とグラフの関係]
+  variations:
+    - 定義域を $1\leqq x\leqq 32$ に変え、最大値をとる点が1つになる場合と比べる。
+    - $y=(\log_2 x)^2-\log_2 x^4+3$ のように、$\log_2 x^4=4\log_2 x$ の変形を要する形で出題する。

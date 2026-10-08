@@ -1,0 +1,55 @@
+id: m2-cl-a04
+level: applied
+format: mark
+title: 3次関数のグラフと接線・面積（共通テスト型）
+stem: |
+  曲線 $C:\ y=x^3-3x$ を考える。$C$ は原点に関して対称で、$x=-1$ で極大値 $2$、$x=1$ で極小値 $-2$ をとり、$x$ 軸とは $x=-\sqrt{3},\ 0,\ \sqrt{3}$ で交わる。
+
+  (1) $C$ 上の点 $(t,\ t^3-3t)$ における接線の方程式は
+  $$y=\left(\boxed{\text{ア}}\,t^2-\boxed{\text{イ}}\right)x-\boxed{\text{ウ}}\,t^3$$
+  である。
+
+  (2) 点 $\mathrm{P}(2,\ 2)$ は $C$ 上にある。$\mathrm{P}$ における $C$ の接線は
+  $$y=\boxed{\text{エ}}\,x-\boxed{\text{オカ}}$$
+  である。
+
+  一方、$\mathrm{P}$ を通る $C$ の接線は、$\mathrm{P}$ における接線のほかにもう1本ある。(1) の接線が $\mathrm{P}$ を通るための $t$ の条件を整理すると
+  $$t^3-3t^2+4=0$$
+  となり、$t=2$ 以外の解から、その接線は直線 $y=\boxed{\text{キ}}$ で、接点の $x$ 座標は $\boxed{\text{クケ}}$ であることがわかる。
+
+  (3) (2) で求めた、$\mathrm{P}$ における接線ではないほうの接線と $C$ で囲まれた部分の面積は $\dfrac{\boxed{\text{コサ}}}{\boxed{\text{シ}}}$ である。ただし、分数は既約分数で答えよ。
+blanks:
+  - { label: ア, answer: "3" }
+  - { label: イ, answer: "3" }
+  - { label: ウ, answer: "2" }
+  - { label: エ, answer: "9" }
+  - { label: オカ, answer: "16" }
+  - { label: キ, answer: "2" }
+  - { label: クケ, answer: "-1" }
+  - { label: コサ, answer: "27" }
+  - { label: シ, answer: "4" }
+solution: |
+  (1) $y'=3x^2-3$ より
+  $$y=(3t^2-3)(x-t)+t^3-3t=(3t^2-3)x-2t^3$$
+
+  (2) $2^3-3\cdot 2=2$ なので $\mathrm{P}$ は $C$ 上にある。$t=2$ を代入して $y=9x-16$。
+
+  (1) の接線が $(2,\ 2)$ を通る条件は $2=2(3t^2-3)-2t^3$、整理して $t^3-3t^2+4=0$。$t=2$ が解であり（接点 $\mathrm{P}$ 自身）、しかも $\mathrm{P}$ における接線は $\mathrm{P}$ で $C$ と接するので $t=2$ は重解になる。
+  $$t^3-3t^2+4=(t-2)^2(t+1)=0$$
+  $t=-1$ のとき接線は $y=(3-3)x+2=2$。これは極大点 $(-1,\ 2)$ における水平な接線であり、$\mathrm{P}(2,\ 2)$ を通る。
+
+  (3) $x^3-3x=2$ より $x^3-3x-2=(x+1)^2(x-2)=0$。$-1\leqq x\leqq 2$ で直線 $y=2$ は $C$ の上側にあるので
+  $$S=\int_{-1}^{2}\{2-(x^3-3x)\}\,dx=\left[2x-\frac{x^4}{4}+\frac{3x^2}{2}\right]_{-1}^{2}=6-\left(-\frac{3}{4}\right)=\frac{27}{4}$$
+  （発展: 3次関数と接線の 1/12 公式 $\dfrac{1}{12}\{2-(-1)\}^4=\dfrac{81}{12}=\dfrac{27}{4}$ と一致する。）
+concepts: [cl-tangent, cl-area, cl-extremum]
+misconceptions: [mc-cl-tangent-external-point, mc-cl-area-sign, mc-cl-one-sixth-coef]
+targetSeconds: 600
+irt: { expectedCorrectRate: 0.45, discrimination: 1.3 }
+author:
+  intent: |
+    共通テスト「3次関数のグラフと接線・面積」型の誘導問題。(1) で接点を $t$ とおいた接線の一般形を作らせ、(2) で「点 $\mathrm{P}$ における接線」と「$\mathrm{P}$ を通る接線」の違いに気づけるかをみる。「$\mathrm{P}$ を通る接線は $\mathrm{P}$ における接線だけ」と考える受験者はキ以降に進めない。$t$ の3次方程式で $t=2$ が重解になる理由（接点の重複）を理解していれば因数分解が速い。(3) は3次関数と接線で囲まれた面積で、1/6 公式を誤用すると $\dfrac{9}{2}$ となり識別できる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学II (5) ア(ア) 微分係数と導関数（接線の方程式）", "数学II (5) イ(イ) 定積分を用いた面積"]
+  variations:
+    - 点 $(2,\ b)$ を通る接線が3本引ける $b$ の範囲を問う（入試型、定数分離に帰着）。
+    - $\mathrm{P}$ における接線 $y=9x-16$ と $C$ で囲まれた部分の面積（$\dfrac{1}{12}\cdot 6^4=108$）を問う。

@@ -1,0 +1,74 @@
+id: m2-tf-e05
+level: exam
+format: written
+title: t=sinθ+cosθ による最小値と定数の決定
+stem: |
+  $a$ を実数の定数とし、$\theta$ の関数
+  $$f(\theta)=\sin 2\theta+a(\sin\theta+\cos\theta)$$
+  を考える。ただし $\theta$ はすべての実数を動く。
+
+  (1) $t=\sin\theta+\cos\theta$ とおく。$t$ のとりうる値の範囲を求め、$f(\theta)$ を $t$ と $a$ で表せ。
+
+  (2) $f(\theta)$ の最小値 $m(a)$ を求めよ。
+
+  (3) $m(a)=-2$ となるような $a$ の値をすべて求めよ。
+modelAnswer: |
+  (1) $t=\sin\theta+\cos\theta=\sqrt{2}\sin\left(\theta+\dfrac{\pi}{4}\right)$ であり、$\theta$ はすべての実数を動くので
+  $$-\sqrt{2}\leqq t\leqq\sqrt{2}$$
+  また $t^2=1+2\sin\theta\cos\theta=1+\sin 2\theta$ より $\sin 2\theta=t^2-1$。よって
+  $$f(\theta)=t^2+at-1=\left(t+\frac{a}{2}\right)^2-\frac{a^2}{4}-1$$
+  これを $g(t)$ とおく。
+
+  (2) $m(a)$ は $-\sqrt{2}\leqq t\leqq\sqrt{2}$ における $g(t)$ の最小値である。$g$ のグラフは下に凸で、軸は $t=-\dfrac{a}{2}$。
+
+  (i) $-\dfrac{a}{2}<-\sqrt{2}$ すなわち $a>2\sqrt{2}$ のとき、$g$ は区間で増加するので
+  $m(a)=g(-\sqrt{2})=1-\sqrt{2}a$。
+
+  (ii) $-\sqrt{2}\leqq-\dfrac{a}{2}\leqq\sqrt{2}$ すなわち $-2\sqrt{2}\leqq a\leqq 2\sqrt{2}$ のとき
+  $m(a)=g\left(-\dfrac{a}{2}\right)=-\dfrac{a^2}{4}-1$。
+
+  (iii) $-\dfrac{a}{2}>\sqrt{2}$ すなわち $a<-2\sqrt{2}$ のとき、$g$ は区間で減少するので
+  $m(a)=g(\sqrt{2})=1+\sqrt{2}a$。
+
+  (3) (ii) の場合: $-\dfrac{a^2}{4}-1=-2$ より $a^2=4$、$a=\pm 2$。$|\pm 2|=2\leqq 2\sqrt{2}$ なので条件を満たす。
+
+  (i) の場合: $1-\sqrt{2}a=-2$ より $a=\dfrac{3}{\sqrt{2}}=\dfrac{3\sqrt{2}}{2}$。しかし $\dfrac{3\sqrt{2}}{2}<2\sqrt{2}$ なので $a>2\sqrt{2}$ を満たさず不適。
+
+  (iii) の場合: $1+\sqrt{2}a=-2$ より $a=-\dfrac{3\sqrt{2}}{2}$。$-\dfrac{3\sqrt{2}}{2}>-2\sqrt{2}$ なので $a<-2\sqrt{2}$ を満たさず不適。
+
+  **答え: (1) $-\sqrt{2}\leqq t\leqq\sqrt{2}$、$f(\theta)=t^2+at-1$ (2) $a<-2\sqrt{2}$ のとき $m(a)=1+\sqrt{2}a$、$-2\sqrt{2}\leqq a\leqq 2\sqrt{2}$ のとき $m(a)=-\dfrac{a^2}{4}-1$、$a>2\sqrt{2}$ のとき $m(a)=1-\sqrt{2}a$ (3) $a=\pm 2$**
+rubric:
+  - id: r1
+    criterion: 合成により $-\sqrt{2}\leqq t\leqq\sqrt{2}$ を根拠とともに示し、$\sin 2\theta=t^2-1$ から $f(\theta)=t^2+at-1$ を得ている
+    points: 2
+    keywords: ["t^2-1", "√2sin(θ+π/4)"]
+  - id: r2
+    criterion: 軸 $t=-\dfrac{a}{2}$ と区間 $-\sqrt{2}\leqq t\leqq\sqrt{2}$ の位置関係で、$a>2\sqrt{2},\ -2\sqrt{2}\leqq a\leqq 2\sqrt{2},\ a<-2\sqrt{2}$ の3通りに場合分けしている
+    points: 2
+    keywords: ["2√2", "-a/2"]
+  - id: r3
+    criterion: 各場合の最小値 $1-\sqrt{2}a,\ -\dfrac{a^2}{4}-1,\ 1+\sqrt{2}a$ を正しく求めている
+    points: 3
+    keywords: ["1-√2a", "-a^2/4-1", "1+√2a"]
+  - id: r4
+    criterion: (3) で各場合の方程式を解き、場合の条件と照合して $a=\pm\dfrac{3\sqrt{2}}{2}$ を不適として除いている
+    points: 2
+    keywords: ["不適", "3√2/2"]
+  - id: r5
+    criterion: (3) の結論 $a=\pm 2$ を答えている
+    points: 1
+    keywords: ["a=±2"]
+solution: |
+  $\sin 2\theta$ と $\sin\theta+\cos\theta$ を含むので $t=\sin\theta+\cos\theta$ とおき、$\sin 2\theta=t^2-1$ で $t$ の2次関数にする。**$t$ の範囲 $-\sqrt{2}\leqq t\leqq\sqrt{2}$** が定義域になり、下に凸の放物線の最小値は軸の位置で3通りに分かれる。(3) では、各場合で得た $a$ がその場合の条件を満たすかを必ず確かめる（$a=\pm\dfrac{3\sqrt{2}}{2}$ は不適）。
+concepts: [tf-substitution, tf-synthesis, qf-max-min]
+misconceptions: [mc-tf-substitution-range]
+targetSeconds: 720
+irt: { expectedCorrectRate: 0.25, discrimination: 1.4 }
+author:
+  intent: |
+    置き換え $t=\sin\theta+\cos\theta$ の定義域を合成で正しく求め、文字定数を含む2次関数の区間での最小値を場合分けできるかをみる。(3) は「場合分けの条件との照合」を答案として書けるかを評価するために置いた。$t$ の範囲を無視すると最小値が常に $-\dfrac{a^2}{4}-1$ となり、(3) で不適な解を排除する根拠を失うので、置き換えの範囲意識を記述の中で識別できる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学II (4) イ(ア) 三角関数の合成, 数学I (3) ア(ア) 2次関数の最大・最小]
+  variations:
+    - 最大値 $M(a)=1+\sqrt{2}|a|$ を求めさせ、下に凸の関数では最大値が端点で決まることを確認させる。
+    - $\theta$ の範囲を $0\leqq\theta\leqq\dfrac{\pi}{2}$ に制限し、$t$ の範囲が $1\leqq t\leqq\sqrt{2}$ に変わる場合を問う。

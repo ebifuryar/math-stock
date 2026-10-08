@@ -1,0 +1,52 @@
+id: m2-tf-a05
+level: applied
+format: written
+title: 2次の同次式の最大・最小
+stem: |
+  関数
+  $$f(\theta)=\sin^2\theta+2\sin\theta\cos\theta+3\cos^2\theta\qquad\left(0\leqq\theta\leqq\frac{\pi}{2}\right)$$
+  の最大値と最小値を求めよ。また、そのときの $\theta$ の値を求めよ。
+modelAnswer: |
+  2倍角・半角の公式より $\sin^2\theta=\dfrac{1-\cos 2\theta}{2},\ \cos^2\theta=\dfrac{1+\cos 2\theta}{2},\ 2\sin\theta\cos\theta=\sin 2\theta$ であるから
+  $$f(\theta)=\frac{1-\cos 2\theta}{2}+\sin 2\theta+\frac{3(1+\cos 2\theta)}{2}=\sin 2\theta+\cos 2\theta+2$$
+  合成すると
+  $$f(\theta)=\sqrt{2}\sin\left(2\theta+\frac{\pi}{4}\right)+2$$
+  $0\leqq\theta\leqq\dfrac{\pi}{2}$ より
+  $$\frac{\pi}{4}\leqq 2\theta+\frac{\pi}{4}\leqq\frac{5}{4}\pi$$
+  この範囲で $-\dfrac{\sqrt{2}}{2}\leqq\sin\left(2\theta+\dfrac{\pi}{4}\right)\leqq 1$ である。
+
+  - 最大: $2\theta+\dfrac{\pi}{4}=\dfrac{\pi}{2}$ すなわち $\theta=\dfrac{\pi}{8}$ のとき、最大値 $\sqrt{2}+2$
+  - 最小: $2\theta+\dfrac{\pi}{4}=\dfrac{5}{4}\pi$ すなわち $\theta=\dfrac{\pi}{2}$ のとき、最小値 $\sqrt{2}\cdot\left(-\dfrac{\sqrt{2}}{2}\right)+2=1$
+
+  **答え: $\theta=\dfrac{\pi}{8}$ のとき最大値 $2+\sqrt{2}$、$\theta=\dfrac{\pi}{2}$ のとき最小値 $1$**
+rubric:
+  - id: r1
+    criterion: 半角（次数下げ）・2倍角の公式で $f(\theta)=\sin 2\theta+\cos 2\theta+2$ と $2\theta$ の1次式に直している
+    points: 3
+    keywords: ["sin2θ+cos2θ+2", "cos2θ"]
+  - id: r2
+    criterion: $f(\theta)=\sqrt{2}\sin\left(2\theta+\dfrac{\pi}{4}\right)+2$ と正しく合成している
+    points: 2
+    keywords: ["√2sin(2θ+π/4)", "π/4"]
+  - id: r3
+    criterion: $\dfrac{\pi}{4}\leqq 2\theta+\dfrac{\pi}{4}\leqq\dfrac{5}{4}\pi$ と角の範囲を求め、$\sin$ のとる値の範囲を正しく読んでいる
+    points: 2
+    keywords: ["5π/4", "-√2/2"]
+  - id: r4
+    criterion: 最大値 $2+\sqrt{2}$（$\theta=\dfrac{\pi}{8}$）と最小値 $1$（$\theta=\dfrac{\pi}{2}$）を、$\theta$ の値とともに答えている
+    points: 3
+    keywords: ["π/8", "最小値1"]
+solution: |
+  $\sin^2\theta,\ \sin\theta\cos\theta,\ \cos^2\theta$ だけからなる2次の同次式は、次数下げで $\sin 2\theta,\ \cos 2\theta$ の1次式に直してから合成する。合成後の角 $2\theta+\dfrac{\pi}{4}$ の範囲を求め忘れると、最小値を $2-\sqrt{2}$ と誤る。
+concepts: [tf-double-half, tf-synthesis]
+misconceptions: [mc-tf-angle-range, mc-tf-synthesis-angle]
+targetSeconds: 480
+irt: { expectedCorrectRate: 0.45, discrimination: 1.2 }
+author:
+  intent: |
+    次数下げ → 合成 → 角の範囲 という三角関数の最大・最小の標準的な流れを、記述として一貫して書けるかをみる。最小値は範囲の端（$\theta=\dfrac{\pi}{2}$）でとるので、範囲を考えずに $2-\sqrt{2}$ と答える答案を確実に識別できる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学II (4) イ(ア) 2倍角・半角の公式, 数学II (4) イ(ア) 三角関数の合成]
+  variations:
+    - 範囲を $0\leqq\theta<2\pi$ にして、最小値 $2-\sqrt{2}$ をとる $\theta$ を2つ求めさせる。
+    - $f(\theta)=k$ が $0\leqq\theta\leqq\dfrac{\pi}{2}$ に異なる2解をもつ $k$ の範囲を求めさせる。

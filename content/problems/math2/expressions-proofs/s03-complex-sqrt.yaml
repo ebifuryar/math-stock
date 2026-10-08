@@ -1,0 +1,45 @@
+id: m2-ep-s03
+level: school
+format: choice
+title: 負の数の平方根を含む計算
+stem: |
+  $\sqrt{-2}\times\sqrt{-8}+\dfrac{\sqrt{12}}{\sqrt{-3}}$ を計算した結果として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $4+2i$
+    misconception: mc-ep-negative-sqrt
+    rationale: |
+      $\sqrt{-2}\sqrt{-8}=\sqrt{16}=4$、$\dfrac{\sqrt{12}}{\sqrt{-3}}=\sqrt{-4}=2i$ と、根号の積・商の規則を負の数にそのまま使っている。
+  - id: "2"
+    text: $4-2i$
+    misconception: mc-ep-negative-sqrt
+    rationale: |
+      商は正しく $-2i$ と計算できているが、積を $\sqrt{(-2)(-8)}=\sqrt{16}=4$ としている。$\sqrt{-2}\sqrt{-8}=\sqrt{2}i\cdot 2\sqrt{2}i=4i^2=-4$。
+  - id: "3"
+    text: $-4+2i$
+    rationale: |
+      積は正しいが、$\dfrac{2}{i}=2i$ としている。$\dfrac{2}{i}=\dfrac{2i}{i^2}=-2i$。
+  - id: "4"
+    text: $-4-2i$
+    rationale: |
+      正解。$\sqrt{-2}\sqrt{-8}=\sqrt{2}i\cdot 2\sqrt{2}i=-4$、$\dfrac{\sqrt{12}}{\sqrt{-3}}=\dfrac{2\sqrt{3}}{\sqrt{3}i}=\dfrac{2}{i}=-2i$。
+answer: "4"
+solution: |
+  負の数の平方根は、計算の前に $\sqrt{-a}=\sqrt{a}\,i\ (a>0)$ の形に直す。
+  $$\sqrt{-2}\times\sqrt{-8}=\sqrt{2}\,i\times 2\sqrt{2}\,i=4i^2=-4$$
+  $$\frac{\sqrt{12}}{\sqrt{-3}}=\frac{2\sqrt{3}}{\sqrt{3}\,i}=\frac{2}{i}=\frac{2i}{i^2}=-2i$$
+  よって、与式 $=-4-2i$。
+
+  $\sqrt{A}\sqrt{B}=\sqrt{AB}$ や $\dfrac{\sqrt{A}}{\sqrt{B}}=\sqrt{\dfrac{A}{B}}$ は、$A,\ B$ が負のときには一般に成り立たない。
+concepts: [ep-complex-quadratic]
+misconceptions: [mc-ep-negative-sqrt]
+targetSeconds: 120
+irt: { expectedCorrectRate: 0.7, discrimination: 1.1 }
+author:
+  intent: |
+    負の数の平方根を $i$ を用いた形に直してから計算する手順が身についているかをみる。積と商の両方で根号の規則が破れる例を組み合わせ、どちらで誤ったかを選択肢①（両方）・②（積のみ）で区別する。③は $\dfrac{1}{i}$ の処理という別系統の計算ミスを拾う。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学II (1) ア(ウ) 複素数の四則計算]
+  variations:
+    - $\sqrt{-3}\sqrt{-12}$ と $\sqrt{(-3)(-12)}$ の値を比較させ、規則が成り立たない理由を説明させる。
+    - $\dfrac{\sqrt{-12}}{\sqrt{3}}$ と $\dfrac{\sqrt{12}}{\sqrt{-3}}$ を比べ、商の規則が成り立つ場合と成り立たない場合を見分けさせる。

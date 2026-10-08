@@ -1,0 +1,53 @@
+id: m2-cg-e05
+level: exam
+format: written
+title: 2直線の交点の軌跡と除外点
+stem: |
+  $t$ を実数とする。2直線
+  $$\ell:\ tx-y=0,\qquad m:\ x+ty-2=0$$
+  の交点を $\mathrm{P}$ とする。$t$ がすべての実数値をとって変化するとき、点 $\mathrm{P}$ の軌跡を求めよ。
+modelAnswer: |
+  $\ell$ と $m$ の法線ベクトル $(t,\ -1),\ (1,\ t)$ について $t\cdot 1+(-1)\cdot t=0$ なので、$\ell\perp m$ であり、2直線はただ1点で交わる。
+
+  点 $(x,\ y)$ が軌跡上にある $\iff$ $tx-y=0$ かつ $x+ty-2=0$ を満たす実数 $t$ が存在する。
+
+  (i) $x\neq 0$ のとき。$tx-y=0$ より $t=\dfrac{y}{x}$。これを $x+ty-2=0$ に代入して
+  $$x+\frac{y^2}{x}-2=0\iff x^2+y^2-2x=0\iff (x-1)^2+y^2=1$$
+  逆に、$x\neq 0$ でこの式を満たす点 $(x,\ y)$ に対して $t=\dfrac{y}{x}$ とおけば、2式とも満たされる。
+
+  (ii) $x=0$ のとき。$tx-y=0$ より $y=0$。このとき $x+ty-2=-2\neq 0$ となり、$m$ の式を満たさない。よって $x=0$ となる点は軌跡上にない。
+
+  (i)、(ii) より、求める軌跡は **円 $(x-1)^2+y^2=1$ から原点 $(0,\ 0)$ を除いた部分**。
+
+  （図形的には、$\ell$ は原点 $\mathrm{O}$ を通り、$m$ は点 $\mathrm{A}(2,\ 0)$ を通り、$\ell\perp m$ だから $\angle\mathrm{OPA}=90^\circ$ となり、$\mathrm{P}$ は $\mathrm{OA}$ を直径とする円上にある。$\ell$ は $y$ 軸（$x=0$）を表せないので、$\mathrm{P}=\mathrm{O}$ は実現しない。一方 $t=0$ のとき $\mathrm{P}=\mathrm{A}(2,\ 0)$ は実現する。）
+rubric:
+  - id: r1
+    criterion: $x\neq 0$ の場合に $t=\dfrac{y}{x}$ として $t$ を消去し、$x^2+y^2-2x=0$（円 $(x-1)^2+y^2=1$）を導いている
+    points: 3
+    keywords: ["t=y/x", "x^2+y^2-2x=0", "(x-1)^2+y^2=1"]
+  - id: r2
+    criterion: $x=0$ の場合を別に調べ、条件を満たす $t$ が存在しないことを示している
+    points: 3
+    keywords: ["x=0", "-2"]
+  - id: r3
+    criterion: 円上の点（原点以外）に対して $t$ が存在すること（逆の確認）に触れている
+    points: 2
+    keywords: ["逆に", "存在"]
+  - id: r4
+    criterion: 軌跡を「円 $(x-1)^2+y^2=1$ から原点を除いた部分」と、除外点を明示して結論している
+    points: 2
+    keywords: ["原点を除", "(0,0)"]
+solution: |
+  媒介変数 $t$ を消去するとき、$x$ で割る操作をしたら $x=0$ の場合を必ず別に調べる。$\ell:\ y=tx$ は原点を通る直線のうち $y$ 軸だけを表せないので、$\mathrm{P}$ が $y$ 軸上（原点）に来ることはない。「円全体」と答えると除外点を落とした誤答になる。
+concepts: [cg-locus, cg-line-equation]
+misconceptions: [mc-cg-locus-excluded]
+targetSeconds: 600
+irt: { expectedCorrectRate: 0.3, discrimination: 1.4 }
+author:
+  intent: |
+    媒介変数を含む2直線の交点の軌跡で、消去の過程で生じる除外点を論理的に扱えるかをみる。答えの円は図形的に予想しやすいので、結論の正しさより「$x=0$ の場合分け」と「逆の確認」が書けているかで上位層を識別する。同じ円を得ていても、除外点の有無で採点が分かれるよう採点基準を設計した。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学II (2) ア(エ) 軌跡]
+  variations:
+    - $m$ を $x+ty-2t=0$ に変え、軌跡が円 $x^2+(y-1)^2=1$ から点 $(0,\ 2)$ を除いた部分になる（除外点の位置が変わる）ことを確かめさせる。
+    - 交点を $\mathrm{P}$ の座標 $\left(\dfrac{2}{1+t^2},\ \dfrac{2t}{1+t^2}\right)$ で直接表し、$x$ の値域 $0<x\leqq 2$ から除外点を確かめる方法と比較させる。

@@ -1,0 +1,50 @@
+id: m2-ep-e01
+level: exam
+format: choice
+title: 比例式の値と場合分け
+stem: |
+  $0$ でない実数 $a,\ b,\ c$ が $b+c\neq 0,\ c+a\neq 0,\ a+b\neq 0$ を満たし、
+  $$\frac{a}{b+c}=\frac{b}{c+a}=\frac{c}{a+b}=k$$
+  が成り立っている。このとき、$k$ のとりうる値をすべて挙げたものとして正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $k=\dfrac{1}{2}$ のみ
+    misconception: mc-ep-zero-division
+    rationale: |
+      3式を加えた $a+b+c=2k(a+b+c)$ を $a+b+c$ で割って $k=\dfrac{1}{2}$ としており、$a+b+c=0$ の場合を見落としている。例えば $a=1,\ b=2,\ c=-3$ では $k=-1$ になる。
+  - id: "2"
+    text: $k=-1$ のみ
+    misconception: mc-ep-zero-division
+    rationale: |
+      $a=k(b+c),\ b=k(c+a)$ の差から $(a-b)(1+k)=0$ を得て、$a-b$ で割って $k=-1$ としている。$a=b$（さらに $b=c$）の場合を見落としており、$a=b=c$ のとき $k=\dfrac{1}{2}$ になる。
+  - id: "3"
+    text: $k=\dfrac{1}{2},\ -1$
+    rationale: |
+      正解。$a+b+c=2k(a+b+c)$ から、$a+b+c\neq 0$ なら $k=\dfrac{1}{2}$、$a+b+c=0$ なら $b+c=-a$ より $k=-1$。どちらも実際に起こる。
+  - id: "4"
+    text: $k=2,\ -1$
+    rationale: |
+      場合分けはできているが、$a+b+c=2k(a+b+c)$ から $k$ を求めるときに逆数をとり違えている（$2k=1$ を $k=2$ としている）。
+answer: "3"
+solution: |
+  $a=k(b+c),\ b=k(c+a),\ c=k(a+b)$ の3式を辺々加えると
+  $$a+b+c=2k(a+b+c)\quad\text{すなわち}\quad (a+b+c)(2k-1)=0$$
+
+  - $a+b+c\neq 0$ のとき: $k=\dfrac{1}{2}$。例えば $a=b=c=1$ で実際に成り立つ。
+  - $a+b+c=0$ のとき: $b+c=-a$ なので $k=\dfrac{a}{-a}=-1$（$a\neq 0$）。例えば $a=1,\ b=2,\ c=-3$ で $\dfrac{1}{-1}=\dfrac{2}{-2}=\dfrac{-3}{3}=-1$。
+
+  よって $k=\dfrac{1}{2},\ -1$。
+
+  「加えた式で割る」操作は、割る式が $0$ でないときにしか使えない。$AB=0$ の形にして「$A=0$ または $B=0$」と処理すると漏れがない。
+concepts: [ep-proof-methods, ep-division-fraction]
+misconceptions: [mc-ep-zero-division]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.35, discrimination: 1.4 }
+author:
+  intent: |
+    比例式を処理するとき、文字式で割る操作の前に「その式が $0$ になる場合」を分けられるかをみる。加比の理による $k=\dfrac{1}{2}$ だけで終える誤り（①）と、差をとって $k=-1$ だけを得る誤り（②）を、どちらも「$0$ で割る可能性の見落とし」として対称に配置し、解法の入り方にかかわらず場合分けの意識の有無で正誤が分かれるようにした。各値について実例 $(a,\ b,\ c)$ を示せるかまで問えば記述式にも転用できる。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学II (1) イ(イ) 等式や不等式が成り立つことの証明（比例式）, 数学II (1) ア(イ) 分数式の四則計算]
+  variations:
+    - $\dfrac{b+c}{a}=\dfrac{c+a}{b}=\dfrac{a+b}{c}$ のときの値（$2$ または $-1$）を問う。
+    - $k$ の各値について、$\dfrac{(a+b)(b+c)(c+a)}{abc}$ の値を求めさせる。

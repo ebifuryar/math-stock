@@ -1,0 +1,18 @@
+id: ep-binomial-theorem
+kind: theorem
+title: 二項定理と多項定理
+body: |
+  $$(a+b)^n=\sum_{r=0}^{n}{}_n\mathrm{C}_r\,a^{n-r}b^r={}_n\mathrm{C}_0a^n+{}_n\mathrm{C}_1a^{n-1}b+\cdots+{}_n\mathrm{C}_nb^n$$
+
+  **一般項** ${}_n\mathrm{C}_r\,a^{n-r}b^r$ を書いてから、求めたい次数になる $r$ を決める。
+
+  - $a,\ b$ に係数や符号が付いているときは、それごと累乗する。例: $(2x-\frac{1}{x})^6$ の一般項は
+    $${}_6\mathrm{C}_r(2x)^{6-r}\left(-\frac{1}{x}\right)^r={}_6\mathrm{C}_r\,2^{6-r}(-1)^r\,x^{6-2r}$$
+    $2^{6-r}$ と $(-1)^r$ を落とさないこと。
+  - $x=1$ などを代入すると係数の和が得られる（例: ${}_n\mathrm{C}_0+{}_n\mathrm{C}_1+\cdots+{}_n\mathrm{C}_n=2^n$）。
+  - $(1+10)^n$ のように分けると、累乗の下の桁や余りを求められる。
+
+  **多項定理（発展）** $(a+b+c)^n$ の展開式で $a^pb^qc^r\ (p+q+r=n)$ の係数は
+  $$\frac{n!}{p!\,q!\,r!}$$
+  次数の条件を満たす $(p,\ q,\ r)$ の組をすべて書き出してから足し合わせる。
+prerequisites: [ep-cubic-formulas]

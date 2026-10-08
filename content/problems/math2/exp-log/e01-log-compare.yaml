@@ -1,0 +1,47 @@
+id: m2-el-e01
+level: exam
+format: choice
+title: 底の異なる3つの対数の大小
+stem: |
+  3つの数
+  $$a=\log_2 3,\qquad b=\log_3 5,\qquad c=\log_5 8$$
+  の大小関係として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $a<b<c$
+    misconception: mc-el-change-of-base-inverted
+    rationale: |
+      底の変換で分母・分子を逆にし、$a=\dfrac{\log 2}{\log 3}$ のように計算している。すると $a,\ b,\ c$ はすべて $1$ より小さくなり、大小も逆転する。$\log_2 3>\log_2 2=1$ のように、$1$ との比較で誤りに気づける。
+  - id: "2"
+    text: $a<c<b$
+    rationale: |
+      $\log_a b$ を $\dfrac{b}{a}$ で近似し、$\dfrac{3}{2}<\dfrac{8}{5}<\dfrac{5}{3}$ から判断している。対数は真数と底の比ではない（例: $\log_2 4=2$ だが $\log_4 16=2$ で、比は $2$ と $4$）。
+  - id: "3"
+    text: $c<b<a$
+    rationale: |
+      正解。$c<\dfrac{4}{3}<b<\dfrac{3}{2}<a$ が示せる。
+  - id: "4"
+    text: $b<c<a$
+    rationale: |
+      $\dfrac{3}{2}$ との比較で $a$ が最大であることは分かったが、$b$ と $c$ の比較を、底を無視して真数の大小（$5<8$）だけで決めている。$\dfrac{4}{3}$ と比べると $c<\dfrac{4}{3}<b$。
+answer: "3"
+solution: |
+  **$\dfrac{3}{2}$ との比較**: $2^{\frac{3}{2}}=\sqrt{8}<\sqrt{9}=3$ より $a=\log_2 3>\dfrac{3}{2}$。$3^{\frac{3}{2}}=\sqrt{27}>\sqrt{25}=5$ より $b=\log_3 5<\dfrac{3}{2}$。
+
+  **$\dfrac{4}{3}$ との比較**: $3^{\frac{4}{3}}=\sqrt[3]{81}<\sqrt[3]{125}=5$ より $b>\dfrac{4}{3}$。$5^{\frac{4}{3}}=\sqrt[3]{625}>\sqrt[3]{512}=8$ より $c=\log_5 8<\dfrac{4}{3}$。
+
+  よって
+  $$c<\frac{4}{3}<b<\frac{3}{2}<a$$
+  （参考: $a\fallingdotseq 1.585,\ b\fallingdotseq 1.465,\ c\fallingdotseq 1.292$）
+concepts: [el-log-function, el-change-of-base, el-exp-function]
+misconceptions: [mc-el-change-of-base-inverted]
+targetSeconds: 360
+irt: { expectedCorrectRate: 0.3, discrimination: 1.4 }
+author:
+  intent: |
+    底も真数も異なる対数の大小を、適切な有理数を間にはさんで比較できるかをみる。$\frac{3}{2}$ だけでは $b$ と $c$ が分離できず、$\frac{4}{3}$ という2つ目の基準を自分で見つける必要がある点が難所。$\log_a b>\frac{p}{q}\iff b^q>a^p$（$a>1$）という言いかえを使いこなせるかを識別する。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学II (3) ア(エ) 対数関数の値の変化やグラフの特徴, 数学II (3) イ(ア) 指数と対数を相互に関連付けて考察すること]
+  variations:
+    - $\log_2 3$ と $\log_3 4$ のように、隣り合う数で作った対数の大小を相加・相乗平均で示させる記述式にする。
+    - 「$a$ と $\frac{3}{2}$ の大小」から始めて、基準の数を誘導するマーク式にする。

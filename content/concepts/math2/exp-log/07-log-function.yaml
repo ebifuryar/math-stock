@@ -1,0 +1,14 @@
+id: el-log-function
+kind: method
+title: 対数関数のグラフと対数方程式・不等式
+body: |
+  $y=\log_a x$ は $y=a^x$ の逆関数で、グラフは直線 $y=x$ に関して $y=a^x$ と対称。点 $(1,\ 0)$ を通り、定義域は $x>0$（$y$ 軸が漸近線）。$y=\log_{\frac{1}{a}}x=-\log_a x$ のグラフは $y=\log_a x$ と **$x$ 軸** に関して対称。
+
+  - $a>1$ のとき増加: $0<p<q\iff\log_a p<\log_a q$
+  - $0<a<1$ のとき減少: $0<p<q\iff\log_a p>\log_a q$
+
+  **対数方程式・不等式の手順**
+  1. 真数条件（真数 $>0$）から $x$ の範囲を先に求める。
+  2. 底をそろえて $\log_a(\cdots)$ を1つにまとめ、真数の関係式に直す。底が $1$ より小さいときは不等号の向きを逆にする。
+  3. 得られた解と真数条件の共通部分をとる。
+prerequisites: [el-log-definition, el-exp-function, ne-linear-inequality]

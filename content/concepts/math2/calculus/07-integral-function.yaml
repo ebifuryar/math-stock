@@ -1,0 +1,10 @@
+id: cl-integral-function
+kind: method
+title: 定積分で表された関数
+body: |
+  **上端が $x$ の場合**: $a$ を定数とすると
+  $$\frac{d}{dx}\int_a^x f(t)\,dt=f(x),\qquad \int_a^a f(t)\,dt=0$$
+  $\displaystyle\int_a^x f(t)\,dt=g(x)$ が与えられたら、両辺を微分して $f(x)=g'(x)$、$x=a$ を代入して $g(a)=0$ を得る（下端の情報はこちらで使う）。微分の結果は $f(x)-f(a)$ ではない。
+
+  **両端が定数の場合**: $\displaystyle\int_0^1 f(t)\,dt$ は $x$ を含まない **定数** である。$\displaystyle k=\int_0^1 f(t)\,dt$ とおいて $f(x)$ を $k$ で表し、それを積分した式が $k$ に等しいという方程式から $k$ を決める。この定数を $x$ で微分しても $0$ である。
+prerequisites: [cl-integral]

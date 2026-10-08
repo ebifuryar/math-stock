@@ -1,0 +1,43 @@
+id: m2-tf-s01
+level: school
+format: choice
+title: 扇形の弧の長さと面積
+stem: |
+  半径 $6$、中心角 $150^\circ$ の扇形がある。この扇形の弧の長さ $l$ と面積 $S$ の組として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $l=5\pi,\quad S=30\pi$
+    rationale: |
+      面積を $S=r^2\theta=36\cdot\dfrac{5}{6}\pi$ または $S=rl$ として、$\dfrac{1}{2}$ を落としている。扇形は「底辺 $l$、高さ $r$ の三角形」に近い形なので $S=\dfrac{1}{2}rl$。
+  - id: "2"
+    text: $l=900,\quad S=2700$
+    misconception: mc-tf-degree-radian
+    rationale: |
+      $l=r\theta,\ S=\dfrac{1}{2}r^2\theta$ に度数の $150$ をそのまま代入している（$6\cdot 150=900$、$\dfrac{1}{2}\cdot 36\cdot 150=2700$）。これらの公式の $\theta$ は弧度で、$150^\circ=\dfrac{5}{6}\pi$ に直してから代入する。
+  - id: "3"
+    text: $l=5\pi,\quad S=15\pi$
+    rationale: |
+      正解。$150^\circ=\dfrac{5}{6}\pi$ より $l=6\cdot\dfrac{5}{6}\pi=5\pi$、$S=\dfrac{1}{2}\cdot 6^2\cdot\dfrac{5}{6}\pi=15\pi$。
+  - id: "4"
+    text: $l=10\pi^2,\quad S=30\pi^2$
+    misconception: mc-tf-degree-radian
+    rationale: |
+      円周 $2\pi r=12\pi$ と円の面積 $\pi r^2=36\pi$ に、弧度の $\dfrac{5}{6}\pi$ をそのまま掛けている。扇形は円全体の $\dfrac{\theta}{2\pi}=\dfrac{5}{12}$ 倍であって、$\theta$ 倍ではない。答えに $\pi^2$ が現れたら疑うべき。
+answer: "3"
+solution: |
+  中心角を弧度に直す: $150^\circ=150\times\dfrac{\pi}{180}=\dfrac{5}{6}\pi$。
+
+  $$l=r\theta=6\cdot\frac{5}{6}\pi=5\pi,\qquad S=\frac{1}{2}r^2\theta=\frac{1}{2}\cdot 36\cdot\frac{5}{6}\pi=15\pi$$
+  検算: 扇形は円全体の $\dfrac{150}{360}=\dfrac{5}{12}$ なので、$l=12\pi\cdot\dfrac{5}{12}=5\pi$、$S=36\pi\cdot\dfrac{5}{12}=15\pi$。また $S=\dfrac{1}{2}rl=\dfrac{1}{2}\cdot 6\cdot 5\pi=15\pi$ とも一致する。
+concepts: [tf-radian]
+misconceptions: [mc-tf-degree-radian]
+targetSeconds: 60
+irt: { expectedCorrectRate: 0.85, discrimination: 0.8 }
+author:
+  intent: |
+    弧度法の公式 $l=r\theta,\ S=\dfrac{1}{2}r^2\theta$ を、度数で与えられた角を弧度に直してから使えるかをみる。誤答は「度数をそのまま代入」「円全体に $\theta$ を掛ける」「$\dfrac{1}{2}$ の脱落」に対応させ、弧度が円に対する割合とどう結びつくかの理解の差を見分ける。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学II (4) ア(ア) 角の拡張（弧度法）]
+  variations:
+    - 弧の長さ $4\pi$、面積 $12\pi$ の扇形の半径と中心角を逆算させる（$S=\dfrac{1}{2}rl$ の利用）。
+    - 周の長さが一定の扇形の面積の最大値を求めさせる（2次関数との融合）。

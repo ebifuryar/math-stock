@@ -1,0 +1,20 @@
+id: tf-definition
+kind: definition
+title: 単位円による三角関数の定義と性質
+body: |
+  原点を中心とする半径 $1$ の円（単位円）の上で、一般角 $\theta$ の動径との交点を $\mathrm{P}(x,\ y)$ とするとき
+  $$\cos\theta=x,\qquad \sin\theta=y,\qquad \tan\theta=\frac{y}{x}\ \left(\theta\neq\frac{\pi}{2}+n\pi\right)$$
+  と定める。$\theta$ は任意の実数をとり、$-1\leqq\sin\theta\leqq 1$、$-1\leqq\cos\theta\leqq 1$、$\tan\theta$ はすべての実数値をとる。
+
+  | 象限 | 第1 | 第2 | 第3 | 第4 |
+  | --- | --- | --- | --- | --- |
+  | $\sin\theta$ | $+$ | $+$ | $-$ | $-$ |
+  | $\cos\theta$ | $+$ | $-$ | $-$ | $+$ |
+  | $\tan\theta$ | $+$ | $-$ | $+$ | $-$ |
+
+  **相互関係** $\sin^2\theta+\cos^2\theta=1$、$\tan\theta=\dfrac{\sin\theta}{\cos\theta}$、$1+\tan^2\theta=\dfrac{1}{\cos^2\theta}$。平方根をとるときは、$\theta$ の属する象限から符号を決める。
+
+  **角の変換** 単位円上の点の対称性から
+  $$\sin(-\theta)=-\sin\theta,\quad \cos(-\theta)=\cos\theta,\quad \sin(\pi-\theta)=\sin\theta,\quad \cos(\pi-\theta)=-\cos\theta$$
+  $$\sin\left(\theta+\frac{\pi}{2}\right)=\cos\theta,\quad \cos\left(\theta+\frac{\pi}{2}\right)=-\sin\theta,\quad \tan(\theta+\pi)=\tan\theta$$
+prerequisites: [tf-radian, tg-unit-circle, tg-identities]

@@ -1,0 +1,50 @@
+id: m2-cl-e04
+level: exam
+format: choice
+title: 放物線と2本の接線で囲まれた部分の面積の最小値
+stem: |
+  放物線 $y=x^2$ を $C$ とする。点 $\mathrm{P}$ が直線 $y=x-2$ 上を動く。$\mathrm{P}$ は常に $C$ より下側にあるので、$\mathrm{P}$ から $C$ に2本の接線が引ける。この2本の接線と $C$ で囲まれた部分の面積の最小値として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\dfrac{7\sqrt{7}}{24}$
+    rationale: |
+      囲まれた部分は直線 $x=p$（$\mathrm{P}$ の $x$ 座標）で左右に分かれ、片側の面積がそれぞれ $\dfrac{(\beta-\alpha)^3}{24}$ である。片側だけを計算して2倍し忘れている。
+  - id: "2"
+    text: $\dfrac{7\sqrt{7}}{6}$
+    misconception: mc-cl-one-sixth-coef
+    rationale: |
+      1/6 公式をそのまま使い、2つの接点を結ぶ弦と $C$ で囲まれた部分の面積 $\dfrac{(\beta-\alpha)^3}{6}$ を求めている。接線と $C$ の間の面積は $\dfrac{(\beta-\alpha)^3}{12}$ でその半分。
+  - id: "3"
+    text: $\dfrac{7\sqrt{7}}{12}$
+    rationale: |
+      正解。接点の $x$ 座標の差を $\beta-\alpha$ とすると面積は $\dfrac{(\beta-\alpha)^3}{12}$、$(\beta-\alpha)^2=4(p^2-p+2)$ の最小値は $7$。
+  - id: "4"
+    text: $\dfrac{7\sqrt{7}}{4}$
+    rationale: |
+      2本の接線と2つの接点を結ぶ弦でできる三角形の面積 $\dfrac{(\beta-\alpha)^3}{4}$ を求めている。求める部分は、この三角形から弦と $C$ の間の部分を除いたものである。
+answer: "3"
+solution: |
+  $\mathrm{P}(p,\ p-2)$ とする。$p^2-(p-2)=\left(p-\dfrac{1}{2}\right)^2+\dfrac{7}{4}>0$ なので $\mathrm{P}$ は $C$ の下側にある。
+
+  $C$ 上の点 $(t,\ t^2)$ における接線 $y=2tx-t^2$ が $\mathrm{P}$ を通る条件は
+  $$t^2-2pt+(p-2)=0$$
+  この2解を $\alpha<\beta$ とすると $\alpha+\beta=2p,\ \alpha\beta=p-2$ で、2接線は $x=\dfrac{\alpha+\beta}{2}=p$ で交わる。
+
+  囲まれた部分の面積は
+  $$S=\int_\alpha^p(x-\alpha)^2\,dx+\int_p^\beta(x-\beta)^2\,dx=\frac{(p-\alpha)^3}{3}+\frac{(\beta-p)^3}{3}=\frac{(\beta-\alpha)^3}{12}$$
+  （$p-\alpha=\beta-p=\dfrac{\beta-\alpha}{2}$ を用いた。）
+
+  $(\beta-\alpha)^2=(\alpha+\beta)^2-4\alpha\beta=4p^2-4p+8=4\left(p-\dfrac{1}{2}\right)^2+7$ なので、$p=\dfrac{1}{2}$ のとき $\beta-\alpha$ は最小値 $\sqrt{7}$ をとる。よって
+  $$S_{\min}=\frac{(\sqrt{7})^3}{12}=\frac{7\sqrt{7}}{12}$$
+concepts: [cl-area, cl-tangent]
+misconceptions: [mc-cl-one-sixth-coef]
+targetSeconds: 540
+irt: { expectedCorrectRate: 0.3, discrimination: 1.3 }
+author:
+  intent: |
+    放物線と2接線で囲まれた図形の面積を、図形の構造（弦との間の部分・三角形との関係）を正しく捉えて $\dfrac{(\beta-\alpha)^3}{12}$ と求められるかをみる。誤答は、1/6 公式の誤用（弦との間）・三角形全体・片側のみで、いずれも $(\beta-\alpha)^3$ の係数だけが異なるように設計し、面積の立式のどこを誤ったかを特定できる。$\beta-\alpha$ を解と係数の関係で $p$ の2次式に帰着させる最小化の部分は数学Iの平方完成の応用。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: ["数学II (5) イ(イ) 定積分を用いた面積", "数学II (5) ア(ア) 微分係数と導関数（接線の方程式）"]
+  variations:
+    - 2本の接線が直交するとき（$\mathrm{P}$ が準線 $y=-\dfrac{1}{4}$ 上にあるとき）の面積の最小値を問う。
+    - 記述式にして、$\dfrac{(\beta-\alpha)^3}{12}$ の導出そのものを答案として書かせる。

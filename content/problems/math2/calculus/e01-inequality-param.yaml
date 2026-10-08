@@ -1,0 +1,49 @@
+id: m2-cl-e01
+level: exam
+format: choice
+title: x≧0 で常に成り立つ3次不等式
+stem: |
+  $a$ を実数の定数とする。$x\geqq 0$ を満たすすべての実数 $x$ に対して、不等式
+  $$x^3-3ax^2+4\geqq 0$$
+  が成り立つような $a$ の値の範囲として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $a\leqq\sqrt[3]{2}$
+    rationale: |
+      極小となる点を $x=a$ と誤っている（$f'(x)=3x(x-2a)$ の解は $x=0,\ 2a$）。$f(a)=4-2a^3\geqq 0$ を解いても正しい最小値の条件にはならない。
+  - id: "2"
+    text: $0<a\leqq 1$
+    misconception: mc-case-split-missing
+    rationale: |
+      $a>0$ の場合だけを調べ、$a\leqq 0$ の場合を落としている。$a\leqq 0$ のとき $x\geqq 0$ で $f'(x)=3x(x-2a)\geqq 0$ となり $f(x)$ は増加するので、最小値 $f(0)=4>0$ で不等式は成り立つ。
+  - id: "3"
+    text: $a<1$
+    rationale: |
+      等号の扱いの誤り。$a=1$ のとき最小値 $f(2)=8-12+4=0$ であり、$\geqq 0$ は成り立つので $a=1$ も含む。
+  - id: "4"
+    text: $a\leqq 1$
+    rationale: |
+      正解。$a\leqq 0$ では常に成り立ち、$a>0$ では最小値 $f(2a)=4-4a^3\geqq 0$ より $0<a\leqq 1$。合わせて $a\leqq 1$。
+answer: "4"
+solution: |
+  $f(x)=x^3-3ax^2+4$ とおく。$f'(x)=3x^2-6ax=3x(x-2a)$。$x\geqq 0$ における $f(x)$ の最小値が $0$ 以上となる条件を求める。
+
+  **$a\leqq 0$ のとき**: $x\geqq 0$ で $f'(x)\geqq 0$ なので $f(x)$ は増加し、最小値は $f(0)=4>0$。常に成り立つ。
+
+  **$a>0$ のとき**: $0\leqq x\leqq 2a$ で減少、$x\geqq 2a$ で増加するので、最小値は
+  $$f(2a)=8a^3-12a^3+4=4(1-a^3)$$
+  $4(1-a^3)\geqq 0$ より $a\leqq 1$。よって $0<a\leqq 1$。
+
+  以上を合わせて $a\leqq 1$。
+concepts: [cl-equation-inequality, cl-max-min]
+misconceptions: [mc-case-split-missing, mc-cl-endpoint-missing]
+targetSeconds: 360
+irt: { expectedCorrectRate: 0.35, discrimination: 1.3 }
+author:
+  intent: |
+    不等式が「区間で常に成り立つ」ことを「区間での最小値 $\geqq 0$」に言い換え、極値をとる $x=2a$ が区間 $x\geqq 0$ に入るかどうかで場合分けできるかをみる。②は $a\leqq 0$ の場合の考え落とし、③は最小値がちょうど $0$ となる境界の扱い、①は導関数の計算ミスをそれぞれ識別する。区間の端 $x=0$ が最小となる場合を見落とさないかが、端点を比較する意識の有無を表す。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: ["数学II (5) イ(ア) 導関数を用いた関数の考察（不等式の証明）"]
+  variations:
+    - 記述式にして、$a=1$ のとき等号が成り立つ $x$ の値（$x=2$）まで答えさせる。
+    - 区間を $0\leqq x\leqq 1$ に限定し、極小点 $x=2a$ が区間の外に出る場合の場合分けを加える。

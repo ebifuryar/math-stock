@@ -1,0 +1,37 @@
+id: m2-tf-s04
+level: school
+format: mark
+title: 加法定理による値の計算
+stem: |
+  $0<\alpha<\dfrac{\pi}{2},\ \dfrac{\pi}{2}<\beta<\pi$ とし、$\sin\alpha=\dfrac{3}{5},\ \cos\beta=-\dfrac{5}{13}$ とする。このとき
+  $$\cos\alpha=\frac{\boxed{\text{ア}}}{\boxed{\text{イ}}},\qquad \sin\beta=\frac{\boxed{\text{ウエ}}}{\boxed{\text{オカ}}}$$
+  であり
+  $$\sin(\alpha+\beta)=\frac{\boxed{\text{キク}}}{\boxed{\text{ケコ}}},\qquad \cos(\alpha+\beta)=\frac{\boxed{\text{サシス}}}{\boxed{\text{セソ}}}$$
+  である。
+blanks:
+  - { label: ア, answer: "4" }
+  - { label: イ, answer: "5" }
+  - { label: ウエ, answer: "12" }
+  - { label: オカ, answer: "13" }
+  - { label: キク, answer: "33" }
+  - { label: ケコ, answer: "65" }
+  - { label: サシス, answer: "-56" }
+  - { label: セソ, answer: "65" }
+solution: |
+  $\alpha$ は第1象限なので $\cos\alpha=\sqrt{1-\dfrac{9}{25}}=\dfrac{4}{5}$。$\beta$ は第2象限なので $\sin\beta>0$ で $\sin\beta=\sqrt{1-\dfrac{25}{169}}=\dfrac{12}{13}$。
+
+  $$\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta=\frac{3}{5}\cdot\left(-\frac{5}{13}\right)+\frac{4}{5}\cdot\frac{12}{13}=\frac{-15+48}{65}=\frac{33}{65}$$
+  $$\cos(\alpha+\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta=\frac{4}{5}\cdot\left(-\frac{5}{13}\right)-\frac{3}{5}\cdot\frac{12}{13}=\frac{-20-36}{65}=-\frac{56}{65}$$
+  検算: $33^2+56^2=1089+3136=4225=65^2$ で、$\sin^2+\cos^2=1$ を満たす。
+concepts: [tf-addition, tf-definition]
+misconceptions: [mc-tf-addition-sign]
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.7, discrimination: 1.0 }
+author:
+  intent: |
+    相互関係で象限から符号を決め、加法定理を符号まで正しく適用できるかをみる。$\cos$ の加法定理を $+$ で計算すると $\dfrac{16}{65}$、$\cos\beta$ の符号を落とすと別の値になり、空欄 サシス に符号を含めたことで $\cos(\alpha+\beta)<0$（$\alpha+\beta$ が第2象限）まで判断できたかを見分ける。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学II (4) イ(ア) 加法定理]
+  variations:
+    - 同じ条件で $\tan(\alpha-\beta)$ を求めさせ、$\tan$ の加法定理を使わせる。
+    - $\alpha+\beta$ が第何象限の角かを答えさせ、$\sin,\ \cos$ の符号と結びつける。

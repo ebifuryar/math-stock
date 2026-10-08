@@ -1,0 +1,52 @@
+id: m1-ne-a02
+level: applied
+format: choice
+title: 根号で表された絶対値の等式
+stem: |
+  $a$ を実数とする。等式
+  $$\sqrt{a^2+2a+1}+\sqrt{a^2-4a+4}=2a-1$$
+  が成り立つような $a$ の値の範囲として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $a\geqq -1$
+    misconception: mc-ne-sqrt-nonnegative
+    rationale: |
+      $\sqrt{(a+1)^2}=a+1$ となる条件 $a\geqq -1$ だけを考え、もう一方の $\sqrt{(a-2)^2}=a-2$ の条件を落としている。$a=0$ とすると左辺 $=1+2=3$、右辺 $=-1$ で成り立たない。
+  - id: "2"
+    text: $a\geqq 2$
+    rationale: |
+      正解。左辺 $=|a+1|+|a-2|$ で、これが $(a+1)+(a-2)=2a-1$ と一致するのは $a+1\geqq 0$ かつ $a-2\geqq 0$、すなわち $a\geqq 2$ のとき。
+  - id: "3"
+    text: $a>2$
+    misconception: mc-ne-abs-case-check
+    rationale: |
+      $a=2$ を除いている。$a=2$ のとき左辺 $=3+0=3$、右辺 $=3$ で成り立つので、等号を含めなければならない。
+  - id: "4"
+    text: すべての実数
+    misconception: mc-ne-sqrt-nonnegative
+    rationale: |
+      $\sqrt{A^2}=A$ として絶対値を付けずに外し、左辺が恒等的に $2a-1$ になると考えている。$a=-5$ とすると左辺 $=4+7=11$、右辺 $=-11$ で成り立たない。
+answer: "2"
+solution: |
+  $a^2+2a+1=(a+1)^2$、$a^2-4a+4=(a-2)^2$ であり、$\sqrt{A^2}=|A|$ なので
+  $$（左辺）=|a+1|+|a-2|$$
+
+  右辺 $2a-1$ と比べる。$a\geqq 2$ のとき $|a+1|=a+1,\ |a-2|=a-2$ なので左辺 $=2a-1$ で成立。
+
+  $-1\leqq a<2$ のとき左辺 $=(a+1)+(2-a)=3$ なので $3=2a-1$ より $a=2$。これは範囲外で不適。
+
+  $a<-1$ のとき左辺 $=-(a+1)+(2-a)=1-2a$ なので $1-2a=2a-1$ より $a=\dfrac{1}{2}$。これも範囲外で不適。
+
+  よって $a\geqq 2$。
+concepts: [ne-absolute-value, ne-absolute-equation, ne-radicals]
+misconceptions: [mc-ne-sqrt-nonnegative, mc-ne-abs-case-check]
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.45, discrimination: 1.3 }
+author:
+  intent: |
+    $\sqrt{A^2}=|A|$ を使えるか、そのうえで場合分けの結果が各範囲に含まれるかを検証できるかをみる。誤答④は絶対値を付けずに外す最も重い誤り、①は片方の条件だけ、③は境界の等号の見落としに対応し、理解の深さを3段階で判別できる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学I (1) ア(ア) 実数の絶対値と平方根の性質]
+  variations:
+    - 右辺を $3$ にして、解が範囲全体になる場合を問う。
+    - $\sqrt{a^2+2a+1}-\sqrt{a^2-4a+4}$ を $a$ の範囲ごとに場合分けして表させる。

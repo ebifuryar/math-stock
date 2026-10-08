@@ -1,0 +1,13 @@
+id: tg-identities
+kind: formula
+title: 三角比の相互関係と 90°−θ・180°−θ
+body: |
+  **相互関係**
+  $$\sin^2\theta+\cos^2\theta=1,\qquad \tan\theta=\frac{\sin\theta}{\cos\theta},\qquad 1+\tan^2\theta=\frac{1}{\cos^2\theta}$$
+  1つの三角比から他を求めるときは、平方根をとる段階で $\theta$ の範囲から符号を決める（$0^\circ\leqq\theta\leqq 180^\circ$ なら $\sin\theta\geqq 0$、$\cos\theta$ と $\tan\theta$ は鈍角で負）。
+
+  **$90^\circ-\theta$ と $180^\circ-\theta$**
+  $$\sin(90^\circ-\theta)=\cos\theta,\quad \cos(90^\circ-\theta)=\sin\theta,\quad \tan(90^\circ-\theta)=\frac{1}{\tan\theta}$$
+  $$\sin(180^\circ-\theta)=\sin\theta,\quad \cos(180^\circ-\theta)=-\cos\theta,\quad \tan(180^\circ-\theta)=-\tan\theta$$
+  単位円で、点 $(x,\ y)$ と $y$ 軸について対称な点 $(-x,\ y)$ を考えれば $180^\circ-\theta$ の公式が読み取れる。
+prerequisites: [tg-unit-circle]

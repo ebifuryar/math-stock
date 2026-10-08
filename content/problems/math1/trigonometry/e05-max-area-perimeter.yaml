@@ -1,0 +1,67 @@
+id: m1-tg-e05
+level: exam
+format: written
+title: 1辺と対角が一定の三角形の面積・周の最大
+stem: |
+  $\triangle\mathrm{ABC}$ において、$\mathrm{BC}=3,\ \angle\mathrm{BAC}=60^\circ$ とする。
+
+  (1) $\triangle\mathrm{ABC}$ の外接円の半径を求めよ。
+
+  (2) $\triangle\mathrm{ABC}$ の面積の最大値を求めよ。
+
+  (3) $\triangle\mathrm{ABC}$ の周の長さの最大値を求めよ。
+modelAnswer: |
+  $\mathrm{CA}=b,\ \mathrm{AB}=c\ (b>0,\ c>0)$ とおく。
+
+  (1) 正弦定理より $2R=\dfrac{3}{\sin 60^\circ}=\dfrac{3}{\sqrt{3}/2}=2\sqrt{3}$。よって $R=\sqrt{3}$。
+
+  (2) 余弦定理より
+  $$9=b^2+c^2-2bc\cos 60^\circ=b^2+c^2-bc\qquad\cdots\text{①}$$
+  $(b-c)^2\geqq 0$ より $b^2+c^2\geqq 2bc$ であるから、① より $9\geqq 2bc-bc=bc$。すなわち $bc\leqq 9$。
+
+  面積は $S=\dfrac{1}{2}bc\sin 60^\circ=\dfrac{\sqrt{3}}{4}bc\leqq\dfrac{9\sqrt{3}}{4}$。
+
+  等号は $b=c$ のときで、① に代入すると $b^2=9$、$b=c=3$。このとき3辺はすべて $3$ で三角形は存在する（正三角形）。
+
+  よって面積の最大値は $\dfrac{9\sqrt{3}}{4}$。
+
+  (3) ① を変形して $9=(b+c)^2-3bc$。$(b-c)^2\geqq 0$ より $bc\leqq\dfrac{(b+c)^2}{4}$ であるから
+  $$9\geqq(b+c)^2-\frac{3}{4}(b+c)^2=\frac{1}{4}(b+c)^2$$
+  $b+c>0$ より $b+c\leqq 6$。等号は $b=c=3$ のときで成立する。
+
+  周の長さは $3+b+c\leqq 9$ であり、**最大値は $9$**（正三角形のとき）。
+
+  **答え: (1) $\sqrt{3}$ (2) $\dfrac{9\sqrt{3}}{4}$ (3) $9$**
+rubric:
+  - id: r1
+    criterion: 正弦定理を $\dfrac{a}{\sin A}=2R$ の形で正しく用い、$R=\sqrt{3}$ を得ている
+    points: 2
+    keywords: ["2R", "√3"]
+  - id: r2
+    criterion: 余弦定理から $b^2+c^2-bc=9$ という $b,\ c$ の関係式を立てている
+    points: 2
+    keywords: ["余弦定理", "-bc"]
+  - id: r3
+    criterion: $b^2+c^2\geqq 2bc$ などを根拠に $bc\leqq 9$ を導き、等号成立（$b=c=3$）を確認して面積の最大値 $\dfrac{9\sqrt{3}}{4}$ を求めている
+    points: 3
+    keywords: ["9√3/4", "等号"]
+  - id: r4
+    criterion: $9=(b+c)^2-3bc$ と $bc\leqq\dfrac{(b+c)^2}{4}$ から $b+c\leqq 6$ を導き、等号成立を確認して周の最大値 $9$ を求めている
+    points: 3
+    keywords: ["b+c", "正三角形"]
+solution: |
+  $\mathrm{BC}$ と対角 $A$ が一定なので、頂点 $\mathrm{A}$ は半径 $\sqrt{3}$ の外接円の弧の上を動く。余弦定理で $b,\ c$ の関係式 $b^2+c^2-bc=9$ を作り、$(b-c)^2\geqq 0$ を使って $bc$ や $b+c$ を評価するのが数学Iの範囲での解法。不等式で上から抑えたら、**等号が実際に成立すること** を必ず確認する。
+concepts: [tg-law-of-cosines, tg-law-of-sines, tg-area]
+misconceptions: [mc-tg-sine-2r, mc-tg-area-angle]
+targetSeconds: 720
+irt: { expectedCorrectRate: 0.3, discrimination: 1.4 }
+author:
+  intent: |
+    「1辺とその対角が一定」という条件を、余弦定理による2変数の関係式として捉え、不等式で最大値を評価できるかをみる。最大値の問題で等号成立の確認を書けるか（「$\leqq$ を示しただけ」の答案との差）で記述力を識別する。図形的には弧の中点で最大になる（正三角形）ことの直観と結論が一致するかも検算の観点になる。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学I (2) ア(ウ) 正弦定理・余弦定理, 数学I (2) イ(イ) 図形の計量（三角形の面積）]
+  variations:
+    - $\angle\mathrm{BAC}=120^\circ$ に変え、周の最大値 $3+2\sqrt{3}$ を求めさせる。
+    - 面積が最大のときの内接円の半径を求めさせ、内接円・外接円の半径比 $r:R=1:2$ を確認させる。
+  notes: |
+    数学IIの加法定理を使えば $b=2\sqrt{3}\sin B,\ c=2\sqrt{3}\sin(120^\circ-B)$ として角の関数で処理できるが、本問は数学Iの範囲（$(b-c)^2\geqq 0$ による評価）で解ける設定にしている。

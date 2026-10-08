@@ -1,0 +1,48 @@
+id: m1-tg-e01
+level: exam
+format: choice
+title: 最大角が120°以上となる三角形の条件
+stem: |
+  $x$ を正の実数とする。3辺の長さが $x,\ x+1,\ x+2$ である三角形が存在し、かつその三角形の最大の角が $120^\circ$ 以上となるような $x$ の値の範囲として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $x>1$
+    misconception: mc-tg-obtuse-sign
+    rationale: |
+      $\cos 120^\circ=\dfrac{1}{2}$ として「$\cos\theta\leqq\dfrac{1}{2}$」で立式している。このとき $(x+2)^2\geqq x^2+(x+1)^2-x(x+1)$ すなわち $3x+3\geqq 0$ となり、三角形の成立条件 $x>1$ だけが残る。正しくは $\cos 120^\circ=-\dfrac{1}{2}$。
+  - id: "2"
+    text: $0<x\leqq\dfrac{3}{2}$
+    rationale: |
+      角の条件 $(2x-3)(x+1)\leqq 0$ は正しく解けているが、三角形の成立条件 $x+(x+1)>x+2$ すなわち $x>1$ を忘れている。たとえば $x=\dfrac{1}{2}$ では3辺 $\dfrac{1}{2},\ \dfrac{3}{2},\ \dfrac{5}{2}$ で三角形ができない。
+  - id: "3"
+    text: $x\geqq\dfrac{3}{2}$
+    misconception: mc-tg-unit-circle-range
+    rationale: |
+      「$120^\circ$ 以上」を $\cos\theta\geqq-\dfrac{1}{2}$ と不等号の向きを逆にしている。$\cos\theta$ は $\theta$ が大きくなるほど小さくなるので、$\theta\geqq 120^\circ\iff\cos\theta\leqq-\dfrac{1}{2}$。
+  - id: "4"
+    text: $1<x\leqq\dfrac{3}{2}$
+    rationale: |
+      正解。三角形の成立条件 $x>1$ と、最大角 $\theta$ について $\cos\theta\leqq-\dfrac{1}{2}$ から得られる $-1\leqq x\leqq\dfrac{3}{2}$ の共通部分。
+answer: "4"
+solution: |
+  **三角形の成立条件** 最大辺は $x+2$ なので、$x+(x+1)>x+2$ より $x>1$。（このとき他の2つの三角不等式は自動的に成り立つ。）
+
+  **角の条件** 最大の角は最大辺 $x+2$ の対角で、これを $\theta$ とする。$0^\circ<\theta<180^\circ$ で $\cos\theta$ は減少するから
+  $$\theta\geqq 120^\circ\iff\cos\theta\leqq-\frac{1}{2}$$
+  余弦定理より $\cos\theta=\dfrac{x^2+(x+1)^2-(x+2)^2}{2x(x+1)}$ で、分母は正だから
+  $$x^2+(x+1)^2-(x+2)^2\leqq -x(x+1)\iff 2x^2-x-3\leqq 0\iff(2x-3)(x+1)\leqq 0$$
+  よって $-1\leqq x\leqq\dfrac{3}{2}$。
+
+  共通部分をとって $1<x\leqq\dfrac{3}{2}$。（$x=\dfrac{3}{2}$ のとき3辺は $\dfrac{3}{2},\ \dfrac{5}{2},\ \dfrac{7}{2}$ で、最大角はちょうど $120^\circ$。）
+concepts: [tg-law-of-cosines, tg-unit-circle, tg-equation-inequality]
+misconceptions: [mc-tg-obtuse-sign, mc-tg-unit-circle-range, mc-tg-cosine-sign]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.4, discrimination: 1.4 }
+author:
+  intent: |
+    角の大きさの条件を $\cos$ の不等式に翻訳する際の「値（$\cos 120^\circ$ の符号）」「向き（$\cos$ の減少性）」と、図形の前提である三角形の成立条件を、すべて落とさずに処理できるかをみる。誤答①〜③はそれぞれ1か所だけを誤った場合に対応しており、どの観点が欠けているかを選択肢から診断できる。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学I (2) ア(ウ) 余弦定理, 数学I (2) ア(イ) 三角比を含む不等式]
+  variations:
+    - 「鋭角三角形となる条件」に変えて答え $x>3$ を求めさせ、最大角だけを調べればよい理由を記述させる。
+    - 3辺を $x,\ x+2,\ x+4$ や $x^2+x+1,\ 2x+1,\ x^2-1$ にし、最大辺の決定から考えさせる。

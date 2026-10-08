@@ -1,0 +1,15 @@
+id: ne-absolute-equation
+kind: method
+title: 絶対値を含む方程式・不等式
+body: |
+  $c>0$ のとき
+  $$|x|=c \iff x=\pm c,\qquad |x|<c \iff -c<x<c,\qquad |x|>c \iff x<-c,\ c<x$$
+
+  右辺に文字を含む場合や、絶対値が複数ある場合は、**中身の符号が変わる点** で数直線を区切って場合分けする。
+
+  1. 各区間で絶対値をはずして解く。
+  2. 得られた解が **その区間に含まれるか** を確認する（含まれないものは捨てる）。
+  3. 各区間の結果を合わせる（和集合をとる）。
+
+  $|x-a|$ を「点 $a$ からの距離」と読むと、$|x-1|+|x+2|$ の最小値が $3$ であることなどが図から分かる。
+prerequisites: [ne-absolute-value, ne-linear-inequality]

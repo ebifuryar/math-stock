@@ -47,4 +47,4 @@ tests/unit/         Vitest
 
 ## 問題の追加
 
-`content/problems/<科目>/<単元>/` に YAML を追加して `npm run content` を実行します。既存ファイルを書式見本にしてください。未定義の概念・誤答パターンの参照、TeX の構文エラー、正解IDの不整合はビルド時にエラーになります。
+`content/problems/<科目>/<単元>/` に YAML を追加して `npm run content` を実行します（誤答パターンは `content/misconceptions/<単元ID>.yaml`、出力を書き換えずに検証だけするときは `npm run content:check`）。既存ファイルを書式見本にしてください。未定義の概念・誤答パターンの参照、TeX の構文エラー、正解IDの不整合はビルド時にエラーになります。

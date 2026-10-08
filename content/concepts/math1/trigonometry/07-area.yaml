@@ -1,0 +1,15 @@
+id: tg-area
+kind: formula
+title: 三角形の面積・内接円の半径・角の二等分線
+body: |
+  **面積** 2辺とその **間の角** を用いて
+  $$S=\frac{1}{2}bc\sin A=\frac{1}{2}ca\sin B=\frac{1}{2}ab\sin C$$
+  3辺だけが分かっているときは、余弦定理で $\cos A$、相互関係で $\sin A$ を求めてから使う。
+
+  **内接円の半径** 内心と3頂点を結んで3つの三角形に分けると
+  $$S=\frac{1}{2}r(a+b+c)\quad\text{すなわち}\quad r=\frac{2S}{a+b+c}$$
+
+  **角の二等分線** $\angle A$ の二等分線と辺 $\mathrm{BC}$ の交点を $\mathrm{D}$ とすると、面積の分割 $\triangle\mathrm{ABC}=\triangle\mathrm{ABD}+\triangle\mathrm{ACD}$ より
+  $$\frac{1}{2}bc\sin A=\frac{1}{2}c\cdot\mathrm{AD}\sin\frac{A}{2}+\frac{1}{2}b\cdot\mathrm{AD}\sin\frac{A}{2}$$
+  $A=120^\circ$ や $60^\circ$ のように $\dfrac{A}{2}$ の三角比が分かるとき、これで $\mathrm{AD}$ が求まる。
+prerequisites: [tg-law-of-cosines, tg-identities]

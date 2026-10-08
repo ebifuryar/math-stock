@@ -1,0 +1,14 @@
+id: ne-radicals
+kind: property
+title: 根号を含む式の計算（有理化・二重根号・整数部分）
+body: |
+  **分母の有理化**: 分母が $\sqrt{a}-\sqrt{b}$ なら、分母・分子に $\sqrt{a}+\sqrt{b}$ を掛ける。$(\sqrt{a}+\sqrt{b})(\sqrt{a}-\sqrt{b})=a-b$。
+
+  **二重根号**: $a>b>0$ のとき
+  $$\sqrt{(a+b)+2\sqrt{ab}}=\sqrt{a}+\sqrt{b},\qquad \sqrt{(a+b)-2\sqrt{ab}}=\sqrt{a}-\sqrt{b}$$
+  引き算の形では **大きい方を先に** 書く。$\sqrt{X^2}=|X|$ なので、結果は必ず $0$ 以上でなければならない。$\sqrt{p-\sqrt{q}}$ の形は、まず $\sqrt{q}=2\sqrt{\dfrac{q}{4}}$ と直して「$2\sqrt{\ }$」の形を作る。
+
+  **整数部分と小数部分**: 実数 $x$ について $n\leqq x<n+1$ となる整数 $n$ が整数部分、$x-n$ が小数部分（$0$ 以上 $1$ 未満）。$\sqrt{3}=1.73\cdots$ のように根号の値を不等式で挟んで求める。
+
+  **次数下げ**: $x=\dfrac{1+\sqrt{5}}{2}$ のような値は $x^2=x+1$ を満たす。高次の式はこの関係で $x^2$ を次々に置きかえ、1次式に直してから値を代入する。
+prerequisites: [ne-absolute-value, ne-expansion]

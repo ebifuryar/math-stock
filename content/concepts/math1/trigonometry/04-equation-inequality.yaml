@@ -1,0 +1,11 @@
+id: tg-equation-inequality
+kind: method
+title: 三角比を含む方程式・不等式（0°≦θ≦180°）
+body: |
+  単位円上の点の座標に読みかえて解く。
+  - $\sin\theta=k$: 直線 $y=k$ と半円の交点。$0<k<1$ なら解は **2つ**（$\theta$ と $180^\circ-\theta$）、$k=1$ なら $\theta=90^\circ$ のみ、$k=0$ なら $\theta=0^\circ,\ 180^\circ$。
+  - $\cos\theta=k$: 直線 $x=k$ との交点で、$-1\leqq k\leqq 1$ のとき解はちょうど1つ。
+  - 不等式は、条件を満たす点が半円のどの部分にあるかを図で確認してから範囲を読む。例: $\cos\theta\leqq -\dfrac{1}{\sqrt{2}}$ は $135^\circ\leqq\theta\leqq 180^\circ$。
+
+  $\sin\theta$ や $\cos\theta$ の2次式は $t=\sin\theta$ などとおいて2次関数の問題にするが、**$t$ の変域**（$\sin\theta$ なら $0\leqq t\leqq 1$）を必ず付け、さらに $t$ の1つの値に $\theta$ がいくつ対応するかを確かめる。
+prerequisites: [tg-unit-circle, tg-identities]

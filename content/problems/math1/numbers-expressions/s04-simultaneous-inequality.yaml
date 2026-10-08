@@ -1,0 +1,30 @@
+id: m1-ne-s04
+level: school
+format: mark
+title: 連立不等式とその整数解
+stem: |
+  連立不等式
+  $$\begin{cases} 3x-5<7x+3 \\ 2(x-1)\geqq 5x-11 \end{cases}$$
+  の解は $\boxed{\text{アイ}}<x\leqq\boxed{\text{ウ}}$ であり、これを満たす整数 $x$ は $\boxed{\text{エ}}$ 個ある。
+blanks:
+  - { label: アイ, answer: "-2" }
+  - { label: ウ, answer: "3" }
+  - { label: エ, answer: "5" }
+solution: |
+  1つ目: $3x-7x<3+5$ より $-4x<8$。両辺を負の数 $-4$ で割るので向きが変わり $x>-2$。
+
+  2つ目: $2x-2\geqq 5x-11$ より $-3x\geqq -9$。両辺を $-3$ で割って $x\leqq 3$。
+
+  共通部分は $-2<x\leqq 3$。これを満たす整数は $-1,\ 0,\ 1,\ 2,\ 3$ の $5$ 個（$-2$ は含まれず、$3$ は含まれる）。
+concepts: [ne-linear-inequality]
+misconceptions: [mc-ne-inequality-direction, mc-ne-integer-boundary]
+targetSeconds: 150
+irt: { expectedCorrectRate: 0.72, discrimination: 1.0 }
+author:
+  intent: |
+    両方の不等式で「負の数で割る」操作が必要になるよう係数を設計し、不等号の向きの処理を確実に問う。向きを変え忘れると共通部分が空集合や片側無限の区間になり、アイ・ウに答えられなくなる。整数の個数では、開いた端 $-2$ と閉じた端 $3$ の扱いの違いをみる。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学I (1) ア(エ) 一次不等式]
+  variations:
+    - 不等式の一方の端を文字 $a$ にし、整数解の個数から $a$ の範囲を求めさせる。
+    - 文章題（料金比較など）から連立不等式を立てさせる。

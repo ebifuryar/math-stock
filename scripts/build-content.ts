@@ -104,7 +104,13 @@ const sourceMisconceptionSchema = z.object({
 });
 
 function loadYaml(path: string): unknown {
-  return loadYamlText(readFileSync(path, 'utf8'));
+  // YAML の構文エラーで処理全体を止めず、他のファイルのエラーとまとめて報告する
+  try {
+    return loadYamlText(readFileSync(path, 'utf8'));
+  } catch (e) {
+    errors.push(`${relative(ROOT, path)}: YAML の構文エラー\n${(e as Error).message}`);
+    return undefined;
+  }
 }
 
 function yamlFiles(dir: string): string[] {
@@ -174,16 +180,21 @@ function compileProblem(src: z.infer<typeof sourceProblemSchema>, subjectId: Pro
   };
 }
 
+function countBy(ids: string[]): Map<string, number> {
+  const m = new Map<string, number>();
+  for (const id of ids) m.set(id, (m.get(id) ?? 0) + 1);
+  return m;
+}
+
 const hash = (s: string) => createHash('sha256').update(s).digest('hex').slice(0, 12);
 
 function main() {
   const curriculum = parseOrReport(curriculumSchema, loadYaml(join(CONTENT, 'curriculum.yaml')), 'curriculum.yaml');
-  const misconceptionsSrc = parseOrReport(
-    z.array(sourceMisconceptionSchema),
-    loadYaml(join(CONTENT, 'misconceptions.yaml')),
-    'misconceptions.yaml',
+  // 誤答パターンは単元ごとのファイルに分けて書き、ここで1つにまとめる
+  const misconceptionsSrc = yamlFiles(join(CONTENT, 'misconceptions')).flatMap(
+    (file) => parseOrReport(z.array(sourceMisconceptionSchema), loadYaml(file), relative(ROOT, file)) ?? [],
   );
-  if (!curriculum || !misconceptionsSrc) return finish();
+  if (!curriculum) return finish();
 
   const concepts: Catalog['concepts'] = [];
   const unitFiles: { subjectId: Problem['subjectId']; unitId: string; problems: unknown[] }[] = [];
@@ -223,8 +234,8 @@ function main() {
       misconceptions: misconceptionsSrc.map((m) => ({
         id: m.id,
         title: m.title,
-        description: md(m.description, `misconceptions.yaml ${m.id}`),
-        cause: md(m.cause, `misconceptions.yaml ${m.id}.cause`),
+        description: md(m.description, `misconceptions ${m.id}`),
+        cause: md(m.cause, `misconceptions ${m.id}.cause`),
         remedyConceptIds: m.remedyConcepts,
       })),
     },
@@ -263,7 +274,19 @@ function main() {
     }
   }
 
+  for (const [id, n] of countBy(catalog?.misconceptions.map((m) => m.id) ?? [])) {
+    if (n > 1) errors.push(`誤答パターンIDが重複: ${id}`);
+  }
+  for (const [id, n] of countBy(catalog?.concepts.map((c) => c.id) ?? [])) {
+    if (n > 1) errors.push(`概念IDが重複: ${id}`);
+  }
+
   if (errors.length > 0 || !catalog) return finish();
+  // --check: 検証だけ行い public/data は書き換えない（作問中の確認用）
+  if (process.argv.includes('--check')) {
+    console.log(`content check OK: ${validUnits.reduce((s, u) => s + u.parsed.problems.length, 0)} problems`);
+    return finish();
+  }
 
   rmSync(OUT, { recursive: true, force: true });
   mkdirSync(join(OUT, 'units'), { recursive: true });

@@ -1,0 +1,56 @@
+- id: mc-tg-ratio-sides
+  title: 三角比の定義での辺の取り違え
+  description: |
+    直角三角形で、$\sin$ を「隣辺/斜辺」、$\tan$ を「隣辺/対辺」とするなど、分子・分母に使う辺を取り違える。$\tan\theta=\dfrac{\cos\theta}{\sin\theta}$ と逆にするのも同じ誤り。
+  cause: |
+    「対辺・隣辺・斜辺」を、基準にする角との位置関係でなく図の向き（右側の辺・下の辺など）で覚えている。教科書の図と向きが違う三角形や、直角が別の頂点にある三角形で崩れる。単位円の定義（$\cos\theta=x,\ \sin\theta=y$）と結びつけていないことが根本原因。
+  remedyConcepts: [tg-ratio-definition, tg-unit-circle]
+- id: mc-tg-obtuse-sign
+  title: 鈍角の cos・tan の符号の誤り
+  description: |
+    $90^\circ<\theta<180^\circ$ でも $\cos\theta>0$ としてしまう。例: $\sin\theta=\dfrac{2}{3}$（$\theta$ は鈍角）から $\cos\theta=\dfrac{\sqrt{5}}{3}$、あるいは $\cos 120^\circ=\dfrac{1}{2}$。
+  cause: |
+    三角比を直角三角形の辺の比としてだけ理解しており、鈍角への拡張（単位円の $x$ 座標が負になること）が定着していない。相互関係で平方根をとる段階で「$\pm$ のどちらか」を $\theta$ の範囲から判断する手順を省いている。
+  remedyConcepts: [tg-unit-circle, tg-identities]
+- id: mc-tg-sin-solution-count
+  title: sinθ=k の解の個数の誤認
+  description: |
+    $0^\circ\leqq\theta\leqq 180^\circ$ で $\sin\theta=\dfrac{1}{2}$ の解を $\theta=30^\circ$ だけにする（$150^\circ$ を落とす）。正弦定理で $\sin B$ から角を求める場面で鈍角の可能性を考えない。逆に、$\sin\theta=1$ にも解が2つあると数える。
+  cause: |
+    「$\sin\theta=k$ の解 = 三角比の表で1つ引く値」と、鋭角の感覚で処理している。直線 $y=k$ と単位円の上半分の交点の個数（$0<k<1$ で2個、$k=1$ で1個、$k=0$ で2個）を図で確認する習慣がない。
+  remedyConcepts: [tg-equation-inequality, tg-law-of-sines]
+- id: mc-tg-unit-circle-range
+  title: 三角比の値の範囲・不等式の向きの取り違え
+  description: |
+    $0^\circ\leqq\theta\leqq 180^\circ$ でも $-1\leqq\sin\theta\leqq 1$ として置き換えた変数の変域を誤る。あるいは $\cos\theta$ が減少することを無視して、$\cos\theta\leqq k$ の解を $\theta\leqq\alpha$ のように逆向きにする。
+  cause: |
+    三角比の範囲を数学IIの一般角の知識や「$\sin,\ \cos$ は $-1$ から $1$」という丸暗記で処理し、単位円の上半分という具体的な図に戻っていない。$\cos\theta$ は $\theta$ が増えると減る（$x$ 座標が左へ動く）ことを意識していない。
+  remedyConcepts: [tg-unit-circle, tg-equation-inequality]
+- id: mc-tg-sine-2r
+  title: 正弦定理で 2R を R とする
+  description: |
+    $\dfrac{a}{\sin A}=R$ として外接円の半径を2倍に求めたり、$\sin A=\dfrac{a}{R}$ として $1$ を超える値を出したりする。
+  cause: |
+    正弦定理を「辺 ÷ sin = 外接円」という曖昧な形で覚えている。直径を斜辺とする直角三角形（円周角の定理）から定理を導いた経験がなく、比の値が直径であることの根拠を持っていない。
+  remedyConcepts: [tg-law-of-sines]
+- id: mc-tg-cosine-sign
+  title: 余弦定理の符号・形の誤り
+  description: |
+    $a^2=b^2+c^2+2bc\cos A$ と符号を誤る。$A$ が鈍角のときに $-2bc\cos A$ の項を負のまま扱う。鋭角・鈍角の判定（$b^2+c^2$ と $a^2$ の大小）を逆にする。
+  cause: |
+    余弦定理を三平方の定理の「補正」として理解していない。$A=90^\circ$ で補正項が $0$、$A$ が鈍角なら $a$ は三平方より長くなる（補正項は正）という大小の感覚で検算する習慣がない。
+  remedyConcepts: [tg-law-of-cosines]
+- id: mc-tg-area-angle
+  title: 面積公式で「挟む角」でない角を使う
+  description: |
+    $S=\dfrac{1}{2}ab\sin\theta$ の $\theta$ に、辺 $a,\ b$ の間の角ではなく、問題文で与えられた別の角（たとえば辺 $a$ の対角）を代入する。
+  cause: |
+    公式を「2辺 × sin（与えられた角）」という形で覚えている。面積公式が「底辺 $b$ × 高さ $c\sin A$」から導かれること、すなわち $\sin$ の角は2辺が作る角でなければ高さにならないことを理解していない。
+  remedyConcepts: [tg-area]
+- id: mc-tg-cyclic-supplement
+  title: 円に内接する四角形で対角の cos を等しいとする
+  description: |
+    円に内接する四角形 $\mathrm{ABCD}$ で $\cos D=\cos B$ として余弦定理を立てる。$\sin D=\sin B$ と混同している。
+  cause: |
+    「対角の和が $180^\circ$」は知っていても、それを $180^\circ-\theta$ の公式（$\sin$ は等しく $\cos$ は符号が変わる）に結びつけていない。$\sin$ で成り立つ関係を $\cos$ にも流用している。
+  remedyConcepts: [tg-figure-application, tg-identities]

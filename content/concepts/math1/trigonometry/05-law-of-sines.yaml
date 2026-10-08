@@ -1,0 +1,11 @@
+id: tg-law-of-sines
+kind: theorem
+title: 正弦定理
+body: |
+  $\triangle\mathrm{ABC}$ の外接円の半径を $R$、$a=\mathrm{BC},\ b=\mathrm{CA},\ c=\mathrm{AB}$ とすると
+  $$\frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C}=2R$$
+  右辺は直径 $2R$ であって半径 $R$ ではない。
+
+  - 使いどころ: 「1辺と両端の角」「外接円の半径」が絡むとき。$a:b:c=\sin A:\sin B:\sin C$ も成り立つ。
+  - 辺から角を求めると $\sin B$ しか決まらないので、$B$ が鋭角・鈍角の2通りになりうる。内角の和が $180^\circ$ 未満か、大きい辺に大きい角が向かい合うかで吟味する。
+prerequisites: [tg-unit-circle]

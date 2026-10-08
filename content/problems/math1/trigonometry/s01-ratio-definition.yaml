@@ -1,0 +1,45 @@
+id: m1-tg-s01
+level: school
+format: choice
+title: 直角三角形の三角比
+stem: |
+  $\angle\mathrm{C}=90^\circ$ の直角三角形 $\mathrm{ABC}$ において、$\mathrm{AC}=2,\ \mathrm{BC}=1$ とする。$\sin\angle\mathrm{A}$ の値として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\dfrac{2\sqrt{5}}{5}$
+    misconception: mc-tg-ratio-sides
+    rationale: |
+      これは $\cos A=\dfrac{\mathrm{AC}}{\mathrm{AB}}$ の値。$\angle A$ に接している辺 $\mathrm{AC}$（隣辺）を分子にしている。$\sin A$ の分子は $\angle A$ の向かい側の辺 $\mathrm{BC}$。
+  - id: "2"
+    text: $\dfrac{1}{2}$
+    misconception: mc-tg-ratio-sides
+    rationale: |
+      これは $\tan A=\dfrac{\mathrm{BC}}{\mathrm{AC}}$ の値。斜辺 $\mathrm{AB}$ を求めずに、見えている2辺の比をとっている。$\sin$ の分母は斜辺。
+  - id: "3"
+    text: $\dfrac{\sqrt{5}}{5}$
+    rationale: |
+      正解。三平方の定理で $\mathrm{AB}=\sqrt{2^2+1^2}=\sqrt{5}$。$\sin A=\dfrac{\mathrm{BC}}{\mathrm{AB}}=\dfrac{1}{\sqrt{5}}=\dfrac{\sqrt{5}}{5}$。
+  - id: "4"
+    text: $\sqrt{5}$
+    misconception: mc-tg-ratio-sides
+    rationale: |
+      $\dfrac{\mathrm{AB}}{\mathrm{BC}}$ と分子・分母を逆にしている。直角三角形の三角比 $\sin,\ \cos$ は斜辺で割るので、必ず $1$ 以下になる。
+answer: "3"
+solution: |
+  まず斜辺を求める。$\mathrm{AB}=\sqrt{\mathrm{AC}^2+\mathrm{BC}^2}=\sqrt{5}$。
+
+  $\angle A$ から見て、対辺は $\mathrm{BC}=1$、隣辺は $\mathrm{AC}=2$、斜辺は $\mathrm{AB}=\sqrt{5}$。よって
+  $$\sin A=\frac{\mathrm{BC}}{\mathrm{AB}}=\frac{1}{\sqrt{5}}=\frac{\sqrt{5}}{5}$$
+  なお $A+B=90^\circ$ なので、$\sin A=\cos(90^\circ-A)=\cos B$ でもある。
+concepts: [tg-ratio-definition]
+misconceptions: [mc-tg-ratio-sides]
+targetSeconds: 60
+irt: { expectedCorrectRate: 0.85, discrimination: 0.8 }
+author:
+  intent: |
+    直角三角形の三角比を、基準の角から見た「対辺・隣辺・斜辺」で正しく判断できるかをみる。斜辺が与えられていない設定にして、三平方の定理で斜辺を出す一手間を入れた。誤答はそれぞれ $\cos A$、$\tan A$、逆数に対応させ、どの取り違えかを特定できるようにしている。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学I (2) ア(ア) 鋭角の三角比の意味]
+  variations:
+    - 同じ三角形で $\cos B$ を問い、$\sin A=\cos B$（$90^\circ-\theta$ の関係）に気づかせる。
+    - 斜辺と1辺を与え、残りの辺を三角比から求めさせる（測量の文脈）。

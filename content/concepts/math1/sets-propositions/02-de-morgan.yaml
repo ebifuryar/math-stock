@@ -1,0 +1,13 @@
+id: sp-de-morgan
+kind: theorem
+title: ド・モルガンの法則
+body: |
+  全体集合 $U$ の部分集合 $A,\ B$ について
+  $$\overline{A\cap B}=\overline{A}\cup\overline{B},\qquad \overline{A\cup B}=\overline{A}\cap\overline{B}$$
+
+  「補集合をとると $\cap$ と $\cup$ が入れかわる」。$\overline{A\cap B}$ は「$A$ と $B$ の両方には属さない」であって「両方に属さない」ではない。ベン図で斜線部分を塗り分けて確かめるとよい。
+
+  条件 $p,\ q$ についても同じ形で
+  $$\overline{p\text{ かつ }q}\iff\overline{p}\text{ または }\overline{q},\qquad \overline{p\text{ または }q}\iff\overline{p}\text{ かつ }\overline{q}$$
+  が成り立つ（真理集合のド・モルガンの法則そのもの）。
+prerequisites: [sp-set-operations]

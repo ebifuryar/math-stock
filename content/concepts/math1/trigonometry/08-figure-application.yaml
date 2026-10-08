@@ -1,0 +1,12 @@
+id: tg-figure-application
+kind: method
+title: 円に内接する四角形・空間図形への応用
+body: |
+  **円に内接する四角形** $\mathrm{ABCD}$ では対角の和が $180^\circ$ なので
+  $$\cos D=\cos(180^\circ-B)=-\cos B,\qquad \sin D=\sin B$$
+  対角線 $\mathrm{AC}$ を $\triangle\mathrm{ABC}$ と $\triangle\mathrm{ACD}$ の両方で余弦定理により表し、等置すると $\cos B$ が求まる。面積は $\triangle\mathrm{ABC}+\triangle\mathrm{ACD}$ で、$\sin B=\sin D$ を共通に使える。
+
+  **空間図形** 求めたい長さ・角を含む平面（三角形）を取り出して、正弦定理・余弦定理を使う。
+  - 四面体 $\mathrm{OABC}$ で $\mathrm{OA}=\mathrm{OB}=\mathrm{OC}$ のとき、$\mathrm{O}$ から平面 $\mathrm{ABC}$ に下ろした垂線の足 $\mathrm{H}$ は $\triangle\mathrm{ABC}$ の外心（$\mathrm{HA}=\mathrm{HB}=\mathrm{HC}$）になり、高さは $\sqrt{\mathrm{OA}^2-R^2}$。
+  - 体積 $V=\dfrac{1}{3}\times(\text{底面積})\times(\text{高さ})$ を2通りに表すと、点と平面の距離（高さ）が求まる。
+prerequisites: [tg-law-of-sines, tg-law-of-cosines, tg-area]

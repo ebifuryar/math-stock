@@ -1,0 +1,50 @@
+id: m1-tg-s05
+level: school
+format: written
+title: 三角形の面積と内接円の半径
+stem: |
+  $\triangle\mathrm{ABC}$ において、$\mathrm{AB}=5,\ \mathrm{AC}=8,\ \angle\mathrm{BAC}=60^\circ$ とする。辺 $\mathrm{BC}$ の長さ、$\triangle\mathrm{ABC}$ の面積 $S$、および $\triangle\mathrm{ABC}$ の内接円の半径 $r$ を求めよ。
+modelAnswer: |
+  余弦定理より
+  $$\mathrm{BC}^2=5^2+8^2-2\cdot 5\cdot 8\cos 60^\circ=25+64-40=49$$
+  $\mathrm{BC}>0$ より $\mathrm{BC}=7$。
+
+  2辺 $\mathrm{AB},\ \mathrm{AC}$ とその間の角 $\angle\mathrm{BAC}$ を用いて
+  $$S=\frac{1}{2}\cdot 5\cdot 8\cdot\sin 60^\circ=\frac{1}{2}\cdot 40\cdot\frac{\sqrt{3}}{2}=10\sqrt{3}$$
+
+  内接円の中心を $\mathrm{I}$ とすると、$S=\triangle\mathrm{IBC}+\triangle\mathrm{ICA}+\triangle\mathrm{IAB}=\dfrac{1}{2}r(\mathrm{BC}+\mathrm{CA}+\mathrm{AB})$ であるから
+  $$10\sqrt{3}=\frac{1}{2}r(7+8+5)=10r$$
+  よって $r=\sqrt{3}$。
+
+  **答え: $\mathrm{BC}=7,\ S=10\sqrt{3},\ r=\sqrt{3}$**
+rubric:
+  - id: r1
+    criterion: 余弦定理を正しく立てて $\mathrm{BC}^2=49$、$\mathrm{BC}=7$ を求めている
+    points: 3
+    keywords: ["余弦定理", "49"]
+  - id: r2
+    criterion: 2辺 $\mathrm{AB},\ \mathrm{AC}$ とその間の角 $60^\circ$ で面積公式を使い $S=10\sqrt{3}$ を得ている
+    points: 3
+    keywords: ["sin60", "10√3"]
+  - id: r3
+    criterion: 面積を内心で3つの三角形に分ける関係 $S=\dfrac{1}{2}r(a+b+c)$ を根拠とともに立てている
+    points: 2
+    keywords: ["内接円", "10r"]
+  - id: r4
+    criterion: $r=\sqrt{3}$ を正しく求め、3つの答えをすべて明示している
+    points: 2
+    keywords: ["r=√3", "r=sqrt3"]
+solution: |
+  「2辺と間の角」から余弦定理で残りの辺、面積公式で面積を出し、内接円の半径は「面積を3つに分ける」関係 $S=\dfrac{1}{2}r(a+b+c)$ から求める。$5,\ 7,\ 8$ という整数辺の三角形になるよう設定している。
+concepts: [tg-law-of-cosines, tg-area]
+misconceptions: [mc-tg-cosine-sign, mc-tg-area-angle]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.65, discrimination: 1.0 }
+author:
+  intent: |
+    余弦定理・面積公式・内接円の半径の3段階を、根拠を示しながら答案に書けるかをみる。特に $S=\dfrac{1}{2}r(a+b+c)$ を公式の丸暗記でなく「3つの三角形に分ける」ことから説明できるかで記述力を評価する。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学I (2) ア(ウ) 余弦定理, 数学I (2) イ(イ) 三角形の面積・内接円]
+  variations:
+    - 外接円の半径 $R=\dfrac{7\sqrt{3}}{3}$ も求めさせ、$R$ と $r$ の求め方の違いを対比させる。
+    - $\angle\mathrm{BAC}=120^\circ$ に変えて鈍角での余弦定理の符号を問う。

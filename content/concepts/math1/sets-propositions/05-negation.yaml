@@ -1,0 +1,17 @@
+id: sp-negation
+kind: property
+title: 条件の否定（「かつ」「または」・「すべて」「ある」）
+body: |
+  条件 $p$ の否定を $\overline{p}$ と書く。$\overline{p}$ の真理集合は $\overline{P}$。
+
+  **不等式の否定**: $\overline{x>1}$ は $x\leqq 1$（$x<1$ ではない）。$\overline{a<x\leqq b}$ は「$x\leqq a$ または $b<x$」。
+
+  **「かつ」「または」の否定**（ド・モルガンの法則）
+  $$\overline{p\text{ かつ }q}\iff\overline{p}\text{ または }\overline{q},\qquad \overline{p\text{ または }q}\iff\overline{p}\text{ かつ }\overline{q}$$
+  例: 「$x,\ y$ の少なくとも一方は偶数」の否定は「$x,\ y$ はともに奇数」。
+
+  **「すべて」「ある」の否定**: 「すべて」と「ある」を入れかえ、後ろの条件を否定する。
+  $$\overline{\text{すべての }x\text{ について }p(x)}\iff\text{ある }x\text{ について }\overline{p(x)}$$
+  $$\overline{\text{ある }x\text{ について }p(x)}\iff\text{すべての }x\text{ について }\overline{p(x)}$$
+  「すべて」「ある」が2つ以上重なるときは、前から順に1つずつ入れかえ、最後の条件だけを否定する。
+prerequisites: [sp-de-morgan, sp-proposition-truth]

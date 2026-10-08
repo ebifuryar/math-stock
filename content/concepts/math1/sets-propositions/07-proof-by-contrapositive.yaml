@@ -1,0 +1,15 @@
+id: sp-proof-contrapositive
+kind: method
+title: 対偶を利用した証明
+body: |
+  「$p\Longrightarrow q$」を直接示しにくいときは、真偽が一致する対偶「$\overline{q}\Longrightarrow\overline{p}$」を証明する。
+
+  **有効な場面**: 結論 $q$ が「〜でない」「少なくとも一方は〜」「$n$ は〜の倍数」のように、否定の形にすると扱いやすくなる場合。
+
+  例: 整数 $n$ について「$n^2$ が偶数 $\Longrightarrow$ $n$ は偶数」。対偶「$n$ が奇数 $\Longrightarrow$ $n^2$ は奇数」は、$n=2k+1$ とおけば $n^2=2(2k^2+2k)+1$ で示せる。
+
+  **答案の型**
+  1. 「対偶『$\overline{q}\Longrightarrow\overline{p}$』を証明する」と明記する。
+  2. $\overline{q}$ を仮定し、$\overline{p}$ を導く（余りで分類するときは全ての場合を尽くす）。
+  3. 「対偶が真であるから、もとの命題も真である」と結ぶ。
+prerequisites: [sp-converse-contrapositive]

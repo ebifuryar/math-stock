@@ -1,0 +1,46 @@
+id: m1-tg-a02
+level: applied
+format: choice
+title: 三角比の2次式の最大・最小
+stem: |
+  $0^\circ\leqq\theta\leqq 180^\circ$ のとき、関数
+  $$y=\cos^2\theta+\sin\theta$$
+  を考える。$t=\sin\theta$ とおいて $y$ を $t$ の2次関数で表すことにより、$y$ の最大値と最小値を求める。$y$ の最大値・最小値の組として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: 最大値 $\dfrac{5}{4}$、最小値 $-1$
+    misconception: mc-tg-unit-circle-range
+    rationale: |
+      $t$ の変域を $-1\leqq t\leqq 1$ としている。$0^\circ\leqq\theta\leqq 180^\circ$ では $\sin\theta\geqq 0$ なので $0\leqq t\leqq 1$ であり、$t=-1$ は取り得ない。
+  - id: "2"
+    text: 最大値 $3$、最小値 $1$
+    rationale: |
+      $\cos^2\theta=1+\sin^2\theta$ と相互関係の符号を誤り、$y=t^2+t+1$ としている。正しくは $\cos^2\theta=1-\sin^2\theta$。
+  - id: "3"
+    text: 最大値 $\dfrac{5}{4}$、最小値 $1$
+    rationale: |
+      正解。$y=-t^2+t+1=-\left(t-\dfrac{1}{2}\right)^2+\dfrac{5}{4}\ (0\leqq t\leqq 1)$。$t=\dfrac{1}{2}$ で最大、$t=0,\ 1$ で最小。
+  - id: "4"
+    text: 最大値 $1$、最小値 $-1$
+    rationale: |
+      $\cos^2\theta=\sin^2\theta-1$ と相互関係を逆向きに使い、$y=t^2+t-1$（$0\leqq t\leqq 1$ で増加）としている。
+answer: "3"
+solution: |
+  $\cos^2\theta=1-\sin^2\theta$ より、$t=\sin\theta$ とおくと
+  $$y=1-t^2+t=-\left(t-\frac{1}{2}\right)^2+\frac{5}{4}$$
+  $0^\circ\leqq\theta\leqq 180^\circ$ より $t$ の変域は $0\leqq t\leqq 1$。
+
+  - 最大: $t=\dfrac{1}{2}$ すなわち $\theta=30^\circ,\ 150^\circ$ のとき $\dfrac{5}{4}$
+  - 最小: $t=0$ または $t=1$ すなわち $\theta=0^\circ,\ 90^\circ,\ 180^\circ$ のとき $1$
+concepts: [tg-equation-inequality, tg-identities, tg-unit-circle]
+misconceptions: [mc-tg-unit-circle-range]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.55, discrimination: 1.1 }
+author:
+  intent: |
+    相互関係で1種類の三角比にそろえ、置き換えた変数の変域を $\theta$ の範囲から正しく決められるかをみる。誤答①は変域を $-1\leqq t\leqq 1$ とした場合で、最大値は正しく最小値だけが変わるように設計し、「変域の誤り」だけを取り出して診断できるようにした。②④は相互関係の式そのものの誤り。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学I (2) ア(イ) 三角比の相互関係, 数学I (3) ア(ア) 2次関数の最大・最小]
+  variations:
+    - 最大値・最小値をとる $\theta$ の値もすべて答えさせる（$\sin\theta=\dfrac{1}{2}$ の2解、$t=0$ に対応する $0^\circ,\ 180^\circ$）。
+    - $y=\sin^2\theta+\cos\theta$ に変え、$t=\cos\theta$ の変域が $-1\leqq t\leqq 1$ になる場合と対比させる。

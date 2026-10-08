@@ -1,0 +1,44 @@
+id: m1-tg-s02
+level: school
+format: choice
+title: 鈍角の三角比と相互関係
+stem: |
+  $0^\circ\leqq\theta\leqq 180^\circ$ とする。$\theta$ は鈍角で、$\sin\theta=\dfrac{2}{3}$ である。このとき、$\tan\theta$ の値として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\dfrac{2\sqrt{5}}{5}$
+    misconception: mc-tg-obtuse-sign
+    rationale: |
+      $\cos\theta=\dfrac{\sqrt{5}}{3}$ と正にとっている。$\theta$ は鈍角なので $\cos\theta<0$、したがって $\tan\theta<0$。
+  - id: "2"
+    text: $-\dfrac{\sqrt{5}}{2}$
+    misconception: mc-tg-ratio-sides
+    rationale: |
+      $\tan\theta=\dfrac{\cos\theta}{\sin\theta}$ と分子・分母を逆にしている。単位円で $\tan\theta=\dfrac{y}{x}=\dfrac{\sin\theta}{\cos\theta}$（直線 $\mathrm{OP}$ の傾き）。
+  - id: "3"
+    text: $-\dfrac{2\sqrt{3}}{3}$
+    rationale: |
+      $\cos^2\theta=1-\sin\theta=\dfrac{1}{3}$ と、$\sin\theta$ を2乗し忘れている。正しくは $\cos^2\theta=1-\sin^2\theta=1-\dfrac{4}{9}=\dfrac{5}{9}$。
+  - id: "4"
+    text: $-\dfrac{2\sqrt{5}}{5}$
+    rationale: |
+      正解。$\cos\theta=-\dfrac{\sqrt{5}}{3}$ より $\tan\theta=\dfrac{2}{3}\div\left(-\dfrac{\sqrt{5}}{3}\right)=-\dfrac{2}{\sqrt{5}}=-\dfrac{2\sqrt{5}}{5}$。
+answer: "4"
+solution: |
+  $\sin^2\theta+\cos^2\theta=1$ より $\cos^2\theta=1-\dfrac{4}{9}=\dfrac{5}{9}$。
+
+  $\theta$ は鈍角なので $\cos\theta<0$。よって $\cos\theta=-\dfrac{\sqrt{5}}{3}$。
+  $$\tan\theta=\frac{\sin\theta}{\cos\theta}=\frac{2}{3}\cdot\left(-\frac{3}{\sqrt{5}}\right)=-\frac{2\sqrt{5}}{5}$$
+  単位円で考えると、$\theta$ は $\sin\alpha=\dfrac{2}{3}$ となる鋭角 $\alpha$ を用いて $\theta=180^\circ-\alpha$ と書け、$\tan\theta=-\tan\alpha$ になっている。
+concepts: [tg-identities, tg-unit-circle]
+misconceptions: [mc-tg-obtuse-sign, mc-tg-ratio-sides]
+targetSeconds: 90
+irt: { expectedCorrectRate: 0.7, discrimination: 1.0 }
+author:
+  intent: |
+    相互関係を使って他の三角比を求める際に、平方根の符号を角の範囲から決められるかをみる。誤答①（符号）と②（$\tan$ の定義）と③（相互関係の式の誤り）を分け、どの段階でのミスかを識別できるようにした。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学I (2) ア(イ) 三角比の相互関係・鈍角への拡張]
+  variations:
+    - $\tan\theta=-2$ を与えて $\cos\theta$ を求めさせ、$1+\tan^2\theta=\dfrac{1}{\cos^2\theta}$ の利用と符号判断を問う。
+    - $\theta$ の範囲を条件にせず「$\sin\theta=\dfrac{2}{3}$ のとき」とし、2通りの答えを求めさせる。

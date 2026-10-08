@@ -1,0 +1,56 @@
+- id: mc-sp-nec-suff-reversed
+  title: 必要条件と十分条件の取り違え
+  description: |
+    $p\Longrightarrow q$ が真のとき、$p$ を「必要条件」、$q$ を「十分条件」と逆に答えてしまう。「$p$ は $q$ であるための」の主語を取り違えて、$q$ を基準に判定する場合も含む。
+  cause: |
+    日常語の「必要」「十分」の語感で判断しており、「矢印の出発点が十分・行き先が必要」「狭い（小さい）真理集合が十分条件」という対応を集合の包含で理解していない。さらに、問題文の「$p$ は $q$ であるための」の主語がどちらかを確認する習慣がない。選択肢では「必要条件であるが十分条件でない」と「十分条件であるが必要条件でない」を必ず並べると検出できる。
+  remedyConcepts: [sp-necessary-sufficient, sp-proposition-truth]
+- id: mc-sp-converse-assumed
+  title: 逆も成り立つと思い込む
+  description: |
+    $p\Longrightarrow q$ が真であることを確かめただけで、逆 $q\Longrightarrow p$ も真（必要十分条件）と判断する。あるいは逆の真偽を、具体例を1〜2個試しただけで真と決めてしまう。
+  cause: |
+    「逆は必ずしも真ならず」を知識として知っていても、逆向きの反例（負の数、$0$、片方の変数だけが条件を満たす場合など）を系統的に探す手順を持っていない。$x^2=4\Rightarrow x=2$ のように、正の数だけを思い浮かべて判断する癖が根本にある。
+  remedyConcepts: [sp-converse-contrapositive, sp-necessary-sufficient, sp-proposition-truth]
+- id: mc-sp-ura-taiguu-confusion
+  title: 裏と対偶の取り違え
+  description: |
+    $p\Longrightarrow q$ の対偶を $\overline{p}\Longrightarrow\overline{q}$（実際は裏）としてしまう。また、裏の真偽をもとの命題の真偽と一致すると考える。
+  cause: |
+    「否定する」と「入れかえる」の2つの操作を区別して覚えておらず、逆・裏・対偶の定義を名前だけで暗記している。対偶がもとの命題と同値である理由（$P\subset Q\iff\overline{Q}\subset\overline{P}$）を真理集合の図で確認していない。
+  remedyConcepts: [sp-converse-contrapositive]
+- id: mc-sp-negation-quantifier
+  title: 「すべて」「ある」の否定の誤り
+  description: |
+    「すべての $x$ について $p(x)$」の否定を「すべての $x$ について $\overline{p(x)}$」とする（「ある」に入れかえない）。逆に「ある $x$ について $p(x)$」の否定を「ある $x$ について $\overline{p(x)}$」とする。
+  cause: |
+    否定を文の後半の条件だけにかけており、「すべて」「ある」という量の部分も否定の対象であることを理解していない。「全員が合格した」の否定が「全員が不合格だった」ではなく「合格しなかった人がいる」であるという日常の言い換えと、記号操作が結びついていない。
+  remedyConcepts: [sp-negation]
+- id: mc-sp-de-morgan-misuse
+  title: ド・モルガンの法則の誤用（かつ・または、∩・∪ を入れかえない）
+  description: |
+    $\overline{A\cap B}=\overline{A}\cap\overline{B}$ や、「$p$ かつ $q$」の否定を「$\overline{p}$ かつ $\overline{q}$」とするなど、補集合・否定をとるときに $\cap$ と $\cup$（「かつ」と「または」）を入れかえない。
+  cause: |
+    否定や補集合を「各部分にバーを付ける」機械的な操作と捉えており、「両方に属する」の否定が「少なくとも一方に属さない」であることをベン図で確認していない。集合の法則と条件の否定が同じ構造であることも結びついていない。
+  remedyConcepts: [sp-de-morgan, sp-negation, sp-set-operations]
+- id: mc-sp-boundary
+  title: 境界（等号）の扱いの誤り
+  description: |
+    $x<3$ の否定・補集合を $x>3$ とする、「$x\geqq 2$」の否定を「$x\leqq 2$」とするなど、端点の含まれ方を誤る。真理集合の包含を判定するときに、端点が一致する場合の等号を落とす（または余計に付ける）。
+  cause: |
+    不等号の向きだけを反転させ、等号の有無を独立に処理していない。数直線に●・○を描いて端点がどちらの集合に属するかを確かめる手順を省いている。包含の判定では「端点が一致しても含まれる」ことを、具体的な端点の値を代入して確かめていない。
+  remedyConcepts: [sp-set-operations, sp-negation]
+- id: mc-sp-counterexample
+  title: 反例・真偽判定の論理の誤解
+  description: |
+    仮定 $p$ を満たさない例を「反例」として挙げて命題を偽とする。あるいは、いくつかの具体例で成り立つことから命題を真と判断する。「ある $x$ について〜」の形の命題を、1つの $x$ で成り立たないことから偽とする。
+  cause: |
+    反例が「$p$ を満たし、かつ $q$ を満たさないもの」であるという定義を、真理集合（$P$ の中で $Q$ の外にある要素）として捉えていない。「すべて」の命題と「ある」の命題で、真を示すのに必要なものと偽を示すのに必要なものが入れかわることを整理していない。
+  remedyConcepts: [sp-proposition-truth, sp-negation]
+- id: mc-sp-contradiction-structure
+  title: 背理法・対偶証明の構造の誤り
+  description: |
+    背理法で結論の否定を誤って仮定する（「少なくとも一方」の否定を「一方だけ」とするなど）、矛盾が何と何の矛盾なのかを示さない、示したい結論を途中で使ってしまう（循環論法）。また「有理数 $a,\ b$ について $a+b\sqrt{2}=0\Rightarrow a=b=0$」を、$a,\ b$ が有理数でない場合にも使ってしまう。
+  cause: |
+    背理法を「否定を仮定 → 矛盾 → 結論」という論理の型として理解しておらず、教科書の $\sqrt{2}$ の証明を手順として暗記しているだけである。どの仮定（互いに素、有理数であること）が矛盾の発生源になっているかを意識していないため、条件を落としたり、不要な仮定を加えたりする。
+  remedyConcepts: [sp-proof-contradiction, sp-proof-contrapositive, sp-negation]

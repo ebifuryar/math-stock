@@ -1,0 +1,47 @@
+id: m1-ne-s02
+level: school
+format: choice
+title: 有理数と無理数・循環小数
+stem: |
+  実数に関する記述として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\sqrt{16}$ と $\sqrt{0.09}$ は、どちらも無理数である。
+    misconception: mc-ne-number-classification
+    rationale: |
+      根号が付いているかどうかで判断している。$\sqrt{16}=4$、$\sqrt{0.09}=0.3=\dfrac{3}{10}$ で、どちらも有理数。
+  - id: "2"
+    text: $0.\dot{9}$ は $1$ より小さい有理数である。
+    misconception: mc-ne-number-classification
+    rationale: |
+      $x=0.\dot{9}$ とおくと $10x-x=9$ より $x=1$。$0.\dot{9}$ は $1$ に「近づいていく数」ではなく、$1$ そのものを表す。
+  - id: "3"
+    text: $\dfrac{3}{8}$ は有限小数で、$\dfrac{5}{12}$ は循環小数で表される。どちらも有理数である。
+    rationale: |
+      正解。$\dfrac{3}{8}=0.375$、$\dfrac{5}{12}=0.41\dot{6}$。分母 $8=2^3$ は素因数が $2$ だけなので有限小数、$12=2^2\cdot 3$ は $3$ を含むので循環小数になる。どちらも分数で表されているので有理数。
+  - id: "4"
+    text: 2つの無理数の和は、つねに無理数である。
+    misconception: mc-ne-number-classification
+    rationale: |
+      反例がある。$\sqrt{2}+(-\sqrt{2})=0$、$(1+\sqrt{2})+(1-\sqrt{2})=2$ はいずれも有理数。
+answer: "3"
+solution: |
+  有理数は「整数 $m$ と $0$ でない整数 $n$ で $\dfrac{m}{n}$ と表せる数」であり、小数で表すと有限小数か循環小数になる。
+  - $\sqrt{16}=4$、$\sqrt{0.09}=0.3$ は有理数。
+  - $0.\dot{9}=1$。
+  - 無理数の和は有理数になることがある（$\sqrt{2}+(-\sqrt{2})=0$）。
+  - 既約分数の分母の素因数が $2,\ 5$ だけなら有限小数、それ以外を含めば循環小数。
+
+  よって正しいのは③。
+concepts: [ne-real-numbers]
+misconceptions: [mc-ne-number-classification]
+targetSeconds: 90
+irt: { expectedCorrectRate: 0.7, discrimination: 0.9 }
+author:
+  intent: |
+    有理数・無理数を「分数で表せるか」という定義に基づいて判断できるかをみる。誤答①②④は、根号の有無・小数の見た目・演算での閉性という、定義を使わずに判断したときの典型的な誤りに対応させた。正答③は有限小数と循環小数の判定基準（分母の素因数）を知っていれば根拠をもって選べる。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学I (1) ア(ア) 数の実数への拡張]
+  variations:
+    - 循環小数 $0.\dot{1}\dot{2}$ などを分数に直させるマーク式にする。
+    - 「無理数と有理数の和」「無理数どうしの積」の正誤を、反例を挙げさせる記述式にする。

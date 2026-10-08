@@ -1,0 +1,13 @@
+id: ne-symmetric-expression
+kind: method
+title: 対称式と基本対称式
+body: |
+  $x$ と $y$ を入れかえても変わらない式を **対称式** という。対称式はすべて **基本対称式** $x+y,\ xy$ で表せる。
+
+  $$x^2+y^2=(x+y)^2-2xy,\qquad (x-y)^2=(x+y)^2-4xy$$
+
+  特に $y=\dfrac{1}{x}$ のとき $xy=1$ なので
+  $$x^2+\frac{1}{x^2}=\left(x+\frac{1}{x}\right)^2-2,\qquad \left(x-\frac{1}{x}\right)^2=\left(x+\frac{1}{x}\right)^2-4$$
+
+  $x-y$ や $x^2-y^2$ のような **対称でない式** は、2乗すると対称式になるが、もとに戻すときに符号が2通り生じる。$x,\ y$ の大小などの条件から符号を決めること。
+prerequisites: [ne-expansion]

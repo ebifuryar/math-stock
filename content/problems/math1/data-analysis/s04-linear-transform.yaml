@@ -1,0 +1,32 @@
+id: m1-da-s04
+level: school
+format: mark
+title: 変量の変換と平均・分散
+stem: |
+  変量 $x$ のデータの平均値が $62$、標準偏差が $5$ である。このデータの各値を変換して、新しい変量 $y=-3x+200$ をつくる。
+
+  $y$ のデータの平均値は $\boxed{\text{アイ}}$、分散は $\boxed{\text{ウエオ}}$、標準偏差は $\boxed{\text{カキ}}$ である。
+blanks:
+  - { label: アイ, answer: "14" }
+  - { label: ウエオ, answer: "225" }
+  - { label: カキ, answer: "15" }
+solution: |
+  $y=ax+b$ のとき、$\bar{y}=a\bar{x}+b$、$s_y^2=a^2s_x^2$、$s_y=|a|s_x$。
+
+  - 平均値：$-3\times 62+200=14$
+  - 分散：$x$ の分散は $5^2=25$ なので $(-3)^2\times 25=225$
+  - 標準偏差：$|-3|\times 5=15$
+
+  偏差が $-3$ 倍されるので、2乗すると $9$ 倍。定数 $200$ は散らばりに影響しない。
+concepts: [da-linear-transform, da-variance]
+misconceptions: [mc-da-linear-transform]
+targetSeconds: 120
+irt: { expectedCorrectRate: 0.65, discrimination: 1.1 }
+author:
+  intent: |
+    変量変換の公式を、負の係数を含めて正しく使えるかをみる。$a=-3$ にしたのは、分散を $-75$（$a$ 倍）や $-75+200$（$b$ も加える）、標準偏差を $-15$ とする誤りをすべて表面化させるため。分散を問う前に標準偏差 $5$ から分散 $25$ を作る一手間を入れ、分散と標準偏差の区別も確認する。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学I (4) ア(ア) 分散・標準偏差（変量の変換）]
+  variations:
+    - 逆に $y$ の平均と分散から $x$ の値を求めさせる。
+    - '偏差値 $z=10\cdot\dfrac{x-\bar{x}}{s_x}+50$ の平均と標準偏差を求めさせる。'

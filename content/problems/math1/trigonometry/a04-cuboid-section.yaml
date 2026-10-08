@@ -1,0 +1,46 @@
+id: m1-tg-a04
+level: applied
+format: mark
+title: 直方体を切る三角形と点から平面への距離
+stem: |
+  直方体 $\mathrm{ABCD}\text{-}\mathrm{EFGH}$ がある。底面 $\mathrm{ABCD}$ は長方形で、$\mathrm{AE},\ \mathrm{BF},\ \mathrm{CG},\ \mathrm{DH}$ は底面に垂直な辺である（$\mathrm{E},\ \mathrm{F},\ \mathrm{G},\ \mathrm{H}$ はそれぞれ $\mathrm{A},\ \mathrm{B},\ \mathrm{C},\ \mathrm{D}$ の真上にある）。$\mathrm{AB}=2,\ \mathrm{AD}=3,\ \mathrm{AE}=1$ とする。
+
+  3点 $\mathrm{A},\ \mathrm{C},\ \mathrm{F}$ を頂点とする $\triangle\mathrm{AFC}$ を考える。
+
+  (1) $\cos\angle\mathrm{AFC}=\dfrac{\sqrt{\boxed{\text{ア}}}}{\boxed{\text{イウ}}}$ である。
+
+  (2) $\triangle\mathrm{AFC}$ の面積は $\dfrac{\boxed{\text{エ}}}{\boxed{\text{オ}}}$ である。
+
+  (3) 四面体 $\mathrm{FABC}$ の体積は $\boxed{\text{カ}}$ である。したがって、点 $\mathrm{B}$ から平面 $\mathrm{AFC}$ に下ろした垂線の長さは $\dfrac{\boxed{\text{キ}}}{\boxed{\text{ク}}}$ である。
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イウ, answer: "10" }
+  - { label: エ, answer: "7" }
+  - { label: オ, answer: "2" }
+  - { label: カ, answer: "1" }
+  - { label: キ, answer: "6" }
+  - { label: ク, answer: "7" }
+solution: |
+  (1) 三平方の定理より
+  $$\mathrm{AF}=\sqrt{2^2+1^2}=\sqrt{5},\quad \mathrm{CF}=\sqrt{3^2+1^2}=\sqrt{10},\quad \mathrm{AC}=\sqrt{2^2+3^2}=\sqrt{13}$$
+  $\triangle\mathrm{AFC}$ で余弦定理を用いて
+  $$\cos\angle\mathrm{AFC}=\frac{5+10-13}{2\sqrt{5}\sqrt{10}}=\frac{2}{10\sqrt{2}}=\frac{\sqrt{2}}{10}$$
+
+  (2) $\sin\angle\mathrm{AFC}=\sqrt{1-\dfrac{2}{100}}=\dfrac{7\sqrt{2}}{10}$ より
+  $$\triangle\mathrm{AFC}=\frac{1}{2}\cdot\sqrt{5}\cdot\sqrt{10}\cdot\frac{7\sqrt{2}}{10}=\frac{7}{2}$$
+
+  (3) 四面体 $\mathrm{FABC}$ は底面 $\triangle\mathrm{ABC}$（$\angle\mathrm{ABC}=90^\circ$）、高さ $\mathrm{BF}=1$ なので
+  $$V=\frac{1}{3}\cdot\frac{1}{2}\cdot 2\cdot 3\cdot 1=1$$
+  同じ四面体を底面 $\triangle\mathrm{AFC}$、高さ $h$（$\mathrm{B}$ から平面 $\mathrm{AFC}$ への距離）とみると $\dfrac{1}{3}\cdot\dfrac{7}{2}\cdot h=1$、よって $h=\dfrac{6}{7}$。
+concepts: [tg-law-of-cosines, tg-area, tg-figure-application]
+misconceptions: [mc-tg-area-angle]
+targetSeconds: 420
+irt: { expectedCorrectRate: 0.45, discrimination: 1.2 }
+author:
+  intent: |
+    空間図形から平面の三角形を取り出し、余弦定理・面積公式を使えるか、さらに体積を2通りに表して点と平面の距離を求める発想を持っているかをみる。(1)(2) は計算、(3) は「同じ四面体を別の面を底面として見る」視点の切り替えで、共通テストの誘導形式で段階的に識別する。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学I (2) イ(イ) 図形の計量（空間図形への応用）]
+  variations:
+    - 辺の長さを $\mathrm{AB}=a,\ \mathrm{AD}=b,\ \mathrm{AE}=c$ と文字にし、$\triangle\mathrm{AFC}$ の面積が $\dfrac{1}{2}\sqrt{a^2b^2+b^2c^2+c^2a^2}$ となることを示させる。
+    - 正四面体の1辺と高さ・内接球の半径を同様の手法で求めさせる。

@@ -1,0 +1,45 @@
+id: m1-sp-s01
+level: school
+format: choice
+title: 補集合の共通部分（数直線）
+stem: |
+  実数全体を全体集合とし、その部分集合 $A,\ B$ を
+  $$A=\{x\mid -2\leqq x<3\},\qquad B=\{x\mid 1<x\leqq 5\}$$
+  とする。集合 $\overline{A}\cap\overline{B}$ として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\{x\mid x\leqq 1\ \text{または}\ 3\leqq x\}$
+    misconception: mc-sp-de-morgan-misuse
+    rationale: |
+      これは $\overline{A\cap B}$（$A\cap B=\{x\mid 1<x<3\}$ の補集合）。$\overline{A}\cap\overline{B}$ を $\overline{A\cap B}$ と同じものと考えている。ド・モルガンの法則では $\overline{A}\cap\overline{B}=\overline{A\cup B}$ であり、$\cap$ が $\cup$ に入れかわる。
+  - id: "2"
+    text: $\{x\mid x<-2\ \text{または}\ 5<x\}$
+    rationale: |
+      正解。$A\cup B=\{x\mid -2\leqq x\leqq 5\}$ なので、$\overline{A}\cap\overline{B}=\overline{A\cup B}=\{x\mid x<-2\ \text{または}\ 5<x\}$。
+  - id: "3"
+    text: $\{x\mid x\leqq -2\ \text{または}\ 5\leqq x\}$
+    misconception: mc-sp-boundary
+    rationale: |
+      端点の扱いの誤り。$x=-2$ は $A$ に、$x=5$ は $B$ に属するので、どちらも $\overline{A}\cap\overline{B}$ には含まれない。補集合をとると端点の●・○が入れかわる。
+  - id: "4"
+    text: $\{x\mid 3\leqq x\leqq 5\}$
+    rationale: |
+      これは $\overline{A}\cap B$。$B$ の補集合をとり忘れている。$\overline{A}=\{x\mid x<-2\ \text{または}\ 3\leqq x\}$ と $\overline{B}=\{x\mid x\leqq 1\ \text{または}\ 5<x\}$ の両方を数直線に描いて重なりを読む。
+answer: "2"
+solution: |
+  ド・モルガンの法則 $\overline{A}\cap\overline{B}=\overline{A\cup B}$ を使うと速い。数直線上で $A\cup B=\{x\mid -2\leqq x\leqq 5\}$（$A$ と $B$ は $1<x<3$ で重なり、すき間はない）。
+  その補集合は端点を含まないので
+  $$\overline{A}\cap\overline{B}=\{x\mid x<-2\ \text{または}\ 5<x\}$$
+  直接 $\overline{A}=\{x\mid x<-2\ \text{または}\ 3\leqq x\}$、$\overline{B}=\{x\mid x\leqq 1\ \text{または}\ 5<x\}$ の共通部分をとっても同じ結果になる。
+concepts: [sp-set-operations, sp-de-morgan]
+misconceptions: [mc-sp-de-morgan-misuse, mc-sp-boundary]
+targetSeconds: 120
+irt: { expectedCorrectRate: 0.72, discrimination: 1.0 }
+author:
+  intent: |
+    補集合と共通部分を数直線上で正確に処理できるかをみる。誤答①はド・モルガンの法則の誤用（$\overline{A\cap B}$ との混同）、③は端点の●・○の扱い、④は補集合のとり忘れに対応させ、どの操作でつまずいたかを分離できるようにした。$A$ と $B$ が重なる設定にして、$A\cup B$ が1つの区間になることも判断させている。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学I (1) ア(ウ) 集合と命題（集合の共通部分・和集合・補集合）]
+  variations:
+    - $A$ と $B$ が離れている設定（例として $B=\{x\mid 4<x\leqq 6\}$）にして、$A\cup B$ が2つの区間になる場合を問う。
+    - 有限集合（$1$ から $20$ までの整数の倍数など）で $\overline{A}\cup\overline{B}$ の要素の個数を問う。

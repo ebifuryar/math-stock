@@ -1,0 +1,14 @@
+id: da-linear-transform
+kind: property
+title: 変量の変換と平均・分散・標準偏差
+body: |
+  変量 $x$ を $y=ax+b$（$a,\ b$ は定数）で変換すると、各値の偏差は $y_k-\bar{y}=a(x_k-\bar{x})$ となり、$a$ 倍される。したがって
+
+  $$\bar{y}=a\bar{x}+b,\qquad s_y^2=a^2s_x^2,\qquad s_y=|a|\,s_x$$
+
+  - 平均は $x$ と同じ変換を受ける。
+  - 分散は $a^2$ 倍、標準偏差は $|a|$ 倍。**$b$ は散らばりに影響しない**。
+  - $a<0$ でも標準偏差は負にならない。
+
+  2変量を $u=ax+b,\ v=cy+d$ と変換すると、共分散は $s_{uv}=ac\,s_{xy}$、相関係数は $ac>0$ なら $r_{uv}=r_{xy}$、$ac<0$ なら $r_{uv}=-r_{xy}$（値の大きさは変わらない）。
+prerequisites: [da-variance]

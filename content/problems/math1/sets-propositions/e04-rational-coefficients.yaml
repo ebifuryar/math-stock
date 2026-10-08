@@ -1,0 +1,44 @@
+id: m1-sp-e04
+level: exam
+format: mark
+title: 無理数を解にもつ方程式の有理数係数
+stem: |
+  (1) $(1+\sqrt{2})^3=\boxed{\text{ア}}+\boxed{\text{イ}}\sqrt{2}$ である。
+
+  (2) 有理数 $p,\ q$ に対して、$x=1+\sqrt{2}$ が方程式 $x^3+px+q=0$ の解であるとき
+  $$p=\boxed{\text{ウエ}},\qquad q=\boxed{\text{オカ}}$$
+  である。
+
+  (3) (2) では「$r,\ s$ が有理数のとき、$r+s\sqrt{2}=0$ ならば $r=s=0$」という事実を用いた。この事実は $r,\ s$ が有理数であるという条件がないと成り立たない。$r,\ s$ が有理数という条件を外したとき、この命題の反例となる組 $(r,\ s)$ は $\boxed{\text{キ}}$ である。
+
+  $\boxed{\text{キ}}$ の解答群
+  - ⓪ $(r,\ s)=(0,\ 0)$
+  - ① $(r,\ s)=(2,\ -\sqrt{2})$
+  - ② $(r,\ s)=(\sqrt{2},\ 1)$
+  - ③ $(r,\ s)=(1,\ -1)$
+blanks:
+  - { label: ア, answer: "7" }
+  - { label: イ, answer: "5" }
+  - { label: ウエ, answer: "-5" }
+  - { label: オカ, answer: "-2" }
+  - { label: キ, answer: "1" }
+solution: |
+  (1) $(1+\sqrt{2})^2=3+2\sqrt{2}$、$(1+\sqrt{2})^3=(3+2\sqrt{2})(1+\sqrt{2})=7+5\sqrt{2}$。
+
+  (2) 代入して整理すると
+  $$(7+p+q)+(5+p)\sqrt{2}=0$$
+  $p,\ q$ は有理数なので $7+p+q,\ 5+p$ も有理数。$5+p\neq 0$ と仮定すると $\sqrt{2}=-\dfrac{7+p+q}{5+p}$ が有理数となり、$\sqrt{2}$ が無理数であることに矛盾する（背理法）。よって $5+p=0$、さらに $7+p+q=0$。ゆえに $p=-5,\ q=-2$。
+
+  (3) 反例は「$r+s\sqrt{2}=0$ を満たし、$r=s=0$ でない」組。$(2,\ -\sqrt{2})$ は $2+(-\sqrt{2})\cdot\sqrt{2}=0$ を満たすので反例（①）。⓪は結論を満たすので反例ではなく、②・③は $r+s\sqrt{2}\neq 0$ で仮定を満たさない。
+concepts: [sp-proof-contradiction, sp-proposition-truth]
+misconceptions: [mc-sp-contradiction-structure, mc-sp-counterexample]
+targetSeconds: 360
+irt: { expectedCorrectRate: 0.38, discrimination: 1.3 }
+author:
+  intent: |
+    「有理数 $r,\ s$ について $r+s\sqrt{2}=0\Rightarrow r=s=0$」を、背理法の帰結として正しい場面で使えるかをみる。(2) では「有理数部分と無理数部分を比較する」操作ができるか、(3) ではその操作に有理数という条件が不可欠であることを、反例の定義（仮定を満たし結論を満たさない）に沿って判断できるかを確かめる。キの⓪は結論を満たす例、②・③は仮定を満たさない例で、反例の誤解に対応する。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学I (1) ア(エ) 集合と命題（背理法）, 数学I (1) ア(イ) 数と式（実数）]
+  variations:
+    - $x=2-\sqrt{3}$ が $x^2+px+q=0$ の解となる有理数 $p,\ q$ を求めさせ、記述で背理法の部分を書かせる。
+    - $p,\ q$ を実数とした場合に解が一意に定まらないことを示させ、条件の役割を確認させる。

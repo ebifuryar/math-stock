@@ -1,0 +1,47 @@
+id: m1-ne-a01
+level: applied
+format: choice
+title: 対称式の値
+stem: |
+  $x=\dfrac{\sqrt{5}+\sqrt{3}}{\sqrt{5}-\sqrt{3}},\quad y=\dfrac{\sqrt{5}-\sqrt{3}}{\sqrt{5}+\sqrt{3}}$ のとき、$x^2-3xy+y^2$ の値として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $59$
+    rationale: |
+      正解。$x+y=8,\ xy=1$ より $x^2-3xy+y^2=(x+y)^2-2xy-3xy=64-5=59$。
+  - id: "2"
+    text: $60$
+    misconception: mc-ne-symmetric-identity
+    rationale: |
+      $x^2-3xy+y^2=(x-y)^2-xy$ と変形したのに、最後の $-xy$ を落として $(x-y)^2=(x+y)^2-4xy=60$ で止めている。
+  - id: "3"
+    text: $61$
+    misconception: mc-ne-symmetric-identity
+    rationale: |
+      $x^2+y^2=(x+y)^2$ として補正項 $-2xy$ を落としている。$64-3xy=61$ となってしまう。
+  - id: "4"
+    text: $63$
+    misconception: mc-ne-symmetric-identity
+    rationale: |
+      $x^2+y^2=(x+y)^2+2xy$ と補正項の符号を誤り、$64+2-3=63$ としている。
+answer: "1"
+solution: |
+  まず基本対称式を求める。分母を有理化すると
+  $$x=\frac{(\sqrt{5}+\sqrt{3})^2}{(\sqrt{5}-\sqrt{3})(\sqrt{5}+\sqrt{3})}=\frac{8+2\sqrt{15}}{2}=4+\sqrt{15}$$
+  同様に $y=4-\sqrt{15}$。よって
+  $$x+y=8,\qquad xy=(4+\sqrt{15})(4-\sqrt{15})=16-15=1$$
+  （$x,\ y$ は互いに逆数なので $xy=1$ はすぐ分かる。）
+
+  $$x^2-3xy+y^2=(x+y)^2-2xy-3xy=(x+y)^2-5xy=64-5=59$$
+concepts: [ne-symmetric-expression, ne-radicals]
+misconceptions: [mc-ne-symmetric-identity]
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.55, discrimination: 1.2 }
+author:
+  intent: |
+    「$x,\ y$ が互いに逆数なので $xy=1$」に気づき、対称式を基本対称式で表して計算できるかをみる。$x,\ y$ を個別に有理化して2乗する方針でも解けるが時間がかかるため、方針選択の差が出る。誤答はすべて $x^2+y^2$ の補正項の扱いに起因する値にそろえ、値が近接しているので当てずっぽうでは当たらない。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学I (1) ア(ウ) 式の展開と因数分解, 数学I (1) ア(ア) 簡単な無理数の四則計算]
+  variations:
+    - $x^3+y^3$（数学IIの公式を使わず $(x+y)^3-3xy(x+y)$ の形で）の値を問う。
+    - $x-y$ の値を問い、$x>y$ から符号を決めさせる。

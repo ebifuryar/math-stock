@@ -1,0 +1,49 @@
+id: m1-ne-e01
+level: exam
+format: choice
+title: 二重根号の和が一定になる範囲
+stem: |
+  $x\geqq 1$ とする。等式
+  $$\sqrt{x+3-4\sqrt{x-1}}+\sqrt{x+8-6\sqrt{x-1}}=1$$
+  が成り立つような $x$ の値の範囲として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $x=10$
+    misconception: mc-ne-sqrt-nonnegative
+    rationale: |
+      $t=\sqrt{x-1}$ とおいて $\sqrt{(t-2)^2}=t-2$、$\sqrt{(t-3)^2}=t-3$ と絶対値を付けずに外し、$2t-5=1$ から $t=3$、$x=10$ としている。$x=10$ は確かに解だが、$x=5$（$t=2$）でも左辺は $0+1=1$ となる。
+  - id: "2"
+    text: $x\geqq 5$
+    misconception: mc-ne-sqrt-nonnegative
+    rationale: |
+      $t\geqq 2$ のとき $|t-2|=t-2$ は正しいが、$|t-3|$ を $t$ の大きさによらず $3-t$ としている。この誤りでは左辺が常に $1$ になってしまう。$x=17$（$t=4$）では左辺 $=2+1=3$ である。
+  - id: "3"
+    text: $5\leqq x\leqq 10$
+    rationale: |
+      正解。左辺 $=|t-2|+|t-3|$（$t=\sqrt{x-1}$）が $1$ になるのは $2\leqq t\leqq 3$ のとき。$4\leqq x-1\leqq 9$ より $5\leqq x\leqq 10$。
+  - id: "4"
+    text: $2\leqq x\leqq 3$
+    rationale: |
+      $t=\sqrt{x-1}$ についての条件 $2\leqq t\leqq 3$ を、そのまま $x$ の範囲として答えている。置き換えた文字をもとに戻す必要がある。$x=2$ のとき $t=1$ で、左辺は $1+2=3$ である。
+answer: "3"
+solution: |
+  $t=\sqrt{x-1}\ (t\geqq 0)$ とおくと $x=t^2+1$ であり
+  $$x+3-4\sqrt{x-1}=t^2-4t+4=(t-2)^2,\qquad x+8-6\sqrt{x-1}=t^2-6t+9=(t-3)^2$$
+
+  $\sqrt{A^2}=|A|$ より、左辺 $=|t-2|+|t-3|$。これは数直線上で点 $t$ から $2$ と $3$ までの距離の和なので、
+  $$|t-2|+|t-3|=1 \iff 2\leqq t\leqq 3$$
+  （$t<2$ では $5-2t>1$、$t>3$ では $2t-5>1$ となる。）
+
+  $2\leqq\sqrt{x-1}\leqq 3$ より $4\leqq x-1\leqq 9$、すなわち $5\leqq x\leqq 10$。
+concepts: [ne-radicals, ne-absolute-value, ne-absolute-equation]
+misconceptions: [mc-ne-sqrt-nonnegative, mc-ne-abs-case-check]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.25, discrimination: 1.4 }
+author:
+  intent: |
+    $\sqrt{x-1}$ の置き換えで二重根号を $|t-2|+|t-3|$ に帰着させ、絶対値の和が一定になる範囲を距離として読み取れるかをみる。「$\sqrt{A^2}=|A|$」を機械的に適用するだけでは $t$ の大小による場合分けが必要になるため、距離の解釈まで到達しているかで差が付く。誤答①②は絶対値の外し方の誤り、④は置換した文字を戻し忘れる誤りに対応させた。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学I (1) ア(ア) 実数の絶対値と平方根の性質, 数学I (1) ア(ウ) 式の展開と因数分解]
+  variations:
+    - 右辺を $3$ に変えて、解が2つの区間に分かれる場合を問う。
+    - 左辺の値を $x$ の範囲ごとに場合分けして表す記述式にする。

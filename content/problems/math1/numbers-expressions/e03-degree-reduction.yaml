@@ -1,0 +1,44 @@
+id: m1-ne-e03
+level: exam
+format: mark
+title: 次数下げによる高次式の値
+stem: |
+  $x=\dfrac{2}{\sqrt{5}-1}$ とする。分母を有理化すると
+  $$x=\dfrac{\boxed{\text{ア}}+\sqrt{\boxed{\text{イ}}}}{\boxed{\text{ウ}}}$$
+  であり、$x$ は $x^2=x+1$ を満たす。
+
+  この関係を繰り返し用いると、$x^5$ は $x$ の1次式として
+  $$x^5=\boxed{\text{エ}}x+\boxed{\text{オ}}$$
+  と表される。したがって $x^5$ の整数部分は $\boxed{\text{カキ}}$ である。
+blanks:
+  - { label: ア, answer: "1" }
+  - { label: イ, answer: "5" }
+  - { label: ウ, answer: "2" }
+  - { label: エ, answer: "5" }
+  - { label: オ, answer: "3" }
+  - { label: カキ, answer: "11" }
+solution: |
+  有理化すると
+  $$x=\frac{2(\sqrt{5}+1)}{(\sqrt{5}-1)(\sqrt{5}+1)}=\frac{2(\sqrt{5}+1)}{4}=\frac{1+\sqrt{5}}{2}$$
+  このとき $2x-1=\sqrt{5}$ の両辺を2乗して $4x^2-4x+1=5$、すなわち $x^2=x+1$。
+
+  次数下げを繰り返す。
+  $$x^3=x\cdot x^2=x^2+x=(x+1)+x=2x+1$$
+  $$x^4=x\cdot x^3=2x^2+x=2(x+1)+x=3x+2$$
+  $$x^5=x\cdot x^4=3x^2+2x=3(x+1)+2x=5x+3$$
+
+  よって $x^5=5x+3=5\cdot\dfrac{1+\sqrt{5}}{2}+3=\dfrac{11+5\sqrt{5}}{2}$。
+
+  $2.23<\sqrt{5}<2.24$ より $11.15<5\sqrt{5}<11.2$ なので $11.07<\dfrac{11+5\sqrt{5}}{2}<11.1$。整数部分は $11$。
+concepts: [ne-radicals, ne-real-numbers]
+misconceptions: [mc-ne-expansion-error]
+targetSeconds: 360
+irt: { expectedCorrectRate: 0.32, discrimination: 1.3 }
+author:
+  intent: |
+    $x^5$ を直接展開すると計算量が大きく、$x^2=x+1$ による次数下げの有効性を体感させる設計。有理化・2乗による関係式の導出・次数下げ・根号の値の評価という4段階を通すことで、どの段階で崩れたかをマーク欄の位置から特定できる。最後の整数部分は、$\sqrt{5}$ の値を不等式で挟んで評価する習慣を問う。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学I (1) ア(ア) 簡単な無理数の四則計算, 数学I (1) ア(ウ) 式の展開と因数分解]
+  variations:
+    - $x^5+\dfrac{1}{x^5}$ のように対称式として問う（$x\cdot\frac{-1}{x}$ の関係に注意）。
+    - $x=1+\sqrt{2}$ として $x^2=2x+1$ を導かせ、$x^4$ の値を求めさせる。

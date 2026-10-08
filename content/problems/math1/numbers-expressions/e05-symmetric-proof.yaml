@@ -1,0 +1,63 @@
+id: m1-ne-e05
+level: exam
+format: written
+title: 対称式の因数分解を用いた証明
+stem: |
+  $0$ でない実数 $x,\ y,\ z$ が
+  $$x+y+z=1,\qquad \frac{1}{x}+\frac{1}{y}+\frac{1}{z}=1$$
+  を満たすとき、$x,\ y,\ z$ のうち少なくとも1つは $1$ であることを示せ。
+modelAnswer: |
+  $x,\ y,\ z$ はいずれも $0$ でないから $xyz\neq 0$ である。
+
+  第2の条件の左辺を通分すると
+  $$\frac{1}{x}+\frac{1}{y}+\frac{1}{z}=\frac{yz+zx+xy}{xyz}=1$$
+  よって
+  $$xy+yz+zx=xyz \quad \cdots (*)$$
+
+  ここで $(x-1)(y-1)(z-1)$ を展開すると
+  $$(x-1)(y-1)(z-1)=xyz-(xy+yz+zx)+(x+y+z)-1$$
+
+  これに $x+y+z=1$ と $(*)$ を代入すると
+  $$(x-1)(y-1)(z-1)=xyz-xyz+1-1=0$$
+
+  実数の積が $0$ になるのは、少なくとも1つの因数が $0$ のときであるから
+  $$x-1=0 \quad\text{または}\quad y-1=0 \quad\text{または}\quad z-1=0$$
+
+  すなわち $x,\ y,\ z$ のうち少なくとも1つは $1$ である。$\blacksquare$
+
+  （例えば $x=1,\ y=t,\ z=-t\ (t\neq 0)$ は実際に2つの条件を満たす。）
+rubric:
+  - id: r1
+    criterion: 第2の条件を通分して $xy+yz+zx=xyz$ の形に直している
+    points: 3
+    keywords: ["通分", "xy+yz+zx=xyz"]
+  - id: r2
+    criterion: 示すべき結論を $(x-1)(y-1)(z-1)=0$ と言いかえる方針を立てている
+    points: 2
+    keywords: ["(x-1)(y-1)(z-1)"]
+  - id: r3
+    criterion: $(x-1)(y-1)(z-1)=xyz-(xy+yz+zx)+(x+y+z)-1$ と正しく展開している
+    points: 3
+    keywords: ["xyz-(xy+yz+zx)+(x+y+z)-1"]
+  - id: r4
+    criterion: 2つの条件を代入して値が $0$ になることを示している
+    points: 1
+    keywords: ["=0"]
+  - id: r5
+    criterion: 積が $0$ ならいずれかの因数が $0$ であることを根拠に結論を述べている
+    points: 1
+    keywords: ["少なくとも1つ", "因数"]
+solution: |
+  「$x,\ y,\ z$ のうち少なくとも1つが $1$」は「$(x-1)(y-1)(z-1)=0$」と同じこと。この積を展開すると基本対称式 $x+y+z$、$xy+yz+zx$、$xyz$ だけで表せるので、与えられた2つの条件がそのまま代入できる。逆数の和の条件は、通分して $xy+yz+zx=xyz$ と対称式の関係に直すのが要点。
+concepts: [ne-symmetric-expression, ne-expansion, ne-factorization]
+misconceptions: [mc-ne-expansion-error, mc-ne-symmetric-identity]
+targetSeconds: 480
+irt: { expectedCorrectRate: 0.22, discrimination: 1.4 }
+author:
+  intent: |
+    「少なくとも1つが $1$」という結論を積が $0$ になる形に翻訳できるか、という発想を問う。条件が基本対称式で与えられていることに気づけば、$(x-1)(y-1)(z-1)$ の展開という1手で解決する。場合分けや文字消去で押し切ろうとすると行き詰まるため、式の形を見て方針を選ぶ力を測れる。3因数の展開を正確に行えるかも同時に評価する。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学I (1) ア(ウ) 式の展開と因数分解, 数学I (1) イ 式の変形と対称式の活用]
+  variations:
+    - 条件を $x+y+z=xyz$、$\frac{1}{x}+\frac{1}{y}+\frac{1}{z}=1$ に変えて同様の変形を問う。
+    - $x+y+z=1$ のもとで $(1-x)(1-y)(1-z)$ を基本対称式で表させる誘導付きの小問にする。

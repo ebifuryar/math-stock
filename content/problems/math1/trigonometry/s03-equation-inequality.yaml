@@ -1,0 +1,35 @@
+id: m1-tg-s03
+level: school
+format: mark
+title: 三角比を含む方程式・不等式
+stem: |
+  $0^\circ\leqq\theta\leqq 180^\circ$ とする。
+
+  (1) 方程式 $2\sin\theta-1=0$ の解は、小さい順に
+  $$\theta=\boxed{\text{アイ}}^\circ,\quad \boxed{\text{ウエオ}}^\circ$$
+  である。
+
+  (2) 不等式 $\sqrt{2}\cos\theta+1\leqq 0$ の解は
+  $$\boxed{\text{カキク}}^\circ\leqq\theta\leqq\boxed{\text{ケコサ}}^\circ$$
+  である。
+blanks:
+  - { label: アイ, answer: "30" }
+  - { label: ウエオ, answer: "150" }
+  - { label: カキク, answer: "135" }
+  - { label: ケコサ, answer: "180" }
+solution: |
+  (1) $\sin\theta=\dfrac{1}{2}$。単位円の上半分と直線 $y=\dfrac{1}{2}$ の交点は2つあり、$\theta=30^\circ,\ 150^\circ$。
+
+  (2) $\cos\theta\leqq-\dfrac{1}{\sqrt{2}}$。単位円上で $x$ 座標が $-\dfrac{1}{\sqrt{2}}$ 以下の部分は、$\theta=135^\circ$ の点から $\theta=180^\circ$ の点まで。よって $135^\circ\leqq\theta\leqq 180^\circ$。
+concepts: [tg-equation-inequality, tg-unit-circle]
+misconceptions: [mc-tg-sin-solution-count, mc-tg-unit-circle-range]
+targetSeconds: 120
+irt: { expectedCorrectRate: 0.7, discrimination: 1.0 }
+author:
+  intent: |
+    (1) は $\sin\theta=k$ の解が $0^\circ\leqq\theta\leqq 180^\circ$ で2つあることを、(2) は $\cos\theta$ が $\theta$ の増加とともに減少することを踏まえて不等式の向きを判断できるかをみる。マーク式にして、$150^\circ$ の書き落としや $0^\circ\leqq\theta\leqq 135^\circ$ という逆向きの答えを選択肢から推測されないようにした。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学I (2) ア(イ) 三角比を含む方程式・不等式]
+  variations:
+    - (2) を $\sqrt{2}\sin\theta-1>0$ に変え、範囲が半円の「中央部分」になる場合を問う。
+    - $\tan\theta\geqq -1$ のように $90^\circ$ で定義されない場合を含む不等式にする。

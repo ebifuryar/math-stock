@@ -1,0 +1,12 @@
+id: da-variance
+kind: definition
+title: 分散と標準偏差
+body: |
+  変量 $x$ のデータ $x_1,\ x_2,\ \dots,\ x_n$ の平均を $\bar{x}$ とする。$x_k-\bar{x}$ を **偏差** という。偏差の和は常に $0$ になるので、散らばりは偏差の2乗で測る。
+
+  $$s^2=\frac{1}{n}\left\{(x_1-\bar{x})^2+(x_2-\bar{x})^2+\cdots+(x_n-\bar{x})^2\right\}$$
+
+  を **分散**、その正の平方根 $s=\sqrt{s^2}$ を **標準偏差** という（数学Iでは $n$ で割る）。
+
+  分散の単位はもとの単位の2乗になる（例：点 → $\text{点}^2$）。標準偏差はもとのデータと同じ単位になるので、平均値と比べて散らばりを解釈するときは標準偏差を用いる。
+prerequisites: [da-representative-values]

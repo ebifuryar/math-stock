@@ -1,0 +1,49 @@
+id: m1-sp-a02
+level: applied
+format: choice
+title: 「すべて」を含む命題の否定と真偽
+stem: |
+  $a$ を定数とする。命題
+  $$P:\ \text{すべての実数 }x\text{ に対して }x^2-2x+a>0$$
+  の否定 $\overline{P}$ と、$\overline{P}$ が真となるための $a$ の条件の組合せとして正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: |
+      $\overline{P}$：すべての実数 $x$ に対して $x^2-2x+a\leqq 0$。$\overline{P}$ が真となる $a$ は存在しない。
+    misconception: mc-sp-negation-quantifier
+    rationale: |
+      「すべて」を「ある」に入れかえず、条件の部分だけを否定している。放物線 $y=x^2-2x+a$ は下に凸なので、すべての $x$ で $0$ 以下になることはなく、この誤った否定からは「存在しない」が導かれる。
+  - id: "2"
+    text: |
+      $\overline{P}$：ある実数 $x$ に対して $x^2-2x+a<0$。$\overline{P}$ が真となる条件は $a<1$。
+    misconception: mc-sp-boundary
+    rationale: |
+      $\overline{\ >0\ }$ を $<0$ としている。$>0$ の否定は $\leqq 0$。$a=1$ のとき $x=1$ で $x^2-2x+a=0$ となり、$P$ は偽（$\overline{P}$ は真）なので、$a=1$ も含めなければならない。
+  - id: "3"
+    text: |
+      $\overline{P}$：ある実数 $x$ に対して $x^2-2x+a\leqq 0$。$\overline{P}$ が真となる条件は $a>1$。
+    rationale: |
+      否定の形は正しいが、$a>1$ は $P$ が真となる条件。$P$ の真偽を調べた結果を、$\overline{P}$ の条件としてそのまま書いている。
+  - id: "4"
+    text: |
+      $\overline{P}$：ある実数 $x$ に対して $x^2-2x+a\leqq 0$。$\overline{P}$ が真となる条件は $a\leqq 1$。
+    rationale: |
+      正解。$x^2-2x+a=(x-1)^2+a-1$ の最小値は $a-1$。$\overline{P}$ が真 $\iff a-1\leqq 0$。
+answer: "4"
+solution: |
+  「すべての $x$ について $p(x)$」の否定は「ある $x$ について $\overline{p(x)}$」。$\overline{x^2-2x+a>0}$ は $x^2-2x+a\leqq 0$ なので
+  $$\overline{P}:\ \text{ある実数 }x\text{ に対して }x^2-2x+a\leqq 0$$
+  $x^2-2x+a=(x-1)^2+a-1$ の最小値は $a-1$（$x=1$ のとき）。$\overline{P}$ が真 $\iff$ 最小値が $0$ 以下 $\iff a\leqq 1$。
+  （$P$ が真 $\iff a>1$ であり、$\overline{P}$ の条件はちょうどその否定になっている。）
+concepts: [sp-negation, sp-proposition-truth]
+misconceptions: [mc-sp-negation-quantifier, mc-sp-boundary]
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.5, discrimination: 1.2 }
+author:
+  intent: |
+    「すべて」を含む命題の否定を正しく作り、それを2次関数の最小値の条件に翻訳できるかをみる。①は量化子の否定の誤り、②は不等号の等号の誤り、③は $P$ と $\overline{P}$ の条件の取り違えに対応し、①〜③はいずれも「否定の形」と「条件」が互いに整合するように作ってあるので、片方だけを見て選んでも正解できない。$a=1$ という境界の扱いが②と④を分ける。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学I (1) ア(ウ) 集合と命題（「すべて」「ある」の否定）, 数学I (3) ア(イ) 2次不等式]
+  variations:
+    - 「ある実数 $x$ に対して $x^2-2x+a<0$」の否定を作らせ、「ある」の否定の方向も問う。
+    - 定義域を $0\leqq x\leqq 3$ に制限し、最小値の場合分けと組み合わせる。

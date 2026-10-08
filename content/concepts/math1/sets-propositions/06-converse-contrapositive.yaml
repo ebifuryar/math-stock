@@ -1,0 +1,15 @@
+id: sp-converse-contrapositive
+kind: theorem
+title: 逆・裏・対偶
+body: |
+  命題「$p\Longrightarrow q$」に対して
+  - **逆**: $q\Longrightarrow p$
+  - **裏**: $\overline{p}\Longrightarrow\overline{q}$
+  - **対偶**: $\overline{q}\Longrightarrow\overline{p}$
+
+  **もとの命題とその対偶の真偽は一致する**（$P\subset Q\iff\overline{Q}\subset\overline{P}$）。逆と裏は互いに対偶の関係なので、逆と裏の真偽も一致する。
+
+  一方、もとの命題が真でも逆が真とは限らない。「逆は必ずしも真ならず」。例: 「$x=2\Longrightarrow x^2=4$」は真だが、逆「$x^2=4\Longrightarrow x=2$」は偽（反例 $x=-2$）。
+
+  対偶をつくるときは、仮定と結論を **入れかえてから両方を否定** する。否定の作り方（「かつ」「または」、等号）は条件の否定の規則に従う。
+prerequisites: [sp-proposition-truth, sp-negation]

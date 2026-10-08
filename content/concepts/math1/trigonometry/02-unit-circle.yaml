@@ -1,0 +1,15 @@
+id: tg-unit-circle
+kind: definition
+title: 単位円による三角比（0°〜180°）
+body: |
+  原点 $\mathrm{O}$ を中心とする半径 $1$ の円（単位円）の上半分に点 $\mathrm{P}$ をとり、$x$ 軸の正の向きから測った $\angle\mathrm{POx}$ を $\theta\ (0^\circ\leqq\theta\leqq 180^\circ)$ とする。$\mathrm{P}(x,\ y)$ のとき
+  $$\cos\theta=x,\quad \sin\theta=y,\quad \tan\theta=\frac{y}{x}\ (\theta\neq 90^\circ)$$
+  と定める（$\tan\theta$ は直線 $\mathrm{OP}$ の傾き）。
+
+  | $\theta$ の範囲 | $\sin\theta$ | $\cos\theta$ | $\tan\theta$ |
+  | --- | --- | --- | --- |
+  | $0^\circ<\theta<90^\circ$（鋭角） | 正 | 正 | 正 |
+  | $90^\circ<\theta<180^\circ$（鈍角） | 正 | **負** | **負** |
+
+  値の範囲は $0\leqq\sin\theta\leqq 1$、$-1\leqq\cos\theta\leqq 1$。$\sin\theta$ は負にならない。
+prerequisites: [tg-ratio-definition]

@@ -1,0 +1,56 @@
+- id: mc-ne-expansion-error
+  title: 展開公式の誤用（中間項の脱落・係数や符号の誤り）
+  description: |
+    $(a+b)^2=a^2+b^2$、$(a+b+c)^2=a^2+b^2+c^2$ のように中間項を落とす、中間項の $2$ 倍を忘れる、負の項の符号を無視する、$(\sqrt{a}+\sqrt{b})(\sqrt{a}-\sqrt{b})=a+b$ とするなど、展開の一部を誤る。
+  cause: |
+    乗法公式を「見た目の形」で暗記しており、展開が「すべての項どうしの積の和」（分配法則）であるという意味で確かめていない。特に項が3つ以上のときや、係数・符号・根号が付いたときに崩れる。作問時は、項数を増やす・負の項や係数を入れるとこの誤りが表に出やすい。
+  remedyConcepts: [ne-expansion]
+- id: mc-ne-factorization-error
+  title: 因数分解の組合せミス・途中での打ち切り
+  description: |
+    たすき掛けで係数の組合せや符号を誤る、2文字の式を整理せずに当てずっぽうで組合せを探す、あるいはまだ因数分解できる因数を残したまま終える。
+  cause: |
+    因数分解を「展開の逆」として扱っておらず、得られた結果を展開して検算する習慣がない。また、多文字の式で「1つの文字について整理し、定数項を先に分解する」という手順を持っていないため、試行錯誤に頼って誤った組合せで妥協してしまう。
+  remedyConcepts: [ne-factorization, ne-expansion]
+- id: mc-ne-symmetric-identity
+  title: 対称式の変形の誤り
+  description: |
+    $x^2+y^2=(x+y)^2-xy$ や $x^2+y^2=(x+y)^2+2xy$ のように補正項を誤る。$x^2+\dfrac{1}{x^2}=\left(x+\dfrac{1}{x}\right)^2$ として $-2$ を落とす。
+  cause: |
+    変形公式を展開式 $(x+y)^2=x^2+2xy+y^2$ から毎回導かず、結果だけを記憶している。$xy=1$ となる $x+\dfrac{1}{x}$ 型で、$2xy$ が定数 $2$ になることを意識していないことも多い。
+  remedyConcepts: [ne-symmetric-expression, ne-expansion]
+- id: mc-ne-number-classification
+  title: 有理数・無理数を見た目で判定する
+  description: |
+    「$\sqrt{\ }$ が付いていれば無理数」「無理数どうしの和は無理数」「$0.\dot{9}$ は $1$ より小さい」「循環小数は無理数」などと判断する。
+  cause: |
+    有理数を「分数 $\dfrac{m}{n}$ で表せる数」という定義から判断せず、記号や小数表示の見た目で分類している。無限小数と「限りなく近づく」という操作を混同し、$0.\dot{9}$ を1つの確定した数として扱えていない。
+  remedyConcepts: [ne-real-numbers]
+- id: mc-ne-sqrt-nonnegative
+  title: 根号の値が0以上であることの無視
+  description: |
+    $\sqrt{a^2}=a$ と常にしてしまう。二重根号で $\sqrt{5-2\sqrt{6}}=\sqrt{2}-\sqrt{3}$ のように小さい方を先に書く。$\left(x-\dfrac{1}{x}\right)^2=5$ から符号を検討せずに $x-\dfrac{1}{x}=\sqrt{5}$（あるいは $\pm\sqrt{5}$ のまま）とする。
+  cause: |
+    $\sqrt{A}$ を「2乗すると $A$ になる数」とだけ覚えており、「そのうち $0$ 以上のもの」という定義の後半を落としている。そのため、2乗をはずすときに絶対値や符号の検討が必要だという意識が働かない。文字を含む根号でこの誤りが最も表に出る。
+  remedyConcepts: [ne-absolute-value, ne-radicals]
+- id: mc-ne-inequality-direction
+  title: 不等式で負の数・符号未定の式で割るときの誤り
+  description: |
+    負の数で割っても不等号の向きを変えない。文字係数 $ax>b$ を、$a$ の符号を考えずに $x>\dfrac{b}{a}$ とする。係数が $0$ になる場合（$0\cdot x>b$）を考えない、またはその真偽を誤る。
+  cause: |
+    不等号の向きが変わる理由（負の数を掛けると大小が逆転する）を数直線で理解しておらず、手順として覚えている。文字式の場合、「割る式の符号が確定しているか」を確認する習慣がない。$0\cdot x\geqq 0$ がすべての $x$ で成り立つことなど、係数 $0$ の不等式を「$x$ についての条件」として読めていない。
+  remedyConcepts: [ne-linear-inequality]
+- id: mc-ne-abs-case-check
+  title: 絶対値の場合分けでの範囲の確認漏れ
+  description: |
+    絶対値をはずす場合分けで、各場合の方程式・不等式の解が、その場合の範囲に入っているかを確認しない。場合分けの境界を誤る、場合の一部を考え忘れる。
+  cause: |
+    場合分けを「絶対値をはずす作業」だと捉え、「その範囲の $x$ についてだけ成り立つ式」だという意味を意識していない。各場合の結論が「範囲の条件」と「解いた結果」の共通部分であることを、数直線に書いて確かめていない。
+  remedyConcepts: [ne-absolute-equation, ne-absolute-value]
+- id: mc-ne-integer-boundary
+  title: 整数解の個数の条件での端点の扱いの誤り
+  description: |
+    「整数解がちょうど $n$ 個」となる定数の範囲で、端点に等号を付けるかどうかを誤る（$2<a<3$ と $2\leqq a<3$ の区別など）。
+  cause: |
+    端点の整数が含まれる条件・外側の整数が含まれない条件を、具体的に端点の値を代入して確かめず、「なんとなく」等号を付けている。不等式の解の端が開いているか閉じているかと、定数の範囲の等号との対応を、数直線上で追っていない。
+  remedyConcepts: [ne-linear-inequality]

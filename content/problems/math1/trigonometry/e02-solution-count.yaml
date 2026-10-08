@@ -1,0 +1,50 @@
+id: m1-tg-e02
+level: exam
+format: choice
+title: 三角比を含む方程式の解の個数
+stem: |
+  $k$ を定数とする。$\theta$ の方程式
+  $$2\cos^2\theta+3\sin\theta=k\qquad(0^\circ\leqq\theta\leqq 180^\circ)$$
+  が異なる4個の解をもつような $k$ の値の範囲として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $3<k<\dfrac{25}{8}$
+    rationale: |
+      正解。$t=\sin\theta$ の方程式が $0<t<1$ に異なる2解をもつ条件。$t=1$ が解になる $k=3$ は除く。
+  - id: "2"
+    text: $3\leqq k<\dfrac{25}{8}$
+    misconception: mc-tg-sin-solution-count
+    rationale: |
+      $k=3$ のとき $t=\dfrac{1}{2},\ 1$ で、$t=1$ からは $\theta=90^\circ$ の1個しか得られない。$t=1$ からも2個出ると数えて、解を4個としている（実際は $30^\circ,\ 90^\circ,\ 150^\circ$ の3個）。
+  - id: "3"
+    text: $2<k<\dfrac{25}{8}$
+    rationale: |
+      $t$ の方程式の解の個数を、左端 $t=0$ での値 $2$ と最大値 $\dfrac{25}{8}$ だけで判断し、右端 $t=1$ での値 $3$ を見落としている。$2<k<3$ では $0<t<1$ の解は1個だけで、$\theta$ は2個。
+  - id: "4"
+    text: $3<k\leqq\dfrac{25}{8}$
+    rationale: |
+      $k=\dfrac{25}{8}$ では $t$ の2次方程式が重解 $t=\dfrac{3}{4}$ をもつ。重解を「$t$ が2個」と数えると $\theta$ が4個あるように見えるが、実際の $\theta$ は $\sin\theta=\dfrac{3}{4}$ の2個。
+answer: "1"
+solution: |
+  $\cos^2\theta=1-\sin^2\theta$ より、$t=\sin\theta$ とおくと
+  $$k=-2t^2+3t+2=-2\left(t-\frac{3}{4}\right)^2+\frac{25}{8}\qquad(0\leqq t\leqq 1)$$
+  $t$ と $\theta$ の対応は次のとおり（単位円の上半分と直線 $y=t$ の交点）。
+  - $0<t<1$ のとき $\theta$ は2個（$\theta$ と $180^\circ-\theta$）
+  - $t=1$ のとき $\theta=90^\circ$ の1個
+  - $t=0$ のとき $\theta=0^\circ,\ 180^\circ$ の2個
+
+  $\theta$ が4個となるのは、$t$ が $0\leqq t\leqq 1$ に2個あって、どちらも $\theta$ を2個ずつ与えるとき。$y=-2t^2+3t+2$ のグラフ（$t=0$ で $2$、$t=1$ で $3$、$t=\dfrac{3}{4}$ で最大 $\dfrac{25}{8}$）と直線 $y=k$ の共有点を見ると、$t$ が2個になるのは $3\leqq k<\dfrac{25}{8}$。ただし $k=3$ では一方が $t=1$ となり $\theta$ は計3個。
+
+  よって $3<k<\dfrac{25}{8}$。
+concepts: [tg-equation-inequality, tg-identities, tg-unit-circle]
+misconceptions: [mc-tg-sin-solution-count, mc-tg-unit-circle-range]
+targetSeconds: 420
+irt: { expectedCorrectRate: 0.3, discrimination: 1.4 }
+author:
+  intent: |
+    置き換え $t=\sin\theta$ によって「$t$ の個数」と「$\theta$ の個数」が一致しないことを、$t=0,\ 1$ の端の扱いまで含めて正確に処理できるかをみる。誤答②（$t=1$ の扱い）、③（グラフの右端の見落とし）、④（重解の数え方）は、いずれも上位層でも起こる1か所のミスに対応させ、難関大受験生の間で識別力が出るように設計した。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学I (2) ア(イ) 三角比を含む方程式, 数学I (3) イ(ア) 2次関数のグラフと方程式]
+  variations:
+    - 解の個数を $k$ の値で完全に分類させる記述問題にする（$k=2$ で2個、$2<k<3$ で2個、$k=3$ で3個 など）。
+    - $\cos$ で置き換える形（$t=\cos\theta$ は $\theta$ と1対1）と比較し、なぜ $\sin$ の場合だけ個数の対応に注意が要るのかを説明させる。

@@ -1,0 +1,19 @@
+id: sp-necessary-sufficient
+kind: definition
+title: 必要条件・十分条件・必要十分条件
+body: |
+  命題「$p\Longrightarrow q$」が真のとき
+  - $p$ は $q$ であるための **十分条件**
+  - $q$ は $p$ であるための **必要条件**
+
+  という。$p\Longrightarrow q$ と $q\Longrightarrow p$ がともに真のとき、$p$ は $q$ であるための **必要十分条件** であり、$p$ と $q$ は **同値**（$p\iff q$）であるという。
+
+  **判定の手順**（「$p$ は $q$ であるための □」）
+  1. $p\Longrightarrow q$ の真偽を調べる。真なら「十分」。
+  2. $q\Longrightarrow p$ の真偽を調べる。真なら「必要」。
+  3. 偽のものは反例を1つ挙げて確かめる。
+
+  真理集合で考えると、**小さい集合（狭い条件）が十分条件、大きい集合（広い条件）が必要条件**。$P\subsetneq Q$ なら $p$ は「十分条件であるが必要条件でない」、$q$ は「必要条件であるが十分条件でない」。
+
+  語順に注意: 「$p$ は $q$ であるための」の主語は $p$。矢印 $p\Longrightarrow q$ の **出発点が十分、行き先が必要** と覚える。
+prerequisites: [sp-proposition-truth]

@@ -1,0 +1,12 @@
+id: tg-law-of-cosines
+kind: theorem
+title: 余弦定理
+body: |
+  $\triangle\mathrm{ABC}$ において
+  $$a^2=b^2+c^2-2bc\cos A,\qquad \cos A=\frac{b^2+c^2-a^2}{2bc}$$
+  （$b,\ c$ についても同様）。$A=90^\circ$ のとき三平方の定理になる。
+
+  - 使いどころ: 「2辺とその間の角」から残りの辺、「3辺」から角。
+  - 角の大きさの判定: $b^2+c^2>a^2 \iff A$ が鋭角、$=\iff$ 直角、$<\iff$ 鈍角。
+  - 鈍角では $\cos A<0$ なので $-2bc\cos A$ は **正** になる（例: $A=120^\circ$ なら $a^2=b^2+c^2+bc$）。
+prerequisites: [tg-unit-circle, tg-identities]

@@ -1,0 +1,47 @@
+id: m1-sp-a03
+level: applied
+format: mark
+title: 必要条件・十分条件の判定（4つの組）
+stem: |
+  $x,\ y$ を実数とする。次の $\boxed{\text{ア}}$ 〜 $\boxed{\text{エ}}$ に当てはまるものを、下の⓪〜③のうちから一つずつ選べ。ただし、同じものを繰り返し選んでもよい。
+
+  (1) $xy=0$ は $x=0$ であるための $\boxed{\text{ア}}$ 。
+
+  (2) $x>y$ は $x^2>y^2$ であるための $\boxed{\text{イ}}$ 。
+
+  (3) $x^2+y^2<1$ は「$|x|<1$ かつ $|y|<1$」であるための $\boxed{\text{ウ}}$ 。
+
+  (4) $|x+y|=|x|+|y|$ は $xy\geqq 0$ であるための $\boxed{\text{エ}}$ 。
+
+  解答群
+  - ⓪ 必要条件であるが、十分条件ではない
+  - ① 十分条件であるが、必要条件ではない
+  - ② 必要十分条件である
+  - ③ 必要条件でも十分条件でもない
+blanks:
+  - { label: ア, answer: "0" }
+  - { label: イ, answer: "3" }
+  - { label: ウ, answer: "1" }
+  - { label: エ, answer: "2" }
+solution: |
+  「$p$ は $q$ であるための」では、$p\Longrightarrow q$ が真なら十分、$q\Longrightarrow p$ が真なら必要。
+
+  (1) $x=0\Longrightarrow xy=0$ は真。$xy=0\Longrightarrow x=0$ は偽（反例 $x=1,\ y=0$）。必要条件であるが十分条件ではない（⓪）。
+
+  (2) $x>y\Longrightarrow x^2>y^2$ は偽（反例 $x=1,\ y=-2$）。$x^2>y^2\Longrightarrow x>y$ も偽（反例 $x=-3,\ y=0$）。どちらでもない（③）。
+
+  (3) $x^2+y^2<1$ なら $x^2\leqq x^2+y^2<1$ より $|x|<1$、同様に $|y|<1$。逆は偽（反例 $x=y=0.9$ で $x^2+y^2=1.62$）。十分条件であるが必要条件ではない（①）。
+
+  (4) 両辺は $0$ 以上なので $|x+y|=|x|+|y|\iff (x+y)^2=(|x|+|y|)^2\iff 2xy=2|xy|\iff xy\geqq 0$。必要十分条件（②）。
+concepts: [sp-necessary-sufficient, sp-proposition-truth]
+misconceptions: [mc-sp-nec-suff-reversed, mc-sp-converse-assumed, mc-sp-counterexample]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.45, discrimination: 1.3 }
+author:
+  intent: |
+    共通テストの頻出形式（共通の解答群から4つの組を判定）で、4種類の答えをすべて1回ずつ出現させた。(1) は「$p$ は $q$ であるための」の主語の確認、(2) は負の数を使った反例を両方向で作れるか、(3) は $x^2\leqq x^2+y^2$ という評価と逆向きの反例、(4) は絶対値の性質を同値変形で示せるかをみる。正答の分布を偏らせないことで、「⓪を選んでおけば当たる」という推測を封じている。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学I (1) ア(ウ) 集合と命題（必要条件・十分条件）]
+  variations:
+    - (2) を「$x>y>0$ は $x^2>y^2$ であるための」に変え、条件を追加すると十分条件になることを問う。
+    - $x,\ y$ を整数に限定し、「$x+y$ が偶数」と「$x,\ y$ がともに偶数」の関係などを問う。

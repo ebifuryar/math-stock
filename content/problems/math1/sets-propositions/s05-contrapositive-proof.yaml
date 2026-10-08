@@ -1,0 +1,51 @@
+id: m1-sp-s05
+level: school
+format: written
+title: 対偶を利用した証明（3の倍数）
+stem: |
+  $n$ を整数とする。「$n^2$ が $3$ の倍数ならば、$n$ は $3$ の倍数である」ことを、対偶を利用して証明せよ。
+modelAnswer: |
+  与えられた命題の対偶「$n$ が $3$ の倍数でないならば、$n^2$ は $3$ の倍数でない」を証明する。
+
+  $n$ が $3$ の倍数でないとき、ある整数 $k$ を用いて $n=3k+1$ または $n=3k+2$ と表せる。
+
+  (i) $n=3k+1$ のとき
+  $$n^2=9k^2+6k+1=3(3k^2+2k)+1$$
+
+  (ii) $n=3k+2$ のとき
+  $$n^2=9k^2+12k+4=3(3k^2+4k+1)+1$$
+
+  $3k^2+2k,\ 3k^2+4k+1$ は整数であるから、いずれの場合も $n^2$ は $3$ で割ると $1$ 余り、$3$ の倍数でない。
+
+  よって対偶は真であり、もとの命題も真である。（証明終）
+rubric:
+  - id: r1
+    criterion: 対偶「$n$ が $3$ の倍数でない $\Rightarrow$ $n^2$ は $3$ の倍数でない」を正しく述べている
+    points: 2
+    keywords: ["対偶", "3の倍数でない"]
+  - id: r2
+    criterion: $3$ の倍数でない整数を $n=3k+1,\ 3k+2$（または $3k\pm 1$）と、$k$ が整数であることを明記して漏れなく表している
+    points: 2
+    keywords: ["3k+1", "3k+2"]
+  - id: r3
+    criterion: 各場合について $n^2=3(\text{整数})+1$ の形に正しく変形している
+    points: 4
+    keywords: ["3(3k^2+2k)+1", "3(3k^2+4k+1)+1"]
+  - id: r4
+    criterion: 「対偶が真であるから、もとの命題も真」と結論を明記している
+    points: 2
+    keywords: ["もとの命題も真"]
+solution: |
+  「$n^2$ が $3$ の倍数」から直接 $n$ の形を決めるのは難しいが、対偶なら「$n$ の形」から出発できる。$3$ の倍数でない整数を余りで $3k+1,\ 3k+2$ に分類し、$n^2$ を $3$ で割った余りがともに $1$ になることを示す。
+concepts: [sp-proof-contrapositive, sp-converse-contrapositive]
+misconceptions: [mc-sp-ura-taiguu-confusion, mc-sp-contradiction-structure]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.62, discrimination: 1.2 }
+author:
+  intent: |
+    対偶による証明の答案の型（対偶の明示 → 余りによる場合分け → 結論）を書けるかをみる。$3k+2$ の場合を書き落とす答案、裏「$n^2$ が $3$ の倍数でない $\Rightarrow$ $n$ は $3$ の倍数でない」を証明してしまう答案、最後に「もとの命題も真」と結ばない答案を、ルーブリックの各項目で区別できる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学I (1) ア(ウ) 集合と命題（対偶を利用した証明）]
+  variations:
+    - 「$n^2$ が偶数ならば $n$ は偶数」（余りが2通り）で、場合分けの少ない基本形を問う。
+    - この結果を用いて $\sqrt{3}$ が無理数であることを背理法で示す問題につなげる。

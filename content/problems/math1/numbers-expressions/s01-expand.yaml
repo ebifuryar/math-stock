@@ -1,0 +1,44 @@
+id: m1-ne-s01
+level: school
+format: choice
+title: 3つの項の和の平方の展開
+stem: |
+  $(x+2y-3)^2$ を展開した式として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $x^2+4y^2+9$
+    misconception: mc-ne-expansion-error
+    rationale: |
+      各項の2乗だけを並べ、異なる2項の積（中間項）$2\cdot x\cdot 2y$、$2\cdot 2y\cdot(-3)$、$2\cdot(-3)\cdot x$ をすべて落としている。$(a+b)^2=a^2+b^2$ と同じ誤り。
+  - id: "2"
+    text: $x^2+4y^2+9+2xy-6y-3x$
+    misconception: mc-ne-expansion-error
+    rationale: |
+      中間項は書いているが、$2ab+2bc+2ca$ の係数 $2$ を掛け忘れている。$xy$ の係数は $2\cdot 1\cdot 2=4$ になる。
+  - id: "3"
+    text: $x^2+4y^2+9+4xy+12y+6x$
+    misconception: mc-ne-expansion-error
+    rationale: |
+      $-3$ を $+3$ として扱い、$(x+2y+3)^2$ を展開している。$-3$ を含む中間項 $2\cdot 2y\cdot(-3)=-12y$、$2\cdot(-3)\cdot x=-6x$ は負になる。
+  - id: "4"
+    text: $x^2+4y^2+9+4xy-12y-6x$
+    rationale: |
+      正解。$(a+b+c)^2=a^2+b^2+c^2+2ab+2bc+2ca$ に $a=x,\ b=2y,\ c=-3$ を代入する。
+answer: "4"
+solution: |
+  $a=x,\ b=2y,\ c=-3$ として $(a+b+c)^2=a^2+b^2+c^2+2ab+2bc+2ca$ を用いる。
+  $$(x+2y-3)^2=x^2+(2y)^2+(-3)^2+2\cdot x\cdot 2y+2\cdot 2y\cdot(-3)+2\cdot(-3)\cdot x$$
+  $$=x^2+4y^2+9+4xy-12y-6x$$
+  $A=x+2y$ とおいて $(A-3)^2=A^2-6A+9$ から計算してもよい。
+concepts: [ne-expansion]
+misconceptions: [mc-ne-expansion-error]
+targetSeconds: 90
+irt: { expectedCorrectRate: 0.78, discrimination: 0.9 }
+author:
+  intent: |
+    3項の和の平方を、符号付きの項を含めて正しく展開できるかをみる。誤答は「中間項の脱落」「中間項の2倍忘れ」「負の項の符号の無視」の3段階に対応させ、展開公式のどこが崩れているかを選ばれた選択肢から特定できるようにしている。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学I (1) ア(ウ) 二次の乗法公式と因数分解]
+  variations:
+    - $(x-2y+3)(x+2y+3)$ のように、置き換えで和と差の積に帰着させる展開を問う。
+    - "展開式の特定の項の係数（例として $y$ の係数）だけをマーク式で問う。"

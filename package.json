@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "content": "tsx scripts/build-content.ts",
+    "content:check": "tsx scripts/build-content.ts --check",
     "dev": "npm run content && vite",
     "build": "npm run content && tsc -b && vite build",
     "preview": "vite preview",

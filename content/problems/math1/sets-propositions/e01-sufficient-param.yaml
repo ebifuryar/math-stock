@@ -1,0 +1,50 @@
+id: m1-sp-e01
+level: exam
+format: choice
+title: 十分条件となる定数の範囲（真理集合の包含）
+stem: |
+  $a$ を定数とし、実数 $x$ に関する条件 $p,\ q$ を
+  $$p:\ x^2-(a+1)x+a\leqq 0,\qquad q:\ x^2-2x-8\leqq 0$$
+  とする。$p$ が $q$ であるための十分条件となるような $a$ の値の範囲として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $-2\leqq a\leqq 4$
+    rationale: |
+      正解。$p$ の真理集合は $1$ と $a$ を両端とする閉区間で、これが $-2\leqq x\leqq 4$ に含まれる条件。$a<1,\ a=1,\ a>1$ のすべての場合をまとめると $-2\leqq a\leqq 4$。
+  - id: "2"
+    text: $1\leqq a\leqq 4$
+    rationale: |
+      $p$ の解を $1\leqq x\leqq a$ と決めつけ、$a<1$ の場合（解は $a\leqq x\leqq 1$）を考えていない。例えば $a=-1$ のとき $p$ の真理集合は $-1\leqq x\leqq 1$ で、$q$ の真理集合に含まれる。
+  - id: "3"
+    text: $-2<a<4$
+    misconception: mc-sp-boundary
+    rationale: |
+      端点の一致を「含まれない」と判断している。$a=4$ のとき $p$ の真理集合は $1\leqq x\leqq 4$ で、$-2\leqq x\leqq 4$ に含まれる（$a=-2$ も同様）。両端とも閉区間なので、端点が一致しても包含関係は成り立つ。
+  - id: "4"
+    text: そのような $a$ は存在しない
+    misconception: mc-sp-nec-suff-reversed
+    rationale: |
+      包含の向きを逆（$Q\subset P$）にしている。$Q\subset P$ は $p$ が $q$ の **必要条件** となる条件で、$a\leqq -2$ かつ $a\geqq 4$ が必要になるため確かにそのような $a$ は存在しない。十分条件は $P\subset Q$ であり、こちらには解がある。
+answer: "1"
+solution: |
+  $p,\ q$ の真理集合を $P,\ Q$ とすると、$p$ が $q$ の十分条件 $\iff P\subset Q$。
+
+  $q:\ (x+2)(x-4)\leqq 0$ より $Q=\{x\mid -2\leqq x\leqq 4\}$。
+  $p:\ (x-1)(x-a)\leqq 0$ より
+  - $a<1$ のとき $P=\{x\mid a\leqq x\leqq 1\}$。$P\subset Q\iff -2\leqq a$。よって $-2\leqq a<1$。
+  - $a=1$ のとき $P=\{1\}\subset Q$。
+  - $a>1$ のとき $P=\{x\mid 1\leqq x\leqq a\}$。$P\subset Q\iff a\leqq 4$。よって $1<a\leqq 4$。
+
+  まとめて $-2\leqq a\leqq 4$。（$1\in Q$ なので、結局「$a\in Q$」と同じ条件になる。）
+concepts: [sp-necessary-sufficient, sp-set-operations]
+misconceptions: [mc-sp-boundary, mc-sp-nec-suff-reversed]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.4, discrimination: 1.3 }
+author:
+  intent: |
+    十分条件を真理集合の包含 $P\subset Q$ に翻訳し、文字定数を含む2次不等式の解を場合分けして扱えるかをみる。誤答②は「$a$ と $1$ の大小」の場合分けを落とす受験者、③は閉区間どうしの包含で端点の一致を誤る受験者、④は包含の向きを逆にとる受験者に対応する。$1\in Q$ となるよう設定したため、最後に「$a\in Q$」と簡潔にまとめられるかで理解の深さも測れる。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学I (1) ア(ウ) 集合と命題（必要条件・十分条件）, 数学I (3) ア(イ) 2次不等式]
+  variations:
+    - $q$ を $x^2-2x-8<0$（開区間）に変え、端点が一致する場合の扱いが変わることを問う。
+    - 「$p$ が $q$ であるための必要条件となる」ように $q$ を $1$ を含む狭い区間（例として $0\leqq x\leqq 2$）に変え、$Q\subset P$ を考えさせる。

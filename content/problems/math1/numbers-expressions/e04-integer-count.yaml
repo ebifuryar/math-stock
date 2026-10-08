@@ -1,0 +1,53 @@
+id: m1-ne-e04
+level: exam
+format: mark
+title: 整数解の個数から定数の範囲を定める
+stem: |
+  $a$ を実数とし、$x$ についての条件
+  $$A:\ |x-1|<3,\qquad B:\ |x-a|\leqq 2$$
+  を考える。
+
+  $A$ と $B$ をともに満たす実数 $x$ が存在するのは
+  $$\boxed{\text{アイ}}<a<\boxed{\text{ウ}}$$
+  のときである。
+
+  また、$A$ と $B$ をともに満たす整数 $x$ がただ1つであるのは
+  $$\boxed{\text{エオ}}\leqq a<\boxed{\text{カキ}},\qquad \boxed{\text{ク}}<a\leqq\boxed{\text{ケ}}$$
+  のときである。
+blanks:
+  - { label: アイ, answer: "-4" }
+  - { label: ウ, answer: "6" }
+  - { label: エオ, answer: "-3" }
+  - { label: カキ, answer: "-2" }
+  - { label: ク, answer: "4" }
+  - { label: ケ, answer: "5" }
+solution: |
+  $A$ は $-3<x-1<3$ より $-2<x<4$、$B$ は $a-2\leqq x\leqq a+2$。
+
+  **(前半)** 共通部分が空でない条件は、$B$ の区間が $A$ の区間から完全に外れないことである。
+  $$a+2>-2\ \text{かつ}\ a-2<4 \iff -4<a<6$$
+  （$a=-4$ なら $B$ は $-6\leqq x\leqq -2$ で、$x=-2$ は $A$ を満たさない。$A$ の端が開いているので等号は入らない。）
+
+  **(後半)** $A$ を満たす整数は $-1,\ 0,\ 1,\ 2,\ 3$ の5個。このうち $B$ に入るものがちょうど1個になる条件を考える。$B$ の幅は $4$ なので、左右の端の方で1個だけを拾う形になる。
+
+  左側: $x=-1$ だけが入る条件は、$a+2\geqq -1$ かつ $a+2<0$、すなわち
+  $$-3\leqq a<-2$$
+  （$a=-3$ のとき $B$ は $-5\leqq x\leqq -1$ で $x=-1$ のみ。$a=-2$ のとき $-4\leqq x\leqq 0$ で $-1,\ 0$ の2個になる。）
+
+  右側: $x=3$ だけが入る条件は、$a-2\leqq 3$ かつ $a-2>2$、すなわち
+  $$4<a\leqq 5$$
+  （$a=5$ のとき $B$ は $3\leqq x\leqq 7$ で $x=3$ のみ。$a=4$ のとき $2\leqq x\leqq 6$ で $2,\ 3$ の2個になる。）
+
+  よって $-3\leqq a<-2,\ 4<a\leqq 5$。
+concepts: [ne-absolute-equation, ne-linear-inequality, ne-absolute-value]
+misconceptions: [mc-ne-integer-boundary, mc-ne-abs-case-check]
+targetSeconds: 420
+irt: { expectedCorrectRate: 0.2, discrimination: 1.4 }
+author:
+  intent: |
+    絶対値の不等式を区間に直し、数直線上で区間の重なりを条件に翻訳できるかをみる。$A$ の端は開区間、$B$ の端は閉区間、さらに $A$ の端 $-2,\ 4$ が整数なので、等号の扱いを1つ誤るだけで答えが変わる設計になっている。端点の値を実際に代入して確かめる習慣があるかを、4つのマーク欄すべてで問う。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学I (1) ア(エ) 一次不等式, 数学I (1) イ 不等式の解と集合の関係]
+  variations:
+    - 「整数 $x$ がちょうど3個」に変えて、区間が内側に入る場合を問う。
+    - $B$ を $|x-a|<2$（開区間）に変えて、等号の位置がどう変わるか比べさせる。

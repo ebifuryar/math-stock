@@ -1,0 +1,55 @@
+id: m1-sp-a05
+level: applied
+format: written
+title: 「または」を含む命題の対偶証明と逆
+stem: |
+  $x,\ y$ を実数とする。
+
+  (1) 命題「$x+y>2$ ならば $x>1$ または $y>1$」を、対偶を利用して証明せよ。
+
+  (2) (1) の命題の逆を述べ、その真偽を答えよ。偽である場合は反例を一つ挙げよ。
+modelAnswer: |
+  (1) 「$x>1$ または $y>1$」の否定は「$x\leqq 1$ かつ $y\leqq 1$」、「$x+y>2$」の否定は「$x+y\leqq 2$」である。よって、与えられた命題の対偶は
+  $$\text{「}x\leqq 1\text{ かつ }y\leqq 1\text{ ならば }x+y\leqq 2\text{」}$$
+  である。$x\leqq 1,\ y\leqq 1$ のとき、2つの不等式の辺々を加えると $x+y\leqq 2$ となるので、対偶は真である。
+
+  したがって、もとの命題も真である。（証明終）
+
+  (2) 逆は「$x>1$ または $y>1$ ならば $x+y>2$」であり、**偽** である。
+
+  反例: $x=2,\ y=-1$。このとき $x>1$ を満たすが、$x+y=1$ で $x+y>2$ を満たさない。
+rubric:
+  - id: r1
+    criterion: ド・モルガンの法則により「$x>1$ または $y>1$」の否定を「$x\leqq 1$ かつ $y\leqq 1$」とし、対偶を正しく述べている（「または」のままや $x<1$ などは不可）
+    points: 3
+    keywords: ["対偶", "かつ"]
+  - id: r2
+    criterion: $x\leqq 1,\ y\leqq 1$ を辺々加えて $x+y\leqq 2$ を導いている
+    points: 2
+    keywords: ["加え", "x+y"]
+  - id: r3
+    criterion: 対偶が真であることから、もとの命題が真であると結論している
+    points: 1
+    keywords: ["もとの命題"]
+  - id: r4
+    criterion: 逆「$x>1$ または $y>1$ ならば $x+y>2$」を正しく述べ、偽と判断している
+    points: 2
+    keywords: ["逆", "偽"]
+  - id: r5
+    criterion: 「$x>1$ または $y>1$」を満たし $x+y\leqq 2$ となる正しい反例（例として $x=2,\ y=-1$）を挙げている
+    points: 2
+    keywords: ["反例"]
+solution: |
+  結論が「または」を含むので直接は示しにくい。対偶をとると、ド・モルガンの法則で「$x\leqq 1$ かつ $y\leqq 1$」という扱いやすい仮定になり、不等式を加えるだけで示せる。逆は、一方だけが大きく他方が負になる例で崩れる。
+concepts: [sp-proof-contrapositive, sp-converse-contrapositive, sp-negation, sp-de-morgan]
+misconceptions: [mc-sp-de-morgan-misuse, mc-sp-boundary, mc-sp-converse-assumed, mc-sp-counterexample]
+targetSeconds: 360
+irt: { expectedCorrectRate: 0.48, discrimination: 1.3 }
+author:
+  intent: |
+    「または」の否定をド・モルガンの法則で正しく処理し、対偶証明の型で書けるかをみる。対偶の段階で「$x\leqq 1$ または $y\leqq 1$」と書く答案（ド・モルガンの誤り）や $x<1$ と書く答案（等号の誤り）は、その後の証明が成立しないため r1 で明確に区別できる。(2) では逆が偽であることを、正しい反例（仮定を満たすもの）で示せるかを確かめる。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学I (1) ア(ウ) 集合と命題（対偶を利用した証明）]
+  variations:
+    - 「$xy>1$ ならば $|x|>1$ または $|y|>1$」として、辺々掛ける操作で同様に示させる。
+    - 整数 $m,\ n$ について「$mn$ が偶数ならば $m,\ n$ の少なくとも一方は偶数」を対偶で示させ、偶奇で同じ構造を問う。

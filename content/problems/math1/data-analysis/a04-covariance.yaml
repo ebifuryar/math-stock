@@ -1,0 +1,51 @@
+id: m1-da-a04
+level: applied
+format: mark
+title: 共分散と相関係数の計算
+stem: |
+  5人の生徒について、1週間の自主学習時間 $x$（時間）と小テストの得点 $y$（点）を調べたところ、次の表のようになった。
+
+  | 生徒 | A | B | C | D | E |
+  | --- | --- | --- | --- | --- | --- |
+  | $x$（時間） | 1 | 2 | 4 | 5 | 13 |
+  | $y$（点） | 10 | 6 | 8 | 4 | 12 |
+
+  $x$ の平均値は $\boxed{\text{ア}}$、$y$ の平均値は $\boxed{\text{イ}}$ である。
+
+  $x$ の分散は $\boxed{\text{ウエ}}$、$y$ の分散は $\boxed{\text{オ}}$ であり、$x$ と $y$ の共分散は $\boxed{\text{カ}}$ である。
+
+  したがって $x$ と $y$ の相関係数は $\boxed{\text{キ}}.\boxed{\text{ク}}$ である。
+blanks:
+  - { label: ア, answer: "5" }
+  - { label: イ, answer: "8" }
+  - { label: ウエ, answer: "18" }
+  - { label: オ, answer: "8" }
+  - { label: カ, answer: "6" }
+  - { label: キ, answer: "0" }
+  - { label: ク, answer: "5" }
+solution: |
+  $\bar{x}=\dfrac{1+2+4+5+13}{5}=5$、$\bar{y}=\dfrac{10+6+8+4+12}{5}=8$。
+
+  | 生徒 | A | B | C | D | E |
+  | --- | --- | --- | --- | --- | --- |
+  | $x-\bar{x}$ | $-4$ | $-3$ | $-1$ | $0$ | $8$ |
+  | $y-\bar{y}$ | $2$ | $-2$ | $0$ | $-4$ | $4$ |
+
+  $s_x^2=\dfrac{16+9+1+0+64}{5}=18$、$s_y^2=\dfrac{4+4+0+16+16}{5}=8$、
+  $s_{xy}=\dfrac{(-4)(2)+(-3)(-2)+(-1)(0)+0\cdot(-4)+8\cdot 4}{5}=\dfrac{30}{5}=6$。
+
+  $$r=\frac{s_{xy}}{s_xs_y}=\frac{6}{\sqrt{18}\sqrt{8}}=\frac{6}{\sqrt{144}}=\frac{6}{12}=0.5$$
+
+  分母は $\sqrt{s_x^2s_y^2}$ としてまとめて計算すると、根号が消えて楽になる。
+concepts: [da-correlation, da-variance]
+misconceptions: [mc-da-linear-transform]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.55, discrimination: 1.1 }
+author:
+  intent: |
+    共分散・相関係数を定義どおりに計算できるかをみる。$s_x^2s_y^2=144$ となるよう数値を設計し、$\sqrt{18}\times\sqrt{8}$ を別々に小数化して誤差を出す受験者と、積にまとめて $12$ を得る受験者を区別する。偏差が正負に散らばり、積が $0$ になる組も含むので、符号処理の確認にもなる。相関係数が $0.5$（中程度の正の相関）なのに、$x$ が最大の生徒が $y$ も最大とは限らない点は、後続の記述問題への伏線としても使える。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学I (4) ア(ア) 散布図・相関係数, 数学I (4) ア(ア) 分散・標準偏差]
+  variations:
+    - 時間を分単位（$60x$）に直したときの共分散と相関係数の変化を問う。
+    - 1人分のデータを変えて、相関係数が大きくなるか小さくなるかを判断させる。

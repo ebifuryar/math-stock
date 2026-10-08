@@ -1,0 +1,35 @@
+id: m1-ne-s03
+level: school
+format: mark
+title: 分母の有理化と整数部分・小数部分
+stem: |
+  $x=\dfrac{\sqrt{3}+1}{\sqrt{3}-1}$ とする。$x$ の分母を有理化すると
+  $$x=\boxed{\text{ア}}+\sqrt{\boxed{\text{イ}}}$$
+  である。$x$ の整数部分は $\boxed{\text{ウ}}$ であり、小数部分は $\sqrt{\boxed{\text{エ}}}-\boxed{\text{オ}}$ である。
+
+  また、$x^2-4x$ の値は $\boxed{\text{カキ}}$ である。
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イ, answer: "3" }
+  - { label: ウ, answer: "3" }
+  - { label: エ, answer: "3" }
+  - { label: オ, answer: "1" }
+  - { label: カキ, answer: "-1" }
+solution: |
+  分母・分子に $\sqrt{3}+1$ を掛ける。
+  $$x=\frac{(\sqrt{3}+1)^2}{(\sqrt{3}-1)(\sqrt{3}+1)}=\frac{4+2\sqrt{3}}{2}=2+\sqrt{3}$$
+  $1<\sqrt{3}<2$ より $3<x<4$ なので、整数部分は $3$、小数部分は $x-3=\sqrt{3}-1$。
+
+  $x-2=\sqrt{3}$ の両辺を2乗すると $x^2-4x+4=3$ なので $x^2-4x=-1$。
+concepts: [ne-radicals, ne-real-numbers]
+misconceptions: [mc-ne-expansion-error]
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.68, discrimination: 1.0 }
+author:
+  intent: |
+    分母の有理化、根号の値の評価による整数部分の決定、小数部分を「$x-$整数部分」として表すことを一連で確認する。$(\sqrt{3}+1)^2=4$（中間項の脱落）や $(\sqrt{3}-1)(\sqrt{3}+1)=4$ とする誤りは、ア・イの段階で表に出る。最後の $x^2-4x$ は、値を直接代入せず「$x-2=\sqrt{3}$ を2乗する」発想があるかをみる。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学I (1) ア(ア) 簡単な無理数の四則計算]
+  variations:
+    - 小数部分を $b$ として $b^2+2b$ の値を問う（$b+1=\sqrt{3}$ を利用）。
+    - '分母が $\sqrt{5}-\sqrt{2}$ など、2つの無理数の差の場合にする。'

@@ -1,0 +1,50 @@
+id: m1-sp-s04
+level: school
+format: mark
+title: 逆・裏・対偶と反例
+stem: |
+  $x$ を実数とする。命題「$x>1\Longrightarrow x^2>1$」……(*) について考える。
+
+  (1) 命題 (*) の対偶は $\boxed{\text{ア}}$ である。
+
+  $\boxed{\text{ア}}$ の解答群
+  - ⓪ $x^2>1\Longrightarrow x>1$
+  - ① $x\leqq 1\Longrightarrow x^2\leqq 1$
+  - ② $x^2\leqq 1\Longrightarrow x\leqq 1$
+  - ③ $x^2<1\Longrightarrow x<1$
+
+  (2) 命題 (*) の逆は $\boxed{\text{イ}}$ 。
+
+  $\boxed{\text{イ}}$ の解答群
+  - ⓪ 真である
+  - ① 偽である
+
+  (3) 命題 (*) の裏が偽であることを示す反例として正しいものは $\boxed{\text{ウ}}$ である。
+
+  $\boxed{\text{ウ}}$ の解答群
+  - ⓪ $x=0$
+  - ① $x=-2$
+  - ② $x=2$
+  - ③ $x=1$
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イ, answer: "1" }
+  - { label: ウ, answer: "1" }
+solution: |
+  (1) 対偶は仮定と結論を入れかえて両方を否定したもの。$\overline{x^2>1}$ は $x^2\leqq 1$、$\overline{x>1}$ は $x\leqq 1$ なので「$x^2\leqq 1\Longrightarrow x\leqq 1$」（②）。⓪は逆、①は裏。
+
+  (2) 逆「$x^2>1\Longrightarrow x>1$」は偽。反例 $x=-2$（$x^2=4>1$ だが $x>1$ でない）。（①）
+
+  (3) 裏は「$x\leqq 1\Longrightarrow x^2\leqq 1$」。反例は「$x\leqq 1$ を満たし、$x^2\leqq 1$ を満たさない」もので、$x=-2$（①）。$x=0,\ 1$ は仮定も結論も満たし、$x=2$ は仮定を満たさないので反例にならない。逆と裏は互いに対偶なので、(2) と (3) の真偽は一致する。
+concepts: [sp-converse-contrapositive, sp-proposition-truth, sp-negation]
+misconceptions: [mc-sp-ura-taiguu-confusion, mc-sp-boundary, mc-sp-counterexample, mc-sp-converse-assumed]
+targetSeconds: 120
+irt: { expectedCorrectRate: 0.68, discrimination: 1.1 }
+author:
+  intent: |
+    逆・裏・対偶を正しく作れるか、反例の定義（仮定を満たし結論を満たさない）を理解しているかをみる。アの⓪（逆）・①（裏）は名前の取り違え、③は否定の等号の誤りを拾う。ウの②（$x=2$）は「仮定を満たさない例を反例とする」誤り、⓪・③は「結論が成り立たない例」を探していない誤りに対応する。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学I (1) ア(ウ) 集合と命題（逆・裏・対偶）]
+  variations:
+    - もとの命題を偽のもの（例として「$x^2>1\Longrightarrow x>1$」）にして、対偶も偽になることを確かめさせる。
+    - 2変数の命題「$x+y>0\Longrightarrow x>0$ または $y>0$」の対偶を作らせ、ド・モルガンの法則と組み合わせる。

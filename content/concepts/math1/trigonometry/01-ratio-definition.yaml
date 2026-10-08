@@ -1,0 +1,10 @@
+id: tg-ratio-definition
+kind: definition
+title: 直角三角形による三角比の定義
+body: |
+  $\angle C=90^\circ$ の直角三角形 $\mathrm{ABC}$ で、$\angle A=\theta$ とする。斜辺 $\mathrm{AB}$、$\theta$ の対辺 $\mathrm{BC}$、$\theta$ の隣辺 $\mathrm{AC}$ を用いて
+  $$\sin\theta=\frac{\mathrm{BC}}{\mathrm{AB}}\ \left(\frac{\text{対辺}}{\text{斜辺}}\right),\quad \cos\theta=\frac{\mathrm{AC}}{\mathrm{AB}}\ \left(\frac{\text{隣辺}}{\text{斜辺}}\right),\quad \tan\theta=\frac{\mathrm{BC}}{\mathrm{AC}}\ \left(\frac{\text{対辺}}{\text{隣辺}}\right)$$
+  と定める。三角比は三角形の大きさによらず、角 $\theta$ だけで決まる。
+
+  - 「どの角から見た対辺・隣辺か」を必ず確認する。$\angle B$ から見ると対辺と隣辺が入れ替わる。
+  - 代表的な値: $30^\circ,\ 45^\circ,\ 60^\circ$ は辺の比 $1:2:\sqrt{3}$、$1:1:\sqrt{2}$ の直角三角形から求める。

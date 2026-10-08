@@ -1,0 +1,41 @@
+id: m1-tg-s04
+level: school
+format: mark
+title: 3辺から角・外接円・面積を求める
+stem: |
+  $\triangle\mathrm{ABC}$ において、$\mathrm{BC}=7,\ \mathrm{CA}=5,\ \mathrm{AB}=3$ とする。
+
+  (1) $\angle\mathrm{BAC}=\boxed{\text{アイウ}}^\circ$ である。
+
+  (2) $\triangle\mathrm{ABC}$ の外接円の半径は $\dfrac{\boxed{\text{エ}}\sqrt{\boxed{\text{オ}}}}{\boxed{\text{カ}}}$ である。
+
+  (3) $\triangle\mathrm{ABC}$ の面積は $\dfrac{\boxed{\text{キク}}\sqrt{\boxed{\text{ケ}}}}{\boxed{\text{コ}}}$ である。
+blanks:
+  - { label: アイウ, answer: "120" }
+  - { label: エ, answer: "7" }
+  - { label: オ, answer: "3" }
+  - { label: カ, answer: "3" }
+  - { label: キク, answer: "15" }
+  - { label: ケ, answer: "3" }
+  - { label: コ, answer: "4" }
+solution: |
+  (1) 余弦定理より
+  $$\cos A=\frac{5^2+3^2-7^2}{2\cdot 5\cdot 3}=\frac{-15}{30}=-\frac{1}{2}$$
+  よって $A=120^\circ$。
+
+  (2) 正弦定理 $\dfrac{\mathrm{BC}}{\sin A}=2R$ より $2R=\dfrac{7}{\sqrt{3}/2}=\dfrac{14}{\sqrt{3}}$、$R=\dfrac{7}{\sqrt{3}}=\dfrac{7\sqrt{3}}{3}$。
+
+  (3) 2辺 $\mathrm{AB},\ \mathrm{AC}$ とその間の角 $A$ を使って
+  $$S=\frac{1}{2}\cdot 3\cdot 5\cdot\sin 120^\circ=\frac{15\sqrt{3}}{4}$$
+concepts: [tg-law-of-cosines, tg-law-of-sines, tg-area]
+misconceptions: [mc-tg-cosine-sign, mc-tg-sine-2r, mc-tg-obtuse-sign]
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.65, discrimination: 1.1 }
+author:
+  intent: |
+    余弦定理・正弦定理・面積公式を一つの三角形で順に使えるかをみる基本問題。$\cos A<0$ となる鈍角三角形にして、$\cos A=-\dfrac{1}{2}$ から $120^\circ$ を読む力と、外接円で $2R$ を $R$ と取り違えるミス（$\dfrac{14\sqrt{3}}{3}$ と答える）を検出する。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学I (2) ア(ウ) 正弦定理・余弦定理, 数学I (2) イ(イ) 三角形の面積]
+  variations:
+    - 内接円の半径 $r=\dfrac{2S}{a+b+c}$ まで求めさせる（答えは $\dfrac{\sqrt{3}}{2}$）。
+    - $\sin A:\sin B:\sin C=7:5:3$ の形で与え、正弦定理で辺の比に直す一段階を加える。

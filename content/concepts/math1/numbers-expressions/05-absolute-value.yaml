@@ -1,0 +1,11 @@
+id: ne-absolute-value
+kind: definition
+title: 絶対値
+body: |
+  数直線上で実数 $a$ に対応する点と原点との距離を $a$ の **絶対値** といい $|a|$ で表す。
+  $$|a|=\begin{cases} a & (a\geqq 0) \\ -a & (a<0)\end{cases}$$
+
+  - $|a|\geqq 0$ であり、$|a-b|$ は数直線上の2点 $a,\ b$ の距離を表す。
+  - 文字を含む絶対値は、**中身の符号** で場合分けして絶対値記号をはずす。
+  - $\sqrt{a^2}=|a|$。$\sqrt{\ }$ は $0$ 以上の値を表すので、$\sqrt{a^2}=a$ とは限らない。
+prerequisites: [ne-real-numbers]

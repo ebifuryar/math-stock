@@ -1,0 +1,55 @@
+id: m1-ne-a05
+level: applied
+format: written
+title: x+1/x の値から導く対称式
+stem: |
+  $x>1$ で $x+\dfrac{1}{x}=3$ であるとき、次の値を求めよ。
+  1. $x^2+\dfrac{1}{x^2}$
+  2. $x^4+\dfrac{1}{x^4}$
+  3. $x-\dfrac{1}{x}$
+modelAnswer: |
+  (1) $\left(x+\dfrac{1}{x}\right)^2=x^2+2\cdot x\cdot\dfrac{1}{x}+\dfrac{1}{x^2}=x^2+\dfrac{1}{x^2}+2$ であるから
+  $$x^2+\frac{1}{x^2}=\left(x+\frac{1}{x}\right)^2-2=3^2-2=\mathbf{7}$$
+
+  (2) 同様に $\left(x^2+\dfrac{1}{x^2}\right)^2=x^4+\dfrac{1}{x^4}+2$ であるから
+  $$x^4+\frac{1}{x^4}=7^2-2=\mathbf{47}$$
+
+  (3) $\left(x-\dfrac{1}{x}\right)^2=x^2+\dfrac{1}{x^2}-2=7-2=5$
+
+  ここで $x>1$ より $\dfrac{1}{x}<1<x$ であるから $x-\dfrac{1}{x}>0$。よって
+  $$x-\frac{1}{x}=\mathbf{\sqrt{5}}$$
+rubric:
+  - id: r1
+    criterion: $\left(x+\frac{1}{x}\right)^2=x^2+\frac{1}{x^2}+2$ を用いて (1) の値 $7$ を求めている
+    points: 2
+    keywords: ["-2", "7"]
+  - id: r2
+    criterion: (1) の結果を同じ要領で2乗し、(2) の値 $47$ を求めている
+    points: 2
+    keywords: ["47"]
+  - id: r3
+    criterion: $\left(x-\frac{1}{x}\right)^2=x^2+\frac{1}{x^2}-2=5$ を導いている
+    points: 3
+    keywords: ["(x-1/x)^2", "5"]
+  - id: r4
+    criterion: $x>1$ から $x-\frac{1}{x}>0$ であることを述べ、符号を正に決めている
+    points: 2
+    keywords: ["x>1", ">0"]
+  - id: r5
+    criterion: (3) の値を $\sqrt{5}$ と結論している
+    points: 1
+    keywords: ["√5", "sqrt5"]
+solution: |
+  $x\cdot\dfrac{1}{x}=1$ なので、2乗したときの中間項は定数 $2$ になる。$x^2+\dfrac{1}{x^2}$ は $x+\dfrac{1}{x}$ の2乗から $2$ を引けばよく、$x^4+\dfrac{1}{x^4}$ はそれをもう一度繰り返す。$x-\dfrac{1}{x}$ は対称式ではないので、2乗の値から符号を条件 $x>1$ で決めるのが要点。
+concepts: [ne-symmetric-expression, ne-expansion]
+misconceptions: [mc-ne-symmetric-identity, mc-ne-sqrt-nonnegative]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.52, discrimination: 1.3 }
+author:
+  intent: |
+    $xy=1$ 型の対称式の計算を繰り返し使えるか、そして (3) で「2乗の値から元の値に戻すときは符号の検討が必要」という点に気づけるかをみる。$\pm\sqrt{5}$ のままにする答案、条件 $x>1$ を使わずに $\sqrt{5}$ と書く答案を、採点基準 r4 で区別できるようにしている。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学I (1) ア(ウ) 式の展開と因数分解, 数学I (1) ア(ア) 簡単な無理数の四則計算]
+  variations:
+    - 条件を $0<x<1$ に変え、符号が負になる場合を問う。
+    - $x+\frac{1}{x}=3$ から $x$ 自身を求め、$x=\frac{3+\sqrt{5}}{2}$ と二重根号の関係を扱う。

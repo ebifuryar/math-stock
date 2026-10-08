@@ -1,0 +1,47 @@
+id: m1-sp-s03
+level: school
+format: mark
+title: 条件と命題の否定
+stem: |
+  次の $\boxed{\text{ア}}$ 〜 $\boxed{\text{ウ}}$ に当てはまるものを、それぞれの解答群のうちから一つずつ選べ。
+
+  (1) $x,\ y$ を実数とする。条件「$x\geqq 2$ かつ $y<1$」の否定は $\boxed{\text{ア}}$ である。
+
+  $\boxed{\text{ア}}$ の解答群
+  - ⓪ $x<2$ かつ $y\geqq 1$
+  - ① $x<2$ または $y\geqq 1$
+  - ② $x\leqq 2$ または $y>1$
+  - ③ $x\leqq 2$ かつ $y\geqq 1$
+
+  (2) 命題「すべての自然数 $n$ について $n^2\geqq n$」の否定は $\boxed{\text{イ}}$ であり、この否定の命題は $\boxed{\text{ウ}}$ 。
+
+  $\boxed{\text{イ}}$ の解答群
+  - ⓪ すべての自然数 $n$ について $n^2<n$
+  - ① すべての自然数 $n$ について $n^2\leqq n$
+  - ② ある自然数 $n$ について $n^2\leqq n$
+  - ③ ある自然数 $n$ について $n^2<n$
+
+  $\boxed{\text{ウ}}$ の解答群
+  - ⓪ 真である
+  - ① 偽である
+blanks:
+  - { label: ア, answer: "1" }
+  - { label: イ, answer: "3" }
+  - { label: ウ, answer: "1" }
+solution: |
+  (1) ド・モルガンの法則より「$p$ かつ $q$」の否定は「$\overline{p}$ または $\overline{q}$」。$\overline{x\geqq 2}$ は $x<2$、$\overline{y<1}$ は $y\geqq 1$ なので「$x<2$ または $y\geqq 1$」（①）。
+
+  (2) 「すべて」を「ある」に入れかえ、条件を否定する。$\overline{n^2\geqq n}$ は $n^2<n$ なので「ある自然数 $n$ について $n^2<n$」（③）。
+  自然数 $n$ について $n^2-n=n(n-1)\geqq 0$ だから、もとの命題は真。よって否定は偽（①）。
+concepts: [sp-negation, sp-de-morgan]
+misconceptions: [mc-sp-de-morgan-misuse, mc-sp-boundary, mc-sp-negation-quantifier]
+targetSeconds: 120
+irt: { expectedCorrectRate: 0.65, discrimination: 1.1 }
+author:
+  intent: |
+    否定の3つの規則（不等号の等号の扱い、「かつ」と「または」の入れかえ、「すべて」と「ある」の入れかえ）を個別に確認する。アの⓪は「かつ」を残す誤り、②・③は等号の扱いの誤り、イの⓪・①は量化子を入れかえない誤り、②は等号の誤りに対応する。ウでは「もとの命題と否定は真偽が逆」であることを、真偽の判定と結びつけられるかをみる。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学I (1) ア(ウ) 集合と命題（条件の否定）]
+  variations:
+    - 「ある実数 $x$ について $x^2<0$」の否定とその真偽を問い、「ある」の否定も扱う。
+    - 「$x,\ y$ の少なくとも一方は正」の否定を言葉で答えさせる。

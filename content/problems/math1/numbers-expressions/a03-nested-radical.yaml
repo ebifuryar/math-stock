@@ -1,0 +1,38 @@
+id: m1-ne-a03
+level: applied
+format: mark
+title: 二重根号と小数部分
+stem: |
+  $$\sqrt{11-\sqrt{72}}=\boxed{\text{ア}}-\sqrt{\boxed{\text{イ}}}$$
+  である。この数の整数部分は $\boxed{\text{ウ}}$ であり、小数部分 $b$ は $b=\boxed{\text{エ}}-\sqrt{\boxed{\text{オ}}}$ と表される。
+
+  このとき $b+\dfrac{2}{b}=\boxed{\text{カ}}$ である。
+blanks:
+  - { label: ア, answer: "3" }
+  - { label: イ, answer: "2" }
+  - { label: ウ, answer: "1" }
+  - { label: エ, answer: "2" }
+  - { label: オ, answer: "2" }
+  - { label: カ, answer: "4" }
+solution: |
+  $\sqrt{72}=6\sqrt{2}=2\sqrt{18}$ と直して「$2\sqrt{\ }$」の形を作る。$9+2=11,\ 9\cdot 2=18$ なので
+  $$\sqrt{11-2\sqrt{18}}=\sqrt{(\sqrt{9}-\sqrt{2})^2}=\sqrt{9}-\sqrt{2}=3-\sqrt{2}$$
+  （大きい方 $\sqrt{9}$ を先に書く。結果は正でなければならない。）
+
+  $1.41<\sqrt{2}<1.42$ より $1.58<3-\sqrt{2}<1.59$ なので整数部分は $1$、小数部分は
+  $$b=(3-\sqrt{2})-1=2-\sqrt{2}$$
+
+  $\dfrac{2}{b}=\dfrac{2}{2-\sqrt{2}}=\dfrac{2(2+\sqrt{2})}{(2-\sqrt{2})(2+\sqrt{2})}=\dfrac{2(2+\sqrt{2})}{2}=2+\sqrt{2}$ なので
+  $$b+\frac{2}{b}=(2-\sqrt{2})+(2+\sqrt{2})=4$$
+concepts: [ne-radicals, ne-symmetric-expression]
+misconceptions: [mc-ne-sqrt-nonnegative, mc-ne-expansion-error]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.48, discrimination: 1.2 }
+author:
+  intent: |
+    二重根号を外すとき $\sqrt{72}$ を $2\sqrt{18}$ の形に直す操作と、「差の形では大きい方を先に書く」という符号の判断を問う。$\sqrt{2}-3$ と答えると負の値になり、続く整数部分（ウ）で矛盾が生じるため、符号を誤ったまま最後まで到達できない設計にしている。後半は有理化と対称式の計算を組み合わせ、計算の見通しの良さを測る。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学I (1) ア(ア) 簡単な無理数の四則計算]
+  variations:
+    - $\sqrt{7+4\sqrt{3}}$ のように和の形の二重根号にする。
+    - 小数部分 $b$ について $b^2-4b$ の値を問い、次数下げを使わせる。

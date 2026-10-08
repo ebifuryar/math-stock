@@ -1,0 +1,49 @@
+id: m1-tg-a03
+level: applied
+format: mark
+title: 3辺が与えられた三角形の計量
+stem: |
+  $\triangle\mathrm{ABC}$ において、$\mathrm{AB}=5,\ \mathrm{CA}=6,\ \mathrm{BC}=7$ とする。
+
+  (1) $\cos\angle\mathrm{BAC}=\dfrac{\boxed{\text{ア}}}{\boxed{\text{イ}}}$ であり、$\sin\angle\mathrm{BAC}=\dfrac{\boxed{\text{ウ}}\sqrt{\boxed{\text{エ}}}}{\boxed{\text{オ}}}$ である。
+
+  (2) $\triangle\mathrm{ABC}$ の面積は $\boxed{\text{カ}}\sqrt{\boxed{\text{キ}}}$ である。
+
+  (3) $\triangle\mathrm{ABC}$ の内接円の半径は $\dfrac{\boxed{\text{ク}}\sqrt{\boxed{\text{ケ}}}}{\boxed{\text{コ}}}$ である。
+
+  (4) $\triangle\mathrm{ABC}$ の外接円の半径は $\dfrac{\boxed{\text{サシ}}\sqrt{\boxed{\text{ス}}}}{\boxed{\text{セソ}}}$ である。
+blanks:
+  - { label: ア, answer: "1" }
+  - { label: イ, answer: "5" }
+  - { label: ウ, answer: "2" }
+  - { label: エ, answer: "6" }
+  - { label: オ, answer: "5" }
+  - { label: カ, answer: "6" }
+  - { label: キ, answer: "6" }
+  - { label: ク, answer: "2" }
+  - { label: ケ, answer: "6" }
+  - { label: コ, answer: "3" }
+  - { label: サシ, answer: "35" }
+  - { label: ス, answer: "6" }
+  - { label: セソ, answer: "24" }
+solution: |
+  (1) 余弦定理より $\cos A=\dfrac{5^2+6^2-7^2}{2\cdot 5\cdot 6}=\dfrac{12}{60}=\dfrac{1}{5}$。$\sin A>0$ より
+  $$\sin A=\sqrt{1-\frac{1}{25}}=\frac{2\sqrt{6}}{5}$$
+
+  (2) $S=\dfrac{1}{2}\cdot 5\cdot 6\cdot\dfrac{2\sqrt{6}}{5}=6\sqrt{6}$
+
+  (3) $S=\dfrac{1}{2}r(5+6+7)=9r$ より $r=\dfrac{6\sqrt{6}}{9}=\dfrac{2\sqrt{6}}{3}$
+
+  (4) 正弦定理 $\dfrac{\mathrm{BC}}{\sin A}=2R$ より $2R=7\cdot\dfrac{5}{2\sqrt{6}}=\dfrac{35}{2\sqrt{6}}$、$R=\dfrac{35}{4\sqrt{6}}=\dfrac{35\sqrt{6}}{24}$
+concepts: [tg-law-of-cosines, tg-identities, tg-area, tg-law-of-sines]
+misconceptions: [mc-tg-sine-2r, mc-tg-area-angle]
+targetSeconds: 360
+irt: { expectedCorrectRate: 0.5, discrimination: 1.2 }
+author:
+  intent: |
+    3辺から $\cos\to\sin\to$ 面積 $\to$ 内接円・外接円と、共通テストの典型的な誘導の流れを最後まで正確に計算し切れるかをみる。角が有名角にならない設定にして、相互関係で $\sin$ を出す過程と有理化を含む計算力を問う。(4) は $2R$ を $R$ と取り違えると $\dfrac{35\sqrt{6}}{12}$ となり識別できる。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学I (2) ア(ウ) 正弦定理・余弦定理, 数学I (2) イ(イ) 三角形の面積・内接円・外接円]
+  variations:
+    - $\angle\mathrm{BAC}$ の二等分線と $\mathrm{BC}$ の交点 $\mathrm{D}$ について、$\mathrm{BD}$ と $\mathrm{AD}$ を求めさせる。
+    - 3辺を $\sin A:\sin B:\sin C=5:6:7$ と外接円の半径で与え、逆向きに辺を復元させる。

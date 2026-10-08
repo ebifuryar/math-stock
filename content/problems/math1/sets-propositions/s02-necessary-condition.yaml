@@ -1,0 +1,45 @@
+id: m1-sp-s02
+level: school
+format: choice
+title: 必要条件・十分条件の判定
+stem: |
+  $x$ は実数とする。$x^2>4$ は $x>2$ であるための何であるか。正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: 必要条件であるが、十分条件ではない
+    rationale: |
+      正解。$x>2\Longrightarrow x^2>4$ は真、$x^2>4\Longrightarrow x>2$ は偽（反例 $x=-3$）。
+  - id: "2"
+    text: 十分条件であるが、必要条件ではない
+    misconception: mc-sp-nec-suff-reversed
+    rationale: |
+      必要と十分を逆にしている。成り立つのは $x>2\Longrightarrow x^2>4$ で、$x^2>4$ は矢印の **行き先** なので必要条件。真理集合でも $\{x\mid x>2\}\subset\{x\mid x^2>4\}$ で、広い方の $x^2>4$ が必要条件。
+  - id: "3"
+    text: 必要十分条件である
+    misconception: mc-sp-converse-assumed
+    rationale: |
+      $x^2>4$ から $x>2$ が導けると思い込んでいる。$x^2>4$ の解は $x<-2,\ 2<x$ であり、$x=-3$ のように負の解も含む。
+  - id: "4"
+    text: 必要条件でも十分条件でもない
+    misconception: mc-sp-counterexample
+    rationale: |
+      $x>2\Longrightarrow x^2>4$ も偽と判断している。例えば $x=1$（$x^2=1$）を反例としたなら、それは仮定 $x>2$ を満たしていないので反例にならない。
+answer: "1"
+solution: |
+  $p:\ x^2>4$、$q:\ x>2$ とする。
+  - $q\Longrightarrow p$: $x>2$ なら $x^2>4$。真。
+  - $p\Longrightarrow q$: 偽。反例 $x=-3$（$x^2=9>4$ だが $x>2$ でない）。
+
+  真理集合は $P=\{x\mid x<-2\ \text{または}\ 2<x\}$、$Q=\{x\mid x>2\}$ で $Q\subsetneq P$。よって $p$ は $q$ であるための **必要条件であるが十分条件ではない**。
+concepts: [sp-necessary-sufficient, sp-proposition-truth]
+misconceptions: [mc-sp-nec-suff-reversed, mc-sp-converse-assumed, mc-sp-counterexample]
+targetSeconds: 75
+irt: { expectedCorrectRate: 0.7, discrimination: 1.1 }
+author:
+  intent: |
+    必要条件・十分条件の定義を正しい向きで適用できるかをみる。問題文の主語を「広い方の条件」$x^2>4$ にしたため、「$p$ は $q$ であるための」の語順を確認しない受験者は②を選ぶ。③は負の解を見落とす受験者、④は反例の条件を誤解している受験者を拾う。共通テストで毎年問われる4択の定型をそのまま使っている。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学I (1) ア(ウ) 集合と命題（必要条件・十分条件）]
+  variations:
+    - 主語を入れかえ「$x>2$ は $x^2>4$ であるための」として、同じ受験者が両方向で正答できるかを確かめる。
+    - $x^2\geqq 4$ と $x\geqq 2$ のように等号付きにして、端点 $x=-2$ の扱いも問う。

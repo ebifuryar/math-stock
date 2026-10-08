@@ -1,0 +1,38 @@
+id: m1-ne-a04
+level: applied
+format: mark
+title: 絶対値を含む方程式と不等式
+stem: |
+  方程式 $|x-2|=3x+4$ の解は $x=\dfrac{\boxed{\text{アイ}}}{\boxed{\text{ウ}}}$ である。
+
+  また、不等式 $|x+1|+|x-3|\leqq 6$ の解は $\boxed{\text{エオ}}\leqq x\leqq\boxed{\text{カ}}$ である。
+blanks:
+  - { label: アイ, answer: "-1" }
+  - { label: ウ, answer: "2" }
+  - { label: エオ, answer: "-2" }
+  - { label: カ, answer: "4" }
+solution: |
+  **方程式** $x\geqq 2$ のとき $x-2=3x+4$ より $x=-3$。これは $x\geqq 2$ を満たさないので不適。
+
+  $x<2$ のとき $-(x-2)=3x+4$ より $-4x=2$、$x=-\dfrac{1}{2}$。これは $x<2$ を満たすので解。
+
+  よって $x=-\dfrac{1}{2}$。（$|x-2|\geqq 0$ より $3x+4\geqq 0$ が必要で、$x=-3$ はこの点でも不適。）
+
+  **不等式** $|x+1|+|x-3|$ は数直線上で、点 $x$ から $-1$ までの距離と $3$ までの距離の和を表す。
+  - $x<-1$ のとき $-(x+1)-(x-3)=-2x+2\leqq 6$ より $x\geqq -2$。あわせて $-2\leqq x<-1$。
+  - $-1\leqq x<3$ のとき和は $4$ で、$4\leqq 6$ は常に成立。
+  - $3\leqq x$ のとき $2x-2\leqq 6$ より $x\leqq 4$。あわせて $3\leqq x\leqq 4$。
+
+  これらを合わせて $-2\leqq x\leqq 4$。
+concepts: [ne-absolute-equation, ne-absolute-value, ne-linear-inequality]
+misconceptions: [mc-ne-abs-case-check]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.5, discrimination: 1.2 }
+author:
+  intent: |
+    場合分けで得た解がその範囲に属するかを確認する習慣があるかを、前半で直接問う（$x=-3$ を捨てられないと答えが2つになり、マーク欄に合わない）。後半は絶対値が2つある不等式で、中央の区間では左辺が定数 $4$ になることに気づけば計算が減る。場合分けの漏れ（3区間のうち1つを忘れる）があると端点を取り違える。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学I (1) ア(エ) 一次不等式, 数学I (1) ア(ア) 実数の絶対値]
+  variations:
+    - $|x+1|+|x-3|\leqq 3$ として、解が存在しない場合を問う。
+    - $|x-2|=3x+4$ を $y=|x-2|$ と $y=3x+4$ のグラフの交点として図示させる。

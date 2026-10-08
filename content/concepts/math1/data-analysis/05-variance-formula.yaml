@@ -1,0 +1,17 @@
+id: da-variance-formula
+kind: formula
+title: 分散の公式と平均・分散の合併
+body: |
+  分散は「2乗の平均 − 平均の2乗」でも求められる。
+
+  $$s^2=\overline{x^2}-\left(\bar{x}\right)^2\qquad\left(\overline{x^2}=\frac{x_1^2+x_2^2+\cdots+x_n^2}{n}\right)$$
+
+  これを使うと、データの **合計** $\sum x_k=n\bar{x}$ と **2乗の合計** $\sum x_k^2=n\left(s^2+\bar{x}^2\right)$ が平均と分散から復元できる。
+  データの追加・修正・2つのグループの合併では、
+
+  1. 合計と2乗の合計を求める
+  2. 追加・修正・合併を合計と2乗の合計に反映する
+  3. 新しい $n$ で割って平均と2乗の平均を出し、分散 $=\overline{x^2}-\left(\bar{x}\right)^2$ を計算する
+
+  という手順をとる。分散どうしを（重み付きでも）平均するだけでは、グループ間の平均の差による散らばりが抜け落ちる。
+prerequisites: [da-variance]

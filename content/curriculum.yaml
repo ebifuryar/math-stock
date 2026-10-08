@@ -3,7 +3,23 @@ subjects:
   - id: math1
     title: 数学I
     units:
+      - id: math1-numbers-expressions
+        title: 数と式
+        curriculumCode: 数学I (1) 数と式
+        summary: 多項式の展開と因数分解、実数と平方根、1次不等式と絶対値
+      - id: math1-sets-propositions
+        title: 集合と命題
+        curriculumCode: 数学I (1) 数と式（集合と命題）
+        summary: 集合の演算、必要条件と十分条件、逆・裏・対偶、背理法
       - id: math1-quadratic-function
         title: 2次関数
         curriculumCode: 数学I (3) 2次関数
         summary: 2次関数の値の変化とグラフ、最大・最小、2次方程式・2次不等式との関係
+      - id: math1-trigonometry
+        title: 図形と計量
+        curriculumCode: 数学I (2) 図形と計量
+        summary: 三角比と相互関係、正弦定理・余弦定理、三角形の面積と空間図形への応用
+      - id: math1-data-analysis
+        title: データの分析
+        curriculumCode: 数学I (4) データの分析
+        summary: 代表値と四分位数・箱ひげ図、分散と標準偏差、相関係数、仮説検定の考え方

@@ -1,0 +1,11 @@
+id: da-outliers
+kind: definition
+title: 外れ値
+body: |
+  他の値から極端にかけ離れた値を **外れ値** という。数学Iでは次の基準を用いる。
+
+  $$x<Q_1-1.5\times(Q_3-Q_1)\quad\text{または}\quad x>Q_3+1.5\times(Q_3-Q_1)$$
+
+  を満たす値 $x$ を外れ値とする。基準は **中央値ではなく四分位数** から測り、四分位範囲の **1.5倍** をとる。
+  見た目で離れているだけでは外れ値とはいえず、必ず基準の値と比較して判定する。
+prerequisites: [da-quartiles-boxplot]

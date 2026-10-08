@@ -1,0 +1,45 @@
+id: m1-sp-a01
+level: applied
+format: choice
+title: 「x>0 かつ y>0」と同値な条件
+stem: |
+  $x,\ y$ を実数とする。条件「$x>0$ かつ $y>0$」であるための必要十分条件であるものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $x+y>0$
+    misconception: mc-sp-converse-assumed
+    rationale: |
+      「$x>0$ かつ $y>0\Longrightarrow x+y>0$」は真だが、逆は偽（反例 $x=3,\ y=-1$）。必要条件ではあるが十分条件ではない。一方向だけ確かめて同値と判断している。
+  - id: "2"
+    text: $x>1$ かつ $y>1$
+    misconception: mc-sp-nec-suff-reversed
+    rationale: |
+      「$x>1$ かつ $y>1\Longrightarrow x>0$ かつ $y>0$」は真なので十分条件だが、逆は偽（反例 $x=y=\dfrac{1}{2}$）。真理集合が小さすぎる。どちら向きの矢印が必要なのかを取り違えている。
+  - id: "3"
+    text: $x+y>0$ かつ $xy>0$
+    rationale: |
+      正解。$xy>0$ より $x,\ y$ は同符号で、さらに $x+y>0$ より両方とも正。逆も明らかに成り立つ。
+  - id: "4"
+    text: $xy>0$
+    misconception: mc-sp-converse-assumed
+    rationale: |
+      $x,\ y$ がともに負（例として $x=y=-1$）でも $xy>0$ となる。必要条件ではあるが十分条件ではない。正の数の例だけで逆を確かめている。
+answer: "3"
+solution: |
+  「$p$ が $q$ の必要十分条件」とは $p\Longrightarrow q$ と $q\Longrightarrow p$ がともに真であること。
+
+  ③ について、$xy>0$ なら $x,\ y$ は同符号（ともに正、またはともに負）。ともに負なら $x+y<0$ となり $x+y>0$ に反するので、ともに正。逆に $x>0,\ y>0$ なら $x+y>0,\ xy>0$。よって同値。
+
+  ①・④は必要条件だが十分条件でなく（反例 $x=3,\ y=-1$ / $x=y=-1$）、②は十分条件だが必要条件でない（反例 $x=y=\dfrac{1}{2}$）。
+concepts: [sp-necessary-sufficient, sp-proposition-truth]
+misconceptions: [mc-sp-converse-assumed, mc-sp-nec-suff-reversed]
+targetSeconds: 150
+irt: { expectedCorrectRate: 0.55, discrimination: 1.2 }
+author:
+  intent: |
+    「必要十分条件」を両方向の矢印として扱えるかをみる。①・④は必要条件だけを満たす（一方向の確認で止まる受験者を拾う）、②は十分条件だけを満たす（狭すぎる条件）という構成で、真理集合が「大きすぎる」「小さすぎる」「一致する」の3種類を並べた。正解の③は2つの条件を組み合わせて初めて同値になる点が判断のポイント。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学I (1) ア(ウ) 集合と命題（必要十分条件）]
+  variations:
+    - 「$x<0$ かつ $y<0$」であるための必要十分条件を問い、符号の組み合わせを変える。
+    - 3変数「$x,\ y,\ z$ がすべて正」の必要十分条件として $x+y+z>0,\ xy+yz+zx>0,\ xyz>0$ を扱う（数学IIの3次方程式につながる）。

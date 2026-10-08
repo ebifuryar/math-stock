@@ -9,6 +9,7 @@ import { gradeChoice, gradeMark, type AnswerResponse, type Confidence, type Grad
 import type { Catalog, Problem } from '@/domain/schema';
 import type { EncodedImage } from '@/lib/image';
 import { toUserMessage } from '@/lib/errors';
+import { ScratchPad } from '@/features/scratch/ScratchPad';
 import { ChoiceInput, ConfidencePicker, MarkInput, WrittenInput } from './AnswerInputs';
 import { ResultView } from './ResultView';
 import type { SessionMode } from './sessionStore';
@@ -46,6 +47,8 @@ export function ProblemRunner({
   const [record, setRecord] = useState<RecordAttemptResult | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [scratchOpen, setScratchOpen] = useState(false);
+  const [scratchExpanded, setScratchExpanded] = useState(false);
 
   // 復習では選択肢の並びを入れ替え、位置の暗記で正解できないようにする
   const choiceOrder = useMemo(() => {
@@ -112,7 +115,8 @@ export function ProblemRunner({
   };
 
   return (
-    <div className="space-y-4">
+    // メモを開いている間は、問題文をメモの上までスクロールできるよう下に余白をとる
+    <div className={`space-y-4 ${scratchOpen ? (scratchExpanded ? 'pb-[88dvh]' : 'pb-[55dvh]') : ''}`}>
       <Card>
         <div className="mb-2 flex flex-wrap items-center gap-2">
           <LevelBadge level={problem.level} />
@@ -156,6 +160,25 @@ export function ProblemRunner({
           onNext={() => onDone(outcome.scoreRatio)}
         />
       )}
+
+      {!scratchOpen && (
+        <button
+          type="button"
+          className="fixed right-4 bottom-24 z-20 min-h-12 rounded-full bg-slate-800 px-4 text-sm font-semibold text-white shadow-lg active:bg-slate-900 dark:bg-slate-200 dark:text-slate-900"
+          style={{ marginBottom: 'env(safe-area-inset-bottom)' }}
+          onClick={() => setScratchOpen(true)}
+        >
+          ✎ 計算メモ
+        </button>
+      )}
+      <ScratchPad
+        problemId={problem.id}
+        open={scratchOpen}
+        onClose={() => setScratchOpen(false)}
+        expanded={scratchExpanded}
+        onExpandedChange={setScratchExpanded}
+        onUseAsAnswer={problem.format === 'written' && phase === 'answering' ? setImage : undefined}
+      />
     </div>
   );
 }

@@ -3,6 +3,7 @@
 import Dexie, { type EntityTable } from 'dexie';
 import type { Confidence, GradeOutcome } from '@/domain/grading';
 import type { ReviewCard } from '@/domain/scheduler';
+import type { ScratchPage } from '@/domain/scratch';
 import type { Format, Level, SubjectId } from '@/domain/schema';
 
 export type AttemptRecord = {
@@ -52,6 +53,13 @@ export type AuthorNoteRecord = {
 
 export type SettingRecord = { key: string; value: unknown };
 
+/** 問題ごとの計算メモ（手書き） */
+export type ScratchRecord = {
+  problemId: string;
+  pages: ScratchPage[];
+  updatedAt: Date;
+};
+
 export class MathDb extends Dexie {
   attempts!: EntityTable<AttemptRecord, 'id'>;
   reviewCards!: EntityTable<ReviewCard, 'problemId'>;
@@ -59,6 +67,7 @@ export class MathDb extends Dexie {
   abilityHistory!: EntityTable<AbilityHistoryRecord, 'id'>;
   authorNotes!: EntityTable<AuthorNoteRecord, 'problemId'>;
   settings!: EntityTable<SettingRecord, 'key'>;
+  scratchpads!: EntityTable<ScratchRecord, 'problemId'>;
 
   constructor(name = 'math-pwa') {
     super(name);
@@ -70,6 +79,10 @@ export class MathDb extends Dexie {
       abilityHistory: '++id, at',
       authorNotes: 'problemId, updatedAt',
       settings: 'key',
+    });
+    // v2: 計算メモを追加（既存の表はそのまま）
+    this.version(2).stores({
+      scratchpads: 'problemId, updatedAt',
     });
   }
 }

@@ -35,3 +35,11 @@ body {
 .math-text .katex { font-size: 1.08em; }
 
 .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+
+/* 計算メモの用紙（薄い方眼）。方眼は CSS で描き、筆跡や答案画像には含めない */
+.scratch-paper {
+  background-image:
+    linear-gradient(to right, rgb(148 163 184 / 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(148 163 184 / 0.25) 1px, transparent 1px);
+  background-size: 24px 24px;
+}

@@ -23,11 +23,18 @@ export async function compressImage(file: File): Promise<EncodedImage> {
   if (!ctx) throw new AppError('画像の変換に失敗しました。');
   ctx.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
   bitmap.close();
+  return canvasToImage(canvas);
+}
+
+/** キャンバスの内容を答案画像（JPEG）にする。計算メモを答案として提出するときにも使う */
+export async function canvasToImage(canvas: HTMLCanvasElement): Promise<EncodedImage> {
   const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/jpeg', 0.85));
   if (!blob) throw new AppError('画像の変換に失敗しました。');
   const base64 = await blobToBase64(blob);
   return { mediaType: 'image/jpeg', base64, previewUrl: URL.createObjectURL(blob) };
 }
+
+export { MAX_EDGE as MAX_IMAGE_EDGE };
 
 function blobToBase64(blob: Blob): Promise<string> {
   return new Promise((resolve, reject) => {

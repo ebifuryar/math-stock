@@ -6,6 +6,7 @@ import { z } from 'zod';
 import type { AnswerResponse, Confidence, GradeOutcome } from '@/domain/grading';
 import { difficultyFromExpectedRate, estimateAbility, type ItemResponse } from '@/domain/irt';
 import { ratingFor, updateReviewCard, type ReviewCard } from '@/domain/scheduler';
+import { isBlankPages, type ScratchPage } from '@/domain/scratch';
 import type { Problem } from '@/domain/schema';
 import { AppError } from '@/lib/errors';
 import { db, type AbilityRecord, type AbilityScope, type AttemptRecord } from './db';
@@ -117,6 +118,8 @@ const backupSchema = z.object({
   reviewCards: z.array(z.record(z.string(), z.unknown())),
   authorNotes: z.array(z.record(z.string(), z.unknown())),
   abilityHistory: z.array(z.record(z.string(), z.unknown())),
+  // 計算メモは後から追加したため、古いバックアップには無い
+  scratchpads: z.array(z.record(z.string(), z.unknown())).default([]),
 });
 
 const DATE_KEYS = new Set(['answeredAt', 'due', 'last_review', 'updatedAt', 'at']);
@@ -141,6 +144,7 @@ export async function exportBackup(): Promise<Blob> {
     reviewCards: await db.reviewCards.toArray(),
     authorNotes: await db.authorNotes.toArray(),
     abilityHistory: await db.abilityHistory.toArray(),
+    scratchpads: await db.scratchpads.toArray(),
   };
   return new Blob([JSON.stringify(data)], { type: 'application/json' });
 }
@@ -157,20 +161,22 @@ export async function importBackup(file: File): Promise<{ attempts: number }> {
     throw new AppError('バックアップファイルの形式が正しくありません。', 'このアプリで書き出したJSONファイルを選んでください。');
   }
   const b = parsed.data;
-  await db.transaction('rw', [db.attempts, db.reviewCards, db.authorNotes, db.abilityHistory, db.abilities], async () => {
-    await Promise.all([db.attempts.clear(), db.reviewCards.clear(), db.authorNotes.clear(), db.abilityHistory.clear()]);
+  await db.transaction('rw', [db.attempts, db.reviewCards, db.authorNotes, db.abilityHistory, db.abilities, db.scratchpads], async () => {
+    await Promise.all([db.attempts.clear(), db.reviewCards.clear(), db.authorNotes.clear(), db.abilityHistory.clear(), db.scratchpads.clear()]);
     await db.attempts.bulkAdd(reviveDates<AttemptRecord>(b.attempts));
     await db.reviewCards.bulkAdd(reviveDates<ReviewCard>(b.reviewCards));
     await db.authorNotes.bulkAdd(reviveDates(b.authorNotes));
     await db.abilityHistory.bulkAdd(reviveDates(b.abilityHistory));
+    await db.scratchpads.bulkAdd(reviveDates(b.scratchpads));
     await recomputeAbilities(new Date());
   });
   return { attempts: b.attempts.length };
 }
 
 export async function resetAllProgress(): Promise<void> {
-  await db.transaction('rw', [db.attempts, db.reviewCards, db.authorNotes, db.abilityHistory, db.abilities], async () => {
+  await db.transaction('rw', [db.attempts, db.reviewCards, db.authorNotes, db.abilityHistory, db.abilities, db.scratchpads], async () => {
     await Promise.all([
+      db.scratchpads.clear(),
       db.attempts.clear(),
       db.reviewCards.clear(),
       db.authorNotes.clear(),
@@ -178,6 +184,18 @@ export async function resetAllProgress(): Promise<void> {
       db.abilities.clear(),
     ]);
   });
+}
+
+// ---- 計算メモ ----
+
+export async function getScratch(problemId: string): Promise<ScratchPage[] | undefined> {
+  return (await db.scratchpads.get(problemId))?.pages;
+}
+
+export async function saveScratch(problemId: string, pages: ScratchPage[]): Promise<void> {
+  // 何も書かれていないメモは保存せず、既存のものも消す（空のメモで容量を使わないため）
+  if (isBlankPages(pages)) await db.scratchpads.delete(problemId);
+  else await db.scratchpads.put({ problemId, pages, updatedAt: new Date() });
 }
 
 // ---- 設定 ----

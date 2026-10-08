@@ -1,0 +1,12 @@
+id: lm-geometric-limit
+kind: theorem
+title: 無限等比数列 {rⁿ} の極限
+body: |
+  $$\lim_{n\to\infty}r^n=\begin{cases}\infty & (r>1)\\ 1 & (r=1)\\ 0 & (-1<r<1)\\ \text{振動（極限はない）} & (r\leqq -1)\end{cases}$$
+
+  したがって **$\{r^n\}$ が収束する $\iff -1<r\leqq 1$**。$r=1$ は収束（極限 $1$）に含まれ、$r=-1$ は $1,\ -1,\ 1,\ \cdots$ と振動するので含まれない。境目の $r=\pm 1$ は必ず個別に確かめる。
+
+  **公比に文字を含むとき**: $\{(2x-1)^n\}$ が収束する条件は $-1<2x-1\leqq 1$、すなわち $0<x\leqq 1$ のように、公比の条件を文字の条件に翻訳する。
+
+  **極限で定められる関数**: $f(x)=\displaystyle\lim_{n\to\infty}\frac{x^{2n+1}+\cdots}{x^{2n}+1}$ のような関数は、$|x|<1$、$|x|>1$（分子・分母を $x^{2n}$ で割る）、$x=1$、$x=-1$ の4つに分けて求める。$x=\pm 1$ では $x^{2n}=1$ をそのまま代入する。
+prerequisites: [sq-geometric, lm-sequence-limit]

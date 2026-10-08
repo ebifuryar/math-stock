@@ -1,0 +1,16 @@
+id: lm-sequence-limit
+kind: method
+title: 数列の極限と不定形の扱い
+body: |
+  数列 $\{a_n\}$ の極限は「収束（$\to\alpha$）」「正の無限大に発散」「負の無限大に発散」「振動（どれでもない）」のいずれか。$\lim a_n=\alpha,\ \lim b_n=\beta$ のとき、和・差・積・商（$\beta\neq 0$）の極限はそれぞれ $\alpha\pm\beta,\ \alpha\beta,\ \dfrac{\alpha}{\beta}$。
+
+  **不定形** $\dfrac{\infty}{\infty},\ \infty-\infty,\ \dfrac{0}{0},\ 0\times\infty$ は、形だけでは極限が決まらない。$\dfrac{\infty}{\infty}=1$、$\infty-\infty=0$ などとしてはいけない。式を変形して不定形を解消する。
+
+  | 形 | 変形 | 例 |
+  | --- | --- | --- |
+  | 多項式の分数 $\dfrac{\infty}{\infty}$ | 分母の最高次の項で分子・分母を割る | $\dfrac{3n^2+n}{2n^2-1}=\dfrac{3+\frac{1}{n}}{2-\frac{1}{n^2}}\to\dfrac{3}{2}$ |
+  | $\sqrt{\ }$ を含む $\infty-\infty$ | 分子の有理化 | $\sqrt{n^2+4n}-n=\dfrac{4n}{\sqrt{n^2+4n}+n}\to 2$ |
+  | 指数の分数 | 底の絶対値が最大のもので割る | $\dfrac{3^{n+1}-2^n}{3^n+2^{n+1}}=\dfrac{3-(\frac{2}{3})^n}{1+2(\frac{2}{3})^n}\to 3$ |
+
+  式をどう変形してもよいが、最後に「$\dfrac{1}{n}\to 0$」「$r^n\to 0\ (|r|<1)$」のような確定した極限だけで値が決まる形にする。
+prerequisites: [ne-radicals]

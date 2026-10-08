@@ -1,0 +1,56 @@
+- id: mc-ig-sub-bounds
+  title: 置換積分で積分区間・dx の変換を忘れる
+  description: |
+    定積分で $u=g(x)$ と置換したのに、積分区間を $x$ の範囲のまま計算する。例: $\displaystyle\int_0^2 xe^{x^2}dx$ で $u=x^2$ とおき、$\displaystyle\frac{1}{2}\int_0^2 e^u\,du$ とする（正しくは $u$ は $0$ から $4$）。また、$dx$ を $du$ にそのまま書き換えて、$du=g'(x)\,dx$ の係数（$\frac{1}{2}$ など）を落とす。
+  cause: |
+    置換を「式の見た目の書き換え」としかとらえておらず、積分変数が変わると区間も変数ごとに変わることを意識していない。$x$ と $u$ の対応表を書く習慣がない。
+  remedyConcepts: [ig-substitution]
+- id: mc-ig-parts-choice
+  title: 部分積分の役割の選び方・2回目の扱いの誤り
+  description: |
+    部分積分で、微分すべき因子を積分側にしてしまい、右辺の積分がかえって複雑になる（例: $\displaystyle\int x\log x\,dx$ で $x$ を微分し $\log x$ を積分しようとする）。$e^x\sin x$ 型で2回目に役割を入れ替えて $I=I$ に戻る、あるいは $2I=\cdots$ を $2$ で割り忘れる。また、$\displaystyle\int f(x)g(x)\,dx$ を「それぞれ積分したものの積」とする。
+  cause: |
+    公式 $\displaystyle\int fg'=fg-\int f'g$ を、「どちらを微分すれば右辺が簡単になるか」という目的と結び付けていない。積の微分公式から導いた経験が少ない。
+  remedyConcepts: [ig-by-parts]
+- id: mc-ig-log-abs
+  title: 1/x の積分で絶対値を落とす
+  description: |
+    $\displaystyle\int\frac{dx}{x}=\log x+C$ と覚えていて、$x<0$ の区間の定積分を「$\log$ の中が負になるので定義されない」とする。あるいは $x<0$ では原始関数を $-\log(-x)$ とする（正しくは $\log|x|=\log(-x)$）。
+  cause: |
+    $\log|x|$ の絶対値が「$x<0$ でも $\dfrac{1}{x}$ の原始関数になるため」に付いていることを理解していない。$\{\log(-x)\}'$ を合成関数の微分で確かめていない。
+  remedyConcepts: [ig-basic]
+- id: mc-ig-inner-function
+  title: 合成関数の積分・微分で内側の関数を無視する
+  description: |
+    $\displaystyle\int\sin^2x\,dx=\frac{\sin^3x}{3}$、$\displaystyle\int\frac{dx}{x(x-1)}=\log|x(x-1)|$ のように、内側の関数の導関数が掛かっていないのに $\displaystyle\int\{g(x)\}^n g'(x)\,dx$ 型や $\dfrac{f'}{f}$ 型の公式を当てはめる。また $\displaystyle\frac{d}{dx}\int_0^{2x}f(t)\,dt=f(2x)$ として、上端の導関数 $2$ を掛け忘れる。
+  cause: |
+    合成関数の微分 $\{F(g(x))\}'=f(g(x))\,g'(x)$ と、その逆である置換積分を対応させていない。積分の結果を微分して元に戻るか確かめていない。
+  remedyConcepts: [ig-basic, ig-substitution, ig-definite-properties]
+- id: mc-ig-riemann-range
+  title: 区分求積法で積分区間・刻み幅の対応を誤る
+  description: |
+    $\displaystyle\lim_{n\to\infty}\frac{1}{n}\sum_{k=1}^{2n}f\!\left(\frac{k}{n}\right)$ を、和の範囲を見ずに $\displaystyle\int_0^1 f(x)\,dx$ とする（正しくは $\displaystyle\int_0^2$）。また $\dfrac{k}{2n}$ を $x$ とおき直したのに、刻み幅 $\dfrac{1}{2n}$ に合わせた係数の調整を忘れる。
+  cause: |
+    「$\dfrac{1}{n}\sum\to\displaystyle\int_0^1$」を形だけで覚えていて、$\dfrac{k}{n}$ が動く範囲（長方形の並ぶ区間）と幅 $\dfrac{1}{n}$ を図と対応させていない。
+  remedyConcepts: [ig-riemann-sum]
+- id: mc-ig-volume-formula
+  title: 回転体の体積公式の誤用（π・2乗・回転軸）
+  description: |
+    回転体の体積を $\displaystyle\int_a^b f(x)\,dx$ や $\displaystyle\pi\int_a^b f(x)\,dx$ とし、$\pi$ や2乗を落とす。また、$y$ 軸のまわりの回転体なのに $x$ 軸まわりの公式 $\displaystyle\pi\int_a^b y^2\,dx$ を使う。
+  cause: |
+    体積を「断面積の積分」として組み立てず、公式を記号の並びで覚えている。回転軸に垂直な断面が半径いくらの円になるかを図で確かめていない。
+  remedyConcepts: [ig-volume]
+- id: mc-ig-washer
+  title: 2曲線の間の回転体を (f−g)² で計算する
+  description: |
+    $f(x)\geqq g(x)\geqq 0$ のとき、2曲線の間の部分を $x$ 軸のまわりに回転した体積を $\displaystyle\pi\int_a^b\{f(x)-g(x)\}^2dx$ とする（正しくは $\displaystyle\pi\int_a^b\left[\{f(x)\}^2-\{g(x)\}^2\right]dx$）。$y$ 軸まわりで外側と内側の $x$ の差を半径とするのも同じ誤り。
+  cause: |
+    面積の「上 $-$ 下」をそのまま回転体に流用している。断面が半径 $f(x)-g(x)$ の円ではなく、外径 $f(x)$・内径 $g(x)$ の円環であることを図で確かめていない。
+  remedyConcepts: [ig-volume]
+- id: mc-ig-arc-length
+  title: 曲線の長さで根号の中を誤る
+  description: |
+    曲線の長さを $\displaystyle\int\{1+f'(x)\}\,dx$ や $\displaystyle\int\left\{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2\right\}dt$ のように根号を外して計算する、$\sqrt{1+\{f'(x)\}^2}$ の代わりに $\sqrt{1+f(x)^2}$ とする、あるいは根号を外すときに $\sqrt{A^2}=A$ として符号を確かめない。
+  cause: |
+    曲線の長さの式が、微小な直角三角形の斜辺 $\sqrt{(\Delta x)^2+(\Delta y)^2}$ の和から来ていることを理解していない。$\sqrt{p^2+q^2}=p+q$ という誤った計算規則を使っている。
+  remedyConcepts: [ig-area-length]

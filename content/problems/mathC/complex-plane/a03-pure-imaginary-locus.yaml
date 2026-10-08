@@ -1,0 +1,55 @@
+id: mc-cp-a03
+level: applied
+format: choice
+title: 純虚数となる条件と除外点
+stem: |
+  複素数 $z\ (z\neq -1)$ に対して $w=\dfrac{z-i}{z+1}$ とする。$w$ が純虚数となるような点 $z$ 全体の表す図形を求めたい。
+
+  太郎さんは、$w$ が純虚数であるための条件を $w+\overline{w}=0$ として計算し、$z=x+yi$（$x,\ y$ は実数）とおいて次の式を得た。
+  $$x^2+y^2+x-y=0\qquad\text{すなわち}\qquad\left(x+\frac{1}{2}\right)^2+\left(y-\frac{1}{2}\right)^2=\frac{1}{2}$$
+  この円を $K$ とする。求める図形として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: 円 $K$ 全体
+    misconception: mc-cp-real-condition
+    rationale: |
+      分母を払った式 $x^2+y^2+x-y=0$ をそのまま答えにしている。円 $K$ 上の点 $-1$ では分母が $0$ になり $w$ が定義されず、点 $i$ では $w=0$ となって純虚数ではない。
+  - id: "2"
+    text: 円 $K$ から点 $-1$ を除いたもの
+    misconception: mc-cp-real-condition
+    rationale: |
+      分母が $0$ になる点 $-1$ は除いたが、$w+\overline{w}=0$ は $w=0$ のときも成り立つことを見落としている。$z=i$ のとき $w=0$ で、$0$ は純虚数ではない。
+  - id: "3"
+    text: 円 $K$ から2点 $-1,\ i$ を除いたもの
+    rationale: |
+      正解。$w$ が純虚数 $\iff w+\overline{w}=0$ かつ $w\neq 0$。$z\neq -1$ と $w\neq 0$（$z\neq i$）の2つの除外点がともに円 $K$ 上にある。
+  - id: "4"
+    text: 円 $K$ から点 $i$ を除いたもの
+    misconception: mc-cp-real-condition
+    rationale: |
+      $w\neq 0$ による除外点 $i$ は除いたが、分母を払ったことで式に入り込んだ点 $-1$ を除いていない。$z=-1$ は円 $K$ 上にあるが、$w$ の分母が $0$ になる。
+answer: "3"
+solution: |
+  $w$ が純虚数 $\iff$ $w+\overline{w}=0$ かつ $w\neq 0$。
+  $$\frac{z-i}{z+1}+\frac{\overline{z}+i}{\overline{z}+1}=0$$
+  分母 $(z+1)(\overline{z}+1)=|z+1|^2>0$（$z\neq -1$）を払うと
+  $$(z-i)(\overline{z}+1)+(\overline{z}+i)(z+1)=0\iff 2z\overline{z}+(1+i)z+(1-i)\overline{z}=0$$
+  $z=x+yi$ とおくと $(1+i)z+(1-i)\overline{z}=2(x-y)$ なので $x^2+y^2+x-y=0$。これは中心 $-\dfrac{1}{2}+\dfrac{1}{2}i$、半径 $\dfrac{\sqrt{2}}{2}$ の円 $K$。
+
+  ここで除外点を調べる。
+  - $z=-1$: $(-1)^2+0+(-1)-0=0$ より $K$ 上にあるが、$w$ の分母が $0$ なので除く。
+  - $w=0$ となるのは $z=i$: $0+1+0-1=0$ より $K$ 上にあるが、$0$ は純虚数ではないので除く。
+
+  よって、求める図形は **円 $K$ から2点 $-1,\ i$ を除いたもの**。（図形的には、点 $\mathrm{P}(z),\ \mathrm{A}(i),\ \mathrm{B}(-1)$ について $\dfrac{z-i}{z-(-1)}$ が純虚数 $\iff$ $\mathrm{PA}\perp\mathrm{PB}$（$\mathrm{P}\neq\mathrm{A},\ \mathrm{B}$）なので、線分 $\mathrm{AB}$ を直径とする円から両端を除いたものになる。）
+concepts: [cp-conjugate-abs, cp-figures, cp-angle-condition]
+misconceptions: [mc-cp-real-condition]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.45, discrimination: 1.3 }
+author:
+  intent: |
+    純虚数条件を $\overline{w}=-w$ だけで処理したあと、分母 $\neq 0$ と $w\neq 0$ の2つの条件で除外点を検討できるかをみる。円 $K$ の方程式は問題文で与え、計算力ではなく条件の検討で差がつくようにした（共通テスト型の「他者の解答の検討」）。2つの除外点がどちらも $K$ 上にあるように係数を選び、①（両方見落とし）・②（$w\neq 0$ の見落とし）・④（分母の見落とし）で、どの条件が欠けているかを特定できる。解説では「直径 $i,\ -1$ の円」という図形的な意味づけも示し、計算結果の検証手段とする。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学C (2) ア(エ) 複素数平面における図形（実数・純虚数となる条件）]
+  variations:
+    - 同じ $w$ が実数となる点 $z$ 全体（2点 $i,\ -1$ を通る直線から点 $-1$ を除いたもの）を求めさせる。
+    - $|z|=1,\ z\neq 1$ のとき $\dfrac{1+z}{1-z}$ が純虚数または $0$ になることを示させ、$0$ になる $z$ を答えさせる。

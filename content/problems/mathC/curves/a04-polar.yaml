@@ -1,0 +1,53 @@
+id: mc-cv-a04
+level: applied
+format: mark
+title: 極座標と極方程式（直線・円・楕円）
+stem: |
+  原点 $\mathrm{O}$ を極、$x$ 軸の正の部分を始線とする極座標を考える。偏角 $\theta$ は $0\leqq\theta<2\pi$ の範囲で答えよ。
+
+  (1) 直交座標が $(-\sqrt{3},\ -1)$ である点 $\mathrm{A}$ の極座標は $\left(\boxed{\text{ア}},\ \dfrac{\boxed{\text{イ}}}{\boxed{\text{ウ}}}\pi\right)$ である。
+
+  (2) $\mathrm{A}$ を通り直線 $\mathrm{OA}$ に垂直な直線 $\ell$ の極方程式は
+  $$r\cos\left(\theta-\frac{\boxed{\text{イ}}}{\boxed{\text{ウ}}}\pi\right)=\boxed{\text{エ}}$$
+  であり、$\ell$ を直交座標の方程式で表すと $\sqrt{3}\,x+y+\boxed{\text{オ}}=0$ である。
+
+  (3) 円 $x^2+y^2-4x=0$ の極方程式は $r=\boxed{\text{カ}}\cos\theta$ である。
+
+  (4) 極方程式 $r=\dfrac{6}{2+\cos\theta}$ の表す曲線を直交座標の方程式で表すと
+  $$\frac{(x+\boxed{\text{キ}})^2}{\boxed{\text{クケ}}}+\frac{y^2}{\boxed{\text{コサ}}}=1$$
+  であり、この楕円の離心率は $\dfrac{\boxed{\text{シ}}}{\boxed{\text{ス}}}$ である。
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イ, answer: "7" }
+  - { label: ウ, answer: "6" }
+  - { label: エ, answer: "2" }
+  - { label: オ, answer: "4" }
+  - { label: カ, answer: "4" }
+  - { label: キ, answer: "2" }
+  - { label: クケ, answer: "16" }
+  - { label: コサ, answer: "12" }
+  - { label: シ, answer: "1" }
+  - { label: ス, answer: "2" }
+solution: |
+  (1) $r=\sqrt{3+1}=2$。$\cos\theta=-\dfrac{\sqrt{3}}{2},\ \sin\theta=-\dfrac{1}{2}$ を両方満たすので $\theta=\dfrac{7}{6}\pi$（第3象限）。$\tan\theta=\dfrac{1}{\sqrt{3}}$ だけから $\dfrac{\pi}{6}$ とすると、原点について反対側の点 $(\sqrt{3},\ 1)$ になってしまう。
+
+  (2) $\ell$ 上の点 $\mathrm{P}(r,\ \theta)$ について、$\mathrm{OP}$ の $\mathrm{OA}$ 方向への正射影の長さは $\mathrm{OA}=2$ に等しいので $r\cos\left(\theta-\dfrac{7}{6}\pi\right)=2$。展開すると
+  $$r\cos\theta\cos\frac{7}{6}\pi+r\sin\theta\sin\frac{7}{6}\pi=2\iff -\frac{\sqrt{3}}{2}x-\frac{1}{2}y=2\iff\sqrt{3}\,x+y+4=0$$
+
+  (3) $r^2=x^2+y^2,\ x=r\cos\theta$ より $r^2-4r\cos\theta=0$、$r(r-4\cos\theta)=0$。$r=0$（極）は $r=4\cos\theta$ で $\theta=\dfrac{\pi}{2}$ としたときに含まれるので、$r=4\cos\theta$。
+
+  (4) 分母を払って $2r+r\cos\theta=6$、すなわち $2r=6-x$。両辺を2乗して $4(x^2+y^2)=36-12x+x^2$
+  $$3x^2+12x+4y^2=36\iff 3(x+2)^2+4y^2=48\iff\frac{(x+2)^2}{16}+\frac{y^2}{12}=1$$
+  （2乗する前の条件は $6-x=2r>0$ だが、この楕円上では $-6\leqq x\leqq 2$ なので自動的に満たされ、余分な点は生じない。）$a=4,\ c=\sqrt{16-12}=2$ より離心率 $e=\dfrac{c}{a}=\dfrac{1}{2}$。$r=\dfrac{3}{1+\frac{1}{2}\cos\theta}$ と変形しても $e=\dfrac{1}{2}$ が読み取れる。焦点は $(-2\pm 2,\ 0)$ で、その一つは極 $\mathrm{O}$ である。
+concepts: [cv-polar-coordinates, cv-polar-equation]
+misconceptions: [mc-cv-polar-sign]
+targetSeconds: 480
+irt: { expectedCorrectRate: 0.45, discrimination: 1.2 }
+author:
+  intent: |
+    極座標と直交座標の相互変換を、点・直線・円・2次曲線の各段階で確認する。(1) は偏角の象限判断で、$\tan$ だけで決めて $\dfrac{\pi}{6}$ とすると (2) の直線も原点の反対側の直線 $\sqrt{3}\,x+y-4=0$ になり、誤りが連鎖する構成にした。(4) は離心率の読み取りと焦点が極にあることの確認で、極方程式 $r=\dfrac{\ell}{1+e\cos\theta}$ の意味を理解しているかをみる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学C (2) ア(ウ) 極座標の意味及び曲線が極方程式で表されること]
+  variations:
+    - 極方程式 $r=\dfrac{2}{1+\cos\theta}$ を直交座標で表し、放物線 $y^2=-4(x-1)$ となることを確かめさせる。
+    - 極座標で表された2点 $\left(2,\ \dfrac{\pi}{6}\right),\ \left(4,\ \dfrac{5}{6}\pi\right)$ と極を頂点とする三角形の面積を求めさせる。

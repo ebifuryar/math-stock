@@ -1,0 +1,56 @@
+- id: mc-lm-indeterminate-form
+  title: 不定形を変形せずに値を決めつける
+  description: |
+    $\dfrac{\infty}{\infty}$ を $1$、$\infty-\infty$ を $0$、$\dfrac{0}{0}$ を $0$、$1^{\infty}$ を $1$ とするなど、不定形の極限を形だけで決めてしまう。例: $\sqrt{n^2+n}-n\to 0$、$\left(\dfrac{x+2}{x-2}\right)^x\to 1$。また $\displaystyle\lim_{x\to 0}\frac{\sin x}{x}=1$ や $\displaystyle\lim_{x\to\infty}\left(1+\frac{1}{x}\right)^x=e$ を、中身と分母（指数）をそろえずに $\dfrac{\sin 3x}{x}\to 1$、$\left(1+\dfrac{2}{x}\right)^x\to e$ と当てはめる。
+  cause: |
+    「$\infty$ どうしは打ち消し合う」「$1$ を何乗しても $1$」という有限の数の感覚を、極限にそのまま持ち込んでいる。不定形は「どちらが速く大きく（小さく）なるか」の競争で値が決まることを理解していない。公式を「形」ではなく「見た目」で覚えている。
+  remedyConcepts: [lm-sequence-limit, lm-function-limit]
+- id: mc-lm-rn-boundary
+  title: rⁿ の極限で r=1, r=−1 の場合を取り違える
+  description: |
+    $\{r^n\}$ が収束する条件を $-1<r<1$（$r=1$ を落とす）や $-1\leqq r\leqq 1$（振動する $r=-1$ を含める）とする。$\displaystyle\lim_{n\to\infty}x^{2n}$ を含む式で、$|x|<1$ と $|x|>1$ だけを調べて $x=\pm 1$ の値を求めない。無限等比級数で公比 $-1$ のときも収束するとみなす。
+  cause: |
+    $|r|<1$ と $|r|>1$ の結果だけを覚え、境目 $r=\pm 1$ で数列が実際にどうなるか（$1,1,1,\cdots$ と $1,-1,1,\cdots$）を書き並べて確かめていない。
+  remedyConcepts: [lm-geometric-limit]
+- id: mc-lm-geometric-series-condition
+  title: 無限等比級数の収束条件（初項 0・|r|<1）の確認漏れ
+  description: |
+    無限等比級数の収束条件を「$|r|<1$」だけとし、初項が $0$ のとき（公比によらず和 $0$ で収束）を落とす。あるいは条件を確かめずに $\dfrac{a}{1-r}$ を使う（例: $1-1+1-\cdots=\dfrac{1}{1-(-1)}=\dfrac{1}{2}$ とする）。公比が分数式 $\dfrac{1}{1+x}$ のとき、$|1+x|<1$ と逆向きに翻訳する。
+  cause: |
+    和の公式 $\dfrac{a}{1-r}$ が部分和 $\dfrac{a(1-r^n)}{1-r}$ の極限として $r^n\to 0$ のときにだけ得られることを理解していない。初項が文字を含む場合に、$a=0$ の場合を独立に考える習慣がない。
+  remedyConcepts: [lm-infinite-series, lm-geometric-limit]
+- id: mc-lm-term-zero-convergence
+  title: 項が 0 に収束すれば無限級数も収束すると思い込む
+  description: |
+    $\displaystyle\lim_{n\to\infty}a_n=0$ を確かめただけで $\displaystyle\sum_{n=1}^{\infty}a_n$ が収束すると判断する。例: $\displaystyle\sum_{n=1}^{\infty}\frac{1}{\sqrt{n}+\sqrt{n+1}}$ や $\displaystyle\sum_{n=1}^{\infty}\log\frac{n+1}{n}$ を収束とする。
+  cause: |
+    「級数が収束 $\Rightarrow$ 項 $\to 0$」の逆を正しいと思っている。無限級数の和が部分和の極限として定義されることを意識せず、部分和 $S_n$ を求めずに項だけを見ている。
+  remedyConcepts: [lm-infinite-series]
+- id: mc-lm-one-sided-limit
+  title: 右側極限と左側極限の違いを無視する
+  description: |
+    $|x-a|$、$\sqrt{(x-a)^2}$、$2^{\frac{1}{x}}$、場合分けで定義された関数などで、片側（多くは $x>a$ の側）だけを計算して $\displaystyle\lim_{x\to a}f(x)$ とする。連続性の判定で、つなぎ目の片側の極限だけ、または関数値だけを比べる。
+  cause: |
+    「$x\to a$」を「$x$ に $a$ に近い正の数を足したもの」としてしか想像していない。$\sqrt{x^2}=|x|$ を $x$ と書き換えるなど、符号の確認を省いている。
+  remedyConcepts: [lm-function-limit, lm-continuity]
+- id: mc-lm-asymptote
+  title: 分数関数の漸近線の取り違え
+  description: |
+    $y=\dfrac{3x-1}{x+2}$ の漸近線を、符号を逆にして $x=2$ とする、定数項の比 $-\dfrac{1}{2}$ を $y$ の漸近線とする、$x$ と $y$ を入れ替えて $x=3,\ y=-2$ とするなど。$y=\dfrac{k}{x-p}+q$ の形にせずに読み取ろうとする。
+  cause: |
+    漸近線を「分母 $=0$ となる $x$」「$x\to\pm\infty$ のときに近づく値」という意味から求めず、式の数字を位置で覚えて当てはめている。
+  remedyConcepts: [lm-rational-irrational]
+- id: mc-lm-inverse-domain
+  title: 逆関数の定義域・値域の入れ替え忘れ
+  description: |
+    逆関数を式だけで答え、定義域を書かない、またはもとの関数の定義域をそのまま書く。例: $f(x)=\sqrt{x-2}+1\ (x\geqq 2)$ の逆関数を $(x-1)^2+2$（すべての $x$）や $(x-1)^2+2\ (x\geqq 2)$ とする。
+  cause: |
+    逆関数を「$x$ と $y$ を入れ替える式変形」としてしか捉えておらず、対応の向きを逆にしたもの（定義域と値域が入れ替わる）という意味を理解していない。もとの関数の値域を求めていない。
+  remedyConcepts: [lm-inverse-composite]
+- id: mc-lm-irrational-equation
+  title: 分数・無理方程式（不等式）で同値性を崩す
+  description: |
+    $\sqrt{A}=B$ を2乗した $A=B^2$ だけを解き、$B\geqq 0$ を確かめずに無縁解を含める。文字定数を含む場合に、2乗した2次方程式の判別式だけで解の個数を決める。分数不等式 $\dfrac{A}{B}\geqq C$ の両辺に分母 $B$ を掛けて、$B<0$ のときの不等号の向きを考えない。
+  cause: |
+    式変形が同値変形かどうかを意識していない。2乗や分母を払う操作で解が増える・減ることを、グラフ（半放物線と直線、双曲線と直線）の位置関係と結びつけて確かめていない。
+  remedyConcepts: [lm-rational-irrational]

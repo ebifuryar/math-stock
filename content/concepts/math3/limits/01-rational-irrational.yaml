@@ -1,0 +1,15 @@
+id: lm-rational-irrational
+kind: property
+title: 分数関数・無理関数のグラフと方程式・不等式
+body: |
+  **分数関数** $y=\dfrac{ax+b}{cx+d}$（$c\neq 0,\ ad-bc\neq 0$）は、割り算をして
+  $$y=\frac{k}{x-p}+q$$
+  の形に直すと、$y=\dfrac{k}{x}$ のグラフを $x$ 軸方向に $p$、$y$ 軸方向に $q$ だけ平行移動したものとわかる。漸近線は **$x=p$（分母 $=0$ となる $x$）と $y=q$**、定義域は $x\neq p$、値域は $y\neq q$。$y=q$ は分子・分母の $x$ の係数の比 $\dfrac{a}{c}$ であり、定数項の比 $\dfrac{b}{d}$（$y$ 切片）ではない。
+
+  **無理関数** $y=\sqrt{ax+b}$ の定義域は $ax+b\geqq 0$、値域は $y\geqq 0$。$y=\sqrt{a(x-p)}$ は $y=\sqrt{ax}$ を $x$ 軸方向に $p$ だけ平行移動したもので、端点 $(p,\ 0)$ から半放物線がのびる。
+
+  **方程式・不等式はグラフの共有点・上下関係で考える。** 式変形で解くときは同値性に注意する。
+  - 分数不等式 $\dfrac{A}{B}\geqq C$ の両辺に $B$ を掛けると、$B<0$ のとき不等号の向きが変わる。$B$ の符号で場合分けするか、$\dfrac{A-BC}{B}\geqq 0$ と移項して符号表で調べる。
+  - 無理方程式 $\sqrt{A}=B$ は $\iff A=B^2\ \text{かつ}\ B\geqq 0$。2乗するだけでは $\sqrt{A}=-B$ の解（無縁解）が混ざる。
+  - 文字を含む $\sqrt{2x+4}=x+a$ の実数解の個数は、半放物線 $y=\sqrt{2x+4}$ と傾き $1$ の直線 $y=x+a$ の共有点の個数として、**端点を通る場合** と **接する場合** を境目に調べる。
+prerequisites: [qf-graph-translation, qf-discriminant]

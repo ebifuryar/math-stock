@@ -1,0 +1,51 @@
+id: mc-cp-e02
+level: exam
+format: choice
+title: 原点以外を中心とする回転・拡大による円の像
+stem: |
+  複素数平面上に点 $\mathrm{A}(2+i)$ がある。点 $\mathrm{P}(z)$ を、点 $\mathrm{A}$ を中心として反時計回りに $\dfrac{\pi}{3}$ だけ回転し、さらに $\mathrm{A}$ からの距離を $2$ 倍した点を $\mathrm{Q}(w)$ とする。
+
+  点 $\mathrm{P}$ が円 $|z|=1$ 上を一周するとき、点 $\mathrm{Q}$ の描く図形として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: 点 $-\sqrt{3}+2\sqrt{3}\,i$ を中心とする半径 $2$ の円
+    misconception: mc-cp-rotation
+    rationale: |
+      $\cos\dfrac{\pi}{3}-i\sin\dfrac{\pi}{3}$ を掛けて、時計回りに回転している。$w-\alpha=2\left(\cos\dfrac{\pi}{3}-i\sin\dfrac{\pi}{3}\right)(z-\alpha)$ とすると中心は $\alpha\left(1-2\cdot\dfrac{1-\sqrt{3}i}{2}\right)=(2+i)\sqrt{3}\,i=-\sqrt{3}+2\sqrt{3}\,i$ になる。
+  - id: "2"
+    text: 原点を中心とする半径 $2$ の円
+    misconception: mc-cp-rotation
+    rationale: |
+      $w=2\left(\cos\dfrac{\pi}{3}+i\sin\dfrac{\pi}{3}\right)z$ と、原点を中心に回転・拡大している。これでは点 $\mathrm{A}$ がまったく使われていない。
+  - id: "3"
+    text: 点 $\dfrac{2+\sqrt{3}}{2}+\dfrac{1-2\sqrt{3}}{2}i$ を中心とする半径 $1$ の円
+    misconception: mc-cp-modulus-scale
+    rationale: |
+      回転だけを行い、$\mathrm{A}$ からの距離を $2$ 倍することを落としている。$w-\alpha=\left(\cos\dfrac{\pi}{3}+i\sin\dfrac{\pi}{3}\right)(z-\alpha)$ とすると、中心は $\alpha\left(1-\dfrac{1+\sqrt{3}i}{2}\right)$、半径は $1$ のままになる。
+  - id: "4"
+    text: 点 $\sqrt{3}-2\sqrt{3}\,i$ を中心とする半径 $2$ の円
+    rationale: |
+      正解。$w-\alpha=2\left(\cos\dfrac{\pi}{3}+i\sin\dfrac{\pi}{3}\right)(z-\alpha)$ より $w=(1+\sqrt{3}i)z+\alpha\{1-(1+\sqrt{3}i)\}=(1+\sqrt{3}i)z+(\sqrt{3}-2\sqrt{3}i)$。$|z|=1$ なので $|w-(\sqrt{3}-2\sqrt{3}i)|=|1+\sqrt{3}i|=2$。
+answer: "4"
+solution: |
+  $\alpha=2+i$ とする。点 $\mathrm{A}$ を中心とする回転・拡大は
+  $$w-\alpha=2\left(\cos\frac{\pi}{3}+i\sin\frac{\pi}{3}\right)(z-\alpha)=(1+\sqrt{3}\,i)(z-\alpha)$$
+  よって
+  $$w=(1+\sqrt{3}\,i)z+\alpha-(1+\sqrt{3}\,i)\alpha=(1+\sqrt{3}\,i)z-\sqrt{3}\,i\,\alpha$$
+  $-\sqrt{3}\,i(2+i)=\sqrt{3}-2\sqrt{3}\,i$ であるから、$c=\sqrt{3}-2\sqrt{3}\,i$ とおくと
+  $$w-c=(1+\sqrt{3}\,i)z,\qquad |w-c|=|1+\sqrt{3}\,i||z|=2$$
+  $z$ が単位円を一周すると、$(1+\sqrt{3}i)z$ は原点中心・半径 $2$ の円を一周するので、$\mathrm{Q}$ は **点 $\sqrt{3}-2\sqrt{3}\,i$ を中心とする半径 $2$ の円** を描く。
+
+  （図形的には、円 $|z|=1$ の中心 $\mathrm{O}$ を同じ変換で移した点 $-\sqrt{3}\,i\,\alpha$ が像の円の中心で、半径は $2$ 倍になる。）
+concepts: [cp-product-rotation, cp-figures]
+misconceptions: [mc-cp-rotation, mc-cp-modulus-scale]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.4, discrimination: 1.3 }
+author:
+  intent: |
+    原点以外の点を中心とする「回転＋拡大」を $w-\alpha=r(\cos\theta+i\sin\theta)(z-\alpha)$ と立式し、円の像を中心と半径の移動として捉えられるかをみる。誤答は、回転の向き（①）、回転の中心（②）、拡大率の欠落（③）に対応させ、いずれも「円である」こと自体は正しいので、図形の種類ではなく変換の立式の精度で差がつく。像の円の中心は「元の円の中心 $\mathrm{O}$ の像」であるという見方ができれば、計算を大幅に省ける。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学C (2) ア(エ) 複素数平面における図形の移動（回転・拡大）]
+  variations:
+    - 点 $\mathrm{P}$ が直線 $z+\overline{z}=2$ 上を動くときの $\mathrm{Q}$ の描く直線の方程式を求めさせる。
+    - 変換を2回続けて行った点の描く図形を求めさせ、回転角 $\dfrac{2}{3}\pi$・拡大率 $4$ の変換になることを確認させる。

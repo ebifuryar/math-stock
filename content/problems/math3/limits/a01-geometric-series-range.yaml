@@ -1,0 +1,50 @@
+id: m3-lm-a01
+level: applied
+format: choice
+title: 初項・公比に文字を含む無限等比級数の収束条件
+stem: |
+  $x$ は $-1$ でない実数とする。無限級数
+  $$x+\frac{x}{1+x}+\frac{x}{(1+x)^2}+\cdots+\frac{x}{(1+x)^{n-1}}+\cdots$$
+  が収束するような $x$ の値の範囲として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $x<-2,\ \ 0\leqq x$
+    rationale: |
+      正解。初項 $x=0$ のときは和 $0$ で収束し、$x\neq 0$ のときは公比 $\dfrac{1}{1+x}$ について $\left|\dfrac{1}{1+x}\right|<1\iff|1+x|>1\iff x<-2,\ 0<x$。
+  - id: "2"
+    text: $x<-2,\ \ 0<x$
+    misconception: mc-lm-geometric-series-condition
+    rationale: |
+      公比の条件 $|r|<1$ だけを考え、初項 $x=0$ の場合を落としている。$x=0$ のときはすべての項が $0$ なので、級数は収束して和は $0$ である。
+  - id: "3"
+    text: $-2<x<0$
+    misconception: mc-lm-geometric-series-condition
+    rationale: |
+      $\left|\dfrac{1}{1+x}\right|<1$ を $|1+x|<1$ と逆向きに翻訳している。たとえば $x=-\dfrac{1}{2}$ では公比が $2$ となり発散する。
+  - id: "4"
+    text: $x\leqq -2,\ \ 0\leqq x$
+    misconception: mc-lm-rn-boundary
+    rationale: |
+      $x=-2$ を含めている。$x=-2$ のとき初項 $-2$、公比 $-1$ で、部分和は $-2,\ 0,\ -2,\ 0,\ \cdots$ と振動するので収束しない。
+answer: "1"
+solution: |
+  初項 $x$、公比 $\dfrac{1}{1+x}$ の無限等比級数である。
+
+  - $x=0$ のとき: すべての項が $0$ なので収束し、和は $0$。
+  - $x\neq 0$ のとき: 収束 $\iff\left|\dfrac{1}{1+x}\right|<1\iff|1+x|>1\iff 1+x<-1\ \text{または}\ 1+x>1\iff x<-2\ \text{または}\ x>0$。
+
+  よって収束する範囲は **$x<-2,\ 0\leqq x$**。
+
+  （参考: $x\neq 0$ で収束するときの和は $\dfrac{x}{1-\frac{1}{1+x}}=\dfrac{x(1+x)}{x}=1+x$。和を $x$ の関数とみると $x=0$ だけ値が $0$ になり、$x=0$ で不連続になる。）
+concepts: [lm-infinite-series, lm-geometric-limit]
+misconceptions: [mc-lm-geometric-series-condition, mc-lm-rn-boundary]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.45, discrimination: 1.3 }
+author:
+  intent: |
+    無限等比級数の収束条件を「初項 $=0$ または $|$公比$|<1$」と正確に使えるかをみる。初項にも文字が入っているため、$|r|<1$ の公式だけを覚えている受験者は①と②の区別でつまずく。公比が分数式であることで、絶対値の不等式の翻訳（③）と、境目 $r=-1$ の扱い（④）も同時に問える。私大の小問や二次試験の (1) で定番の題材で、参考に示した和の不連続性へ発展させる誘導の入口にもなる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学III (1) ア(イ) 無限級数の和", "数学III (1) ア(ア) 数列の極限"]
+  variations:
+    - 和を $f(x)$ として、$y=f(x)$ のグラフをかかせ、$x=0$ での不連続性を説明させる。
+    - $x^2+\dfrac{x^2}{1+x^2}+\dfrac{x^2}{(1+x^2)^2}+\cdots$ とし、すべての実数で収束するが和が $x=0$ で不連続になる例を扱う。

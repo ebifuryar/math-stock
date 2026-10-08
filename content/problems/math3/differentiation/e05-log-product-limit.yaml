@@ -1,0 +1,65 @@
+id: m3-df-e05
+level: exam
+format: written
+title: 対数の不等式と積の極限
+stem: |
+  (1) $x>0$ のとき、不等式
+  $$x-\frac{x^2}{2}<\log(1+x)<x$$
+  が成り立つことを証明せよ。
+
+  (2) (1) を用いて、極限
+  $$\lim_{n\to\infty}\prod_{k=1}^{n}\left(1+\frac{k}{n^2}\right)=\lim_{n\to\infty}\left(1+\frac{1}{n^2}\right)\left(1+\frac{2}{n^2}\right)\cdots\left(1+\frac{n}{n^2}\right)$$
+  を求めよ。
+modelAnswer: |
+  (1) $g(x)=x-\log(1+x)$ とおくと、$x>0$ で
+  $$g'(x)=1-\frac{1}{1+x}=\frac{x}{1+x}>0$$
+  なので $g(x)$ は $x\geqq 0$ で増加し、$x>0$ のとき $g(x)>g(0)=0$。よって $\log(1+x)<x$。
+
+  $h(x)=\log(1+x)-x+\dfrac{x^2}{2}$ とおくと、$x>0$ で
+  $$h'(x)=\frac{1}{1+x}-1+x=\frac{1-(1+x)+x(1+x)}{1+x}=\frac{x^2}{1+x}>0$$
+  なので $h(x)$ は $x\geqq 0$ で増加し、$x>0$ のとき $h(x)>h(0)=0$。よって $x-\dfrac{x^2}{2}<\log(1+x)$。
+
+  (2) $P_n=\displaystyle\prod_{k=1}^{n}\left(1+\frac{k}{n^2}\right)$ とおくと $P_n>0$ で
+  $$\log P_n=\sum_{k=1}^{n}\log\left(1+\frac{k}{n^2}\right)$$
+  (1) で $x=\dfrac{k}{n^2}\ (>0)$ とおき、$k=1,\ 2,\ \ldots,\ n$ について辺々を加えると
+  $$\sum_{k=1}^{n}\frac{k}{n^2}-\sum_{k=1}^{n}\frac{k^2}{2n^4}<\log P_n<\sum_{k=1}^{n}\frac{k}{n^2}$$
+  ここで
+  $$\sum_{k=1}^{n}\frac{k}{n^2}=\frac{n(n+1)}{2n^2}=\frac{1}{2}\left(1+\frac{1}{n}\right)\to\frac{1}{2}$$
+  $$\sum_{k=1}^{n}\frac{k^2}{2n^4}=\frac{n(n+1)(2n+1)}{12n^4}=\frac{1}{12n}\left(1+\frac{1}{n}\right)\left(2+\frac{1}{n}\right)\to 0$$
+  よって、はさみうちの原理により $\displaystyle\lim_{n\to\infty}\log P_n=\frac{1}{2}$。$e^x$ は連続関数なので
+  $$\lim_{n\to\infty}P_n=e^{\frac{1}{2}}=\sqrt{e}$$
+rubric:
+  - id: r1
+    criterion: (1) で $g(x)=x-\log(1+x)$ について $g'(x)=\dfrac{x}{1+x}>0$ と $g(0)=0$ から右側の不等式を示している
+    points: 2
+    keywords: ["x/(1+x)", "g(0)=0"]
+  - id: r2
+    criterion: (1) で $h(x)=\log(1+x)-x+\dfrac{x^2}{2}$ について $h'(x)=\dfrac{x^2}{1+x}>0$ と $h(0)=0$ から左側の不等式を示している
+    points: 2
+    keywords: ["x^2/(1+x)", "h(0)=0"]
+  - id: r3
+    criterion: (2) で積の対数をとって和に直し、(1) に $x=\dfrac{k}{n^2}$ を代入して $k=1$ から $n$ まで加え、$\log P_n$ を上下からはさむ不等式を作っている
+    points: 2
+    keywords: ["log", "k/n^2"]
+  - id: r4
+    criterion: (2) で $\displaystyle\sum_{k=1}^{n}\frac{k}{n^2}\to\frac{1}{2}$ と $\displaystyle\sum_{k=1}^{n}\frac{k^2}{2n^4}\to 0$ を正しく計算している
+    points: 2
+    keywords: ["n(n+1)", "1/2"]
+  - id: r5
+    criterion: (2) ではさみうちの原理により $\log P_n\to\dfrac{1}{2}$ を導き、極限値 $\sqrt{e}$（$e^{\frac{1}{2}}$）を答えている
+    points: 2
+    keywords: ["はさみうち", "√e"]
+solution: |
+  (1) は差の関数を2つ作り、それぞれの導関数が $x>0$ で正であることと、$x=0$ での値が $0$ であることから示す。(2) は積の極限なので対数をとって和にし、(1) の不等式で上下からはさむ。上からの評価 $\displaystyle\sum\frac{k}{n^2}$ は $\dfrac{1}{2}$ に、誤差項 $\displaystyle\sum\frac{k^2}{2n^4}$ は $0$ に収束するので、$\log P_n\to\dfrac{1}{2}$、極限は $\sqrt{e}$。
+concepts: [df-applications, df-elementary]
+misconceptions: []
+targetSeconds: 900
+irt: { expectedCorrectRate: 0.25, discrimination: 1.4 }
+author:
+  intent: |
+    $\log(1+x)$ の1次・2次の評価式を微分で証明し、それを極限の計算に応用できるかをみる。(2) では「積は対数をとって和にする」「近似 $\log(1+x)\fallingdotseq x$ の誤差を (1) の左側の不等式で制御する」という2つの発想が必要で、上からの評価 $\log(1+x)<x$ だけでは極限が確定しないことに気づけるかが上位層を識別する。各項 $\dfrac{k}{n^2}\to 0$ だから積は $1$ に近づく、と答える誤り（項数 $n$ も増えることの見落とし）も排除される。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学III (2) イ(ア) 導関数を用いた関数の考察（不等式の証明）", "数学III (1) ア(ア) 数列の極限"]
+  variations:
+    - $\displaystyle\lim_{n\to\infty}\prod_{k=1}^{n}\left(1+\frac{k^2}{n^3}\right)$（答 $e^{\frac{1}{3}}$）に変え、誤差項の評価を同様に行わせる。
+    - (1) を用いて $\displaystyle\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^{n}=e$ をはさみうちで示させる。

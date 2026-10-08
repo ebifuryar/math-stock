@@ -1,0 +1,56 @@
+- id: mc-df-chain-inner
+  title: 合成関数の微分で内側の微分を掛け忘れる
+  description: |
+    合成関数を微分するとき、外側の関数だけを微分して、内側の関数の導関数を掛け忘れる。例: $(\sin 2x)'=\cos 2x$、$(e^{-x})'=e^{-x}$、$\{\log(\cos 2x)\}'=\dfrac{1}{\cos 2x}$ とする。内側が何重にもなっているとき、途中の段の微分を落とすことも多い。
+  cause: |
+    $\dfrac{dy}{dx}=\dfrac{dy}{du}\cdot\dfrac{du}{dx}$ の形で「どれが外側でどれが内側か」を意識せず、基本関数の導関数の表を形だけで当てはめている。$e^{-x}$ や $\sin 2x$ のように内側が1次式だと、掛ける因子が定数になるため見落としやすい。
+  remedyConcepts: [df-rules, df-elementary]
+- id: mc-df-quotient-order
+  title: 商の微分で分子の順序を逆にする
+  description: |
+    $\left\{\dfrac{f(x)}{g(x)}\right\}'$ を $\dfrac{f(x)g'(x)-f'(x)g(x)}{\{g(x)\}^2}$ とし、符号が反転した導関数を得る。その結果、増減表の $+$ と $-$ が入れ替わり、極大と極小を取り違える。
+  cause: |
+    積の微分 $f'g+fg'$ は順序によらないので、商でも順序は関係ないと思っている。商の公式を、逆数の微分 $\left(\dfrac{1}{g}\right)'=-\dfrac{g'}{g^2}$ と積の微分から導いたことがない。
+  remedyConcepts: [df-rules]
+- id: mc-df-log-abs
+  title: log|x| の微分で絶対値を誤って扱う
+  description: |
+    $(\log|x|)'=\dfrac{1}{|x|}$、$\{\log|f(x)|\}'=\dfrac{f'(x)}{|f(x)|}$ とする。あるいは「真数が正の範囲でしか微分できない」と考え、$f(x)<0$ となる範囲を除外したり、対数微分法を使えないとしたりする。
+  cause: |
+    $x<0$ のとき $\log|x|=\log(-x)$ を合成関数として微分すると $\dfrac{-1}{-x}=\dfrac{1}{x}$ になることを確かめていない。絶対値記号が導関数にもそのまま残ると思い込んでいる。
+  remedyConcepts: [df-elementary]
+- id: mc-df-inflection-second-only
+  title: f''(a)=0 だけで変曲点と判断する
+  description: |
+    $f''(x)=0$ の解をすべて変曲点の $x$ 座標とする。例: $f''(x)=x^2(x-2)(x-6)e^{-x}$ のとき、$x=0$ も変曲点に数える（$x=0$ の前後で $f''(x)$ の符号は変わらない）。
+  cause: |
+    極値で「$f'(a)=0$ だけでは決まらない」と学んだことを、凹凸に移して考えていない。$f''(x)$ の符号表を作らず、方程式 $f''(x)=0$ を解いたところで止めている。重解の因数 $x^2$ が符号を変えないことに気づいていない。
+  remedyConcepts: [df-graph, cl-extremum]
+- id: mc-df-asymptote-missing
+  title: 漸近線・端の極限を調べずに増減表だけでグラフをかく
+  description: |
+    分数関数や指数・対数を含む関数のグラフを、増減表の極値だけでかき、漸近線（$x=-1$ や $y=x-1$ など）や $x\to\pm\infty$ での振る舞いを調べない。その結果、極大値が極小値より小さい場合に矛盾と感じたり、最大値・最小値をもたない関数に最大値があると答えたりする。
+  cause: |
+    整式（数学II）のグラフでは極値と $x\to\pm\infty$ で $\pm\infty$ に発散することだけで概形が決まったため、その手順をそのまま流用している。分母が $0$ になる点や、$x\to\pm\infty$ でグラフが近づく直線を調べる習慣がない。
+  remedyConcepts: [df-graph]
+- id: mc-df-limit-check-missing
+  title: 定数分離で端の極限を確認せずに解の個数を数える
+  description: |
+    方程式 $g(x)=a$ の実数解の個数を数えるとき、極値だけを見て、$x\to\pm\infty$ や $x\to 0$ での $g(x)$ の極限を確認しない。例: $g(x)=x^2e^{-x}$ で $x\to\infty$ のとき $g(x)\to 0$（ただし $0$ にはならない）であることを見落とし、$0<a<\dfrac{4}{e^2}$ での解を2個とする。
+  cause: |
+    増減表の矢印 $\searrow$ の先が「どこまで下がるか」を決めないままグラフをかいている。$\displaystyle\lim_{x\to\infty}\frac{x^n}{e^x}=0$ などの基本的な極限を、グラフの概形に結びつけていない。
+  remedyConcepts: [df-applications, df-graph]
+- id: mc-df-parametric-dydt
+  title: 媒介変数表示で dy/dt を dy/dx と取り違える
+  description: |
+    $x=f(t),\ y=g(t)$ で表された曲線の接線の傾きを、$\dfrac{dy}{dt}=g'(t)$ とする。あるいは $\dfrac{dx}{dt}\Big/\dfrac{dy}{dt}$ と分子と分母を逆にする。
+  cause: |
+    「$y$ を微分する」ことと「$y$ を $x$ で微分する」ことを区別していない。$\dfrac{dy}{dx}=\dfrac{dy}{dt}\cdot\dfrac{dt}{dx}$ という合成関数・逆関数の微分の組み合わせとして理解していない。
+  remedyConcepts: [df-implicit-parametric]
+- id: mc-df-differentiability
+  title: 微分可能性を連続性や導関数の極限で判定する
+  description: |
+    「連続ならば微分可能」と考えて、つなぎ目で値が一致することだけを確かめる。逆に、$\displaystyle\lim_{x\to a}f'(x)$ が存在しないことから「$x=a$ で微分可能でない」と結論する（例: $x^2\sin\dfrac{1}{x}$ 型の関数）。
+  cause: |
+    微分可能性の定義 $\displaystyle\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}$ に戻らず、「導関数の式に $x=a$ を代入する」「導関数の極限をとる」という計算手順で代用している。「微分可能 $\Rightarrow$ 連続」の逆が成り立たないこと、導関数が連続とは限らないことを区別していない。
+  remedyConcepts: [df-differentiability]

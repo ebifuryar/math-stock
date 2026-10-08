@@ -1,0 +1,13 @@
+id: df-mean-value
+kind: theorem
+title: 平均値の定理
+body: |
+  関数 $f(x)$ が閉区間 $[a,\ b]$ で連続、開区間 $(a,\ b)$ で微分可能ならば
+  $$\frac{f(b)-f(a)}{b-a}=f'(c),\qquad a<c<b$$
+  を満たす $c$ が存在する。2点 $(a,\ f(a)),\ (b,\ f(b))$ を結ぶ直線と平行な接線をもつ点が、区間の内部にあることを意味する。
+
+  **不等式への応用**: $f'(x)$ が単調なら、$a<c<b$ から $f'(c)$ を $f'(a)$ と $f'(b)$ ではさめる。例: $f(x)=\log x,\ 0<a<b$ で
+  $$\frac{b-a}{b}<\log b-\log a<\frac{b-a}{a}$$
+
+  **極限への応用**: $f(p(x))-f(q(x))=f'(c)\{p(x)-q(x)\}$（$c$ は $p(x)$ と $q(x)$ の間）と書きかえ、$p(x),\ q(x)$ が同じ値 $\alpha$ に近づくとき、はさみうちの原理により $c\to\alpha$、したがって $f'(c)\to f'(\alpha)$ とする（$f'$ の連続性を使う）。$c$ は $x$ によって変わるので、$c$ の範囲を明記してから極限をとる。
+prerequisites: [df-differentiability]

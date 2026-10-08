@@ -1,0 +1,17 @@
+id: cp-nth-roots
+kind: method
+title: 1の n 乗根と方程式 z^n=α
+body: |
+  **方程式 $z^n=\alpha$（$\alpha\neq 0$）の解き方**
+  1. $\alpha=R(\cos\varphi+i\sin\varphi)$、$z=r(\cos\theta+i\sin\theta)$ とおく。
+  2. ド・モアブルの定理より $r^n(\cos n\theta+i\sin n\theta)=R(\cos\varphi+i\sin\varphi)$。
+  3. 絶対値と偏角を比べて $r^n=R$、$n\theta=\varphi+2k\pi$（$k$ は整数）。偏角の比較では **$2k\pi$ を必ず付ける**。
+  4. $r=\sqrt[n]{R}$、$\theta=\dfrac{\varphi}{n}+\dfrac{2k\pi}{n}$ で、$k=0,\ 1,\ \cdots,\ n-1$ とすると **異なる $n$ 個の解** がすべて得られる。
+
+  解は原点を中心とする半径 $\sqrt[n]{R}$ の円に内接する正 $n$ 角形の頂点に並ぶ。
+
+  **1の $n$ 乗根** $z^n=1$ の解は $\omega_k=\cos\dfrac{2k\pi}{n}+i\sin\dfrac{2k\pi}{n}\ (k=0,\ 1,\ \cdots,\ n-1)$。$\omega=\omega_1$ とおくと $\omega_k=\omega^k$ で、$\omega\neq 1$ なら
+  $$z^n-1=(z-1)(z^{n-1}+\cdots+z+1)\ \text{より}\ \ \omega^{n-1}+\omega^{n-2}+\cdots+\omega+1=0$$
+  - $n=5$ のとき、両辺を $\omega^2$ で割って $t=\omega+\dfrac{1}{\omega}=2\cos\dfrac{2\pi}{5}$ とおくと $t^2+t-1=0$ となり、$\cos\dfrac{2\pi}{5}=\dfrac{-1+\sqrt{5}}{4}$ が得られる。
+  - $\left(\dfrac{z+1}{z}\right)^n=1$ のように置き換えて $w^n=1$ に帰着するときは、$w=1$ など **元の $z$ に戻せない値** を除く。
+prerequisites: [cp-de-moivre, ep-factor-theorem]

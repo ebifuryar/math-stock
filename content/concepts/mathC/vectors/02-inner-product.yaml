@@ -1,0 +1,19 @@
+id: vc-inner-product
+kind: formula
+title: 内積となす角・垂直条件
+body: |
+  **定義** $\vec a,\ \vec b$ のなす角を $\theta$（$0\leqq\theta\leqq\pi$、2つのベクトルの **始点をそろえて** 測る）とするとき
+  $$\vec a\cdot\vec b=|\vec a||\vec b|\cos\theta$$
+  内積は **ベクトルではなく実数（スカラー）** である。
+
+  **成分** $\vec a=(a_1,a_2),\ \vec b=(b_1,b_2)$ なら $\vec a\cdot\vec b=a_1b_1+a_2b_2$（積の **和** までとって1つの数にする）。空間では $a_1b_1+a_2b_2+a_3b_3$。
+
+  **なす角** $\cos\theta=\dfrac{\vec a\cdot\vec b}{|\vec a||\vec b|}$。$\vec a\cdot\vec b<0$ なら $\theta$ は鈍角。$\theta$ は $0$ 以上 $\pi$ 以下の1つに決まる。
+
+  **垂直条件** $\vec a\neq\vec 0,\ \vec b\neq\vec 0$ のとき $\vec a\perp\vec b\iff\vec a\cdot\vec b=0$
+
+  **展開** 文字式の展開と同じように計算でき、$\vec a\cdot\vec a=|\vec a|^2$ を使う。
+  $$|\vec a\pm\vec b|^2=|\vec a|^2\pm 2\vec a\cdot\vec b+|\vec b|^2,\qquad |\vec a+k\vec b|^2=|\vec a|^2+2k\,\vec a\cdot\vec b+k^2|\vec b|^2$$
+
+  **$|\vec a+t\vec b|$ の最小** $|\vec a+t\vec b|^2$ は $t$ の2次関数なので平方完成する。最小となるのは $(\vec a+t\vec b)\perp\vec b$ のとき（点から直線に下ろした垂線の足）。
+prerequisites: [vc-operations, tg-law-of-cosines]

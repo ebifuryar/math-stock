@@ -1,0 +1,50 @@
+id: m3-df-e02
+level: exam
+format: choice
+title: 微分可能性と導関数の連続性
+stem: |
+  関数 $f(x)$ を
+  $$f(x)=\begin{cases}x^2\sin\dfrac{1}{x} & (x\neq 0)\\[4pt] 0 & (x=0)\end{cases}$$
+  で定める。$x=0$ における $f(x)$ の性質について述べた文として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $f(x)$ は $x=0$ で微分可能で $f'(0)=0$ であるが、$\displaystyle\lim_{x\to 0}f'(x)$ は存在しない。
+    rationale: |
+      正解。$\left|\dfrac{f(h)-f(0)}{h}\right|=\left|h\sin\dfrac{1}{h}\right|\leqq|h|\to 0$ より $f'(0)=0$。一方 $x\neq 0$ で $f'(x)=2x\sin\dfrac{1}{x}-\cos\dfrac{1}{x}$ であり、$\cos\dfrac{1}{x}$ が $-1$ と $1$ の間を振動するので、$x\to 0$ の極限は存在しない。
+  - id: "2"
+    text: $f(x)$ は $x=0$ で連続であるが、微分可能ではない。
+    misconception: mc-df-differentiability
+    rationale: |
+      $\displaystyle\lim_{x\to 0}f'(x)$ が存在しないことから、$x=0$ で微分可能でないと判断している。微分可能性は定義 $\displaystyle\lim_{h\to 0}\frac{f(h)-f(0)}{h}$ で判定するもので、この極限は $0$ に収束する。
+  - id: "3"
+    text: $f(x)$ は $x=0$ で微分可能で $f'(0)=0$ であり、$f'(x)$ は $x=0$ で連続である。
+    misconception: mc-df-differentiability
+    rationale: |
+      「微分可能なら導関数も連続」と思い込んでいる。$x_n=\dfrac{1}{2n\pi}$ のとき $f'(x_n)=-1$、$x_n=\dfrac{1}{(2n+1)\pi}$ のとき $f'(x_n)=1$ となり、$f'(x)$ は $x\to 0$ で $f'(0)=0$ に近づかない。
+  - id: "4"
+    text: $\sin\dfrac{1}{x}$ が $x\to 0$ で振動するので、$f(x)$ は $x=0$ で連続でない。
+    rationale: |
+      $\sin\dfrac{1}{x}$ は振動するが、$|f(x)|\leqq x^2\to 0$ なので、はさみうちの原理により $\displaystyle\lim_{x\to 0}f(x)=0=f(0)$ となり連続である。
+answer: "1"
+solution: |
+  **連続性**: $x\neq 0$ で $\left|x^2\sin\dfrac{1}{x}\right|\leqq x^2$ なので、はさみうちの原理により $\displaystyle\lim_{x\to 0}f(x)=0=f(0)$。
+
+  **微分可能性**: 定義に従うと
+  $$\left|\frac{f(h)-f(0)}{h}\right|=\left|h\sin\frac{1}{h}\right|\leqq|h|\to 0\quad(h\to 0)$$
+  より $f'(0)=0$ が存在する。
+
+  **導関数の極限**: $x\neq 0$ では $f'(x)=2x\sin\dfrac{1}{x}-\cos\dfrac{1}{x}$。第1項は $0$ に近づくが、第2項は振動する。例えば $x=\dfrac{1}{2n\pi}$ では $f'(x)=-1$、$x=\dfrac{1}{(2n+1)\pi}$ では $f'(x)=1$（$n$ は自然数）で、$n\to\infty$ のときどちらも $x\to 0$ となるから、$\displaystyle\lim_{x\to 0}f'(x)$ は存在しない。
+
+  よって、$f(x)$ は $x=0$ で微分可能だが、導関数 $f'(x)$ は $x=0$ で連続でない。
+concepts: [df-differentiability, df-elementary]
+misconceptions: [mc-df-differentiability]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.3, discrimination: 1.4 }
+author:
+  intent: |
+    「連続」「微分可能」「導関数が連続」という3段階の性質を区別し、それぞれを定義に基づいて判定できるかをみる。②は微分可能性を導関数の極限で判定する誤り（$f'(x)$ の式に頼る計算習慣）、③は「微分可能なら導関数も連続」という過度の一般化、④は振動する因子があると連続でないとする誤りで、どの段階の理解でつまずいているかを識別する。難関大の論証問題で、区分的に定義された関数の扱いの基礎となる。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: ["数学III (2) ア(ア) 微分可能性と連続性"]
+  variations:
+    - $x^2$ を $x$ に変えた $x\sin\dfrac{1}{x}$ について同様に問う（$x=0$ で連続だが微分可能でない）。
+    - $x^3\sin\dfrac{1}{x}$ について、導関数 $f'(x)$ が $x=0$ で連続であることまで示させる。

@@ -1,0 +1,50 @@
+id: m3-lm-e01
+level: exam
+format: choice
+title: 1^∞ 型の極限と定数の決定
+stem: |
+  $a$ を正の定数とする。
+  $$\lim_{x\to\infty}\left(\frac{x+a}{x-a}\right)^{x}=e^4$$
+  が成り立つような $a$ について正しく述べたものを、次の①〜④のうちから一つ選べ。ただし、$e$ は自然対数の底とする。
+choices:
+  - id: "1"
+    text: そのような $a$ は存在しない
+    misconception: mc-lm-indeterminate-form
+    rationale: |
+      $\dfrac{x+a}{x-a}\to 1$ なので「$1$ の何乗も $1$」と考え、極限を $1$ としている。$1^{\infty}$ は不定形であり、実際の極限は $e^{2a}$ である。$\left(1+\dfrac{a}{x}\right)^x\to e^{a}$ と $\left(1-\dfrac{a}{x}\right)^x\to e^{-a}$ の符号を取り違え、$\dfrac{e^a}{e^a}=1$ とした場合もここに至る。
+  - id: "2"
+    text: $a=2$ のときに限り成り立つ
+    rationale: |
+      正解。$\dfrac{x+a}{x-a}=1+\dfrac{2a}{x-a}$ より極限は $e^{2a}$ で、$e^{2a}=e^4$ から $a=2$。
+  - id: "3"
+    text: $a=4$ のときに限り成り立つ
+    misconception: mc-lm-indeterminate-form
+    rationale: |
+      分子だけを $\left(1+\dfrac{a}{x}\right)^x\to e^a$ と処理し、分母の $\left(1-\dfrac{a}{x}\right)^x$ を「$1$ に近いものの累乗だから $1$」と無視している。分母は $e^{-a}$ に収束するので、全体は $\dfrac{e^a}{e^{-a}}=e^{2a}$ である。
+  - id: "4"
+    text: $a=\dfrac{1}{8}$ のときに限り成り立つ
+    rationale: |
+      $1+\dfrac{2a}{x-a}$ を $1+\dfrac{1}{t}$ の形にする置き換えで、$t=\dfrac{x-a}{2a}$ とすべきところを指数との対応を逆にし、極限を $e^{\frac{1}{2a}}$ としている。$\dfrac{1}{2a}=4$ から $a=\dfrac{1}{8}$ となるが、$a=\dfrac{1}{8}$ のとき実際の極限は $e^{\frac{1}{4}}$ である。
+answer: "2"
+solution: |
+  $x>a$ で考える。
+  $$\frac{x+a}{x-a}=1+\frac{2a}{x-a}$$
+  $t=\dfrac{x-a}{2a}$ とおくと、$x\to\infty$ のとき $t\to\infty$ で、$x=2at+a$。
+  $$\left(\frac{x+a}{x-a}\right)^x=\left(1+\frac{1}{t}\right)^{2at+a}=\left\{\left(1+\frac{1}{t}\right)^{t}\right\}^{2a}\left(1+\frac{1}{t}\right)^{a}\to e^{2a}\cdot 1=e^{2a}$$
+
+  別解: 分子・分母を $x$ で割ると
+  $$\left(\frac{1+\frac{a}{x}}{1-\frac{a}{x}}\right)^x=\frac{\left(1+\frac{a}{x}\right)^x}{\left(1-\frac{a}{x}\right)^x}\to\frac{e^{a}}{e^{-a}}=e^{2a}$$
+
+  $e^{2a}=e^4$ より $2a=4$、**$a=2$**（②）。
+concepts: [lm-function-limit]
+misconceptions: [mc-lm-indeterminate-form]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.38, discrimination: 1.3 }
+author:
+  intent: |
+    $1^{\infty}$ 型の不定形を、$\left(1+\dfrac{1}{t}\right)^t\to e$ の形に正確に変形して処理できるかをみる。定数 $a$ を決める形にしたことで、「極限は $1$」と考える受験者は①（存在しない）を選び、分子だけを $e^a$ と処理する受験者は③を選ぶ。置き換えで指数の対応を誤る受験者は④に至る。$e$ の定義を「見た目」ではなく「かっこ内と指数の逆数関係」で理解しているかを分離できる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学III (1) ア(オ) 関数の値の極限", "数学III (1) イ(ア) 極限を求める方法の考察"]
+  variations:
+    - $\displaystyle\lim_{n\to\infty}\left(1+\frac{1}{n}+\frac{1}{n^2}\right)^n$ を、はさみうちの原理を用いて求めさせる。
+    - $\displaystyle\lim_{x\to 0}(\cos x)^{\frac{1}{x^2}}=e^{-\frac{1}{2}}$ のように、三角関数の極限と組み合わせる。

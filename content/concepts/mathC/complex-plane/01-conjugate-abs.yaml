@@ -1,0 +1,21 @@
+id: cp-conjugate-abs
+kind: property
+title: 複素数平面・共役複素数と絶対値
+body: |
+  複素数 $z=a+bi$（$a,\ b$ は実数）を座標平面上の点 $(a,\ b)$ に対応させた平面を **複素数平面** という（$x$ 軸が実軸、$y$ 軸が虚軸）。
+
+  **共役複素数** $\overline{z}=a-bi$ は、点 $z$ を実軸に関して対称移動した点。
+  $$\overline{z+w}=\overline{z}+\overline{w},\qquad \overline{zw}=\overline{z}\,\overline{w},\qquad \overline{\left(\frac{z}{w}\right)}=\frac{\overline{z}}{\overline{w}},\qquad z+\overline{z}=2a,\qquad z-\overline{z}=2bi$$
+
+  **絶対値** $|z|=\sqrt{a^2+b^2}$ は原点と点 $z$ の距離で
+  $$|z|^2=z\overline{z}$$
+  - $|z|^2$ と $z^2$ は別物。$z=a+bi$ なら $z^2=a^2-b^2+2abi$ で、一般には実数でもない。
+  - $|z|=r\ (r>0)$ のとき $z\overline{z}=r^2$ なので $\dfrac{1}{z}=\dfrac{\overline{z}}{r^2}$。特に $|z|=1$ なら $\dfrac{1}{z}=\overline{z}$。
+  - $|zw|=|z||w|$、$\left|\dfrac{z}{w}\right|=\dfrac{|z|}{|w|}$。
+
+  **実数・純虚数となる条件**
+  - $z$ が実数 $\iff \overline{z}=z$
+  - $z$ が純虚数 $\iff \overline{z}=-z$ かつ $z\neq 0$（$0$ は純虚数ではない）
+
+  分数式 $w=\dfrac{P}{Q}$ にこれを使うときは、分母 $Q\neq 0$ の条件と、純虚数なら $w\neq 0$ の条件を最後に必ず確認する。
+prerequisites: [ep-complex-quadratic]

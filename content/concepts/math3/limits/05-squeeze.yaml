@@ -1,0 +1,17 @@
+id: lm-squeeze
+kind: theorem
+title: はさみうちの原理と漸化式で定まる数列の極限
+body: |
+  **はさみうちの原理**: すべての $n$ で $a_n\leqq c_n\leqq b_n$ が成り立ち、$\displaystyle\lim_{n\to\infty}a_n=\lim_{n\to\infty}b_n=\alpha$ ならば $\displaystyle\lim_{n\to\infty}c_n=\alpha$。極限が直接計算できない数列は、極限が同じになる2つの数列ではさむ。
+
+  よく使う評価:
+  - 二項定理: $n\geqq 2$ のとき $2^n=(1+1)^n\geqq 1+n+\dfrac{n(n-1)}{2}>\dfrac{n(n-1)}{2}$。これから $0<\dfrac{n}{2^n}<\dfrac{2}{n-1}\to 0$。
+  - $|\sin n|\leqq 1$ などの有界性: $0\leqq\left|\dfrac{\sin n}{n}\right|\leqq\dfrac{1}{n}$。
+
+  **漸化式 $a_{n+1}=f(a_n)$ で定まる数列の極限**（一般項が求められない場合）:
+  1. 極限の候補 $\alpha$ を $\alpha=f(\alpha)$ から求める（候補が複数あれば $a_n$ の範囲で絞る）。
+  2. $a_{n+1}-\alpha=f(a_n)-f(\alpha)$ を変形し、$a_n$ の範囲を用いて $|a_{n+1}-\alpha|\leqq r|a_n-\alpha|$（$0<r<1$ の **定数** $r$）を示す。
+  3. 繰り返して $0\leqq|a_n-\alpha|\leqq r^{n-1}|a_1-\alpha|\to 0$。はさみうちの原理により $\displaystyle\lim_{n\to\infty}a_n=\alpha$。
+
+  $r$ は $n$ によらない定数で $r<1$ でなければならない。「$|a_{n+1}-\alpha|<|a_n-\alpha|$」だけでは $0$ に収束するとは限らない。
+prerequisites: [lm-sequence-limit, lm-geometric-limit, sq-recurrence-basic]

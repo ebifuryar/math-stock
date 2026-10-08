@@ -1,0 +1,48 @@
+id: m3-df-s02
+level: school
+format: mark
+title: いろいろな微分の計算（小問集合）
+stem: |
+  (1) 関数 $y=\dfrac{(x+1)^3}{(x-1)^2}$ の導関数は、対数微分法などにより
+  $$y'=\frac{(x+1)^{\boxed{\text{ア}}}\,(x-\boxed{\text{イ}})}{(x-1)^{\boxed{\text{ウ}}}}$$
+  である。
+
+  (2) $f(x)=x^2e^x$ の第 $10$ 次導関数を $f^{(10)}(x)$ とすると、$f^{(10)}(0)=\boxed{\text{エオ}}$ である。
+
+  (3) 関数 $g(x)=x^3+3x$ の逆関数を $h(x)$ とすると、$h'(4)=\dfrac{1}{\boxed{\text{カ}}}$ である。
+
+  (4) 曲線 $x^3+y^3=9$ 上の点 $(1,\ 2)$ における法線の方程式は
+  $$y=\boxed{\text{キ}}\,x-\boxed{\text{ク}}$$
+  である。
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イ, answer: "5" }
+  - { label: ウ, answer: "3" }
+  - { label: エオ, answer: "90" }
+  - { label: カ, answer: "6" }
+  - { label: キ, answer: "4" }
+  - { label: ク, answer: "2" }
+solution: |
+  (1) 両辺の絶対値の自然対数をとると $\log|y|=3\log|x+1|-2\log|x-1|$。両辺を $x$ で微分して
+  $$\frac{y'}{y}=\frac{3}{x+1}-\frac{2}{x-1}=\frac{x-5}{(x+1)(x-1)}$$
+  よって $y'=\dfrac{(x+1)^3}{(x-1)^2}\cdot\dfrac{x-5}{(x+1)(x-1)}=\dfrac{(x+1)^2(x-5)}{(x-1)^3}$。
+
+  (2) $f'(x)=(x^2+2x)e^x$、$f''(x)=(x^2+4x+2)e^x$、$f'''(x)=(x^2+6x+6)e^x$ から、$f^{(n)}(x)=\{x^2+2nx+n(n-1)\}e^x$ と推測でき、数学的帰納法で示せる（$\{x^2+2nx+n(n-1)\}'+\{x^2+2nx+n(n-1)\}=x^2+2(n+1)x+(n+1)n$）。よって $f^{(10)}(0)=10\cdot 9=90$。
+
+  (3) $g(1)=4$ なので $h(4)=1$。$g'(x)=3x^2+3$ より
+  $$h'(4)=\frac{1}{g'(h(4))}=\frac{1}{g'(1)}=\frac{1}{6}$$
+
+  (4) 両辺を $x$ で微分すると $3x^2+3y^2\dfrac{dy}{dx}=0$ より $\dfrac{dy}{dx}=-\dfrac{x^2}{y^2}$。点 $(1,\ 2)$ で接線の傾きは $-\dfrac{1}{4}$ なので、法線の傾きは $4$。
+  $$y-2=4(x-1)\quad\text{すなわち}\quad y=4x-2$$
+concepts: [df-elementary, df-rules, df-implicit-parametric, df-tangent-normal]
+misconceptions: [mc-df-log-abs, mc-df-chain-inner]
+targetSeconds: 480
+irt: { expectedCorrectRate: 0.62, discrimination: 1.0 }
+author:
+  intent: |
+    数学IIIの微分で新たに加わる計算技能（対数微分法、高次導関数、逆関数の微分、陰関数の微分と法線）を一通り確認する小問集合。(1) は $y$ が負になる範囲も含めて絶対値の対数をとる意味、(2) は第 $n$ 次導関数の規則の発見、(3) は $h'(4)=\dfrac{1}{g'(4)}$ としてしまう誤り（正しくは $g(a)=4$ となる $a=1$ での値）、(4) は $y^3$ の微分で $\dfrac{dy}{dx}$ を掛け忘れる誤りと、接線と法線の傾きの取り違えを識別する。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: ["数学III (2) ア(ア) 積・商・合成関数・逆関数の導関数", "数学III (2) ア(イ) 三角関数・指数関数・対数関数の導関数", "数学III (2) ア(ウ) 導関数の応用（接線・法線）"]
+  variations:
+    - (1) を $y=x^{\sin x}\ (x>0)$ に変え、$x^{g(x)}$ 型の対数微分法を練習させる。
+    - (4) を楕円 $\dfrac{x^2}{4}+y^2=1$ 上の点 $(x_0,\ y_0)$ における接線の公式の導出に変える。

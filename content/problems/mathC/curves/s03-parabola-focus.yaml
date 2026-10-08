@@ -1,0 +1,37 @@
+id: mc-cv-s03
+level: school
+format: mark
+title: 放物線の焦点と準線
+stem: |
+  (1) 焦点が $(3,\ 0)$、準線が直線 $x=-3$ である放物線の方程式は $y^2=\boxed{\text{アイ}}\,x$ である。
+
+  (2) 放物線 $y=\dfrac{1}{8}x^2$ の焦点の座標は $(0,\ \boxed{\text{ウ}})$、準線の方程式は $y=\boxed{\text{エオ}}$ である。
+
+  (3) (1) の放物線上の点 $\mathrm{P}$ の $x$ 座標が $6$ であるとき、$\mathrm{P}$ と (1) の焦点との距離は $\boxed{\text{カ}}$ である。
+blanks:
+  - { label: アイ, answer: "12" }
+  - { label: ウ, answer: "2" }
+  - { label: エオ, answer: "-2" }
+  - { label: カ, answer: "9" }
+solution: |
+  (1) 点 $\mathrm{P}(x,\ y)$ から焦点 $(3,\ 0)$ までの距離と準線 $x=-3$ までの距離が等しいので
+  $$(x-3)^2+y^2=(x+3)^2\iff y^2=12x$$
+  （標準形 $y^2=4px$ で $p=3$。）
+
+  (2) $y=\dfrac{1}{8}x^2$ を $x^2=8y$ と変形すると $4p=8$ より $p=2$。焦点 $(0,\ 2)$、準線 $y=-2$。
+
+  (3) 放物線の定義より、$\mathrm{P}$ と焦点の距離は $\mathrm{P}$ と準線 $x=-3$ の距離に等しいので $6-(-3)=9$。
+
+  （検算: $\mathrm{P}(6,\ \pm 6\sqrt{2})$ で $\sqrt{(6-3)^2+72}=\sqrt{81}=9$。）
+concepts: [cv-parabola]
+misconceptions: [mc-cv-parabola-focus]
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.75, discrimination: 1.0 }
+author:
+  intent: |
+    放物線の定義（焦点と準線から等距離）と標準形の対応をみる。(2) は $y=ax^2$ の形から焦点を求める場面で、係数 $\dfrac{1}{8}$ をそのまま $4p$ や $p$ とみて $\left(0,\ \dfrac{1}{32}\right)$ などとする $4p$ と $p$ の取り違えを識別する。(3) は定義を使えば根号計算が不要になることに気づくかをみる。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学C (2) ア(ア) 放物線・楕円・双曲線が2次式で表されること]
+  variations:
+    - 焦点 $(0,\ -1)$、準線 $y=1$ の放物線を求め、上に凸か下に凸かを判断させる。
+    - 放物線 $y^2=8x$ 上の点で焦点からの距離が $5$ である点の座標を、定義を使って求めさせる。

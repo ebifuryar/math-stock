@@ -1,0 +1,18 @@
+id: cp-de-moivre
+kind: theorem
+title: ド・モアブルの定理
+body: |
+  整数 $n$ に対して
+  $$(\cos\theta+i\sin\theta)^n=\cos n\theta+i\sin n\theta$$
+  したがって $\{r(\cos\theta+i\sin\theta)\}^n=r^n(\cos n\theta+i\sin n\theta)$。**絶対値は $n$ 乗、偏角は $n$ 倍**。
+
+  **累乗の計算手順**
+  1. 底を極形式に直す（商なら先に絶対値の比と偏角の差を求めておく）。
+  2. $r^n$ と $n\theta$ を計算し、$n\theta$ を $2\pi$ の整数倍だけずらして見やすい角にする。
+
+  例: $\left(\dfrac{1+\sqrt{3}i}{1+i}\right)^6$ は、底が $\sqrt{2}\left(\cos\dfrac{\pi}{12}+i\sin\dfrac{\pi}{12}\right)$ なので $(\sqrt{2})^6\left(\cos\dfrac{\pi}{2}+i\sin\dfrac{\pi}{2}\right)=8i$。
+
+  **$z+\dfrac{1}{z}$ 型** $z=\cos\theta+i\sin\theta$ なら $\dfrac{1}{z}=\cos\theta-i\sin\theta=\overline{z}$ なので
+  $$z^n+\frac{1}{z^n}=2\cos n\theta,\qquad z^n-\frac{1}{z^n}=2i\sin n\theta$$
+  $z+\dfrac{1}{z}=2\cos\theta$ の値が与えられたら、$z$ を極形式で求めてから $n$ 乗する。$z^m=1$ となる $m$ があれば、指数を $m$ で割った余りで次数を下げられる。
+prerequisites: [cp-product-rotation]

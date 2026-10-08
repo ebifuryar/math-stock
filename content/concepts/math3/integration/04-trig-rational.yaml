@@ -1,0 +1,20 @@
+id: ig-trig-rational
+kind: method
+title: 三角関数・分数関数の積分の変形
+body: |
+  そのままでは積分できない式を、積分できる形の和に直してから積分する。
+
+  **次数下げ（半角の公式）**:
+  $$\sin^2x=\frac{1-\cos 2x}{2},\qquad \cos^2x=\frac{1+\cos 2x}{2},\qquad \sin x\cos x=\frac{\sin 2x}{2}$$
+  例: $\displaystyle\int_0^{\pi}\sin^2x\,dx=\left[\frac{x}{2}-\frac{\sin 2x}{4}\right]_0^\pi=\frac{\pi}{2}$。$\displaystyle\int\sin^2x\,dx=\frac{\sin^3x}{3}$ は誤り（右辺を微分すると $\sin^2x\cos x$）。
+
+  **積和の公式**:
+  $$\sin\alpha\cos\beta=\frac{1}{2}\{\sin(\alpha+\beta)+\sin(\alpha-\beta)\}$$
+  $$\cos\alpha\cos\beta=\frac{1}{2}\{\cos(\alpha+\beta)+\cos(\alpha-\beta)\},\qquad \sin\alpha\sin\beta=-\frac{1}{2}\{\cos(\alpha+\beta)-\cos(\alpha-\beta)\}$$
+
+  **奇数乗**: $\cos^3x=(1-\sin^2x)\cos x$ として $u=\sin x$ と置換する。
+
+  **分数関数**: 分子の次数を分母より下げ（割り算）、分母を因数分解して **部分分数** に分ける。
+  $$\frac{1}{x(x-1)}=\frac{1}{x-1}-\frac{1}{x},\qquad \frac{1}{(x-a)(x-b)}=\frac{1}{a-b}\left(\frac{1}{x-a}-\frac{1}{x-b}\right)$$
+  分けた後は通分して元に戻るかを確かめる。分母の導関数が分子に現れていれば $\dfrac{f'(x)}{f(x)}$ 型として直接 $\log|f(x)|$ にする。
+prerequisites: [ig-basic, ig-substitution]

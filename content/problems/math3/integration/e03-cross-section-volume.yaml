@@ -1,0 +1,51 @@
+id: m3-ig-e03
+level: exam
+format: mark
+title: 断面積から求める立体の体積
+stem: |
+  座標空間において、不等式
+  $$x^2+y^2\leqq 1,\qquad 0\leqq z\leqq x^2$$
+  の表す立体を $K$ とする。$K$ は、$xy$ 平面上の円板 $x^2+y^2\leqq 1$ を底面とし、その上の点 $(x,\ y,\ 0)$ の真上に高さ $x^2$ まで積み上げた立体である。
+
+  (1) $-1\leqq t\leqq 1$ とする。平面 $x=t$ による $K$ の断面は、$y$ 方向の長さが $2\sqrt{1-t^2}$、$z$ 方向の長さが $t^2$ の長方形であり、その面積は
+  $$S(t)=\boxed{\text{ア}}\,t^2\sqrt{1-t^2}$$
+  である。
+
+  (2) $S(t)$ は偶関数であるから $V=\displaystyle\int_{-1}^{1}S(t)\,dt=2\int_0^1S(t)\,dt$ であり、$t=\sin\theta\ \left(0\leqq\theta\leqq\dfrac{\pi}{2}\right)$ と置換すると
+  $$V=\boxed{\text{イ}}\int_0^{\frac{\pi}{2}}\sin^2\theta\cos^2\theta\,d\theta$$
+  となる。これより $K$ の体積は $V=\dfrac{\pi}{\boxed{\text{ウ}}}$ である。
+
+  (3) 検算のため、平面 $y=s\ (-1\leqq s\leqq 1)$ で $K$ を切る。断面は $xz$ 平面に平行な平面上の、$-\sqrt{1-s^2}\leqq x\leqq\sqrt{1-s^2},\ 0\leqq z\leqq x^2$ の部分であり、その面積は
+  $$T(s)=\frac{\boxed{\text{エ}}}{\boxed{\text{オ}}}\left(1-s^2\right)^{\frac{3}{2}}$$
+  である。$\displaystyle\int_{-1}^{1}T(s)\,ds$ を計算すると、(2) と同じ値になる。
+
+  ただし、分数は既約分数で答えよ。
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イ, answer: "4" }
+  - { label: ウ, answer: "4" }
+  - { label: エ, answer: "2" }
+  - { label: オ, answer: "3" }
+solution: |
+  (1) 平面 $x=t$ 上では $y^2\leqq 1-t^2$、$0\leqq z\leqq t^2$ なので、断面は $2\sqrt{1-t^2}\times t^2$ の長方形で $S(t)=2t^2\sqrt{1-t^2}$。
+
+  (2) $t=\sin\theta$ とおくと $dt=\cos\theta\,d\theta$、$t:0\to 1$ に $\theta:0\to\dfrac{\pi}{2}$ が対応し、$0\leqq\theta\leqq\dfrac{\pi}{2}$ で $\sqrt{1-\sin^2\theta}=\cos\theta$ なので
+  $$V=2\int_0^1 2t^2\sqrt{1-t^2}\,dt=4\int_0^{\frac{\pi}{2}}\sin^2\theta\cos\theta\cdot\cos\theta\,d\theta=4\int_0^{\frac{\pi}{2}}\sin^2\theta\cos^2\theta\,d\theta$$
+  $\sin^2\theta\cos^2\theta=\dfrac{\sin^22\theta}{4}=\dfrac{1-\cos 4\theta}{8}$ より
+  $$V=4\left[\frac{\theta}{8}-\frac{\sin 4\theta}{32}\right]_0^{\frac{\pi}{2}}=4\cdot\frac{\pi}{16}=\frac{\pi}{4}$$
+
+  (3) $a=\sqrt{1-s^2}$ とおくと $T(s)=\displaystyle\int_{-a}^{a}x^2\,dx=\frac{2}{3}a^3=\frac{2}{3}(1-s^2)^{\frac{3}{2}}$。$s=\sin\varphi$ と置換すると
+  $$\int_{-1}^{1}T(s)\,ds=\frac{2}{3}\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\cos^4\varphi\,d\varphi=\frac{2}{3}\cdot\frac{3}{8}\pi=\frac{\pi}{4}$$
+  となり (2) と一致する。
+concepts: [ig-volume, ig-substitution, ig-trig-rational, ig-definite-properties]
+misconceptions: [mc-ig-sub-bounds]
+targetSeconds: 900
+irt: { expectedCorrectRate: 0.35, discrimination: 1.3 }
+author:
+  intent: |
+    回転体ではない立体の体積を「断面積の積分」として組み立てられるか、断面の形を不等式から正しく読み取れるかをみる。(2) は $x=a\sin\theta$ 型の置換で、$dt=\cos\theta\,d\theta$ を掛け忘れると係数や次数がずれ（$\displaystyle\int\sin^2\theta\cos\theta\,d\theta$ になり $\pi$ が出ない）、偶関数の性質を使わないと係数イが $2$ になることで識別できる。(3) は切り方を変えると断面が長方形から放物線で囲まれた図形に変わることを確かめさせ、「切り方によらず体積は同じ」という検算の発想を育てる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学III (3) イ(イ) 定積分を用いた面積・体積・曲線の長さ", "数学III (3) ア(イ) 置換積分法・部分積分法"]
+  variations:
+    - 2つの円柱 $x^2+y^2\leqq 1,\ x^2+z^2\leqq 1$ の共通部分の体積（$\dfrac{16}{3}$）を、断面が正方形になることから求めさせる。
+    - 高さを $0\leqq z\leqq|x|$ に変え（体積 $\dfrac{4}{3}$）、断面の形と計算の違いを比べさせる。

@@ -1,0 +1,17 @@
+id: cv-polar-coordinates
+kind: definition
+title: 極座標と直交座標
+body: |
+  平面上に点 $\mathrm{O}$（**極**）と半直線 $\mathrm{OX}$（**始線**）を定めると、点 $\mathrm{P}$ の位置は $r=\mathrm{OP}$ と、$\mathrm{OX}$ から $\mathrm{OP}$ へ測った角 $\theta$（**偏角**）の組 $(r,\ \theta)$ で表せる。これを **極座標** という。
+
+  **直交座標との変換**（極を原点、始線を $x$ 軸の正の部分とする）
+  $$x=r\cos\theta,\quad y=r\sin\theta,\qquad r=\sqrt{x^2+y^2}$$
+  $\theta$ は $\cos\theta=\dfrac{x}{r},\ \sin\theta=\dfrac{y}{r}$ の **両方** を満たすように決める。$\tan\theta=\dfrac{y}{x}$ だけでは、原点について反対側にある点と区別できない。
+  $$\text{例: }(-\sqrt{3},\ -1)\ \text{は}\ r=2,\ \cos\theta=-\frac{\sqrt{3}}{2},\ \sin\theta=-\frac{1}{2}\ \text{より}\ \left(2,\ \frac{7}{6}\pi\right)$$
+
+  **偏角の範囲** 偏角は $2n\pi$ の差を除いて定まる。答えるときは $0\leqq\theta<2\pi$ などの指定に従う。
+
+  **$r<0$ の約束** 極方程式では $r<0$ の場合も考え、点 $(r,\ \theta)$ は点 $(-r,\ \theta+\pi)$ と同じ点を表すものとする。したがって $(r,\ \theta)$ と $(-r,\ \theta+\pi)$ は同じ点である。
+
+  **2点間の距離** $\mathrm{A}(r_1,\ \theta_1),\ \mathrm{B}(r_2,\ \theta_2)$ に対して、余弦定理より $\mathrm{AB}^2=r_1^2+r_2^2-2r_1r_2\cos(\theta_2-\theta_1)$。
+prerequisites: [tf-definition, tf-radian]

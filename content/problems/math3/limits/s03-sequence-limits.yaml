@@ -1,0 +1,52 @@
+id: m3-lm-s03
+level: school
+format: mark
+title: 数列の極限の計算と循環小数
+stem: |
+  次の極限値を求めよ。
+
+  (1) 
+  $$\lim_{n\to\infty}\frac{(2n+1)(3n-1)}{4n^2+5}=\frac{\boxed{\text{ア}}}{\boxed{\text{イ}}}$$
+
+  (2) 
+  $$\lim_{n\to\infty}\left(\sqrt{n^2+4n}-n\right)=\boxed{\text{ウ}}$$
+
+  (3) 
+  $$\lim_{n\to\infty}\frac{3^{n+1}-2^n}{3^n+2^{n+1}}=\boxed{\text{エ}}$$
+
+  (4) 循環小数 $0.1\dot{2}\dot{3}=0.1232323\cdots$ を無限等比級数を用いて分数で表すと
+  $$0.1\dot{2}\dot{3}=\frac{\boxed{\text{オカ}}}{\boxed{\text{キクケ}}}$$
+  である（既約分数で答えよ）。
+blanks:
+  - { label: ア, answer: "3" }
+  - { label: イ, answer: "2" }
+  - { label: ウ, answer: "2" }
+  - { label: エ, answer: "3" }
+  - { label: オカ, answer: "61" }
+  - { label: キクケ, answer: "495" }
+solution: |
+  (1) 分子・分母を $n^2$ で割る。
+  $$\frac{(2+\frac{1}{n})(3-\frac{1}{n})}{4+\frac{5}{n^2}}\to\frac{2\cdot 3}{4}=\frac{3}{2}$$
+
+  (2) $\infty-\infty$ の不定形なので分子を有理化する。
+  $$\sqrt{n^2+4n}-n=\frac{(n^2+4n)-n^2}{\sqrt{n^2+4n}+n}=\frac{4}{\sqrt{1+\frac{4}{n}}+1}\to\frac{4}{2}=2$$
+  （$0$ ではない。）
+
+  (3) 分子・分母を $3^n$ で割る。$\left(\dfrac{2}{3}\right)^n\to 0$ なので
+  $$\frac{3-\left(\frac{2}{3}\right)^n}{1+2\left(\frac{2}{3}\right)^n}\to 3$$
+
+  (4) 
+  $$0.1\dot{2}\dot{3}=0.1+0.023+0.00023+\cdots=\frac{1}{10}+\frac{0.023}{1-0.01}=\frac{1}{10}+\frac{23}{990}=\frac{122}{990}=\frac{61}{495}$$
+  第2項以降は初項 $0.023$、公比 $0.01$ の無限等比級数で、$|0.01|<1$ なので収束する。$61$ は素数、$495=3^2\cdot 5\cdot 11$ で既約。
+concepts: [lm-sequence-limit, lm-geometric-limit, lm-infinite-series]
+misconceptions: [mc-lm-indeterminate-form]
+targetSeconds: 360
+irt: { expectedCorrectRate: 0.7, discrimination: 1.0 }
+author:
+  intent: |
+    数列の極限の3つの基本変形（最高次で割る・分子の有理化・最大の底で割る）と、循環小数の無限等比級数による表示を一通り確認する。(2) は $\infty-\infty=0$ とする誤り、(3) は $\dfrac{\infty}{\infty}=1$ とする誤りを捉える。(4) は循環しない部分 $0.1$ を分けて考えられるか（$0.\dot{1}\dot{2}\dot{3}$ と混同しないか）をみる。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: ["数学III (1) ア(ア) 数列の極限", "数学III (1) ア(イ) 無限級数の和"]
+  variations:
+    - (2) を $\displaystyle\lim_{n\to\infty}n\left(\sqrt{n^2+2}-n\right)$ に変え、有理化の後に $\dfrac{0}{0}$ や $0\times\infty$ の見え方が変わる例を扱う。
+    - $0.\dot{3}\dot{6}$ と $0.3\dot{6}$ を並べて分数にさせ、循環節の始まりの違いを確認する。

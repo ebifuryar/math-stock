@@ -1,0 +1,59 @@
+id: m3-ig-e05
+level: exam
+format: written
+title: 媒介変数表示された8の字曲線で囲まれた面積
+stem: |
+  座標平面上で、媒介変数 $t$ を用いて
+  $$x=\sin t,\qquad y=\sin 2t\qquad(0\leqq t\leqq 2\pi)$$
+  と表される曲線を $C$ とする。$C$ は原点で自分自身と交わる「8の字」形の閉曲線で、$x\geqq 0$ の部分と $x\leqq 0$ の部分にそれぞれ1つずつ輪をつくる。
+
+  $C$ で囲まれた部分（2つの輪の内部を合わせたもの）の面積 $S$ を求めよ。
+modelAnswer: |
+  **対称性**: $t$ を $\pi-t$ に替えると $\sin(\pi-t)=\sin t,\ \sin(2\pi-2t)=-\sin 2t$ なので、点 $(x,\ y)$ が $C$ 上にあれば $(x,\ -y)$ も $C$ 上にある。また $t$ を $t+\pi$ に替えると $\sin(t+\pi)=-\sin t,\ \sin(2t+2\pi)=\sin 2t$ なので、$(-x,\ y)$ も $C$ 上にある。よって $C$ は $x$ 軸、$y$ 軸のそれぞれに関して対称であり、$S$ は $x\geqq 0,\ y\geqq 0$ の部分の面積 $S_1$ の4倍である。
+
+  **第1象限の部分**: $0\leqq t\leqq\dfrac{\pi}{2}$ のとき
+  $$\frac{dx}{dt}=\cos t\geqq 0,\qquad y=2\sin t\cos t\geqq 0$$
+  であり、$x$ は $0$ から $1$ まで増加し、$t=0,\ \dfrac{\pi}{2}$ で $y=0$ となる。（$\dfrac{\pi}{2}\leqq t\leqq\pi$ では $y\leqq 0$ となり、これは $x$ 軸に関して対称な下側の弧である。）よって第1象限の部分は、この弧と $x$ 軸ではさまれた部分で
+  $$S_1=\int_0^1y\,dx$$
+  $x=\sin t$ と置換すると、$x:0\to 1$ に $t:0\to\dfrac{\pi}{2}$ が対応し、$dx=\cos t\,dt$ なので
+  $$S_1=\int_0^{\frac{\pi}{2}}\sin 2t\cos t\,dt=\int_0^{\frac{\pi}{2}}2\sin t\cos^2t\,dt$$
+  $u=\cos t$ とおくと $du=-\sin t\,dt$、$t:0\to\dfrac{\pi}{2}$ に $u:1\to 0$ が対応して
+  $$S_1=\int_1^0 2u^2(-du)=\int_0^1 2u^2\,du=\frac{2}{3}$$
+
+  したがって
+  $$S=4S_1=\frac{8}{3}$$
+
+  （補足）$y^2=4\sin^2t\cos^2t=4x^2(1-x^2)$ より、$C$ は $y=\pm 2x\sqrt{1-x^2}\ (-1\leqq x\leqq 1)$ と表せるので、$S=4\displaystyle\int_0^1 2x\sqrt{1-x^2}\,dx=\frac{8}{3}$ としてもよい。
+rubric:
+  - id: r1
+    criterion: $t\to\pi-t$、$t\to t+\pi$ などにより $C$ が $x$ 軸・$y$ 軸に関して対称であることを示し、$S=4S_1$ と帰着している（図からの決めつけでなく根拠がある）
+    points: 2
+    keywords: ["対称", "π-t"]
+  - id: r2
+    criterion: $0\leqq t\leqq\dfrac{\pi}{2}$ で $x$ が増加し $y\geqq 0$ であることを確かめ、第1象限の部分を $\displaystyle\int_0^1 y\,dx$ と正しく立式している
+    points: 2
+    keywords: ["cos t", "y≧0"]
+  - id: r3
+    criterion: $dx=\cos t\,dt$ と区間の対応 $x:0\to 1\leftrightarrow t:0\to\dfrac{\pi}{2}$ を用いて、$\displaystyle\int_0^{\frac{\pi}{2}}\sin 2t\cos t\,dt$ に正しく置換している
+    points: 3
+    keywords: ["sin2tcos t", "π/2"]
+  - id: r4
+    criterion: 積分を正しく計算して $S_1=\dfrac{2}{3}$、$S=\dfrac{8}{3}$ を得ている
+    points: 3
+    keywords: ["2/3", "8/3"]
+solution: |
+  $C$ は $x$ 軸・$y$ 軸に関して対称なので、第1象限の部分を4倍する。$0\leqq t\leqq\dfrac{\pi}{2}$ で $x=\sin t$ は $0\to 1$ と増加し $y=\sin 2t\geqq 0$ だから
+  $$S=4\int_0^1 y\,dx=4\int_0^{\frac{\pi}{2}}\sin 2t\cos t\,dt=4\int_0^{\frac{\pi}{2}}2\sin t\cos^2t\,dt=4\cdot\frac{2}{3}=\frac{8}{3}$$
+  $\displaystyle\int_0^{2\pi}y\,\frac{dx}{dt}\,dt$ をそのまま計算すると、向きの異なる部分が打ち消し合って $0$ になる。符号付きの量を面積と混同しないこと。
+concepts: [ig-area-length, ig-substitution]
+misconceptions: [mc-ig-sub-bounds, mc-cl-area-sign]
+targetSeconds: 900
+irt: { expectedCorrectRate: 0.3, discrimination: 1.4 }
+author:
+  intent: |
+    媒介変数表示の曲線で囲まれた面積を、(i) 対称性の論証、(ii) $x$ の増減と $y$ の符号の確認、(iii) $\displaystyle\int y\,dx$ から $t$ の積分への置換、の手順で答案にまとめられるかをみる。$\displaystyle\int_0^{2\pi}y\frac{dx}{dt}\,dt$ を機械的に計算すると $0$ になるため、「区間ごとに $x$ の向きと $y$ の符号を確かめる」意識のない答案を確実に識別できる。対称性を図だけで主張する答案は r1 を減点する。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: ["数学III (3) イ(イ) 定積分を用いた面積・体積・曲線の長さ", "数学C (2) ア(イ) 曲線の媒介変数表示"]
+  variations:
+    - 同じ曲線 $C$ で囲まれた部分を $x$ 軸のまわりに回転した立体の体積（$\dfrac{16}{15}\pi$）を問う。
+    - $x=\sin t,\ y=\sin 3t$ など、輪の数が増える曲線の面積に発展させる。

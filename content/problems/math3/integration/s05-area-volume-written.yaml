@@ -1,0 +1,55 @@
+id: m3-ig-s05
+level: school
+format: written
+title: 2曲線で囲まれた部分の面積と回転体の体積
+stem: |
+  2つの曲線 $y=x^2$ と $y=\sqrt{x}$ で囲まれた部分を $D$ とする。
+
+  (1) $D$ の面積 $S$ を求めよ。
+
+  (2) $D$ を $x$ 軸のまわりに1回転してできる立体の体積 $V$ を求めよ。
+modelAnswer: |
+  2曲線の共有点の $x$ 座標は、$x^2=\sqrt{x}$ より $x^4=x$、$x(x^3-1)=0$ から $x=0,\ 1$。$0\leqq x\leqq 1$ では $\sqrt{x}\geqq x^2$（例えば $x=\dfrac{1}{4}$ で $\dfrac{1}{2}>\dfrac{1}{16}$）なので、$D$ は $0\leqq x\leqq 1,\ x^2\leqq y\leqq\sqrt{x}$ で表される。
+
+  (1)
+  $$S=\int_0^1\left(\sqrt{x}-x^2\right)dx=\left[\frac{2}{3}x^{\frac{3}{2}}-\frac{x^3}{3}\right]_0^1=\frac{2}{3}-\frac{1}{3}=\frac{1}{3}$$
+
+  (2) $D$ を直線 $x=t\ (0\leqq t\leqq 1)$ で切った線分は $t^2\leqq y\leqq\sqrt{t}$ であり、これを $x$ 軸のまわりに回転すると、外側の半径 $\sqrt{t}$、内側の半径 $t^2$ の円環になる。その面積は
+  $$\pi(\sqrt{t})^2-\pi(t^2)^2=\pi(t-t^4)$$
+  よって
+  $$V=\pi\int_0^1\left(x-x^4\right)dx=\pi\left[\frac{x^2}{2}-\frac{x^5}{5}\right]_0^1=\pi\left(\frac{1}{2}-\frac{1}{5}\right)=\frac{3}{10}\pi$$
+
+  答 (1) $S=\dfrac{1}{3}$、(2) $V=\dfrac{3}{10}\pi$
+rubric:
+  - id: r1
+    criterion: 共有点の $x$ 座標 $0,\ 1$ を求め、$0\leqq x\leqq 1$ で $\sqrt{x}\geqq x^2$ であること（上下関係）を示している
+    points: 2
+    keywords: ["x=0", "x=1"]
+  - id: r2
+    criterion: 面積を $\displaystyle\int_0^1(\sqrt{x}-x^2)\,dx$ と立て、$S=\dfrac{1}{3}$ を正しく求めている
+    points: 2
+    keywords: ["1/3"]
+  - id: r3
+    criterion: 回転体の断面が外径 $\sqrt{x}$・内径 $x^2$ の円環であることを理解し、$\displaystyle\pi\int_0^1\{(\sqrt{x})^2-(x^2)^2\}\,dx$ と立式している（$\pi\int(\sqrt{x}-x^2)^2dx$ としていない）
+    points: 3
+    keywords: ["x-x^4", "π"]
+  - id: r4
+    criterion: 積分を正しく計算し、$V=\dfrac{3}{10}\pi$ を得ている（$\pi$ の落としがない）
+    points: 3
+    keywords: ["3/10"]
+solution: |
+  共有点は $x=0,\ 1$ で、その間では $\sqrt{x}$ が上。(1) $S=\displaystyle\int_0^1(\sqrt{x}-x^2)\,dx=\frac{1}{3}$。(2) 断面は円環なので
+  $$V=\pi\int_0^1\left\{(\sqrt{x})^2-(x^2)^2\right\}dx=\pi\int_0^1(x-x^4)\,dx=\frac{3}{10}\pi$$
+  $\pi\displaystyle\int_0^1(\sqrt{x}-x^2)^2dx=\frac{9}{70}\pi$ とするのは、断面を半径 $\sqrt{x}-x^2$ の円とみなす誤り。
+concepts: [ig-volume, ig-area-length]
+misconceptions: [mc-ig-washer, mc-ig-volume-formula]
+targetSeconds: 480
+irt: { expectedCorrectRate: 0.65, discrimination: 1.1 }
+author:
+  intent: |
+    同じ領域について面積と回転体の体積を続けて問い、面積の「上 $-$ 下」をそのまま2乗して体積にする誤り（$\dfrac{9}{70}\pi$）を識別する。答案では、断面が円環であることを言葉か式で示しているかを重視する。$y=x^2$ と $y=\sqrt{x}$ は互いに逆関数なので、$y$ 軸まわりの回転体も同じ体積になるという発展に結び付けられる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学III (3) イ(イ) 定積分を用いた面積・体積"]
+  variations:
+    - $D$ を $y$ 軸のまわりに回転した体積を問い、対称性（$y=x$ に関して対称）から同じ値になることを説明させる。
+    - 直線 $y=x$ と曲線 $y=x^2$ で囲まれた部分を直線 $y=x$ のまわりに回転させる（入試発展）。

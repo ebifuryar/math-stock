@@ -1,0 +1,57 @@
+id: mc-cp-a04
+level: applied
+format: mark
+title: 3点が一直線上・垂直となる条件となす角
+stem: |
+  $a$ を実数とし、複素数平面上の3点 $\mathrm{A}(\alpha),\ \mathrm{B}(\beta),\ \mathrm{C}(\gamma)$ を
+  $$\alpha=1+i,\qquad \beta=3+2i,\qquad \gamma=a+4i$$
+  とする。
+
+  (1) $\dfrac{\gamma-\alpha}{\beta-\alpha}$ を計算すると
+  $$\frac{\gamma-\alpha}{\beta-\alpha}=\frac{(\boxed{\text{ア}}\,a+\boxed{\text{イ}})+(\boxed{\text{ウ}}-a)i}{\boxed{\text{エ}}}$$
+  である。
+
+  (2) 3点 $\mathrm{A},\ \mathrm{B},\ \mathrm{C}$ が一直線上にあるのは $a=\boxed{\text{オ}}$ のときであり、$\mathrm{AB}\perp\mathrm{AC}$ となるのは $a=\dfrac{\boxed{\text{カキ}}}{\boxed{\text{ク}}}$ のときである。
+
+  (3) $a=2$ のとき、$\dfrac{\gamma-\alpha}{\beta-\alpha}$ を極形式で表すことにより
+  $$\angle\mathrm{BAC}=\frac{\pi}{\boxed{\text{ケ}}},\qquad \mathrm{AC}=\sqrt{\boxed{\text{コ}}}\,\mathrm{AB}$$
+  であることがわかる。また、このとき $\triangle\mathrm{ABC}$ の面積は $\dfrac{\boxed{\text{サ}}}{\boxed{\text{シ}}}$ である。
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イ, answer: "1" }
+  - { label: ウ, answer: "7" }
+  - { label: エ, answer: "5" }
+  - { label: オ, answer: "7" }
+  - { label: カキ, answer: "-1" }
+  - { label: ク, answer: "2" }
+  - { label: ケ, answer: "4" }
+  - { label: コ, answer: "2" }
+  - { label: サ, answer: "5" }
+  - { label: シ, answer: "2" }
+solution: |
+  (1) $\gamma-\alpha=(a-1)+3i,\ \beta-\alpha=2+i$。分母の共役 $2-i$ を分母・分子に掛けて
+  $$\frac{(a-1)+3i}{2+i}=\frac{\{(a-1)+3i\}(2-i)}{5}=\frac{(2a+1)+(7-a)i}{5}$$
+
+  (2) 一直線上 $\iff\dfrac{\gamma-\alpha}{\beta-\alpha}$ が実数 $\iff 7-a=0$ より $a=7$。
+
+  $\mathrm{AB}\perp\mathrm{AC}\iff\dfrac{\gamma-\alpha}{\beta-\alpha}$ が純虚数 $\iff 2a+1=0$ かつ $7-a\neq 0$ より $a=-\dfrac{1}{2}$。
+
+  (3) $a=2$ のとき
+  $$\frac{\gamma-\alpha}{\beta-\alpha}=\frac{5+5i}{5}=1+i=\sqrt{2}\left(\cos\frac{\pi}{4}+i\sin\frac{\pi}{4}\right)$$
+  よって、$\mathrm{AC}$ は $\mathrm{AB}$ を $\mathrm{A}$ のまわりに $\dfrac{\pi}{4}$ 回転して $\sqrt{2}$ 倍したもので、$\angle\mathrm{BAC}=\dfrac{\pi}{4}$、$\mathrm{AC}=\sqrt{2}\,\mathrm{AB}$。
+
+  $\mathrm{AB}=|2+i|=\sqrt{5}$、$\mathrm{AC}=\sqrt{10}$ なので
+  $$\triangle\mathrm{ABC}=\frac{1}{2}\cdot\sqrt{5}\cdot\sqrt{10}\cdot\sin\frac{\pi}{4}=\frac{1}{2}\cdot 5\sqrt{2}\cdot\frac{\sqrt{2}}{2}=\frac{5}{2}$$
+  （$\mathrm{AC}=\sqrt{2}\,\mathrm{AB}$ かつ $\angle\mathrm{BAC}=\dfrac{\pi}{4}$ より、$\triangle\mathrm{ABC}$ は $\angle\mathrm{B}=\dfrac{\pi}{2}$ の直角二等辺三角形で、面積は $\dfrac{1}{2}\mathrm{AB}^2=\dfrac{5}{2}$ としてもよい。）
+concepts: [cp-angle-condition, cp-polar-form, cp-conjugate-abs]
+misconceptions: [mc-cp-real-condition, mc-cp-arg-operation]
+targetSeconds: 420
+irt: { expectedCorrectRate: 0.5, discrimination: 1.2 }
+author:
+  intent: |
+    $\dfrac{\gamma-\alpha}{\beta-\alpha}$ の値が「実数 $\iff$ 一直線上」「純虚数 $\iff$ 垂直」「極形式 $\iff$ なす角と長さの比」を同時に表すことを、共通テスト型の誘導で一通り使わせる。(1) の計算を誤ると (2)(3) がすべて崩れる構成で、分母の実数化を確実に実行できるかを確かめる。実数条件と純虚数条件を取り違えると $\boxed{\text{オ}}$ と $\boxed{\text{カキ}}$ が入れ替わり、偏角を $\arg(\beta-\alpha)-\arg(\gamma-\alpha)$ と逆にとっても $\angle\mathrm{BAC}$ は同じだが、向きまで問う発展につなげられる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学C (2) ア(エ) 複素数平面における図形（なす角・平行・垂直）]
+  variations:
+    - $\mathrm{AB}=\mathrm{AC}$ となる $a$ の値を求めさせ、そのときの $\angle\mathrm{BAC}$ の $\cos$ を問う。
+    - $\triangle\mathrm{ABC}$ が $\angle\mathrm{A}=\dfrac{\pi}{3}$ の三角形となる $a$ を求めさせる（偏角の条件から $a$ の1次方程式になることを確認させる）。

@@ -1,0 +1,53 @@
+id: m3-df-e04
+level: exam
+format: mark
+title: 文字定数を含む分数関数の最大値・最小値
+stem: |
+  $a$ を実数の定数とし、関数
+  $$f(x)=\frac{x+a}{x^2+1}$$
+  の最大値を $M(a)$、最小値を $m(a)$ とする。
+
+  (1) 導関数は
+  $$f'(x)=-\frac{x^2+\boxed{\text{ア}}\,ax-\boxed{\text{イ}}}{(x^2+1)^2}$$
+  である。
+
+  (2) $f'(x)=0$ を満たす $x$ では $f(x)=\dfrac{1}{2x}$ が成り立つ。このことと $\displaystyle\lim_{x\to\pm\infty}f(x)=0$ を用いると
+  $$M(a)=\frac{a+\sqrt{a^2+\boxed{\text{ウ}}}}{\boxed{\text{エ}}}$$
+  であり、$M(a)\,m(a)=\dfrac{\boxed{\text{オカ}}}{\boxed{\text{キ}}}$ である。
+
+  (3) $M(a)=1$ となるのは $a=\dfrac{\boxed{\text{ク}}}{\boxed{\text{ケ}}}$ のときである。
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イ, answer: "1" }
+  - { label: ウ, answer: "1" }
+  - { label: エ, answer: "2" }
+  - { label: オカ, answer: "-1" }
+  - { label: キ, answer: "4" }
+  - { label: ク, answer: "3" }
+  - { label: ケ, answer: "4" }
+solution: |
+  (1) 商の微分により
+  $$f'(x)=\frac{(x^2+1)-(x+a)\cdot 2x}{(x^2+1)^2}=\frac{-x^2-2ax+1}{(x^2+1)^2}=-\frac{x^2+2ax-1}{(x^2+1)^2}$$
+
+  (2) $x^2+2ax-1=0$ の判別式は $4(a^2+1)>0$ なので、異なる2つの実数解
+  $$\alpha=-a-\sqrt{a^2+1},\qquad \beta=-a+\sqrt{a^2+1}$$
+  をもち、$\alpha\beta=-1$ より $\alpha<0<\beta$。$f'(x)$ の符号は $-(x-\alpha)(x-\beta)$ と一致するので、$f(x)$ は $x<\alpha$ で減少、$\alpha<x<\beta$ で増加、$x>\beta$ で減少する。
+
+  $f'(x)=0$ のとき $x^2+1=2x(x+a)$ なので $f(x)=\dfrac{x+a}{2x(x+a)}=\dfrac{1}{2x}$（$x+a=\pm\sqrt{a^2+1}\neq 0$）。よって
+  $$f(\beta)=\frac{1}{2\beta}=\frac{1}{2\left(\sqrt{a^2+1}-a\right)}=\frac{a+\sqrt{a^2+1}}{2}>0,\qquad f(\alpha)=\frac{1}{2\alpha}=\frac{a-\sqrt{a^2+1}}{2}<0$$
+  $\displaystyle\lim_{x\to\pm\infty}f(x)=0$ であり、$x<\alpha$ では $f(x)$ は $0$ に近い値から $f(\alpha)$ まで減少、$x>\beta$ では $f(\beta)$ から $0$ に近づくまで減少する。したがって $f(\beta)$ は最大値、$f(\alpha)$ は最小値であり
+  $$M(a)=\frac{a+\sqrt{a^2+1}}{2},\qquad m(a)=\frac{a-\sqrt{a^2+1}}{2},\qquad M(a)m(a)=\frac{a^2-(a^2+1)}{4}=-\frac{1}{4}$$
+
+  (3) $\sqrt{a^2+1}=2-a$。右辺 $\geqq 0$ より $a\leqq 2$ のもとで両辺を2乗して $a^2+1=4-4a+a^2$、$a=\dfrac{3}{4}$（$a\leqq 2$ を満たす）。
+concepts: [df-applications, df-graph, df-rules]
+misconceptions: [mc-df-asymptote-missing, mc-df-quotient-order]
+targetSeconds: 600
+irt: { expectedCorrectRate: 0.3, discrimination: 1.3 }
+author:
+  intent: |
+    文字定数を含む関数の最大値・最小値を、極値の計算と $x\to\pm\infty$ の極限の両方から判断できるかをみる。極大値・極小値が最大値・最小値になることは、$\lim_{x\to\pm\infty}f(x)=0$ と極大値 $>0>$ 極小値の比較によって初めて保証されるので、増減表だけで結論する答案との差が出る。極値の計算は、$f'(x)=0$ の関係式を使って $f(x)=\dfrac{1}{2x}$ と次数を下げる工夫で見通しがよくなり、この処理ができるかで上位層を識別する。$M(a)m(a)=-\dfrac{1}{4}$ が $a$ によらないことは、解と係数の関係 $\alpha\beta=-1$ の反映である。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学III (2) イ(ア) 導関数を用いた関数の考察（最大・最小）"]
+  variations:
+    - $f(x)=k$ が実数解をもつ条件（判別式 $D\geqq 0$）から値域を求める解法と比較させ、両者が同じ $M(a),\ m(a)$ を与えることを確かめさせる。
+    - $M(a)-m(a)=\sqrt{a^2+1}$ を用いて、$M(a)-m(a)\leqq\sqrt{2}$ となる $a$ の範囲（$-1\leqq a\leqq 1$）を求めさせる。

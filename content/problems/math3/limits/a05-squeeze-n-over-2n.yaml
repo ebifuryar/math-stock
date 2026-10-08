@@ -1,0 +1,64 @@
+id: m3-lm-a05
+level: applied
+format: written
+title: はさみうちの原理と無限級数 Σn/2ⁿ
+stem: |
+  (1) $n\geqq 2$ を満たす自然数 $n$ に対して、$2^n>\dfrac{n(n-1)}{2}$ が成り立つことを示せ。
+
+  (2) $\displaystyle\lim_{n\to\infty}\frac{n}{2^n}=0$ であることを示せ。
+
+  (3) 無限級数 $\displaystyle\sum_{n=1}^{\infty}\frac{n}{2^n}$ の和を求めよ。
+modelAnswer: |
+  **(1)** 二項定理より、$n\geqq 2$ のとき
+  $$2^n=(1+1)^n={}_n\mathrm{C}_0+{}_n\mathrm{C}_1+{}_n\mathrm{C}_2+\cdots+{}_n\mathrm{C}_n\geqq 1+n+\frac{n(n-1)}{2}>\frac{n(n-1)}{2}$$
+  （各項は正なので、${}_n\mathrm{C}_3$ 以降を除いても値は大きくならない。）
+
+  **(2)** $n\geqq 2$ のとき、(1) より
+  $$0<\frac{n}{2^n}<\frac{n}{\frac{n(n-1)}{2}}=\frac{2}{n-1}$$
+  $\displaystyle\lim_{n\to\infty}\frac{2}{n-1}=0$ なので、はさみうちの原理により $\displaystyle\lim_{n\to\infty}\frac{n}{2^n}=0$。
+
+  **(3)** 部分和を $S_n=\displaystyle\sum_{k=1}^{n}\frac{k}{2^k}$ とおく。
+  $$S_n=\frac{1}{2}+\frac{2}{2^2}+\frac{3}{2^3}+\cdots+\frac{n}{2^n}$$
+  $$\frac{1}{2}S_n=\frac{1}{2^2}+\frac{2}{2^3}+\cdots+\frac{n-1}{2^n}+\frac{n}{2^{n+1}}$$
+  辺々引くと
+  $$\frac{1}{2}S_n=\frac{1}{2}+\frac{1}{2^2}+\cdots+\frac{1}{2^n}-\frac{n}{2^{n+1}}=1-\frac{1}{2^n}-\frac{n}{2^{n+1}}$$
+  よって
+  $$S_n=2-\frac{2}{2^n}-\frac{n}{2^n}=2-\frac{n+2}{2^n}$$
+
+  $\displaystyle\lim_{n\to\infty}\frac{1}{2^n}=0$ と (2) より $\displaystyle\lim_{n\to\infty}\frac{n+2}{2^n}=\lim_{n\to\infty}\left(\frac{n}{2^n}+2\cdot\frac{1}{2^n}\right)=0$ なので
+  $$\sum_{n=1}^{\infty}\frac{n}{2^n}=\lim_{n\to\infty}S_n=2$$
+rubric:
+  - id: r1
+    criterion: 二項定理 $(1+1)^n$ を用いて、第3項までの和 $1+n+\dfrac{n(n-1)}{2}$ 以上であることから (1) を示している
+    points: 2
+    keywords: ["(1+1)^n", "二項定理"]
+  - id: r2
+    criterion: (1) から $0<\dfrac{n}{2^n}<\dfrac{2}{n-1}$ を導き、はさみうちの原理で極限 $0$ を結論している（不定形 $\dfrac{\infty}{\infty}$ を根拠なく $0$ としていない）
+    points: 2
+    keywords: ["2/(n-1)", "はさみうち"]
+  - id: r3
+    criterion: $S_n-\dfrac{1}{2}S_n$ の形で差をとり、中央に現れる等比数列の和を正しく求めている
+    points: 2
+    keywords: ["1/2S_n", "1-1/2^n"]
+  - id: r4
+    criterion: 部分和を $S_n=2-\dfrac{n+2}{2^n}$（または同値な式）と正しく求めている
+    points: 2
+    keywords: ["2-(n+2)/2^n"]
+  - id: r5
+    criterion: (2) の結果を用いて $\dfrac{n+2}{2^n}\to 0$ を示し、和が $2$ であると結論している
+    points: 2
+    keywords: ["=2", "(2)"]
+solution: |
+  (1) 二項展開の第3項までで下から評価する。(2) $0<\dfrac{n}{2^n}<\dfrac{2}{n-1}$ ではさむ。(3)（等差）×（等比）型の和は $S_n-\dfrac{1}{2}S_n$ で部分和 $S_n=2-\dfrac{n+2}{2^n}$ を求め、(2) を用いて極限 $2$ を得る。無限級数の和は「部分和の極限」なので、部分和を $n$ の式で表してから極限をとる。
+concepts: [lm-squeeze, lm-infinite-series, sq-sum-techniques]
+misconceptions: [mc-lm-indeterminate-form, mc-sq-term-count]
+targetSeconds: 720
+irt: { expectedCorrectRate: 0.45, discrimination: 1.3 }
+author:
+  intent: |
+    「指数関数は多項式より速く増大する」という事実を、高校数学の範囲（二項定理とはさみうちの原理）で論証できるかをみる。(2) では $\dfrac{\infty}{\infty}$ の形から直観的に $0$ と書くだけの答案と、評価式を示した答案を分離する。(3) は数学Bの（等差）×（等比）の和と、(2) の極限を組み合わせて無限級数の和を求める流れで、誘導の意味（なぜ (2) が必要か）を理解しているかが問われる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学III (1) ア(ア) 数列の極限", "数学III (1) ア(イ) 無限級数の和", "数学III (1) イ(ア) 極限を求める方法の考察"]
+  variations:
+    - $\displaystyle\lim_{n\to\infty}\frac{n^2}{2^n}=0$ を、第4項 ${}_n\mathrm{C}_3$ までの評価で示させる。
+    - $\displaystyle\sum_{n=1}^{\infty}n r^{n-1}=\frac{1}{(1-r)^2}\ (0<r<1)$ を、$\displaystyle\lim_{n\to\infty}nr^n=0$ の証明とあわせて一般化させる。

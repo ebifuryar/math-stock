@@ -1,0 +1,51 @@
+id: m3-ig-a02
+level: applied
+format: choice
+title: x=π−t の置換で求める定積分
+stem: |
+  定積分
+  $$I=\int_0^{\pi}\frac{x\sin x}{1+\cos^2x}\,dx$$
+  を求めたい。$x=\pi-t$ と置換すると、$\sin(\pi-t)=\sin t,\ \cos^2(\pi-t)=\cos^2t$ であるから
+  $$I=\int_0^{\pi}\frac{(\pi-t)\sin t}{1+\cos^2t}\,dt$$
+  となる。これを利用して $I$ を求めるとき、$I$ の値として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\dfrac{\pi^2}{4}$
+    rationale: |
+      正解。$I=\pi J-I$（$J=\displaystyle\int_0^\pi\frac{\sin x}{1+\cos^2x}\,dx$）より $I=\dfrac{\pi}{2}J$。$u=\cos x$、さらに $u=\tan\theta$ と置換して $J=\displaystyle\int_{-1}^{1}\frac{du}{1+u^2}=\int_{-\frac{\pi}{4}}^{\frac{\pi}{4}}d\theta=\frac{\pi}{2}$。よって $I=\dfrac{\pi^2}{4}$。
+  - id: "2"
+    text: $\dfrac{\pi^2}{2}$
+    rationale: |
+      $I=\pi J-I$ の右辺の $-I$ を落として $I=\pi J$ としている。置換後の式を分配すると $\displaystyle\int_0^\pi\frac{t\sin t}{1+\cos^2t}\,dt$ は $I$ そのものなので、移項して $2I=\pi J$ となる。
+  - id: "3"
+    text: $\pi$
+    misconception: mc-ig-sub-bounds
+    rationale: |
+      $J=\displaystyle\int_{-1}^{1}\frac{du}{1+u^2}$ で $u=\tan\theta$ と置換したのに、積分区間を $-1\to 1$ のまま $\displaystyle\int_{-1}^{1}d\theta=2$ としている。$u=\pm 1$ に対応するのは $\theta=\pm\dfrac{\pi}{4}$ である。
+  - id: "4"
+    text: $\dfrac{\pi}{2}$
+    rationale: |
+      $J=\dfrac{\pi}{2}$ を求めたところで止め、$I=\dfrac{\pi}{2}J$ の係数 $\dfrac{\pi}{2}$ を掛け忘れている（$x$ を取り除いた積分と $I$ を取り違えている）。
+answer: "1"
+solution: |
+  置換後の式を分けると
+  $$I=\pi\int_0^\pi\frac{\sin t}{1+\cos^2t}\,dt-\int_0^\pi\frac{t\sin t}{1+\cos^2t}\,dt=\pi J-I$$
+  （定積分の値は積分変数の文字によらない）。よって $I=\dfrac{\pi}{2}J$。
+
+  $J$ は $u=\cos x$ と置換する。$du=-\sin x\,dx$、$x:0\to\pi$ のとき $u:1\to -1$ なので
+  $$J=\int_1^{-1}\frac{-du}{1+u^2}=\int_{-1}^{1}\frac{du}{1+u^2}=2\int_0^1\frac{du}{1+u^2}\quad(\text{偶関数})$$
+  さらに $u=\tan\theta$ とおくと $du=\dfrac{d\theta}{\cos^2\theta}$、$1+u^2=\dfrac{1}{\cos^2\theta}$、$u:0\to 1$ のとき $\theta:0\to\dfrac{\pi}{4}$ で
+  $$J=2\int_0^{\frac{\pi}{4}}d\theta=\frac{\pi}{2}$$
+  したがって $I=\dfrac{\pi}{2}\cdot\dfrac{\pi}{2}=\dfrac{\pi^2}{4}$。
+concepts: [ig-definite-properties, ig-substitution]
+misconceptions: [mc-ig-sub-bounds]
+targetSeconds: 420
+irt: { expectedCorrectRate: 0.45, discrimination: 1.3 }
+author:
+  intent: |
+    $x\,f(\sin x)$ 型の積分は直接には原始関数が求まらないが、$x=\pi-t$ の置換で「元の積分 $I$ が右辺に再び現れる」構造を作れば求まる、という誘導を最後まで実行できるかをみる。②は $I$ が右辺に現れることを見落として移項しない誤り、④は誘導の途中結果で止める誤り、③は2段階目の置換（$u=\tan\theta$）で積分区間を取り替え忘れる誤りで、置換を2回重ねる問題での区間管理を識別する。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: ["数学III (3) ア(イ) 置換積分法・部分積分法", "数学III (3) イ(ア) 関数の式を目的に応じて変形した積分の考察"]
+  variations:
+    - $\displaystyle\int_0^{\frac{\pi}{2}}\frac{\sin x}{\sin x+\cos x}\,dx$（$=\dfrac{\pi}{4}$）を $x=\dfrac{\pi}{2}-t$ の置換で求めさせる。
+    - $\displaystyle\int_0^{\pi}x\sin^3x\,dx$（$=\dfrac{2}{3}\pi$）のように、$J$ が置換で直接計算できる形にする。

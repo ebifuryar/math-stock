@@ -1,0 +1,19 @@
+id: ig-basic
+kind: formula
+title: いろいろな関数の不定積分
+body: |
+  $C$ を積分定数とする。$\alpha\neq -1$ のとき
+  $$\int x^\alpha\,dx=\frac{x^{\alpha+1}}{\alpha+1}+C,\qquad \int\frac{dx}{x}=\log|x|+C$$
+  $$\int e^x\,dx=e^x+C,\qquad \int a^x\,dx=\frac{a^x}{\log a}+C$$
+  $$\int\sin x\,dx=-\cos x+C,\qquad \int\cos x\,dx=\sin x+C,\qquad \int\frac{dx}{\cos^2x}=\tan x+C$$
+
+  **1次式の置き換え**: $F'(x)=f(x)$ のとき、$a\neq 0$ として
+  $$\int f(ax+b)\,dx=\frac{1}{a}F(ax+b)+C$$
+  例: $\displaystyle\int\cos 2x\,dx=\frac{1}{2}\sin 2x+C$。$\dfrac{1}{a}$ を忘れないこと（微分して確かめる）。
+
+  **$\dfrac{f'(x)}{f(x)}$ 型**: 分子が分母の導関数になっていれば
+  $$\int\frac{f'(x)}{f(x)}\,dx=\log|f(x)|+C$$
+  例: $\displaystyle\int\tan x\,dx=-\int\frac{(\cos x)'}{\cos x}\,dx=-\log|\cos x|+C$。
+
+  絶対値は $x<0$（$f(x)<0$）の範囲でも成り立たせるために必要である。$x<0$ のとき $\{\log(-x)\}'=\dfrac{-1}{-x}=\dfrac{1}{x}$ なので、$\log|x|$ は $x>0$ でも $x<0$ でも $\dfrac{1}{x}$ の原始関数になる。
+prerequisites: [cl-integral, df-elementary]

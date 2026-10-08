@@ -1,0 +1,53 @@
+id: mc-cp-e04
+level: exam
+format: mark
+title: 円上を動く点の偏角の範囲と累乗
+stem: |
+  複素数 $z$ が $|z-2i|=1$ を満たしながら動くとする。偏角は $0$ 以上 $2\pi$ 未満で考える。
+
+  (1) $|z|$ の最大値は $\boxed{\text{ア}}$、最小値は $\boxed{\text{イ}}$ である。
+
+  (2) $\arg z$ の最大値は $\dfrac{\boxed{\text{ウ}}}{\boxed{\text{エ}}}\pi$、最小値は $\dfrac{\pi}{\boxed{\text{オ}}}$ である。
+
+  (3) $z^3$ が実数となるような $z$ は全部で $\boxed{\text{カ}}$ 個ある。そのうち $z^3$ が負の実数となるものは
+  $$z=\frac{\sqrt{\boxed{\text{キ}}}}{\boxed{\text{ク}}}+\frac{\boxed{\text{ケ}}}{\boxed{\text{コ}}}i$$
+  であり、このとき $z^3=-\boxed{\text{サ}}\sqrt{\boxed{\text{シ}}}$ である。
+blanks:
+  - { label: ア, answer: "3" }
+  - { label: イ, answer: "1" }
+  - { label: ウ, answer: "2" }
+  - { label: エ, answer: "3" }
+  - { label: オ, answer: "3" }
+  - { label: カ, answer: "2" }
+  - { label: キ, answer: "3" }
+  - { label: ク, answer: "2" }
+  - { label: ケ, answer: "3" }
+  - { label: コ, answer: "2" }
+  - { label: サ, answer: "3" }
+  - { label: シ, answer: "3" }
+solution: |
+  点 $z$ は中心 $\mathrm{C}(2i)$、半径 $1$ の円周上を動く。
+
+  (1) $\mathrm{OC}=2$ なので、$|z|$ は $2+1=3$（$z=3i$）が最大、$2-1=1$（$z=i$）が最小。
+
+  (2) 原点からこの円に引いた2本の接線の接点を $\mathrm{T}_1,\ \mathrm{T}_2$ とすると、$\mathrm{OT}\perp\mathrm{CT}$、$\mathrm{CT}=1$、$\mathrm{OC}=2$ より $\angle\mathrm{COT}=\dfrac{\pi}{6}$。$\mathrm{OC}$ の偏角は $\dfrac{\pi}{2}$ なので
+  $$\frac{\pi}{2}-\frac{\pi}{6}\leqq\arg z\leqq\frac{\pi}{2}+\frac{\pi}{6}\qquad\text{すなわち}\qquad\frac{\pi}{3}\leqq\arg z\leqq\frac{2}{3}\pi$$
+  最大値 $\dfrac{2}{3}\pi$、最小値 $\dfrac{\pi}{3}$。
+
+  (3) $z=r(\cos\theta+i\sin\theta)$ とすると $z^3=r^3(\cos 3\theta+i\sin 3\theta)$ が実数 $\iff\sin 3\theta=0$。(2) より $\pi\leqq 3\theta\leqq 2\pi$ なので $3\theta=\pi$ または $3\theta=2\pi$、すなわち $\theta=\dfrac{\pi}{3}$ または $\dfrac{2}{3}\pi$。これらの偏角をもつ円上の点はそれぞれ接点ただ1つなので、$z$ は **2個**。
+
+  $z^3<0$ となるのは $\cos 3\theta=-1$、すなわち $\theta=\dfrac{\pi}{3}$ の接点。$\mathrm{OT}=\sqrt{\mathrm{OC}^2-\mathrm{CT}^2}=\sqrt{3}$ なので
+  $$z=\sqrt{3}\left(\cos\frac{\pi}{3}+i\sin\frac{\pi}{3}\right)=\frac{\sqrt{3}}{2}+\frac{3}{2}i,\qquad z^3=(\sqrt{3})^3(\cos\pi+i\sin\pi)=-3\sqrt{3}$$
+  （$\theta=\dfrac{2}{3}\pi$ の接点 $-\dfrac{\sqrt{3}}{2}+\dfrac{3}{2}i$ では $z^3=3\sqrt{3}$。）
+concepts: [cp-polar-form, cp-de-moivre, cp-figures]
+misconceptions: [mc-cp-modulus-scale]
+targetSeconds: 480
+irt: { expectedCorrectRate: 0.35, discrimination: 1.4 }
+author:
+  intent: |
+    円 $|z-\alpha|=r$ 上の点について、絶対値と偏角の範囲を図形（中心までの距離・接線）から求め、それをド・モアブルの定理による $z^n$ の偏角の条件に結び付けられるかをみる。(3) では $\sin 3\theta=0$ の一般解のうち範囲 $\pi\leqq 3\theta\leqq 2\pi$ に入るものだけを選ぶ必要があり、範囲の端点が接点にちょうど対応する設定にしたので、「偏角の範囲を求めずに解く」と個数を誤る。$z^3$ の値では絶対値 $(\sqrt{3})^3=3\sqrt{3}$ の処理を確認する。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学C (2) ア(イ) 複素数の極形式, 数学C (2) ア(ウ) ド・モアブルの定理, 数学C (2) ア(エ) 複素数平面における図形]
+  variations:
+    - 同じ円上で $z^4$ が実数となる $z$ の個数を問う（$4\theta=2\pi$ のみで、$\theta=\dfrac{\pi}{2}$ の点 $i,\ 3i$ の2個）。
+    - $\arg\dfrac{z-1}{z+1}$ の範囲を問い、円周角との関係を考えさせる。

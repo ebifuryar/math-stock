@@ -1,0 +1,50 @@
+id: mc-cv-a02
+level: applied
+format: choice
+title: 転がる円の周上の点（サイクロイド）
+stem: |
+  座標平面上で、半径 $2$ の円 $C$ が $x$ 軸の上側にあって $x$ 軸に接しながら、$x$ 軸上を正の向きに滑ることなく転がる。はじめ $C$ の中心は $(0,\ 2)$ にあり、$C$ 上の定点 $\mathrm{P}$ は原点にある。
+
+  $C$ が角 $\theta$ だけ回転したとき、$C$ と $x$ 軸の接点は原点から弧の長さと同じ距離だけ進むので、$C$ の中心は $(2\theta,\ 2)$ にある。また、$C$ は時計回りに回転する。
+
+  点 $\mathrm{P}$ の $y$ 座標が初めて $3$ となるときの $\mathrm{P}$ の $x$ 座標として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\dfrac{4}{3}\pi-\sqrt{3}$
+    rationale: |
+      正解。$\mathrm{P}(2\theta-2\sin\theta,\ 2-2\cos\theta)$ で、$2-2\cos\theta=3$ となる最小の $\theta>0$ は $\theta=\dfrac{2}{3}\pi$。
+  - id: "2"
+    text: $\dfrac{4}{3}\pi+\sqrt{3}$
+    rationale: |
+      中心から見た $\mathrm{P}$ の位置を $(2\sin\theta,\ -2\cos\theta)$ としている（反時計回りに回転させた）。円が正の向きに転がるとき、$\mathrm{P}$ は中心の後方（$x$ 座標が中心より小さい側）から持ち上がる。$\theta$ が小さいとき $\mathrm{P}$ は原点の近くにとどまるはずだが、この式では $x$ 座標が $4\theta$ 程度で急に進んでしまう。
+  - id: "3"
+    text: $\dfrac{2}{3}\pi-\sqrt{3}$
+    rationale: |
+      中心の $x$ 座標を、転がった距離 $2\theta$ ではなく回転角 $\theta$ そのものとしている。半径 $2$ の円が角 $\theta$ 回転したときに転がる距離は弧の長さ $2\theta$。この式 $x=\theta-2\sin\theta$ では、$\theta$ が小さいとき $x\fallingdotseq-\theta<0$ となり、$\mathrm{P}$ が原点より左へ動く（円が滑りながら回る）ことになって不合理。
+  - id: "4"
+    text: $\dfrac{8}{3}\pi+\sqrt{3}$
+    rationale: |
+      $\cos\theta=-\dfrac{1}{2}$ の解のうち $\theta=\dfrac{4}{3}\pi$ を採用している。これは $\mathrm{P}$ が最高点を過ぎて下がる途中で2回目に $y=3$ となるときで、「初めて」ではない。
+answer: "1"
+solution: |
+  中心を $\mathrm{Q}(2\theta,\ 2)$ とする。はじめ $\overrightarrow{\mathrm{QP}}=(0,\ -2)$ で、円は時計回りに角 $\theta$ 回転するので
+  $$\overrightarrow{\mathrm{QP}}=(-2\sin\theta,\ -2\cos\theta)$$
+  よって
+  $$\mathrm{P}(2\theta-2\sin\theta,\ 2-2\cos\theta)$$
+  （サイクロイド $x=a(\theta-\sin\theta),\ y=a(1-\cos\theta)$ で $a=2$。）
+
+  $y=3$ とすると $\cos\theta=-\dfrac{1}{2}$。$y$ は $0\leqq\theta\leqq\pi$ で $0$ から $4$ まで増加するので、初めて $y=3$ となるのは $\theta=\dfrac{2}{3}\pi$。このとき
+  $$x=\frac{4}{3}\pi-2\cdot\frac{\sqrt{3}}{2}=\frac{4}{3}\pi-\sqrt{3}$$
+  検算: $\mathrm{P}$ は中心 $\mathrm{Q}\left(\dfrac{4}{3}\pi,\ 2\right)$ より左にあり、中心より $1$ だけ高い。半径 $2$ なので水平方向のずれは $\sqrt{4-1}=\sqrt{3}$。
+concepts: [cv-parametric]
+misconceptions: []
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.5, discrimination: 1.2 }
+author:
+  intent: |
+    サイクロイドの式を暗記で当てはめるのではなく、「中心の移動（転がった距離）」と「中心から見た点の回転」に分けて構成できるかをみる。②は回転の向き、③は転がる距離と回転角の混同、④は「初めて」という条件で $\theta$ の候補を選ぶ判断の誤りに対応し、それぞれ構成のどの段階でつまずいたかを識別する。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学C (2) ア(イ) 曲線の媒介変数表示（サイクロイド）]
+  variations:
+    - $\mathrm{P}$ の $y$ 座標が最大となる最初の点と、再び $x$ 軸上に来る点の座標を求めさせる。
+    - 半径 $2$ の円の中心から距離 $1$ の位置にある円の内部の点が描く曲線（トロコイド）の媒介変数表示を求めさせる。

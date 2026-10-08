@@ -1,0 +1,44 @@
+id: mc-cv-s02
+level: school
+format: choice
+title: 双曲線の焦点と漸近線
+stem: |
+  双曲線 $\dfrac{x^2}{16}-\dfrac{y^2}{9}=1$ の焦点の座標と漸近線の方程式の組合せとして正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: 焦点 $(\pm\sqrt{7},\ 0)$、漸近線 $y=\pm\dfrac{3}{4}x$
+    misconception: mc-cv-focus-c-formula
+    rationale: |
+      楕円の公式 $c^2=a^2-b^2$ を使って $c=\sqrt{16-9}=\sqrt{7}$ としている。$\sqrt{7}<4$ なので、この点は頂点 $(4,\ 0)$ より内側にあり、双曲線の焦点になりえない。
+  - id: "2"
+    text: 焦点 $(\pm 5,\ 0)$、漸近線 $y=\pm\dfrac{4}{3}x$
+    misconception: mc-cv-asymptote-slope
+    rationale: |
+      漸近線の傾きを $\dfrac{a}{b}=\dfrac{4}{3}$ としている。$\dfrac{x^2}{16}-\dfrac{y^2}{9}=0$ を解くと $y=\pm\dfrac{3}{4}x$ である。
+  - id: "3"
+    text: 焦点 $(0,\ \pm 5)$、漸近線 $y=\pm\dfrac{3}{4}x$
+    rationale: |
+      焦点を $y$ 軸上に置いている。$x^2$ の項が正なので、この双曲線は $x$ 軸と $(\pm 4,\ 0)$ で交わり、$y$ 軸とは交わらない。焦点は頂点と同じ $x$ 軸上にある。（焦点が $y$ 軸上になるのは右辺が $-1$ の双曲線。）
+  - id: "4"
+    text: 焦点 $(\pm 5,\ 0)$、漸近線 $y=\pm\dfrac{3}{4}x$
+    rationale: |
+      正解。$c=\sqrt{16+9}=5$、漸近線は $\dfrac{x}{4}\pm\dfrac{y}{3}=0$ より $y=\pm\dfrac{3}{4}x$。
+answer: "4"
+solution: |
+  $a=4,\ b=3$ の双曲線 $\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1$ である。頂点は $(\pm 4,\ 0)$ で、焦点は $x$ 軸上にあり
+  $$c=\sqrt{a^2+b^2}=\sqrt{16+9}=5\quad\Longrightarrow\quad\text{焦点 }(\pm 5,\ 0)$$
+  漸近線は、右辺を $0$ にした式を因数分解して
+  $$\frac{x^2}{16}-\frac{y^2}{9}=\left(\frac{x}{4}-\frac{y}{3}\right)\left(\frac{x}{4}+\frac{y}{3}\right)=0\quad\Longrightarrow\quad y=\pm\frac{3}{4}x$$
+  検算: $x$ が大きいとき $y=\pm 3\sqrt{\dfrac{x^2}{16}-1}\fallingdotseq\pm\dfrac{3}{4}x$。
+concepts: [cv-hyperbola]
+misconceptions: [mc-cv-focus-c-formula, mc-cv-asymptote-slope]
+targetSeconds: 90
+irt: { expectedCorrectRate: 0.7, discrimination: 1.1 }
+author:
+  intent: |
+    双曲線の標準形から焦点と漸近線を読み取れるかをみる。①は楕円の公式との混同、②は漸近線の傾きの分子・分母の取り違え、③は焦点がどちらの軸にあるかの判断の誤りに対応する。焦点と漸近線を組にして、それぞれの判断を1問で識別できるようにした。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学C (2) ア(ア) 放物線・楕円・双曲線が2次式で表されること]
+  variations:
+    - 漸近線が $y=\pm 2x$ で、点 $(2,\ 2)$ を通る双曲線の方程式を求めさせる（右辺が $1$ か $-1$ かの判断が必要）。
+    - 双曲線 $\dfrac{x^2}{16}-\dfrac{y^2}{9}=-1$ について同じことを問い、焦点の位置だけが変わり漸近線は変わらないことを確かめさせる。

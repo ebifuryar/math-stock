@@ -1,0 +1,47 @@
+id: m3-ig-a04
+level: applied
+format: mark
+title: サイクロイドの長さ・面積・回転体の体積
+stem: |
+  媒介変数 $t$ を用いて
+  $$x=t-\sin t,\qquad y=1-\cos t\qquad(0\leqq t\leqq 2\pi)$$
+  と表される曲線 $C$ を考える。$C$ は点 $(0,\ 0)$ から出発して $t=\pi$ で最高点 $(\pi,\ 2)$ に達し、点 $(2\pi,\ 0)$ で再び $x$ 軸に達する山形の曲線であり、$\dfrac{dx}{dt}=1-\cos t\geqq 0$ より $t$ が増えると $x$ は増加する。
+
+  (1)
+  $$\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2=\boxed{\text{ア}}\,(1-\cos t)=\boxed{\text{イ}}\sin^2\frac{t}{2}$$
+  であるから、$C$ の長さは $\boxed{\text{ウ}}$ である。
+
+  (2) $C$ と $x$ 軸で囲まれた部分の面積は $\boxed{\text{エ}}\,\pi$ である。
+
+  (3) (2) の部分を $x$ 軸のまわりに1回転してできる立体の体積は $\boxed{\text{オ}}\,\pi^2$ である。
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イ, answer: "4" }
+  - { label: ウ, answer: "8" }
+  - { label: エ, answer: "3" }
+  - { label: オ, answer: "5" }
+solution: |
+  (1) $\dfrac{dx}{dt}=1-\cos t,\ \dfrac{dy}{dt}=\sin t$ より
+  $$(1-\cos t)^2+\sin^2t=2-2\cos t=2(1-\cos t)=4\sin^2\frac{t}{2}$$
+  $0\leqq t\leqq 2\pi$ では $\sin\dfrac{t}{2}\geqq 0$ なので、根号は $2\sin\dfrac{t}{2}$ と外せて
+  $$L=\int_0^{2\pi}2\sin\frac{t}{2}\,dt=\left[-4\cos\frac{t}{2}\right]_0^{2\pi}=4+4=8$$
+
+  (2) $S=\displaystyle\int_0^{2\pi}y\,dx$ で、$x:0\to 2\pi$ に $t:0\to 2\pi$ が対応する。
+  $$S=\int_0^{2\pi}(1-\cos t)(1-\cos t)\,dt=\int_0^{2\pi}\left(1-2\cos t+\frac{1+\cos 2t}{2}\right)dt=2\pi+\pi=3\pi$$
+
+  (3) $V=\pi\displaystyle\int_0^{2\pi}y^2\,dx=\pi\int_0^{2\pi}(1-\cos t)^3\,dt$。
+  $$(1-\cos t)^3=1-3\cos t+3\cos^2t-\cos^3t$$
+  で、$\displaystyle\int_0^{2\pi}\cos t\,dt=0$、$\displaystyle\int_0^{2\pi}\cos^2t\,dt=\pi$、$\displaystyle\int_0^{2\pi}\cos^3t\,dt=\int_0^{2\pi}(1-\sin^2t)\cos t\,dt=0$ より
+  $$V=\pi(2\pi+3\pi)=5\pi^2$$
+concepts: [ig-area-length, ig-volume, ig-trig-rational]
+misconceptions: [mc-ig-arc-length, mc-ig-volume-formula, mc-ig-sub-bounds]
+targetSeconds: 720
+irt: { expectedCorrectRate: 0.5, discrimination: 1.2 }
+author:
+  intent: |
+    媒介変数表示の曲線について、長さ・面積・回転体の体積の3つの公式を、$dx=\dfrac{dx}{dt}\,dt$ の置換と結び付けて使い分けられるかをみる。(1) は半角の公式で根号を外す誘導付きで、根号を付け忘れて $\displaystyle\int_0^{2\pi}2(1-\cos t)\,dt=4\pi$ とすると整数にならず、誤りに気づける設計。(2)(3) では $dx$ を $dt$ に直すときに $\dfrac{dx}{dt}$ を掛け忘れる誤り（(2) で $2\pi$ と答える）や、体積で $\pi$ や2乗を落とす誤りを識別する。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学III (3) イ(イ) 定積分を用いた面積・体積・曲線の長さ"]
+  variations:
+    - アステロイド $x=\cos^3t,\ y=\sin^3t$ の長さ（$6$）と囲む面積（$\dfrac{3}{8}\pi$）を問う。
+    - (3) を $y$ 軸のまわりの回転（$6\pi^3$）に変え、$\displaystyle\pi\int x^2\,dy$ を $t$ の積分に直させる。

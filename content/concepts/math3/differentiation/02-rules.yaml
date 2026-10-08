@@ -1,0 +1,23 @@
+id: df-rules
+kind: formula
+title: 積・商・合成関数・逆関数の微分
+body: |
+  $f(x),\ g(x)$ が微分可能であるとき、次が成り立つ。
+
+  | 種類 | 公式 |
+  | --- | --- |
+  | 積 | $\{f(x)g(x)\}'=f'(x)g(x)+f(x)g'(x)$ |
+  | 商 | $\left\{\dfrac{f(x)}{g(x)}\right\}'=\dfrac{f'(x)g(x)-f(x)g'(x)}{\{g(x)\}^2}$ |
+  | 逆数 | $\left\{\dfrac{1}{g(x)}\right\}'=-\dfrac{g'(x)}{\{g(x)\}^2}$ |
+  | $x^r$（$r$ は実数、$x>0$） | $(x^r)'=rx^{r-1}$ |
+
+  商の公式の分子は「**分子の微分 $\times$ 分母 $-$ 分子 $\times$ 分母の微分**」の順で、順序を逆にすると符号が反転する。
+
+  **合成関数の微分**: $y=f(u),\ u=g(x)$ のとき
+  $$\frac{dy}{dx}=\frac{dy}{du}\cdot\frac{du}{dx},\qquad \{f(g(x))\}'=f'(g(x))\,g'(x)$$
+  外側の関数を微分したあと、**内側の関数の導関数を掛ける**。内側がさらに合成関数なら、これを繰り返す。
+
+  **逆関数の微分**: $y=f^{-1}(x)$ のとき $x=f(y)$ であり、
+  $$\frac{dy}{dx}=\frac{1}{\dfrac{dx}{dy}}=\frac{1}{f'(y)}\quad(f'(y)\neq 0)$$
+  逆関数 $g$ の $x=b$ での微分係数は、$f(a)=b$ となる $a$ を求めて $g'(b)=\dfrac{1}{f'(a)}$ とする（$\dfrac{1}{f'(b)}$ ではない）。
+prerequisites: [df-differentiability, cl-derivative]

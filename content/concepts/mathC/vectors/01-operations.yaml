@@ -1,0 +1,17 @@
+id: vc-operations
+kind: definition
+title: ベクトルの演算・成分・平行条件
+body: |
+  **ベクトル** は「向き」と「大きさ」だけをもつ量で、平行移動して重なる有向線分は同じベクトルを表す。大きさを $|\vec a|$ と書く。
+
+  **演算** 和 $\vec a+\vec b$（つなぐ・平行四辺形の対角線）、差 $\vec a-\vec b$（$\vec b$ の終点から $\vec a$ の終点へ）、実数倍 $k\vec a$（$k<0$ なら逆向き）。文字式と同じ計算法則（交換・結合・分配）が成り立つ。
+
+  **成分** $\vec a=(a_1,\ a_2),\ \vec b=(b_1,\ b_2)$ のとき
+  - $\vec a\pm\vec b=(a_1\pm b_1,\ a_2\pm b_2)$、$k\vec a=(ka_1,\ ka_2)$
+  - $|\vec a|=\sqrt{a_1^2+a_2^2}$
+  - $\mathrm{A}(x_1,y_1),\ \mathrm{B}(x_2,y_2)$ なら $\overrightarrow{\mathrm{AB}}=(x_2-x_1,\ y_2-y_1)$（終点 − 始点）
+
+  **平行条件** $\vec a\neq\vec 0,\ \vec b\neq\vec 0$ のとき
+  $$\vec a\parallel\vec b\iff\vec b=k\vec a\ \text{となる実数}\ k\ \text{がある}\iff a_1b_2-a_2b_1=0$$
+
+  **注意** 大きさは一般に足し算できない。$|\vec a+\vec b|\leqq|\vec a|+|\vec b|$ で、等号は $\vec a,\ \vec b$ が同じ向きのときに限る（三角形の2辺の和は他の1辺より大きい）。

@@ -1,0 +1,22 @@
+id: cv-polar-equation
+kind: formula
+title: 極方程式と2次曲線の統一的な定義
+body: |
+  曲線を $r$ と $\theta$ の関係式 $r=f(\theta)$ などで表したものを **極方程式** という。直交座標の式へは $x=r\cos\theta,\ y=r\sin\theta,\ r^2=x^2+y^2$ で直す。
+
+  **直線** 極 $\mathrm{O}$ から直線に下ろした垂線の足を $\mathrm{H}(p,\ \alpha)$（$p>0$）とすると、直線上の点 $\mathrm{P}(r,\ \theta)$ について $\mathrm{OP}$ の $\mathrm{OH}$ 方向への正射影が $p$ なので
+  $$r\cos(\theta-\alpha)=p\qquad(\text{直交座標では }x\cos\alpha+y\sin\alpha=p)$$
+
+  **円** 中心 $(a,\ 0)$、半径 $a$ の円（極を通る）: $r=2a\cos\theta$。極を中心とする半径 $a$ の円: $r=a$。
+
+  **2次曲線の統一的な定義（離心率）** 定点 $\mathrm{F}$ と、$\mathrm{F}$ を通らない直線 $g$ に対して、$\dfrac{\mathrm{PF}}{(\mathrm{P}\text{ と }g\text{ の距離})}=e$（一定）を満たす点 $\mathrm{P}$ の軌跡は
+  - $0<e<1$ のとき楕円、$e=1$ のとき放物線、$e>1$ のとき双曲線
+
+  $e$ を **離心率** という。楕円・双曲線の標準形では $e=\dfrac{c}{a}$。
+
+  **焦点を極とする極方程式** $\mathrm{F}$ を極とし、準線 $g$ を始線に垂直で極から距離 $d$ の正の側にとると
+  $$r=\frac{\ell}{1+e\cos\theta}\qquad(\ell=ed)$$
+  （$r=e(d-r\cos\theta)$ を $r$ について解いたもの）。たとえば $r=\dfrac{6}{2+\cos\theta}=\dfrac{3}{1+\frac{1}{2}\cos\theta}$ は $e=\dfrac{1}{2}$ の楕円で、直交座標に直すと $\dfrac{(x+2)^2}{16}+\dfrac{y^2}{12}=1$（焦点の一つが極）。
+
+  **焦点を通る弦** 焦点を通る弦の両端を $\mathrm{A}(r_1,\ \theta),\ \mathrm{B}(r_2,\ \theta+\pi)$ とすると $\dfrac{1}{r_1}+\dfrac{1}{r_2}=\dfrac{(1+e\cos\theta)+(1-e\cos\theta)}{\ell}=\dfrac{2}{\ell}$ で、弦の向きによらない。
+prerequisites: [cv-polar-coordinates, cv-parabola, cv-ellipse, cv-hyperbola, cg-circle-equation]

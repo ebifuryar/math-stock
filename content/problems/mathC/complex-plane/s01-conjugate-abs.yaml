@@ -1,0 +1,45 @@
+id: mc-cp-s01
+level: school
+format: choice
+title: 絶対値が一定の複素数と共役複素数
+stem: |
+  複素数 $z$ が $|z|=3$ を満たしながら動く。このとき、$z+\dfrac{9}{z}$ の値についての記述として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: 常に $2z$ に等しい。
+    misconception: mc-cp-abs-square
+    rationale: |
+      $|z|^2=9$ を $z^2=9$ と取り違え、$\dfrac{9}{z}=z$ としている。例えば $z=3i$ のとき $z+\dfrac{9}{z}=3i-3i=0$ であり、$2z=6i$ ではない。
+  - id: "2"
+    text: 常に純虚数または $0$ である。
+    rationale: |
+      $\dfrac{9}{z}=\overline{z}$ までは正しいが、$z+\overline{z}$ を $z-\overline{z}=2bi$ と混同している。例えば $z=3$ のとき値は $6$ で、純虚数でも $0$ でもない。
+  - id: "3"
+    text: 常に $6$ である。
+    rationale: |
+      絶対値の関係 $|z|+\dfrac{9}{|z|}=6$ と、複素数そのものの和を混同している。例えば $z=-3$ のとき値は $-6$ になる。
+  - id: "4"
+    text: 常に実数であり、その値は $-6$ 以上 $6$ 以下である。
+    rationale: |
+      正解。$z\overline{z}=|z|^2=9$ より $\dfrac{9}{z}=\overline{z}$ なので、$z+\dfrac{9}{z}=z+\overline{z}=2a$（$a$ は $z$ の実部）。$|z|=3$ より $-3\leqq a\leqq 3$。
+answer: "4"
+solution: |
+  $|z|^2=z\overline{z}$ であるから、$|z|=3$ より $z\overline{z}=9$、すなわち
+  $$\frac{9}{z}=\overline{z}$$
+  よって、$z=a+bi$（$a,\ b$ は実数）とすると
+  $$z+\frac{9}{z}=z+\overline{z}=2a$$
+  は常に実数である。さらに $a^2+b^2=9$ より $-3\leqq a\leqq 3$ なので、値の範囲は $-6\leqq z+\dfrac{9}{z}\leqq 6$（$z=3$ で $6$、$z=-3$ で $-6$、$z=\pm 3i$ で $0$）。
+
+  $|z|^2$ と $z^2$ は異なる。$|z|=3$ から $z^2=9$ は導けない（$z=\pm 3$ のときだけ成り立つ）。
+concepts: [cp-conjugate-abs]
+misconceptions: [mc-cp-abs-square]
+targetSeconds: 120
+irt: { expectedCorrectRate: 0.7, discrimination: 1.1 }
+author:
+  intent: |
+    $|z|^2=z\overline{z}$ を使って $\dfrac{9}{z}$ を $\overline{z}$ に書き換えられるかをみる。$|z|^2$ と $z^2$ を混同すると①、$z+\overline{z}$ と $z-\overline{z}$ を混同すると②、絶対値の式と複素数の式を混同すると③に至るように、「共役・絶対値」の基本関係の誤り方を3通りに分けた。正解④は「実数である」に加えて値の範囲まで述べさせ、具体例 $z=\pm 3,\ \pm 3i$ を代入して検証する姿勢も促す。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学C (2) ア(イ) 複素数平面と複素数の極形式（共役複素数と絶対値）]
+  variations:
+    - $|z|=2$ のとき $z-\dfrac{4}{z}$ が純虚数または $0$ であることを示させる。
+    - $|z|=1,\ z\neq\pm 1$ のとき $\dfrac{1+z}{1-z}$ が純虚数であることを、$\overline{z}=\dfrac{1}{z}$ を用いて示させる。

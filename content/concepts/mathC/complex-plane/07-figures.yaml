@@ -1,0 +1,20 @@
+id: cp-figures
+kind: method
+title: 複素数の表す図形と w=f(z) の像
+body: |
+  **基本の図形**（$\alpha,\ \beta$ は定点、$r>0$）
+  - $|z-\alpha|=r$: 点 $\alpha$ を中心とする半径 $r$ の円。
+  - $|z-\alpha|=|z-\beta|$: 2点 $\alpha,\ \beta$ を結ぶ線分の垂直二等分線。
+  - $|z-\alpha|=k|z-\beta|\ (k>0,\ k\neq 1)$: **アポロニウスの円**。線分を $k:1$ に内分する点と外分する点を直径の両端とする円。
+
+  **式の処理** 両辺を2乗して $|z-\alpha|^2=(z-\alpha)(\overline{z}-\overline{\alpha})$ と展開し、$z\overline{z}$ の係数で割って
+  $$z\overline{z}-\overline{c}z-c\overline{z}+c\overline{c}=\rho^2\iff|z-c|^2=\rho^2$$
+  の形にまとめる。$z=x+yi$ とおいて $x,\ y$ の式にしてもよい。
+
+  **$w=f(z)$ による像** 点 $z$ が図形上を動くときの点 $w$ の軌跡は
+  1. $z$ を $w$ で表す（例: $w=\dfrac{1}{z}$ なら $z=\dfrac{1}{w}$）。このとき $w$ がとれない値（$w\neq 0$ など）を記録する。
+  2. $z$ の満たす条件に代入し、$w$ の条件に直す。
+  3. 1 で記録した値を除く。
+
+  例: $z$ が直線 $z+\overline{z}=2$（実部が $1$）上を動くとき、$w=\dfrac{1}{z}$ は円 $\left|w-\dfrac{1}{2}\right|=\dfrac{1}{2}$ から **原点を除いた** 部分を動く。$w=\dfrac{1}{z}$ は原点を通らない直線を原点を通る円（原点を除く）に、原点を通る円（原点を除く）を原点を通らない直線に移す。
+prerequisites: [cp-distance-division, cg-locus, cg-circle-equation]

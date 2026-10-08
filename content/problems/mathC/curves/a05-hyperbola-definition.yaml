@@ -1,0 +1,65 @@
+id: mc-cv-a05
+level: applied
+format: written
+title: 距離の差から双曲線の方程式を導く
+stem: |
+  2点 $\mathrm{F}(5,\ 0),\ \mathrm{F'}(-5,\ 0)$ からの距離の差が $6$ である点 $\mathrm{P}$、すなわち $|\mathrm{PF}-\mathrm{PF'}|=6$ を満たす点 $\mathrm{P}$ の軌跡を $H$ とする。
+
+  (1) $H$ の方程式を、定義から導け。
+
+  (2) $H$ の漸近線の方程式を求めよ。
+
+  (3) $H$ 上の点 $\mathrm{P}$ で $\mathrm{PF}=4$ となるものの座標をすべて求めよ。
+modelAnswer: |
+  (1) $\mathrm{P}(x,\ y)$ とする。$\mathrm{PF'}-\mathrm{PF}=\pm 6$ より $\sqrt{(x+5)^2+y^2}=\sqrt{(x-5)^2+y^2}\pm 6$。両辺を2乗して
+  $$(x+5)^2+y^2=(x-5)^2+y^2\pm 12\sqrt{(x-5)^2+y^2}+36$$
+  $$20x-36=\pm 12\sqrt{(x-5)^2+y^2}\iff 5x-9=\pm 3\sqrt{(x-5)^2+y^2}$$
+  再び2乗して
+  $$25x^2-90x+81=9(x^2-10x+25+y^2)\iff 16x^2-9y^2=144$$
+  よって $\dfrac{x^2}{9}-\dfrac{y^2}{16}=1$。
+
+  逆に、この曲線上の点では $(x-5)^2+y^2=x^2-10x+25+\dfrac{16}{9}x^2-16=\left(\dfrac{5}{3}x-3\right)^2$ より $\mathrm{PF}=\left|\dfrac{5}{3}x-3\right|$、同様に $\mathrm{PF'}=\left|\dfrac{5}{3}x+3\right|$ で、$|x|\geqq 3$ から $|\mathrm{PF}-\mathrm{PF'}|=6$ が成り立つ。したがって
+  $$H:\ \frac{x^2}{9}-\frac{y^2}{16}=1$$
+
+  (2) $\dfrac{x^2}{9}-\dfrac{y^2}{16}=0$ より $\dfrac{x}{3}\pm\dfrac{y}{4}=0$、すなわち漸近線は $y=\dfrac{4}{3}x,\ y=-\dfrac{4}{3}x$。
+
+  (3) (1) より $H$ 上の点で $\mathrm{PF}=\left|\dfrac{5}{3}x-3\right|$。$x\leqq -3$ の枝では $\mathrm{PF}=3-\dfrac{5}{3}x\geqq 8$ なので $\mathrm{PF}=4$ とならない。$x\geqq 3$ の枝では $\mathrm{PF}=\dfrac{5}{3}x-3=4$ より $x=\dfrac{21}{5}$。このとき
+  $$y^2=16\left(\frac{x^2}{9}-1\right)=16\cdot\frac{441-225}{225}=\frac{384}{25},\qquad y=\pm\frac{8\sqrt{6}}{5}$$
+  よって $\mathrm{P}\left(\dfrac{21}{5},\ \dfrac{8\sqrt{6}}{5}\right),\ \left(\dfrac{21}{5},\ -\dfrac{8\sqrt{6}}{5}\right)$。
+
+  （検算: $\mathrm{PF'}=\dfrac{5}{3}\cdot\dfrac{21}{5}+3=10$ で、$\mathrm{PF'}-\mathrm{PF}=6$。）
+rubric:
+  - id: r1
+    criterion: 距離の差の条件を式に表し、2回の2乗を正しく行って $16x^2-9y^2=144$（$\dfrac{x^2}{9}-\dfrac{y^2}{16}=1$）を導いている
+    points: 3
+    keywords: ["16x^2-9y^2=144", "x^2/9-y^2/16=1"]
+  - id: r2
+    criterion: 得られた曲線上の点が実際に $|\mathrm{PF}-\mathrm{PF'}|=6$ を満たすこと（逆）を確かめている、または同値変形であることを明示している
+    points: 2
+    keywords: ["逆に", "5/3x-3"]
+  - id: r3
+    criterion: 漸近線 $y=\pm\dfrac{4}{3}x$ を正しく求めている
+    points: 2
+    keywords: ["y=±4/3x", "4/3"]
+  - id: r4
+    criterion: $\mathrm{PF}=4$ となる点が $x>0$ の枝にしかないことを、$\mathrm{PF}$ を $x$ で表すか連立方程式を解くことで正しく判断し、$x=\dfrac{21}{5}$ を得ている
+    points: 2
+    keywords: ["21/5"]
+  - id: r5
+    criterion: $y=\pm\dfrac{8\sqrt{6}}{5}$ を求め、2点の座標を答えている
+    points: 1
+    keywords: ["8√6/5"]
+solution: |
+  双曲線の定義（2焦点からの距離の差の絶対値が一定）から、焦点 $(\pm c,\ 0)$、差 $2a$ のとき $b^2=c^2-a^2$ として $\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1$ が得られる。ここでは $a=3,\ c=5$ から $b=4$。(3) は $\mathrm{PF}^2=(x-5)^2+y^2=16$ と $H$ の方程式を連立してもよい（$y^2$ を消去して $25x^2-90x-63=0$、$x=\dfrac{21}{5},\ -\dfrac{3}{5}$ のうち $|x|\geqq 3$ を満たすのは $\dfrac{21}{5}$）。
+concepts: [cv-hyperbola]
+misconceptions: [mc-cv-sum-diff, mc-cv-asymptote-slope]
+targetSeconds: 720
+irt: { expectedCorrectRate: 0.45, discrimination: 1.2 }
+author:
+  intent: |
+    双曲線の方程式を公式の暗記ではなく定義から導けるかをみる。2回の2乗という計算の山を越えられるか、2乗による同値性の崩れを意識できるか（逆の確認）を採点で分けた。(3) は連立方程式から出る $x=-\dfrac{3}{5}$ が $|x|\geqq 3$ を満たさず不適であることに気づくかで、曲線の存在範囲を意識しているかを識別する。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学C (2) ア(ア) 放物線・楕円・双曲線が2次式で表されること]
+  variations:
+    - 2点 $(0,\ \pm 5)$ からの距離の差が $8$ である点の軌跡を求めさせ、焦点が $y$ 軸上の双曲線の形を確かめさせる。
+    - 楕円 $\dfrac{x^2}{25}+\dfrac{y^2}{9}=1$ 上の点 $\mathrm{P}$ で $\mathrm{PF}=a-ex$ となることを示させ、焦点距離が $x$ の1次式で表せることを楕円でも確かめさせる。

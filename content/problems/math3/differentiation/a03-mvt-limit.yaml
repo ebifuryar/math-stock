@@ -1,0 +1,41 @@
+id: m3-df-a03
+level: applied
+format: mark
+title: 近似式と平均値の定理による極限
+stem: |
+  (1) $|h|$ が十分小さいときの1次の近似式 $(1+h)^{\frac{1}{3}}\fallingdotseq 1+\dfrac{h}{3}$ を用いると、$\sqrt[3]{8.12}=2\left(1+0.015\right)^{\frac{1}{3}}$ の近似値は $\boxed{\text{ア}}.\boxed{\text{イウ}}$ である。
+
+  (2) 関数 $f(t)=e^t$ に、区間 $\left[\dfrac{2}{x+1},\ \dfrac{2}{x}\right]$（$x>0$）で平均値の定理を用いると
+  $$e^{\frac{2}{x}}-e^{\frac{2}{x+1}}=\frac{\boxed{\text{エ}}\,e^{c}}{x(x+\boxed{\text{オ}})},\qquad \frac{2}{x+1}<c<\frac{2}{x}$$
+  を満たす $c$ が存在する。
+
+  (3) (2) を用いると
+  $$\lim_{x\to\infty}x^2\left(e^{\frac{2}{x}}-e^{\frac{2}{x+1}}\right)=\boxed{\text{カ}}$$
+  である。
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イウ, answer: "01" }
+  - { label: エ, answer: "2" }
+  - { label: オ, answer: "1" }
+  - { label: カ, answer: "2" }
+solution: |
+  (1) $\sqrt[3]{8.12}=\sqrt[3]{8}\cdot\sqrt[3]{1.015}=2(1+0.015)^{\frac{1}{3}}\fallingdotseq 2\left(1+\dfrac{0.015}{3}\right)=2\times 1.005=2.01$。
+
+  (2) $f(t)=e^t$ はすべての実数で微分可能で $f'(t)=e^t$。平均値の定理により
+  $$e^{\frac{2}{x}}-e^{\frac{2}{x+1}}=e^c\left(\frac{2}{x}-\frac{2}{x+1}\right)=\frac{2e^c}{x(x+1)},\qquad \frac{2}{x+1}<c<\frac{2}{x}$$
+  を満たす $c$ が存在する。
+
+  (3) $x\to\infty$ のとき $\dfrac{2}{x+1}\to 0,\ \dfrac{2}{x}\to 0$ なので、はさみうちの原理により $c\to 0$、よって $e^c\to 1$。
+  $$x^2\left(e^{\frac{2}{x}}-e^{\frac{2}{x+1}}\right)=\frac{2x}{x+1}\cdot e^c\to 2\cdot 1=2$$
+concepts: [df-mean-value, df-applications]
+misconceptions: []
+targetSeconds: 360
+irt: { expectedCorrectRate: 0.52, discrimination: 1.1 }
+author:
+  intent: |
+    1次の近似式と平均値の定理は、どちらも「$f(b)-f(a)$ を導関数で表す」考え方である。(1) で近似式の基本を確認し、(2)〜(3) で平均値の定理を極限の計算に使えるかをみる。(3) では $c$ が $x$ とともに変わることを意識し、$c$ の範囲からはさみうちで $c\to 0$ を導く手順が要点となる。$e^{\frac{2}{x}}-e^{\frac{2}{x+1}}$ を2つの極限に分けて $0$ と答える誤り（$\infty\times 0$ の不定形の処理の失敗）を識別する。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学III (2) ア(ウ) 平均値の定理", "数学III (2) イ(イ) 導関数の応用（近似式）"]
+  variations:
+    - $\displaystyle\lim_{x\to 0}\frac{e^x-e^{\sin x}}{x-\sin x}$（答 $1$）を平均値の定理で求めさせる。
+    - $f(t)=\log t$ に平均値の定理を用いて、$0<a<b$ のとき $\dfrac{b-a}{b}<\log\dfrac{b}{a}<\dfrac{b-a}{a}$ を示させる。

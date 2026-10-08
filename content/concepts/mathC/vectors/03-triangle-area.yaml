@@ -1,0 +1,14 @@
+id: vc-triangle-area
+kind: formula
+title: ベクトルによる三角形の面積
+body: |
+  $\overrightarrow{\mathrm{OA}}=\vec a,\ \overrightarrow{\mathrm{OB}}=\vec b$ のとき、$S=\dfrac{1}{2}|\vec a||\vec b|\sin\theta$ に $\sin\theta=\sqrt{1-\cos^2\theta}$ を代入して
+  $$\triangle\mathrm{OAB}=\frac{1}{2}\sqrt{|\vec a|^2|\vec b|^2-(\vec a\cdot\vec b)^2}$$
+
+  成分 $\vec a=(a_1,a_2),\ \vec b=(b_1,b_2)$ で表すと根号がはずれて
+  $$\triangle\mathrm{OAB}=\frac{1}{2}|a_1b_2-a_2b_1|$$
+
+  - 3点 $\mathrm{A},\ \mathrm{B},\ \mathrm{C}$ が与えられたときは、1つの頂点を始点にして $\overrightarrow{\mathrm{AB}},\ \overrightarrow{\mathrm{AC}}$ に適用する。
+  - 根号の形の公式は **空間でもそのまま使える**（成分の公式は平面のみ）。
+  - $(\vec a\cdot\vec b)^2$ は内積を先に計算してから2乗する。
+prerequisites: [vc-inner-product, tg-area]

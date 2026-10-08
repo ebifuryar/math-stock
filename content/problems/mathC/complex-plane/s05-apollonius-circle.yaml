@@ -1,0 +1,72 @@
+id: mc-cp-s05
+level: school
+format: written
+title: 距離の比が一定な点の描く図形
+stem: |
+  複素数平面上に2点 $\mathrm{A}(2i),\ \mathrm{B}(-i)$ がある。
+
+  (1) 線分 $\mathrm{AB}$ を $2:1$ に内分する点 $\mathrm{P}$ と、$2:1$ に外分する点 $\mathrm{Q}$ を表す複素数をそれぞれ求めよ。
+
+  (2) 等式 $|z-2i|=2|z+i|$ を満たす点 $z$ 全体はどのような図形か。$|z|^2=z\overline{z}$ を用いて求め、それが線分 $\mathrm{PQ}$ を直径とする円であることを確かめよ。
+
+  (3) 点 $z$ が (2) の図形上を動くとき、$|z|$ の最大値と、そのときの $z$ を求めよ。
+modelAnswer: |
+  (1) 内分点・外分点の公式より
+  $$\mathrm{P}:\ \frac{1\cdot 2i+2\cdot(-i)}{2+1}=0,\qquad \mathrm{Q}:\ \frac{-1\cdot 2i+2\cdot(-i)}{2-1}=-4i$$
+  よって $\mathrm{P}$ は $0$、$\mathrm{Q}$ は $-4i$。
+
+  (2) 両辺は $0$ 以上なので、2乗した $|z-2i|^2=4|z+i|^2$ と同値である。$\overline{2i}=-2i,\ \overline{i}=-i$ に注意して
+  $$(z-2i)(\overline{z}+2i)=4(z+i)(\overline{z}-i)$$
+  $$z\overline{z}+2iz-2i\overline{z}+4=4z\overline{z}-4iz+4i\overline{z}+4$$
+  整理すると
+  $$3z\overline{z}-6iz+6i\overline{z}=0\qquad\text{すなわち}\qquad z\overline{z}-2iz+2i\overline{z}=0$$
+  $(z+2i)(\overline{z}-2i)=z\overline{z}-2iz+2i\overline{z}+4$ であるから
+  $$(z+2i)(\overline{z}-2i)=4\qquad\text{すなわち}\qquad |z+2i|^2=4,\quad |z+2i|=2$$
+  よって、求める図形は **点 $-2i$ を中心とする半径 $2$ の円** である。
+
+  線分 $\mathrm{PQ}$ の中点は $\dfrac{0+(-4i)}{2}=-2i$、$\mathrm{PQ}=|-4i-0|=4$ なので、線分 $\mathrm{PQ}$ を直径とする円は中心 $-2i$、半径 $2$ の円であり、上の図形と一致する。
+
+  (3) 原点 $\mathrm{O}$ は (2) の円上の点 $\mathrm{P}$ である。円上の点 $z$ と $\mathrm{O}$ の距離 $|z|$ は、$z$ が $\mathrm{O}$ と直径の反対側の端点にあるとき最大で、その値は直径 $4$。
+
+  したがって **最大値 $4$（$z=-4i$ のとき）**。
+rubric:
+  - id: r1
+    criterion: (1) で内分点・外分点の公式を正しく用い、$\mathrm{P}=0,\ \mathrm{Q}=-4i$ を求めている
+    points: 2
+    keywords: ["-4i", "内分", "外分"]
+  - id: r2
+    criterion: (2) で両辺を2乗し、$|w|^2=w\overline{w}$ を用いて $(z-2i)(\overline{z}+2i)=4(z+i)(\overline{z}-i)$ と、共役を正しくとって立式している
+    points: 2
+    keywords: ["(z-2i)(z̄+2i)", "zz̄", "共役"]
+  - id: r3
+    criterion: 展開・整理して $z\overline{z}-2iz+2i\overline{z}=0$ を導き、$|z+2i|=2$ の形にまとめている（$z=x+yi$ とおいて $x^2+(y+2)^2=4$ を導いても可）
+    points: 3
+    keywords: ["|z+2i|=2", "x^2+(y+2)^2=4"]
+  - id: r4
+    criterion: 図形が中心 $-2i$・半径 $2$ の円であると答え、線分 $\mathrm{PQ}$ の中点と長さから $\mathrm{PQ}$ を直径とする円と一致することを確かめている
+    points: 1
+    keywords: ["中心-2i", "半径2", "直径"]
+  - id: r5
+    criterion: (3) で原点が円周上にあることを用いて、$|z|$ の最大値 $4$ と $z=-4i$ を答えている
+    points: 2
+    keywords: ["最大値4", "z=-4i"]
+solution: |
+  (1) 内分は $\dfrac{n\alpha+m\beta}{m+n}$、外分は $\dfrac{-n\alpha+m\beta}{m-n}$（$m:n=2:1$）で、$\mathrm{P}=0,\ \mathrm{Q}=-4i$。
+
+  (2) $|z-2i|=2|z+i|$ は「$\mathrm{A}$ からの距離が $\mathrm{B}$ からの距離の2倍」という条件で、アポロニウスの円になる。2乗して $|w|^2=w\overline{w}$ で展開すると $z\overline{z}-2iz+2i\overline{z}=0$、平方完成に当たる変形で $|z+2i|=2$。中心 $-2i$、半径 $2$ の円で、確かに $\mathrm{P}(0),\ \mathrm{Q}(-4i)$ を直径の両端とする。
+
+  $|z-2i|^2$ を $(z-2i)^2$ と展開すると、$z\overline{z}$ が現れず図形が求まらない。
+
+  (3) 円は原点を通るので、$|z|$ の最大値は直径 $4$（$z=-4i$）、最小値は $0$（$z=0$）。
+concepts: [cp-figures, cp-distance-division, cp-conjugate-abs]
+misconceptions: [mc-cp-abs-square]
+targetSeconds: 480
+irt: { expectedCorrectRate: 0.6, discrimination: 1.2 }
+author:
+  intent: |
+    $|z-\alpha|=k|z-\beta|$ 型の条件を、$|w|^2=w\overline{w}$ を用いて複素数のまま処理できるかと、それがアポロニウスの円（内分点・外分点を直径の両端とする円）になることを結び付けられるかをみる。(1) を先に問うことで、計算結果を図形的に検証する手段を与えている。共役のとり方（$\overline{2i}=-2i$）の誤り、$|z-2i|^2$ を $(z-2i)^2$ とする誤り、最後の平方完成に当たる変形ができない答案を、r2・r3 で区別する。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学C (2) ア(エ) 複素数平面における図形の移動など（複素数の表す図形）, 数学II (2) ア(ア) 座標を用いた内分点・外分点]
+  variations:
+    - $|z-3|=2|z|$ を満たす点 $z$ の図形を求めさせ、中心 $-1$・半径 $2$ の円になることを確かめさせる。
+    - $|z-1|=|z+i|$ のように比が $1$ の場合を扱い、垂直二等分線になることと対比させる。

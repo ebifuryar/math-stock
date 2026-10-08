@@ -1,0 +1,14 @@
+id: ig-area-length
+kind: formula
+title: 面積と曲線の長さ（媒介変数表示を含む）
+body: |
+  **面積**: $a\leqq x\leqq b$ で $f(x)\geqq g(x)$ のとき $\displaystyle S=\int_a^b\{f(x)-g(x)\}\,dx$。$y$ について積分するほうが楽なら $\displaystyle S=\int_c^d x\,dy$ の形も使う。
+
+  **媒介変数表示の曲線**: $x=f(t),\ y=g(t)$ で、$x$ 軸との間の面積は $\displaystyle S=\int_a^b y\,dx$ を置換積分で $t$ の積分に直す。
+  $$S=\int_{\alpha}^{\beta}g(t)\,f'(t)\,dt\qquad(x=a\leftrightarrow t=\alpha,\ x=b\leftrightarrow t=\beta)$$
+  区間は $x$ の小さいほう ($a$) に対応する $t$ を下端にする。$t$ が増えると $x$ が減る部分では、$t$ の区間の向きが逆になることに注意する。曲線が対称なら、対称性で一部分に絞ってから計算する。
+
+  **曲線の長さ**:
+  $$L=\int_\alpha^\beta\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}\,dt,\qquad y=f(x)\ \text{なら}\ L=\int_a^b\sqrt{1+\{f'(x)\}^2}\,dx$$
+  根号の中は「導関数の2乗の和」であり、$\sqrt{p^2+q^2}\neq p+q$。根号を外すには $1-\cos t=2\sin^2\dfrac{t}{2}$ などで平方の形を作り、$\sqrt{A^2}=|A|$ の符号を区間で確かめる。
+prerequisites: [cl-area, ig-substitution, df-implicit-parametric]

@@ -1,0 +1,61 @@
+id: m3-lm-e03
+level: exam
+format: mark
+title: 無限に続く図形の操作と周の長さ・面積の極限
+stem: |
+  1辺の長さが $1$ の正三角形を図形 $P_0$ とする。図形 $P_n$（$n=0,\ 1,\ 2,\ \cdots$）から図形 $P_{n+1}$ を次の操作で作る。
+
+  **操作**: $P_n$ の周をなす各辺を3等分し、3等分した中央の線分を1辺とする正三角形を $P_n$ の外側に付け加え、その中央の線分を取り除く。
+
+  この操作では、付け加えた正三角形どうし、および付け加えた正三角形ともとの図形は、辺や頂点以外で重ならないことが知られている。たとえば $P_1$ は、正三角形の各辺の中央に小さな正三角形が付いた、辺の数が $12$ の星形の図形である。
+
+  (1) $P_n$ の辺の数は $\boxed{\text{ア}}\cdot\boxed{\text{イ}}^{\,n}$、1辺の長さは $\left(\dfrac{1}{\boxed{\text{ウ}}}\right)^n$ である。したがって $P_n$ の周の長さ $L_n$ は
+  $$L_n=\boxed{\text{エ}}\left(\frac{\boxed{\text{オ}}}{\boxed{\text{カ}}}\right)^n$$
+  であり、$n\to\infty$ のとき $L_n$ は正の無限大に発散する。
+
+  (2) $P_n$ の面積を $S_n$ とすると
+  $$S_{n+1}-S_n=\frac{\sqrt{\boxed{\text{キ}}}}{\boxed{\text{クケ}}}\left(\frac{\boxed{\text{コ}}}{\boxed{\text{サ}}}\right)^n$$
+  である。
+
+  (3) 
+  $$\lim_{n\to\infty}S_n=\frac{\boxed{\text{シ}}\sqrt{\boxed{\text{ス}}}}{\boxed{\text{セ}}}$$
+  である。
+blanks:
+  - { label: ア, answer: "3" }
+  - { label: イ, answer: "4" }
+  - { label: ウ, answer: "3" }
+  - { label: エ, answer: "3" }
+  - { label: オ, answer: "4" }
+  - { label: カ, answer: "3" }
+  - { label: キ, answer: "3" }
+  - { label: クケ, answer: "12" }
+  - { label: コ, answer: "4" }
+  - { label: サ, answer: "9" }
+  - { label: シ, answer: "2" }
+  - { label: ス, answer: "3" }
+  - { label: セ, answer: "5" }
+solution: |
+  (1) 1回の操作で、1本の辺は長さ $\dfrac{1}{3}$ 倍の辺 $4$ 本（両端の2本と、付け加えた正三角形の2辺）に置き換わる。よって辺の数は $3\cdot 4^n$、1辺の長さは $\left(\dfrac{1}{3}\right)^n$。
+  $$L_n=3\cdot 4^n\cdot\left(\frac{1}{3}\right)^n=3\left(\frac{4}{3}\right)^n\to\infty\quad\left(\frac{4}{3}>1\right)$$
+
+  (2) $P_n$ から $P_{n+1}$ を作るとき、$P_n$ の辺 $3\cdot 4^n$ 本それぞれに、1辺の長さ $\left(\dfrac{1}{3}\right)^{n+1}$ の正三角形が1個ずつ加わる。1辺 $s$ の正三角形の面積は $\dfrac{\sqrt{3}}{4}s^2$ なので
+  $$S_{n+1}-S_n=3\cdot 4^n\cdot\frac{\sqrt{3}}{4}\cdot\frac{1}{9^{n+1}}=\frac{3\sqrt{3}}{4\cdot 9}\cdot\left(\frac{4}{9}\right)^n=\frac{\sqrt{3}}{12}\left(\frac{4}{9}\right)^n$$
+
+  (3) $S_0=\dfrac{\sqrt{3}}{4}$ で、$n\geqq 1$ のとき
+  $$S_n=S_0+\sum_{k=0}^{n-1}\frac{\sqrt{3}}{12}\left(\frac{4}{9}\right)^k$$
+  公比 $\dfrac{4}{9}$ は $\left|\dfrac{4}{9}\right|<1$ なので収束し
+  $$\lim_{n\to\infty}S_n=\frac{\sqrt{3}}{4}+\frac{\frac{\sqrt{3}}{12}}{1-\frac{4}{9}}=\frac{\sqrt{3}}{4}+\frac{3\sqrt{3}}{20}=\frac{8\sqrt{3}}{20}=\frac{2\sqrt{3}}{5}$$
+
+  周の長さは発散するのに、面積はもとの正三角形の $\dfrac{8}{5}$ 倍に収束する。
+concepts: [lm-infinite-series, lm-geometric-limit]
+misconceptions: [mc-lm-geometric-series-condition]
+targetSeconds: 720
+irt: { expectedCorrectRate: 0.35, discrimination: 1.3 }
+author:
+  intent: |
+    図形の操作を無限に繰り返す問題で、「個数」と「1個あたりの大きさ」の両方が等比的に変化することを読み取り、増加分の公比を $4\times\dfrac{1}{9}=\dfrac{4}{9}$ と正しく組み立てられるかをみる。1個あたりの面積比 $\dfrac{1}{9}$ だけを公比とする誤り、増加分の和を $\left(\dfrac{4}{9}\right)^1$ の項から始めて初項を取り違える誤り（正しくは $S_1-S_0=\dfrac{\sqrt{3}}{12}$ が初項）、$S_0$ を足し忘れる誤りで差がつく。周の長さ（公比 $\dfrac{4}{3}>1$ で発散）と面積（公比 $\dfrac{4}{9}<1$ で収束）の対比から、公比と収束条件の結びつきも確認できる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学III (1) ア(イ) 無限級数の和", "数学III (1) イ(ウ) 極限に着目した事象の考察"]
+  variations:
+    - 付け加える正三角形を内側に向ける（反コッホ曲線）として、面積の極限 $\dfrac{\sqrt{3}}{4}\cdot\dfrac{2}{5}$ を求めさせる。
+    - 正方形の各辺の中央 $\dfrac{1}{3}$ に正方形を付け加える操作にし、重なりが生じないかの吟味を含めて面積の極限を問う。

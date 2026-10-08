@@ -1,0 +1,48 @@
+id: m3-ig-e01
+level: exam
+format: choice
+title: y 軸のまわりの回転体の体積
+stem: |
+  曲線 $y=\sin x\ (0\leqq x\leqq\pi)$ と $x$ 軸で囲まれた部分を、$y$ 軸のまわりに1回転してできる立体の体積 $V$ として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\dfrac{\pi^2}{2}$
+    misconception: mc-ig-volume-formula
+    rationale: |
+      $y$ 軸まわりなのに $x$ 軸まわりの公式 $\pi\displaystyle\int_0^\pi\sin^2x\,dx=\frac{\pi^2}{2}$ を使っている。これは同じ部分を $x$ 軸のまわりに回転した立体の体積である。
+  - id: "2"
+    text: $4\pi^2-8\pi$
+    misconception: mc-ig-washer
+    rationale: |
+      高さ $y$ での断面を、外側の $x_2=\pi-x_1$ と内側の $x_1$ の差 $x_2-x_1$ を半径とする円とみなし、$\pi\displaystyle\int_0^1(x_2-x_1)^2\,dy=4\pi(\pi-2)$ としている。断面は外径 $x_2$・内径 $x_1$ の円環で、面積は $\pi(x_2^2-x_1^2)$。
+  - id: "3"
+    text: $\dfrac{\pi^3}{4}+2\pi^2-2\pi$
+    rationale: |
+      外側の曲線（$\dfrac{\pi}{2}\leqq x\leqq\pi$ の部分）による回転体 $\pi\displaystyle\int_0^1x_2^2\,dy$ だけを求め、内側の曲線（$0\leqq x\leqq\dfrac{\pi}{2}$ の部分）がくりぬく空洞 $\pi\displaystyle\int_0^1x_1^2\,dy$ を引き忘れている。
+  - id: "4"
+    text: $2\pi^2$
+    rationale: |
+      正解。高さ $y$ での断面は外径 $x_2$・内径 $x_1$ の円環で、$V=\pi\displaystyle\int_0^1(x_2^2-x_1^2)\,dy=-\pi\int_0^\pi x^2\cos x\,dx=2\pi^2$。
+answer: "4"
+solution: |
+  $0\leqq y\leqq 1$ を満たす $y$ に対して、$\sin x=y$ となる $x$ を $x_1\ \left(0\leqq x_1\leqq\dfrac{\pi}{2}\right)$、$x_2=\pi-x_1\ \left(\dfrac{\pi}{2}\leqq x_2\leqq\pi\right)$ とする。$y$ 軸に垂直な高さ $y$ の平面による断面は、外径 $x_2$・内径 $x_1$ の円環なので
+  $$V=\pi\int_0^1x_2^2\,dy-\pi\int_0^1x_1^2\,dy$$
+  それぞれ $y=\sin x,\ dy=\cos x\,dx$ と置換する。第1項は $y:0\to 1$ に $x:\pi\to\dfrac{\pi}{2}$、第2項は $x:0\to\dfrac{\pi}{2}$ が対応するので
+  $$V=\pi\int_{\pi}^{\frac{\pi}{2}}x^2\cos x\,dx-\pi\int_0^{\frac{\pi}{2}}x^2\cos x\,dx=-\pi\int_0^{\pi}x^2\cos x\,dx$$
+  部分積分を2回行うと
+  $$\int_0^\pi x^2\cos x\,dx=\Big[x^2\sin x\Big]_0^\pi-2\int_0^\pi x\sin x\,dx=0-2\pi=-2\pi$$
+  よって $V=2\pi^2$。
+
+  （検算）$y$ 軸まわりの回転体は $V=2\pi\displaystyle\int_0^\pi x\sin x\,dx=2\pi\cdot\pi=2\pi^2$ とも求められる。
+concepts: [ig-volume, ig-substitution, ig-by-parts]
+misconceptions: [mc-ig-volume-formula, mc-ig-washer]
+targetSeconds: 600
+irt: { expectedCorrectRate: 0.35, discrimination: 1.4 }
+author:
+  intent: |
+    $y$ 軸のまわりの回転体で、(i) $y$ で積分すること、(ii) 断面が円環であること、(iii) $x$ を $y$ で表せない（$\sin x=y$ を解けない）ので置換で $x$ の積分に戻すこと、の3段階を最後までやり切れるかをみる。①は軸の取り違え、②は円環を「差の2乗」で処理する誤り、③は空洞の引き忘れで、それぞれ数値が異なるように設計した。置換後の区間が $\pi\to\dfrac{\pi}{2}$ と逆向きになる点も、区間の管理力を問う要素である。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学III (3) イ(イ) 定積分を用いた面積・体積・曲線の長さ"]
+  variations:
+    - 曲線 $y=\cos x\ \left(0\leqq x\leqq\dfrac{\pi}{2}\right)$ と $x$ 軸・$y$ 軸で囲まれた部分を $y$ 軸のまわりに回転させる（$\pi^2-2\pi$、空洞なし）。
+    - 記述式にして、$2\pi\displaystyle\int xf(x)\,dx$ の公式を使わずに $y$ による積分から導かせる。

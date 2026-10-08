@@ -1,0 +1,39 @@
+id: m3-ig-s04
+level: school
+format: mark
+title: 部分積分と偶関数・奇関数
+stem: |
+  (1) $\displaystyle\int_1^e x\log x\,dx=\frac{e^2+\boxed{\text{ア}}}{\boxed{\text{イ}}}$ である。
+
+  (2) $\displaystyle\int_{-\pi}^{\pi}(x+x^2)\sin x\,dx=\boxed{\text{ウ}}\,\pi$ である。
+
+  (3) $\displaystyle\int_1^e(\log x)^2\,dx=e-\boxed{\text{エ}}$ である。
+
+  ただし、分数は既約分数で答えよ。
+blanks:
+  - { label: ア, answer: "1" }
+  - { label: イ, answer: "4" }
+  - { label: ウ, answer: "2" }
+  - { label: エ, answer: "2" }
+solution: |
+  (1) $\log x$ を微分する側、$x$ を積分する側にとる。
+  $$\int_1^e x\log x\,dx=\left[\frac{x^2}{2}\log x\right]_1^e-\int_1^e\frac{x^2}{2}\cdot\frac{1}{x}\,dx=\frac{e^2}{2}-\left[\frac{x^2}{4}\right]_1^e=\frac{e^2}{2}-\frac{e^2-1}{4}=\frac{e^2+1}{4}$$
+
+  (2) $x\sin x$ は偶関数、$x^2\sin x$ は奇関数なので
+  $$\int_{-\pi}^{\pi}(x+x^2)\sin x\,dx=2\int_0^{\pi}x\sin x\,dx+0$$
+  部分積分で $\displaystyle\int_0^\pi x\sin x\,dx=\Big[-x\cos x\Big]_0^\pi+\int_0^\pi\cos x\,dx=\pi+0=\pi$。よって $2\pi$。
+
+  (3) $(\log x)^2=(x)'(\log x)^2$ とみて
+  $$\int_1^e(\log x)^2\,dx=\Big[x(\log x)^2\Big]_1^e-\int_1^e x\cdot\frac{2\log x}{x}\,dx=e-2\Big[x\log x-x\Big]_1^e=e-2\{0-(-1)\}=e-2$$
+concepts: [ig-by-parts, ig-definite-properties]
+misconceptions: [mc-ig-parts-choice]
+targetSeconds: 420
+irt: { expectedCorrectRate: 0.65, discrimination: 1.1 }
+author:
+  intent: |
+    部分積分で「どちらを微分するか」を正しく選べるかを、$\log x$ を含む2題で確かめる。(1) で $x$ を微分する側にすると $\displaystyle\int\log x\,dx$ の知識が必要になって行き詰まり、(3) は「$1\cdot(\log x)^2$ とみて $1$ を積分する」発想が必要。(2) は偶関数・奇関数の性質を使えば $x^2\sin x$ の部分積分2回を省けることに気づくかをみる（気づかなくても計算はできるが時間差がつく）。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: ["数学III (3) ア(イ) 置換積分法・部分積分法"]
+  variations:
+    - $\displaystyle\int_0^1 x^2e^x\,dx$（$=e-2$）のように部分積分を2回繰り返す形にする。
+    - (2) を $\displaystyle\int_{-\pi}^{\pi}(x+x^2)\cos x\,dx$（$=-4\pi$）に変え、どちらの項が残るかを入れ替える。

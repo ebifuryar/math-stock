@@ -1,0 +1,50 @@
+id: m3-ig-a03
+level: applied
+format: mark
+title: 両端に x を含む定積分で表された関数の最大値
+stem: |
+  $x>0$ に対して、関数 $F(x)$ を
+  $$F(x)=\int_x^{2x}te^{-t}\,dt$$
+  で定める。
+
+  (1) 部分積分法により
+  $$\int te^{-t}\,dt=-\left(t+\boxed{\text{ア}}\right)e^{-t}+C\quad(C\ \text{は積分定数})$$
+  である。
+
+  (2) $F(x)$ の導関数は
+  $$F'(x)=xe^{-2x}\left(\boxed{\text{イ}}-e^{x}\right)$$
+  である。
+
+  (3) $F(x)$ は $x=\log\boxed{\text{ウ}}$ で最大となり、最大値は
+  $$\frac{\boxed{\text{エ}}\log 2+\boxed{\text{オ}}}{\boxed{\text{カキ}}}$$
+  である。
+blanks:
+  - { label: ア, answer: "1" }
+  - { label: イ, answer: "4" }
+  - { label: ウ, answer: "4" }
+  - { label: エ, answer: "4" }
+  - { label: オ, answer: "3" }
+  - { label: カキ, answer: "16" }
+solution: |
+  (1) $t$ を微分、$e^{-t}$ を積分する側にとって
+  $$\int te^{-t}\,dt=-te^{-t}+\int e^{-t}\,dt=-te^{-t}-e^{-t}+C=-(t+1)e^{-t}+C$$
+
+  (2) $f(t)=te^{-t}$ とすると、$\dfrac{d}{dx}\displaystyle\int_x^{2x}f(t)\,dt=f(2x)\cdot(2x)'-f(x)\cdot(x)'$ なので
+  $$F'(x)=2\cdot 2xe^{-2x}-xe^{-x}=xe^{-2x}\left(4-e^{x}\right)$$
+
+  (3) $x>0$ では $xe^{-2x}>0$ なので、$F'(x)$ の符号は $4-e^x$ の符号と一致する。$0<x<\log 4$ で $F'(x)>0$、$x>\log 4$ で $F'(x)<0$ だから、$F(x)$ は $x=\log 4$ で最大となる。(1) より
+  $$F(x)=\Big[-(t+1)e^{-t}\Big]_x^{2x}=(x+1)e^{-x}-(2x+1)e^{-2x}$$
+  $x=\log 4=2\log 2$ のとき $e^{-x}=\dfrac{1}{4},\ e^{-2x}=\dfrac{1}{16}$ なので
+  $$F(\log 4)=\frac{2\log 2+1}{4}-\frac{4\log 2+1}{16}=\frac{4\log 2+3}{16}$$
+concepts: [ig-definite-properties, ig-by-parts]
+misconceptions: [mc-ig-inner-function, mc-cl-integral-function-constant]
+targetSeconds: 600
+irt: { expectedCorrectRate: 0.45, discrimination: 1.3 }
+author:
+  intent: |
+    上端・下端の両方に $x$ を含む定積分で表された関数を、合成関数の微分を用いて微分できるかをみる。上端 $2x$ の微分係数 $2$ を掛け忘れると $F'(x)=xe^{-2x}(2-e^x)$ となってイに $2$ と答え、以降の最大点も $x=\log 2$ にずれるので、イで誤りの種類を識別できる。(1) の部分積分の結果を (3) で再利用させ、最大値を整理する計算力（$e^{-2\log 2}=\dfrac{1}{4}$ など）もみる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学III (3) ア(イ) 置換積分法・部分積分法", "数学III (2) イ(ア) 導関数を用いた関数の考察"]
+  variations:
+    - $F(x)=\displaystyle\int_0^{x}(x-t)\sin t\,dt$ を $x$ をくくり出してから2回微分させ、$F(x)=x-\sin x$ を導かせる。
+    - $\displaystyle\lim_{x\to 0}\frac{1}{x^2}\int_x^{2x}te^{-t}\,dt$（$=\dfrac{3}{2}$）を、微分係数の定義と結び付けて問う。

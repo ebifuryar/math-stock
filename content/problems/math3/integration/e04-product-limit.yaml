@@ -1,0 +1,46 @@
+id: m3-ig-e04
+level: exam
+format: mark
+title: 区分求積法による積の極限
+stem: |
+  (1) 自然数 $n$ に対して
+  $$a_n=\frac{1}{n}\sqrt[n]{\frac{(2n)!}{n!}}$$
+  とおく。$\dfrac{(2n)!}{n!}=(n+1)(n+2)\cdots(n+n)$ であるから
+  $$\log a_n=\frac{1}{n}\sum_{k=1}^{n}\log\left(1+\frac{k}{n}\right)$$
+  となり、区分求積法により
+  $$\lim_{n\to\infty}\log a_n=\int_0^{\boxed{\text{ア}}}\log(1+x)\,dx=\boxed{\text{イ}}\log 2-\boxed{\text{ウ}}$$
+  である。したがって $\displaystyle\lim_{n\to\infty}a_n=\frac{\boxed{\text{エ}}}{e}$ である。
+
+  (2) 同様にして
+  $$\lim_{n\to\infty}\frac{1}{n}\sqrt[n]{\frac{(3n)!}{(2n)!}}=\frac{\boxed{\text{オカ}}}{\boxed{\text{キ}}\,e}$$
+  である。ただし、分数は既約分数で答えよ。
+blanks:
+  - { label: ア, answer: "1" }
+  - { label: イ, answer: "2" }
+  - { label: ウ, answer: "1" }
+  - { label: エ, answer: "4" }
+  - { label: オカ, answer: "27" }
+  - { label: キ, answer: "4" }
+solution: |
+  (1) $\dfrac{(2n)!}{n!}=\displaystyle\prod_{k=1}^{n}(n+k)=n^n\prod_{k=1}^{n}\left(1+\frac{k}{n}\right)$ なので
+  $$\log a_n=\frac{1}{n}\left\{n\log n+\sum_{k=1}^{n}\log\left(1+\frac{k}{n}\right)\right\}-\log n=\frac{1}{n}\sum_{k=1}^{n}\log\left(1+\frac{k}{n}\right)$$
+  $\dfrac{k}{n}$ は $\dfrac{1}{n}$ から $1$ まで動くので、積分区間は $[0,\ 1]$。部分積分で
+  $$\int_0^1\log(1+x)\,dx=\Big[(1+x)\log(1+x)\Big]_0^1-\int_0^1 dx=2\log 2-1$$
+  $y=e^x$ は連続なので $\displaystyle\lim_{n\to\infty}a_n=e^{2\log 2-1}=\frac{4}{e}$。
+
+  (2) $\dfrac{(3n)!}{(2n)!}=\displaystyle\prod_{k=1}^{n}(2n+k)=n^n\prod_{k=1}^{n}\left(2+\frac{k}{n}\right)$ なので、同様に
+  $$\log\left(\frac{1}{n}\sqrt[n]{\frac{(3n)!}{(2n)!}}\right)=\frac{1}{n}\sum_{k=1}^{n}\log\left(2+\frac{k}{n}\right)\to\int_0^1\log(2+x)\,dx$$
+  $$\int_0^1\log(2+x)\,dx=\Big[(2+x)\log(2+x)-x\Big]_0^1=3\log 3-2\log 2-1=\log\frac{27}{4}-1$$
+  よって極限は $e^{\log\frac{27}{4}-1}=\dfrac{27}{4e}$。
+concepts: [ig-riemann-sum, ig-by-parts]
+misconceptions: [mc-ig-riemann-range]
+targetSeconds: 720
+irt: { expectedCorrectRate: 0.3, discrimination: 1.3 }
+author:
+  intent: |
+    積の形の極限を、対数をとって和に直し区分求積法に持ち込む典型手順を、誘導付きで実行できるかをみる。(1) で手順を示し、(2) で誘導なしに同じ変形（$n^n$ をくくり出して $\log\left(2+\frac{k}{n}\right)$ の和にする）ができるかで上位層を識別する。(2) で $\dfrac{k}{n}$ ではなく $\dfrac{2n+k}{n}$ を $x$ とおいた受験者は積分区間 $[2,\ 3]$ の $\displaystyle\int_2^3\log x\,dx$ となり、これも正しい（同じ値になる）。区間を $[0,\ 3]$ や $[2,\ 3]$ と $\log(2+x)$ の組合せにする誤りは値がずれる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学III (3) イ(イ) 極限や定積分の考えを基にした考察（区分求積法）", "数学III (3) ア(イ) 置換積分法・部分積分法"]
+  variations:
+    - $\displaystyle\lim_{n\to\infty}\frac{\sqrt[n]{n!}}{n}=\frac{1}{e}$ を、$\displaystyle\int_0^1\log x\,dx$（広義積分）を避けて定積分と不等式ではさむ形で証明させる。
+    - $\displaystyle\lim_{n\to\infty}\sqrt[n]{\left(1+\frac{1^2}{n^2}\right)\left(1+\frac{2^2}{n^2}\right)\cdots\left(1+\frac{n^2}{n^2}\right)}$（$=2e^{\frac{\pi}{2}-2}$）を問う。

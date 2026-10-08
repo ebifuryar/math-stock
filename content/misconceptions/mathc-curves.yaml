@@ -1,0 +1,56 @@
+- id: mc-cv-focus-c-formula
+  title: 楕円と双曲線の焦点の公式の混同
+  description: |
+    楕円 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$ の焦点を $c=\sqrt{a^2+b^2}$ で求める（双曲線の公式を流用する）、あるいは双曲線の焦点を $c=\sqrt{a^2-b^2}$ で求める。
+  cause: |
+    $c^2=a^2-b^2$ と $c^2=a^2+b^2$ を、楕円・双曲線の図形的な意味（楕円の焦点は内部にあり $c<a$、双曲線の焦点は頂点より外側にあり $c>a$）と結びつけずに記号だけで覚えている。楕円で $c^2=a^2+b^2$ とすると焦点が楕円の外に出てしまうことで検算していない。
+  remedyConcepts: [cv-ellipse, cv-hyperbola]
+- id: mc-cv-major-axis
+  title: 長軸が y 軸方向の楕円で a, b を取り違える
+  description: |
+    $\dfrac{x^2}{9}+\dfrac{y^2}{25}=1$ のように $y^2$ の分母の方が大きい楕円でも、焦点を $x$ 軸上 $(\pm 4,\ 0)$ に置く、長軸の長さや焦点からの距離の和を $x^2$ の分母から $2\cdot 3=6$ とするなど、「$x^2$ の分母が $a^2$（長半径の2乗）」と決めつけて処理する。
+  cause: |
+    標準形を $a>b$ の場合の形だけで覚え、「分母の大きい方の軸が長軸で、焦点もその軸上にある」という判断をしていない。どちらの軸方向に長いかを、軸との交点 $(\pm 3,\ 0),\ (0,\ \pm 5)$ で確かめる習慣がない。
+  remedyConcepts: [cv-ellipse]
+- id: mc-cv-asymptote-slope
+  title: 双曲線の漸近線の傾き b/a と a/b の混同
+  description: |
+    双曲線 $\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1$ の漸近線を $y=\pm\dfrac{a}{b}x$ とする。または分母そのものを使って $y=\pm\dfrac{b^2}{a^2}x$ とする。
+  cause: |
+    漸近線を公式の形だけで覚えており、「右辺を $0$ にした $\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=0$ を因数分解する」という導き方や、$x$ が大きいとき $y\fallingdotseq\pm\dfrac{b}{a}x$ となる理由を理解していない。
+  remedyConcepts: [cv-hyperbola]
+- id: mc-cv-parabola-focus
+  title: 放物線の焦点の位置（4p と p の取り違え）
+  description: |
+    $y^2=4px$ の係数 $4p$ と焦点の $x$ 座標 $p$ を取り違える。$y^2=12x$ の焦点を $(12,\ 0)$ とする、$y=ax^2$ の焦点を $\left(0,\ \dfrac{a}{4}\right)$ とする（正しくは $\left(0,\ \dfrac{1}{4a}\right)$）など。
+  cause: |
+    標準形 $y^2=4px$ を「焦点 $(p,\ 0)$・準線 $x=-p$ から導いた式」として理解しておらず、係数の $4$ がどこから来たかを意識していない。$y=ax^2$ を $x^2=\dfrac{1}{a}y$ と標準形に直す手順を省いている。
+  remedyConcepts: [cv-parabola]
+- id: mc-cv-sum-diff
+  title: 焦点からの距離の和・差の取り違え
+  description: |
+    楕円の「2焦点からの距離の和 $2a$」を、短軸の長さ $2b$ や焦点間の距離 $2c$ と取り違える。双曲線の距離の差を和と混同する。また、「1つの焦点から楕円上の2点までの距離の和」を2焦点からの距離の和と取り違えて一定 $2a$ とする。
+  cause: |
+    楕円・双曲線の定義（どの2点からの距離の和・差が一定か）を図形として捉えていない。頂点 $(a,\ 0)$ で $\mathrm{PF}+\mathrm{PF'}=(a-c)+(a+c)=2a$ となることを具体的に確かめていない。
+  remedyConcepts: [cv-ellipse, cv-hyperbola]
+- id: mc-cv-param-range
+  title: 媒介変数を消去したときの範囲の制限の見落とし
+  description: |
+    媒介変数を消去して得た方程式の表す図形全体を答える。媒介変数の範囲（$\theta$ の範囲、$|\cos\theta|\leqq 1$、判別式 $D>0$ など）から生じる $x$・$y$ の変域を落とす、端点の値だけで変域を決めて途中の最大・最小を見落とす、等号の有無を誤る。
+  cause: |
+    「媒介変数で表された点 ⇒ 消去後の式を満たす」の一方向しか確かめていない。消去後の式上の点に対応する媒介変数の値が実際に存在するか（逆の確認）を考えていない。
+  remedyConcepts: [cv-parametric, cg-locus]
+- id: mc-cv-polar-sign
+  title: 極座標で偏角の象限や r の符号を無視する
+  description: |
+    直交座標から極座標に直すとき $\tan\theta=\dfrac{y}{x}$ だけで $\theta$ を決め、原点について反対側の点の偏角（$\dfrac{7}{6}\pi$ の代わりに $\dfrac{\pi}{6}$ など）を答える。$r<0$ の点 $(r,\ \theta)$ を $(|r|,\ \theta)$ と同じ点とみなす、指定された $\theta$ の範囲を無視する。
+  cause: |
+    $\tan\theta$ の値が $\theta$ と $\theta+\pi$ で等しいことを意識していない。$\cos\theta=\dfrac{x}{r},\ \sin\theta=\dfrac{y}{r}$ の両方で偏角を決める、あるいは点の位置（象限）で確かめる習慣がない。
+  remedyConcepts: [cv-polar-coordinates]
+- id: mc-cv-tangent-external
+  title: 接線の公式を曲線外の点に適用する
+  description: |
+    曲線外の点 $(p,\ q)$ から楕円に引いた接線を求めるのに、接線の公式 $\dfrac{x_1x}{a^2}+\dfrac{y_1y}{b^2}=1$ に $(x_1,\ y_1)=(p,\ q)$ をそのまま代入する。得られる直線 $\dfrac{px}{a^2}+\dfrac{qy}{b^2}=1$ は2つの接点を結ぶ直線で、接線ではない。
+  cause: |
+    接線の公式が「接点の座標」を代入するものであることを意識していない。得られた直線が $(p,\ q)$ を通るか、曲線と接するか（判別式 $=0$）で検算していない。
+  remedyConcepts: [cv-curve-line]

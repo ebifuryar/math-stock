@@ -1,0 +1,45 @@
+id: mc-vc-s02
+level: school
+format: choice
+title: 成分による内積となす角
+stem: |
+  $\vec a=(2,\ 1),\ \vec b=(-3,\ 1)$ について述べた文として正しいものを、次の①〜④のうちから一つ選べ。ただし、$\vec a$ と $\vec b$ のなす角を $\theta\ (0^\circ\leqq\theta\leqq 180^\circ)$ とする。
+choices:
+  - id: "1"
+    text: $\vec a\cdot\vec b=(-6,\ 1)$ である。
+    misconception: mc-vc-dot-componentwise
+    rationale: |
+      成分ごとの積を並べたところで止めている。内積は実数で、成分の積の **和** $2\cdot(-3)+1\cdot 1=-5$ である。
+  - id: "2"
+    text: $\vec a\cdot\vec b=-5$ であり、$\theta=135^\circ$ である。
+    rationale: |
+      正解。$\cos\theta=\dfrac{-5}{\sqrt{5}\cdot\sqrt{10}}=-\dfrac{1}{\sqrt{2}}$ で、$0^\circ\leqq\theta\leqq 180^\circ$ の範囲では $\theta=135^\circ$。
+  - id: "3"
+    text: $\vec a\cdot\vec b=-5$ であり、$\theta=45^\circ$ である。
+    misconception: mc-vc-angle-range
+    rationale: |
+      $\cos\theta=-\dfrac{1}{\sqrt{2}}$ の符号を無視するか、なす角は鋭角だと決めつけている。内積が負ならなす角は鈍角である。
+  - id: "4"
+    text: $|\vec a+\vec b|=|\vec a|+|\vec b|=\sqrt{5}+\sqrt{10}$ である。
+    misconception: mc-vc-norm-additive
+    rationale: |
+      大きさを足し算している。実際には $\vec a+\vec b=(-1,\ 2)$ なので $|\vec a+\vec b|=\sqrt{5}$ で、$|\vec a|+|\vec b|$ よりずっと小さい（$\vec a$ と $\vec b$ が鈍角をなすため）。
+answer: "2"
+solution: |
+  $$\vec a\cdot\vec b=2\cdot(-3)+1\cdot 1=-5,\qquad |\vec a|=\sqrt{5},\qquad |\vec b|=\sqrt{10}$$
+  $$\cos\theta=\frac{\vec a\cdot\vec b}{|\vec a||\vec b|}=\frac{-5}{\sqrt{50}}=-\frac{1}{\sqrt{2}}$$
+  $0^\circ\leqq\theta\leqq 180^\circ$ より $\theta=135^\circ$。
+
+  また $\vec a+\vec b=(-1,\ 2)$ より $|\vec a+\vec b|=\sqrt{5}$ で、$|\vec a|+|\vec b|=\sqrt{5}+\sqrt{10}$ とは異なる。
+concepts: [vc-inner-product, vc-operations]
+misconceptions: [mc-vc-dot-componentwise, mc-vc-angle-range, mc-vc-norm-additive]
+targetSeconds: 120
+irt: { expectedCorrectRate: 0.75, discrimination: 1.0 }
+author:
+  intent: |
+    内積の成分計算となす角の求め方を、典型的な誤解を含む文の真偽判定として確認する。①は内積をベクトルと思っている受験者、③は $\cos\theta<0$ を処理できない（なす角の範囲を意識していない）受験者、④は大きさを足し算する受験者を拾う。どの誤答を選んだかで、内積の概念のどこに穴があるかを分離できる。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学C (1) ア(イ) ベクトルの内積とその基本的な性質, 数学C (1) ア(ア) ベクトルの成分表示]
+  variations:
+    - $\vec a+t\vec b$ と $\vec a$ が垂直になる $t$ を求めさせる。
+    - なす角が $45^\circ$ になるように $\vec b=(x,\ 1)$ の $x$ を求めさせる（2次方程式の解の吟味が必要）。

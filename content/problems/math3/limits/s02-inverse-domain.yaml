@@ -1,0 +1,45 @@
+id: m3-lm-s02
+level: school
+format: choice
+title: 無理関数の逆関数と定義域
+stem: |
+  関数 $f(x)=\sqrt{x-2}+1\ \ (x\geqq 2)$ の逆関数 $f^{-1}(x)$ として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $f^{-1}(x)=(x-1)^2+2\ \ (x\geqq 2)$
+    misconception: mc-lm-inverse-domain
+    rationale: |
+      式は正しいが、定義域にもとの関数の定義域 $x\geqq 2$ をそのまま書いている。逆関数の定義域は $f(x)$ の値域 $y\geqq 1$ であり、たとえば $f^{-1}\!\left(\dfrac{3}{2}\right)=\dfrac{9}{4}$（$f\!\left(\dfrac{9}{4}\right)=\dfrac{3}{2}$）が抜け落ちる。
+  - id: "2"
+    text: $f^{-1}(x)=(x-1)^2+2$（定義域はすべての実数）
+    misconception: mc-lm-inverse-domain
+    rationale: |
+      定義域を考えていない。$x=0$ とすると $(0-1)^2+2=3$ だが $f(3)=2\neq 0$ であり、$x<1$ の部分は $f$ の逆の対応になっていない。グラフは放物線全体ではなく、その右半分である。
+  - id: "3"
+    text: $f^{-1}(x)=x^2+1\ \ (x\geqq 1)$
+    rationale: |
+      $y-1=\sqrt{x-2}$ の両辺を2乗するとき、左辺を $(y-1)^2$ ではなく $y^2-1$ としている。$x=3$ とすると $10$ だが $f(10)=\sqrt{8}+1\neq 3$ である。
+  - id: "4"
+    text: $f^{-1}(x)=(x-1)^2+2\ \ (x\geqq 1)$
+    rationale: |
+      正解。$f(x)$ の値域は $y\geqq 1$ なので、逆関数の定義域は $x\geqq 1$。
+answer: "4"
+solution: |
+  $y=\sqrt{x-2}+1$ とおく。$x\geqq 2$ で $\sqrt{x-2}\geqq 0$ なので、**値域は $y\geqq 1$**。
+
+  $y-1=\sqrt{x-2}$ の両辺を2乗して（$y-1\geqq 0$ なので同値）
+  $$x=(y-1)^2+2\quad(y\geqq 1)$$
+
+  $x$ と $y$ を入れ替えて、**$f^{-1}(x)=(x-1)^2+2\ \ (x\geqq 1)$**。逆関数の定義域はもとの関数の値域、値域はもとの関数の定義域 $y\geqq 2$ になる。グラフは放物線 $y=(x-1)^2+2$ の $x\geqq 1$ の部分で、$y=f(x)$ のグラフと直線 $y=x$ に関して対称。
+concepts: [lm-inverse-composite, lm-rational-irrational]
+misconceptions: [mc-lm-inverse-domain]
+targetSeconds: 120
+irt: { expectedCorrectRate: 0.68, discrimination: 1.1 }
+author:
+  intent: |
+    逆関数を「式の $x,\ y$ の入れ替え」で終わらせず、「定義域と値域の入れ替え」まで含めて答えられるかをみる。①②③は式の形が似ているので、定義域の欄まで読まないと選べない。①は定義域をもとの関数から写した誤り、②は定義域の書き忘れで、いずれも値域を求めていないことに起因する。③は2乗の計算ミスで、具体的な値を代入して $f(f^{-1}(x))=x$ を確かめれば見抜ける。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: ["数学III (1) ア(エ) 合成関数と逆関数", "数学III (1) ア(ウ) 分数関数と無理関数"]
+  variations:
+    - $f(x)=-\sqrt{x-2}+1$ として値域を $y\leqq 1$ に変え、逆関数の定義域と値域がどう変わるかを問う。
+    - $y=f(x)$ と $y=f^{-1}(x)$ のグラフの共有点を求めさせ、$y=x$ との交点で済むことを確認させる。

@@ -1,0 +1,14 @@
+id: vc-position-vector
+kind: formula
+title: 位置ベクトル（内分・外分・重心）
+body: |
+  点 $\mathrm{O}$ を基準に $\overrightarrow{\mathrm{OP}}=\vec p$ と表し、$\vec p$ を点 $\mathrm{P}$ の **位置ベクトル** という。$\overrightarrow{\mathrm{AB}}=\vec b-\vec a$（終点 − 始点）。
+
+  - 線分 $\mathrm{AB}$ を $m:n$ に **内分** する点: $\dfrac{n\vec a+m\vec b}{m+n}$
+  - 線分 $\mathrm{AB}$ を $m:n$ に **外分** する点: $\dfrac{-n\vec a+m\vec b}{m-n}$（内分の $n$ を $-n$ に）
+  - $\triangle\mathrm{ABC}$ の重心: $\dfrac{\vec a+\vec b+\vec c}{3}$
+
+  **係数の付き方に注意** $m:n$ に内分する点では、$\vec a$ には反対側の線分 $\mathrm{PB}$ の比 $n$、$\vec b$ には $\mathrm{AP}$ の比 $m$ が付く（たすき掛け）。$m$ が大きいほど $\mathrm{P}$ は $\mathrm{B}$ に近く、$\vec b$ の係数 $\dfrac{m}{m+n}$ も大きくなる（近い点の係数が大きい）。逆に $\overrightarrow{\mathrm{OP}}=\dfrac{2\vec a+\vec b}{3}$ なら $\mathrm{AP}:\mathrm{PB}=1:2$。
+
+  **係数の和が1** $\overrightarrow{\mathrm{OP}}=s\vec a+t\vec b$ で $s+t=1$ のとき、$\mathrm{P}$ は直線 $\mathrm{AB}$ 上にあり、$\mathrm{AP}:\mathrm{PB}=t:s$（$s,\ t>0$ なら内分）。
+prerequisites: [vc-operations, cg-distance-division]

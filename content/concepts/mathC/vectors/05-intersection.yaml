@@ -1,0 +1,17 @@
+id: vc-intersection
+kind: method
+title: 交点の位置ベクトルと一次独立
+body: |
+  **一次独立** $\vec a\neq\vec 0,\ \vec b\neq\vec 0$ が平行でないとき（$\vec a,\ \vec b$ が一次独立）、平面上のどのベクトルも $s\vec a+t\vec b$ の形に **ただ1通りに** 表せる。したがって
+  $$s\vec a+t\vec b=s'\vec a+t'\vec b\implies s=s',\ t=t'$$
+  空間では、同じ平面上にない $\vec a,\ \vec b,\ \vec c$（一次独立）について $s\vec a+t\vec b+u\vec c$ の表し方が1通り。
+
+  **交点の求め方**（2直線 $\mathrm{AD},\ \mathrm{BC}$ の交点 $\mathrm{P}$）
+  1. $\mathrm{P}$ は直線 $\mathrm{AD}$ 上 → $\overrightarrow{\mathrm{OP}}=(1-s)\overrightarrow{\mathrm{OA}}+s\overrightarrow{\mathrm{OD}}$ と1つ目の表し方を作る。
+  2. $\mathrm{P}$ は直線 $\mathrm{BC}$ 上 → 別の文字 $t$ で2つ目の表し方を作る。
+  3. 2つを $\vec a,\ \vec b$ で表し、「$\vec a,\ \vec b$ は一次独立だから」と **断ってから** 係数を比較する。
+
+  一次独立でない（平行な）ベクトルや、平面上の3つのベクトルについて係数を比較してはいけない。
+
+  直線 $\mathrm{OP}$ と辺 $\mathrm{AB}$ の交点は、$\overrightarrow{\mathrm{OQ}}=k\overrightarrow{\mathrm{OP}}$ とおいて係数の和を $1$ にすればよい。チェバ・メネラウスの定理による比で検算できる。
+prerequisites: [vc-position-vector, gm-ceva-menelaus]

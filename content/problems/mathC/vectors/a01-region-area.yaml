@@ -1,0 +1,56 @@
+id: mc-vc-a01
+level: applied
+format: choice
+title: 係数に条件のある点の存在範囲
+stem: |
+  $\triangle\mathrm{OAB}$ の面積を $S$ とする。実数 $s,\ t$ が
+  $$s\geqq 0,\qquad t\geqq 0,\qquad 1\leqq s+2t\leqq 2$$
+  を満たしながら変化するとき、$\overrightarrow{\mathrm{OP}}=s\overrightarrow{\mathrm{OA}}+t\overrightarrow{\mathrm{OB}}$ で定まる点 $\mathrm{P}$ の存在範囲を考える。
+
+  まず $s+2t=k\ (1\leqq k\leqq 2)$ と固定すると、$\dfrac{s}{k}+\dfrac{2t}{k}=1$ であるから、$\overrightarrow{\mathrm{OP}}$ を係数の和が $1$ になる形に書き直すことができる。これをもとに $k$ を動かして考える。
+
+  点 $\mathrm{P}$ の存在範囲の面積として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $6S$
+    misconception: mc-vc-region-coefficient
+    rationale: |
+      $t$ の係数 $2$ を「$\overrightarrow{\mathrm{OB}}$ を $2$ 倍する」と逆向きに読み、$s+2t=1$ を $\mathrm{A}$ と $2\overrightarrow{\mathrm{OB}}$ の終点を結ぶ線分、$s+2t=2$ を $2\overrightarrow{\mathrm{OA}}$ と $4\overrightarrow{\mathrm{OB}}$ の終点を結ぶ線分とした。面積は $8S-2S=6S$ になる。正しくは $2t\cdot\dfrac{1}{2}\overrightarrow{\mathrm{OB}}$ と書き直すので、$\overrightarrow{\mathrm{OB}}$ は $\dfrac{1}{2}$ 倍される。
+  - id: "2"
+    text: $2S$
+    misconception: mc-vc-region-coefficient
+    rationale: |
+      下限の $1\leqq s+2t$ を落とし、$s+2t\leqq 2$ だけで三角形 $\mathrm{OCB}$（$\overrightarrow{\mathrm{OC}}=2\overrightarrow{\mathrm{OA}}$）全体を答えている。$s+2t<1$ の部分（$\triangle\mathrm{OAM}$、$\mathrm{M}$ は辺 $\mathrm{OB}$ の中点）を除く必要がある。
+  - id: "3"
+    text: $3S$
+    misconception: mc-vc-region-coefficient
+    rationale: |
+      $t$ の係数を無視して $1\leqq s+t\leqq 2$ と同じ図形（$\triangle\mathrm{OAB}$ を $2$ 倍に拡大した三角形から $\triangle\mathrm{OAB}$ を除いた台形、面積 $4S-S$）を答えている。
+  - id: "4"
+    text: $\dfrac{3}{2}S$
+    rationale: |
+      正解。$\overrightarrow{\mathrm{OC}}=2\overrightarrow{\mathrm{OA}}$、辺 $\mathrm{OB}$ の中点を $\mathrm{M}$ とすると、存在範囲は台形 $\mathrm{ACBM}$ の周および内部で、面積は $\triangle\mathrm{OCB}-\triangle\mathrm{OAM}=2S-\dfrac{1}{2}S$。
+answer: "4"
+solution: |
+  $s+2t=k\ (1\leqq k\leqq 2)$ と固定する。$\dfrac{s}{k}+\dfrac{2t}{k}=1$ より
+  $$\overrightarrow{\mathrm{OP}}=\frac{s}{k}\left(k\overrightarrow{\mathrm{OA}}\right)+\frac{2t}{k}\left(\frac{k}{2}\overrightarrow{\mathrm{OB}}\right)$$
+  係数 $\dfrac{s}{k},\ \dfrac{2t}{k}$ は $0$ 以上で和が $1$ なので、$\mathrm{P}$ は $k\overrightarrow{\mathrm{OA}}$ の終点と $\dfrac{k}{2}\overrightarrow{\mathrm{OB}}$ の終点を結ぶ線分上を動く。この線分は $k$ によらず $\left(\dfrac{1}{2}\overrightarrow{\mathrm{OB}}-\overrightarrow{\mathrm{OA}}\right)$ に平行で、$\mathrm{O}$ からの距離は $k$ に比例する。
+
+  - $k=1$: $\mathrm{A}$ と辺 $\mathrm{OB}$ の中点 $\mathrm{M}$ を結ぶ線分
+  - $k=2$: $\overrightarrow{\mathrm{OC}}=2\overrightarrow{\mathrm{OA}}$ となる点 $\mathrm{C}$ と $\mathrm{B}$ を結ぶ線分
+
+  $k$ が $1$ から $2$ まで動くと、この線分は $\mathrm{AM}$ から $\mathrm{CB}$ まで平行を保ったまま長さを伸ばしながら動くので、存在範囲は台形 $\mathrm{ACBM}$ の周および内部。
+
+  $\triangle\mathrm{OCB}=2S$（底辺 $\mathrm{OC}$ が2倍）、$\triangle\mathrm{OAM}=\dfrac{1}{2}S$（底辺 $\mathrm{OM}$ が半分）より、面積は $2S-\dfrac{1}{2}S=\dfrac{3}{2}S$。
+concepts: [vc-vector-equation, vc-position-vector]
+misconceptions: [mc-vc-region-coefficient]
+targetSeconds: 360
+irt: { expectedCorrectRate: 0.45, discrimination: 1.3 }
+author:
+  intent: |
+    係数に重みの付いた条件を「右辺を1にして係数をベクトル側に移す」手順で図形に読み替えられるかをみる。誤答は、係数の倍率を逆に読む（①）、不等式の下限を落とす（②）、係数を無視する（③）の3つで、いずれも変形の手順のどこを省いたかに対応する。①と③は面積が大きく、図を描けば $\triangle\mathrm{OAB}$ との比較で誤りに気づける。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学C (1) ア(ア) 位置ベクトル, 数学C (1) イ(イ) ベクトルを用いた平面図形の考察]
+  variations:
+    - 条件を $s\geqq 0,\ t\geqq 0,\ 2s+3t\leqq 6$ に変えて面積を問う。
+    - 条件を $0\leqq s+t\leqq 1,\ 0\leqq s-t\leqq 1$ に変え、$s+t,\ s-t$ を新しい文字とおいて平行四辺形として捉えさせる。

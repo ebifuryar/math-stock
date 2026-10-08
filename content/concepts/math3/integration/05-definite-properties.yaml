@@ -1,0 +1,16 @@
+id: ig-definite-properties
+kind: property
+title: 定積分の性質と定積分で表された関数
+body: |
+  **偶関数・奇関数**: $f(-x)=f(x)$（偶関数）なら $\displaystyle\int_{-a}^{a}f(x)\,dx=2\int_0^a f(x)\,dx$、$f(-x)=-f(x)$（奇関数）なら $\displaystyle\int_{-a}^{a}f(x)\,dx=0$。
+  $x\sin x,\ x^2,\ \cos x$ は偶関数、$x^3,\ \sin x,\ x^2\sin x$ は奇関数（偶 $\times$ 奇 $=$ 奇）。
+
+  **区間を折り返す置換**: $x=a-t$ と置換すると
+  $$\int_0^a f(x)\,dx=\int_0^a f(a-x)\,dx$$
+  例えば $\displaystyle I=\int_0^\pi xf(\sin x)\,dx$ では、$x=\pi-t$ とおくと $\sin(\pi-t)=\sin t$ より $I=\displaystyle\int_0^\pi(\pi-t)f(\sin t)\,dt=\pi\int_0^\pi f(\sin t)\,dt-I$、よって
+  $$\int_0^\pi xf(\sin x)\,dx=\frac{\pi}{2}\int_0^\pi f(\sin x)\,dx$$
+
+  **定積分で表された関数の微分**: $F'(t)=f(t)$ とすると $\displaystyle\int_{a}^{g(x)}f(t)\,dt=F(g(x))-F(a)$ なので、合成関数の微分により
+  $$\frac{d}{dx}\int_{h(x)}^{g(x)}f(t)\,dt=f(g(x))\,g'(x)-f(h(x))\,h'(x)$$
+  例: $\displaystyle\frac{d}{dx}\int_x^{2x}f(t)\,dt=2f(2x)-f(x)$。$g'(x)$ を掛け忘れないこと。被積分関数に $x$ が含まれるとき（$\displaystyle\int_0^x(x-t)f(t)\,dt$ など）は、$x$ を積分の外に出してから微分する。
+prerequisites: [ig-substitution, cl-integral-function]

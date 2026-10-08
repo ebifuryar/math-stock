@@ -1,0 +1,17 @@
+id: cp-angle-condition
+kind: method
+title: なす角・一直線・垂直と回転による図形の扱い
+body: |
+  異なる3点 $\mathrm{A}(\alpha),\ \mathrm{B}(\beta),\ \mathrm{C}(\gamma)$ について
+  $$\frac{\gamma-\alpha}{\beta-\alpha}=\frac{\mathrm{AC}}{\mathrm{AB}}\,(\cos\theta+i\sin\theta)$$
+  で、$\theta$ は半直線 $\mathrm{AB}$ から半直線 $\mathrm{AC}$ へ **反時計回り** に測った角（$\angle\mathrm{BAC}=|\theta|$、ただし $-\pi<\theta\leqq\pi$）。分子と分母を入れ替えると角の向きが逆になる。
+
+  - 3点 $\mathrm{A},\ \mathrm{B},\ \mathrm{C}$ が一直線上 $\iff\dfrac{\gamma-\alpha}{\beta-\alpha}$ が実数
+  - $\mathrm{AB}\perp\mathrm{AC}\iff\dfrac{\gamma-\alpha}{\beta-\alpha}$ が純虚数（$0$ でない）
+
+  **正三角形** $\triangle\mathrm{ABC}$ が正三角形で $\mathrm{A}\to\mathrm{B}\to\mathrm{C}$ が反時計回りなら
+  $$\gamma-\alpha=(\beta-\alpha)\left(\cos\frac{\pi}{3}+i\sin\frac{\pi}{3}\right)$$
+  時計回りなら $-\dfrac{\pi}{3}$ 回転。向きが指定されていなければ両方を考える。両方をまとめると、正三角形である条件は
+  $$\alpha^2+\beta^2+\gamma^2=\alpha\beta+\beta\gamma+\gamma\alpha$$
+  （$p=\beta-\alpha,\ q=\gamma-\alpha$ とおくと左辺と右辺の差は $p^2-pq+q^2$ になり、$\dfrac{q}{p}=\cos\left(\pm\dfrac{\pi}{3}\right)+i\sin\left(\pm\dfrac{\pi}{3}\right)$ と同値。）
+prerequisites: [cp-product-rotation, cp-distance-division]

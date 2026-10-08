@@ -1,0 +1,53 @@
+id: mc-vc-a04
+level: applied
+format: mark
+title: 垂線の足の位置ベクトルと面積
+stem: |
+  $\triangle\mathrm{OAB}$ において $\mathrm{OA}=4,\ \mathrm{OB}=3,\ \angle\mathrm{AOB}=60^\circ$ とする。$\overrightarrow{\mathrm{OA}}=\vec a,\ \overrightarrow{\mathrm{OB}}=\vec b$ とする。
+
+  (1) $\vec a\cdot\vec b=\boxed{\text{ア}}$ であり、$\mathrm{AB}=\sqrt{\boxed{\text{イウ}}}$ である。
+
+  (2) 点 $\mathrm{O}$ から直線 $\mathrm{AB}$ に垂線 $\mathrm{OH}$ を下ろす。$\mathrm{H}$ は直線 $\mathrm{AB}$ 上にあるから、実数 $t$ を用いて $\overrightarrow{\mathrm{OH}}=(1-t)\vec a+t\vec b$ と表せる。$\overrightarrow{\mathrm{OH}}\cdot\overrightarrow{\mathrm{AB}}=0$ より
+  $$t=\frac{\boxed{\text{エオ}}}{\boxed{\text{カキ}}}$$
+  であり、$\overrightarrow{\mathrm{OH}}=\dfrac{\boxed{\text{ク}}}{\boxed{\text{ケコ}}}\vec a+\dfrac{\boxed{\text{サシ}}}{\boxed{\text{スセ}}}\vec b$ である。したがって、$\mathrm{AH}:\mathrm{HB}=\boxed{\text{ソタ}}:\boxed{\text{チ}}$ である。
+
+  (3) $\triangle\mathrm{OAB}$ の面積は $\boxed{\text{ツ}}\sqrt{\boxed{\text{テ}}}$ であり、$|\overrightarrow{\mathrm{OH}}|=\dfrac{\boxed{\text{ト}}\sqrt{\boxed{\text{ナニ}}}}{\boxed{\text{ヌネ}}}$ である。
+blanks:
+  - { label: ア, answer: "6" }
+  - { label: イウ, answer: "13" }
+  - { label: エオ, answer: "10" }
+  - { label: カキ, answer: "13" }
+  - { label: ク, answer: "3" }
+  - { label: ケコ, answer: "13" }
+  - { label: サシ, answer: "10" }
+  - { label: スセ, answer: "13" }
+  - { label: ソタ, answer: "10" }
+  - { label: チ, answer: "3" }
+  - { label: ツ, answer: "3" }
+  - { label: テ, answer: "3" }
+  - { label: ト, answer: "6" }
+  - { label: ナニ, answer: "39" }
+  - { label: ヌネ, answer: "13" }
+solution: |
+  (1) $\vec a\cdot\vec b=4\cdot 3\cos 60^\circ=6$。$|\vec b-\vec a|^2=9-2\cdot 6+16=13$ より $\mathrm{AB}=\sqrt{13}$。
+
+  (2) $\overrightarrow{\mathrm{OH}}=\vec a+t(\vec b-\vec a)$、$\overrightarrow{\mathrm{AB}}=\vec b-\vec a$ より
+  $$\overrightarrow{\mathrm{OH}}\cdot\overrightarrow{\mathrm{AB}}=\vec a\cdot\vec b-|\vec a|^2+t|\vec b-\vec a|^2=6-16+13t=0\qquad t=\frac{10}{13}$$
+  よって $\overrightarrow{\mathrm{OH}}=\dfrac{3}{13}\vec a+\dfrac{10}{13}\vec b$。$\overrightarrow{\mathrm{AH}}=t\overrightarrow{\mathrm{AB}}$ で $0<t<1$ だから $\mathrm{H}$ は線分 $\mathrm{AB}$ 上にあり、$\mathrm{AH}:\mathrm{HB}=t:(1-t)=10:3$。
+
+  (3) $\triangle\mathrm{OAB}=\dfrac{1}{2}\sqrt{16\cdot 9-6^2}=\dfrac{1}{2}\sqrt{108}=3\sqrt{3}$。
+  $\triangle\mathrm{OAB}=\dfrac{1}{2}\cdot\mathrm{AB}\cdot\mathrm{OH}$ より
+  $$\mathrm{OH}=\frac{2\cdot 3\sqrt{3}}{\sqrt{13}}=\frac{6\sqrt{39}}{13}$$
+  （$|\overrightarrow{\mathrm{OH}}|^2=\dfrac{1}{169}\left(9\cdot 16+2\cdot 3\cdot 10\cdot 6+100\cdot 9\right)=\dfrac{1404}{169}$ と直接計算しても同じ。）
+concepts: [vc-inner-product, vc-position-vector, vc-triangle-area]
+misconceptions: [mc-vc-division-reversed, mc-vc-expansion-sign]
+targetSeconds: 600
+irt: { expectedCorrectRate: 0.5, discrimination: 1.2 }
+author:
+  intent: |
+    垂線の足を「直線上にある（係数の和が1）」と「垂直（内積が0）」の2条件で求める、共通テスト頻出の誘導をなぞれるかをみる。$\overrightarrow{\mathrm{OH}}=(1-t)\vec a+t\vec b$ の $t$ と $\mathrm{AH}:\mathrm{HB}$ の対応（$t:(1-t)$）で比を逆に読む誤り、$|\vec b-\vec a|^2$ の展開の符号の誤りを識別する。(3) は面積から高さを求める方法と、$|\overrightarrow{\mathrm{OH}}|^2$ を直接計算する方法のどちらでも到達でき、検算の手段にもなる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学C (1) ア(イ) ベクトルの内積とその基本的な性質, 数学C (1) イ(イ) ベクトルを用いた平面図形の考察]
+  variations:
+    - 直線 $\mathrm{OH}$ に関して $\mathrm{A}$ と対称な点 $\mathrm{A}'$ の位置ベクトルを求めさせる。
+    - $\mathrm{OA}=1,\ \mathrm{OB}=4,\ \angle\mathrm{AOB}=60^\circ$ に変え、$t=-\dfrac{1}{13}<0$ となって垂線の足が線分 $\mathrm{AB}$ の外（$\mathrm{A}$ の側）に出ることを確かめさせる。

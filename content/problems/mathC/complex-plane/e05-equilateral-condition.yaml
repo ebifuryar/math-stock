@@ -1,0 +1,77 @@
+id: mc-cp-e05
+level: exam
+format: written
+title: 正三角形となるための条件式とその応用
+stem: |
+  複素数平面上の相異なる3点 $\mathrm{A}(\alpha),\ \mathrm{B}(\beta),\ \mathrm{C}(\gamma)$ について、次の問いに答えよ。
+
+  (1) $\triangle\mathrm{ABC}$ が正三角形であるための必要十分条件は
+  $$\alpha^2+\beta^2+\gamma^2=\alpha\beta+\beta\gamma+\gamma\alpha$$
+  であることを証明せよ。
+
+  (2) 3点 $1,\ z,\ z^2$ が相異なり、正三角形の3頂点となるような複素数 $z$ をすべて求めよ。
+modelAnswer: |
+  (1) $p=\beta-\alpha,\ q=\gamma-\alpha$ とおく。3点は相異なるので $p\neq 0,\ q\neq 0$。$\beta=\alpha+p,\ \gamma=\alpha+q$ を代入すると
+  $$\begin{aligned}
+  &\alpha^2+\beta^2+\gamma^2-\alpha\beta-\beta\gamma-\gamma\alpha\\
+  &=\alpha^2+(\alpha+p)^2+(\alpha+q)^2-\alpha(\alpha+p)-(\alpha+p)(\alpha+q)-(\alpha+q)\alpha\\
+  &=p^2-pq+q^2
+  \end{aligned}$$
+  （$\alpha^2$ の項は $3\alpha^2-3\alpha^2=0$、$\alpha p,\ \alpha q$ の項も $2\alpha p-\alpha p-\alpha p=0$ などと消える。）
+
+  よって、与えられた等式は $p^2-pq+q^2=0$ と同値であり、$p\neq 0$ で両辺を $p^2$ で割って $u=\dfrac{q}{p}$ とおくと
+  $$u^2-u+1=0\iff u=\frac{1\pm\sqrt{3}\,i}{2}=\cos\left(\pm\frac{\pi}{3}\right)+i\sin\left(\pm\frac{\pi}{3}\right)\quad(\text{複号同順})$$
+  と同値である。
+
+  一方、$u=\dfrac{\gamma-\alpha}{\beta-\alpha}$ について、$|u|=\dfrac{\mathrm{AC}}{\mathrm{AB}}$ であり、$\arg u$ は半直線 $\mathrm{AB}$ から半直線 $\mathrm{AC}$ へ測った角である。したがって
+  $$u=\cos\left(\pm\frac{\pi}{3}\right)+i\sin\left(\pm\frac{\pi}{3}\right)\iff\mathrm{AC}=\mathrm{AB}\ \text{かつ}\ \angle\mathrm{BAC}=\frac{\pi}{3}$$
+  であり、これは2辺が等しくその間の角が $\dfrac{\pi}{3}$ の三角形、すなわち $\triangle\mathrm{ABC}$ が正三角形であることと同値である。
+
+  以上より、$\triangle\mathrm{ABC}$ が正三角形 $\iff\alpha^2+\beta^2+\gamma^2=\alpha\beta+\beta\gamma+\gamma\alpha$。$\blacksquare$
+
+  (2) 3点 $1,\ z,\ z^2$ が相異なる条件は、$z\neq 1$、$z^2\neq 1$、$z^2\neq z$ より
+  $$z\neq 0,\ 1,\ -1$$
+  このもとで (1) を $\alpha=1,\ \beta=z,\ \gamma=z^2$ に用いると、正三角形となる条件は
+  $$1+z^2+z^4=z+z^3+z^2\iff z^4-z^3-z+1=0\iff(z-1)(z^3-1)=0$$
+  $z\neq 1$ より $z^3=1$ かつ $z\neq 1$、すなわち $z^2+z+1=0$ で
+  $$z=\frac{-1\pm\sqrt{3}\,i}{2}$$
+  これらは $z\neq 0,\ \pm 1$ を満たす。（このとき3点は $1,\ z,\ z^2$ で、1の3乗根がつくる正三角形になっている。）
+
+  **答え: $z=\dfrac{-1\pm\sqrt{3}\,i}{2}$**
+rubric:
+  - id: r1
+    criterion: $p=\beta-\alpha,\ q=\gamma-\alpha$ などと平行移動して、条件式の差が $p^2-pq+q^2$ になることを正しく計算している
+    points: 2
+    keywords: ["p^2-pq+q^2", "β-α", "γ-α"]
+  - id: r2
+    criterion: $p\neq 0$ を明示して $u=\frac{q}{p}$ の2次方程式 $u^2-u+1=0$ に帰着し、$u=\cos\left(\pm\frac{\pi}{3}\right)+i\sin\left(\pm\frac{\pi}{3}\right)$ を得ている
+    points: 2
+    keywords: ["u^2-u+1=0", "π/3", "(1±√3i)/2"]
+  - id: r3
+    criterion: $u=\frac{\gamma-\alpha}{\beta-\alpha}$ の絶対値・偏角が $\frac{\mathrm{AC}}{\mathrm{AB}}$・$\angle\mathrm{BAC}$ を表すことを用いて、正三角形との同値性を両方向（または同値変形の連鎖）で示している
+    points: 2
+    keywords: ["AC=AB", "同値", "回転"]
+  - id: r4
+    criterion: (2) で相異なる条件 $z\neq 0,\ \pm 1$ を求め、条件式を $(z-1)(z^3-1)=0$（または $(z-1)^2(z^2+z+1)=0$）と因数分解している
+    points: 2
+    keywords: ["(z-1)(z^3-1)", "z^2+z+1=0", "z≠0"]
+  - id: r5
+    criterion: $z=\frac{-1\pm\sqrt{3}i}{2}$ を答え、相異なる条件を満たすことを確認している
+    points: 2
+    keywords: ["(-1±√3i)/2"]
+solution: |
+  (1) 3点の式を1点（$\alpha$）からの差 $p,\ q$ で書き直すと、対称式が $p^2-pq+q^2$ に簡約される。$p^2-pq+q^2=0\iff\left(\dfrac{q}{p}\right)^2-\dfrac{q}{p}+1=0\iff\dfrac{q}{p}=\cos\left(\pm\dfrac{\pi}{3}\right)+i\sin\left(\pm\dfrac{\pi}{3}\right)$ で、これは「$\overrightarrow{\mathrm{AC}}$ が $\overrightarrow{\mathrm{AB}}$ を $\pm\dfrac{\pi}{3}$ 回転したもの」すなわち正三角形を意味する。向きの異なる2通り（反時計回り・時計回り）が複号に対応し、どちらも条件式1本にまとまっている点が要点。
+
+  (2) 条件式は $z^4-z^3-z+1=(z-1)^2(z^2+z+1)=0$。「相異なる」から $z\neq 1$ なので $z^2+z+1=0$。$z\neq 0,\ \pm 1$ の確認も忘れない。
+concepts: [cp-angle-condition, cp-product-rotation, cp-nth-roots]
+misconceptions: [mc-cp-rotation, mc-cp-root-count]
+targetSeconds: 720
+irt: { expectedCorrectRate: 0.25, discrimination: 1.4 }
+author:
+  intent: |
+    正三角形の条件を回転（$\gamma-\alpha=(\beta-\alpha)(\cos\theta+i\sin\theta),\ \theta=\pm\dfrac{\pi}{3}$）で表し、2つの向きを1本の対称式にまとめる議論を、必要十分条件として答案に書けるかをみる。上位層との差は、平行移動による簡約（$p,\ q$ への置き換え）に気づくか、$\theta=\dfrac{\pi}{3}$ の一方の向きだけで論証して十分性・必要性の一方を欠かないか（r3）に現れる。(2) では条件式の因数分解と「相異なる」条件の処理を求め、$z=1$ を答えに含める誤りを r4・r5 で検出する。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学C (2) ア(エ) 複素数平面における図形（回転と正三角形）, 数学C (2) ア(ウ) ド・モアブルの定理（1の3乗根）]
+  variations:
+    - 相異なる3点 $z,\ z^2,\ z^3$ が正三角形となる $z$ を求めさせる（$z\neq 0$ で割ると (2) と同じ条件になる）。
+    - $\omega=\cos\dfrac{2\pi}{3}+i\sin\dfrac{2\pi}{3}$ として、$\alpha+\omega\beta+\omega^2\gamma=0$が、$\triangle\mathrm{ABC}$ が反時計回りの正三角形であるための条件であることを示させる。

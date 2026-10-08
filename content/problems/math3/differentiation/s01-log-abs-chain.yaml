@@ -1,0 +1,44 @@
+id: m3-df-s01
+level: school
+format: choice
+title: 対数関数と合成関数の微分
+stem: |
+  関数 $y=\log|\cos 2x|$ の導関数（$\cos 2x\neq 0$ を満たすすべての $x$ で成り立つもの）として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $y'=\dfrac{1}{\cos 2x}$
+    misconception: mc-df-chain-inner
+    rationale: |
+      $(\log|u|)'=\dfrac{1}{u}$ の $u=\cos 2x$ の部分で止め、内側の関数 $\cos 2x$ の導関数 $-2\sin 2x$ を掛け忘れている。
+  - id: "2"
+    text: $y'=-\tan 2x$
+    misconception: mc-df-chain-inner
+    rationale: |
+      $(\cos 2x)'=-\sin 2x$ とし、さらに内側の $2x$ の導関数 $2$ を掛け忘れている。合成関数が2重になっていることに注意する。
+  - id: "3"
+    text: $y'=-\dfrac{2\sin 2x}{|\cos 2x|}$
+    misconception: mc-df-log-abs
+    rationale: |
+      $(\log|u|)'=\dfrac{u'}{|u|}$ と、絶対値を導関数に残している。$\cos 2x<0$ の範囲（例えば $x=\dfrac{\pi}{2}$ の近く）では、$\log|\cos 2x|=\log(-\cos 2x)$ を微分して $\dfrac{2\sin 2x}{-\cos 2x}$ となるので、この式とは符号が異なる。
+  - id: "4"
+    text: $y'=-2\tan 2x$
+    rationale: |
+      正解。$(\log|u|)'=\dfrac{u'}{u}$ に $u=\cos 2x,\ u'=-2\sin 2x$ を代入して $\dfrac{-2\sin 2x}{\cos 2x}=-2\tan 2x$。
+answer: "4"
+solution: |
+  $u=\cos 2x$ とおくと $y=\log|u|$。$\cos 2x$ の正負によらず $(\log|u|)'=\dfrac{u'}{u}$ が成り立つ（$u<0$ のときは $\log(-u)$ を微分して $\dfrac{-u'}{-u}=\dfrac{u'}{u}$）。
+
+  合成関数の微分により $u'=(\cos 2x)'=-\sin 2x\cdot(2x)'=-2\sin 2x$ なので
+  $$y'=\frac{-2\sin 2x}{\cos 2x}=-2\tan 2x$$
+concepts: [df-elementary, df-rules]
+misconceptions: [mc-df-chain-inner, mc-df-log-abs]
+targetSeconds: 120
+irt: { expectedCorrectRate: 0.7, discrimination: 1.0 }
+author:
+  intent: |
+    $\log$・$\cos$・$2x$ の3段の合成関数を、段を落とさずに微分できるかと、$(\log|u|)'=\dfrac{u'}{u}$ で絶対値が消えることを理解しているかをみる。①と②は内側の微分の掛け忘れ（どの段で止めたか）、③は絶対値の扱いの誤りを分離する。③は $\cos 2x>0$ の範囲では正しい式なので、「すべての $x$ で成り立つ」という条件を読めているかも問われる。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: ["数学III (2) ア(ア) 合成関数の導関数", "数学III (2) ア(イ) 三角関数・指数関数・対数関数の導関数"]
+  variations:
+    - $y=\log|\tan x|$ の導関数（$\dfrac{2}{\sin 2x}$）を求めさせ、三角関数の公式による整理まで要求する。
+    - $y=\log\left|\dfrac{1+\sin x}{1-\sin x}\right|$ を対数の性質で分解してから微分させる。

@@ -1,0 +1,46 @@
+id: m3-df-a04
+level: applied
+format: choice
+title: 平面上の運動の速さと加速度
+stem: |
+  座標平面上を運動する点 $\mathrm{P}$ の時刻 $t$ における座標 $(x,\ y)$ が
+  $$x=e^t\cos t,\qquad y=e^t\sin t$$
+  で与えられている。時刻 $t$ における $\mathrm{P}$ の速度を $\vec{v}$、加速度を $\vec{\alpha}$ とするとき、速さ $|\vec{v}|$ と加速度の大きさ $|\vec{\alpha}|$ の組として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $|\vec{v}|=e^t,\quad |\vec{\alpha}|=e^t$
+    rationale: |
+      積の微分を使わず、$\cos t,\ \sin t$ の部分だけを微分して $\vec{v}=(-e^t\sin t,\ e^t\cos t)$ などとしている。$e^t$ も $t$ の関数なので、$(e^t\cos t)'=e^t\cos t-e^t\sin t$ である。
+  - id: "2"
+    text: $|\vec{v}|=\sqrt{2}e^t,\quad |\vec{\alpha}|=2e^t$
+    rationale: |
+      正解。$\vec{v}=e^t(\cos t-\sin t,\ \sin t+\cos t)$ より $|\vec{v}|=\sqrt{2}e^t$。$\vec{\alpha}=e^t(-2\sin t,\ 2\cos t)$ より $|\vec{\alpha}|=2e^t$。
+  - id: "3"
+    text: $|\vec{v}|=\sqrt{2}e^t,\quad |\vec{\alpha}|=\sqrt{2}e^t$
+    rationale: |
+      加速度の大きさを、速さ $|\vec{v}|=\sqrt{2}e^t$ を $t$ で微分したものとしている。$\dfrac{d|\vec{v}|}{dt}$ は速さの変化率であり、速度の向きの変化を含まないので、一般に $|\vec{\alpha}|$ とは一致しない。
+  - id: "4"
+    text: $|\vec{v}|=2e^{2t},\quad |\vec{\alpha}|=4e^{2t}$
+    rationale: |
+      成分の2乗の和 $\left(\dfrac{dx}{dt}\right)^2+\left(\dfrac{dy}{dt}\right)^2=2e^{2t}$ を求めたところで止め、平方根をとり忘れている（加速度も同様）。
+answer: "2"
+solution: |
+  積の微分により
+  $$\frac{dx}{dt}=e^t(\cos t-\sin t),\qquad \frac{dy}{dt}=e^t(\sin t+\cos t)$$
+  $$|\vec{v}|^2=e^{2t}\{(\cos t-\sin t)^2+(\sin t+\cos t)^2\}=2e^{2t}\quad\text{より}\quad |\vec{v}|=\sqrt{2}e^t$$
+  さらに微分して
+  $$\frac{d^2x}{dt^2}=e^t(\cos t-\sin t)+e^t(-\sin t-\cos t)=-2e^t\sin t,\qquad \frac{d^2y}{dt^2}=e^t(\sin t+\cos t)+e^t(\cos t-\sin t)=2e^t\cos t$$
+  $$|\vec{\alpha}|=\sqrt{4e^{2t}(\sin^2 t+\cos^2 t)}=2e^t$$
+  なお、$\dfrac{d|\vec{v}|}{dt}=\sqrt{2}e^t$ は $|\vec{\alpha}|$ と一致しない。点 $\mathrm{P}$ は原点のまわりを回りながら遠ざかる渦巻き線上を動き、向きの変化による加速度が加わるからである。
+concepts: [df-applications, df-rules]
+misconceptions: [mc-df-chain-inner]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.5, discrimination: 1.1 }
+author:
+  intent: |
+    平面上の運動の速度・加速度をベクトルの成分の微分として求め、その大きさを正しく計算できるかをみる。①は積の微分の誤り、④は大きさの計算での平方根の付け忘れという計算面の誤り、③は「加速度の大きさ $=$ 速さの変化率」という概念面の誤りで、③を選ぶ受験者は直線運動の感覚を平面運動にそのまま持ち込んでいる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学III (2) イ(イ) 導関数の応用（速度・加速度）"]
+  variations:
+    - 速度ベクトル $\vec{v}$ と位置ベクトル $\overrightarrow{\mathrm{OP}}$ のなす角が常に $\dfrac{\pi}{4}$ であることを示させる。
+    - 等速円運動 $x=r\cos\omega t,\ y=r\sin\omega t$ で、速さが一定でも加速度の大きさが $r\omega^2$ であることを確かめさせる。

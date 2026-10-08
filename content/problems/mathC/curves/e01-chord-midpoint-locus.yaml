@@ -1,0 +1,51 @@
+id: mc-cv-e01
+level: exam
+format: choice
+title: 平行な弦の中点の軌跡
+stem: |
+  楕円 $\dfrac{x^2}{4}+y^2=1$ と、傾きが $1$ の直線 $y=x+k$ が異なる2点で交わるとき、その2点を結ぶ線分（弦）の中点を $\mathrm{M}$ とする。$k$ がこの条件を満たしながら変化するとき、点 $\mathrm{M}$ の軌跡として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: 直線 $y=-\dfrac{1}{4}x$ 全体
+    misconception: mc-cv-param-range
+    rationale: |
+      $k$ を消去して得た直線全体を答えている。$k$ は「異なる2点で交わる」条件 $-\sqrt{5}<k<\sqrt{5}$ を満たす値に限られ、それが $x$ の範囲を制限する。そもそも中点は楕円の内部にあるので、直線全体にはなりえない。
+  - id: "2"
+    text: 直線 $y=-4x$ の $-\dfrac{\sqrt{5}}{5}<x<\dfrac{\sqrt{5}}{5}$ の部分
+    misconception: mc-cv-major-axis
+    rationale: |
+      $x^2$ と $y^2$ の分母を取り違え、楕円 $x^2+\dfrac{y^2}{4}=1$ について計算した結果になっている。この楕円は $x$ 軸方向に長いので、中点の軌跡（直径）の傾きの絶対値は $1$ より小さくなる。
+  - id: "3"
+    text: 直線 $y=-\dfrac{1}{4}x$ の $-\dfrac{4\sqrt{5}}{5}\leqq x\leqq\dfrac{4\sqrt{5}}{5}$ の部分
+    misconception: mc-cv-param-range
+    rationale: |
+      判別式の条件を $D\geqq 0$ として端点を含めている。端点 $x=\pm\dfrac{4\sqrt{5}}{5}$ は $k=\mp\sqrt{5}$（接する場合）に対応し、このとき共有点は1個で弦ができない。
+  - id: "4"
+    text: 直線 $y=-\dfrac{1}{4}x$ の $-\dfrac{4\sqrt{5}}{5}<x<\dfrac{4\sqrt{5}}{5}$ の部分
+    rationale: |
+      正解。中点の $x$ 座標は $-\dfrac{4k}{5}$、$y$ 座標は $\dfrac{k}{5}$ で、$-\sqrt{5}<k<\sqrt{5}$ から $x$ の範囲が決まる。
+answer: "4"
+solution: |
+  $y=x+k$ を代入して4倍すると
+  $$x^2+4(x+k)^2=4\iff 5x^2+8kx+4k^2-4=0\qquad\cdots(*)$$
+  異なる2点で交わる条件は $\dfrac{D}{4}=16k^2-5(4k^2-4)=-4(k^2-5)>0$、すなわち $-\sqrt{5}<k<\sqrt{5}$。
+
+  $(*)$ の2解を $\alpha,\ \beta$ とすると $\alpha+\beta=-\dfrac{8k}{5}$。中点 $\mathrm{M}(X,\ Y)$ は直線 $y=x+k$ 上にあるので
+  $$X=\frac{\alpha+\beta}{2}=-\frac{4k}{5},\qquad Y=X+k=\frac{k}{5}$$
+  $k=-\dfrac{5}{4}X$ を代入して $Y=-\dfrac{1}{4}X$。また $-\sqrt{5}<k<\sqrt{5}$ より $-\dfrac{4\sqrt{5}}{5}<X<\dfrac{4\sqrt{5}}{5}$。逆にこの範囲の $X$ に対して $k=-\dfrac{5}{4}X$ とおけば条件を満たす。
+
+  よって軌跡は直線 $y=-\dfrac{1}{4}x$ の $-\dfrac{4\sqrt{5}}{5}<x<\dfrac{4\sqrt{5}}{5}$ の部分（楕円の内部にある線分で、両端を除く）。
+
+  （参考: 端点 $\left(\pm\dfrac{4\sqrt{5}}{5},\ \mp\dfrac{\sqrt{5}}{5}\right)$ は楕円上の点で、そこでの接線の傾きが $1$ になっている。）
+concepts: [cv-curve-line, cv-parametric, cg-locus, qf-discriminant]
+misconceptions: [mc-cv-param-range, mc-cv-major-axis]
+targetSeconds: 420
+irt: { expectedCorrectRate: 0.35, discrimination: 1.4 }
+author:
+  intent: |
+    2次曲線と直線の共有点の条件（判別式）、解と係数の関係による中点の表示、媒介変数 $k$ の消去と変域の処理を一連で行えるかをみる。①は変域を落とす、③は接する場合を含めてしまう（不等号の等号の判断）、②は楕円の $a,\ b$ の取り違えに対応する。正解と③の違いは端点の有無だけで、「異なる2点」の意味を正確に読めているかで上位層を識別する。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学C (2) ア(ア) 2次曲線と直線の位置関係, 数学II (2) ア(エ) 軌跡]
+  variations:
+    - 弦の傾きを $m$ に一般化し、中点の軌跡の傾きとの積が $-\dfrac{b^2}{a^2}$ で一定になることを示させる。
+    - 双曲線 $\dfrac{x^2}{4}-y^2=1$ で傾き $1$ の弦の中点の軌跡を求めさせ、直線 $y=\dfrac{1}{4}x$ の $|x|>\dfrac{4\sqrt{3}}{3}$ の部分となり、変域が楕円の場合と異なり2つの部分に分かれることを確かめさせる。

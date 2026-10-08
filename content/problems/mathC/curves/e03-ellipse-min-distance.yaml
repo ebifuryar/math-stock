@@ -1,0 +1,53 @@
+id: mc-cv-e03
+level: exam
+format: mark
+title: 楕円上の点と x 軸上の点の距離の最小値
+stem: |
+  $t$ を正の定数とする。楕円 $\dfrac{x^2}{4}+y^2=1$ 上の点 $\mathrm{P}$ と点 $\mathrm{A}(t,\ 0)$ の距離 $\mathrm{PA}$ の最小値を考える。
+
+  (1) $\mathrm{P}(2\cos\theta,\ \sin\theta)$ とおくと
+  $$\mathrm{PA}^2=\boxed{\text{ア}}\cos^2\theta-\boxed{\text{イ}}\,t\cos\theta+t^2+\boxed{\text{ウ}}$$
+  である。
+
+  (2) $0<t\leqq\dfrac{\boxed{\text{エ}}}{\boxed{\text{オ}}}$ のとき、$\mathrm{PA}$ の最小値は $\sqrt{\boxed{\text{カ}}-\dfrac{t^2}{\boxed{\text{キ}}}}$ である。
+
+  (3) $t>\dfrac{\boxed{\text{エ}}}{\boxed{\text{オ}}}$ のとき、$\mathrm{PA}$ の最小値は $|t-\boxed{\text{ク}}|$ である。
+
+  (4) $t=1$ のとき、$\mathrm{PA}$ を最小にする点 $\mathrm{P}$ の $x$ 座標は $\dfrac{\boxed{\text{ケ}}}{\boxed{\text{コ}}}$ である。
+blanks:
+  - { label: ア, answer: "3" }
+  - { label: イ, answer: "4" }
+  - { label: ウ, answer: "1" }
+  - { label: エ, answer: "3" }
+  - { label: オ, answer: "2" }
+  - { label: カ, answer: "1" }
+  - { label: キ, answer: "3" }
+  - { label: ク, answer: "2" }
+  - { label: ケ, answer: "4" }
+  - { label: コ, answer: "3" }
+solution: |
+  (1) $\mathrm{PA}^2=(2\cos\theta-t)^2+\sin^2\theta=4\cos^2\theta-4t\cos\theta+t^2+1-\cos^2\theta=3\cos^2\theta-4t\cos\theta+t^2+1$。
+
+  $u=\cos\theta$（$-1\leqq u\leqq 1$）とおくと
+  $$f(u)=3u^2-4tu+t^2+1=3\left(u-\frac{2t}{3}\right)^2+1-\frac{t^2}{3}$$
+  軸 $u=\dfrac{2t}{3}$ は $t>0$ より正。
+
+  (2) $\dfrac{2t}{3}\leqq 1$、すなわち $0<t\leqq\dfrac{3}{2}$ のとき、軸が変域内にあるので最小値は $f\left(\dfrac{2t}{3}\right)=1-\dfrac{t^2}{3}$。$\mathrm{PA}$ の最小値は $\sqrt{1-\dfrac{t^2}{3}}$。
+
+  (3) $t>\dfrac{3}{2}$ のとき、軸が変域の右外にあるので $u=1$ で最小。$f(1)=t^2-4t+4=(t-2)^2$ より、最小値は $|t-2|$（$\mathrm{P}$ は頂点 $(2,\ 0)$）。
+
+  （軸の位置を確かめずに $\sqrt{1-\dfrac{t^2}{3}}$ とすると、$t>\sqrt{3}$ では根号の中が負になって不合理。$t=\dfrac{3}{2}$ では両方の式が $\dfrac{1}{2}$ で一致する。）
+
+  (4) $t=1\leqq\dfrac{3}{2}$ なので $\cos\theta=\dfrac{2}{3}$ で最小。$x=2\cos\theta=\dfrac{4}{3}$（このとき $y=\pm\dfrac{\sqrt{5}}{3}$、最小値 $\sqrt{\dfrac{2}{3}}=\dfrac{\sqrt{6}}{3}$）。
+concepts: [cv-parametric, cv-ellipse, qf-max-min]
+misconceptions: [mc-cv-param-range]
+targetSeconds: 600
+irt: { expectedCorrectRate: 0.3, discrimination: 1.4 }
+author:
+  intent: |
+    楕円上の点を媒介変数で表し、距離の2乗を $\cos\theta$ の2次関数として、変域 $-1\leqq\cos\theta\leqq 1$ のもとで最小値を場合分けして求められるかをみる。(3) は変域の制限を無視して頂点の値を答えると誤る設計で、「点 $\mathrm{A}$ が楕円の外側に近づくと最短点が頂点に移る」という図形的な理解とも対応する。境界 $t=\dfrac{3}{2}$ は、点 $(2,\ 0)$ での楕円の曲率円の中心 $\left(\dfrac{3}{2},\ 0\right)$ にあたる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学C (2) ア(イ) 曲線の媒介変数表示, 数学I (3) ア(イ) 2次関数の最大・最小]
+  variations:
+    - 点 $\mathrm{A}$ を $(0,\ t)$ にとり、$\mathrm{PA}$ の最大値を場合分けして求めさせる。
+    - 楕円上の点 $\mathrm{P}$ と直線 $x+2y=6$ の距離の最小値を、合成または平行な接線を用いて求めさせる。

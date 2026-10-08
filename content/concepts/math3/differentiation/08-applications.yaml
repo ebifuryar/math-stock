@@ -1,0 +1,16 @@
+id: df-applications
+kind: method
+title: 方程式・不等式・速度と加速度・近似式への応用
+body: |
+  **最大・最小（文字定数を含む）**: 増減表に加え、区間の端や $x\to\pm\infty$ の極限と極値を比べる。極値をとる $x$ が区間に入るかどうかで場合分けする。
+
+  **方程式の実数解の個数**: 定数 $a$ を分離して $g(x)=a$ とし、曲線 $y=g(x)$ と直線 $y=a$ の共有点の個数を数える。その際、$x\to\pm\infty$ や定義域の端（$x\to 0$ など）での $g(x)$ の極限を必ず調べ、グラフがその値に **到達しない** ことまで確認する。
+
+  **不等式の証明**: $F(x)=(\text{左辺})-(\text{右辺})$ の最小値が $0$ 以上であることを示す。$F'(x)$ の符号がすぐわからないときは $F''(x)$ まで調べる。基本形: すべての実数 $x$ で $e^x\geqq 1+x$、$x>0$ で $\log x\leqq x-1$（等号はそれぞれ $x=0,\ x=1$）。「すべての $x$ で $h(x)\leqq k$」$\iff$「$h(x)$ の最大値（上限）$\leqq k$」。
+
+  **速度・加速度**: 数直線上の点の位置 $x(t)$ に対し、速度 $v=\dfrac{dx}{dt}$、加速度 $\alpha=\dfrac{d^2x}{dt^2}$。平面上では
+  $$\vec{v}=\left(\frac{dx}{dt},\ \frac{dy}{dt}\right),\quad |\vec{v}|=\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2},\quad \vec{\alpha}=\left(\frac{d^2x}{dt^2},\ \frac{d^2y}{dt^2}\right)$$
+  加速度の大きさ $|\vec{\alpha}|$ は、速さ $|\vec{v}|$ を $t$ で微分したものとは一般に異なる（向きの変化も含むため）。
+
+  **近似式**: $|h|$ が十分小さいとき $f(a+h)\fallingdotseq f(a)+f'(a)h$。特に $|x|$ が小さいとき $(1+x)^p\fallingdotseq 1+px$、$\sin x\fallingdotseq x$、$e^x\fallingdotseq 1+x$、$\log(1+x)\fallingdotseq x$。
+prerequisites: [df-graph, cl-max-min, cl-equation-inequality]

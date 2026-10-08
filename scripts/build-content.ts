@@ -261,8 +261,17 @@ function main() {
     for (const m of catalog.misconceptions) {
       for (const r of m.remedyConceptIds) if (!conceptIds.has(r)) errors.push(`misconception ${m.id}: 未知の概念 ${r}`);
     }
+    // 題名や指導要領の項目名は数式として描画しないため、TeX を書くとそのまま表示されてしまう
+    const plain = (text: string, where: string) => {
+      if (text.includes('$')) errors.push(`${where}: 数式を描画しない欄に TeX があります（${text}）`);
+    };
+    for (const c of catalog.concepts) plain(c.title, `concept ${c.id} title`);
+    for (const m of catalog.misconceptions) plain(m.title, `misconception ${m.id} title`);
     for (const { parsed } of validUnits) {
       for (const p of parsed.problems) {
+        plain(p.title, `${p.id} title`);
+        for (const r of p.author.curriculumRefs) plain(r, `${p.id} curriculumRefs`);
+        for (const a of p.author.assessedAbilities) plain(a, `${p.id} assessedAbilities`);
         if (seen.has(p.id)) errors.push(`問題IDが重複: ${p.id}`);
         seen.add(p.id);
         for (const c of p.conceptIds) if (!conceptIds.has(c)) errors.push(`${p.id}: 未知の概念 ${c}`);

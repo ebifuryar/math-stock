@@ -1,0 +1,64 @@
+id: mc-vc-a05
+level: applied
+format: written
+title: 外心の位置ベクトル
+stem: |
+  $\triangle\mathrm{ABC}$ において $\mathrm{AB}=2,\ \mathrm{AC}=3,\ \angle\mathrm{BAC}=60^\circ$ とし、外心を $\mathrm{O}$ とする。$\overrightarrow{\mathrm{AB}}=\vec b,\ \overrightarrow{\mathrm{AC}}=\vec c$ とする。
+
+  (1) $\overrightarrow{\mathrm{AO}}$ を $\vec b,\ \vec c$ を用いて表せ。
+
+  (2) 直線 $\mathrm{AO}$ と辺 $\mathrm{BC}$ の交点を $\mathrm{D}$ とする。$\mathrm{BD}:\mathrm{DC}$ を求めよ。
+modelAnswer: |
+  $\vec b\cdot\vec c=2\cdot 3\cos 60^\circ=3$、$|\vec b|^2=4$、$|\vec c|^2=9$。
+
+  (1) $\overrightarrow{\mathrm{AO}}=s\vec b+t\vec c$ とおく。辺 $\mathrm{AB}$ の中点を $\mathrm{M}$ とすると、$\mathrm{O}$ は外心なので $\mathrm{OA}=\mathrm{OB}$ であり、$\mathrm{OM}\perp\mathrm{AB}$。よって $\overrightarrow{\mathrm{AO}}$ の $\overrightarrow{\mathrm{AB}}$ 方向への正射影は $\mathrm{AM}$ に等しく
+  $$\overrightarrow{\mathrm{AO}}\cdot\vec b=|\overrightarrow{\mathrm{AO}}||\vec b|\cos\angle\mathrm{OAB}=\mathrm{AM}\cdot|\vec b|=\frac{1}{2}|\vec b|^2=2$$
+  同様に $\overrightarrow{\mathrm{AO}}\cdot\vec c=\dfrac{1}{2}|\vec c|^2=\dfrac{9}{2}$。
+
+  （$\overrightarrow{\mathrm{AO}}\cdot\vec b=\dfrac{1}{2}|\vec b|^2$ は、$|\overrightarrow{\mathrm{BO}}|^2=|\overrightarrow{\mathrm{AO}}-\vec b|^2=|\overrightarrow{\mathrm{AO}}|^2-2\overrightarrow{\mathrm{AO}}\cdot\vec b+|\vec b|^2$ と $|\overrightarrow{\mathrm{BO}}|=|\overrightarrow{\mathrm{AO}}|$ からも得られる。）
+
+  これらに $\overrightarrow{\mathrm{AO}}=s\vec b+t\vec c$ を代入すると
+  $$4s+3t=2,\qquad 3s+9t=\frac{9}{2}$$
+  第1式を3倍して第2式を引くと $9s=\dfrac{3}{2}$、$s=\dfrac{1}{6}$。第1式から $3t=2-\dfrac{2}{3}=\dfrac{4}{3}$、$t=\dfrac{4}{9}$。
+
+  よって $\overrightarrow{\mathrm{AO}}=\dfrac{1}{6}\vec b+\dfrac{4}{9}\vec c$。
+
+  (2) $\mathrm{D}$ は直線 $\mathrm{AO}$ 上にあるから $\overrightarrow{\mathrm{AD}}=k\overrightarrow{\mathrm{AO}}=\dfrac{k}{6}\vec b+\dfrac{4k}{9}\vec c$。$\mathrm{D}$ は直線 $\mathrm{BC}$ 上にあるから、係数の和が $1$ で
+  $$\frac{k}{6}+\frac{4k}{9}=\frac{11k}{18}=1\qquad k=\frac{18}{11}$$
+  $$\overrightarrow{\mathrm{AD}}=\frac{3}{11}\vec b+\frac{8}{11}\vec c=\frac{3\vec b+8\vec c}{8+3}$$
+  よって $\mathrm{D}$ は辺 $\mathrm{BC}$ を $8:3$ に内分し、$\mathrm{BD}:\mathrm{DC}=8:3$。
+
+  **答え: (1) $\overrightarrow{\mathrm{AO}}=\dfrac{1}{6}\vec b+\dfrac{4}{9}\vec c$ (2) $\mathrm{BD}:\mathrm{DC}=8:3$**
+rubric:
+  - id: r1
+    criterion: 外心の性質（$\mathrm{OA}=\mathrm{OB}=\mathrm{OC}$ または辺の垂直二等分線）から、$\overrightarrow{\mathrm{AO}}\cdot\vec b=\dfrac{1}{2}|\vec b|^2=2$ と $\overrightarrow{\mathrm{AO}}\cdot\vec c=\dfrac{1}{2}|\vec c|^2=\dfrac{9}{2}$ を根拠とともに導いている
+    points: 3
+    keywords: ["垂直二等分線", "1/2|b|^2", "9/2"]
+  - id: r2
+    criterion: $\vec b\cdot\vec c=3$ を用いて $s,\ t$ の連立方程式 $4s+3t=2,\ 3s+9t=\dfrac{9}{2}$ を正しく立てている
+    points: 2
+    keywords: ["4s+3t=2", "3s+9t"]
+  - id: r3
+    criterion: 連立方程式を解いて $\overrightarrow{\mathrm{AO}}=\dfrac{1}{6}\vec b+\dfrac{4}{9}\vec c$ を得ている
+    points: 2
+    keywords: ["1/6", "4/9"]
+  - id: r4
+    criterion: $\overrightarrow{\mathrm{AD}}=k\overrightarrow{\mathrm{AO}}$ と係数の和 $=1$ から $k=\dfrac{18}{11}$ を求め、比の向きを正しく $\mathrm{BD}:\mathrm{DC}=8:3$ と答えている
+    points: 3
+    keywords: ["18/11", "8:3"]
+solution: |
+  外心の位置ベクトルは「$\overrightarrow{\mathrm{AO}}\cdot\overrightarrow{\mathrm{AB}}=\dfrac{1}{2}\mathrm{AB}^2$」（正射影が辺の半分）という内積の条件2本で決まる。(2) は直線 $\mathrm{BC}$ 上 ⇔ 係数の和が $1$。$\overrightarrow{\mathrm{AD}}=\dfrac{3}{11}\vec b+\dfrac{8}{11}\vec c$ は $\mathrm{C}$ に近い点なので $\mathrm{BD}>\mathrm{DC}$。
+
+  検算: 余弦定理で $\mathrm{BC}=\sqrt{7}$、正弦定理で外接円の半径 $R=\dfrac{\sqrt{7}}{2\sin 60^\circ}=\dfrac{\sqrt{21}}{3}$。$|\overrightarrow{\mathrm{AO}}|^2=\dfrac{1}{36}\cdot 4+2\cdot\dfrac{1}{6}\cdot\dfrac{4}{9}\cdot 3+\dfrac{16}{81}\cdot 9=\dfrac{1}{9}+\dfrac{4}{9}+\dfrac{16}{9}=\dfrac{7}{3}=R^2$ で一致する。
+concepts: [vc-inner-product, vc-position-vector, vc-intersection]
+misconceptions: [mc-vc-division-reversed]
+targetSeconds: 600
+irt: { expectedCorrectRate: 0.45, discrimination: 1.3 }
+author:
+  intent: |
+    外心という図形的条件を、内積の条件 $\overrightarrow{\mathrm{AO}}\cdot\overrightarrow{\mathrm{AB}}=\dfrac{1}{2}\mathrm{AB}^2$ に翻訳できるかが核心。根拠（垂直二等分線・正射影、または $|\overrightarrow{\mathrm{BO}}|=|\overrightarrow{\mathrm{AO}}|$ の展開）を書けているかを採点項目 r1 で独立に評価する。(2) では係数から比を読むときの向きの誤り（$3:8$ と答える）を識別する。外接円の半径との照合で自己検算できる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学C (1) ア(イ) ベクトルの内積とその基本的な性質, 数学C (1) イ(イ) ベクトルを用いた平面図形の考察]
+  variations:
+    - 同じ三角形の垂心 $\mathrm{H}$ について $\overrightarrow{\mathrm{AH}}$ を求めさせ、$\overrightarrow{\mathrm{OH}}=\overrightarrow{\mathrm{OA}}+\overrightarrow{\mathrm{OB}}+\overrightarrow{\mathrm{OC}}$ を確かめさせる。
+    - $\angle\mathrm{BAC}=120^\circ$ に変え、外心が三角形の外部に出る（係数の和が $1$ を超える）ことを確認させる。

@@ -1,0 +1,44 @@
+id: m3-df-s03
+level: school
+format: choice
+title: 媒介変数で表された曲線の接線の傾き
+stem: |
+  媒介変数 $t$ を用いて
+  $$x=t-\sin t,\qquad y=1-\cos t$$
+  と表される曲線（サイクロイド）上の、$t=\dfrac{\pi}{3}$ に対応する点における接線の傾きとして正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\sqrt{3}$
+    rationale: |
+      正解。$\dfrac{dx}{dt}=1-\cos t,\ \dfrac{dy}{dt}=\sin t$ より $\dfrac{dy}{dx}=\dfrac{\sin t}{1-\cos t}$。$t=\dfrac{\pi}{3}$ で $\dfrac{\sqrt{3}/2}{1/2}=\sqrt{3}$。
+  - id: "2"
+    text: $\dfrac{\sqrt{3}}{2}$
+    misconception: mc-df-parametric-dydt
+    rationale: |
+      $\dfrac{dy}{dt}=\sin t$ の値をそのまま接線の傾きとしている。$\dfrac{dy}{dt}$ は $t$ に対する $y$ の変化率であり、$\dfrac{dx}{dt}$ で割る必要がある。
+  - id: "3"
+    text: $\dfrac{\sqrt{3}}{3}$
+    misconception: mc-df-parametric-dydt
+    rationale: |
+      $\dfrac{dx}{dt}\Big/\dfrac{dy}{dt}=\dfrac{1-\cos t}{\sin t}$ と分子と分母を逆にしており、$\dfrac{dx}{dy}$ を求めている。
+  - id: "4"
+    text: $-\sqrt{3}$
+    rationale: |
+      $(\cos t)'=\sin t$ と符号を誤り、$\dfrac{dy}{dt}=-\sin t$ として計算している。
+answer: "1"
+solution: |
+  $$\frac{dx}{dt}=1-\cos t,\qquad \frac{dy}{dt}=\sin t$$
+  $t=\dfrac{\pi}{3}$ では $\dfrac{dx}{dt}=\dfrac{1}{2}\neq 0$ なので
+  $$\frac{dy}{dx}=\frac{\dfrac{dy}{dt}}{\dfrac{dx}{dt}}=\frac{\sin t}{1-\cos t}=\frac{\sqrt{3}/2}{1/2}=\sqrt{3}$$
+concepts: [df-implicit-parametric, df-elementary]
+misconceptions: [mc-df-parametric-dydt]
+targetSeconds: 120
+irt: { expectedCorrectRate: 0.75, discrimination: 0.9 }
+author:
+  intent: |
+    媒介変数表示の曲線の接線の傾きが $\dfrac{dy}{dt}\Big/\dfrac{dx}{dt}$ であることを理解しているかをみる。②（$\dfrac{dy}{dt}$ をそのまま答える）と③（分子・分母の逆転）が典型的な誤りで、どちらを選んだかで「$x$ で微分する」意味の理解度を分けられる。④は三角関数の導関数の符号の基本的な誤り。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: ["数学III (2) ア(ア) 媒介変数で表された関数の導関数"]
+  variations:
+    - 同じサイクロイドで、$t=\dfrac{\pi}{3}$ に対応する点における法線の方程式を求めさせる。
+    - $\dfrac{d^2y}{dx^2}=-\dfrac{1}{(1-\cos t)^2}$ を求めさせ、曲線が上に凸であることを確かめさせる。

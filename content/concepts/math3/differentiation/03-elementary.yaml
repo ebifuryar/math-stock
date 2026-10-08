@@ -1,0 +1,19 @@
+id: df-elementary
+kind: formula
+title: 三角・指数・対数関数の導関数と高次導関数
+body: |
+  角は弧度法で測る。$\displaystyle\lim_{x\to 0}\frac{\sin x}{x}=1$、$\displaystyle\lim_{h\to 0}\frac{e^h-1}{h}=1$（$e$ の定義）から次が導かれる。
+
+  | 関数 | 導関数 | 関数 | 導関数 |
+  | --- | --- | --- | --- |
+  | $\sin x$ | $\cos x$ | $e^x$ | $e^x$ |
+  | $\cos x$ | $-\sin x$ | $a^x$ | $a^x\log a$ |
+  | $\tan x$ | $\dfrac{1}{\cos^2 x}$ | $\log x$ | $\dfrac{1}{x}$ |
+  | $\log\lvert x\rvert$ | $\dfrac{1}{x}$ | $\log_a\lvert x\rvert$ | $\dfrac{1}{x\log a}$ |
+
+  **$\log|x|$ の導関数**: $x<0$ では $\log|x|=\log(-x)$ で、合成関数の微分により $\dfrac{-1}{-x}=\dfrac{1}{x}$。したがって $x$ の正負によらず $(\log|x|)'=\dfrac{1}{x}$ であり、$\dfrac{1}{|x|}$ ではない。同様に $\{\log|f(x)|\}'=\dfrac{f'(x)}{f(x)}$。
+
+  **対数微分法**: 積・商・累乗が重なった関数 $y$ は、両辺の絶対値の対数をとって $\log|y|$ を和・差に分解し、両辺を $x$ で微分して $\dfrac{y'}{y}$ を求める。絶対値をとるので、$y$ が負になる範囲でもそのまま使える。$y=x^x\ (x>0)$ のような $x^{g(x)}$ 型にも使う。
+
+  **高次導関数**: $f''(x),\ f'''(x),\ \ldots,\ f^{(n)}(x)$。$\sin x$ の第 $n$ 次導関数は $\sin\left(x+\dfrac{n\pi}{2}\right)$、$x^2e^x$ の第 $n$ 次導関数は $\{x^2+2nx+n(n-1)\}e^x$ のように、いくつか計算して規則を見つけ、数学的帰納法で確かめる。
+prerequisites: [df-rules, el-log-function, tf-addition]

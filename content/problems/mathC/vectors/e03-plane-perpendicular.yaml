@@ -1,0 +1,60 @@
+id: mc-vc-e03
+level: exam
+format: mark
+title: 平面への垂線の足と四面体の体積
+stem: |
+  座標空間に4点 $\mathrm{O}(0,\ 0,\ 0),\ \mathrm{A}(-1,\ 1,\ 2),\ \mathrm{B}(1,\ -1,\ 1),\ \mathrm{C}(1,\ 1,\ 0)$ がある。
+
+  (1) $\overrightarrow{\mathrm{AB}}\cdot\overrightarrow{\mathrm{AC}}=\boxed{\text{ア}}$、$|\overrightarrow{\mathrm{AB}}|=\boxed{\text{イ}}$、$|\overrightarrow{\mathrm{AC}}|=\boxed{\text{ウ}}\sqrt{\boxed{\text{エ}}}$ であり、$\triangle\mathrm{ABC}$ の面積は $\boxed{\text{オ}}$ である。
+
+  (2) ベクトル $\vec n=(2,\ p,\ q)$ が $\overrightarrow{\mathrm{AB}}$ と $\overrightarrow{\mathrm{AC}}$ の両方に垂直であるとき、$p=\boxed{\text{カ}},\ q=\boxed{\text{キ}}$ である。
+
+  (3) 点 $\mathrm{O}$ から平面 $\mathrm{ABC}$ に下ろした垂線を $\mathrm{OH}$ とする。$\mathrm{H}$ の座標は $\left(\dfrac{\boxed{\text{ク}}}{\boxed{\text{ケ}}},\ \dfrac{\boxed{\text{コ}}}{\boxed{\text{サ}}},\ \dfrac{\boxed{\text{シ}}}{\boxed{\text{ス}}}\right)$ であり、$\mathrm{OH}=\boxed{\text{セ}}$ である。したがって、四面体 $\mathrm{OABC}$ の体積は $\boxed{\text{ソ}}$ である。
+
+  (4) $\overrightarrow{\mathrm{AH}}=\dfrac{\boxed{\text{タ}}}{\boxed{\text{チ}}}\overrightarrow{\mathrm{AB}}+\dfrac{\boxed{\text{ツ}}}{\boxed{\text{テ}}}\overrightarrow{\mathrm{AC}}$ であり、$\mathrm{H}$ は $\triangle\mathrm{ABC}$ の内部にある。
+blanks:
+  - { label: ア, answer: "6" }
+  - { label: イ, answer: "3" }
+  - { label: ウ, answer: "2" }
+  - { label: エ, answer: "2" }
+  - { label: オ, answer: "3" }
+  - { label: カ, answer: "1" }
+  - { label: キ, answer: "2" }
+  - { label: ク, answer: "2" }
+  - { label: ケ, answer: "3" }
+  - { label: コ, answer: "1" }
+  - { label: サ, answer: "3" }
+  - { label: シ, answer: "2" }
+  - { label: ス, answer: "3" }
+  - { label: セ, answer: "1" }
+  - { label: ソ, answer: "1" }
+  - { label: タ, answer: "1" }
+  - { label: チ, answer: "3" }
+  - { label: ツ, answer: "1" }
+  - { label: テ, answer: "2" }
+solution: |
+  (1) $\overrightarrow{\mathrm{AB}}=(2,\ -2,\ -1),\ \overrightarrow{\mathrm{AC}}=(2,\ 0,\ -2)$。
+  $$\overrightarrow{\mathrm{AB}}\cdot\overrightarrow{\mathrm{AC}}=4+0+2=6,\quad |\overrightarrow{\mathrm{AB}}|=3,\quad |\overrightarrow{\mathrm{AC}}|=2\sqrt{2}$$
+  $$\triangle\mathrm{ABC}=\frac{1}{2}\sqrt{9\cdot 8-6^2}=\frac{1}{2}\sqrt{36}=3$$
+
+  (2) $\vec n\cdot\overrightarrow{\mathrm{AB}}=4-2p-q=0$、$\vec n\cdot\overrightarrow{\mathrm{AC}}=4-2q=0$ より $q=2,\ p=1$。$\vec n=(2,\ 1,\ 2)$、$|\vec n|=3$。
+
+  (3) $\overrightarrow{\mathrm{OH}}$ は平面 $\mathrm{ABC}$ に垂直なので $\vec n$ に平行で、$\overrightarrow{\mathrm{OH}}=k\vec n$ とおける。$\mathrm{H}$ は平面上にあるから $\overrightarrow{\mathrm{AH}}\perp\vec n$:
+  $$(k\vec n-\overrightarrow{\mathrm{OA}})\cdot\vec n=9k-(-2+1+4)=0\qquad k=\frac{1}{3}$$
+  よって $\mathrm{H}\left(\dfrac{2}{3},\ \dfrac{1}{3},\ \dfrac{2}{3}\right)$、$\mathrm{OH}=\dfrac{1}{3}\cdot 3=1$。体積は $\dfrac{1}{3}\cdot 3\cdot 1=1$。
+
+  （発展: 平面 $\mathrm{ABC}$ の方程式は $2x+y+2z=3$ で、点と平面の距離の公式から $\mathrm{OH}=\dfrac{|-3|}{\sqrt{4+1+4}}=1$ としてもよい。）
+
+  (4) $\overrightarrow{\mathrm{AH}}=\left(\dfrac{5}{3},\ -\dfrac{2}{3},\ -\dfrac{4}{3}\right)=s(2,\ -2,\ -1)+t(2,\ 0,\ -2)$ とおくと、$y$ 成分から $-2s=-\dfrac{2}{3}$ で $s=\dfrac{1}{3}$、$x$ 成分から $2s+2t=\dfrac{5}{3}$ で $t=\dfrac{1}{2}$（$z$ 成分 $-\dfrac{1}{3}-1=-\dfrac{4}{3}$ も成り立つ）。$s>0,\ t>0,\ s+t=\dfrac{5}{6}<1$ なので $\mathrm{H}$ は $\triangle\mathrm{ABC}$ の内部にある。
+concepts: [vc-space-vector, vc-triangle-area, vc-sphere-plane]
+misconceptions: [mc-vc-coplanar-sum]
+targetSeconds: 840
+irt: { expectedCorrectRate: 0.35, discrimination: 1.3 }
+author:
+  intent: |
+    空間座標での計量の一連の流れ（面積公式・法線ベクトル・垂線の足・体積・平面上の点の表示）を、数値の一貫性を保ちながら処理できるかをみる。$\overrightarrow{\mathrm{OH}}=k\vec n$ とおく発想が (3) の鍵で、ここで「$\overrightarrow{\mathrm{OH}}\cdot\overrightarrow{\mathrm{AB}}=\overrightarrow{\mathrm{OH}}\cdot\overrightarrow{\mathrm{AC}}=0$ と平面上の条件の3式」を連立する受験者との処理時間の差も識別点になる。行列式による体積 $\dfrac{1}{6}|\det(\vec a,\ \vec b,\ \vec c)|=1$ と一致することを確認済み。(4) で $s+t<1$ を確かめることで、垂線の足の位置の判定まで含めた。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学C (1) ア(ウ) 空間座標と空間におけるベクトル, 数学C (1) イ(イ) ベクトルを用いた空間図形の考察]
+  variations:
+    - 点 $\mathrm{O}$ を $\mathrm{O}'(3,\ 3,\ 3)$ に替え、$\mathrm{O}'$ から平面 $\mathrm{ABC}$ に下ろした垂線の足が $\triangle\mathrm{ABC}$ の外部に出るかどうかを判定させる。
+    - 平面 $\mathrm{ABC}$ に関して $\mathrm{O}$ と対称な点の座標を求めさせる。

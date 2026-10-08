@@ -1,0 +1,15 @@
+id: ig-riemann-sum
+kind: theorem
+title: 区分求積法と定積分の不等式
+body: |
+  **区分求積法**: 区間 $[0,\ 1]$ を $n$ 等分し、各小区間の右端 $\dfrac{k}{n}$ の値で長方形を作ると、$f(x)$ が連続なら
+  $$\lim_{n\to\infty}\frac{1}{n}\sum_{k=1}^{n}f\!\left(\frac{k}{n}\right)=\int_0^1 f(x)\,dx$$
+  （$k=0$ から $n-1$ までの和でも同じ極限。）和の範囲が $k=1$ から $2n$ までなら、$\dfrac{k}{n}$ は $0$ から $2$ まで動くので
+  $$\lim_{n\to\infty}\frac{1}{n}\sum_{k=1}^{2n}f\!\left(\frac{k}{n}\right)=\int_0^2 f(x)\,dx$$
+  手順: (i) 和を $\dfrac{1}{n}\times\left(\dfrac{k}{n}\ \text{の式}\right)$ の形に直す、(ii) $\dfrac{k}{n}\to x$、$\dfrac{1}{n}\to dx$、(iii) $\dfrac{k}{n}$ の最初と最後の値の極限から積分区間を決める。積の極限は対数をとって和に直す。
+
+  **定積分と不等式**: $a\leqq x\leqq b$ で $f(x)\leqq g(x)$ なら $\displaystyle\int_a^b f(x)\,dx\leqq\int_a^b g(x)\,dx$（連続で $f\not\equiv g$ なら等号は成り立たない）。
+  $f(x)$ が減少関数のとき、$k\leqq x\leqq k+1$ で $f(k+1)\leqq f(x)\leqq f(k)$ なので
+  $$f(k+1)<\int_k^{k+1}f(x)\,dx<f(k)$$
+  これを $k$ について加えると、和 $\displaystyle\sum f(k)$ を定積分ではさんで評価できる（グラフ上では、曲線の下の面積を、外側と内側の長方形の面積ではさむ）。
+prerequisites: [cl-integral, lm-squeeze]

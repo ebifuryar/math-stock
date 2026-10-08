@@ -1,0 +1,50 @@
+id: mc-cp-a01
+level: applied
+format: choice
+title: 正三角形の第3の頂点
+stem: |
+  複素数平面上に2点 $\mathrm{A}(1+i),\ \mathrm{B}(3+3i)$ がある。$\triangle\mathrm{ABC}$ が正三角形となり、頂点が $\mathrm{A}\to\mathrm{B}\to\mathrm{C}$ の順に反時計回りに並ぶような点 $\mathrm{C}(\gamma)$ を求めたい。
+
+  点 $\mathrm{C}$ は、点 $\mathrm{B}$ を点 $\mathrm{A}$ を中心として $\dfrac{\pi}{3}$ だけ回転した点である。このことを用いて $\gamma$ を求めると、$\gamma$ として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $(2-\sqrt{3})+(2+\sqrt{3})i$
+    rationale: |
+      正解。$\gamma-\alpha=(\beta-\alpha)\left(\cos\dfrac{\pi}{3}+i\sin\dfrac{\pi}{3}\right)$ より $\gamma=(1+i)+(2+2i)\cdot\dfrac{1+\sqrt{3}i}{2}=(2-\sqrt{3})+(2+\sqrt{3})i$。
+  - id: "2"
+    text: $(2+\sqrt{3})+(2-\sqrt{3})i$
+    misconception: mc-cp-rotation
+    rationale: |
+      $\cos\dfrac{\pi}{3}-i\sin\dfrac{\pi}{3}$ を掛けて（$\cos\dfrac{\pi}{3}+i\sin\dfrac{\pi}{3}$ で割って）$-\dfrac{\pi}{3}$ 回転している。この点を $\mathrm{C}$ とすると $\triangle\mathrm{ABC}$ は正三角形だが、$\mathrm{A}\to\mathrm{B}\to\mathrm{C}$ は時計回りになる。
+  - id: "3"
+    text: $\dfrac{3-3\sqrt{3}}{2}+\dfrac{3+3\sqrt{3}}{2}i$
+    misconception: mc-cp-rotation
+    rationale: |
+      $\gamma=\beta\left(\cos\dfrac{\pi}{3}+i\sin\dfrac{\pi}{3}\right)$ と、点 $\mathrm{B}$ を **原点** を中心に回転している。この点は $\mathrm{A}$ からの距離が $\mathrm{AB}$ と等しくならず、正三角形にならない。
+  - id: "4"
+    text: $(1-\sqrt{3})+(1+\sqrt{3})i$
+    misconception: mc-cp-rotation
+    rationale: |
+      $\gamma-\alpha=(\beta-\alpha)\left(\cos\dfrac{\pi}{3}+i\sin\dfrac{\pi}{3}\right)$ の右辺だけを計算し、最後に $\alpha$ を加えていない。これは $\overrightarrow{\mathrm{AC}}$ に当たる複素数 $\gamma-\alpha$ であり、点 $\mathrm{C}$ そのものではない。
+answer: "1"
+solution: |
+  $\alpha=1+i,\ \beta=3+3i$ とする。点 $\mathrm{A}$ を中心とする回転なので、$\mathrm{A}$ を原点に移してから回転し、元に戻す。
+  $$\gamma-\alpha=(\beta-\alpha)\left(\cos\frac{\pi}{3}+i\sin\frac{\pi}{3}\right)$$
+  $\beta-\alpha=2+2i$ なので
+  $$(2+2i)\cdot\frac{1+\sqrt{3}\,i}{2}=(1+i)(1+\sqrt{3}\,i)=(1-\sqrt{3})+(1+\sqrt{3})i$$
+  よって
+  $$\gamma=(1+i)+(1-\sqrt{3})+(1+\sqrt{3})i=(2-\sqrt{3})+(2+\sqrt{3})i$$
+
+  反時計回り（正の向き）の回転は $\cos\theta+i\sin\theta$ を **掛ける**。時計回りに並ぶ場合は $\cos\dfrac{\pi}{3}-i\sin\dfrac{\pi}{3}$ を掛け、$\gamma=(2+\sqrt{3})+(2-\sqrt{3})i$ となる。
+concepts: [cp-product-rotation, cp-angle-condition]
+misconceptions: [mc-cp-rotation]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.55, discrimination: 1.2 }
+author:
+  intent: |
+    原点以外の点を中心とする回転を $\gamma-\alpha=(\beta-\alpha)(\cos\theta+i\sin\theta)$ と正しく式にできるかをみる。誤答3つは、回転の向き（②）、回転の中心（③）、平行移動の戻し忘れ（④）という、回転の立式で起こる3種類の誤りに1対1で対応させた。$\overrightarrow{\mathrm{AB}}$ が $2+2i$ となるよう点を選び、計算量を抑えて立式の正しさだけで差がつくようにしている。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学C (2) ア(エ) 複素数平面における図形の移動（回転）]
+  variations:
+    - 向きを指定せず「正三角形となる点 $\mathrm{C}$ をすべて求めよ」として、2つの解を答えさせる。
+    - $\mathrm{AB}$ を1辺とする正方形 $\mathrm{ABCD}$（反時計回り）の残りの頂点を、$i$ を掛ける回転で求めさせる。

@@ -1,0 +1,18 @@
+id: cv-parametric
+kind: method
+title: 媒介変数表示と媒介変数の消去
+body: |
+  曲線上の点 $(x,\ y)$ を、変数 $t$ の関数 $x=f(t),\ y=g(t)$ で表したものを **媒介変数表示** という。
+
+  **代表的な媒介変数表示**
+  - 円 $x^2+y^2=r^2$: $x=r\cos\theta,\ y=r\sin\theta$
+  - 楕円 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$: $x=a\cos\theta,\ y=b\sin\theta$（$\theta$ は点と原点を結ぶ線分の偏角とは一般に異なる）
+  - 双曲線 $\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1$: $x=\dfrac{a}{\cos\theta},\ y=b\tan\theta$
+  - 中心 $(p,\ q)$ への平行移動: $x=p+a\cos\theta,\ y=q+b\sin\theta$
+  - **サイクロイド**: 半径 $a$ の円が $x$ 軸の上側で $x$ 軸に接しながら滑らずに転がるとき、はじめ原点にあった円周上の定点が描く曲線。円が角 $\theta$ だけ回転すると、中心は $(a\theta,\ a)$ に移り（転がった距離 $=$ 弧の長さ $a\theta$）
+  $$x=a(\theta-\sin\theta),\qquad y=a(1-\cos\theta)$$
+
+  **媒介変数の消去と変域** 媒介変数を消去して $x,\ y$ の関係式を得たら、媒介変数の動く範囲から $x$（や $y$）の **とりうる値の範囲** を必ず求め直す。たとえば $x=\sin\theta+\cos\theta,\ y=\sin\theta\cos\theta$ は $x^2=1+2y$ を満たすが、$x=\sqrt{2}\sin\left(\theta+\dfrac{\pi}{4}\right)$ なので $|x|\leqq\sqrt{2}$ の部分しか表さない。
+
+  **楕円上の点の最大・最小** 楕円上の点を $(a\cos\theta,\ b\sin\theta)$ とおくと、1次式 $px+qy$ は三角関数の合成で、距離の2乗などは $\cos\theta$ の2次関数（$-1\leqq\cos\theta\leqq 1$）として扱える。
+prerequisites: [cv-ellipse, cg-locus, tf-definition, tf-synthesis]

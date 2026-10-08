@@ -1,0 +1,56 @@
+- id: mc-vc-norm-additive
+  title: ベクトルの大きさを足し算する
+  description: |
+    $|\vec a+\vec b|=|\vec a|+|\vec b|$、$|\vec a+2\vec b|=|\vec a|+2|\vec b|$ のように、和の大きさを大きさの和として計算する。
+  cause: |
+    ベクトルを向きのない数と同じように扱っている。等号が成り立つのは $\vec a,\ \vec b$ が同じ向きのときだけで、一般には三角形の2辺の和と他の1辺の関係（三角不等式）になることを図で確かめていない。大きさは $|\vec a+\vec b|^2$ を内積で展開して求める、という手順が身についていない。
+  remedyConcepts: [vc-operations, vc-inner-product]
+- id: mc-vc-dot-componentwise
+  title: 内積を成分ごとの積のベクトルにする
+  description: |
+    $\vec a=(a_1,a_2),\ \vec b=(b_1,b_2)$ の内積を $(a_1b_1,\ a_2b_2)$ というベクトルとして答える。和をとらずに止める、または内積の結果にさらにベクトルの演算を施す。
+  cause: |
+    和・差・実数倍がすべて「成分ごと」の演算なので、内積もその延長だと思っている。内積が $|\vec a||\vec b|\cos\theta$ という **実数** であり、成分の積の **和** までとって1つの数になることを、定義と結びつけていない。
+  remedyConcepts: [vc-inner-product]
+- id: mc-vc-expansion-sign
+  title: 大きさの2乗の展開で内積の項の符号・係数を誤る
+  description: |
+    $|\vec a-\vec b|^2=|\vec a|^2+2\vec a\cdot\vec b+|\vec b|^2$ と符号を誤る、$|\vec a+2\vec b|^2$ の中央の項を $2\vec a\cdot\vec b$（正しくは $4\vec a\cdot\vec b$）とする、あるいは $\vec a\cdot\vec b$ が負のときの符号処理で崩れる。
+  cause: |
+    $(x-y)^2=x^2-2xy+y^2$ との対応を意識せず、「$|\ |^2$ の展開は全部プラス」と形で覚えている。$|\vec a+k\vec b|^2=|\vec a|^2+2k\,\vec a\cdot\vec b+k^2|\vec b|^2$ と係数 $k$ を明示して展開する習慣がない。
+  remedyConcepts: [vc-inner-product]
+- id: mc-vc-angle-range
+  title: なす角を始点をそろえずに読む・範囲を無視する
+  description: |
+    $\vec a\cdot\vec b<0$ なのになす角を鋭角とする、$\cos\theta=-\dfrac{1}{\sqrt{2}}$ から $\theta=-45^\circ$ や $225^\circ$ と答えるなど、なす角の範囲 $0\leqq\theta\leqq\pi$（$0^\circ\leqq\theta\leqq 180^\circ$）を無視する。図形の中のベクトル（$\overrightarrow{\mathrm{AB}}$ と $\overrightarrow{\mathrm{BC}}$ など）で、始点をそろえずに図形の内角をそのままなす角とする。
+  cause: |
+    なす角が「2つのベクトルの始点をそろえたときにできる角で、$0$ 以上 $\pi$ 以下の1つ」と定義されていることを確認していない。内積の符号と角が鋭角・鈍角かの対応で検算していない。
+  remedyConcepts: [vc-inner-product]
+- id: mc-vc-division-reversed
+  title: 内分点の係数・比を逆にする
+  description: |
+    線分 $\mathrm{AB}$ を $m:n$ に内分する点を $\dfrac{m\vec a+n\vec b}{m+n}$ とする。逆に $\overrightarrow{\mathrm{OP}}=\dfrac{2\vec a+\vec b}{3}$ から $\mathrm{AP}:\mathrm{PB}=2:1$ と読む。角の二等分線の比や $\mathrm{AI}:\mathrm{ID}$ のような比を、ベクトルの係数に移すときに逆にする。
+  cause: |
+    「$\mathrm{P}$ に近い端点ほど係数が大きい」というたすき掛けの構造を理解せず、比の数字を左から順に係数に当てはめている。極端な場合（$m:n=1:0$ なら $\mathrm{P}=\mathrm{B}$）で確かめる習慣がない。
+  remedyConcepts: [vc-position-vector]
+- id: mc-vc-independence-unchecked
+  title: 一次独立を確認せずに係数比較する
+  description: |
+    交点の位置ベクトルを2通りに表したあと、基にしたベクトルが一次独立（平面で2つ、空間で3つ、かつ平行でない・同じ平面上にない）であることを確かめず、あるいは述べずに係数を比較する。平面上の3つのベクトルについて係数を比較する、空間の問題で平面上の2つのベクトルだけで係数を比較する。
+  cause: |
+    「係数を比較できるのは表し方がただ1通りのとき」という根拠を理解していない。$\vec a\parallel\vec b$ なら $2\vec a=\vec b$ のように、異なる係数で同じベクトルを表せる例を知らない。
+  remedyConcepts: [vc-intersection]
+- id: mc-vc-coplanar-sum
+  title: 平面上にある条件の「係数の和 = 1」を忘れる・誤用する
+  description: |
+    $\overrightarrow{\mathrm{OP}}=x\overrightarrow{\mathrm{OA}}+y\overrightarrow{\mathrm{OB}}+z\overrightarrow{\mathrm{OC}}$ と表しただけで点 $\mathrm{P}$ が平面 $\mathrm{ABC}$ 上にあるとみなし、$x+y+z=1$ の条件を付けない。逆に、$\mathrm{O}$ を通る平面（平面 $\mathrm{OBC}$ など）にも係数の和 $=1$ を課す。
+  cause: |
+    $\overrightarrow{\mathrm{AP}}=s\overrightarrow{\mathrm{AB}}+t\overrightarrow{\mathrm{AC}}$ から $\overrightarrow{\mathrm{OP}}=(1-s-t)\overrightarrow{\mathrm{OA}}+s\overrightarrow{\mathrm{OB}}+t\overrightarrow{\mathrm{OC}}$ を導く過程を理解しておらず、条件の意味（$\mathrm{A}$ を始点にしたときの表し方）を形だけで覚えている。
+  remedyConcepts: [vc-space-vector, vc-position-vector]
+- id: mc-vc-region-coefficient
+  title: 点の存在範囲で係数付きの条件を正しく変形しない
+  description: |
+    $\overrightarrow{\mathrm{OP}}=s\overrightarrow{\mathrm{OA}}+t\overrightarrow{\mathrm{OB}}$、$s+2t\leqq 2$ のような条件で、係数を無視して $s+t\leqq 2$ と同じ図形にする、$t$ の係数 $2$ を「$\overrightarrow{\mathrm{OB}}$ を2倍する」と逆向きに読む、あるいは $1\leqq s+2t$ の下限を落とす。
+  cause: |
+    「右辺を1にする → 係数をベクトル側に移す → 新しい係数の和が1以下」という変形の手順を踏まず、図形を直感で決めている。$s+2t=1$ を満たす具体的な点（$s=1,\ t=0$ と $s=0,\ t=\dfrac{1}{2}$）を代入して境界を確かめていない。
+  remedyConcepts: [vc-vector-equation]

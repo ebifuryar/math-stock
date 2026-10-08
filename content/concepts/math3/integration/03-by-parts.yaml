@@ -1,0 +1,17 @@
+id: ig-by-parts
+kind: method
+title: 部分積分法
+body: |
+  積の微分 $(fg)'=f'g+fg'$ を積分して
+  $$\int f(x)g'(x)\,dx=f(x)g(x)-\int f'(x)g(x)\,dx$$
+  $$\int_a^b f(x)g'(x)\,dx=\Big[f(x)g(x)\Big]_a^b-\int_a^b f'(x)g(x)\,dx$$
+
+  **どちらを微分するか**: 右辺の積分が元より簡単になるように選ぶ。目安は「微分すると簡単になるもの（$\log x$、多項式）を $f$、積分しやすいもの（$e^x$、$\sin x$、$\cos x$）を $g'$」。
+  - $\displaystyle\int x\cos x\,dx$: $x$ を微分、$\cos x$ を積分 $\Rightarrow x\sin x+\cos x+C$
+  - $\displaystyle\int x\log x\,dx$: $\log x$ を微分、$x$ を積分 $\Rightarrow \frac{x^2}{2}\log x-\frac{x^2}{4}+C$
+  - $\displaystyle\int\log x\,dx=\int(x)'\log x\,dx=x\log x-x+C$
+
+  **$e^{ax}\sin bx$ 型（2回で元に戻る）**: $I=\displaystyle\int e^x\sin x\,dx$ は、2回とも $e^x$ を積分する側（または2回とも三角関数を積分する側）に固定して部分積分すると
+  $$I=e^x\sin x-\left(e^x\cos x+I\right)\quad\Longrightarrow\quad I=\frac{e^x(\sin x-\cos x)}{2}+C$$
+  2回目に役割を入れ替えると $I=I$ という恒等式に戻って求まらない。最後に $2I=\cdots$ を $2$ で割ることを忘れない。
+prerequisites: [ig-basic]

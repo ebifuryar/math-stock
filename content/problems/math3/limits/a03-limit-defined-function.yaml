@@ -1,0 +1,53 @@
+id: m3-lm-a03
+level: applied
+format: mark
+title: 極限で定められた関数の連続性
+stem: |
+  $a,\ b$ を定数とし、関数 $f(x)$ を
+  $$f(x)=\lim_{n\to\infty}\frac{x^{2n+2}+x^{2n+1}+ax+b}{x^{2n}+1}$$
+  で定める。
+
+  (1) $|x|<1$ のとき $f(x)=ax+b$ であり、$|x|>1$ のとき
+  $$f(x)=x^{\boxed{\text{ア}}}+x$$
+  である。また
+  $$f(1)=\frac{a+b+\boxed{\text{イ}}}{2},\qquad f(-1)=\frac{b-a}{2}$$
+  である。
+
+  (2) $f(x)$ が $x=1$ で連続となるための条件は $a+b=\boxed{\text{ウ}}$ であり、$x=-1$ で連続となるための条件は $a-b=\boxed{\text{エ}}$ である。
+
+  (3) $f(x)$ がすべての実数 $x$ で連続となるのは $a=\boxed{\text{オ}}$、$b=\boxed{\text{カ}}$ のときである。
+
+  (4) (3) のとき、方程式 $f(x)=2$ の実数解は $x=\boxed{\text{キク}},\ \boxed{\text{ケ}}$ である（小さい順に答えよ）。
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イ, answer: "2" }
+  - { label: ウ, answer: "2" }
+  - { label: エ, answer: "0" }
+  - { label: オ, answer: "1" }
+  - { label: カ, answer: "1" }
+  - { label: キク, answer: "-2" }
+  - { label: ケ, answer: "1" }
+solution: |
+  (1) $|x|<1$ のとき $x^{2n}\to 0$ なので $f(x)=ax+b$。$|x|>1$ のとき分子・分母を $x^{2n}$ で割ると、$\dfrac{1}{x^{2n}}\to 0$ より
+  $$f(x)=\lim_{n\to\infty}\frac{x^2+x+\frac{ax+b}{x^{2n}}}{1+\frac{1}{x^{2n}}}=x^2+x$$
+  $x=1$ のとき $x^{2n}=1$ なので $f(1)=\dfrac{1+1+a+b}{2}=\dfrac{a+b+2}{2}$。$x=-1$ のとき $x^{2n+2}=1,\ x^{2n+1}=-1$ なので $f(-1)=\dfrac{1-1-a+b}{2}=\dfrac{b-a}{2}$。
+
+  (2) $x=1$ で: $\displaystyle\lim_{x\to 1-0}f(x)=a+b$、$\displaystyle\lim_{x\to 1+0}f(x)=1+1=2$、$f(1)=\dfrac{a+b+2}{2}$。この3つが一致する条件は $a+b=2$。
+
+  $x=-1$ で: $\displaystyle\lim_{x\to -1+0}f(x)=-a+b$、$\displaystyle\lim_{x\to -1-0}f(x)=1-1=0$、$f(-1)=\dfrac{b-a}{2}$。一致する条件は $b-a=0$、すなわち $a-b=0$。
+
+  (3) $|x|<1$、$|x|>1$ の各範囲では $f(x)$ は多項式で連続なので、$x=\pm 1$ で連続であればよい。$a+b=2,\ a-b=0$ より $a=1,\ b=1$。
+
+  (4) $f(x)=\begin{cases}x+1 & (|x|\leqq 1)\\ x^2+x & (|x|>1)\end{cases}$（$x=\pm 1$ でも $f(1)=2,\ f(-1)=0$ と一致）。$|x|\leqq 1$ で $x+1=2$ より $x=1$。$|x|>1$ で $x^2+x-2=0$ より $x=1,\ -2$ のうち $|x|>1$ を満たす $x=-2$。よって $x=-2,\ 1$。
+concepts: [lm-geometric-limit, lm-continuity, lm-function-limit]
+misconceptions: [mc-lm-rn-boundary, mc-lm-one-sided-limit]
+targetSeconds: 600
+irt: { expectedCorrectRate: 0.5, discrimination: 1.3 }
+author:
+  intent: |
+    $\{x^{2n}\}$ の極限を $|x|<1,\ |x|>1,\ x=\pm 1$ に分けて求め、つなぎ目 $x=\pm 1$ で「左側極限・右側極限・関数値」の3つを比べて連続性を判定できるかをみる、二次試験の定番題材を誘導付きにしたもの。$x=-1$ では $x^{2n+1}=-1$ となる符号の扱いと、左右どちらが $|x|<1$ の側かの取り違えで差がつく。(4) は区間ごとの式に解の範囲の条件を課せるかを確認する。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学III (1) ア(ア) 数列の極限", "数学III (1) ア(オ) 関数の値の極限（関数の連続性）"]
+  variations:
+    - 連続となる $a,\ b$ を与えたうえで、$y=f(x)$ のグラフと直線 $y=k$ の共有点の個数を $k$ の値で分類させる。
+    - $f(x)=\displaystyle\lim_{n\to\infty}\frac{x^{2n-1}+ax^2+bx}{x^{2n}+1}$ のように、$|x|>1$ の極限が分数式になる形にする。

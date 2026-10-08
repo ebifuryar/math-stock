@@ -1,0 +1,46 @@
+id: mc-vc-s01
+level: school
+format: choice
+title: 内積を用いたベクトルの大きさ
+stem: |
+  $|\vec a|=3,\ |\vec b|=2,\ \vec a\cdot\vec b=-3$ のとき、$|\vec a+2\vec b|$ の値として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $7$
+    misconception: mc-vc-norm-additive
+    rationale: |
+      $|\vec a+2\vec b|=|\vec a|+2|\vec b|=3+4$ と大きさを足し算している。これが成り立つのは $\vec a$ と $\vec b$ が同じ向きのとき（$\vec a\cdot\vec b=6$）だけで、$\vec a\cdot\vec b=-3$ の場合は成り立たない。
+  - id: "2"
+    text: $\sqrt{37}$
+    misconception: mc-vc-expansion-sign
+    rationale: |
+      $|\vec a|^2+4\vec a\cdot\vec b+4|\vec b|^2$ の中央の項で $\vec a\cdot\vec b=-3$ の符号を落とし、$9+12+16=37$ としている。$\vec a\cdot\vec b<0$（なす角が鈍角）なので、$|\vec a+2\vec b|$ は $\vec a\cdot\vec b=0$ のときの $\sqrt{25}=5$ より小さくなるはず。
+  - id: "3"
+    text: $\sqrt{13}$
+    rationale: |
+      正解。$|\vec a+2\vec b|^2=|\vec a|^2+4\vec a\cdot\vec b+4|\vec b|^2=9-12+16=13$。
+  - id: "4"
+    text: $\sqrt{19}$
+    misconception: mc-vc-expansion-sign
+    rationale: |
+      中央の項を $2\vec a\cdot\vec b$ として $9+2\cdot(-3)+16=19$ としている。$\vec a$ と $2\vec b$ の内積の2倍なので、正しくは $2\cdot\vec a\cdot(2\vec b)=4\vec a\cdot\vec b$。
+answer: "3"
+solution: |
+  大きさは2乗して内積で展開する。$\vec a\cdot\vec a=|\vec a|^2$ を用いて
+  $$|\vec a+2\vec b|^2=(\vec a+2\vec b)\cdot(\vec a+2\vec b)=|\vec a|^2+4\vec a\cdot\vec b+4|\vec b|^2$$
+  $$=9+4\cdot(-3)+4\cdot 4=13$$
+  $|\vec a+2\vec b|\geqq 0$ より $|\vec a+2\vec b|=\sqrt{13}$。
+
+  検算: $\cos\theta=\dfrac{-3}{3\cdot 2}=-\dfrac{1}{2}$ より $\theta=120^\circ$。$\vec a=(3,\ 0),\ \vec b=(-1,\ \sqrt{3})$ とおけば $\vec a+2\vec b=(1,\ 2\sqrt{3})$、大きさは $\sqrt{1+12}=\sqrt{13}$。
+concepts: [vc-inner-product, vc-operations]
+misconceptions: [mc-vc-norm-additive, mc-vc-expansion-sign]
+targetSeconds: 90
+irt: { expectedCorrectRate: 0.75, discrimination: 1.0 }
+author:
+  intent: |
+    ベクトルの大きさを「2乗して内積で展開する」基本操作をみる。誤答は「大きさの足し算」「内積の符号の落とし」「中央の項の係数（$4$ を $2$ に）」の3つに対応させ、展開のどこで崩れたかを特定できるようにした。$\vec a\cdot\vec b<0$ に設定したので、符号を落とした受験者は値が大きくなりすぎる。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学C (1) ア(イ) ベクトルの内積とその基本的な性質]
+  variations:
+    - $|\vec a-3\vec b|$ を求めさせ、展開の符号と係数を同時に確認する。
+    - $|\vec a+t\vec b|$ が最小となる $t$ と最小値を求めさせる。

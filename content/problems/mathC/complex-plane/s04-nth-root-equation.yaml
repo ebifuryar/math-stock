@@ -1,0 +1,49 @@
+id: mc-cp-s04
+level: school
+format: mark
+title: 方程式 z⁴=−8+8√3 i の解
+stem: |
+  方程式 $z^4=-8+8\sqrt{3}\,i$ を解こう。
+
+  右辺を極形式で表すと
+  $$-8+8\sqrt{3}\,i=\boxed{\text{アイ}}\left(\cos\frac{\boxed{\text{ウ}}}{\boxed{\text{エ}}}\pi+i\sin\frac{\boxed{\text{ウ}}}{\boxed{\text{エ}}}\pi\right)$$
+  である（偏角は $0$ 以上 $2\pi$ 未満とする）。
+
+  $z=r(\cos\theta+i\sin\theta)\ (r>0,\ 0\leqq\theta<2\pi)$ とおき、ド・モアブルの定理を用いて両辺の絶対値と偏角を比べると、$r=\boxed{\text{オ}}$ であり
+  $$\theta=\frac{\pi}{\boxed{\text{カ}}}+\frac{k}{\boxed{\text{キ}}}\pi\qquad(k=0,\ 1,\ 2,\ 3)$$
+  となる。よって、この方程式の解は全部で $\boxed{\text{ク}}$ 個あり、そのうち実部と虚部がともに正であるものは
+  $$z=\sqrt{\boxed{\text{ケ}}}+i$$
+  である。
+blanks:
+  - { label: アイ, answer: "16" }
+  - { label: ウ, answer: "2" }
+  - { label: エ, answer: "3" }
+  - { label: オ, answer: "2" }
+  - { label: カ, answer: "6" }
+  - { label: キ, answer: "2" }
+  - { label: ク, answer: "4" }
+  - { label: ケ, answer: "3" }
+solution: |
+  $|-8+8\sqrt{3}i|=8\sqrt{1+3}=16$。$\cos\varphi=-\dfrac{1}{2},\ \sin\varphi=\dfrac{\sqrt{3}}{2}$ より $\varphi=\dfrac{2}{3}\pi$。
+
+  $z=r(\cos\theta+i\sin\theta)$ とおくと $z^4=r^4(\cos 4\theta+i\sin 4\theta)$ なので
+  $$r^4=16,\qquad 4\theta=\frac{2}{3}\pi+2k\pi\quad(k\text{ は整数})$$
+  $r>0$ より $r=2$。$\theta=\dfrac{\pi}{6}+\dfrac{k}{2}\pi$ で、$0\leqq\theta<2\pi$ より $k=0,\ 1,\ 2,\ 3$、すなわち
+  $$\theta=\frac{\pi}{6},\ \frac{2}{3}\pi,\ \frac{7}{6}\pi,\ \frac{5}{3}\pi$$
+  解は
+  $$z=\sqrt{3}+i,\quad -1+\sqrt{3}\,i,\quad -\sqrt{3}-i,\quad 1-\sqrt{3}\,i$$
+  の4個で、原点を中心とする半径 $2$ の円に内接する正方形の頂点をなす。実部・虚部がともに正なのは $z=\sqrt{3}+i$。
+
+  偏角の比較で $+2k\pi$ を付けないと、$\theta=\dfrac{\pi}{6}$ の1個しか得られない。
+concepts: [cp-nth-roots, cp-de-moivre, cp-polar-form]
+misconceptions: [mc-cp-root-count]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.65, discrimination: 1.2 }
+author:
+  intent: |
+    $z^n=\alpha$ を極形式で解く標準手順（右辺の極形式化・絶対値と偏角の比較・$2k\pi$ の付加・範囲内の $k$ の列挙）を、誘導に沿って最後まで実行できるかをみる。$\boxed{\text{キ}}$ と $\boxed{\text{ク}}$ で「$2k\pi$ を $4$ で割る」ことと「解が $4$ 個ある」ことを独立に確認し、偏角の比較で $2k\pi$ を落とす誤り（解が1個になる）を検出する。最後に1つの解を具体的に書かせて、極形式から $a+bi$ への変換も確認する。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学C (2) ア(ウ) ド・モアブルの定理（方程式 zⁿ=α）]
+  variations:
+    - $z^3=-8i$ を解かせ、解が正三角形の頂点をなすことを確認させる（$2i,\ \pm\sqrt{3}-i$）。
+    - $z^6=-64$ の解のうち実部が正のものの積を求めさせる。

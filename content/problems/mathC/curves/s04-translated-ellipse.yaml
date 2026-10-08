@@ -1,0 +1,50 @@
+id: mc-cv-s04
+level: school
+format: mark
+title: 平行移動した楕円と媒介変数表示
+stem: |
+  方程式 $4x^2+9y^2-16x+18y-11=0$ の表す曲線を $C$ とする。
+
+  (1) $C$ の方程式は
+  $$\frac{(x-\boxed{\text{ア}})^2}{\boxed{\text{イ}}}+\frac{(y+\boxed{\text{ウ}})^2}{\boxed{\text{エ}}}=1$$
+  と変形でき、$C$ は長軸の長さ $\boxed{\text{オ}}$、短軸の長さ $\boxed{\text{カ}}$ の楕円である。
+
+  (2) $C$ の焦点の座標は $\left(\boxed{\text{キ}}\pm\sqrt{\boxed{\text{ク}}},\ \boxed{\text{ケコ}}\right)$ である。
+
+  (3) $C$ は媒介変数 $\theta$ を用いて
+  $$x=\boxed{\text{サ}}+\boxed{\text{シ}}\cos\theta,\qquad y=\boxed{\text{スセ}}+\boxed{\text{ソ}}\sin\theta$$
+  と表される。
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イ, answer: "9" }
+  - { label: ウ, answer: "1" }
+  - { label: エ, answer: "4" }
+  - { label: オ, answer: "6" }
+  - { label: カ, answer: "4" }
+  - { label: キ, answer: "2" }
+  - { label: ク, answer: "5" }
+  - { label: ケコ, answer: "-1" }
+  - { label: サ, answer: "2" }
+  - { label: シ, answer: "3" }
+  - { label: スセ, answer: "-1" }
+  - { label: ソ, answer: "2" }
+solution: |
+  (1) $x,\ y$ それぞれについて平方完成する。
+  $$4(x^2-4x)+9(y^2+2y)=11\iff 4(x-2)^2+9(y+1)^2=11+16+9=36$$
+  両辺を $36$ で割って $\dfrac{(x-2)^2}{9}+\dfrac{(y+1)^2}{4}=1$。これは楕円 $\dfrac{x^2}{9}+\dfrac{y^2}{4}=1$ を $x$ 軸方向に $2$、$y$ 軸方向に $-1$ 平行移動したもので、長軸の長さ $2\cdot 3=6$、短軸の長さ $2\cdot 2=4$。
+
+  (2) もとの楕円の焦点は $(\pm\sqrt{9-4},\ 0)=(\pm\sqrt{5},\ 0)$。同じだけ平行移動して $(2\pm\sqrt{5},\ -1)$。
+
+  (3) もとの楕円は $x=3\cos\theta,\ y=2\sin\theta$ と表せるので、平行移動して $x=2+3\cos\theta,\ y=-1+2\sin\theta$。
+concepts: [cv-translation, cv-ellipse, cv-parametric]
+misconceptions: [mc-cv-focus-c-formula]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.65, discrimination: 1.0 }
+author:
+  intent: |
+    一般形の2次式を平方完成して標準形に直し、平行移動の考え方で焦点や媒介変数表示を求められるかをみる。(2) で焦点を平行移動し忘れて $(\pm\sqrt{5},\ 0)$ とする誤りや、$c^2=9+4$ とする誤りを空欄ク・ケコで識別できる。(3) は楕円の媒介変数表示と平行移動を結びつける導入。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学C (2) ア(ア) 放物線・楕円・双曲線が2次式で表されること, 数学C (2) ア(イ) 曲線の媒介変数表示]
+  variations:
+    - $9x^2-4y^2+18x+16y-43=0$ を変形させ、双曲線の中心・焦点・漸近線を求めさせる。
+    - $y^2-4y-8x+12=0$ の放物線の焦点と準線を求めさせる。

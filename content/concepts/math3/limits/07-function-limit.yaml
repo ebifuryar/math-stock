@@ -1,0 +1,18 @@
+id: lm-function-limit
+kind: theorem
+title: 関数の極限（片側極限・三角関数・e）
+body: |
+  **片側極限**: $x$ が $a$ より大きい側から近づくときの極限を $\displaystyle\lim_{x\to a+0}f(x)$（右側極限）、小さい側からを $\displaystyle\lim_{x\to a-0}f(x)$（左側極限）と書く。
+  $$\lim_{x\to a}f(x)=\alpha\iff\lim_{x\to a+0}f(x)=\lim_{x\to a-0}f(x)=\alpha$$
+  絶対値・$\sqrt{(\ )^2}$・$\dfrac{1}{x}$ を指数に含む式などは、左右で値が変わりうるので両側を調べる。例: $\dfrac{x^2-1}{|x-1|}$ は $x\to 1+0$ で $2$、$x\to 1-0$ で $-2$ なので、$x\to 1$ の極限はない。
+
+  **三角関数の極限**（$x$ は弧度法）:
+  $$\lim_{x\to 0}\frac{\sin x}{x}=1$$
+  使うときは **$\sin$ の中身と分母をそろえる**: $\dfrac{\sin 3x}{x}=3\cdot\dfrac{\sin 3x}{3x}\to 3$。$1-\cos x$ は $\dfrac{1-\cos^2 x}{1+\cos x}=\dfrac{\sin^2 x}{1+\cos x}$ と変形し、$\displaystyle\lim_{x\to 0}\frac{1-\cos x}{x^2}=\frac{1}{2}$。
+
+  **自然対数の底 $e$**:
+  $$\lim_{x\to\pm\infty}\left(1+\frac{1}{x}\right)^x=\lim_{h\to 0}(1+h)^{\frac{1}{h}}=e\ (=2.718\cdots)$$
+  $1^\infty$ 型は不定形で、$1$ とは限らない。$(1+2x)^{\frac{1}{x}}=\left\{(1+2x)^{\frac{1}{2x}}\right\}^2\to e^2$ のように、**かっこ内の「$1+$□」の□と指数の □ の逆数をそろえる**。
+
+  **定数の決定**: $\displaystyle\lim_{x\to a}\frac{f(x)}{g(x)}$ が有限の値をもち $g(x)\to 0$ ならば、$f(x)\to 0$ が必要。
+prerequisites: [lm-sequence-limit, tf-radian, tf-double-half, el-exp-function]

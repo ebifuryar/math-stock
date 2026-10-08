@@ -1,0 +1,40 @@
+id: mc-vc-s04
+level: school
+format: mark
+title: 内積と三角形の面積
+stem: |
+  (1) $\triangle\mathrm{OAB}$ において $\overrightarrow{\mathrm{OA}}=\vec a,\ \overrightarrow{\mathrm{OB}}=\vec b$ とし、$|\vec a|=2,\ |\vec b|=3,\ |\vec a+\vec b|=\sqrt{19}$ とする。このとき $\vec a\cdot\vec b=\boxed{\text{ア}}$ であり、$\vec a$ と $\vec b$ のなす角を $\theta$ とすると $\cos\theta=\dfrac{\boxed{\text{イ}}}{\boxed{\text{ウ}}}$ である。また、$\triangle\mathrm{OAB}$ の面積は $\dfrac{\boxed{\text{エ}}\sqrt{\boxed{\text{オ}}}}{\boxed{\text{カ}}}$ である。
+
+  (2) 座標平面上の3点 $\mathrm{A}(1,\ 1),\ \mathrm{B}(4,\ 2),\ \mathrm{C}(2,\ 5)$ について、$\overrightarrow{\mathrm{AB}}\cdot\overrightarrow{\mathrm{AC}}=\boxed{\text{キ}}$ であり、$\triangle\mathrm{ABC}$ の面積は $\dfrac{\boxed{\text{クケ}}}{\boxed{\text{コ}}}$ である。
+blanks:
+  - { label: ア, answer: "3" }
+  - { label: イ, answer: "1" }
+  - { label: ウ, answer: "2" }
+  - { label: エ, answer: "3" }
+  - { label: オ, answer: "3" }
+  - { label: カ, answer: "2" }
+  - { label: キ, answer: "7" }
+  - { label: クケ, answer: "11" }
+  - { label: コ, answer: "2" }
+solution: |
+  (1) $|\vec a+\vec b|^2=|\vec a|^2+2\vec a\cdot\vec b+|\vec b|^2$ より $19=4+2\vec a\cdot\vec b+9$、よって $\vec a\cdot\vec b=3$。
+  $$\cos\theta=\frac{3}{2\cdot 3}=\frac{1}{2}$$
+  面積は
+  $$\triangle\mathrm{OAB}=\frac{1}{2}\sqrt{|\vec a|^2|\vec b|^2-(\vec a\cdot\vec b)^2}=\frac{1}{2}\sqrt{36-9}=\frac{3\sqrt{3}}{2}$$
+  （$\theta=60^\circ$ から $\dfrac{1}{2}\cdot 2\cdot 3\sin 60^\circ$ としても同じ。）
+
+  (2) $\overrightarrow{\mathrm{AB}}=(3,\ 1),\ \overrightarrow{\mathrm{AC}}=(1,\ 4)$ より $\overrightarrow{\mathrm{AB}}\cdot\overrightarrow{\mathrm{AC}}=3+4=7$。
+  $$\triangle\mathrm{ABC}=\frac{1}{2}\sqrt{10\cdot 17-7^2}=\frac{1}{2}\sqrt{121}=\frac{11}{2}$$
+  成分の公式 $\dfrac{1}{2}|3\cdot 4-1\cdot 1|=\dfrac{11}{2}$ でも一致する。
+concepts: [vc-triangle-area, vc-inner-product]
+misconceptions: [mc-vc-expansion-sign]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.7, discrimination: 1.0 }
+author:
+  intent: |
+    大きさの条件から内積を逆算する操作と、内積を用いた三角形の面積公式を確認する。(1) は内積の値から角を経由しても公式でも求まり、(2) は根号の公式と成分の公式 $\dfrac{1}{2}|a_1b_2-a_2b_1|$ の両方で検算できる。展開の符号を誤ると (1) で $\vec a\cdot\vec b=-3$ となり、$\cos\theta$ が負になって空欄の形と合わない。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学C (1) ア(イ) ベクトルの内積とその基本的な性質, 数学C (1) イ(イ) ベクトルを用いた平面図形の考察]
+  variations:
+    - $|\vec a-\vec b|$ の値を与えて同様に面積を求めさせる。
+    - (2) の $\triangle\mathrm{ABC}$ で、$\mathrm{A}$ から辺 $\mathrm{BC}$ に下ろした垂線の長さを面積から求めさせる。

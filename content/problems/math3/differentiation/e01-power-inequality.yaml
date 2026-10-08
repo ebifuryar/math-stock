@@ -1,0 +1,47 @@
+id: m3-df-e01
+level: exam
+format: choice
+title: すべての正の数で a^x≧x が成り立つ条件
+stem: |
+  $a$ を正の定数とする。すべての正の実数 $x$ に対して不等式
+  $$a^x\geqq x$$
+  が成り立つような $a$ の値の範囲として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $a\geqq e$
+    rationale: |
+      $a=e$ のとき $e^x\geqq 1+x>x$ が成り立つことから、$a\geqq e$ ならよいと判断している。これは十分条件にすぎない。例えば $a=2$ のときも $\log 2>\dfrac{1}{e}$ なので成り立ち、$e^{\frac{1}{e}}\leqq a<e$ の範囲が抜けている。
+  - id: "2"
+    text: $a>e^{\frac{1}{e}}$
+    misconception: mc-case-split-missing
+    rationale: |
+      境界の扱いの誤り。$a=e^{\frac{1}{e}}$ のとき $\log a=\dfrac{1}{e}$ で、$\dfrac{\log x}{x}\leqq\dfrac{1}{e}$ より不等式は成り立つ（等号は $x=e$ のとき）。$\geqq$ の不等式なので境界を含める。
+  - id: "3"
+    text: $a\geqq e^{\frac{1}{e}}$
+    rationale: |
+      正解。両辺の自然対数をとると $x\log a\geqq\log x$、すなわち $\log a\geqq\dfrac{\log x}{x}$ がすべての $x>0$ で成り立つ条件は、右辺の最大値 $\dfrac{1}{e}$ 以上であること。
+  - id: "4"
+    text: $1<a\leqq e^{\frac{1}{e}}$
+    rationale: |
+      「すべての $x$ で $\log a\geqq h(x)$」を、$h(x)=\dfrac{\log x}{x}$ の最大値以下の条件と取り違えている。例えば $a=1.2$ では $x=e$ のとき $a^e=e^{e\log 1.2}<e$ となり成り立たない。
+answer: "3"
+solution: |
+  $a^x>0,\ x>0$ なので、両辺の自然対数をとって同値変形できる。
+  $$a^x\geqq x\iff x\log a\geqq\log x\iff \log a\geqq\frac{\log x}{x}$$
+  $h(x)=\dfrac{\log x}{x}\ (x>0)$ とおくと $h'(x)=\dfrac{1-\log x}{x^2}$。$0<x<e$ で $h'(x)>0$、$x>e$ で $h'(x)<0$ なので、$h(x)$ は $x=e$ で最大値 $h(e)=\dfrac{1}{e}$ をとる（$x\to +0$ で $-\infty$、$x\to\infty$ で $0$ に近づく）。
+
+  すべての $x>0$ で $\log a\geqq h(x)$ が成り立つ $\iff$ $\log a\geqq\dfrac{1}{e}$ $\iff$ $a\geqq e^{\frac{1}{e}}$。
+
+  境界の $a=e^{\frac{1}{e}}$ では、曲線 $y=a^x$ と直線 $y=x$ が点 $(e,\ e)$ で接する。
+concepts: [df-applications, df-elementary]
+misconceptions: [mc-case-split-missing]
+targetSeconds: 360
+irt: { expectedCorrectRate: 0.35, discrimination: 1.3 }
+author:
+  intent: |
+    文字定数を含む不等式が「すべての $x$ で成り立つ」条件を、対数をとって定数を分離し「$\log a\geqq\max h(x)$」に帰着できるかをみる。①は $e^x\geqq 1+x$ からの連想で十分条件を答える誤り、②は等号の扱い、④は「すべての $x$ で $k\geqq h(x)$」と「$k\leqq h(x)$」の取り違えで、論理の向きを正確に扱えるかを識別する。曲線 $y=a^x$ と直線 $y=x$ が接する境界の値 $e^{\frac{1}{e}}$ を、図形的にも解釈できると上位の理解といえる。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: ["数学III (2) イ(ア) 導関数を用いた関数の考察（不等式、最大・最小）"]
+  variations:
+    - 方程式 $a^x=x$ の正の実数解の個数を $a>1$ の値で分類させる。
+    - $h(x)=\dfrac{\log x}{x}$ の増減を利用して、$e^\pi$ と $\pi^e$ の大小を比較させる。

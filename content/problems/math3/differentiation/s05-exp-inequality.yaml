@@ -1,0 +1,56 @@
+id: m3-df-s05
+level: school
+format: written
+title: 指数関数の不等式の証明
+stem: |
+  (1) すべての実数 $x$ に対して、不等式 $e^x\geqq 1+x$ が成り立つことを証明せよ。また、等号が成り立つ $x$ の値を答えよ。
+
+  (2) $x>0$ のとき、不等式
+  $$e^x>1+x+\frac{x^2}{2}$$
+  が成り立つことを証明せよ。
+modelAnswer: |
+  (1) $f(x)=e^x-(1+x)$ とおくと $f'(x)=e^x-1$。$f'(x)=0$ となるのは $x=0$ のときで、$x<0$ で $f'(x)<0$、$x>0$ で $f'(x)>0$。
+
+  | $x$ | $\cdots$ | $0$ | $\cdots$ |
+  | --- | --- | --- | --- |
+  | $f'(x)$ | $-$ | $0$ | $+$ |
+  | $f(x)$ | $\searrow$ | $0$ | $\nearrow$ |
+
+  よって $f(x)$ は $x=0$ で最小値 $f(0)=1-1=0$ をとるので、すべての実数 $x$ で $f(x)\geqq 0$、すなわち $e^x\geqq 1+x$。等号が成り立つのは **$x=0$** のときに限る。
+
+  (2) $g(x)=e^x-\left(1+x+\dfrac{x^2}{2}\right)$ とおくと
+  $$g'(x)=e^x-1-x$$
+  (1) より、$x>0$ では $e^x>1+x$（等号は $x=0$ のときだけ）なので $g'(x)>0$。よって $g(x)$ は $x\geqq 0$ で増加し、$x>0$ のとき
+  $$g(x)>g(0)=1-1=0$$
+  したがって $x>0$ のとき $e^x>1+x+\dfrac{x^2}{2}$。
+rubric:
+  - id: r1
+    criterion: (1) で差の関数 $f(x)=e^x-1-x$ を微分し、$f'(x)=e^x-1$ の符号を $x=0$ の前後で正しく判定している
+    points: 2
+    keywords: ["e^x-1", "f'(x)"]
+  - id: r2
+    criterion: (1) で最小値 $f(0)=0$ から $f(x)\geqq 0$ を結論し、等号成立が $x=0$ であると答えている
+    points: 3
+    keywords: ["最小値", "x=0"]
+  - id: r3
+    criterion: (2) で $g(x)=e^x-1-x-\dfrac{x^2}{2}$ とおき、$g'(x)=e^x-1-x$ を正しく求めている
+    points: 2
+    keywords: ["g'(x)", "e^x-1-x"]
+  - id: r4
+    criterion: (2) で (1) の結果を用いて $x>0$ で $g'(x)>0$ を示し、$g(x)$ の増加と $g(0)=0$ から $g(x)>0$ を結論している（$g(0)=0$ の明記が必要）
+    points: 3
+    keywords: ["増加", "g(0)=0"]
+solution: |
+  不等式は「差の関数の最小値 $\geqq 0$」で示す。(1) は $f'(x)=e^x-1$ の符号が $x=0$ で変わることから、最小値 $f(0)=0$。(2) は $g'(x)=e^x-1-x$ の符号がすぐにはわからないが、これは (1) の左辺そのものなので、(1) を使って $x>0$ で $g'(x)>0$ がいえる。$g(x)$ は $x\geqq 0$ で増加し $g(0)=0$ なので、$x>0$ で $g(x)>0$。
+concepts: [df-applications, df-elementary]
+misconceptions: []
+targetSeconds: 420
+irt: { expectedCorrectRate: 0.65, discrimination: 1.1 }
+author:
+  intent: |
+    指数関数を含む不等式を、差の関数の増減で証明する基本の型を身につけているかをみる。(2) では導関数の符号がすぐに判定できないため、前問 (1) の結果を「導関数の符号を決める道具」として使えるかが鍵になる。$g'(x)>0$ だけで $g(x)>0$ と結論し、出発点 $g(0)=0$ を書き落とす答案を r4 で区別する。(2) を $g''(x)=e^x-1>0$ まで微分して示す答案も正当である。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学III (2) イ(ア) 導関数を用いた関数の考察（不等式の証明）"]
+  variations:
+    - 数学的帰納法と組み合わせ、$x>0$ のとき $e^x>1+x+\dfrac{x^2}{2!}+\cdots+\dfrac{x^n}{n!}$ を示させる。
+    - (2) を用いて $\displaystyle\lim_{x\to\infty}\frac{x}{e^x}=0$ をはさみうちで示させる。

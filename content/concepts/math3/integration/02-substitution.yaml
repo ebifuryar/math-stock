@@ -1,0 +1,18 @@
+id: ig-substitution
+kind: method
+title: 置換積分法
+body: |
+  **不定積分**: $x=g(t)$ とおくと $dx=g'(t)\,dt$ で
+  $$\int f(x)\,dx=\int f(g(t))\,g'(t)\,dt$$
+  逆向きに、被積分関数の中に「ある関数 $g(x)$ とその導関数 $g'(x)$」が見えるときは $u=g(x)$ とおく。
+  $$\int f(g(x))\,g'(x)\,dx=\int f(u)\,du$$
+  例: $u=x^2$ とおくと $du=2x\,dx$ で、$\displaystyle\int xe^{x^2}dx=\frac{1}{2}\int e^u\,du=\frac{1}{2}e^{x^2}+C$。
+
+  **定積分**: 置換したら **積分区間も新しい変数の範囲に取り替える**（元の変数に戻す必要はない）。$x=g(t)$ で $x=a\leftrightarrow t=\alpha$、$x=b\leftrightarrow t=\beta$ のとき
+  $$\int_a^b f(x)\,dx=\int_\alpha^\beta f(g(t))\,g'(t)\,dt$$
+  $dx$ を $g'(t)\,dt$ に置き換えることと、区間の対応表を書くことをセットで行う。
+
+  **$\sqrt{a^2-x^2}$ を含む積分**（$a>0$）: $x=a\sin\theta\ \left(-\dfrac{\pi}{2}\leqq\theta\leqq\dfrac{\pi}{2}\right)$ とおくと $\sqrt{a^2-x^2}=a\cos\theta\ (\geqq 0)$、$dx=a\cos\theta\,d\theta$。
+
+  **$\dfrac{1}{a^2+x^2}$ を含む積分**: $x=a\tan\theta\ \left(-\dfrac{\pi}{2}<\theta<\dfrac{\pi}{2}\right)$ とおくと $dx=\dfrac{a}{\cos^2\theta}\,d\theta$、$a^2+x^2=\dfrac{a^2}{\cos^2\theta}$。例: $\displaystyle\int_0^1\frac{dx}{1+x^2}=\int_0^{\pi/4}d\theta=\frac{\pi}{4}$。
+prerequisites: [ig-basic]

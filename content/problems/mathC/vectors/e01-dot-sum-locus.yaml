@@ -1,0 +1,50 @@
+id: mc-vc-e01
+level: exam
+format: choice
+title: 内積の和が一定である点の軌跡
+stem: |
+  1辺の長さが $4$ の正三角形 $\mathrm{ABC}$ の重心を $\mathrm{G}$ とする。平面上の点 $\mathrm{P}$ が
+  $$\overrightarrow{\mathrm{PA}}\cdot\overrightarrow{\mathrm{PB}}+\overrightarrow{\mathrm{PB}}\cdot\overrightarrow{\mathrm{PC}}+\overrightarrow{\mathrm{PC}}\cdot\overrightarrow{\mathrm{PA}}=4$$
+  を満たしながら動くとき、点 $\mathrm{P}$ の描く図形として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\mathrm{G}$ を中心とする半径 $2\sqrt{3}$ の円
+    misconception: mc-vc-expansion-sign
+    rationale: |
+      $\overrightarrow{\mathrm{PA}}\cdot\overrightarrow{\mathrm{PB}}$ などを展開したとき、3つの式それぞれに現れる $|\vec p|^2$ を1つ分しか数えず、$|\vec p|^2-8=4$ としている。3つの内積の和なので $3|\vec p|^2$ になる。
+  - id: "2"
+    text: $\mathrm{G}$ を中心とする半径 $2$ の円
+    rationale: |
+      正解。$\mathrm{G}$ を始点にすると、左辺は $3|\overrightarrow{\mathrm{GP}}|^2-8$ となり、$|\overrightarrow{\mathrm{GP}}|^2=4$。
+  - id: "3"
+    text: $\mathrm{G}$ を中心とする半径 $\dfrac{2\sqrt{3}}{3}$ の円（$\triangle\mathrm{ABC}$ の内接円）
+    rationale: |
+      $\vec a+\vec b+\vec c=\vec 0$ から $\vec a\cdot\vec b+\vec b\cdot\vec c+\vec c\cdot\vec a=0$ と誤って推論し、$3|\vec p|^2=4$ としている。実際は $|\vec a+\vec b+\vec c|^2=0$ を展開して $\vec a\cdot\vec b+\vec b\cdot\vec c+\vec c\cdot\vec a=-\dfrac{1}{2}(|\vec a|^2+|\vec b|^2+|\vec c|^2)=-8$。
+  - id: "4"
+    text: 条件を満たす点 $\mathrm{P}$ は存在しない
+    misconception: mc-vc-expansion-sign
+    rationale: |
+      $|\vec a+\vec b+\vec c|^2=|\vec a|^2+|\vec b|^2+|\vec c|^2-2(\vec a\cdot\vec b+\vec b\cdot\vec c+\vec c\cdot\vec a)$ と展開の符号を誤り、内積の和を $+8$ として $3|\vec p|^2+8=4$ を得ている。
+answer: "2"
+solution: |
+  $\mathrm{G}$ を始点とする位置ベクトルを $\mathrm{A}(\vec a),\ \mathrm{B}(\vec b),\ \mathrm{C}(\vec c),\ \mathrm{P}(\vec p)$ とすると、$\mathrm{G}$ は重心なので $\vec a+\vec b+\vec c=\vec 0$。また $|\vec a|=|\vec b|=|\vec c|=\mathrm{GA}=\dfrac{2}{3}\cdot 2\sqrt{3}=\dfrac{4}{\sqrt{3}}$ より $|\vec a|^2=\dfrac{16}{3}$。
+
+  $(\vec a-\vec p)\cdot(\vec b-\vec p)=\vec a\cdot\vec b-(\vec a+\vec b)\cdot\vec p+|\vec p|^2$ などを3つ加えると
+  $$\text{左辺}=(\vec a\cdot\vec b+\vec b\cdot\vec c+\vec c\cdot\vec a)-2(\vec a+\vec b+\vec c)\cdot\vec p+3|\vec p|^2=(\vec a\cdot\vec b+\vec b\cdot\vec c+\vec c\cdot\vec a)+3|\vec p|^2$$
+  $|\vec a+\vec b+\vec c|^2=0$ を展開して
+  $$\vec a\cdot\vec b+\vec b\cdot\vec c+\vec c\cdot\vec a=-\frac{1}{2}\left(|\vec a|^2+|\vec b|^2+|\vec c|^2\right)=-\frac{1}{2}\cdot 16=-8$$
+  よって条件は $3|\vec p|^2-8=4$、すなわち $|\overrightarrow{\mathrm{GP}}|=2$。$\mathrm{P}$ は $\mathrm{G}$ を中心とする半径 $2$ の円を描く。
+
+  （この円は内接円（半径 $\dfrac{2\sqrt{3}}{3}$）より大きく外接円（半径 $\dfrac{4\sqrt{3}}{3}$）より小さいので、各辺と2点ずつで交わる。）
+concepts: [vc-vector-equation, vc-inner-product, vc-position-vector]
+misconceptions: [mc-vc-expansion-sign]
+targetSeconds: 480
+irt: { expectedCorrectRate: 0.35, discrimination: 1.3 }
+author:
+  intent: |
+    対称性のよい点（重心）を始点に選び、内積の式を $|\vec p-\vec m|^2=k$ の形にまとめる、軌跡の典型的な処理をみる。誤答は展開の3か所（$|\vec p|^2$ の個数、内積の和の符号、$\vec a+\vec b+\vec c=\vec 0$ から内積の和を求める段階）に1つずつ対応し、どこで崩れたかを特定できる。始点を $\mathrm{A}$ などに選んでも解けるが計算量が増え、始点選択の判断力も差になる。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学C (1) ア(イ) ベクトルの内積とその基本的な性質, 数学C (1) イ(イ) ベクトルを用いた平面図形の考察（ベクトル方程式）]
+  variations:
+    - 右辺を定数 $k$ とし、$\mathrm{P}$ の描く円が $\triangle\mathrm{ABC}$ の3辺すべてに接するような $k$ を求めさせる。
+    - 一般の三角形で $\overrightarrow{\mathrm{PA}}\cdot\overrightarrow{\mathrm{PB}}=k$ の軌跡を、辺 $\mathrm{AB}$ の中点を始点として求めさせる。

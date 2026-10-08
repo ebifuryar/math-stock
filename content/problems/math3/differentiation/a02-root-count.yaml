@@ -1,0 +1,56 @@
+id: m3-df-a02
+level: applied
+format: mark
+title: 指数関数を含む方程式の実数解の個数
+stem: |
+  $a$ を実数の定数とし、$x$ の方程式
+  $$x^2=ae^x\qquad\cdots\text{①}$$
+  の異なる実数解の個数を調べる。① は $x^2e^{-x}=a$ と同値なので、$g(x)=x^2e^{-x}$ とおき、曲線 $y=g(x)$ と直線 $y=a$ の共有点の個数を考える。
+
+  (1) $g'(x)=x(\boxed{\text{ア}}-x)e^{-x}$ であり、$g(x)$ は $x=0$ で極小値 $0$ をとり、$x=\boxed{\text{ア}}$ で極大値 $\dfrac{\boxed{\text{イ}}}{e^{\boxed{\text{ウ}}}}$ をとる。
+
+  (2) $\displaystyle\lim_{x\to\infty}g(x)=\boxed{\text{エ}}$ であり、$\displaystyle\lim_{x\to-\infty}g(x)=\infty$ である。
+
+  (3) ① の異なる実数解の個数は
+  - $0<a<\dfrac{\boxed{\text{イ}}}{e^{\boxed{\text{ウ}}}}$ のとき $\boxed{\text{オ}}$ 個
+  - $a=\dfrac{\boxed{\text{イ}}}{e^{\boxed{\text{ウ}}}}$ のとき $\boxed{\text{カ}}$ 個
+  - $a>\dfrac{\boxed{\text{イ}}}{e^{\boxed{\text{ウ}}}}$ のとき $\boxed{\text{キ}}$ 個
+
+  である。
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イ, answer: "4" }
+  - { label: ウ, answer: "2" }
+  - { label: エ, answer: "0" }
+  - { label: オ, answer: "3" }
+  - { label: カ, answer: "2" }
+  - { label: キ, answer: "1" }
+solution: |
+  (1) $g'(x)=2xe^{-x}-x^2e^{-x}=x(2-x)e^{-x}$。
+
+  | $x$ | $\cdots$ | $0$ | $\cdots$ | $2$ | $\cdots$ |
+  | --- | --- | --- | --- | --- | --- |
+  | $g'(x)$ | $-$ | $0$ | $+$ | $0$ | $-$ |
+  | $g(x)$ | $\searrow$ | $0$ | $\nearrow$ | $\dfrac{4}{e^2}$ | $\searrow$ |
+
+  (2) $\displaystyle\lim_{x\to\infty}\frac{x^2}{e^x}=0$。ただし $x>0$ で $g(x)>0$ なので、グラフは $x$ 軸に上から近づき、$0$ にはならない。$x\to-\infty$ では $x^2\to\infty,\ e^{-x}\to\infty$ より $g(x)\to\infty$。
+
+  (3) グラフは、左上から下って原点で $x$ 軸に接し（極小値 $0$）、点 $\left(2,\ \dfrac{4}{e^2}\right)$ まで上ったあと、$x$ 軸に上から近づきながら下がる。直線 $y=a$ との共有点は
+
+  - $0<a<\dfrac{4}{e^2}$: $x<0$、$0<x<2$、$x>2$ に1個ずつで **3個**（$x>2$ の解は、(2) で $g(x)\to 0$ となり $a$ より小さくなることから存在する）
+  - $a=\dfrac{4}{e^2}$: $x=2$ と $x<0$ の1個で **2個**
+  - $a>\dfrac{4}{e^2}$: $x<0$ の1個のみで **1個**
+
+  なお $a=0$ のとき1個（$x=0$）、$a<0$ のとき0個。
+concepts: [df-applications, df-graph]
+misconceptions: [mc-df-limit-check-missing, mc-df-chain-inner]
+targetSeconds: 420
+irt: { expectedCorrectRate: 0.48, discrimination: 1.2 }
+author:
+  intent: |
+    定数分離した関数のグラフを、増減表だけでなく $x\to\pm\infty$ の極限まで調べてかけるかをみる。$x\to\infty$ で $g(x)\to 0$（$0$ に到達しない）であることを押さえないと、$0<a<\dfrac{4}{e^2}$ で $x>2$ 側の解を見落として2個と答えたり、極大値の右側の振る舞いを誤ったりする。(1)〜(2) の誘導で必要な材料をそろえ、(3) でそれをグラフに統合できるかを識別する。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学III (2) イ(ア) 導関数を用いた関数の考察（方程式の実数解の個数）"]
+  variations:
+    - 方程式 $\log x=ax^2$ で同様に問い、$x\to +0$ の極限も必要にする（$g(x)=\dfrac{\log x}{x^2}$、極大値 $\dfrac{1}{2e}$）。
+    - 「異なる3つの実数解をもち、そのうち2つが正」となる条件など、解の符号と組み合わせる。

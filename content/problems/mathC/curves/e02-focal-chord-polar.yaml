@@ -1,0 +1,49 @@
+id: mc-cv-e02
+level: exam
+format: choice
+title: 焦点を通る弦と極方程式
+stem: |
+  楕円 $E:\ \dfrac{x^2}{25}+\dfrac{y^2}{9}=1$ の焦点のうち $x$ 座標が正であるものを $\mathrm{F}$ とする。$E$ 上の任意の点 $\mathrm{P}$ について、$\mathrm{P}$ と直線 $x=\dfrac{25}{4}$ との距離を $d$ とすると $\mathrm{PF}=\dfrac{4}{5}d$ が成り立つ。
+
+  $\mathrm{F}$ を極、$x$ 軸の正の向きを始線とする極座標を考え、$E$ 上の点を $(r,\ \theta)$（$r>0$）で表す。$\mathrm{F}$ を通る直線が $E$ と交わる2点を $\mathrm{A},\ \mathrm{B}$ とするとき、直線の向きによらず常に成り立つ等式として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\mathrm{FA}+\mathrm{FB}=10$
+    misconception: mc-cv-sum-diff
+    rationale: |
+      楕円の定義「2つの焦点からの距離の和が一定 $10$」を、「1つの焦点から楕円上の2点までの距離の和」と取り違えている。長軸に沿う弦では $1+9=10$ となるが、$x$ 軸に垂直な弦では $\mathrm{FA}=\mathrm{FB}=\dfrac{9}{5}$ で和は $\dfrac{18}{5}$。
+  - id: "2"
+    text: $\dfrac{1}{\mathrm{FA}}+\dfrac{1}{\mathrm{FB}}=\dfrac{10}{9}$
+    rationale: |
+      正解。極方程式は $r=\dfrac{\frac{9}{5}}{1+\frac{4}{5}\cos\theta}$ で、$\mathrm{A}(r_1,\ \theta),\ \mathrm{B}(r_2,\ \theta+\pi)$ とすると $\dfrac{1}{r_1}+\dfrac{1}{r_2}=\dfrac{2}{\frac{9}{5}}=\dfrac{10}{9}$。
+  - id: "3"
+    text: $\mathrm{FA}\cdot\mathrm{FB}=\dfrac{81}{25}$
+    rationale: |
+      $x$ 軸に垂直な弦（$\theta=\dfrac{\pi}{2}$）だけで計算して $\left(\dfrac{9}{5}\right)^2$ としている。長軸に沿う弦では $\mathrm{FA}\cdot\mathrm{FB}=1\cdot 9=9$ で、積は一定でない。
+  - id: "4"
+    text: $\dfrac{1}{\mathrm{FA}}+\dfrac{1}{\mathrm{FB}}=\dfrac{2}{5}$
+    rationale: |
+      極を $\mathrm{F}$ にとったのに、$\mathrm{P}$ と直線 $x=\dfrac{25}{4}$ の距離を原点基準で $d=\dfrac{25}{4}-r\cos\theta$ としている。$\mathrm{P}$ の $x$ 座標は $4+r\cos\theta$ なので $d=\dfrac{9}{4}-r\cos\theta$ が正しい。誤った式からは $r=\dfrac{5}{1+\frac{4}{5}\cos\theta}$ となり、長軸に沿う弦で $\mathrm{FA}=1,\ \mathrm{FB}=9$ となることと合わない。
+answer: "2"
+solution: |
+  $a=5,\ b=3,\ c=\sqrt{25-9}=4$ より $\mathrm{F}(4,\ 0)$。$E$ 上の点 $\mathrm{P}(r,\ \theta)$ の直交座標は $(4+r\cos\theta,\ r\sin\theta)$ なので
+  $$d=\frac{25}{4}-(4+r\cos\theta)=\frac{9}{4}-r\cos\theta$$
+  $\mathrm{PF}=r=\dfrac{4}{5}d$ より $r=\dfrac{9}{5}-\dfrac{4}{5}r\cos\theta$、
+  $$r=\frac{\frac{9}{5}}{1+\frac{4}{5}\cos\theta}$$
+  （離心率 $e=\dfrac{4}{5}$、$\ell=\dfrac{9}{5}=\dfrac{b^2}{a}$。）
+
+  $\mathrm{A}(r_1,\ \theta)$ とすると、$\mathrm{B}$ は $\mathrm{F}$ について反対側にあるので $\mathrm{B}(r_2,\ \theta+\pi)$ で、$\cos(\theta+\pi)=-\cos\theta$。
+  $$\frac{1}{r_1}+\frac{1}{r_2}=\frac{1+\frac{4}{5}\cos\theta}{\frac{9}{5}}+\frac{1-\frac{4}{5}\cos\theta}{\frac{9}{5}}=\frac{2}{\frac{9}{5}}=\frac{10}{9}$$
+  検算: 長軸に沿う弦では $\mathrm{FA}=5-4=1,\ \mathrm{FB}=5+4=9$ で $1+\dfrac{1}{9}=\dfrac{10}{9}$。$x$ 軸に垂直な弦では $\mathrm{FA}=\mathrm{FB}=\dfrac{9}{5}$ で $\dfrac{5}{9}\cdot 2=\dfrac{10}{9}$。
+concepts: [cv-polar-equation, cv-polar-coordinates, cv-ellipse]
+misconceptions: [mc-cv-sum-diff, mc-cv-polar-sign]
+targetSeconds: 480
+irt: { expectedCorrectRate: 0.3, discrimination: 1.4 }
+author:
+  intent: |
+    焦点を極とする2次曲線の極方程式 $r=\dfrac{\ell}{1+e\cos\theta}$ を自分で導き、焦点を通る弦の両端を $\theta$ と $\theta+\pi$ で表して不変量を見つけられるかをみる。①は楕円の定義の誤読、③は特殊な弦1本だけで一般化する誤り、④は極を移したのに座標の基準を原点のまま使う誤りに対応する。①③は2本の特殊な弦で検算すれば否定でき、検算の習慣があるかも識別できる。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学C (2) ア(ウ) 極座標の意味及び曲線が極方程式で表されること, 数学C (2) ア(ア) 放物線・楕円・双曲線が2次式で表されること]
+  variations:
+    - 放物線 $y^2=4x$ の焦点を通る弦 $\mathrm{AB}$ について $\dfrac{1}{\mathrm{FA}}+\dfrac{1}{\mathrm{FB}}=1$ を示させる。
+    - 焦点を通る直交する2本の弦 $\mathrm{AB},\ \mathrm{CD}$ について $\dfrac{1}{\mathrm{AB}}+\dfrac{1}{\mathrm{CD}}$ が一定であることを示させる。

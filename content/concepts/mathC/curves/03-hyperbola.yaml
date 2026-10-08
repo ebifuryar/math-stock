@@ -1,0 +1,18 @@
+id: cv-hyperbola
+kind: definition
+title: 双曲線（焦点からの距離の差・漸近線）
+body: |
+  平面上の異なる2定点 $\mathrm{F},\ \mathrm{F'}$ からの距離の差が一定（$0$ より大きく $\mathrm{FF'}$ より小さい値）である点の軌跡を **双曲線** といい、$\mathrm{F},\ \mathrm{F'}$ を **焦点** という。「差」は $|\mathrm{PF}-\mathrm{PF'}|$ のことで、2つの枝の一方では $\mathrm{PF}-\mathrm{PF'}$、他方では $\mathrm{PF'}-\mathrm{PF}$ が一定値になる。
+
+  **標準形** $a>0,\ b>0$ とする。
+  $$\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$$
+  - 焦点 $(\pm c,\ 0)$、$c=\sqrt{a^2+b^2}$
+  - 頂点 $(\pm a,\ 0)$、距離の差は $2a$
+  - 漸近線 $y=\pm\dfrac{b}{a}x$（$\dfrac{x}{a}\pm\dfrac{y}{b}=0$）
+
+  **漸近線の覚え方** 右辺の $1$ を $0$ にした $\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=0$ を因数分解すると漸近線2本が得られる。傾きは「$y$ の分母の平方根 $\div$ $x$ の分母の平方根」で、$\dfrac{a}{b}$ ではない。
+
+  **焦点が $y$ 軸上の双曲線** $\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=-1$ は焦点 $(0,\ \pm\sqrt{a^2+b^2})$、頂点 $(0,\ \pm b)$、距離の差 $2b$。漸近線は同じ $y=\pm\dfrac{b}{a}x$。
+
+  **直角双曲線** $a=b$ のとき漸近線は $y=\pm x$ で直交する。$xy=k$（$k\neq 0$）も直角双曲線である。
+prerequisites: [cv-ellipse]

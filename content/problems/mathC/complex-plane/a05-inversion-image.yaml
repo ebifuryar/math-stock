@@ -1,0 +1,71 @@
+id: mc-cp-a05
+level: applied
+format: written
+title: w=1/z による直線と線分の像
+stem: |
+  複素数平面上で、点 $z$ が直線 $\ell:\ z+\overline{z}=2$（実部が $1$ である点全体）上を動くとき、$w=\dfrac{1}{z}$ で表される点 $w$ について考える。
+
+  (1) $z=\dfrac{1}{w}$ を用いて、点 $w$ の描く図形を求めよ。除外される点があればそれも明記すること。
+
+  (2) 点 $z$ が $\ell$ 上の線分 $z=1+ti\ (-1\leqq t\leqq 1)$ 上を動くとき、点 $w$ の描く図形を求め、その長さを求めよ。
+modelAnswer: |
+  (1) $z$ は $\ell$ 上にあるので $z\neq 0$（$\ell$ は原点を通らない）であり、$w=\dfrac{1}{z}$ は定義される。また $w\neq 0$ で、$z=\dfrac{1}{w}$ である。
+
+  $z+\overline{z}=2$ に代入すると
+  $$\frac{1}{w}+\frac{1}{\overline{w}}=2$$
+  両辺に $w\overline{w}\ (\neq 0)$ を掛けて
+  $$\overline{w}+w=2w\overline{w}\qquad\text{すなわち}\qquad w\overline{w}-\frac{1}{2}w-\frac{1}{2}\overline{w}=0$$
+  $\left(w-\dfrac{1}{2}\right)\left(\overline{w}-\dfrac{1}{2}\right)=w\overline{w}-\dfrac{1}{2}w-\dfrac{1}{2}\overline{w}+\dfrac{1}{4}$ より
+  $$\left|w-\frac{1}{2}\right|^2=\frac{1}{4}\qquad\text{すなわち}\qquad \left|w-\frac{1}{2}\right|=\frac{1}{2}$$
+
+  逆に、この円上の $0$ でない点 $w$ に対し $z=\dfrac{1}{w}$ とおくと、上の変形を逆にたどって $z+\overline{z}=2$ が成り立つので、$z$ は $\ell$ 上の点で $w=\dfrac{1}{z}$ となる。一方、$w=0$ は $w=\dfrac{1}{z}$ の形に表せない。
+
+  よって、点 $w$ の描く図形は **点 $\dfrac{1}{2}$ を中心とする半径 $\dfrac{1}{2}$ の円から原点を除いたもの**。
+
+  (2) $z=1+ti$ の偏角を $\varphi$ とすると、$-1\leqq t\leqq 1$ より $-\dfrac{\pi}{4}\leqq\varphi\leqq\dfrac{\pi}{4}$ で、$\varphi$ はこの範囲のすべての値をとる。$\arg w=-\varphi$ なので、$w$ は (1) の円上で偏角が $-\dfrac{\pi}{4}$ 以上 $\dfrac{\pi}{4}$ 以下の部分を動く。
+
+  円の中心を $\mathrm{M}\left(\dfrac{1}{2}\right)$ とする。円上の点 $w\ (\neq 0)$ について、$\angle w\mathrm{O}1$ は弧に対する円周角で、中心角 $\angle w\mathrm{M}1$ はその2倍である。よって $w$ は、点 $1$ から中心角 $\dfrac{\pi}{2}$ ずつ両側に広がる弧、すなわち中心角 $\pi$ の弧を動く。その端点は $t=\pm 1$ のときの
+  $$w=\frac{1}{1+i}=\frac{1-i}{2},\qquad w=\frac{1}{1-i}=\frac{1+i}{2}$$
+  である。
+
+  したがって、点 $w$ の描く図形は **(1) の円のうち、2点 $\dfrac{1-i}{2},\ \dfrac{1+i}{2}$ を両端とし点 $1$ を通る半円の弧** で、その長さは
+  $$\frac{1}{2}\cdot\pi=\frac{\pi}{2}$$
+rubric:
+  - id: r1
+    criterion: $z=\dfrac{1}{w}$ を $z+\overline{z}=2$ に代入し、$w\overline{w}$ を掛けて $w\overline{w}-\frac{1}{2}(w+\overline{w})=0$ を導いている（$w=u+vi$ とおいて $u^2+v^2-u=0$ を導いても可）
+    points: 3
+    keywords: ["1/w", "ww̄", "u^2+v^2-u=0"]
+  - id: r2
+    criterion: $\left|w-\frac{1}{2}\right|=\frac{1}{2}$ と変形し、中心 $\frac{1}{2}$・半径 $\frac{1}{2}$ の円と答えている
+    points: 2
+    keywords: ["|w-1/2|=1/2", "半径1/2"]
+  - id: r3
+    criterion: $w\neq 0$ であることを根拠とともに述べ、原点を除外している
+    points: 2
+    keywords: ["原点を除", "w≠0"]
+  - id: r4
+    criterion: (2) で $\arg w=-\arg z$ と $-\frac{\pi}{4}\leqq\arg z\leqq\frac{\pi}{4}$ から、像が円の一部（端点 $\frac{1\pm i}{2}$、点 $1$ を通る弧）であることを示している
+    points: 2
+    keywords: ["(1+i)/2", "(1-i)/2", "π/4"]
+  - id: r5
+    criterion: 弧の中心角が $\pi$ であることを示し、長さ $\frac{\pi}{2}$ を求めている
+    points: 1
+    keywords: ["π/2", "半円"]
+solution: |
+  (1) $w=\dfrac{1}{z}$ の像は、$z=\dfrac{1}{w}$ を $z$ の条件に代入して求める。代入した時点で $w\neq 0$ が前提になるので、得られた円 $\left|w-\dfrac{1}{2}\right|=\dfrac{1}{2}$ から原点を除く。原点を通らない直線は、$w=\dfrac{1}{z}$ により原点を通る円（原点を除く）に移る。
+
+  (2) $\ell$ 上の線分の像は円の一部（弧）である。$\arg\dfrac{1}{z}=-\arg z$ を用いて偏角の範囲を移し、円周角と中心角の関係で弧の中心角 $\pi$ を求める。両端は $\dfrac{1\pm i}{2}$、$t=0$ のとき $w=1$。長さは $\dfrac{1}{2}\cdot\pi=\dfrac{\pi}{2}$。
+
+  $t\to\pm\infty$ で $w\to 0$ となるが、$w=0$ には到達しない。これが (1) の除外点の意味である。
+concepts: [cp-figures, cp-conjugate-abs, cp-polar-form]
+misconceptions: [mc-cp-image-exclusion]
+targetSeconds: 600
+irt: { expectedCorrectRate: 0.45, discrimination: 1.3 }
+author:
+  intent: |
+    変換 $w=\dfrac{1}{z}$ による像を「$z$ を $w$ で表して条件に代入する」手順で求め、除外点（$w=0$）と、図形の一部だけが像になる場合（弧）を正しく判断できるかをみる。(1) は教科書の典型だが、除外点を根拠とともに書けるかを r3 で独立に評価する。(2) は偏角の対応と円周角の定理を結び付ける応用で、像を円全体や直線と答える誤り、端点を誤る誤りを r4・r5 で区別する。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学C (2) ア(エ) 複素数平面における図形の移動（w=1/z による像）]
+  variations:
+    - $z$ が円 $|z-1|=1$ 上の原点以外の点を動くとき、$w=\dfrac{1}{z}$ の描く図形（直線 $w+\overline{w}=1$）を求めさせる。
+    - $w=\dfrac{z+1}{z-1}$ により、虚軸が単位円（点 $1$ を除く）に移ることを示させる。

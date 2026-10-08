@@ -72,3 +72,33 @@ subjects:
         title: 統計的な推測
         curriculumCode: 数学B (2) 統計的な推測
         summary: 確率変数と確率分布、期待値・分散、二項分布、正規分布、標本平均の分布、母平均・母比率の推定、仮説検定
+  - id: math3
+    title: 数学III
+    units:
+      - id: math3-limits
+        title: 極限
+        curriculumCode: 数学III (1) 極限
+        summary: 数列の極限、無限等比数列と無限級数、関数の極限、関数の連続性と中間値の定理、分数関数・無理関数・逆関数と合成関数
+      - id: math3-differentiation
+        title: 微分法
+        curriculumCode: 数学III (2) 微分法
+        summary: 積・商・合成関数の微分、三角・指数・対数関数の導関数、接線と法線、グラフの凹凸と変曲点、最大・最小、方程式・不等式への応用、速度・加速度
+      - id: math3-integration
+        title: 積分法
+        curriculumCode: 数学III (3) 積分法
+        summary: 置換積分・部分積分、いろいろな関数の積分、定積分と区分求積法、定積分と不等式、面積・体積・曲線の長さ
+  - id: mathC
+    title: 数学C
+    units:
+      - id: mathc-vectors
+        title: ベクトル
+        curriculumCode: 数学C (1) ベクトル
+        summary: 平面ベクトルの演算と内積、位置ベクトルと図形、ベクトル方程式、空間座標と空間ベクトル、平面・直線・球面
+      - id: mathc-complex-plane
+        title: 複素数平面
+        curriculumCode: 数学C (2) 平面上の曲線と複素数平面（複素数平面）
+        summary: 複素数平面と極形式、ド・モアブルの定理、n乗根、回転と図形への応用、複素数の表す図形
+      - id: mathc-curves
+        title: 平面上の曲線
+        curriculumCode: 数学C (2) 平面上の曲線と複素数平面（平面上の曲線）
+        summary: 放物線・楕円・双曲線、2次曲線と直線、媒介変数表示、極座標と極方程式

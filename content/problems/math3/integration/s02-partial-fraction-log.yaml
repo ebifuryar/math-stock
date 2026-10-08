@@ -1,0 +1,46 @@
+id: m3-ig-s02
+level: school
+format: choice
+title: 部分分数分解と負の区間での対数
+stem: |
+  定積分
+  $$\int_{-2}^{-1}\frac{dx}{x(x-1)}$$
+  の値として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\log\dfrac{3}{4}$
+    rationale: |
+      部分分数分解の符号を逆にして $\dfrac{1}{x}-\dfrac{1}{x-1}$ としている。通分すると $\dfrac{(x-1)-x}{x(x-1)}=\dfrac{-1}{x(x-1)}$ となり元の式に戻らない。なお区間 $-2\leqq x\leqq -1$ で被積分関数は正なので、値が負になることはない。
+  - id: "2"
+    text: $-\log 3$
+    misconception: mc-ig-inner-function
+    rationale: |
+      分母の導関数 $2x-1$ が分子にないのに $\dfrac{f'}{f}$ 型とみなして $\log|x(x-1)|$ を原始関数としている。$\left[\log(x^2-x)\right]_{-2}^{-1}=\log 2-\log 6=-\log 3$。微分すると $\dfrac{2x-1}{x(x-1)}$ になり元に戻らない。
+  - id: "3"
+    text: 原始関数に負の数の対数が現れるので、この定積分は存在しない。
+    misconception: mc-ig-log-abs
+    rationale: |
+      $\displaystyle\int\frac{dx}{x}=\log x$ と絶対値を落として覚えているため、$x<0$ で計算できないと判断している。原始関数は $\log|x|$ であり、$-2\leqq x\leqq -1$ でも被積分関数は連続なので定積分は存在する。
+  - id: "4"
+    text: $\log\dfrac{4}{3}$
+    rationale: |
+      正解。$\dfrac{1}{x(x-1)}=\dfrac{1}{x-1}-\dfrac{1}{x}$ より $\left[\log\left|\dfrac{x-1}{x}\right|\right]_{-2}^{-1}=\log 2-\log\dfrac{3}{2}=\log\dfrac{4}{3}$。
+answer: "4"
+solution: |
+  部分分数に分解すると
+  $$\frac{1}{x(x-1)}=\frac{1}{x-1}-\frac{1}{x}$$
+  （右辺を通分すると $\dfrac{x-(x-1)}{x(x-1)}$ で元に戻る）。区間 $-2\leqq x\leqq -1$ では $x<0,\ x-1<0$ だが、$\displaystyle\int\frac{dx}{x}=\log|x|+C$ は $x<0$ でも成り立つので
+  $$\int_{-2}^{-1}\frac{dx}{x(x-1)}=\Big[\log|x-1|-\log|x|\Big]_{-2}^{-1}=\left[\log\left|\frac{x-1}{x}\right|\right]_{-2}^{-1}=\log 2-\log\frac{3}{2}=\log\frac{4}{3}$$
+  この区間で被積分関数は正なので、答えが正であることも確かめられる。
+concepts: [ig-trig-rational, ig-basic]
+misconceptions: [mc-ig-log-abs, mc-ig-inner-function]
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.65, discrimination: 1.0 }
+author:
+  intent: |
+    分数関数の積分の基本手順（部分分数分解）と、$\log|x|$ の絶対値の意味を同時にみる。区間をあえて $x<0$ にとり、絶対値を落として覚えている受験者が「存在しない」（③）を選ぶように設計した。②は分子に分母の導関数がないのに $\dfrac{f'}{f}$ 型を当てはめる誤り、①は分解の符号ミスで、いずれも「通分して戻す」「被積分関数の符号から答えの符号を見積もる」という検算で防げる。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: ["数学III (3) ア(ア) 不定積分と定積分（分数関数の積分）"]
+  variations:
+    - $\displaystyle\int_{-3}^{-2}\frac{2x-1}{x^2-x}\,dx$（$=\log 6-\log 12=-\log 2$）のように、正しく $\dfrac{f'}{f}$ 型になる場合と対比させる。
+    - $\displaystyle\int_2^3\frac{x^2}{x-1}\,dx$ のように、分子の次数を下げる割り算が必要な形にする。

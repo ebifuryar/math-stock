@@ -1,0 +1,52 @@
+id: mc-cv-s05
+level: school
+format: written
+title: 楕円と直線の共有点と接線
+stem: |
+  $k$ を定数とする。楕円 $\dfrac{x^2}{4}+y^2=1$ と直線 $y=x+k$ が共有点をもつような $k$ の値の範囲を求めよ。また、楕円と直線が接するときの $k$ の値と、そのときの接点の座標を求めよ。
+modelAnswer: |
+  $y=x+k$ を $\dfrac{x^2}{4}+y^2=1$ に代入し、両辺を $4$ 倍すると
+  $$x^2+4(x+k)^2=4\iff 5x^2+8kx+4k^2-4=0\qquad\cdots(*)$$
+  楕円と直線が共有点をもつ $\iff$ $(*)$ が実数解をもつ。$(*)$ の判別式を $D$ とすると
+  $$\frac{D}{4}=(4k)^2-5(4k^2-4)=-4k^2+20$$
+  $D\geqq 0$ より $k^2\leqq 5$、すなわち
+  $$-\sqrt{5}\leqq k\leqq\sqrt{5}$$
+
+  接するのは $D=0$、すなわち $k=\pm\sqrt{5}$ のとき。このとき $(*)$ の重解は $x=-\dfrac{8k}{2\cdot 5}=-\dfrac{4k}{5}$。
+  - $k=\sqrt{5}$ のとき $x=-\dfrac{4\sqrt{5}}{5}$、$y=x+\sqrt{5}=\dfrac{\sqrt{5}}{5}$
+  - $k=-\sqrt{5}$ のとき $x=\dfrac{4\sqrt{5}}{5}$、$y=x-\sqrt{5}=-\dfrac{\sqrt{5}}{5}$
+
+  よって **$-\sqrt{5}\leqq k\leqq\sqrt{5}$。接するのは $k=\sqrt{5}$（接点 $\left(-\dfrac{4\sqrt{5}}{5},\ \dfrac{\sqrt{5}}{5}\right)$）と $k=-\sqrt{5}$（接点 $\left(\dfrac{4\sqrt{5}}{5},\ -\dfrac{\sqrt{5}}{5}\right)$）**。
+
+  （検算: 点 $\left(-\dfrac{4\sqrt{5}}{5},\ \dfrac{\sqrt{5}}{5}\right)$ における接線は $-\dfrac{\sqrt{5}}{5}x+\dfrac{\sqrt{5}}{5}y=1$、すなわち $y=x+\sqrt{5}$ で一致する。）
+rubric:
+  - id: r1
+    criterion: $y$ を消去して $5x^2+8kx+4k^2-4=0$（またはその定数倍）を正しく導いている
+    points: 3
+    keywords: ["5x^2+8kx+4k^2-4=0", "5x^2+8kx"]
+  - id: r2
+    criterion: 共有点をもつ条件を判別式 $D\geqq 0$（等号を含む）として立て、$-\sqrt{5}\leqq k\leqq\sqrt{5}$ を得ている
+    points: 3
+    keywords: ["D≥0", "k^2≤5", "-√5≤k≤√5"]
+  - id: r3
+    criterion: 接する条件を $D=0$ として $k=\pm\sqrt{5}$ を求めている
+    points: 2
+    keywords: ["k=±√5", "D=0"]
+  - id: r4
+    criterion: 接点 $\left(-\dfrac{4\sqrt{5}}{5},\ \dfrac{\sqrt{5}}{5}\right)$（$k=\sqrt{5}$）と $\left(\dfrac{4\sqrt{5}}{5},\ -\dfrac{\sqrt{5}}{5}\right)$（$k=-\sqrt{5}$）を、対応する $k$ とともに正しく求めている
+    points: 2
+    keywords: ["4√5/5", "√5/5"]
+solution: |
+  2次曲線と直線の共有点は、代入してできる2次方程式の判別式で判定する。円のときに使える「中心と直線の距離」による判定は、楕円にはそのまま使えない。接点は重解 $x=-\dfrac{b}{2a}$ から求めると速い。求めた接点で接線の公式 $\dfrac{x_1x}{4}+y_1y=1$ を作ると、もとの直線と一致することで検算できる。
+concepts: [cv-curve-line, cv-ellipse, qf-discriminant]
+misconceptions: []
+targetSeconds: 420
+irt: { expectedCorrectRate: 0.65, discrimination: 1.1 }
+author:
+  intent: |
+    2次曲線と直線の位置関係を判別式で判定し、答案として書けるかをみる。「共有点をもつ」の等号の扱い、代入後の係数計算、重解から接点を求める処理を採点基準で独立に評価する。円の場合の「中心と直線の距離」を楕円に誤用して $\dfrac{|k|}{\sqrt{2}}\leqq 2$ などとする答案は r2 以降で得点できない設計にしている。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学C (2) ア(ア) 2次曲線と直線の位置関係]
+  variations:
+    - 直線が楕円によって切り取られる線分の長さが最大になる $k$ を求めさせる（$k=0$）。
+    - 双曲線 $x^2-y^2=1$ と直線 $y=2x+k$ で同様に問う。

@@ -1,0 +1,52 @@
+id: mc-cp-e01
+level: exam
+format: choice
+title: 方程式 (z+1)⁶=z⁶ の解の個数と位置
+stem: |
+  方程式
+  $$(z+1)^6=z^6$$
+  の複素数の解について述べた文として正しいものを、次の①〜④のうちから一つ選べ。ただし、個数は異なる解の個数を表す。
+choices:
+  - id: "1"
+    text: 解は6個あり、それらはすべて直線 $z+\overline{z}=-1$（実部が $-\dfrac{1}{2}$ の直線）上にある。
+    misconception: mc-cp-root-count
+    rationale: |
+      $w=\dfrac{z+1}{z}$ とおいた $w^6=1$ の6個の解すべてから $z$ が得られると考えている。$w=1$ のときは $z+1=z$ となって $z$ が存在しないので、解は5個。もとの方程式は展開すると $z^6$ が消えて5次方程式になる。
+  - id: "2"
+    text: 解は5個あり、それらはすべて直線 $z+\overline{z}=-1$（実部が $-\dfrac{1}{2}$ の直線）上にある。
+    rationale: |
+      正解。両辺の絶対値から $|z+1|=|z|$ なので、解はすべて2点 $0,\ -1$ の垂直二等分線上にある。$w=\dfrac{z+1}{z}$ が $w^6=1,\ w\neq 1$ を満たすことから異なる解は5個。
+  - id: "3"
+    text: 解は $z=-\dfrac{1}{2}$ の1個だけである。
+    misconception: mc-cp-root-count
+    rationale: |
+      $z+1=-z$（$w=-1$ の場合）だけを考えて、実数解しか求めていない。$w^6=1$ の虚数解 $w=\cos\dfrac{k\pi}{3}+i\sin\dfrac{k\pi}{3}\ (k=1,\ 2,\ 4,\ 5)$ からも虚数の解が得られる。
+  - id: "4"
+    text: 解は5個あり、それらはすべて円 $\left|z+\dfrac{1}{2}\right|=\dfrac{1}{2}$ 上にある。
+    rationale: |
+      $z=\dfrac{1}{w-1}$ で、$w-1$ が原点を通る円 $|u+1|=1$ 上にあることから、その逆数も円上にあると思い込んでいる。原点を通る円は $\dfrac{1}{u}$ により直線に移る。実際、解 $z=-\dfrac{1}{2}\pm\dfrac{\sqrt{3}}{2}i$ は $\left|z+\dfrac{1}{2}\right|=\dfrac{\sqrt{3}}{2}$ で、この円上にない。
+answer: "2"
+solution: |
+  $z=0$ は解でない（左辺 $1$、右辺 $0$）ので、両辺を $z^6$ で割って $w=\dfrac{z+1}{z}$ とおくと
+  $$w^6=1$$
+  $w=\cos\dfrac{k\pi}{3}+i\sin\dfrac{k\pi}{3}\ (k=0,\ 1,\ \cdots,\ 5)$。$w=\dfrac{z+1}{z}=1+\dfrac{1}{z}$ より $z=\dfrac{1}{w-1}$ だが、$w=1\ (k=0)$ に対応する $z$ はない。$k=1,\ \cdots,\ 5$ の $w$ は互いに異なり、$z=\dfrac{1}{w-1}$ も互いに異なるので、**解は5個**。
+
+  （別の見方）$(z+1)^6-z^6=6z^5+15z^4+\cdots+1$ は5次式なので、解は重複も含めて5個。
+
+  **位置** 両辺の絶対値をとると $|z+1|^6=|z|^6$、すなわち $|z+1|=|z|$。これは2点 $-1,\ 0$ から等距離、つまり実部が $-\dfrac{1}{2}$ の直線 $z+\overline{z}=-1$ 上にあることを表す。
+
+  実際、$\theta=\dfrac{k\pi}{3}$ として
+  $$z=\frac{1}{\cos\theta-1+i\sin\theta}=-\frac{1}{2}-\frac{i}{2}\cdot\frac{\sin\theta}{1-\cos\theta}$$
+  と計算でき、実部はつねに $-\dfrac{1}{2}$ である。$k=3$ で $z=-\dfrac{1}{2}$、$k=1,\ 5$ で $z=-\dfrac{1}{2}\mp\dfrac{\sqrt{3}}{2}i$、$k=2,\ 4$ で $z=-\dfrac{1}{2}\mp\dfrac{\sqrt{3}}{6}i$。
+concepts: [cp-nth-roots, cp-figures, cp-distance-division]
+misconceptions: [mc-cp-root-count]
+targetSeconds: 360
+irt: { expectedCorrectRate: 0.35, discrimination: 1.4 }
+author:
+  intent: |
+    置き換えで $w^n=1$ に帰着させたとき、$w$ の $n$ 個の値がすべて元の解に対応するとは限らないこと（$w=1$ が除外される）と、解の位置を絶対値の条件 $|z+1|=|z|$ から図形的に読み取れることをみる。①は除外の見落とし、③は解を1つしか求めない誤り、④は $\dfrac{1}{z}$ による像を誤って円と考える誤りに対応する。個数と位置の両方を正しく判断しないと正解に至らないよう、選択肢を2要素の組にした。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学C (2) ア(ウ) ド・モアブルの定理（n乗根）, 数学C (2) ア(エ) 複素数平面における図形]
+  variations:
+    - $(z-1)^5=z^5$ の解がすべて直線上にあることを示させ、解の虚部の積を求めさせる。
+    - $(z+i)^n=(z-i)^n$ の解がすべて実数であることを、絶対値の条件から示させる。

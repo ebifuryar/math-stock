@@ -1,0 +1,48 @@
+id: mc-cp-s03
+level: school
+format: choice
+title: 商の累乗とド・モアブルの定理
+stem: |
+  $\left(\dfrac{1+\sqrt{3}\,i}{1+i}\right)^6$ の値として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $-8i$
+    misconception: mc-cp-arg-operation
+    rationale: |
+      商の偏角を $\dfrac{\pi}{3}+\dfrac{\pi}{4}=\dfrac{7}{12}\pi$（和）、または $\dfrac{\pi}{4}-\dfrac{\pi}{3}=-\dfrac{\pi}{12}$（逆向きの差）としている。6倍するとどちらも $-\dfrac{\pi}{2}$ と同じ向きになり $-8i$ になる。
+  - id: "2"
+    text: $\sqrt{2}\,i$
+    misconception: mc-cp-modulus-scale
+    rationale: |
+      偏角は $\dfrac{\pi}{12}\times 6=\dfrac{\pi}{2}$ と正しく6倍しているが、絶対値 $\sqrt{2}$ を6乗していない。ド・モアブルの定理では絶対値は $r^n$ になる。
+  - id: "3"
+    text: $8i$
+    rationale: |
+      正解。底は $\sqrt{2}\left(\cos\dfrac{\pi}{12}+i\sin\dfrac{\pi}{12}\right)$ なので、6乗すると $(\sqrt{2})^6\left(\cos\dfrac{\pi}{2}+i\sin\dfrac{\pi}{2}\right)=8i$。
+  - id: "4"
+    text: $64i$
+    misconception: mc-cp-modulus-scale
+    rationale: |
+      $1+i$ で割ることを $-\dfrac{\pi}{4}$ 回転だけとみて、絶対値 $\sqrt{2}$ で割ることを落としている。分子だけの $(1+\sqrt{3}i)^6=64$ を $-\dfrac{3}{2}\pi$ 回転して $64i$ としている。
+answer: "3"
+solution: |
+  分子・分母を極形式で表すと
+  $$1+\sqrt{3}\,i=2\left(\cos\frac{\pi}{3}+i\sin\frac{\pi}{3}\right),\qquad 1+i=\sqrt{2}\left(\cos\frac{\pi}{4}+i\sin\frac{\pi}{4}\right)$$
+  商は「絶対値は割り、偏角は引く」ので
+  $$\frac{1+\sqrt{3}\,i}{1+i}=\frac{2}{\sqrt{2}}\left\{\cos\left(\frac{\pi}{3}-\frac{\pi}{4}\right)+i\sin\left(\frac{\pi}{3}-\frac{\pi}{4}\right)\right\}=\sqrt{2}\left(\cos\frac{\pi}{12}+i\sin\frac{\pi}{12}\right)$$
+  ド・モアブルの定理より
+  $$\left(\frac{1+\sqrt{3}\,i}{1+i}\right)^6=(\sqrt{2})^6\left(\cos\frac{\pi}{2}+i\sin\frac{\pi}{2}\right)=8i$$
+
+  （検算）$(1+\sqrt{3}i)^6=2^6(\cos 2\pi+i\sin 2\pi)=64$、$(1+i)^6=(\sqrt{2})^6\left(\cos\dfrac{3}{2}\pi+i\sin\dfrac{3}{2}\pi\right)=-8i$ なので、$\dfrac{64}{-8i}=\dfrac{-8}{i}=8i$。
+concepts: [cp-product-rotation, cp-de-moivre, cp-polar-form]
+misconceptions: [mc-cp-arg-operation, mc-cp-modulus-scale]
+targetSeconds: 180
+irt: { expectedCorrectRate: 0.65, discrimination: 1.1 }
+author:
+  intent: |
+    商の極形式（絶対値の商・偏角の差）とド・モアブルの定理を組み合わせて使えるかをみる。誤答は、偏角の演算の誤り（①）、累乗で絶対値を $n$ 乗し忘れる誤り（②）、割り算を回転だけと捉えて拡大率を落とす誤り（④）に対応する。偏角の和と逆向きの差がともに①に集まるように指数を6にしたので、①を選んだ受験者には「商の偏角の求め方」を指導すればよい。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学C (2) ア(ウ) ド・モアブルの定理, 数学C (2) ア(イ) 複素数の極形式（積・商）]
+  variations:
+    - $\left(\dfrac{\sqrt{3}+i}{1-i}\right)^{12}$ の値を求めさせる（$-64$）。
+    - $\left(\dfrac{1+\sqrt{3}i}{1+i}\right)^n$ が実数となる最小の自然数 $n$ を求めさせる（$n=12$）。

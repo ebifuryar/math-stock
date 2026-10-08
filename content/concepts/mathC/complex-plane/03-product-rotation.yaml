@@ -1,0 +1,16 @@
+id: cp-product-rotation
+kind: theorem
+title: 積・商と回転・拡大
+body: |
+  $z_1=r_1(\cos\theta_1+i\sin\theta_1),\ z_2=r_2(\cos\theta_2+i\sin\theta_2)$ のとき、加法定理により
+  $$z_1z_2=r_1r_2\{\cos(\theta_1+\theta_2)+i\sin(\theta_1+\theta_2)\},\qquad \frac{z_1}{z_2}=\frac{r_1}{r_2}\{\cos(\theta_1-\theta_2)+i\sin(\theta_1-\theta_2)\}$$
+  **積は「絶対値は掛け、偏角は足す」、商は「絶対値は割り、偏角は引く」**。
+
+  **回転と拡大** $\alpha=r(\cos\theta+i\sin\theta)$ を掛けると、点 $z$ は原点を中心に $\theta$ 回転し、原点からの距離が $r$ 倍される。$\alpha$ で **割る** と、$-\theta$ 回転して $\dfrac{1}{r}$ 倍。
+  - $i$ を掛ける $=\dfrac{\pi}{2}$ 回転、$-i$ を掛ける（$i$ で割る）$=-\dfrac{\pi}{2}$ 回転。
+  - $1+i$ で割ると $-\dfrac{\pi}{4}$ 回転に加えて $\dfrac{1}{\sqrt{2}}$ 倍される。拡大率を落とさないこと。
+
+  **原点以外の点 $c$ を中心とする回転** 点 $z$ を点 $c$ のまわりに $\theta$ 回転し、$c$ からの距離を $r$ 倍した点 $w$ は
+  $$w-c=r(\cos\theta+i\sin\theta)(z-c)$$
+  いったん $c$ を原点に平行移動し（$z-c$）、回転してから戻す（$+c$）。$w=r(\cos\theta+i\sin\theta)z$ とすると原点中心の回転になってしまう。
+prerequisites: [cp-polar-form, tf-addition]

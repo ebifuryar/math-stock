@@ -1,0 +1,52 @@
+id: m3-ig-e02
+level: exam
+format: choice
+title: e^{-x}|sin x| の積分と無限等比級数
+stem: |
+  自然数 $k$ に対して
+  $$I_k=\int_{(k-1)\pi}^{k\pi}e^{-x}|\sin x|\,dx$$
+  とおく。このとき
+  $$\lim_{n\to\infty}\int_0^{n\pi}e^{-x}|\sin x|\,dx=\lim_{n\to\infty}\sum_{k=1}^{n}I_k$$
+  の値として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\dfrac{1}{2}$
+    rationale: |
+      絶対値を外して $\displaystyle\int_0^{n\pi}e^{-x}\sin x\,dx$ を計算している（$n\to\infty$ で $\dfrac{1}{2}$）。$\sin x<0$ の区間では $|\sin x|=-\sin x$ であり、各区間の積分が正負交互に打ち消し合うことはない。
+  - id: "2"
+    text: $\dfrac{e^{\pi}+1}{2(e^{\pi}-1)}$
+    rationale: |
+      正解。$I_1=\dfrac{1+e^{-\pi}}{2}$、$I_{k+1}=e^{-\pi}I_k$ より、初項 $I_1$、公比 $e^{-\pi}$ の無限等比級数で、和は $\dfrac{I_1}{1-e^{-\pi}}=\dfrac{e^\pi+1}{2(e^\pi-1)}$。
+  - id: "3"
+    text: $\dfrac{e^{\pi}+1}{2e^{\pi}}$
+    rationale: |
+      最初の区間の積分 $I_1=\dfrac{1+e^{-\pi}}{2}$ だけを答えている。$I_2,\ I_3,\ \dots$ は $0$ ではなく、$I_1$ に $e^{-\pi},\ e^{-2\pi},\ \dots$ を掛けたものとして加わる。
+  - id: "4"
+    text: $\dfrac{e^{\pi}+1}{e^{\pi}-1}$
+    misconception: mc-ig-parts-choice
+    rationale: |
+      部分積分を2回行って $J=\displaystyle\int e^{-x}\sin x\,dx$ についての式 $2J=-e^{-x}(\sin x+\cos x)$ を得た後、$2$ で割り忘れて $I_1=1+e^{-\pi}$ としている。
+answer: "2"
+solution: |
+  **$I_1$ の計算**: $J=\displaystyle\int e^{-x}\sin x\,dx$ とおく。$e^{-x}$ を2回とも積分する側にとって部分積分すると
+  $$J=-e^{-x}\sin x+\int e^{-x}\cos x\,dx=-e^{-x}\sin x-e^{-x}\cos x-J$$
+  よって $J=-\dfrac{e^{-x}(\sin x+\cos x)}{2}+C$。$0\leqq x\leqq\pi$ では $|\sin x|=\sin x$ なので
+  $$I_1=\left[-\frac{e^{-x}(\sin x+\cos x)}{2}\right]_0^\pi=\frac{e^{-\pi}}{2}+\frac{1}{2}=\frac{1+e^{-\pi}}{2}$$
+
+  **$I_{k+1}$ と $I_k$ の関係**: $I_{k+1}$ で $x=t+\pi$ と置換すると、$|\sin(t+\pi)|=|\sin t|$、$t:(k-1)\pi\to k\pi$ より
+  $$I_{k+1}=\int_{(k-1)\pi}^{k\pi}e^{-t-\pi}|\sin t|\,dt=e^{-\pi}I_k$$
+
+  よって $\{I_k\}$ は初項 $\dfrac{1+e^{-\pi}}{2}$、公比 $e^{-\pi}\ (0<e^{-\pi}<1)$ の等比数列で
+  $$\lim_{n\to\infty}\sum_{k=1}^{n}I_k=\frac{1+e^{-\pi}}{2(1-e^{-\pi})}=\frac{e^{\pi}+1}{2(e^{\pi}-1)}$$
+concepts: [ig-by-parts, ig-substitution, lm-infinite-series]
+misconceptions: [mc-ig-parts-choice]
+targetSeconds: 720
+irt: { expectedCorrectRate: 0.3, discrimination: 1.4 }
+author:
+  intent: |
+    $e^{-x}\sin x$ 型の部分積分（2回で元に戻る）、絶対値付き周期関数の区間ごとの処理、平行移動の置換による漸化式 $I_{k+1}=e^{-\pi}I_k$、無限等比級数の和という4段階を連結できるかをみる。①は絶対値の無視、③は区間の積分と無限和の取り違え、④は「$2J=\cdots$」の $2$ で割り忘れで、どの段階で崩れたかを選択肢で特定できる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学III (3) ア(イ) 置換積分法・部分積分法", "数学III (1) ア(イ) 無限等比級数の和"]
+  variations:
+    - 記述式にして、$I_k$ を $k$ の式で表すところから問う（$I_k=\dfrac{1+e^{-\pi}}{2}e^{-(k-1)\pi}$）。
+    - 曲線 $y=e^{-x}\sin x\ (x\geqq 0)$ と $x$ 軸で囲まれた部分の面積の総和として出題する（同じ値）。

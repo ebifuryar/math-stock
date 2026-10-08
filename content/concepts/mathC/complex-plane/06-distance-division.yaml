@@ -1,0 +1,14 @@
+id: cp-distance-division
+kind: formula
+title: 2点間の距離と内分点・外分点
+body: |
+  複素数平面上の2点 $\mathrm{A}(\alpha),\ \mathrm{B}(\beta)$ について
+
+  **距離** $\mathrm{AB}=|\beta-\alpha|$。$|z-\alpha|$ は「点 $z$ と点 $\alpha$ の距離」と読む。$|z+2i|=|z-(-2i)|$ は点 $-2i$ からの距離であることに注意。
+
+  **内分点・外分点** 線分 $\mathrm{AB}$ を $m:n$ に
+  $$\text{内分する点}\ \ \frac{n\alpha+m\beta}{m+n},\qquad \text{外分する点}\ \ \frac{-n\alpha+m\beta}{m-n}$$
+  中点は $\dfrac{\alpha+\beta}{2}$、$\triangle\mathrm{ABC}$ の重心は $\dfrac{\alpha+\beta+\gamma}{3}$。座標平面の公式を実部・虚部まとめて書いたものになっている。
+
+  **ベクトルとの対応** $\beta-\alpha$ は $\overrightarrow{\mathrm{AB}}$ に対応する。平行移動は複素数の和、$\overrightarrow{\mathrm{AB}}$ の向きを回すことは $\beta-\alpha$ に回転を表す複素数を掛けることに対応する。
+prerequisites: [cp-conjugate-abs, cg-distance-division]

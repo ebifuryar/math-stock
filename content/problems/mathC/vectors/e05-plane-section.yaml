@@ -1,0 +1,63 @@
+id: mc-vc-e05
+level: exam
+format: written
+title: 3点を通る平面と四面体の辺の交点
+stem: |
+  四面体 $\mathrm{OABC}$ において、辺 $\mathrm{OA}$ を $2:1$ に内分する点を $\mathrm{P}$、辺 $\mathrm{OB}$ を $1:2$ に内分する点を $\mathrm{Q}$、辺 $\mathrm{BC}$ の中点を $\mathrm{R}$ とする。3点 $\mathrm{P},\ \mathrm{Q},\ \mathrm{R}$ を通る平面が辺 $\mathrm{AC}$ と交わる点を $\mathrm{S}$ とする。$\overrightarrow{\mathrm{OA}}=\vec a,\ \overrightarrow{\mathrm{OB}}=\vec b,\ \overrightarrow{\mathrm{OC}}=\vec c$ とするとき、$\overrightarrow{\mathrm{OS}}$ を $\vec a,\ \vec b,\ \vec c$ を用いて表し、$\mathrm{AS}:\mathrm{SC}$ を求めよ。
+modelAnswer: |
+  $$\overrightarrow{\mathrm{OP}}=\frac{2}{3}\vec a,\qquad \overrightarrow{\mathrm{OQ}}=\frac{1}{3}\vec b,\qquad \overrightarrow{\mathrm{OR}}=\frac{1}{2}\vec b+\frac{1}{2}\vec c$$
+
+  $\mathrm{S}$ は辺 $\mathrm{AC}$ 上にあるから、実数 $u\ (0\leqq u\leqq 1)$ を用いて
+  $$\overrightarrow{\mathrm{OS}}=(1-u)\vec a+u\vec c\qquad\cdots\text{①}$$
+  と表せる。
+
+  一方、$\mathrm{S}$ は平面 $\mathrm{PQR}$ 上にあるから、$x+y+z=1$ を満たす実数 $x,\ y,\ z$ を用いて
+  $$\overrightarrow{\mathrm{OS}}=x\overrightarrow{\mathrm{OP}}+y\overrightarrow{\mathrm{OQ}}+z\overrightarrow{\mathrm{OR}}=\frac{2}{3}x\,\vec a+\left(\frac{1}{3}y+\frac{1}{2}z\right)\vec b+\frac{1}{2}z\,\vec c\qquad\cdots\text{②}$$
+  と表せる。
+
+  4点 $\mathrm{O},\ \mathrm{A},\ \mathrm{B},\ \mathrm{C}$ は同じ平面上にないので、$\vec a,\ \vec b,\ \vec c$ は一次独立である。よって①②の係数を比較して
+  $$1-u=\frac{2}{3}x,\qquad 0=\frac{1}{3}y+\frac{1}{2}z,\qquad u=\frac{1}{2}z$$
+  第2式より $y=-\dfrac{3}{2}z$。これと $x+y+z=1$ より $x=1+\dfrac{1}{2}z=1+u$。第1式に代入して
+  $$1-u=\frac{2}{3}(1+u)\qquad 3-3u=2+2u\qquad u=\frac{1}{5}$$
+  （このとき $z=\dfrac{2}{5},\ y=-\dfrac{3}{5},\ x=\dfrac{6}{5}$ で、確かに $x+y+z=1$。）
+
+  $0\leqq u\leqq 1$ を満たすので、$\mathrm{S}$ は確かに辺 $\mathrm{AC}$ 上にある。
+
+  $$\overrightarrow{\mathrm{OS}}=\frac{4}{5}\vec a+\frac{1}{5}\vec c$$
+  $\overrightarrow{\mathrm{AS}}=u\overrightarrow{\mathrm{AC}}=\dfrac{1}{5}\overrightarrow{\mathrm{AC}}$ より $\mathrm{AS}:\mathrm{SC}=1:4$。
+
+  **答え: $\overrightarrow{\mathrm{OS}}=\dfrac{4}{5}\vec a+\dfrac{1}{5}\vec c$、$\mathrm{AS}:\mathrm{SC}=1:4$**
+rubric:
+  - id: r1
+    criterion: $\overrightarrow{\mathrm{OP}}=\dfrac{2}{3}\vec a,\ \overrightarrow{\mathrm{OQ}}=\dfrac{1}{3}\vec b,\ \overrightarrow{\mathrm{OR}}=\dfrac{1}{2}(\vec b+\vec c)$ を正しく表し、$\mathrm{S}$ が辺 $\mathrm{AC}$ 上にあることから $\overrightarrow{\mathrm{OS}}=(1-u)\vec a+u\vec c$ とおいている
+    points: 2
+    keywords: ["2/3", "1/3", "(1-u)"]
+  - id: r2
+    criterion: $\mathrm{S}$ が平面 $\mathrm{PQR}$ 上にある条件を、係数の和が $1$（$x+y+z=1$）の形、または $\overrightarrow{\mathrm{PS}}=s\overrightarrow{\mathrm{PQ}}+t\overrightarrow{\mathrm{PR}}$ の形で正しく立てている
+    points: 3
+    keywords: ["x+y+z=1", "平面PQR"]
+  - id: r3
+    criterion: $\vec a,\ \vec b,\ \vec c$ が一次独立である（4点が同一平面上にない）ことを述べてから係数を比較している
+    points: 2
+    keywords: ["一次独立", "同じ平面上にない"]
+  - id: r4
+    criterion: 連立方程式を解いて $u=\dfrac{1}{5}$ を得て、$\overrightarrow{\mathrm{OS}}=\dfrac{4}{5}\vec a+\dfrac{1}{5}\vec c$ と $\mathrm{AS}:\mathrm{SC}=1:4$ を比の向きも正しく答えている
+    points: 3
+    keywords: ["4/5", "1/5", "1:4"]
+solution: |
+  「$\mathrm{S}$ は辺 $\mathrm{AC}$ 上」「$\mathrm{S}$ は平面 $\mathrm{PQR}$ 上」の2通りに表し、$\vec a,\ \vec b,\ \vec c$ の一次独立を根拠に係数を比較する。平面上の条件では **係数の和が1** を忘れないこと（忘れると未知数が1つ多くなり決まらない）。②で $\vec b$ の係数が $0$ になることが、$\mathrm{S}$ が面 $\mathrm{OAC}$ 上にあることに対応する。
+
+  検算（空間でのメネラウスの定理）: 平面が4辺 $\mathrm{OA},\ \mathrm{AC},\ \mathrm{CB},\ \mathrm{BO}$ と交わるとき
+  $$\frac{\mathrm{OP}}{\mathrm{PA}}\cdot\frac{\mathrm{AS}}{\mathrm{SC}}\cdot\frac{\mathrm{CR}}{\mathrm{RB}}\cdot\frac{\mathrm{BQ}}{\mathrm{QO}}=2\cdot\frac{1}{4}\cdot 1\cdot 2=1$$
+concepts: [vc-space-vector, vc-intersection, vc-position-vector]
+misconceptions: [mc-vc-coplanar-sum, mc-vc-independence-unchecked]
+targetSeconds: 720
+irt: { expectedCorrectRate: 0.3, discrimination: 1.4 }
+author:
+  intent: |
+    空間で「直線（辺）と平面の交点」を求める標準処理を、根拠を含めて答案に書けるかをみる。採点では、平面上にある条件（係数の和 $=1$）の立式と、$\vec a,\ \vec b,\ \vec c$ の一次独立への言及を独立した項目にし、計算は合っていても論理の根拠が欠けた答案を区別する。$x$ が $1$ を超え $y$ が負になる（$\mathrm{S}$ が三角形 $\mathrm{PQR}$ の外にある）ので、「係数はすべて正」と思い込んでいる受験者は途中で不安になる設計。最終的な比は空間のメネラウスの定理で検算できる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学C (1) ア(ウ) 空間におけるベクトル, 数学C (1) イ(イ) ベクトルを用いた空間図形の考察]
+  variations:
+    - 平面 $\mathrm{PQR}$ と直線 $\mathrm{OC}$ の交点 $\mathrm{T}$ を求めさせる（$\overrightarrow{\mathrm{OT}}=-\vec c$ となり、辺の延長上で交わる）。
+    - 四面体 $\mathrm{OABC}$ を平面 $\mathrm{PQR}$ で切ったとき、頂点 $\mathrm{B}$ を含む側の立体の体積が全体の何倍かを問う。

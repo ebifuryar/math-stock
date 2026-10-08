@@ -1,0 +1,49 @@
+id: m3-ig-s01
+level: school
+format: choice
+title: 置換積分と積分区間の変更
+stem: |
+  定積分
+  $$\int_0^2 xe^{x^2}\,dx$$
+  の値として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\dfrac{e^2-1}{2}$
+    misconception: mc-ig-sub-bounds
+    rationale: |
+      $u=x^2$ と置換したのに、積分区間を $x$ の範囲 $0\to 2$ のまま $\displaystyle\frac{1}{2}\int_0^2 e^u\,du$ としている。$x=2$ のとき $u=4$ なので、$u$ の区間は $0\to 4$ である。
+  - id: "2"
+    text: $e^4-1$
+    misconception: mc-ig-sub-bounds
+    rationale: |
+      $du=2x\,dx$ より $x\,dx=\dfrac{1}{2}du$ となるところを、$x\,dx$ をそのまま $du$ に書き換えて係数 $\dfrac{1}{2}$ を落としている。$\{e^{x^2}\}'=2xe^{x^2}$ なので、$e^{x^2}$ を微分して確かめると $2$ 倍ずれていることがわかる。
+  - id: "3"
+    text: $\dfrac{e^4-1}{2}$
+    rationale: |
+      正解。$u=x^2$ とおくと $du=2x\,dx$、$x:0\to 2$ のとき $u:0\to 4$。$\displaystyle\frac{1}{2}\int_0^4 e^u\,du=\frac{e^4-1}{2}$。
+  - id: "4"
+    text: $2e^4$
+    misconception: mc-ig-parts-choice
+    rationale: |
+      積 $x\cdot e^{x^2}$ の積分を、$x$ の原始関数 $\dfrac{x^2}{2}$ と $e^{x^2}$ の積 $\dfrac{x^2}{2}e^{x^2}$ としている（$e^{x^2}$ の原始関数も $e^{x^2}$ と誤っている）。$\left[\dfrac{x^2}{2}e^{x^2}\right]_0^2=2e^4$。積の積分は因数ごとの積分の積ではない。
+answer: "3"
+solution: |
+  被積分関数に $x^2$ とその導関数 $2x$ が見えるので、$u=x^2$ と置換する。$du=2x\,dx$ より $x\,dx=\dfrac{1}{2}\,du$。
+
+  | $x$ | $0\to 2$ |
+  | --- | --- |
+  | $u$ | $0\to 4$ |
+
+  $$\int_0^2 xe^{x^2}\,dx=\frac{1}{2}\int_0^4 e^u\,du=\frac{1}{2}\Big[e^u\Big]_0^4=\frac{e^4-1}{2}$$
+concepts: [ig-substitution, ig-basic]
+misconceptions: [mc-ig-sub-bounds, mc-ig-parts-choice]
+targetSeconds: 150
+irt: { expectedCorrectRate: 0.75, discrimination: 0.9 }
+author:
+  intent: |
+    定積分の置換で「$dx$ の変換」と「積分区間の取り替え」の2つを同時に正しく行えるかをみる。①は区間の取り替え忘れ、②は係数 $\dfrac{1}{2}$ の落とし（$dx\to du$ の機械的な書き換え）を、それぞれ単独で識別できるように設計した。④は置換積分の発想がなく、積を因数ごとに積分してしまう層を拾う。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: ["数学III (3) ア(イ) 置換積分法・部分積分法"]
+  variations:
+    - $\displaystyle\int_0^{\sqrt{\pi}}x\sin x^2\,dx$（$=1$）のように三角関数で同じ構造にする。
+    - $\displaystyle\int_1^e\frac{(\log x)^2}{x}\,dx$（$=\dfrac{1}{3}$）で $u=\log x$ の置換を問う。

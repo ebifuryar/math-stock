@@ -1,0 +1,16 @@
+id: vc-vector-equation
+kind: method
+title: ベクトル方程式と点の存在範囲
+body: |
+  **直線** 点 $\mathrm{A}(\vec a)$ を通り $\vec d$ に平行: $\vec p=\vec a+t\vec d$。2点 $\mathrm{A},\ \mathrm{B}$ を通る: $\vec p=(1-t)\vec a+t\vec b$。点 $\mathrm{A}$ を通り $\vec n$ に垂直（$\vec n$ は法線ベクトル）: $\vec n\cdot(\vec p-\vec a)=0$。成分で書くと $\vec n=(a,\ b)$ のとき $ax+by+c=0$ の形になる。
+
+  **円** 中心 $\mathrm{C}(\vec c)$、半径 $r$: $|\vec p-\vec c|=r$。2点 $\mathrm{A},\ \mathrm{B}$ を直径の両端とする円: $(\vec p-\vec a)\cdot(\vec p-\vec b)=0$。
+  内積の式は、中点などを基準に **平方完成** すると $|\vec p-\vec m|^2=k$ の形になり、円とわかる。
+
+  **点の存在範囲** $\overrightarrow{\mathrm{OP}}=s\overrightarrow{\mathrm{OA}}+t\overrightarrow{\mathrm{OB}}$ について
+  - $s+t=1$ → 直線 $\mathrm{AB}$、さらに $s\geqq 0,\ t\geqq 0$ → 線分 $\mathrm{AB}$
+  - $s+t\leqq 1,\ s\geqq 0,\ t\geqq 0$ → $\triangle\mathrm{OAB}$ の周および内部
+  - $0\leqq s\leqq 1,\ 0\leqq t\leqq 1$ → 平行四辺形の周および内部
+
+  係数付きの条件（例: $s+2t\leqq 2$）は、**右辺を1にしてから** 係数をベクトル側に移す: $\dfrac{s}{2}+t\leqq 1$ より $\overrightarrow{\mathrm{OP}}=\dfrac{s}{2}(2\overrightarrow{\mathrm{OA}})+t\,\overrightarrow{\mathrm{OB}}$。係数 $2$ が付いた文字のベクトルは $\dfrac{1}{2}$ 倍になることに注意。
+prerequisites: [vc-position-vector, vc-inner-product, cg-line-equation]

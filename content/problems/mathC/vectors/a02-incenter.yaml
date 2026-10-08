@@ -1,0 +1,50 @@
+id: mc-vc-a02
+level: applied
+format: choice
+title: 内心の位置ベクトル
+stem: |
+  $\triangle\mathrm{ABC}$ において $\mathrm{AB}=4,\ \mathrm{BC}=5,\ \mathrm{CA}=6$ とし、内心を $\mathrm{I}$ とする。$\angle\mathrm{BAC}$ の二等分線と辺 $\mathrm{BC}$ の交点を $\mathrm{D}$ とすると、角の二等分線の性質から $\mathrm{BD}:\mathrm{DC}$ がわかり、さらに $\angle\mathrm{ABC}$ の二等分線を考えると $\mathrm{AI}:\mathrm{ID}$ がわかる。
+
+  $\overrightarrow{\mathrm{AI}}$ を $\overrightarrow{\mathrm{AB}},\ \overrightarrow{\mathrm{AC}}$ を用いて表したものとして正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\dfrac{2}{5}\overrightarrow{\mathrm{AB}}+\dfrac{4}{15}\overrightarrow{\mathrm{AC}}$
+    rationale: |
+      正解。$\mathrm{BD}:\mathrm{DC}=4:6=2:3$ より $\overrightarrow{\mathrm{AD}}=\dfrac{3\overrightarrow{\mathrm{AB}}+2\overrightarrow{\mathrm{AC}}}{5}$、$\mathrm{AI}:\mathrm{ID}=\mathrm{BA}:\mathrm{BD}=4:2=2:1$ より $\overrightarrow{\mathrm{AI}}=\dfrac{2}{3}\overrightarrow{\mathrm{AD}}$。
+  - id: "2"
+    text: $\dfrac{4}{15}\overrightarrow{\mathrm{AB}}+\dfrac{2}{5}\overrightarrow{\mathrm{AC}}$
+    misconception: mc-vc-division-reversed
+    rationale: |
+      $\mathrm{BD}:\mathrm{DC}=2:3$ をそのまま係数に当てはめ、$\overrightarrow{\mathrm{AD}}=\dfrac{2\overrightarrow{\mathrm{AB}}+3\overrightarrow{\mathrm{AC}}}{5}$ としている。$\mathrm{D}$ は $\mathrm{B}$ に近いので、$\overrightarrow{\mathrm{AB}}$ の係数の方が大きくなるはず。
+  - id: "3"
+    text: $\dfrac{3}{5}\overrightarrow{\mathrm{AB}}+\dfrac{2}{5}\overrightarrow{\mathrm{AC}}$
+    rationale: |
+      これは $\overrightarrow{\mathrm{AD}}$ で、辺 $\mathrm{BC}$ 上の点 $\mathrm{D}$ を表している（係数の和が $1$）。内心 $\mathrm{I}$ は三角形の内部にあるので、係数の和は $1$ より小さい。
+  - id: "4"
+    text: $\dfrac{1}{5}\overrightarrow{\mathrm{AB}}+\dfrac{2}{15}\overrightarrow{\mathrm{AC}}$
+    misconception: mc-vc-division-reversed
+    rationale: |
+      $\mathrm{AI}:\mathrm{ID}=2:1$ を逆にして $\overrightarrow{\mathrm{AI}}=\dfrac{1}{3}\overrightarrow{\mathrm{AD}}$ としている。$\mathrm{AI}:\mathrm{ID}=\mathrm{AB}:\mathrm{BD}$ で、$\mathrm{AB}=4>\mathrm{BD}=2$ だから $\mathrm{I}$ は $\mathrm{D}$ 寄りにある。
+answer: "1"
+solution: |
+  $\mathrm{AD}$ は $\angle\mathrm{A}$ の二等分線なので
+  $$\mathrm{BD}:\mathrm{DC}=\mathrm{AB}:\mathrm{AC}=4:6=2:3,\qquad \mathrm{BD}=5\cdot\frac{2}{5}=2$$
+  $\mathrm{D}$ は辺 $\mathrm{BC}$ を $2:3$ に内分するから
+  $$\overrightarrow{\mathrm{AD}}=\frac{3\overrightarrow{\mathrm{AB}}+2\overrightarrow{\mathrm{AC}}}{2+3}=\frac{3}{5}\overrightarrow{\mathrm{AB}}+\frac{2}{5}\overrightarrow{\mathrm{AC}}$$
+  $\mathrm{BI}$ は $\angle\mathrm{B}$（$\triangle\mathrm{ABD}$ の $\angle\mathrm{ABD}$）の二等分線なので
+  $$\mathrm{AI}:\mathrm{ID}=\mathrm{BA}:\mathrm{BD}=4:2=2:1$$
+  よって
+  $$\overrightarrow{\mathrm{AI}}=\frac{2}{3}\overrightarrow{\mathrm{AD}}=\frac{2}{5}\overrightarrow{\mathrm{AB}}+\frac{4}{15}\overrightarrow{\mathrm{AC}}$$
+  一般に、$a=\mathrm{BC},\ b=\mathrm{CA},\ c=\mathrm{AB}$ とすると $\overrightarrow{\mathrm{AI}}=\dfrac{b\overrightarrow{\mathrm{AB}}+c\overrightarrow{\mathrm{AC}}}{a+b+c}=\dfrac{6\overrightarrow{\mathrm{AB}}+4\overrightarrow{\mathrm{AC}}}{15}$ で、結果は一致する。
+concepts: [vc-position-vector, gm-angle-bisector]
+misconceptions: [mc-vc-division-reversed]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.5, discrimination: 1.2 }
+author:
+  intent: |
+    角の二等分線の比を2回使って内心の位置ベクトルを組み立てる過程で、比をベクトルの係数に正しく移せるかをみる。誤答②④は比を係数に移す2か所（$\mathrm{BD}:\mathrm{DC}$ と $\mathrm{AI}:\mathrm{ID}$）のそれぞれで逆にした場合に対応し、③は $\mathrm{D}$ と $\mathrm{I}$ を取り違えた場合。$\overrightarrow{\mathrm{AB}}$ と $\overrightarrow{\mathrm{AC}}$ の係数の大小と和で、図から誤答を排除できるかも識別できる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学C (1) ア(ア) 位置ベクトル, 数学C (1) イ(イ) ベクトルを用いた平面図形の考察]
+  variations:
+    - 同じ三角形で外心 $\mathrm{O}$ の位置ベクトル $\overrightarrow{\mathrm{AO}}$ を内積を用いて求めさせ、内心と比べさせる。
+    - $\angle\mathrm{A}$ 内の傍心 $\mathrm{J}$ について $\overrightarrow{\mathrm{AJ}}$ を求めさせる（外角の二等分線と外分）。

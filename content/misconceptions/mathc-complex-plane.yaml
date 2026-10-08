@@ -1,0 +1,56 @@
+- id: mc-cp-abs-square
+  title: '|z|² を z² と取り違える'
+  description: |
+    $|z|=3$ から $z^2=9$ とする、$|z-\alpha|^2$ を $(z-\alpha)^2$ と展開するなど、絶対値の2乗を複素数の2乗と同一視する。その結果 $\dfrac{9}{z}=z$ のような誤った式変形をする。
+  cause: |
+    実数では $|x|^2=x^2$ が成り立つので、その感覚を複素数に持ち込んでいる。複素数では $|z|^2=z\overline{z}$ であり、$z^2$ は一般に実数ですらないことを意識していない。
+  remedyConcepts: [cp-conjugate-abs]
+- id: mc-cp-polar-form
+  title: 極形式でない形から偏角を読み取る
+  description: |
+    $-2\left(\cos\frac{\pi}{6}+i\sin\frac{\pi}{6}\right)$ を「絶対値 $-2$、偏角 $\frac{\pi}{6}$」と読む、$\sin\frac{\pi}{5}+i\cos\frac{\pi}{5}$ や $\cos\theta-i\sin\theta$ の偏角を $\frac{\pi}{5}$ や $\theta$ とするなど、$r>0$・$\cos$ と $\sin$ の角が同じ・間が $+i$ という極形式の条件を満たさない式から偏角を読み取る。$\tan\theta=\frac{b}{a}$ だけで偏角を決め、象限を誤ることも含む。
+  cause: |
+    極形式を「$r(\cos\ \ +i\sin\ \ )$ という見た目」として覚えており、$r$ が絶対値（正）であることや、$\cos\theta=\frac{a}{r},\ \sin\theta=\frac{b}{r}$ を同時に満たす角が偏角であることを定義に戻って確認していない。
+  remedyConcepts: [cp-polar-form]
+- id: mc-cp-rotation
+  title: 回転の向き・回転の中心の取り違え
+  description: |
+    $-\frac{\pi}{3}$ 回転なのに $\cos\frac{\pi}{3}+i\sin\frac{\pi}{3}$ を掛ける（掛けると割るの取り違え）、点 $c$ を中心とする回転を $w=(\cos\theta+i\sin\theta)z$ と原点中心で計算する、$w-c=(\cos\theta+i\sin\theta)(z-c)$ の $+c$ を戻し忘れる。
+  cause: |
+    「複素数を掛けると回転する」ことを、回転の中心が原点であることと結び付けて理解していない。反時計回りが正の向きであることや、平行移動→回転→平行移動の手順を図で確かめる習慣がない。
+  remedyConcepts: [cp-product-rotation, cp-angle-condition]
+- id: mc-cp-root-count
+  title: 方程式 zⁿ=α の解の取りこぼし・取りすぎ
+  description: |
+    偏角の比較で $n\theta=\varphi$ とだけ書いて解を1つしか求めない、実数解だけを答える。逆に、置き換えた $w^n=1$ の $n$ 個の解をすべて元の方程式の解とし、$w=1$ のように元の変数に戻せない値を除き忘れる。
+  cause: |
+    偏角が $2\pi$ の整数倍の差を除いてしか定まらないことを、方程式の解の個数と結び付けていない。置き換えを使ったとき、置き換えた変数と元の変数が1対1に対応するかを確認していない。
+  remedyConcepts: [cp-nth-roots, cp-polar-form]
+- id: mc-cp-arg-operation
+  title: 偏角の和・差の取り違え
+  description: |
+    商 $\dfrac{z_1}{z_2}$ の偏角を $\theta_1+\theta_2$ や $\theta_2-\theta_1$ とする、積の偏角を $\theta_1\theta_2$ とするなど、積・商と偏角の演算の対応を誤る。
+  cause: |
+    「積は偏角の和、商は偏角の差」が加法定理から導かれることを確認しておらず、商で分子・分母のどちらからどちらを引くかを記憶に頼っている。
+  remedyConcepts: [cp-product-rotation]
+- id: mc-cp-modulus-scale
+  title: 絶対値（拡大率）の処理を落とす
+  description: |
+    $\{r(\cos\theta+i\sin\theta)\}^n$ を $r(\cos n\theta+i\sin n\theta)$ として $r$ を $n$ 乗しない、$1+i$ で割る操作を $-\frac{\pi}{4}$ 回転だけとみて $\frac{1}{\sqrt{2}}$ 倍を落とす、「回転して2倍」の2倍を回転の中心からの距離に反映させないなど、偏角だけを処理して絶対値を忘れる。
+  cause: |
+    複素数の積を「回転」としてだけ理解しており、「回転と拡大の組合せ」であることを意識していない。絶対値と偏角を別々に計算して最後に組み合わせる手順を踏んでいない。
+  remedyConcepts: [cp-de-moivre, cp-product-rotation]
+- id: mc-cp-real-condition
+  title: 実数・純虚数条件で除外すべき点を見落とす
+  description: |
+    $w=\dfrac{z-i}{z+1}$ が純虚数となる条件を、分母を払って得た式（$w+\overline{w}=0$ や実部 $=0$）だけで処理し、分母が $0$ になる点 $z=-1$ や、$w=0$（純虚数ではない）となる点を除き忘れる。実数条件を、分母を払った式の虚部 $=0$ だけで済ませる場合も同様。
+  cause: |
+    $\overline{w}=w$（実数）や $\overline{w}=-w$ かつ $w\neq 0$（純虚数）という条件を、分母を払う前の式についての条件として扱っていない。分母を払う操作で $z$ の範囲が広がること、$0$ が純虚数でないことを意識していない。
+  remedyConcepts: [cp-conjugate-abs, cp-figures]
+- id: mc-cp-image-exclusion
+  title: 変換 w=f(z) の像で除外点を見落とす
+  description: |
+    $z$ が直線 $z+\overline{z}=2$ 上を動くときの $w=\dfrac{1}{z}$ の像を、円 $\left|w-\frac{1}{2}\right|=\frac{1}{2}$ 全体と答え、$w=0$ を除き忘れる。逆に、像が円全体か一部かを確かめず、直線や円の一部（円弧）しか動かない場合にも図形全体を答える。
+  cause: |
+    $z=\dfrac{1}{w}$ と書き直した時点で $w\neq 0$ が前提になっていることを記録していない。「条件式を満たす $w$ がすべて実際に $f(z)$ の形で得られるか」という逆の確認をしていない。
+  remedyConcepts: [cp-figures]

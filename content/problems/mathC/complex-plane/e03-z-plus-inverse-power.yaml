@@ -1,0 +1,51 @@
+id: mc-cp-e03
+level: exam
+format: mark
+title: z+1/z=√3 を満たす z の累乗と和
+stem: |
+  複素数 $z$ は $z+\dfrac{1}{z}=\sqrt{3}$ を満たし、虚部が正であるとする。
+
+  (1) $z=\dfrac{\sqrt{\boxed{\text{ア}}}+i}{\boxed{\text{イ}}}$ であり、$z$ を極形式で表すと $z=\cos\dfrac{\pi}{\boxed{\text{ウ}}}+i\sin\dfrac{\pi}{\boxed{\text{ウ}}}$ である。
+
+  (2) $z^{2026}+\dfrac{1}{z^{2026}}=\boxed{\text{エ}}$ である。
+
+  (3) $z^n$ が実数となるような自然数 $n$ のうち最小のものは $n=\boxed{\text{オ}}$ である。
+
+  (4) $S=1+z+z^2+\cdots+z^{2026}$ とすると
+  $$S=\frac{-\sqrt{\boxed{\text{カ}}}+i}{\boxed{\text{キ}}}$$
+  である。
+blanks:
+  - { label: ア, answer: "3" }
+  - { label: イ, answer: "2" }
+  - { label: ウ, answer: "6" }
+  - { label: エ, answer: "1" }
+  - { label: オ, answer: "6" }
+  - { label: カ, answer: "3" }
+  - { label: キ, answer: "2" }
+solution: |
+  (1) 両辺に $z$ を掛けて $z^2-\sqrt{3}z+1=0$。$z=\dfrac{\sqrt{3}\pm i}{2}$ で、虚部が正なので
+  $$z=\frac{\sqrt{3}+i}{2}=\cos\frac{\pi}{6}+i\sin\frac{\pi}{6}$$
+
+  (2) ド・モアブルの定理より $z^n+\dfrac{1}{z^n}=z^n+\overline{z^n}=2\cos\dfrac{n\pi}{6}$。$2026=12\cdot 168+10$ なので
+  $$z^{2026}+\frac{1}{z^{2026}}=2\cos\frac{2026\pi}{6}=2\cos\left(336\pi+\frac{5}{3}\pi\right)=2\cos\frac{5}{3}\pi=1$$
+
+  (3) $z^n=\cos\dfrac{n\pi}{6}+i\sin\dfrac{n\pi}{6}$ が実数 $\iff\sin\dfrac{n\pi}{6}=0\iff n$ は $6$ の倍数。最小は $n=6$（$z^6=-1$）。
+
+  (4) $z^{12}=1$ なので、$z^k$ は $k$ を $12$ で割った余りで決まり、連続する12項の和は
+  $$1+z+\cdots+z^{11}=\frac{1-z^{12}}{1-z}=0$$
+  $S$ の項数は $2027=12\cdot 168+11$ なので、最初の $12\cdot 168$ 項の和は $0$ で
+  $$S=z^{2016}+z^{2017}+\cdots+z^{2026}=1+z+\cdots+z^{10}=(1+z+\cdots+z^{11})-z^{11}=-z^{11}$$
+  $z^{11}=z^{-1}=\overline{z}=\dfrac{\sqrt{3}-i}{2}$ より
+  $$S=\frac{-\sqrt{3}+i}{2}$$
+concepts: [cp-de-moivre, cp-nth-roots, cp-polar-form]
+misconceptions: [mc-cp-root-count]
+targetSeconds: 480
+irt: { expectedCorrectRate: 0.35, discrimination: 1.4 }
+author:
+  intent: |
+    $z+\dfrac{1}{z}$ の値から $z$ を極形式で求め、ド・モアブルの定理と周期性（$z^{12}=1$）を用いて大きな指数を処理できるかをみる。(2) は $z^n+z^{-n}=2\cos\dfrac{n\pi}{6}$ への読み替え、(3) は $z^n$ が実数となる条件（$z^6=-1$ に気づくか）、(4) は等比数列の和と周期性の組合せで、指数を $12$ で割った余りの処理の正確さを段階的に確かめる。(4) で項数を $2026$ と数えると $-z^{10}-z^{11}$ 相当の別の値になり、端の処理の誤りを識別できる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学C (2) ア(ウ) ド・モアブルの定理]
+  variations:
+    - $z+\dfrac{1}{z}=-1$ のとき $z^{100}+\dfrac{1}{z^{100}}$ を求めさせる（$z$ は1の3乗根で、値は $-1$）。
+    - $z+\dfrac{1}{z}=2\cos\theta$ から $z^n+\dfrac{1}{z^n}=2\cos n\theta$ を数学的帰納法で示させる。

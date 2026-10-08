@@ -1,0 +1,50 @@
+id: mc-vc-e02
+level: exam
+format: choice
+title: ベクトルの等式で定まる点と四面体の体積比
+stem: |
+  四面体 $\mathrm{OABC}$ と点 $\mathrm{P}$ が
+  $$\overrightarrow{\mathrm{PO}}+2\overrightarrow{\mathrm{PA}}+3\overrightarrow{\mathrm{PB}}+4\overrightarrow{\mathrm{PC}}=\vec 0$$
+  を満たしている。直線 $\mathrm{OP}$ と平面 $\mathrm{ABC}$ の交点を $\mathrm{Q}$ とする。$\mathrm{OP}:\mathrm{PQ}$ と、四面体 $\mathrm{PABC}$ の体積が四面体 $\mathrm{OABC}$ の体積の何倍であるかの組合せとして正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\mathrm{OP}:\mathrm{PQ}=1:9$、$\dfrac{9}{10}$ 倍
+    misconception: mc-vc-division-reversed
+    rationale: |
+      $\overrightarrow{\mathrm{OP}}=\dfrac{9}{10}\overrightarrow{\mathrm{OQ}}$ から比を逆に読み、$\mathrm{P}$ を $\mathrm{O}$ の近くに置いている。係数 $\dfrac{9}{10}$ は $\mathrm{OP}$ が $\mathrm{OQ}$ の $\dfrac{9}{10}$ であることを表すので、$\mathrm{P}$ は $\mathrm{Q}$ の近くにある。
+  - id: "2"
+    text: $\mathrm{P}$ は平面 $\mathrm{ABC}$ 上にあり、四面体 $\mathrm{PABC}$ はできない
+    misconception: mc-vc-coplanar-sum
+    rationale: |
+      $\overrightarrow{\mathrm{OP}}=\dfrac{2}{10}\vec a+\dfrac{3}{10}\vec b+\dfrac{4}{10}\vec c$ と $\vec a,\ \vec b,\ \vec c$ で表せたことから、$\mathrm{P}$ が平面 $\mathrm{ABC}$ 上にあると判断している。平面 $\mathrm{ABC}$ 上にあるには係数の和が $1$ でなければならないが、ここでは $\dfrac{9}{10}$。
+  - id: "3"
+    text: $\mathrm{OP}:\mathrm{PQ}=9:1$、$\dfrac{9}{10}$ 倍
+    rationale: |
+      比は正しいが、体積比に $\dfrac{\mathrm{OP}}{\mathrm{OQ}}$ を用いている。底面 $\triangle\mathrm{ABC}$ が共通なので体積比は高さの比で、$\mathrm{P}$ と平面 $\mathrm{ABC}$ の距離は $\mathrm{O}$ と平面 $\mathrm{ABC}$ の距離の $\dfrac{\mathrm{PQ}}{\mathrm{OQ}}=\dfrac{1}{10}$ 倍。
+  - id: "4"
+    text: $\mathrm{OP}:\mathrm{PQ}=9:1$、$\dfrac{1}{10}$ 倍
+    rationale: |
+      正解。$\overrightarrow{\mathrm{OQ}}=\dfrac{2\vec a+3\vec b+4\vec c}{9}$、$\overrightarrow{\mathrm{OP}}=\dfrac{9}{10}\overrightarrow{\mathrm{OQ}}$ で、高さの比は $\mathrm{PQ}:\mathrm{OQ}=1:10$。
+answer: "4"
+solution: |
+  $\overrightarrow{\mathrm{OA}}=\vec a,\ \overrightarrow{\mathrm{OB}}=\vec b,\ \overrightarrow{\mathrm{OC}}=\vec c,\ \overrightarrow{\mathrm{OP}}=\vec p$ とすると、条件は
+  $$-\vec p+2(\vec a-\vec p)+3(\vec b-\vec p)+4(\vec c-\vec p)=\vec 0\qquad\therefore\ \vec p=\frac{2\vec a+3\vec b+4\vec c}{10}$$
+  $\mathrm{Q}$ は直線 $\mathrm{OP}$ 上にあるので $\overrightarrow{\mathrm{OQ}}=k\vec p=\dfrac{2k}{10}\vec a+\dfrac{3k}{10}\vec b+\dfrac{4k}{10}\vec c$。$\mathrm{Q}$ が平面 $\mathrm{ABC}$ 上にある条件は係数の和が $1$ であることで、$\dfrac{9k}{10}=1$ より $k=\dfrac{10}{9}$。
+  $$\overrightarrow{\mathrm{OQ}}=\frac{2\vec a+3\vec b+4\vec c}{9},\qquad \overrightarrow{\mathrm{OP}}=\frac{9}{10}\overrightarrow{\mathrm{OQ}}$$
+  よって $\mathrm{OP}:\mathrm{PQ}=9:1$。
+
+  四面体 $\mathrm{PABC}$ と $\mathrm{OABC}$ は底面 $\triangle\mathrm{ABC}$ を共有し、高さの比は直線 $\mathrm{OQ}$ に沿った距離の比 $\mathrm{PQ}:\mathrm{OQ}=1:10$ に等しい。したがって体積は $\dfrac{1}{10}$ 倍。
+
+  （一般に $\alpha\overrightarrow{\mathrm{PO}}+\beta\overrightarrow{\mathrm{PA}}+\gamma\overrightarrow{\mathrm{PB}}+\delta\overrightarrow{\mathrm{PC}}=\vec 0$ のとき、四面体 $\mathrm{PABC}:\mathrm{POBC}:\mathrm{POCA}:\mathrm{POAB}=\alpha:\beta:\gamma:\delta$ となる。）
+concepts: [vc-space-vector, vc-position-vector]
+misconceptions: [mc-vc-coplanar-sum, mc-vc-division-reversed]
+targetSeconds: 420
+irt: { expectedCorrectRate: 0.35, discrimination: 1.4 }
+author:
+  intent: |
+    平面の三角形で頻出の「$a\overrightarrow{\mathrm{PA}}+b\overrightarrow{\mathrm{PB}}+c\overrightarrow{\mathrm{PC}}=\vec 0$ と面積比」の空間版。点の位置ベクトルの導出、直線と平面の交点（係数の和 $=1$）、比の読み取り、高さの比への翻訳の4段階をすべて正しく通過できるかをみる。②は係数の和の条件を理解していない受験者、①は比を逆に読む受験者、③は線分比と高さの比の対応を誤る受験者を拾う。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学C (1) ア(ウ) 空間におけるベクトル, 数学C (1) イ(イ) ベクトルを用いた空間図形の考察]
+  variations:
+    - 四面体 $\mathrm{POAB}$ の体積が四面体 $\mathrm{OABC}$ の何倍かを問い、係数との対応を一般化させる。
+    - 直線 $\mathrm{AP}$ と平面 $\mathrm{OBC}$ の交点 $\mathrm{R}$ について $\mathrm{AP}:\mathrm{PR}$ を求めさせる（平面 $\mathrm{OBC}$ は $\mathrm{O}$ を通るので「$\vec a$ の係数 $=0$」が条件になる）。

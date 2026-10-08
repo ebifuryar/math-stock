@@ -1,0 +1,15 @@
+id: cp-polar-form
+kind: definition
+title: 極形式と偏角
+body: |
+  $z\neq 0$ で、$|z|=r$、実軸の正の部分から半直線 $\mathrm{O}z$ までの回転角を $\theta$ とすると
+  $$z=r(\cos\theta+i\sin\theta)\qquad(r>0)$$
+  これを $z$ の **極形式**、$\theta$ を **偏角**（$\arg z$）という。偏角は $2\pi$ の整数倍の差を除いて定まるので、問題で指定された範囲（$0\leqq\theta<2\pi$ や $-\pi<\theta\leqq\pi$）で答える。
+
+  **極形式と認められる条件**: ①$r>0$、②$\cos$ と $\sin$ の角が同じ、③$\cos$ と $\sin$ の間が $+i$。形が崩れているときは書き直してから偏角を読む。
+  - $-2\left(\cos\dfrac{\pi}{6}+i\sin\dfrac{\pi}{6}\right)=2\left(\cos\dfrac{7}{6}\pi+i\sin\dfrac{7}{6}\pi\right)$（$-1=\cos\pi+i\sin\pi$ を掛けたとみる）
+  - $\cos\theta-i\sin\theta=\cos(-\theta)+i\sin(-\theta)$
+  - $\sin\theta+i\cos\theta=\cos\left(\dfrac{\pi}{2}-\theta\right)+i\sin\left(\dfrac{\pi}{2}-\theta\right)$
+
+  **求め方**: $z=a+bi$ なら $r=\sqrt{a^2+b^2}$、$\cos\theta=\dfrac{a}{r},\ \sin\theta=\dfrac{b}{r}$ を **両方** 満たす $\theta$ を選ぶ（$\tan\theta=\dfrac{b}{a}$ だけでは象限が決まらない）。例: $-\sqrt{3}+i=2\left(\cos\dfrac{5}{6}\pi+i\sin\dfrac{5}{6}\pi\right)$。
+prerequisites: [cp-conjugate-abs, tf-definition]

@@ -1,0 +1,45 @@
+id: m3-ig-a01
+level: applied
+format: choice
+title: 区分求積法と和の範囲
+stem: |
+  極限
+  $$\lim_{n\to\infty}\sum_{k=1}^{2n}\frac{n}{(n+k)^2}$$
+  の値として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $\dfrac{1}{2}$
+    misconception: mc-ig-riemann-range
+    rationale: |
+      $\dfrac{n}{(n+k)^2}=\dfrac{1}{n}\cdot\dfrac{1}{\left(1+\frac{k}{n}\right)^2}$ と変形したところまではよいが、和が $k=2n$ まであることを見落として $\displaystyle\int_0^1\frac{dx}{(1+x)^2}=\frac{1}{2}$ としている。$\dfrac{k}{n}$ は $\dfrac{1}{n}$ から $2$ まで動く。
+  - id: "2"
+    text: $\dfrac{2}{3}$
+    rationale: |
+      正解。$\displaystyle\frac{1}{n}\sum_{k=1}^{2n}\frac{1}{\left(1+\frac{k}{n}\right)^2}\to\int_0^2\frac{dx}{(1+x)^2}=\left[-\frac{1}{1+x}\right]_0^2=\frac{2}{3}$。
+  - id: "3"
+    text: $\dfrac{1}{3}$
+    misconception: mc-ig-riemann-range
+    rationale: |
+      区間を $[0,\ 1]$ にそろえようとして $x=\dfrac{k}{2n}$ とおき、$\dfrac{k}{n}=2x$ と書き換えたが、幅を $\dfrac{1}{n}=2\cdot\dfrac{1}{2n}$ とせずに $\dfrac{1}{n}\to dx$ としたため、$\displaystyle\int_0^1\frac{dx}{(1+2x)^2}=\frac{1}{3}$ と半分になっている。$x=\dfrac{k}{2n}$ なら刻み幅は $\dfrac{1}{2n}$ で、$\displaystyle\int_0^1\frac{2}{(1+2x)^2}\,dx=\frac{2}{3}$ となる。
+  - id: "4"
+    text: $0$
+    rationale: |
+      各項 $\dfrac{n}{(n+k)^2}\leqq\dfrac{1}{n}$ が $0$ に近づくことから和も $0$ に近づくとしている。項の個数 $2n$ も同時に増えるので、「$0$ に近づく項の和」が $0$ に近づくとは限らない。
+answer: "2"
+solution: |
+  和を「幅 $\dfrac{1}{n}\times$ 高さ $f\!\left(\dfrac{k}{n}\right)$」の形に直す。
+  $$\sum_{k=1}^{2n}\frac{n}{(n+k)^2}=\frac{1}{n}\sum_{k=1}^{2n}\frac{1}{\left(1+\frac{k}{n}\right)^2}$$
+  $f(x)=\dfrac{1}{(1+x)^2}$ とすると、$\dfrac{k}{n}$ は $k=1$ で $\dfrac{1}{n}\to 0$、$k=2n$ で $2$ なので、区間 $[0,\ 2]$ を幅 $\dfrac{1}{n}$ で $2n$ 等分した長方形の面積の和である。よって
+  $$\lim_{n\to\infty}\sum_{k=1}^{2n}\frac{n}{(n+k)^2}=\int_0^2\frac{dx}{(1+x)^2}=\left[-\frac{1}{1+x}\right]_0^2=1-\frac{1}{3}=\frac{2}{3}$$
+concepts: [ig-riemann-sum]
+misconceptions: [mc-ig-riemann-range]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.5, discrimination: 1.2 }
+author:
+  intent: |
+    区分求積法を「$\dfrac{1}{n}\sum\to\displaystyle\int_0^1$」と形だけで覚えている層と、$\dfrac{k}{n}$ の動く範囲から積分区間を決めている層を分ける。和の上端を $2n$ にして、区間の取り違え（①）と、区間を $[0,\ 1]$ に直そうとして刻み幅の係数を落とす誤り（③）を別々の値にした。④は極限で「項の個数も増える」ことを見落とす誤り。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学III (3) イ(イ) 極限や定積分の考えを基にした考察（区分求積法）"]
+  variations:
+    - $\displaystyle\lim_{n\to\infty}\sum_{k=n+1}^{2n}\frac{1}{k}$（$=\log 2$）のように、和の下端がずれている形にする。
+    - $\displaystyle\lim_{n\to\infty}\frac{1}{n^3}\sum_{k=1}^{n}k^2$ を区分求積法と $\sum k^2$ の公式の両方で求めさせ、一致を確かめさせる。

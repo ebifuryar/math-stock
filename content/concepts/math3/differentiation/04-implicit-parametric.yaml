@@ -1,0 +1,14 @@
+id: df-implicit-parametric
+kind: method
+title: 陰関数・媒介変数で表された関数の微分
+body: |
+  **陰関数の微分**: $F(x,\ y)=0$ で定まる $y$ を $x$ の関数とみて、両辺を $x$ で微分する。$y$ を含む項は合成関数の微分により $\dfrac{dy}{dx}$ が掛かる。
+  $$\frac{d}{dx}y^3=3y^2\frac{dy}{dx},\qquad \frac{d}{dx}(xy)=y+x\frac{dy}{dx}$$
+  得られた式を $\dfrac{dy}{dx}$ について解く。結果は $x,\ y$ の両方を含んでよく、曲線上の点の座標を代入して接線の傾きを求める。
+
+  **媒介変数表示の微分**: $x=f(t),\ y=g(t)$ のとき、$f'(t)\neq 0$ ならば
+  $$\frac{dy}{dx}=\frac{\dfrac{dy}{dt}}{\dfrac{dx}{dt}}=\frac{g'(t)}{f'(t)}$$
+  $\dfrac{dy}{dt}$ そのものは「$t$ に対する $y$ の変化率」であり、接線の傾き $\dfrac{dy}{dx}$ ではない。
+
+  第2次導関数は $\dfrac{d^2y}{dx^2}=\dfrac{d}{dt}\left(\dfrac{dy}{dx}\right)\Big/\dfrac{dx}{dt}$ で求める（$\dfrac{d}{dt}\left(\dfrac{dy}{dx}\right)$ で止めない）。
+prerequisites: [df-rules]

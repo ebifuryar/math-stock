@@ -1,0 +1,68 @@
+id: m3-lm-e05
+level: exam
+format: written
+title: 方程式 xⁿ+x−1=0 の解の極限
+stem: |
+  $n$ を自然数とし、$f_n(x)=x^n+x-1$ とする。
+
+  (1) 方程式 $f_n(x)=0$ は $0<x<1$ の範囲にただ1つの実数解をもつことを示せ。以下、この解を $x_n$ とする。
+
+  (2) $0<t<1$ のとき、$(1-t)^n<\dfrac{1}{1+nt}$ が成り立つことを示せ。
+
+  (3) $\displaystyle\lim_{n\to\infty}x_n$ を求めよ。
+modelAnswer: |
+  **(1)** $f_n(x)$ は多項式なので連続である。
+  $$f_n(0)=-1<0,\qquad f_n(1)=1>0$$
+  よって中間値の定理により、$f_n(x)=0$ は $0<x<1$ に少なくとも1つの実数解をもつ。
+
+  また、$0\leqq x<y$ ならば $x^n<y^n$ かつ $x<y$ なので $f_n(x)<f_n(y)$。すなわち $f_n(x)$ は $x\geqq 0$ で増加するので、$f_n(x)=0$ の $0<x<1$ における解は2つ以上ない。以上より、ただ1つの実数解をもつ。
+
+  **(2)** $0<t<1$ のとき $(1-t)(1+t)=1-t^2<1$ で $1+t>0$ なので $0<1-t<\dfrac{1}{1+t}$。両辺を $n$ 乗して
+  $$(1-t)^n<\frac{1}{(1+t)^n}$$
+  二項定理より $(1+t)^n\geqq 1+nt>0$（$n=1$ では等号）なので $\dfrac{1}{(1+t)^n}\leqq\dfrac{1}{1+nt}$。よって $(1-t)^n<\dfrac{1}{1+nt}$。
+
+  **(3)** $n\geqq 2$ とし、$t=\dfrac{1}{\sqrt{n}}$ とおくと $0<t<1$。(2) より
+  $$f_n\!\left(1-\frac{1}{\sqrt{n}}\right)=\left(1-\frac{1}{\sqrt{n}}\right)^n-\frac{1}{\sqrt{n}}<\frac{1}{1+\sqrt{n}}-\frac{1}{\sqrt{n}}<0$$
+  $f_n(x)$ は $x\geqq 0$ で増加し、$f_n(x_n)=0$ であるから、$0<1-\dfrac{1}{\sqrt{n}}$ と合わせて
+  $$1-\frac{1}{\sqrt{n}}<x_n<1$$
+  $\displaystyle\lim_{n\to\infty}\left(1-\frac{1}{\sqrt{n}}\right)=1$ なので、はさみうちの原理により
+  $$\lim_{n\to\infty}x_n=1$$
+rubric:
+  - id: r1
+    criterion: $f_n(x)$ が連続であること、$f_n(0)=-1<0$、$f_n(1)=1>0$ を示し、中間値の定理で解の存在を述べている
+    points: 2
+    keywords: ["中間値の定理", "f_n(0)=-1", "f_n(1)=1"]
+  - id: r2
+    criterion: $x\geqq 0$ で $f_n(x)$ が（狭義）増加であることを示し、解がただ1つであること（一意性）を論じている
+    points: 2
+    keywords: ["増加", "ただ1つ"]
+  - id: r3
+    criterion: $1-t<\dfrac{1}{1+t}$ と二項定理 $(1+t)^n\geqq 1+nt$ を組み合わせて (2) を正しく示している
+    points: 2
+    keywords: ["1-t^2", "1+nt"]
+  - id: r4
+    criterion: (2) を適当な $t$（$t=\dfrac{1}{\sqrt{n}}$ など、$nt\to\infty$ かつ $t\to 0$ となるもの）に用いて $f_n(1-t)<0$ を示し、単調性から $1-t<x_n$ を導いている
+    points: 2
+    keywords: ["1/√n", "f_n(1-1/√n)<0"]
+  - id: r5
+    criterion: $1-\dfrac{1}{\sqrt{n}}<x_n<1$ からはさみうちの原理により極限が $1$ であると結論している
+    points: 2
+    keywords: ["はさみうち", "1"]
+solution: |
+  (1) 中間値の定理で存在、$x\geqq 0$ での単調増加で一意性を示す。(2) $1-t<\dfrac{1}{1+t}$ を $n$ 乗し、二項定理 $(1+t)^n\geqq 1+nt$ を使う。(3) $t=\dfrac{1}{\sqrt{n}}$ とすると $f_n\!\left(1-\dfrac{1}{\sqrt{n}}\right)<\dfrac{1}{1+\sqrt{n}}-\dfrac{1}{\sqrt{n}}<0$ となるので、$1-\dfrac{1}{\sqrt{n}}<x_n<1$。はさみうちの原理により $\displaystyle\lim_{n\to\infty}x_n=1$。
+
+  $t$ を定数にすると $nt\to\infty$ でも下からの評価が $1-t$ で止まり、極限 $1$ は得られない。$t\to 0$ と $nt\to\infty$ を両立させる $t=\dfrac{1}{\sqrt{n}}$ の選び方が要点である。また「$x_n^n=1-x_n$ で $x_n<1$ だから $x_n^n\to 0$」とするのは、底 $x_n$ も $n$ とともに変わるので誤り。
+concepts: [lm-continuity, lm-squeeze]
+misconceptions: [mc-lm-indeterminate-form]
+targetSeconds: 1080
+irt: { expectedCorrectRate: 0.2, discrimination: 1.5 }
+author:
+  intent: |
+    中間値の定理（存在）と単調性（一意性）を区別して論証できるか、さらに方程式の解として間接的に定まる数列の極限を、適切な評価関数を選んではさみうちで求められるかをみる難関大型の問題。(2) の不等式は誘導だが、(3) で $t$ を $n$ に依存させる発想（$t=\dfrac{1}{\sqrt{n}}$）に到達できるかで上位層を識別する。「$x_n<1$ だから $x_n^n\to 0$」という、底が $n$ に依存する $1^{\infty}$ 型の不定形を見落とした論証は r4・r5 で減点される。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: ["数学III (1) ア(オ) 関数の値の極限（関数の連続性と中間値の定理）", "数学III (1) ア(ア) 数列の極限", "数学III (1) イ(ア) 極限を求める方法の考察"]
+  variations:
+    - (3) に続けて $\displaystyle\lim_{n\to\infty}n(1-x_n)$ を問う（発散することを示させる）など、収束の速さに踏み込む。
+    - 誘導 (2) を外し、「$\{x_n\}$ が増加数列であることを示せ」（$f_{n+1}(x_n)=x_n^n(x_n-1)<0$）を加えて別の方針を誘導する。
+  notes: |
+    数値確認: $x_1=\dfrac{1}{2}$、$x_{1000}\fallingdotseq 0.9948$。$1-\dfrac{1}{\sqrt{n}}<x_n$ は $n=2,\ \cdots,\ 39$ で数値的にも確認済み。

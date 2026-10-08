@@ -1,0 +1,48 @@
+id: m3-lm-s01
+level: school
+format: choice
+title: 分数関数の漸近線
+stem: |
+  関数
+  $$y=\frac{3x-1}{x+2}$$
+  のグラフの漸近線の組として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: 直線 $x=2$ と直線 $y=3$
+    misconception: mc-lm-asymptote
+    rationale: |
+      分母 $x+2$ の「$+2$」をそのまま読み、縦の漸近線の符号を逆にしている。分母が $0$ になるのは $x=-2$ のときである。
+  - id: "2"
+    text: 直線 $x=-2$ と直線 $y=-\dfrac{1}{2}$
+    misconception: mc-lm-asymptote
+    rationale: |
+      横の漸近線を定数項の比 $\dfrac{-1}{2}$ としている。これは $x=0$ のときの値（$y$ 切片）であり、$x\to\pm\infty$ で近づく値は $x$ の係数の比 $\dfrac{3}{1}=3$ である。
+  - id: "3"
+    text: 直線 $x=-2$ と直線 $y=3$
+    rationale: |
+      正解。$y=\dfrac{-7}{x+2}+3$ と変形でき、$y=-\dfrac{7}{x}$ のグラフを $x$ 軸方向に $-2$、$y$ 軸方向に $3$ だけ平行移動したものである。
+  - id: "4"
+    text: 直線 $x=3$ と直線 $y=-2$
+    misconception: mc-lm-asymptote
+    rationale: |
+      $x$ と $y$ の漸近線を入れ替えたうえ、符号も取り違えている。$x=3$ のとき $y=\dfrac{8}{5}$ と値が定まるので、$x=3$ は漸近線ではない。
+answer: "3"
+solution: |
+  分子を分母で割ると $3x-1=3(x+2)-7$ なので
+  $$y=\frac{3(x+2)-7}{x+2}=-\frac{7}{x+2}+3$$
+
+  これは $y=-\dfrac{7}{x}$ のグラフを $x$ 軸方向に $-2$、$y$ 軸方向に $3$ だけ平行移動したもの。$y=-\dfrac{7}{x}$ の漸近線は $x=0,\ y=0$ なので、求める漸近線は **直線 $x=-2$ と直線 $y=3$**。
+
+  確認: $x\to -2$ で分母 $\to 0$、分子 $\to -7$ なので $|y|\to\infty$。$x\to\pm\infty$ では $\dfrac{3-\frac{1}{x}}{1+\frac{2}{x}}\to 3$。
+concepts: [lm-rational-irrational]
+misconceptions: [mc-lm-asymptote]
+targetSeconds: 90
+irt: { expectedCorrectRate: 0.78, discrimination: 0.9 }
+author:
+  intent: |
+    分数関数を $y=\dfrac{k}{x-p}+q$ の形に直し、漸近線を「分母 $=0$」と「$x\to\pm\infty$ の行き先」という意味から読み取れるかをみる。誤答は、縦の漸近線の符号ミス（①）、横の漸近線を $y$ 切片（定数項の比）と混同（②）、両者の入れ替え（④）に対応し、どの読み違いかを分離できる。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: ["数学III (1) ア(ウ) 分数関数と無理関数"]
+  variations:
+    - 漸近線が $x=1,\ y=-2$ で点 $(0,\ 1)$ を通る分数関数 $y=\dfrac{ax+b}{x+c}$ の $a,\ b,\ c$ を求めさせ、逆向きの読み取りを確認する。
+    - 値域が $y\neq 3$ であることから、方程式 $\dfrac{3x-1}{x+2}=k$ が解をもたない $k$ を問う。

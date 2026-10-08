@@ -1,0 +1,42 @@
+id: mb-sq-s03
+level: school
+format: mark
+title: 等差中項・等比中項と Σ の計算
+stem: |
+  (1) $3$ つの数 $2,\ x,\ y$ がこの順に等差数列をなし、$3$ つの数 $x,\ y,\ 9$ がこの順に等比数列をなす。$x,\ y$ がともに正の数であるとき、$x=\boxed{\text{ア}}$、$y=\boxed{\text{イ}}$ である。
+
+  (2) 
+  $$\sum_{k=1}^{n}(3k^2-k)=n^{\boxed{\text{ウ}}}\left(n+\boxed{\text{エ}}\right)$$
+
+  (3) $n\geqq 2$ のとき
+  $$\sum_{k=1}^{n-1}2\cdot 3^k=\boxed{\text{オ}}^{\,n}-\boxed{\text{カ}}$$
+blanks:
+  - { label: ア, answer: "4" }
+  - { label: イ, answer: "6" }
+  - { label: ウ, answer: "2" }
+  - { label: エ, answer: "1" }
+  - { label: オ, answer: "3" }
+  - { label: カ, answer: "3" }
+solution: |
+  (1) 等差中項より $2x=2+y$、等比中項より $y^2=9x$。$y=2x-2$ を代入して
+  $$(2x-2)^2=9x\iff 4x^2-17x+4=0\iff(4x-1)(x-4)=0$$
+  $x=4$ のとき $y=6$、$x=\dfrac{1}{4}$ のとき $y=-\dfrac{3}{2}$。$y>0$ より $x=4,\ y=6$（$4,\ 6,\ 9$ は公比 $\dfrac{3}{2}$ の等比数列）。
+
+  (2) 
+  $$\sum_{k=1}^{n}(3k^2-k)=3\cdot\frac{n(n+1)(2n+1)}{6}-\frac{n(n+1)}{2}=\frac{n(n+1)}{2}\{(2n+1)-1\}=n^2(n+1)$$
+
+  (3) $2\cdot 3^k$ の $k=1$ から $n-1$ までの和は、初項 $6$、公比 $3$、項数 $n-1$ の等比数列の和なので
+  $$\frac{6(3^{n-1}-1)}{3-1}=3^n-3$$
+  （項数を $n$ とすると $3^{n+1}-3$ となり誤り。）
+concepts: [sq-arithmetic, sq-geometric, sq-sigma]
+misconceptions: [mc-sq-sigma-index-shift, mc-sq-term-count]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.7, discrimination: 1.0 }
+author:
+  intent: |
+    等差中項・等比中項の条件式と Σ の基本計算を確認する。(1) は2組の解のうち条件で1つを選ぶ判断、(2) は公式の代入後に共通因数でくくる整理力、(3) は上端が $n-1$ の等比数列の和で「初項・公比・項数」を正しく読み取れるかをみる。(3) で項数を $n$ とすると $3^{n+1}-3$ となり、オの答えが変わるので識別できる。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: ["数学B (1) ア(ア) 等差数列と等比数列", "数学B (1) ア(イ) いろいろな数列（Σ記号と和の公式）"]
+  variations:
+    - (1) で「$x,\ y$ は整数」とする、あるいは条件をはずして2組とも答えさせる。
+    - $\displaystyle\sum_{k=n+1}^{2n}k^2$ のように下端が $1$ でない和を求めさせる。

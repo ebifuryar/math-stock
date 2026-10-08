@@ -1,0 +1,57 @@
+id: mb-sq-a03
+level: applied
+format: mark
+title: n の1次式を含む漸化式の誘導（共通テスト型）
+stem: |
+  数列 $\{a_n\}$ が
+  $$a_1=4,\qquad a_{n+1}=2a_n-2n+1\quad(n=1,\ 2,\ 3,\ \cdots)$$
+  で定められている。
+
+  (1) $a_2=\boxed{\text{ア}}$、$a_3=\boxed{\text{イウ}}$ である。
+
+  (2) 定数 $p,\ q$ を用いて $b_n=a_n-(pn+q)$ とおく。すべての自然数 $n$ について $b_{n+1}=2b_n$ が成り立つように $p,\ q$ を定めると、$p=\boxed{\text{エ}}$、$q=\boxed{\text{オ}}$ である。
+
+  (3) (2) のとき $b_1=\boxed{\text{カ}}$ であるから、数列 $\{a_n\}$ の一般項は
+  $$a_n=\boxed{\text{キ}}^{\,n-1}+\boxed{\text{ク}}\,n+\boxed{\text{ケ}}$$
+  である。
+
+  (4) 
+  $$\sum_{k=1}^{n}a_k=2^n+n^2+\boxed{\text{コ}}\,n-\boxed{\text{サ}}$$
+blanks:
+  - { label: ア, answer: "7" }
+  - { label: イウ, answer: "11" }
+  - { label: エ, answer: "2" }
+  - { label: オ, answer: "1" }
+  - { label: カ, answer: "1" }
+  - { label: キ, answer: "2" }
+  - { label: ク, answer: "2" }
+  - { label: ケ, answer: "1" }
+  - { label: コ, answer: "2" }
+  - { label: サ, answer: "1" }
+solution: |
+  (1) $a_2=2\cdot 4-2+1=7$、$a_3=2\cdot 7-4+1=11$。
+
+  (2) $b_{n+1}=2b_n$ は
+  $$a_{n+1}-p(n+1)-q=2a_n-2pn-2q\iff a_{n+1}=2a_n-pn+(p-q)$$
+  これが与えられた漸化式 $a_{n+1}=2a_n-2n+1$ とすべての $n$ で一致するには、$p=2,\ p-q=1$ より $p=2,\ q=1$。
+
+  (3) $b_1=a_1-(2+1)=1$。$\{b_n\}$ は初項 $1$、公比 $2$ の等比数列なので $b_n=2^{n-1}$、よって
+  $$a_n=2^{n-1}+2n+1$$
+  （$a_2=2+5=7,\ a_3=4+7=11$ で (1) と一致する。）
+
+  (4) 
+  $$\sum_{k=1}^{n}a_k=\sum_{k=1}^{n}2^{k-1}+\sum_{k=1}^{n}(2k+1)=(2^n-1)+n(n+1)+n=2^n+n^2+2n-1$$
+
+  別解: 漸化式の $n$ を $n+1$ にした式との差をとると、階差 $c_n=a_{n+1}-a_n$ について $c_{n+1}=2c_n-2$ が得られ、これを解いても同じ結果になる。
+concepts: [sq-recurrence-advanced, sq-recurrence-basic, sq-sigma]
+misconceptions: [mc-sq-characteristic-misuse, mc-sq-term-count]
+targetSeconds: 540
+irt: { expectedCorrectRate: 0.48, discrimination: 1.3 }
+author:
+  intent: |
+    共通テスト型の誘導問題。$a_{n+1}=pa_n+(n\text{ の1次式})$ 型を、$b_n=a_n-(pn+q)$ という置き換えに沿って解けるかをみる。(2) で「すべての $n$ について成り立つ」を係数比較（恒等式）として処理できるか、(3) で置き換えた数列の初項を $b_1=a_1-3$ と変換できるか（$a_1=4$ のままだと $a_n=4\cdot 2^{n-1}+2n+1$ となり (1) と矛盾する）を段階的に確認する。(1) の具体的な値は (3) の検算にも使えるよう配置した。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学B (1) ア(ウ) 漸化式と数学的帰納法（漸化式）", "数学B (1) イ(ア) 事象の再帰的な関係を漸化式で表す"]
+  variations:
+    - 誘導を「$c_n=a_{n+1}-a_n$ とおく」に変え、階差数列の漸化式経由で同じ一般項を導かせる。
+    - $a_{n+1}=3a_n+2^n$ とし、両辺を $2^{n+1}$ で割る誘導にする。

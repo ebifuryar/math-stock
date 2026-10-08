@@ -1,0 +1,48 @@
+id: mb-sq-s02
+level: school
+format: choice
+title: 公比が文字を含む等比数列の和
+stem: |
+  $x$ を実数の定数とする。自然数 $n$ に対して
+  $$S_n=\sum_{k=1}^{n}(x+1)^{k-1}$$
+  とする。$S_n$ を表す式として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $S_n=\dfrac{(x+1)^n-1}{x}$
+    misconception: mc-sq-geometric-r1
+    rationale: |
+      公比 $x+1$ が $1$ のとき、すなわち $x=0$ のときを場合分けしていない。$x=0$ では分母が $0$ になり、この式は意味をもたない（実際は $S_n=n$）。
+  - id: "2"
+    text: $x\neq 0$ のとき $S_n=\dfrac{(x+1)^n-1}{x}$、$x=0$ のとき $S_n=n$
+    rationale: |
+      正解。公比 $x+1$ が $1$ でないときは等比数列の和の公式、$1$ のときは $1$ を $n$ 個足して $n$ となる。
+  - id: "3"
+    text: $x\neq 1$ のとき $S_n=\dfrac{(x+1)^n-1}{x}$、$x=1$ のとき $S_n=n$
+    misconception: mc-sq-geometric-r1
+    rationale: |
+      「公比 $=1$」を「$x=1$」と取り違えている。$x=1$ なら公比は $2$ で $S_n=2^n-1$ であり、分母が $0$ になる $x=0$ のときが除かれていない。
+  - id: "4"
+    text: $x\neq 0$ のとき $S_n=\dfrac{(x+1)^{n+1}-1}{x}$、$x=0$ のとき $S_n=n+1$
+    misconception: mc-sq-term-count
+    rationale: |
+      項数を $n+1$ としている。指数 $k-1$ は $0$ から $n-1$ まで動くが、$k$ は $1$ から $n$ までなので項数は $n$ である。$n=1$ のとき $S_1=1$ となるはずが、この式では $x+2$ になる。
+answer: "2"
+solution: |
+  $S_n$ は初項 $1$、公比 $x+1$、項数 $n$ の等比数列の和である。
+
+  - 公比 $x+1\neq 1$、すなわち $x\neq 0$ のとき
+  $$S_n=\frac{1\cdot\{(x+1)^n-1\}}{(x+1)-1}=\frac{(x+1)^n-1}{x}$$
+  - 公比 $x+1=1$、すなわち $x=0$ のとき、すべての項が $1$ なので $S_n=n$。
+
+  場合分けは「公比が $1$ かどうか」で行い、それを $x$ の条件に直す。
+concepts: [sq-geometric, sq-sigma]
+misconceptions: [mc-sq-geometric-r1, mc-sq-term-count]
+targetSeconds: 150
+irt: { expectedCorrectRate: 0.65, discrimination: 1.1 }
+author:
+  intent: |
+    等比数列の和の公式を「$r\neq 1$ の条件つき」で理解しているかをみる。公比を $x+1$ にすることで、場合分けの必要に気づく（①との区別）だけでなく、「$r=1$」を文字の条件 $x=0$ に正しく翻訳できるか（③との区別）まで識別する。④は Σ の指数 $k-1$ と項数の関係の誤解を捉える。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学B (1) ア(ア) 等差数列と等比数列", "数学B (1) ア(イ) いろいろな数列（Σ記号）"]
+  variations:
+    - $\displaystyle\sum_{k=1}^{n}k\,x^{k-1}$ のように（等差）×（等比）型にして、$x=1$ の場合分けと $S-xS$ の計算を同時に求める。

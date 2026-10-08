@@ -1,0 +1,69 @@
+id: mb-st-e05
+level: exam
+format: written
+title: 標本平均の分散の証明と検定・標本の大きさ
+stem: |
+  母平均 $m$、母標準偏差 $\sigma$ の母集団から、大きさ $n$ の標本を復元抽出で取り出し、取り出した順に値を $X_1,\ X_2,\ \cdots,\ X_n$ とする。標本平均を $\overline{X}=\dfrac{X_1+X_2+\cdots+X_n}{n}$ とする。
+
+  (1) $E(\overline{X})=m$、$V(\overline{X})=\dfrac{\sigma^2}{n}$ であることを示せ。ただし、確率変数の和・定数倍の期待値と分散についての性質は、成り立つ条件を明示したうえで用いてよい。
+
+  (2) $\sigma=15$ の母集団から大きさ $100$ の標本を取り出したところ、標本平均は $53.0$ であった。「母平均は $50$ と異なる」といえるかを、有意水準 $5\%$ で検定せよ。
+
+  (3) $\sigma=15$ のとき、$\left|\overline{X}-m\right|\leqq 1.5$ となる確率が $0.95$ 以上となるようにしたい。標本の大きさ $n$ の最小値を求めよ。
+
+  ただし、(2)(3) では $\overline{X}$ は近似的に正規分布に従うとしてよく、$Z$ が標準正規分布に従うとき $P(-1.96\leqq Z\leqq 1.96)=0.95$ である。
+modelAnswer: |
+  (1) 復元抽出なので、$X_1,\ X_2,\ \cdots,\ X_n$ はどれも母集団分布（平均 $m$、分散 $\sigma^2$）に従い、互いに独立である。
+
+  期待値は、和の期待値は和に等しい（独立性は不要）ことと $E(aX)=aE(X)$ から
+  $$E(\overline{X})=\frac{1}{n}\{E(X_1)+E(X_2)+\cdots+E(X_n)\}=\frac{1}{n}\cdot nm=m$$
+
+  分散は、$V(aX)=a^2V(X)$ と、$X_1,\ \cdots,\ X_n$ が **互いに独立** であることから $V(X_1+\cdots+X_n)=V(X_1)+\cdots+V(X_n)$ が成り立つことを用いて
+  $$V(\overline{X})=\frac{1}{n^2}V(X_1+X_2+\cdots+X_n)=\frac{1}{n^2}\{V(X_1)+\cdots+V(X_n)\}=\frac{1}{n^2}\cdot n\sigma^2=\frac{\sigma^2}{n}$$
+
+  (2) 帰無仮説を「母平均は $m=50$」、対立仮説を「$m\neq 50$」とし、両側検定を行う。帰無仮説のもとで $\overline{X}$ は近似的に $N\!\left(50,\ \dfrac{15^2}{100}\right)$ に従い、$\sigma(\overline{X})=\dfrac{15}{10}=1.5$。よって $Z=\dfrac{\overline{X}-50}{1.5}$ は近似的に $N(0,\ 1)$ に従う。
+
+  $\overline{X}=53.0$ のとき $Z=\dfrac{53.0-50}{1.5}=2$ である。有意水準 $5\%$ の両側検定の棄却域は $|Z|\geqq 1.96$ であり、$Z=2$ はこれに入る。したがって帰無仮説は棄却され、**母平均は $50$ と異なると判断できる**。
+
+  (3) (1) より $\sigma(\overline{X})=\dfrac{15}{\sqrt{n}}$ で、$Z=\dfrac{\overline{X}-m}{15/\sqrt{n}}$ は近似的に $N(0,\ 1)$ に従う。
+  $$P\left(|\overline{X}-m|\leqq 1.5\right)=P\left(|Z|\leqq\frac{1.5\sqrt{n}}{15}\right)=P\left(|Z|\leqq\frac{\sqrt{n}}{10}\right)$$
+  これが $0.95$ 以上となる条件は $\dfrac{\sqrt{n}}{10}\geqq 1.96$、すなわち $\sqrt{n}\geqq 19.6$、$n\geqq 384.16$。$n$ は自然数なので、最小値は $n=385$。
+rubric:
+  - id: r1
+    criterion: (1) 和の期待値の性質と定数倍の性質から $E(\overline{X})=m$ を導いている
+    points: 2
+    keywords: ["期待値", "nm"]
+  - id: r2
+    criterion: (1) 復元抽出により $X_1,\ \cdots,\ X_n$ が独立であることを明示し、それを根拠に和の分散を分散の和とし、$\dfrac{1}{n^2}$ 倍して $\dfrac{\sigma^2}{n}$ を導いている
+    points: 3
+    keywords: ["独立", "1/n^2", "σ^2/n"]
+  - id: r3
+    criterion: (2) 帰無仮説 $m=50$ と対立仮説 $m\neq 50$（両側）を立て、$\sigma(\overline{X})=1.5$ を用いて $Z=2$ を求めている
+    points: 2
+    keywords: ["帰無仮説", "1.5", "Z=2"]
+  - id: r4
+    criterion: (2) 両側の棄却域 $|Z|\geqq 1.96$ と比較して棄却し、「母平均は $50$ と異なると判断できる」と結論している
+    points: 1
+    keywords: ["1.96", "棄却"]
+  - id: r5
+    criterion: (3) $\dfrac{1.5\sqrt{n}}{15}\geqq 1.96$ を立てて $n\geqq 384.16$ とし、最小値 $385$ を答えている
+    points: 2
+    keywords: ["384.16", "385"]
+solution: |
+  (1) 期待値は独立性なしで $E(\overline{X})=\frac{1}{n}\cdot nm=m$。分散は、復元抽出による独立性から和の分散が分散の和になり、$V(\overline{X})=\frac{1}{n^2}\cdot n\sigma^2=\frac{\sigma^2}{n}$。
+
+  (2) $\sigma(\overline{X})=1.5$、$Z=\frac{53-50}{1.5}=2\geqq 1.96$ なので、両側検定で帰無仮説 $m=50$ は棄却され、母平均は $50$ と異なると判断できる。
+
+  (3) $\frac{1.5}{15/\sqrt{n}}\geqq 1.96$ より $\sqrt{n}\geqq 19.6$、$n\geqq 384.16$。最小値は $385$。
+concepts: [st-sample-mean, st-linear-sum, st-hypothesis-test, st-estimation]
+misconceptions: [mc-st-sample-sd, mc-st-sum-variance, mc-st-one-two-sided]
+targetSeconds: 900
+irt: { expectedCorrectRate: 0.3, discrimination: 1.4 }
+author:
+  intent: |
+    標本平均の分布の公式を「覚えている」だけでなく、どの性質をどの条件で使って導くかを答案に書けるかをみる。特に、期待値には独立性が不要で分散には必要、という区別を書き分けた答案だけが r2 の満点を得る。(2) は導いた公式をそのまま検定に使わせ、$\sigma$ を $\sqrt{n}$ で割らないと $Z=0.2$ となって結論が逆転する。$Z=2$ は $1.96$ をわずかに超える値で、有意水準 $1\%$（$2.58$）なら棄却されない境目に置いた。(3) は $\sqrt{n}$ を含む不等式を解いて自然数の最小値を答える処理まで求める。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学B (2) イ(ア) 標本分布の考察（標本平均の期待値と標準偏差）", "数学B (2) ア(イ) 独立な確率変数と和の分散", "数学B (2) ア(エ) 正規分布を用いた仮説検定"]
+  variations:
+    - 有限母集団から非復元抽出する場合に $V(\overline{X})$ が $\frac{\sigma^2}{n}$ より小さくなることを、$N=4$ の小さな母集団で確かめさせる。
+    - (2) を有意水準 $1\%$ で行い、結論が変わることを述べさせる。

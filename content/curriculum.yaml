@@ -61,3 +61,14 @@ subjects:
         title: 微分・積分の考え
         curriculumCode: 数学II (5) 微分・積分の考え
         summary: 微分係数と導関数、接線、関数の増減と極値、最大・最小、方程式の実数解の個数、不定積分と定積分、面積
+  - id: mathB
+    title: 数学B
+    units:
+      - id: mathb-sequences
+        title: 数列
+        curriculumCode: 数学B (1) 数列
+        summary: 等差数列・等比数列、Σと和の計算、階差数列、群数列、漸化式、数学的帰納法
+      - id: mathb-statistics
+        title: 統計的な推測
+        curriculumCode: 数学B (2) 統計的な推測
+        summary: 確率変数と確率分布、期待値・分散、二項分布、正規分布、標本平均の分布、母平均・母比率の推定、仮説検定

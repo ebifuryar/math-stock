@@ -1,0 +1,56 @@
+- id: mc-sq-term-count
+  title: 項数の数え間違い（n 項か n−1 項か）
+  description: |
+    第 $p$ 項から第 $q$ 項までの項数を $q-p$ とする、一般項を $a_n=a_1+nd$ や $a_n=ar^n$ とする、（等差）×（等比）型の和で $S-rS$ の中央に現れる等比数列の項数を $n$ とする、など「何項あるか」「何回足すか」を $1$ ずれて数える。
+  cause: |
+    「間の数」と「項の数」を区別していない。$n=1,\ 2$ などの小さな場合を書き並べて、式が実際の項と一致するかを確かめる習慣がない。
+  remedyConcepts: [sq-arithmetic, sq-geometric, sq-sum-techniques]
+- id: mc-sq-difference-n1
+  title: 階差数列の公式で n≧2 の条件と n=1 の確認を忘れる
+  description: |
+    階差数列 $\{b_n\}$ から一般項を $a_n=a_1+\displaystyle\sum_{k=1}^{n}b_k$ と上端を $n$ にして求める。あるいは $a_n=a_1+\displaystyle\sum_{k=1}^{n-1}b_k$ で得た式を、$n=1$ のときに成り立つか確かめずに一般項とする。
+  cause: |
+    $a_1$ から $a_n$ までに階差を足す回数が $n-1$ 回であることを、数列を書き並べて確認していない。$\displaystyle\sum_{k=1}^{n-1}$ は $n\geqq 2$ でしか意味をもたないので、得られた式は $n\geqq 2$ についての結論にすぎないことを意識していない。
+  remedyConcepts: [sq-difference-sum, sq-sigma]
+- id: mc-sq-sum-to-term-n1
+  title: S_n から a_n を求めるとき n=1 を別扱いしない
+  description: |
+    和 $S_n$ が与えられたとき、$a_n=S_n-S_{n-1}$ をすべての $n$ で使い、$a_1=S_1$ を確かめない。例: $S_n=n^2+2n+3$ から「$a_n=2n+1$」と答える（実際は $a_1=6$）。
+  cause: |
+    $S_{n-1}$ が $n\geqq 2$ でしか定義されないことを意識していない。$S_n$ の定数項が $0$ でないとき、$a_n=S_n-S_{n-1}$ の式は $n=1$ で $S_1$ と一致しないことを、具体的に $n=1$ を代入して確かめていない。
+  remedyConcepts: [sq-difference-sum]
+- id: mc-sq-geometric-r1
+  title: 等比数列の和で公比 r=1 の場合分けを落とす
+  description: |
+    公比が文字を含む等比数列の和を、$\dfrac{a(r^n-1)}{r-1}$ だけで答え、$r=1$（分母が $0$）の場合を別に扱わない。あるいは「公比 $=1$」となる文字の値を取り違え、別の値で場合分けする。
+  cause: |
+    公式が $S-rS=a-ar^n$ の両辺を $1-r$ で割って得られることを理解しておらず、割る数が $0$ になる場合を意識していない。公比を文字の式（例: $x+1$）で表したときに、$r=1$ を文字の条件に正しく翻訳していない。
+  remedyConcepts: [sq-geometric, sq-sigma]
+- id: mc-sq-sigma-index-shift
+  title: Σ の上端・下端のずれ
+  description: |
+    $\displaystyle\sum_{k=p}^{q}$ を $S_q-S_p$ とする（正しくは $S_q-S_{p-1}$）。$\displaystyle\sum_{k=1}^{n-1}$ を $\displaystyle\sum_{k=1}^{n}$ の公式のまま計算する。打ち消し合う和で、消え残る末尾の項の番号を $1$ ずらす。
+  cause: |
+    Σ の上端と下端が「どの項からどの項まで」を表すかを、和を書き並べて確かめていない。$S_p$ が第 $p$ 項を含むことを意識していない。
+  remedyConcepts: [sq-sigma, sq-sum-techniques]
+- id: mc-sq-induction-base-step
+  title: 数学的帰納法で n=1 の確認や n=k の仮定の使用を欠く
+  description: |
+    $n=k$ から $n=k+1$ を導く部分だけで証明が終わったとし、出発点（$n=1$ や $n=5$）を確かめない。逆に、$n=k+1$ の式を仮定を使わずに直接示そうとする、仮定 $P(k)$ を「示すべきことを仮定している循環論法」だと考える。
+  cause: |
+    数学的帰納法が「出発点」と「1つ先へ進める仕組み」の2つで初めて成り立つ論法であることを理解していない。成り立たない等式でも $n=k\Rightarrow n=k+1$ の計算は通ってしまう例を見たことがない。
+  remedyConcepts: [sq-induction]
+- id: mc-sq-characteristic-misuse
+  title: 漸化式の置き換え（特性方程式）の誤用
+  description: |
+    $a_{n+1}=pa_n+q$ の $\alpha=p\alpha+q$ を解いた $\alpha$ を答えとする、$b_n=a_n-\alpha$ の初項を $a_1$ のままにする、置き換えた数列の初項を変換し忘れて $b_1$ と $a_1$ を混同する。また $a_{n+1}=pa_n+(n\text{ の式})$ 型や分数型にも、定数 $\alpha$ を引くだけの変形を機械的に当てはめる。
+  cause: |
+    特性方程式は「$a_{n+1}-\alpha=p(a_n-\alpha)$ と変形するための $\alpha$ を探す補助の式」であることを理解せず、手順だけを覚えている。置き換えた数列 $\{b_n\}$ ともとの数列 $\{a_n\}$ を区別して書いていない。
+  remedyConcepts: [sq-recurrence-basic, sq-recurrence-advanced]
+- id: mc-sq-partial-fraction
+  title: 部分分数分解での係数・消え残る項の誤り
+  description: |
+    $\dfrac{1}{k(k+2)}=\dfrac{1}{k}-\dfrac{1}{k+2}$ のように係数 $\dfrac{1}{2}$ を付け忘れる。また、番号が2つずれる分解で、消え残るのが前後1項ずつだと思い込む。
+  cause: |
+    分解した式を通分して元に戻るかを確かめていない。打ち消し合いの様子を実際に書き並べず、$\dfrac{1}{k(k+1)}$ の場合の結果（両端の1項ずつが残る）をそのまま当てはめている。
+  remedyConcepts: [sq-sum-techniques]

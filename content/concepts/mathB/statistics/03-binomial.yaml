@@ -1,0 +1,14 @@
+id: st-binomial
+kind: formula
+title: 二項分布 B(n, p) とその平均・分散
+body: |
+  1回の試行で事象 $A$ が起こる確率を $p$ とし、この試行を $n$ 回繰り返す反復試行で $A$ が起こる回数を $X$ とすると
+  $$P(X=r)={}_n\mathrm{C}_r\,p^r(1-p)^{n-r}\qquad(r=0,\ 1,\ \cdots,\ n)$$
+  この確率分布を **二項分布** といい、$B(n,\ p)$ で表す。$q=1-p$ とおくと
+
+  $$E(X)=np,\qquad V(X)=npq=np(1-p),\qquad \sigma(X)=\sqrt{np(1-p)}$$
+
+  **理由**：$k$ 回目に $A$ が起これば $1$、起こらなければ $0$ をとる確率変数 $X_k$ を考えると $X=X_1+X_2+\cdots+X_n$。各 $X_k$ は $E(X_k)=p$、$V(X_k)=p-p^2=p(1-p)$ で、$X_1,\ \cdots,\ X_n$ は互いに独立なので、期待値も分散も $n$ 倍になる。
+
+  分散を $np$ としないこと（$1-p$ を掛け忘れると、$p$ が大きいほど誤差が大きい）。
+prerequisites: [pr-independent-repeated, st-linear-sum]

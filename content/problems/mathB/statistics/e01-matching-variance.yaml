@@ -1,0 +1,51 @@
+id: mb-st-e01
+level: exam
+format: choice
+title: 一致するカードの枚数の分散
+stem: |
+  $n$ を $2$ 以上の整数とする。$1$ から $n$ までの数字が1つずつ書かれた $n$ 枚のカードをよく混ぜて、左から1列に並べる。左から $k$ 番目のカードの数字が $k$ であるとき、その位置を「一致」と呼び、一致している位置の個数を $X$ とする。
+
+  $X$ の分散 $V(X)$ として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $1-\dfrac{1}{n}$
+    misconception: mc-st-sum-variance
+    rationale: |
+      $X=X_1+X_2+\cdots+X_n$（$X_k$ は $k$ 番目が一致なら $1$、そうでなければ $0$）と分解したうえで、$X_1,\ \cdots,\ X_n$ を独立とみなし $V(X)=n\cdot\dfrac{1}{n}\left(1-\dfrac{1}{n}\right)$ としている（$X$ を $B\left(n,\ \frac{1}{n}\right)$ とみなすのと同じ）。実際には、例えば $n-1$ 個が一致すれば残り1個も必ず一致するので、$X_k$ どうしは独立でない。
+  - id: "2"
+    text: $1-\dfrac{1}{2n}$
+    misconception: mc-st-sum-variance
+    rationale: |
+      $V(X)=\displaystyle\sum V(X_k)+2\sum_{i<j}\{E(X_iX_j)-E(X_i)E(X_j)\}$ の交差項の係数 $2$ を落としている。$\left(1-\dfrac{1}{n}\right)+{}_n\mathrm{C}_2\cdot\dfrac{1}{n^2(n-1)}=1-\dfrac{1}{2n}$ となる。
+  - id: "3"
+    text: $2$
+    rationale: |
+      $E(X^2)=2$ を求めたところで止め、$\{E(X)\}^2=1$ を引き忘れている。
+  - id: "4"
+    text: $1$
+    rationale: |
+      正解。$E(X_k)=\dfrac{1}{n}$ より $E(X)=1$。$i\neq j$ のとき $E(X_iX_j)=P(i,\ j\text{ がともに一致})=\dfrac{(n-2)!}{n!}=\dfrac{1}{n(n-1)}$。$X_k^2=X_k$ に注意して $E(X^2)=\displaystyle\sum E(X_k)+2\sum_{i<j}E(X_iX_j)=1+2\cdot{}_n\mathrm{C}_2\cdot\dfrac{1}{n(n-1)}=2$。よって $V(X)=2-1^2=1$。
+answer: "4"
+solution: |
+  $k$ 番目が一致なら $1$、そうでなければ $0$ をとる確率変数 $X_k$ を用いると $X=X_1+X_2+\cdots+X_n$。
+
+  - $E(X_k)=P(k\text{ 番目が一致})=\dfrac{(n-1)!}{n!}=\dfrac{1}{n}$ より $E(X)=n\cdot\dfrac{1}{n}=1$（和の期待値は独立でなくても和）。
+  - $X_k^2=X_k$、$i\neq j$ のとき $E(X_iX_j)=\dfrac{(n-2)!}{n!}=\dfrac{1}{n(n-1)}$。
+
+  $$E(X^2)=\sum_{k=1}^{n}E(X_k)+2\sum_{i<j}E(X_iX_j)=1+2\cdot\frac{n(n-1)}{2}\cdot\frac{1}{n(n-1)}=2$$
+  $$V(X)=E(X^2)-\{E(X)\}^2=2-1=1$$
+
+  $X_k$ どうしは独立でない（$E(X_iX_j)=\dfrac{1}{n(n-1)}\neq\dfrac{1}{n^2}=E(X_i)E(X_j)$）ので、分散を $V(X_k)$ の和として求めることはできない。
+concepts: [st-linear-sum, st-random-variable, st-binomial]
+misconceptions: [mc-st-sum-variance]
+targetSeconds: 600
+irt: { expectedCorrectRate: 0.25, discrimination: 1.4 }
+author:
+  intent: |
+    指示関数（$0$ または $1$ をとる確率変数）の和に分解して期待値・分散を求める入試頻出の手法と、「和の期待値は常に和だが、和の分散は独立なときに限り和」という区別をみる。二項分布の分散の導出（独立な指示関数の和）を形だけ覚えている受験者は①を選ぶ。②は独立でないことに気づいて共分散を入れたが係数を誤ったもの、③は最後の引き算の忘れ。$V(X)=1$ が $n$ によらないという結果自体も印象的で、$n=2,\ 3$ で総当たりして確かめる習慣があれば①②は退けられる（$n=2$ なら $X$ は $0,\ 2$ を等確率でとり $V(X)=1$）。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学B (2) ア(イ) 確率変数の和の期待値・分散", "数学B (2) ア(ウ) 二項分布"]
+  variations:
+    - 'カードを1枚ずつ戻しながら $n$ 回引いて $k$ 回目に $k$ が出る回数とし、$B(n,\ \frac{1}{n})$ になって $V=1-\frac{1}{n}$ となることと比較させる。'
+    - 「$n$ 個の箱に $n$ 個の玉を独立に入れたときの空箱の個数」の期待値・分散を同じ方法で求めさせる。
+  notes: n=2〜7 について全順列の総当たりで E(X)=1、E(X^2)=2、V(X)=1 を確認済み。

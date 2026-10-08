@@ -1,0 +1,16 @@
+id: st-continuous
+kind: definition
+title: 連続型確率変数と確率密度関数
+body: |
+  長さ・重さ・時間のように連続した値をとる確率変数 $X$ を **連続型確率変数** という。関数 $f(x)$ が
+
+  - 常に $f(x)\geqq 0$
+  - 曲線 $y=f(x)$ と $x$ 軸の間の面積の合計が $1$（$X$ のとる値の範囲が $\alpha\leqq x\leqq\beta$ なら $\displaystyle\int_\alpha^\beta f(x)\,dx=1$）
+  - $\displaystyle P(a\leqq X\leqq b)=\int_a^b f(x)\,dx$
+
+  を満たすとき、$f(x)$ を $X$ の **確率密度関数** という。
+
+  $$E(X)=m=\int_\alpha^\beta xf(x)\,dx,\qquad V(X)=\int_\alpha^\beta (x-m)^2f(x)\,dx=\int_\alpha^\beta x^2f(x)\,dx-m^2$$
+
+  注意：確率は **面積** で表されるので、1点の確率は $P(X=a)=\displaystyle\int_a^a f(x)\,dx=0$ である。$f(a)$ は確率ではなく「その付近の確率の密度」であり、$1$ を超えることもある。したがって $P(a\leqq X\leqq b)=P(a<X<b)$。
+prerequisites: [st-random-variable]

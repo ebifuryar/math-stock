@@ -1,0 +1,57 @@
+id: mb-st-a04
+level: applied
+format: mark
+title: 独立な確率変数の和・積と非復元抽出の分散
+stem: |
+  数字 $1,\ 2,\ 2,\ 3$ が1つずつ書かれた $4$ 枚のカードが袋に入っている。また、$6$ 枚の硬貨がある。
+
+  (1) 袋から $1$ 枚のカードを取り出し、その数字を $X$ とする。$E(X)=\boxed{\text{ア}}$、$V(X)=\dfrac{\boxed{\text{イ}}}{\boxed{\text{ウ}}}$ である。
+
+  (2) $6$ 枚の硬貨を同時に投げ、表が出た枚数を $Y$ とする。$E(Y)=\boxed{\text{エ}}$、$V(Y)=\dfrac{\boxed{\text{オ}}}{\boxed{\text{カ}}}$ である。
+
+  (3) (1) のカードの取り出しと (2) の硬貨投げを行う。$X$ と $Y$ は独立であるから、$E(XY)=\boxed{\text{キ}}$、$V(2X-Y)=\dfrac{\boxed{\text{ク}}}{\boxed{\text{ケ}}}$ である。
+
+  (4) 袋から $1$ 枚取り出して数字を記録し、袋に戻してからもう一度 $1$ 枚取り出して数字を記録する。記録した2つの数の和を $S$ とすると $V(S)=\boxed{\text{コ}}$ である。
+
+  一方、袋から $2$ 枚のカードを同時に取り出し、その2つの数の和を $T$ とすると $V(T)=\dfrac{\boxed{\text{サ}}}{\boxed{\text{シ}}}$ である。
+
+  ただし、分数は既約分数で答えよ。
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イ, answer: "1" }
+  - { label: ウ, answer: "2" }
+  - { label: エ, answer: "3" }
+  - { label: オ, answer: "3" }
+  - { label: カ, answer: "2" }
+  - { label: キ, answer: "6" }
+  - { label: ク, answer: "7" }
+  - { label: ケ, answer: "2" }
+  - { label: コ, answer: "1" }
+  - { label: サ, answer: "2" }
+  - { label: シ, answer: "3" }
+solution: |
+  (1) $P(X=1)=\dfrac{1}{4}$、$P(X=2)=\dfrac{1}{2}$、$P(X=3)=\dfrac{1}{4}$。$E(X)=2$、$E(X^2)=\dfrac{1}{4}+2+\dfrac{9}{4}=\dfrac{9}{2}$ より $V(X)=\dfrac{9}{2}-4=\dfrac{1}{2}$。
+
+  (2) $Y$ は $B\left(6,\ \dfrac{1}{2}\right)$ に従うので $E(Y)=3$、$V(Y)=6\cdot\dfrac{1}{2}\cdot\dfrac{1}{2}=\dfrac{3}{2}$。
+
+  (3) 独立なので $E(XY)=E(X)E(Y)=6$、
+  $$V(2X-Y)=2^2V(X)+(-1)^2V(Y)=2+\frac{3}{2}=\frac{7}{2}$$
+  差であっても分散は足される。
+
+  (4) 復元抽出では1回目と2回目の数 $X_1,\ X_2$ は独立で、どちらも $X$ と同じ分布なので $V(S)=V(X_1)+V(X_2)=1$。
+
+  同時に2枚取り出す（非復元抽出）場合、2枚の選び方 $6$ 通りの和は $3,\ 3,\ 4,\ 4,\ 5,\ 5$ で、$T$ は $3,\ 4,\ 5$ をそれぞれ確率 $\dfrac{1}{3}$ でとる。$E(T)=4$、$V(T)=\dfrac{1}{3}(1+0+1)=\dfrac{2}{3}$。
+
+  1枚目と2枚目は独立でない（1枚目が大きいと2枚目は小さくなりやすい）ので、$V(T)\neq V(X)+V(X)$ となる。
+concepts: [st-linear-sum, st-random-variable, st-binomial, st-sample-mean]
+misconceptions: [mc-st-sum-variance, mc-st-linear-variance]
+targetSeconds: 540
+irt: { expectedCorrectRate: 0.5, discrimination: 1.2 }
+author:
+  intent: |
+    和・積の期待値と和の分散の公式について、それぞれの成立条件（独立性）を意識して使えるかをみる。(3) の $V(2X-Y)$ は、分散を引く誤り（$4\cdot\frac{1}{2}-\frac{3}{2}=\frac{1}{2}$）や $a$ を2乗しない誤り（$2\cdot\frac{1}{2}+\frac{3}{2}=\frac{5}{2}$）がいずれも既約分数の形の誤答になるよう数値を選んだ。(4) では復元抽出と非復元抽出を並べ、独立でないときは分散の和の公式が成り立たない（$1$ ではなく $\frac{2}{3}$）ことを、総当たりで確かめさせる。標本調査で復元抽出を仮定する理由につながる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学B (2) ア(イ) 確率変数の和と積（独立な確率変数）", "数学B (2) ア(ウ) 二項分布", "数学B (2) ア(ア) 標本調査の考え方（母集団と標本、復元抽出）"]
+  variations:
+    - 非復元で2枚取り出すときの $V(T)$ を、$V(T)=V(X_1)+V(X_2)+2\{E(X_1X_2)-E(X_1)E(X_2)\}$ から求めさせる（入試レベル）。
+    - $V(X+X)$ と $V(X_1+X_2)$ の違いを問う。

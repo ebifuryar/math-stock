@@ -1,0 +1,56 @@
+id: mb-sq-s05
+level: school
+format: written
+title: 特性方程式を用いる漸化式と一般項の和
+stem: |
+  数列 $\{a_n\}$ が
+  $$a_1=2,\qquad a_{n+1}=3a_n-2\quad(n=1,\ 2,\ 3,\ \cdots)$$
+  で定められている。一般項 $a_n$ を求めよ。また、$\displaystyle\sum_{k=1}^{n}a_k$ を求めよ。
+modelAnswer: |
+  $\alpha=3\alpha-2$ を解くと $\alpha=1$。漸化式から $1=3\cdot 1-2$ を辺々引くと
+  $$a_{n+1}-1=3(a_n-1)$$
+
+  $b_n=a_n-1$ とおくと $b_{n+1}=3b_n$、$b_1=a_1-1=1$ なので、$\{b_n\}$ は初項 $1$、公比 $3$ の等比数列である。よって $b_n=3^{n-1}$ で
+  $$a_n=3^{n-1}+1$$
+
+  （確認: $a_1=1+1=2$、$a_2=3+1=4=3\cdot 2-2$。）
+
+  次に
+  $$\sum_{k=1}^{n}a_k=\sum_{k=1}^{n}3^{k-1}+\sum_{k=1}^{n}1=\frac{3^n-1}{3-1}+n=\frac{3^n+2n-1}{2}$$
+
+  よって **$a_n=3^{n-1}+1$、$\displaystyle\sum_{k=1}^{n}a_k=\frac{3^n+2n-1}{2}$**。
+rubric:
+  - id: r1
+    criterion: $\alpha=3\alpha-2$ から $\alpha=1$ を求め、$a_{n+1}-1=3(a_n-1)$ と変形している
+    points: 2
+    keywords: ["a_{n+1}-1=3(a_n-1)", "α=1"]
+  - id: r2
+    criterion: $b_n=a_n-1$ の初項を $b_1=a_1-1=1$ と正しく求め、公比 $3$ の等比数列と判断している
+    points: 2
+    keywords: ["b_1=1", "公比3"]
+  - id: r3
+    criterion: 一般項 $a_n=3^{n-1}+1$ を得ている（$3^n+1$ などの指数のずれがない）
+    points: 2
+    keywords: ["3^{n-1}+1"]
+  - id: r4
+    criterion: $\displaystyle\sum_{k=1}^{n}3^{k-1}=\frac{3^n-1}{2}$ と、定数項の和 $n$ を正しく求めている
+    points: 2
+    keywords: ["(3^n-1)/2", "+n"]
+  - id: r5
+    criterion: 和を $\dfrac{3^n+2n-1}{2}$（または同値な式）と結論している
+    points: 2
+    keywords: ["3^n+2n-1"]
+solution: |
+  特性方程式 $\alpha=3\alpha-2$ の解 $\alpha=1$ を用いて $a_{n+1}-1=3(a_n-1)$ と変形する。$\{a_n-1\}$ は初項 $a_1-1=1$、公比 $3$ の等比数列なので $a_n=3^{n-1}+1$。和は $\displaystyle\sum 3^{k-1}$ と $\displaystyle\sum 1$ に分けて $\dfrac{3^n-1}{2}+n=\dfrac{3^n+2n-1}{2}$。$\displaystyle\sum_{k=1}^{n}1=1$ としないこと。
+concepts: [sq-recurrence-basic, sq-geometric, sq-sigma]
+misconceptions: [mc-sq-characteristic-misuse, mc-sq-term-count]
+targetSeconds: 420
+irt: { expectedCorrectRate: 0.62, discrimination: 1.1 }
+author:
+  intent: |
+    $a_{n+1}=pa_n+q$ 型の標準的な処理を、記述として筋道立てて書けるかをみる。置き換えた数列の初項を $a_1=2$ のままにする誤り（$a_n=2\cdot 3^{n-1}+1$）、指数を $n$ にする誤り（$3^n+1$）、和で $\displaystyle\sum_{k=1}^{n}1$ を落とす誤りが、それぞれ別の基準で減点されるように設計した。$a_1$ の値を代入して検算しているかも答案から読み取れる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学B (1) ア(ウ) 漸化式と数学的帰納法（漸化式）"]
+  variations:
+    - $a_{n+1}=\dfrac{1}{2}a_n+3$ とし、一般項が $6$ に近づいていく様子を観察させる。
+    - $a_1$ を文字 $c$ にして、$\{a_n\}$ が定数列になる $c$ の値（$c=1$）を問う。

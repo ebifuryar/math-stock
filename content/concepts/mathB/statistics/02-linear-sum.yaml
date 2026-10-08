@@ -1,0 +1,20 @@
+id: st-linear-sum
+kind: property
+title: aX+b と確率変数の和・積の期待値と分散
+body: |
+  **1次式** $aX+b$（$a,\ b$ は定数）
+
+  $$E(aX+b)=aE(X)+b,\qquad V(aX+b)=a^2V(X),\qquad \sigma(aX+b)=|a|\,\sigma(X)$$
+
+  偏差 $(aX+b)-(am+b)=a(X-m)$ が $a$ 倍になるだけなので、$b$ は散らばりに影響せず、分散は $a^2$ 倍になる。
+
+  **和の期待値**（独立でなくても常に成り立つ）
+  $$E(X+Y)=E(X)+E(Y),\qquad E(aX+bY)=aE(X)+bE(Y)$$
+
+  **$X,\ Y$ が独立のときだけ成り立つもの**
+  $$E(XY)=E(X)E(Y),\qquad V(X+Y)=V(X)+V(Y),\qquad V(aX+bY)=a^2V(X)+b^2V(Y)$$
+
+  - 差でも $V(X-Y)=V(X)+(-1)^2V(Y)=V(X)+V(Y)$ となり、分散は **足される**。
+  - 独立でないとき（例：同じカードの山から非復元で2枚引く、$X$ と $X$ 自身）は $V(X+Y)\neq V(X)+V(Y)$ となりうる。例えば $V(X+X)=V(2X)=4V(X)$ であって $2V(X)$ ではない。
+  - 3つ以上でも同様に、互いに独立なら分散は足し合わせられる。
+prerequisites: [st-random-variable, da-linear-transform]

@@ -1,0 +1,17 @@
+id: st-random-variable
+kind: definition
+title: 確率変数と確率分布・期待値・分散
+body: |
+  試行の結果によって値が定まり、その値をとる確率が定まっている変数を **確率変数** という。確率変数 $X$ のとりうる値 $x_1,\ x_2,\ \cdots,\ x_n$ と、それぞれの確率 $p_1,\ p_2,\ \cdots,\ p_n$ の対応を $X$ の **確率分布** という（$p_1+p_2+\cdots+p_n=1$）。
+
+  | 量 | 定義 |
+  | --- | --- |
+  | 期待値（平均） | $E(X)=m=\displaystyle\sum_{k=1}^{n}x_kp_k$ |
+  | 分散 | $V(X)=E\left((X-m)^2\right)=\displaystyle\sum_{k=1}^{n}(x_k-m)^2p_k$ |
+  | 標準偏差 | $\sigma(X)=\sqrt{V(X)}$ |
+
+  分散は「2乗の期待値 − 期待値の2乗」でも計算できる。
+  $$V(X)=E(X^2)-\{E(X)\}^2$$
+
+  手順は (1) 確率分布の表を作り確率の和が $1$ になることを確かめる、(2) $E(X)$ と $E(X^2)$ を求める、(3) 分散・標準偏差を出す。$E(X^2)$ を分散と取り違えないこと。
+prerequisites: [pr-expected-value, da-variance, da-variance-formula]

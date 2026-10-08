@@ -1,0 +1,50 @@
+id: mb-sq-e02
+level: exam
+format: choice
+title: 分数型の漸化式
+stem: |
+  数列 $\{a_n\}$ が
+  $$a_1=5,\qquad a_{n+1}=\frac{4a_n-9}{a_n-2}\quad(n=1,\ 2,\ 3,\ \cdots)$$
+  で定められている。一般項 $a_n$ として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $a_n=3+\dfrac{1}{n+1}$
+    misconception: mc-sq-characteristic-misuse
+    rationale: |
+      $b_n=\dfrac{1}{a_n-3}$ が公差 $1$ の等差数列であることは正しく導いたが、初項を $b_1=a_1-3=2$ と、逆数をとらずに求めている。正しくは $b_1=\dfrac{1}{2}$。$n=1$ で $a_1=\dfrac{7}{2}$ となり合わない。
+  - id: "2"
+    text: $a_n=3+\dfrac{2}{2n+1}$
+    misconception: mc-sq-term-count
+    rationale: |
+      等差数列 $b_n$ の一般項を $b_1+nd=\dfrac{1}{2}+n$ としている。公差を足す回数は $n-1$ 回である。$n=1$ で $a_1=\dfrac{11}{3}$ となり合わない。
+  - id: "3"
+    text: $a_n=3+\dfrac{2}{3-2n}$
+    rationale: |
+      $\dfrac{a_n-2}{a_n-3}=1+\dfrac{1}{a_n-3}$ の符号を誤り、公差を $-1$ としている。$a_2=1$ となるが、実際は $a_2=\dfrac{20-9}{5-2}=\dfrac{11}{3}$ である。
+  - id: "4"
+    text: $a_n=3+\dfrac{2}{2n-1}$
+    rationale: |
+      正解。$\dfrac{1}{a_n-3}$ は初項 $\dfrac{1}{2}$、公差 $1$ の等差数列で、$\dfrac{1}{a_n-3}=n-\dfrac{1}{2}=\dfrac{2n-1}{2}$。
+answer: "4"
+solution: |
+  $x=\dfrac{4x-9}{x-2}$ とすると $x^2-6x+9=0$ で、重解 $x=3$。漸化式から
+  $$a_{n+1}-3=\frac{4a_n-9-3(a_n-2)}{a_n-2}=\frac{a_n-3}{a_n-2}$$
+
+  $a_1=5\neq 3$ であり、$a_n\neq 3$ なら $a_{n+1}-3\neq 0$ なので、すべての $n$ で $a_n\neq 3$。逆数をとると
+  $$\frac{1}{a_{n+1}-3}=\frac{a_n-2}{a_n-3}=1+\frac{1}{a_n-3}$$
+
+  $b_n=\dfrac{1}{a_n-3}$ は初項 $b_1=\dfrac{1}{2}$、公差 $1$ の等差数列なので $b_n=\dfrac{1}{2}+(n-1)=\dfrac{2n-1}{2}$。よって
+  $$a_n=3+\frac{2}{2n-1}$$
+  （$a_n>3$ なので $a_n\neq 2$ であり、漸化式の分母が $0$ になることはない。検算: $a_2=3+\dfrac{2}{3}=\dfrac{11}{3}$、$a_3=3+\dfrac{2}{5}=\dfrac{17}{5}=\dfrac{4\cdot\frac{11}{3}-9}{\frac{11}{3}-2}$。）
+concepts: [sq-recurrence-advanced, sq-arithmetic]
+misconceptions: [mc-sq-characteristic-misuse, mc-sq-term-count]
+targetSeconds: 480
+irt: { expectedCorrectRate: 0.33, discrimination: 1.3 }
+author:
+  intent: |
+    分数型の漸化式で、$x=\dfrac{4x-9}{x-2}$ の解（重解 $3$）を用いて $a_n-3$ を考え、その逆数が等差数列になることを見抜けるかをみる。$\dfrac{a_n}{ra_n+s}$ 型の「そのまま逆数をとる」解法を知っているだけでは届かず、平行移動してから逆数をとる発想が必要になる。誤答は、逆数の初項の変換忘れ（①）、等差数列の項数のずれ（②）、逆数の式変形の符号ミス（③）に対応する。逆数をとる前に $a_n\neq 3$ を確かめる論証の丁寧さは、記述式の類題で問える。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学B (1) ア(ウ) 漸化式と数学的帰納法（漸化式）"]
+  variations:
+    - $a_{n+1}=\dfrac{3a_n-4}{a_n-1}$（重解 $x=2$）や $a_{n+1}=\dfrac{a_n+2}{a_n+1}$（異なる2解 $\pm\sqrt{2}$）など、解の種類を変える。
+    - $a_{n+1}=\dfrac{a_n}{2a_n+1}$ のように直接逆数をとれる型と並べ、置き換えの必要性を比較させる。

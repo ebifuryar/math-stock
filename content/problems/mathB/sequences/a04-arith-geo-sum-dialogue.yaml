@@ -1,0 +1,55 @@
+id: mb-sq-a04
+level: applied
+format: mark
+title: 会話で考える（等差）×（等比）型の和
+stem: |
+  太郎さんと花子さんは、次の和 $S_n$ を求めようとしている。
+  $$S_n=1\cdot 1+3\cdot 2+5\cdot 2^2+\cdots+(2n-1)\cdot 2^{n-1}$$
+
+  花子「各項が（等差数列）$\times$（等比数列）の形になっているね。$2S_n$ を1項ずらして書いて、$S_n-2S_n$ を計算してみよう。」
+  $$
+  \begin{aligned}
+  S_n&=1+3\cdot 2+5\cdot 2^2+\cdots+(2n-1)\cdot 2^{n-1}\\
+  2S_n&=\phantom{1+{}}1\cdot 2+3\cdot 2^2+\cdots+(2n-3)\cdot 2^{n-1}+(2n-1)\cdot 2^n
+  \end{aligned}
+  $$
+
+  太郎「辺々引くと
+  $$-S_n=1+\boxed{\text{ア}}\left(2+2^2+\cdots+2^{n-1}\right)-(2n-1)\cdot 2^n$$
+  となるね。かっこの中は初項 $2$、公比 $2$、項数 $n-\boxed{\text{イ}}$ の等比数列の和だから、$2^n-\boxed{\text{ウ}}$ に等しいよ。」
+
+  花子「整理すると
+  $$S_n=\left(\boxed{\text{エ}}\,n-\boxed{\text{オ}}\right)\cdot 2^n+\boxed{\text{カ}}$$
+  だね。$n=1$ のとき $S_1=1$ になることも確かめられるよ。」
+
+  太郎「この式を使うと、$S_n>1000$ となる最小の自然数 $n$ は $n=\boxed{\text{キ}}$ だとわかるね。」
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イ, answer: "1" }
+  - { label: ウ, answer: "2" }
+  - { label: エ, answer: "2" }
+  - { label: オ, answer: "3" }
+  - { label: カ, answer: "3" }
+  - { label: キ, answer: "7" }
+solution: |
+  $S_n-2S_n$ では、$2^k$ の係数が $(2k+1)-(2k-1)=2$ ずつ残るので
+  $$-S_n=1+2(2+2^2+\cdots+2^{n-1})-(2n-1)\cdot 2^n$$
+  かっこの中は $2^1$ から $2^{n-1}$ までの $n-1$ 項で
+  $$2+2^2+\cdots+2^{n-1}=\frac{2(2^{n-1}-1)}{2-1}=2^n-2$$
+  よって
+  $$-S_n=1+2^{n+1}-4-(2n-1)\cdot 2^n=(3-2n)\cdot 2^n-3$$
+  すなわち $S_n=(2n-3)\cdot 2^n+3$。$n=1$ で $-2+3=1$、$n=2$ で $4+3=7=1+6$ と一致する。
+
+  $S_n$ は増加する数列で、$S_6=9\cdot 64+3=579$、$S_7=11\cdot 128+3=1411$ なので、最小の $n$ は $7$。
+concepts: [sq-sum-techniques, sq-geometric]
+misconceptions: [mc-sq-term-count]
+targetSeconds: 480
+irt: { expectedCorrectRate: 0.5, discrimination: 1.2 }
+author:
+  intent: |
+    （等差）×（等比）型の和を $S-rS$ で求める手順を、会話形式の誘導で一段ずつ確認する。最もつまずきやすい「中央の等比数列の項数（$n-1$）」と「最後に余る $-(2n-1)\cdot 2^n$」を空欄イ・ウとエ〜カで分けて問い、どの段階で誤ったかを特定できるようにした。項数を $n$ として $2^{n+1}-2$ とすると $S_n=(2n-5)\cdot 2^n+3$ となり、$n=1$ で $-3$ になるので、検算で気づけるかもみる。最後のキは、得た式を具体的な数値の判断に使う力を問う。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学B (1) ア(イ) いろいろな数列（和の求め方）", "数学B (1) イ(ア) 数列の考えを事象の考察に活用する"]
+  variations:
+    - 公比を $\dfrac{1}{2}$ にした $\displaystyle\sum_{k=1}^{n}\frac{k}{2^k}$ を扱い、$S-\dfrac{1}{2}S$ で求めさせる。
+    - $S_n=(an+b)\cdot 2^n+c$ とおいて $S_n-S_{n-1}$ と比較し、係数を決める別解を会話で示す。

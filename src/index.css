@@ -25,7 +25,8 @@ body {
 .math-text ol { @apply my-2 list-decimal pl-5; }
 .math-text li { @apply my-1; }
 .math-text strong { @apply font-semibold; }
-.math-text table { @apply my-2 w-full border-collapse text-sm; }
+/* 列の多い表（正規分布表など）は表だけを横スクロールさせ、画面幅を広げない */
+.math-text table { @apply my-2 block max-w-full overflow-x-auto border-collapse text-sm; }
 .math-text th,
 .math-text td { @apply border border-slate-300 px-2 py-1 dark:border-slate-700; }
 .math-text .katex-display {

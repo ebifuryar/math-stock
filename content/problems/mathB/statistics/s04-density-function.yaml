@@ -1,0 +1,48 @@
+id: mb-st-s04
+level: school
+format: mark
+title: 1次関数の確率密度関数
+stem: |
+  連続型確率変数 $X$ のとりうる値の範囲が $0\leqq X\leqq 2$ で、その確率密度関数が
+  $$f(x)=ax\qquad(0\leqq x\leqq 2)$$
+  （$a$ は正の定数）であるとする。
+
+  (1) $a=\dfrac{\boxed{\text{ア}}}{\boxed{\text{イ}}}$ である。
+
+  (2) $P(1\leqq X\leqq 2)=\dfrac{\boxed{\text{ウ}}}{\boxed{\text{エ}}}$、$P(X=1)=\boxed{\text{オ}}$ である。
+
+  (3) $X$ の期待値は $E(X)=\dfrac{\boxed{\text{カ}}}{\boxed{\text{キ}}}$、分散は $V(X)=\dfrac{\boxed{\text{ク}}}{\boxed{\text{ケ}}}$ である。
+
+  ただし、分数は既約分数で答えよ。
+blanks:
+  - { label: ア, answer: "1" }
+  - { label: イ, answer: "2" }
+  - { label: ウ, answer: "3" }
+  - { label: エ, answer: "4" }
+  - { label: オ, answer: "0" }
+  - { label: カ, answer: "4" }
+  - { label: キ, answer: "3" }
+  - { label: ク, answer: "2" }
+  - { label: ケ, answer: "9" }
+solution: |
+  (1) 全確率は $1$ なので $\displaystyle\int_0^2 ax\,dx=a\left[\frac{x^2}{2}\right]_0^2=2a=1$ より $a=\dfrac{1}{2}$。
+
+  (2) $P(1\leqq X\leqq 2)=\displaystyle\int_1^2\frac{x}{2}\,dx=\left[\frac{x^2}{4}\right]_1^2=1-\frac{1}{4}=\frac{3}{4}$。
+
+  連続型確率変数では、1点の確率は幅 $0$ の区間の面積なので $P(X=1)=0$（$f(1)=\dfrac{1}{2}$ ではない）。
+
+  (3) $E(X)=\displaystyle\int_0^2 x\cdot\frac{x}{2}\,dx=\left[\frac{x^3}{6}\right]_0^2=\frac{4}{3}$
+
+  $E(X^2)=\displaystyle\int_0^2 x^2\cdot\frac{x}{2}\,dx=\left[\frac{x^4}{8}\right]_0^2=2$ より $V(X)=2-\left(\dfrac{4}{3}\right)^2=\dfrac{2}{9}$。
+concepts: [st-continuous, st-random-variable]
+misconceptions: [mc-st-density-point]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.68, discrimination: 1.0 }
+author:
+  intent: |
+    確率密度関数の条件（全面積が $1$）、確率を積分（面積）で求めること、期待値・分散の積分による計算を一通り確認する。オで $P(X=1)$ を問い、離散型の感覚で $f(1)=\dfrac{1}{2}$ と答える誤りを識別する。$f(x)$ を1次関数にして、(2) は三角形・台形の面積でも検算できるようにした。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: ["数学B (2) ア(ウ) 連続型確率変数と確率密度関数"]
+  variations:
+    - '$P(X\leqq c)=\frac{1}{2}$ となる $c$（中央値 $\sqrt{2}$）を求めさせ、期待値 $\frac{4}{3}$ との違いを考えさせる。'
+    - '$f(x)=a(2-x)$ に変えて同じ量を求めさせ、期待値が $\frac{2}{3}$ になることと対称性を確認させる。'

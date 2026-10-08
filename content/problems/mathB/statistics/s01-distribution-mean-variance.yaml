@@ -1,0 +1,53 @@
+id: mb-st-s01
+level: school
+format: mark
+title: 確率分布と期待値・分散・標準偏差
+stem: |
+  赤玉 $3$ 個と白玉 $2$ 個が入った袋から、同時に $2$ 個の玉を取り出す。取り出した赤玉の個数を $X$ とする。
+
+  (1) $X=1$ となる確率は $\dfrac{\boxed{\text{ア}}}{\boxed{\text{イ}}}$ である。
+
+  (2) $X$ の期待値は $E(X)=\dfrac{\boxed{\text{ウ}}}{\boxed{\text{エ}}}$、分散は $V(X)=\dfrac{\boxed{\text{オ}}}{\boxed{\text{カキ}}}$、標準偏差は $\sigma(X)=\dfrac{\boxed{\text{ク}}}{\boxed{\text{ケ}}}$ である。
+
+  (3) 取り出した赤玉1個につき $5$ 点、さらに参加賞として一律 $2$ 点がもらえるとき、得点 $Y=5X+2$ の期待値は $E(Y)=\boxed{\text{コ}}$、標準偏差は $\sigma(Y)=\boxed{\text{サ}}$ である。
+
+  ただし、分数は既約分数で答えよ。
+blanks:
+  - { label: ア, answer: "3" }
+  - { label: イ, answer: "5" }
+  - { label: ウ, answer: "6" }
+  - { label: エ, answer: "5" }
+  - { label: オ, answer: "9" }
+  - { label: カキ, answer: "25" }
+  - { label: ク, answer: "3" }
+  - { label: ケ, answer: "5" }
+  - { label: コ, answer: "8" }
+  - { label: サ, answer: "3" }
+solution: |
+  玉の取り出し方は ${}_5\mathrm{C}_2=10$ 通りで同様に確からしい。
+
+  | $X$ | $0$ | $1$ | $2$ | 計 |
+  | --- | --- | --- | --- | --- |
+  | $P$ | $\dfrac{1}{10}$ | $\dfrac{6}{10}$ | $\dfrac{3}{10}$ | $1$ |
+
+  （$X=0$：${}_2\mathrm{C}_2=1$ 通り、$X=1$：$3\times 2=6$ 通り、$X=2$：${}_3\mathrm{C}_2=3$ 通り）
+
+  (1) $P(X=1)=\dfrac{6}{10}=\dfrac{3}{5}$
+
+  (2) $E(X)=0\cdot\dfrac{1}{10}+1\cdot\dfrac{6}{10}+2\cdot\dfrac{3}{10}=\dfrac{12}{10}=\dfrac{6}{5}$
+
+  $E(X^2)=1\cdot\dfrac{6}{10}+4\cdot\dfrac{3}{10}=\dfrac{18}{10}=\dfrac{9}{5}$ より $V(X)=\dfrac{9}{5}-\left(\dfrac{6}{5}\right)^2=\dfrac{45-36}{25}=\dfrac{9}{25}$、$\sigma(X)=\dfrac{3}{5}$。
+
+  (3) $E(Y)=5E(X)+2=6+2=8$、$\sigma(Y)=|5|\,\sigma(X)=5\cdot\dfrac{3}{5}=3$。定数 $2$ は散らばりに影響しない。
+concepts: [st-random-variable, st-linear-sum]
+misconceptions: [mc-st-linear-variance, mc-pr-expectation-incomplete]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.72, discrimination: 1.0 }
+author:
+  intent: |
+    確率分布の表を作り、$V(X)=E(X^2)-\{E(X)\}^2$ で分散を求め、$aX+b$ の公式に進む基本の流れを確認する。$E(X^2)=\dfrac{9}{5}$ をそのまま分散と答える誤り（オ〜キが合わない）、$\sigma(Y)$ を $5\cdot\dfrac{3}{5}+2=5$ や $5V(X)=\dfrac{9}{5}$ からとする誤り（サが合わない）を識別できる。分散が $\dfrac{9}{25}$ と平方数どうしの比になるよう個数を選び、標準偏差まで有理数で答えられるようにした。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: ["数学B (2) ア(イ) 確率変数と確率分布", "数学B (2) ア(イ) 確率変数の期待値と分散、aX+b の期待値と分散"]
+  variations:
+    - 非復元ではなく1個ずつ戻しながら2回取り出す（$B\left(2,\ \frac{3}{5}\right)$ になる）場合と比較させ、分散 $\frac{12}{25}$ との違いを考えさせる。
+    - $Y=-5X+12$ のように係数が負の場合の標準偏差を問う。

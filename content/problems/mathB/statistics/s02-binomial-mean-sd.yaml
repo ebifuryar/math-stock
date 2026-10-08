@@ -1,0 +1,43 @@
+id: mb-st-s02
+level: school
+format: choice
+title: 二項分布の期待値と標準偏差
+stem: |
+  $1$ 個のさいころを $180$ 回投げるとき、$1$ の目が出る回数を $X$ とする。
+
+  $X$ の期待値 $E(X)$ と標準偏差 $\sigma(X)$ の組として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $E(X)=30,\quad \sigma(X)=\sqrt{30}$
+    misconception: mc-st-binomial-variance
+    rationale: |
+      分散を $np=30$ として $1-p=\dfrac{5}{6}$ を掛け忘れている。二項分布の分散は $np(1-p)$。
+  - id: "2"
+    text: $E(X)=30,\quad \sigma(X)=5$
+    rationale: |
+      正解。$X$ は $B\left(180,\ \dfrac{1}{6}\right)$ に従うので $E(X)=180\cdot\dfrac{1}{6}=30$、$V(X)=180\cdot\dfrac{1}{6}\cdot\dfrac{5}{6}=25$、$\sigma(X)=5$。
+  - id: "3"
+    text: $E(X)=30,\quad \sigma(X)=25$
+    rationale: |
+      分散 $V(X)=25$ を求めたところで止め、標準偏差（その正の平方根）と取り違えている。
+  - id: "4"
+    text: $E(X)=30,\quad \sigma(X)=\sqrt{5}$
+    rationale: |
+      分散を $np^2=180\cdot\dfrac{1}{36}=5$ としている。$\{E(X)\}^2$ の形との混同で、$p$ を2乗してしまう誤り。1回の試行の分散は $p-p^2=p(1-p)$ である。
+answer: "2"
+solution: |
+  1回ごとに $1$ の目が出る確率は $\dfrac{1}{6}$ で、$180$ 回の試行は独立なので、$X$ は二項分布 $B\left(180,\ \dfrac{1}{6}\right)$ に従う。
+
+  $$E(X)=np=180\cdot\frac{1}{6}=30,\qquad V(X)=np(1-p)=180\cdot\frac{1}{6}\cdot\frac{5}{6}=25,\qquad \sigma(X)=\sqrt{25}=5$$
+concepts: [st-binomial]
+misconceptions: [mc-st-binomial-variance]
+targetSeconds: 90
+irt: { expectedCorrectRate: 0.75, discrimination: 0.9 }
+author:
+  intent: |
+    二項分布の平均・分散の公式を正しく使えるかを確認する基本問題。期待値はすべての選択肢で共通にして、分散・標準偏差の段階の誤りだけを切り分ける。①は $np$、③は分散と標準偏差の混同、④は $np^2$ を体現する。$n=180$、$p=\dfrac{1}{6}$ は $np(1-p)=25$ が平方数になるように選んだ。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: ["数学B (2) ア(ウ) 二項分布"]
+  variations:
+    - '$1$ の目が出る相対度数 $\frac{X}{180}$ の期待値と標準偏差（$\frac{1}{6}$ と $\frac{1}{36}$）を問う。'
+    - 正規近似を用いて $P(X\geqq 40)$ を求めさせる（$z=2$）。

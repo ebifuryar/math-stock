@@ -1,0 +1,14 @@
+id: sq-recurrence-advanced
+kind: method
+title: いろいろな漸化式
+body: |
+  **$a_{n+1}=pa_n+(n\text{ の1次式})$ 型**: $b_n=a_n-(\alpha n+\beta)$ が $b_{n+1}=pb_n$ を満たすように $\alpha,\ \beta$ を **恒等式として** 定める。あるいは $n$ を $n+1$ にした式との差をとり、階差数列 $c_n=a_{n+1}-a_n$ についての $c_{n+1}=pc_n$ に帰着させる。
+
+  **$a_{n+1}=pa_n+q^n$ 型**: 両辺を $q^{n+1}$ で割ると、$\dfrac{a_n}{q^n}$ についての $a_{n+1}=Pa_n+Q$ 型（$p=q$ なら等差型）になる。
+
+  **分数型**: $a_{n+1}=\dfrac{a_n}{ra_n+s}$ は、すべての $n$ で $a_n\neq 0$ であることを確かめてから逆数をとり、$\dfrac{1}{a_{n+1}}=s\cdot\dfrac{1}{a_n}+r$ とする。$a_{n+1}=\dfrac{pa_n+q}{ra_n+s}$ は $x=\dfrac{px+q}{rx+s}$ の解 $\alpha$ を用いて $a_n-\alpha$ を考える。解が1つ（重解）のときは $\dfrac{1}{a_n-\alpha}$ が等差数列になる。
+
+  **隣接3項間** $a_{n+2}+pa_{n+1}+qa_n=0$: $x^2+px+q=0$ の解を $\alpha,\ \beta$ とすると
+  $$a_{n+2}-\alpha a_{n+1}=\beta(a_{n+1}-\alpha a_n)$$
+  $\alpha\neq\beta$ なら $\alpha,\ \beta$ を入れ替えた式も作って $a_{n+1}$ を消去する。$\alpha=\beta$ なら $a_{n+1}-\alpha a_n=(a_2-\alpha a_1)\alpha^{n-1}$ の両辺を $\alpha^{n+1}$ で割って等差型にする。
+prerequisites: [sq-recurrence-basic]

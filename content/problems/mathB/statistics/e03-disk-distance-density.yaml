@@ -1,0 +1,51 @@
+id: mb-st-e03
+level: exam
+format: mark
+title: 円板内の点の中心からの距離の分布
+stem: |
+  半径 $1$ の円板の内部（周を含む）から、1点 $P$ を無作為に選ぶ。ただし、円板内の領域 $D$ に $P$ が入る確率は、$D$ の面積に比例するものとする。円板の中心 $O$ と $P$ の距離を $R$ とする。
+
+  (1) $0\leqq r\leqq 1$ のとき $P(R\leqq r)=r^{\boxed{\text{ア}}}$ であるから、$R$ の確率密度関数は $f(r)=\boxed{\text{イ}}\,r\ (0\leqq r\leqq 1)$ である。
+
+  (2) $E(R)=\dfrac{\boxed{\text{ウ}}}{\boxed{\text{エ}}}$、$V(R)=\dfrac{1}{\boxed{\text{オカ}}}$ である。
+
+  (3) $P(R\leqq E(R))=\dfrac{\boxed{\text{キ}}}{\boxed{\text{ク}}}$ である。また、$P(R\leqq c)=\dfrac{1}{2}$ を満たす $c$ の値は $c=\dfrac{\sqrt{\boxed{\text{ケ}}}}{\boxed{\text{コ}}}$ である。
+
+  (4) $O$ を中心とし $P$ を通る円の面積を $S$ とすると、$E(S)=\dfrac{\pi}{\boxed{\text{サ}}}$ である。
+
+  ただし、分数は既約分数で、根号の中の数はできるだけ小さい自然数で答えよ。
+blanks:
+  - { label: ア, answer: "2" }
+  - { label: イ, answer: "2" }
+  - { label: ウ, answer: "2" }
+  - { label: エ, answer: "3" }
+  - { label: オカ, answer: "18" }
+  - { label: キ, answer: "4" }
+  - { label: ク, answer: "9" }
+  - { label: ケ, answer: "2" }
+  - { label: コ, answer: "2" }
+  - { label: サ, answer: "2" }
+solution: |
+  (1) $R\leqq r$ となるのは $P$ が半径 $r$ の円板に入るときで、確率は面積比 $\dfrac{\pi r^2}{\pi\cdot 1^2}=r^2$。確率密度関数は、これを $r$ で微分して $f(r)=2r$（実際、$\displaystyle\int_0^r 2t\,dt=r^2$）。
+
+  (2) $E(R)=\displaystyle\int_0^1 r\cdot 2r\,dr=\frac{2}{3}$、$E(R^2)=\displaystyle\int_0^1 r^2\cdot 2r\,dr=\frac{1}{2}$ より
+  $$V(R)=\frac{1}{2}-\left(\frac{2}{3}\right)^2=\frac{9-8}{18}=\frac{1}{18}$$
+
+  (3) $P\left(R\leqq\dfrac{2}{3}\right)=\left(\dfrac{2}{3}\right)^2=\dfrac{4}{9}$。$c^2=\dfrac{1}{2}$ より $c=\dfrac{\sqrt{2}}{2}$。
+
+  分布が $r$ の大きい側に偏っている（外側ほど面積が大きい）ため、期待値 $\dfrac{2}{3}$ 以下となる確率は $\dfrac{1}{2}$ より小さく、中央値 $\dfrac{\sqrt{2}}{2}\fallingdotseq 0.707$ は期待値より大きい。
+
+  (4) $S=\pi R^2$ より $E(S)=\pi E(R^2)=\dfrac{\pi}{2}$。$\pi\{E(R)\}^2=\dfrac{4\pi}{9}$ ではない。
+concepts: [st-continuous, st-random-variable]
+misconceptions: [mc-st-density-point]
+targetSeconds: 720
+irt: { expectedCorrectRate: 0.3, discrimination: 1.3 }
+author:
+  intent: |
+    確率密度関数が与えられていない状況で、累積分布 $P(R\leqq r)$ を図形の面積から求め、それを微分して密度を作れるかをみる。「点を一様に選ぶ」から $R$ も $[0,\ 1]$ で一様と考えると $f(r)=1$、$E(R)=\dfrac{1}{2}$ となり、イ以降がすべて崩れる。(3) では期待値と中央値が一致しないことを、(4) では $E(R^2)\neq\{E(R)\}^2$（$E(\pi R^2)$ を $\pi\{E(R)\}^2=\frac{4\pi}{9}$ とする誤り）を確認させる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学B (2) ア(ウ) 連続型確率変数と確率密度関数", "数学II (5) 積分の考え（定積分）"]
+  variations:
+    - 半径 $1$ の球の内部から点を選ぶ場合に一般化させる（$f(r)=3r^2$、$E(R)=\frac{3}{4}$）。
+    - 正方形 $0\leqq x\leqq 1,\ 0\leqq y\leqq 1$ から点を選び、$X=\max(x,\ y)$ の分布を求めさせる。
+  notes: sympy の積分と、円板内一様点 30 万個のモンテカルロ（E≈0.6667、V≈0.0557、P(R≤2/3)≈0.4436、中央値≈0.708）で確認済み。

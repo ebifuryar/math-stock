@@ -1,0 +1,16 @@
+id: sq-recurrence-basic
+kind: method
+title: 漸化式の基本形と特性方程式
+body: |
+  | 漸化式 | 数列の種類 | 一般項 |
+  | --- | --- | --- |
+  | $a_{n+1}=a_n+d$ | 等差数列 | $a_n=a_1+(n-1)d$ |
+  | $a_{n+1}=ra_n$ | 等比数列 | $a_n=a_1r^{n-1}$ |
+  | $a_{n+1}=a_n+f(n)$ | 階差数列が $f(n)$ | $a_n=a_1+\displaystyle\sum_{k=1}^{n-1}f(k)\ (n\geqq 2)$ |
+
+  **$a_{n+1}=pa_n+q$ 型**（$p\neq 1$）: $\alpha=p\alpha+q$ を満たす $\alpha$ をとると、辺々引いて
+  $$a_{n+1}-\alpha=p(a_n-\alpha)$$
+  $b_n=a_n-\alpha$ とおくと $\{b_n\}$ は公比 $p$ の等比数列で、初項は $b_1=a_1-\alpha$（$a_1$ ではない）。よって $a_n=\alpha+(a_1-\alpha)p^{n-1}$。
+
+  $\alpha=p\alpha+q$（特性方程式）は、変形の形を見つけるための **計算用の式** であって、$\alpha$ そのものは数列の項ではない。
+prerequisites: [sq-arithmetic, sq-geometric, sq-difference-sum]

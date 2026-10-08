@@ -1,0 +1,49 @@
+id: mb-sq-e03
+level: exam
+format: mark
+title: 和と一般項の関係から作る漸化式と分数の和
+stem: |
+  数列 $\{a_n\}$ の初項から第 $n$ 項までの和を $S_n$ とする。すべての自然数 $n$ について
+  $$S_n=2a_n+n$$
+  が成り立っている。
+
+  (1) $a_1=\boxed{\text{アイ}}$ である。
+
+  (2) $a_{n+1}$ を $a_n$ で表すと $a_{n+1}=\boxed{\text{ウ}}\,a_n-\boxed{\text{エ}}$ であり、一般項は
+  $$a_n=\boxed{\text{オ}}-\boxed{\text{カ}}^{\,n}$$
+  である。
+
+  (3) 
+  $$\sum_{k=1}^{n}\frac{2^k}{a_ka_{k+1}}=1-\frac{1}{\boxed{\text{キ}}^{\,n+1}-\boxed{\text{ク}}}$$
+blanks:
+  - { label: アイ, answer: "-1" }
+  - { label: ウ, answer: "2" }
+  - { label: エ, answer: "1" }
+  - { label: オ, answer: "1" }
+  - { label: カ, answer: "2" }
+  - { label: キ, answer: "2" }
+  - { label: ク, answer: "1" }
+solution: |
+  (1) $n=1$ とすると $S_1=a_1$ より $a_1=2a_1+1$、よって $a_1=-1$。
+
+  (2) $S_{n+1}=2a_{n+1}+(n+1)$ と $S_n=2a_n+n$ の差をとると、$S_{n+1}-S_n=a_{n+1}$ より
+  $$a_{n+1}=2a_{n+1}-2a_n+1\iff a_{n+1}=2a_n-1$$
+  $\alpha=2\alpha-1$ より $\alpha=1$ で、$a_{n+1}-1=2(a_n-1)$。$a_1-1=-2$ なので $a_n-1=-2\cdot 2^{n-1}=-2^n$、よって $a_n=1-2^n$。
+  （検算: $S_2=a_1+a_2=-1-3=-4=2\cdot(-3)+2$。）
+
+  (3) $a_ka_{k+1}=(1-2^k)(1-2^{k+1})=(2^k-1)(2^{k+1}-1)$ であり、$(2^{k+1}-1)-(2^k-1)=2^k$ なので
+  $$\frac{2^k}{(2^k-1)(2^{k+1}-1)}=\frac{1}{2^k-1}-\frac{1}{2^{k+1}-1}$$
+  よって
+  $$\sum_{k=1}^{n}\frac{2^k}{a_ka_{k+1}}=\frac{1}{2^1-1}-\frac{1}{2^{n+1}-1}=1-\frac{1}{2^{n+1}-1}$$
+concepts: [sq-difference-sum, sq-recurrence-basic, sq-sum-techniques]
+misconceptions: [mc-sq-sum-to-term-n1, mc-sq-characteristic-misuse, mc-sq-partial-fraction]
+targetSeconds: 600
+irt: { expectedCorrectRate: 0.35, discrimination: 1.3 }
+author:
+  intent: |
+    $S_n$ と $a_n$ の関係式から漸化式を作り、$a_{n+1}=pa_n+q$ 型を解き、さらに得た一般項で部分分数分解の和を計算するという、数列の主要な技能を一続きに要求する。(1) で $n=1$ を代入して $a_1$ を独立に求めることが、(2) の初項として不可欠になるよう設計した（$a_1$ を求めずに進むと一般項が決まらない）。(3) は分母が等比数列由来の差の形になる部分分数分解で、分子 $2^k$ が「2因数の差」であることに気づけるかで上位層を識別する。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学B (1) ア(イ) いろいろな数列（和と一般項の関係）", "数学B (1) ア(ウ) 漸化式と数学的帰納法（漸化式）"]
+  variations:
+    - $S_n=2a_n+n^2$ とし、$a_{n+1}=2a_n-(2n+1)$ という $n$ の式を含む型に帰着させる。
+    - (3) を $\displaystyle\sum_{k=1}^{n}\frac{2^k}{(2^k+1)(2^{k+1}+1)}$ に変えて、符号の扱いを確かめさせる。

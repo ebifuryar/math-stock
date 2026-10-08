@@ -1,0 +1,50 @@
+id: mb-st-a02
+level: applied
+format: choice
+title: 二項分布の正規近似（発芽数）
+stem: |
+  ある植物の種子は、1粒あたり $\dfrac{3}{4}$ の確率で発芽し、各種子が発芽するかどうかは互いに独立であるとする。この種子を $192$ 粒まいたとき、発芽する種子の個数を $X$ とする。
+
+  $X$ が $153$ 以上となる確率を正規分布で近似して求めた値として最も適当なものを、次の①〜④のうちから一つ選べ。ただし、$Z$ を標準正規分布に従う確率変数として、$p(z_0)=P(0\leqq Z\leqq z_0)$ の値は次の表のとおりである。
+
+  | $z_0$ | $0.25$ | $0.50$ | $0.75$ | $1.00$ | $1.50$ | $2.00$ |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | $p(z_0)$ | $0.0987$ | $0.1915$ | $0.2734$ | $0.3413$ | $0.4332$ | $0.4772$ |
+choices:
+  - id: "1"
+    text: $0.0668$
+    rationale: |
+      正解。$X$ は $B\left(192,\ \dfrac{3}{4}\right)$ に従い、$E(X)=144$、$V(X)=192\cdot\dfrac{3}{4}\cdot\dfrac{1}{4}=36$、$\sigma(X)=6$。$P(X\geqq 153)\fallingdotseq P\left(Z\geqq\dfrac{153-144}{6}\right)=P(Z\geqq 1.5)=0.5-0.4332=0.0668$。
+  - id: "2"
+    text: $0.2266$
+    misconception: mc-st-binomial-variance
+    rationale: |
+      分散を $np=144$ とし、標準偏差を $12$ として $z=\dfrac{9}{12}=0.75$、$0.5-0.2734$ を答えている。$1-p=\dfrac{1}{4}$ を掛け忘れている。
+  - id: "3"
+    text: $0.4013$
+    misconception: mc-st-standardize
+    rationale: |
+      分散 $36$ で割って $z=\dfrac{9}{36}=0.25$ とし、$0.5-0.0987$ を答えている。標準化では標準偏差 $\sqrt{36}=6$ で割る。
+  - id: "4"
+    text: $0.4332$
+    rationale: |
+      $z=1.5$ までは正しいが、表の値 $p(1.5)=P(0\leqq Z\leqq 1.5)$ をそのまま答えている。求めるのは $Z\geqq 1.5$ の部分で、$0.5-p(1.5)$。
+answer: "1"
+solution: |
+  $X$ は二項分布 $B\left(192,\ \dfrac{3}{4}\right)$ に従うので
+  $$E(X)=192\cdot\frac{3}{4}=144,\qquad V(X)=192\cdot\frac{3}{4}\cdot\frac{1}{4}=36,\qquad\sigma(X)=6$$
+  $n=192$ は十分大きいので、$X$ は近似的に $N(144,\ 6^2)$ に従い、$Z=\dfrac{X-144}{6}$ は近似的に $N(0,\ 1)$ に従う。
+  $$P(X\geqq 153)\fallingdotseq P\left(Z\geqq\frac{153-144}{6}\right)=P(Z\geqq 1.5)=0.5-0.4332=0.0668$$
+concepts: [st-normal, st-binomial]
+misconceptions: [mc-st-binomial-variance, mc-st-standardize]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.55, discrimination: 1.2 }
+author:
+  intent: |
+    二項分布の正規近似の手順（平均・標準偏差 → 標準化 → 表）を通して実行できるかをみる。$p=\dfrac{3}{4}$ にしたのは、$np=144$ と $np(1-p)=36$ がともに平方数になり、分散を $np$ とする誤り（②）でも、分散で割る誤り（③）でも表の値で計算が完結して、もっともらしい数値の誤答になるようにするため。④は表の値の読み違い。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: ["数学B (2) ア(ウ) 二項分布と正規分布（二項分布の正規近似）"]
+  variations:
+    - $P(138\leqq X\leqq 153)$（$z=-1$ から $1.5$、$0.7745$）を問う。
+    - 発芽数が $153$ 以上だったとき、「発芽率は $\frac{3}{4}$ より高い」といえるかを片側検定で判断させる。
+  notes: 二項分布による正確な値は P(X≥153)=0.0760。高校範囲では半整数補正を行わないため、近似値 0.0668 を正解とする（選択肢の中で最も近い）。

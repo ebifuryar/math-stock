@@ -1,0 +1,17 @@
+id: st-sample-mean
+kind: theorem
+title: 母集団と標本・標本平均の分布
+body: |
+  調査の対象全体を **母集団**、そこから取り出した一部を **標本**、取り出す個数 $n$ を **標本の大きさ** という。母集団の変量の平均・標準偏差を **母平均** $m$・**母標準偏差** $\sigma$ という。1個取り出すごとに戻す **復元抽出**（または母集団が十分大きい場合）では、取り出した値 $X_1,\ X_2,\ \cdots,\ X_n$ は互いに独立で、どれも母集団と同じ分布に従う。
+
+  **標本平均** $\overline{X}=\dfrac{X_1+X_2+\cdots+X_n}{n}$ について
+
+  $$E(\overline{X})=m,\qquad V(\overline{X})=\frac{\sigma^2}{n},\qquad \sigma(\overline{X})=\frac{\sigma}{\sqrt{n}}$$
+
+  （和の期待値は $nm$、独立なので和の分散は $n\sigma^2$、それを $\dfrac{1}{n}$ 倍すると分散は $\dfrac{1}{n^2}$ 倍。）
+
+  さらに $n$ が大きいとき、$\overline{X}$ は母集団の分布によらず近似的に正規分布 $N\!\left(m,\ \dfrac{\sigma^2}{n}\right)$ に従う。
+
+  - 標本平均の散らばりは個々のデータの散らばり $\sigma$ の $\dfrac{1}{\sqrt{n}}$ 倍。標本を $4$ 倍にしても標準偏差は $\dfrac{1}{2}$ 倍にしかならない。
+  - **標本比率** $R$（特性をもつものの割合、母比率 $p$）は $E(R)=p$、$\sigma(R)=\sqrt{\dfrac{p(1-p)}{n}}$ で、$n$ が大きいとき近似的に $N\!\left(p,\ \dfrac{p(1-p)}{n}\right)$ に従う。
+prerequisites: [st-linear-sum, st-normal]

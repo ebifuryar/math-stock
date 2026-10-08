@@ -1,0 +1,42 @@
+id: m1-qf-s02
+level: school
+format: choice
+title: 放物線の平行移動
+stem: |
+  放物線 $y=x^2$ を $x$ 軸方向に $3$、$y$ 軸方向に $-2$ だけ平行移動した放物線の方程式として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $y=(x+3)^2-2$
+    misconception: mc-translation-direction
+    rationale: |
+      $x$ を $x+3$ に置き換えている。$x$ 軸方向に $3$ 移動するときは $x$ を $x-3$ に置き換える。
+  - id: "2"
+    text: $y=(x-3)^2-2$
+    rationale: |
+      正解。頂点 $(0,0)$ が $(3,-2)$ に移る。
+  - id: "3"
+    text: $y=(x-3)^2+2$
+    misconception: mc-translation-direction
+    rationale: |
+      $y$ 軸方向の符号を逆にしている。$y$ を $y+2$ に置き換えると $y+2=(x-3)^2$、すなわち $y=(x-3)^2-2$。
+  - id: "4"
+    text: $y=(x+3)^2+2$
+    misconception: mc-translation-direction
+    rationale: |
+      $x$ 方向・$y$ 方向とも符号が逆。
+answer: "2"
+solution: |
+  頂点の移動で考えると簡単。$y=x^2$ の頂点 $(0,0)$ は $(3,-2)$ に移るので
+  $$y=(x-3)^2-2$$
+concepts: [qf-graph-translation]
+misconceptions: [mc-translation-direction]
+targetSeconds: 60
+irt: { expectedCorrectRate: 0.8, discrimination: 1.0 }
+author:
+  intent: |
+    平行移動の公式の符号を、頂点の移動と結びつけて理解しているかをみる。$x$ 方向・$y$ 方向それぞれの符号ミスを独立に検出できるよう、誤答を3つ用意した。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学I (3) ア(ア) 2次関数のグラフの平行移動]
+  variations:
+    - 平行移動後の式から移動量を答えさせる（逆向きの問い）。
+    - 対称移動（$x$ 軸・$y$ 軸・原点）と組み合わせる。

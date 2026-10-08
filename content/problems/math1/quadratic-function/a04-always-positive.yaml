@@ -1,0 +1,48 @@
+id: m1-qf-a04
+level: applied
+format: written
+title: 区間で常に正となる条件
+stem: |
+  $a$ を定数とする。$0\leqq x\leqq 2$ を満たすすべての $x$ に対して $x^2-2ax+a+2>0$ が成り立つような $a$ の値の範囲を求めよ。
+modelAnswer: |
+  $f(x)=x^2-2ax+a+2=(x-a)^2-a^2+a+2$ とおく。軸は $x=a$。
+
+  求める条件は「$0\leqq x\leqq 2$ における $f(x)$ の最小値が正」である。
+
+  (i) $a<0$ のとき、最小値は $f(0)=a+2$。$a+2>0$ より $a>-2$。$a<0$ と合わせて $-2<a<0$。
+
+  (ii) $0\leqq a\leqq 2$ のとき、最小値は $f(a)=-a^2+a+2$。$-a^2+a+2>0$ より $(a+1)(a-2)<0$、$-1<a<2$。$0\leqq a\leqq 2$ と合わせて $0\leqq a<2$。
+
+  (iii) $2<a$ のとき、最小値は $f(2)=6-3a$。$6-3a>0$ より $a<2$。これは $2<a$ を満たさないので不適。
+
+  (i)〜(iii) より **$-2<a<2$**。
+rubric:
+  - id: r1
+    criterion: 「区間での最小値が正」と条件を言い換え、平方完成して軸 $x=a$ を求めている
+    points: 2
+    keywords: ["最小値", "x=a"]
+  - id: r2
+    criterion: 軸の位置で $a<0,\ 0\leqq a\leqq 2,\ 2<a$ の3通り（境界を漏れなく）に場合分けしている
+    points: 3
+    keywords: ["a<0", "2<a"]
+  - id: r3
+    criterion: 各場合の最小値（$a+2,\ -a^2+a+2,\ 6-3a$）と、場合の範囲との共通部分を正しく求めている
+    points: 3
+    keywords: ["a+2", "6-3a"]
+  - id: r4
+    criterion: 結果を合わせて $-2<a<2$ と結論している
+    points: 2
+    keywords: ["-2<a<2"]
+solution: |
+  「すべての $x$ で $f(x)>0$」は「最小値 $>0$」に言い換える。最小値は軸の位置で3通りに分かれる。各場合で得た $a$ の範囲は、その場合の前提と共通部分をとることを忘れない。
+concepts: [qf-max-min, qf-inequality]
+misconceptions: [mc-case-split-missing]
+targetSeconds: 420
+irt: { expectedCorrectRate: 0.4, discrimination: 1.3 }
+author:
+  intent: |
+    「常に成り立つ」条件を最小値の問題に帰着できるか、そして場合分けの各段階で「前提との共通部分」をとれるかをみる。(iii) が不適になる処理は、答えだけ合っている受験者と論理まで正しい受験者を区別するポイント。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学I (3) ア(ア) 2次関数の最大・最小, 数学I (3) ア(イ) 2次不等式]
+  variations:
+    - 「ある $x$ に対して成り立つ」（存在条件）に変え、最大値の問題に帰着させる。

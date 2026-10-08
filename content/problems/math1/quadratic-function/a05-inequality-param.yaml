@@ -1,0 +1,44 @@
+id: m1-qf-a05
+level: applied
+format: written
+title: 文字を含む2次不等式
+stem: |
+  $a$ を定数とする。$x$ についての不等式 $x^2-(a+1)x+a<0$ を解け。
+modelAnswer: |
+  $x^2-(a+1)x+a=(x-1)(x-a)<0$
+
+  $1$ と $a$ の大小で場合分けする。
+
+  - $a<1$ のとき $a<x<1$
+  - $a=1$ のとき $(x-1)^2<0$ となり、**解なし**
+  - $a>1$ のとき $1<x<a$
+rubric:
+  - id: r1
+    criterion: 左辺を $(x-1)(x-a)$ と因数分解している
+    points: 2
+    keywords: ["(x-1)(x-a)"]
+  - id: r2
+    criterion: $a<1$ のとき $a<x<1$
+    points: 2
+    keywords: ["a<x<1"]
+  - id: r3
+    criterion: $a=1$ のとき解なしと正しく判断している
+    points: 2
+    keywords: ["a=1", "解なし"]
+  - id: r4
+    criterion: $a>1$ のとき $1<x<a$
+    points: 2
+    keywords: ["1<x<a"]
+solution: |
+  因数分解すると2解が $1$ と $a$。どちらが大きいかで「間」の書き方が変わるので場合分けする。$a=1$ では $(x-1)^2<0$ を満たす実数はない。
+concepts: [qf-inequality]
+misconceptions: [mc-case-split-missing, mc-inequality-direction]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.5, discrimination: 1.2 }
+author:
+  intent: |
+    2解の大小が文字で変わるときに場合分けが必要だと気づけるか、特に $a=1$ の「解なし」を落とさないかをみる。採点基準を場合ごとに独立させ、境界の扱いだけが抜けた答案にも部分点を与えられるようにしている。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学I (3) ア(イ) 2次不等式]
+  variations:
+    - 不等号を $\leqq$ にして、$a=1$ で解が $x=1$ になることを問う。

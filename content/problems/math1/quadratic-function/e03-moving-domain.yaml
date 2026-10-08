@@ -1,0 +1,33 @@
+id: m1-qf-e03
+level: exam
+format: mark
+title: 右端が動く定義域での最大・最小
+stem: |
+  $a$ を正の定数とし、$f(x)=x^2-4x+5$ の $0\leqq x\leqq a$ における最大値を $M$、最小値を $m$ とする。
+
+  (1) $M=5$ となるのは $0<a\leqq\boxed{\text{ア}}$ のときであり、$a>\boxed{\text{ア}}$ のとき $M=a^2-\boxed{\text{イ}}a+\boxed{\text{ウ}}$ である。
+
+  (2) $a\geqq\boxed{\text{エ}}$ のとき $m=\boxed{\text{オ}}$ である。
+blanks:
+  - { label: ア, answer: "4" }
+  - { label: イ, answer: "4" }
+  - { label: ウ, answer: "5" }
+  - { label: エ, answer: "2" }
+  - { label: オ, answer: "1" }
+solution: |
+  $f(x)=(x-2)^2+1$。軸は $x=2$、$f(0)=5$。
+
+  (1) $f(x)=5$ となるのは $x=0,\ 4$。右端 $a$ が $4$ 以下なら最大は $f(0)=5$、$a>4$ なら最大は $f(a)=a^2-4a+5$。
+
+  (2) $a\geqq 2$ なら頂点が定義域に含まれ、$m=f(2)=1$。
+concepts: [qf-max-min]
+misconceptions: [mc-max-min-swap, mc-case-split-missing]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.4, discrimination: 1.3 }
+author:
+  intent: |
+    定義域の右端が動くとき、最大値の切り替わりが「軸」ではなく「$f(x)=f(0)$ となる点」で起こることを理解しているかをみる。最大と最小で境界の値が異なる（$4$ と $2$）ことが識別のポイント。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学I (3) ア(ア) 2次関数の最大・最小]
+  variations:
+    - 定義域を $a\leqq x\leqq a+1$ にし、両端が同時に動く場合を問う。

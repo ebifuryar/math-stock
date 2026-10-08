@@ -1,0 +1,48 @@
+id: m1-qf-a01
+level: applied
+format: choice
+title: 文字定数を含む2次関数の最小値
+stem: |
+  $a$ を定数とする。2次関数 $f(x)=x^2-2ax+3\ (0\leqq x\leqq 2)$ の最小値を $m(a)$ とする。$m(a)$ として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: |
+      $m(a)=\begin{cases}3 & (a<0)\\ 3-a^2 & (0\leqq a\leqq 2)\\ 7-4a & (2<a)\end{cases}$
+    rationale: |
+      正解。軸 $x=a$ が定義域の左・内部・右のどこにあるかで場合分けする。
+  - id: "2"
+    text: |
+      $m(a)=\begin{cases}3-a^2 & (a\leqq 2)\\ 7-4a & (2<a)\end{cases}$
+    misconception: mc-case-split-missing
+    rationale: |
+      軸が定義域より左（$a<0$）の場合を考えていない。$a<0$ では左端 $x=0$ で最小となり $m(a)=3$。
+  - id: "3"
+    text: |
+      $m(a)=\begin{cases}7-4a & (a<0)\\ 3-a^2 & (0\leqq a\leqq 2)\\ 3 & (2<a)\end{cases}$
+    misconception: mc-case-split-missing
+    rationale: |
+      軸が左にあるときと右にあるときの端点を逆にしている。軸が左にあれば、軸に近い左端 $x=0$ で最小。
+  - id: "4"
+    text: |
+      $m(a)=\begin{cases}7-4a & (a<1)\\ 3 & (1\leqq a)\end{cases}$
+    misconception: mc-max-min-swap
+    rationale: |
+      これは最小値ではなく **最大値** $M(a)$ の式（軸と定義域の中央 $x=1$ の位置で場合分け）。
+answer: "1"
+solution: |
+  $f(x)=(x-a)^2+3-a^2$。軸は $x=a$。
+  - $a<0$ のとき: 定義域は軸の右側にあり $f$ は増加。$m(a)=f(0)=3$
+  - $0\leqq a\leqq 2$ のとき: 頂点で最小。$m(a)=f(a)=3-a^2$
+  - $2<a$ のとき: 定義域は軸の左側にあり $f$ は減少。$m(a)=f(2)=7-4a$
+concepts: [qf-max-min]
+misconceptions: [mc-case-split-missing, mc-max-min-swap]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.5, discrimination: 1.2 }
+author:
+  intent: |
+    軸が動く場合の最小値の場合分けを、3通りすべて正しく扱えるかをみる。誤答④は最大値の式で、「最小と最大で場合分けの基準が違う」ことを理解しているかを識別する。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学I (3) ア(ア) 2次関数の最大・最小]
+  variations:
+    - 軸を固定して定義域を $a\leqq x\leqq a+2$ と動かす（「軸が動く」と「定義域が動く」の対比）。
+    - $m(a)$ の最大値を求めさせ、関数の関数としての見方を問う。

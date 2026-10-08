@@ -1,0 +1,8 @@
+id: qf-graph-translation
+kind: property
+title: グラフの平行移動
+body: |
+  $y=f(x)$ のグラフを $x$ 軸方向に $p$、$y$ 軸方向に $q$ だけ平行移動したグラフの方程式は
+  $$y-q=f(x-p)$$
+  移動後の点 $(X,\ Y)$ に対して、移動前の点 $(X-p,\ Y-q)$ がもとのグラフ上にある、と考えると符号を間違えない。
+prerequisites: [qf-vertex-form]

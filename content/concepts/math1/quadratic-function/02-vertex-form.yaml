@@ -1,0 +1,10 @@
+id: qf-vertex-form
+kind: method
+title: 平方完成と頂点
+body: |
+  $ax^2+bx+c$ を $a(x-p)^2+q$ の形に変形することを **平方完成** という。
+
+  $$ax^2+bx+c=a\left(x+\frac{b}{2a}\right)^2-\frac{b^2-4ac}{4a}$$
+
+  グラフの頂点は $(p,\ q)$、軸は直線 $x=p$。頂点は「$(x-p)^2=0$ となる点」なので、$x$ 座標は $-\dfrac{b}{2a}$ になる。
+prerequisites: [qf-definition]

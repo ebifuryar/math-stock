@@ -1,0 +1,52 @@
+id: m1-qf-e04
+level: exam
+format: written
+title: 2解がともに1より大きい条件
+stem: |
+  $x$ の2次方程式 $x^2-2ax+2a+3=0$ が、$1$ より大きい異なる2つの実数解をもつような定数 $a$ の値の範囲を求めよ。
+modelAnswer: |
+  $f(x)=x^2-2ax+2a+3$ とおく。$y=f(x)$ のグラフは下に凸で、軸は $x=a$。
+
+  求める条件は、グラフが $x$ 軸の $x>1$ の部分と異なる2点で交わることであり、次の3つが同時に成り立つことである。
+
+  (i) 判別式 $\dfrac{D}{4}=a^2-(2a+3)=(a+1)(a-3)>0$ より $a<-1,\ 3<a$
+
+  (ii) 軸 $x=a$ について $a>1$
+
+  (iii) $f(1)=1-2a+2a+3=4>0$（常に成り立つ）
+
+  (i)〜(iii) の共通部分をとって **$a>3$**。
+rubric:
+  - id: r1
+    criterion: $y=f(x)$ のグラフと $x$ 軸の交点の位置として条件を捉えている
+    points: 2
+    keywords: ["グラフ", "軸"]
+  - id: r2
+    criterion: 判別式 $D>0$ から $a<-1,\ 3<a$ を得ている
+    points: 3
+    keywords: ["(a+1)(a-3)", "3<a"]
+  - id: r3
+    criterion: 軸の条件 $a>1$ を立てている
+    points: 2
+    keywords: ["a>1"]
+  - id: r4
+    criterion: $f(1)>0$ を確認し、常に成り立つ（$f(1)=4$）と判断している
+    points: 2
+    keywords: ["f(1)", "4"]
+  - id: r5
+    criterion: 共通部分として $a>3$ と結論している
+    points: 1
+    keywords: ["a>3"]
+solution: |
+  解の配置は「判別式・軸・端点」の3条件。今回は $f(1)=4$ が $a$ によらず正になるので、実質的に判別式と軸の条件で決まる。条件が自動的に満たされることも答案に明記すると減点されない。
+concepts: [qf-root-location, qf-discriminant]
+misconceptions: [mc-root-location-insufficient]
+targetSeconds: 480
+irt: { expectedCorrectRate: 0.35, discrimination: 1.4 }
+author:
+  intent: |
+    解の配置の3条件を答案として論理的に書けるかをみる。$f(1)$ が定数になるよう係数を設計し、「確認したが自動的に成り立つ」ことを書けるかで、条件を機械的に並べているだけの答案と区別する。
+  assessedAbilities: [思考力・判断力・表現力]
+  curriculumRefs: [数学I (3) ア(イ) 2次方程式の解とグラフ]
+  variations:
+    - 「少なくとも1つの解が1より大きい」に変え、補集合や場合分けの発想を問う。

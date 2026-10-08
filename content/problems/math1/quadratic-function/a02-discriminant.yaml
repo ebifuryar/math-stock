@@ -1,0 +1,41 @@
+id: m1-qf-a02
+level: applied
+format: choice
+title: グラフとx軸の共有点
+stem: |
+  2次関数 $y=x^2+2mx+m+2$ のグラフが $x$ 軸と共有点をもつような定数 $m$ の値の範囲として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $m<-1,\ 2<m$
+    misconception: mc-discriminant-equality
+    rationale: |
+      $D>0$ で考えている。「共有点をもつ」には接する場合（$D=0$）も含まれる。
+  - id: "2"
+    text: $-1\leqq m\leqq 2$
+    misconception: mc-inequality-direction
+    rationale: |
+      $(m+1)(m-2)\geqq 0$ の解を「間」にしている。
+  - id: "3"
+    text: $m\leqq -1,\ 2\leqq m$
+    rationale: |
+      正解。$\dfrac{D}{4}=m^2-m-2=(m+1)(m-2)\geqq 0$。
+  - id: "4"
+    text: $m\leqq -2,\ 1\leqq m$
+    rationale: |
+      $m^2-m-2$ を $(m+2)(m-1)$ と因数分解している。展開して確かめると $m^2+m-2$ になってしまう。
+answer: "3"
+solution: |
+  共有点をもつ $\iff D\geqq 0$。
+  $$\frac{D}{4}=m^2-(m+2)=m^2-m-2=(m+1)(m-2)\geqq 0$$
+  よって $m\leqq -1,\ 2\leqq m$。
+concepts: [qf-discriminant, qf-inequality]
+misconceptions: [mc-discriminant-equality, mc-inequality-direction]
+targetSeconds: 150
+irt: { expectedCorrectRate: 0.55, discrimination: 1.1 }
+author:
+  intent: |
+    問題文の「共有点をもつ」を $D\geqq 0$ と正しく翻訳できるかと、得られた2次不等式を正しく解けるかの2段階をみる。誤答①・②で、どちらの段階でつまずいたかを分離できる。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学I (3) ア(イ) 2次関数のグラフと x 軸の位置関係]
+  variations:
+    - 「接する」「共有点をもたない」に変えて等号の扱いだけを問う。

@@ -1,0 +1,11 @@
+id: qf-root-location
+kind: method
+title: 2次方程式の解の配置
+body: |
+  $f(x)=x^2+bx+c$ について、$f(x)=0$ の異なる2つの解がともに $k$ より大きい条件は
+  1. 判別式 $D>0$
+  2. 軸が $k$ より右: $-\dfrac{b}{2}>k$
+  3. 端点の値: $f(k)>0$
+
+  どれか1つでも欠けると、グラフを描いたときに反例が作れる。3条件はグラフの形から読み取るもの。
+prerequisites: [qf-discriminant, qf-max-min]

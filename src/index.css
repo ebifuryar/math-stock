@@ -1,0 +1,36 @@
+/* src/index.css */
+@import "tailwindcss";
+@import "katex/dist/katex.min.css";
+
+@custom-variant dark (@media (prefers-color-scheme: dark));
+
+:root {
+  color-scheme: light dark;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100;
+  font-family: "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  overscroll-behavior-y: none;
+}
+
+/* Markdown + TeX の本文。長い数式は横スクロールさせ、画面幅を超えて崩れないようにする */
+.math-text {
+  @apply leading-relaxed break-words;
+}
+.math-text p { @apply my-2; }
+.math-text ul { @apply my-2 list-disc pl-5; }
+.math-text ol { @apply my-2 list-decimal pl-5; }
+.math-text li { @apply my-1; }
+.math-text strong { @apply font-semibold; }
+.math-text table { @apply my-2 w-full border-collapse text-sm; }
+.math-text th,
+.math-text td { @apply border border-slate-300 px-2 py-1 dark:border-slate-700; }
+.math-text .katex-display {
+  @apply my-3 overflow-x-auto overflow-y-hidden py-1;
+}
+.math-text .katex { font-size: 1.08em; }
+
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }

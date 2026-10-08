@@ -1,0 +1,27 @@
+id: m1-qf-a03
+level: applied
+format: mark
+title: 平行移動の逆算
+stem: |
+  放物線 $y=x^2+bx+c$ を $x$ 軸方向に $2$、$y$ 軸方向に $-3$ だけ平行移動すると、放物線 $y=x^2-6x+7$ になった。このとき
+  $$b=\boxed{\text{アイ}},\quad c=\boxed{\text{ウ}}$$
+  である。
+blanks:
+  - { label: アイ, answer: "-2" }
+  - { label: ウ, answer: "2" }
+solution: |
+  移動後の放物線 $y=x^2-6x+7=(x-3)^2-2$ の頂点は $(3,-2)$。
+  逆向きに $x$ 軸方向に $-2$、$y$ 軸方向に $3$ 移動すれば元に戻るので、元の頂点は $(1,1)$。
+  $$y=(x-1)^2+1=x^2-2x+2$$
+  よって $b=-2,\ c=2$。
+concepts: [qf-graph-translation, qf-vertex-form]
+misconceptions: [mc-translation-direction]
+targetSeconds: 150
+irt: { expectedCorrectRate: 0.5, discrimination: 1.1 }
+author:
+  intent: |
+    平行移動を「逆向きにたどる」発想ができるかをみる。公式に $b,\ c$ を入れて展開する方法でも解けるが、頂点の移動で考えると計算量が大きく減る。解法の選択も含めて時間内に処理できるかを測る。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学I (3) ア(ア) 2次関数のグラフの平行移動]
+  variations:
+    - 移動量を未知数にして、2つの放物線から移動量を求めさせる。

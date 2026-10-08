@@ -1,0 +1,44 @@
+id: m1-qf-s05
+level: school
+format: written
+title: 定義域のある2次関数の最大・最小
+stem: |
+  2次関数 $y=x^2-4x+1\ (0\leqq x\leqq 5)$ の最大値と最小値を求めよ。また、そのときの $x$ の値も答えよ。
+modelAnswer: |
+  $y=x^2-4x+1=(x-2)^2-3$
+
+  グラフは下に凸で、軸は直線 $x=2$。軸は定義域 $0\leqq x\leqq 5$ に含まれるので、頂点で最小となる。
+
+  $x=0$ のとき $y=1$、$x=5$ のとき $y=6$。軸 $x=2$ から遠いのは $x=5$ なので、$x=5$ で最大となる。
+
+  よって **最大値 $6$（$x=5$ のとき）、最小値 $-3$（$x=2$ のとき）**。
+rubric:
+  - id: r1
+    criterion: 平方完成して $y=(x-2)^2-3$ を正しく得ている
+    points: 2
+    keywords: ["(x-2)^2-3"]
+  - id: r2
+    criterion: 軸 $x=2$ が定義域内にあることを根拠に、最小値 $-3$（$x=2$）を求めている
+    points: 3
+    keywords: ["x=2", "-3"]
+  - id: r3
+    criterion: 端点 $x=0,\ 5$ の値を比較（または軸からの距離で判断）して、最大値 $6$（$x=5$）を求めている
+    points: 3
+    keywords: ["x=5", "6"]
+  - id: r4
+    criterion: 最大値・最小値とそのときの $x$ の値を、すべて明記している
+    points: 2
+    keywords: ["最大値", "最小値"]
+solution: |
+  平方完成 $y=(x-2)^2-3$ からグラフをかき、定義域の部分だけを見る。最小は頂点、最大は軸から遠い端点。
+concepts: [qf-max-min, qf-vertex-form]
+misconceptions: [mc-max-at-endpoint-only]
+targetSeconds: 240
+irt: { expectedCorrectRate: 0.7, discrimination: 1.0 }
+author:
+  intent: |
+    「最大・最小は端点で起こる」という誤った一般化をしていないかをみる。軸が定義域内にあるので、端点だけ計算すると最小値を誤る。記述式にして、軸の位置を根拠として書けるかも評価する。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学I (3) ア(ア) 2次関数の最大・最小]
+  variations:
+    - 定義域を $3\leqq x\leqq 5$ にして、軸が定義域外の場合と比較させる。

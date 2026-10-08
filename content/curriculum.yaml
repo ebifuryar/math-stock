@@ -1,0 +1,9 @@
+# 科目 → 単元の階層。単元IDは「科目ID-単元名」で一意にする。
+subjects:
+  - id: math1
+    title: 数学I
+    units:
+      - id: math1-quadratic-function
+        title: 2次関数
+        curriculumCode: 数学I (3) 2次関数
+        summary: 2次関数の値の変化とグラフ、最大・最小、2次方程式・2次不等式との関係

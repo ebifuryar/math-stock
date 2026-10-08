@@ -1,0 +1,14 @@
+id: qf-discriminant
+kind: theorem
+title: 判別式とグラフとx軸の共有点
+body: |
+  $D=b^2-4ac$ とすると、$y=ax^2+bx+c$ のグラフと $x$ 軸の共有点の個数は
+
+  | $D$ の符号 | 共有点 | 方程式 $ax^2+bx+c=0$ の実数解 |
+  | --- | --- | --- |
+  | $D>0$ | 2個 | 異なる2つ |
+  | $D=0$ | 1個（接する） | 重解 |
+  | $D<0$ | 0個 | なし |
+
+  「共有点をもつ」は $D\geqq 0$。$b=2b'$ のときは $\dfrac{D}{4}=b'^2-ac$ を使うと計算が楽になる。
+prerequisites: [qf-vertex-form]

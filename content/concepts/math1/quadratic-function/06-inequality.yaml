@@ -1,0 +1,10 @@
+id: qf-inequality
+kind: method
+title: 2次不等式
+body: |
+  $\alpha<\beta$ のとき
+  - $(x-\alpha)(x-\beta)<0 \iff \alpha<x<\beta$（グラフが $x$ 軸より下の部分）
+  - $(x-\alpha)(x-\beta)>0 \iff x<\alpha,\ \beta<x$（グラフが $x$ 軸より上の部分）
+
+  $\alpha$ と $\beta$ の大小が文字によって変わるときは、大小で場合分けする。
+prerequisites: [qf-discriminant]

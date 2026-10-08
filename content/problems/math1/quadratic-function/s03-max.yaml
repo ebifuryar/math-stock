@@ -1,0 +1,23 @@
+id: m1-qf-s03
+level: school
+format: mark
+title: 上に凸の2次関数の最大値
+stem: |
+  2次関数 $y=-x^2+6x-5$ は、$x=\boxed{\text{ア}}$ のとき最大値 $\boxed{\text{イ}}$ をとる。
+blanks:
+  - { label: ア, answer: "3" }
+  - { label: イ, answer: "4" }
+solution: |
+  $$y=-(x^2-6x)-5=-\{(x-3)^2-9\}-5=-(x-3)^2+4$$
+  $x^2$ の係数が負なので上に凸。頂点 $(3,4)$ で最大値 $4$ をとる。
+concepts: [qf-vertex-form, qf-definition]
+misconceptions: [mc-completing-square-coef]
+targetSeconds: 90
+irt: { expectedCorrectRate: 0.7, discrimination: 1.0 }
+author:
+  intent: |
+    係数が負の平方完成で、$-\{\ \}$ の符号処理ができるかをみる。マーク式にしたのは、誤った符号処理（$-(x-3)^2-14$ など）を選択肢から推測されないようにするため。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学I (3) ア(ア) 2次関数の最大・最小]
+  variations:
+    - 定義域を $0\leqq x\leqq 2$ に制限し、頂点が定義域外になる場合を問う。

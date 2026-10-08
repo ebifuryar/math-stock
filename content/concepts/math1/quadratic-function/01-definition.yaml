@@ -1,0 +1,6 @@
+id: qf-definition
+kind: definition
+title: 2次関数
+body: |
+  $y$ が $x$ の2次式 $y=ax^2+bx+c$（$a\neq 0$）で表されるとき、$y$ は $x$ の **2次関数** であるという。
+  グラフは放物線で、$a>0$ なら下に凸、$a<0$ なら上に凸。

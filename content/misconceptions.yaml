@@ -1,0 +1,77 @@
+- id: mc-vertex-sign
+  title: 頂点のx座標の符号の取り違え
+  description: |
+    $y=a(x-p)^2+q$ の頂点を $(-p,\ q)$ と読んでしまう。
+  cause: |
+    式中に見えている数字「$-p$」をそのまま座標に書き写してしまう。頂点は「$(x-p)^2=0$ となる $x$」だという意味を押さえていないことが根本原因。
+  remedyConcepts: [qf-vertex-form]
+- id: mc-axis-formula
+  title: 軸の公式の係数ミス
+  description: |
+    $y=ax^2+bx+c$ の軸を $x=-\dfrac{b}{a}$ としてしまう（分母の $2$ を落とす）。
+  cause: |
+    公式を平方完成から導けるようにしておらず、形だけで暗記している。
+  remedyConcepts: [qf-vertex-form]
+- id: mc-completing-square-coef
+  title: 平方完成での係数の処理ミス
+  description: |
+    $x^2$ の係数が $1$ でないとき、括り出した係数を補正項に掛け忘れる。例: $2x^2-8x+5=2(x-2)^2-4+5$。
+  cause: |
+    $2(x^2-4x)=2\{(x-2)^2-4\}$ と中括弧を書く手順を省略している。
+  remedyConcepts: [qf-vertex-form]
+- id: mc-translation-direction
+  title: 平行移動の向きの取り違え
+  description: |
+    $x$ 軸方向に $p$ だけ平行移動するとき、$x$ を $x+p$ に置き換えてしまう。
+  cause: |
+    「移動後の点 $(X,Y)$ と移動前の点 $(X-p,\ Y-q)$ の対応」を考えずに符号を覚えている。
+  remedyConcepts: [qf-graph-translation]
+- id: mc-max-min-swap
+  title: 最大と最小の判定基準の混同
+  description: |
+    下に凸の放物線で、最小値を「定義域の中央と軸の位置」で、最大値を「軸が定義域に含まれるか」で判定するなど、基準を取り違える。
+  cause: |
+    最小は「軸と定義域の位置関係」、最大は「軸と定義域の中央の位置関係」で決まる理由を、グラフで確認していない。
+  remedyConcepts: [qf-max-min]
+- id: mc-case-split-missing
+  title: 場合分けの漏れ・境界の誤り
+  description: |
+    文字定数を含む問題で、一部の場合を考え忘れる。あるいは境界（等号）をどちらの場合にも含めない。
+  cause: |
+    場合分けの基準（軸の位置、係数の符号など）を先に数直線上で整理していない。
+  remedyConcepts: [qf-max-min, qf-inequality]
+- id: mc-inequality-direction
+  title: 2次不等式の解の範囲の取り違え
+  description: |
+    $(x-\alpha)(x-\beta)<0$ の解を「$x<\alpha,\ \beta<x$」と外側にしてしまう（またはその逆）。
+  cause: |
+    不等式をグラフの「$x$ 軸より下にある部分」と結びつけずに覚えている。
+  remedyConcepts: [qf-inequality]
+- id: mc-discriminant-equality
+  title: 判別式の等号の扱いの誤り
+  description: |
+    「共有点をもつ」を $D>0$ だけで表す、あるいは「異なる2つの解」に $D\geqq 0$ を使う。
+  cause: |
+    $D=0$ が「接する（共有点1個）」に対応することを、問題文の言葉と対応づけていない。
+  remedyConcepts: [qf-discriminant]
+- id: mc-root-location-insufficient
+  title: 解の配置の条件不足
+  description: |
+    2次方程式の解の配置で、判別式・軸の位置・端点での値の3条件のうち一部しか考えない。
+  cause: |
+    条件を暗記で並べており、グラフを描いて「どれが欠けると何が起きるか」を確かめていない。
+  remedyConcepts: [qf-root-location]
+- id: mc-domain-forgotten
+  title: 文字消去後の変域の確認漏れ
+  description: |
+    条件式から1文字を消去したあと、残った文字の変域を求めずに最大・最小を考える。
+  cause: |
+    消去した文字に付いていた条件（$y\geqq 0$ など）が、残った文字の条件に変わることを意識していない。
+  remedyConcepts: [qf-max-min]
+- id: mc-max-at-endpoint-only
+  title: 最大・最小を端点だけで判断する
+  description: |
+    定義域の両端の値だけを計算して最大・最小を決め、軸が定義域内にある場合の頂点を見落とす。
+  cause: |
+    1次関数の最大・最小（必ず端点）の感覚をそのまま2次関数に持ち込んでいる。
+  remedyConcepts: [qf-max-min]

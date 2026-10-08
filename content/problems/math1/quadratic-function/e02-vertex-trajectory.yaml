@@ -1,0 +1,33 @@
+id: m1-qf-e02
+level: exam
+format: mark
+title: 頂点の y 座標の最小値
+stem: |
+  $a$ を定数とし、2次関数 $y=x^2-2(a-1)x+2a^2-8a+4$ のグラフを $G$ とする。
+
+  (1) $G$ の頂点の座標は
+  $$\left(a-\boxed{\text{ア}},\ a^2-\boxed{\text{イ}}a+\boxed{\text{ウ}}\right)$$
+  である。
+
+  (2) $a$ が実数全体を動くとき、$G$ の頂点の $y$ 座標は $a=\boxed{\text{エ}}$ のとき最小値 $\boxed{\text{オカ}}$ をとる。
+blanks:
+  - { label: ア, answer: "1" }
+  - { label: イ, answer: "6" }
+  - { label: ウ, answer: "3" }
+  - { label: エ, answer: "3" }
+  - { label: オカ, answer: "-6" }
+solution: |
+  (1) $y=\{x-(a-1)\}^2-(a-1)^2+2a^2-8a+4=\{x-(a-1)\}^2+a^2-6a+3$。頂点は $(a-1,\ a^2-6a+3)$。
+
+  (2) $a^2-6a+3=(a-3)^2-6$ なので、$a=3$ のとき最小値 $-6$。
+concepts: [qf-vertex-form]
+misconceptions: [mc-completing-square-coef]
+targetSeconds: 300
+irt: { expectedCorrectRate: 0.45, discrimination: 1.2 }
+author:
+  intent: |
+    係数に文字を含む平方完成を正確に処理し、得られた頂点の座標を今度は $a$ の2次関数として見直せるかをみる。共通テストで頻出の「誘導に沿って関数を2段階で扱う」構成。
+  assessedAbilities: [知識・技能, 思考力・判断力・表現力]
+  curriculumRefs: [数学I (3) ア(ア) 2次関数の値の変化やグラフの特徴]
+  variations:
+    - 頂点の軌跡（数学II）として $y=x^2-4x-2$ を求めさせる発展問題につなげる。

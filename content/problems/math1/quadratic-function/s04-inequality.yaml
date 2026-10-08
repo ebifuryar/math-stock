@@ -1,0 +1,24 @@
+id: m1-qf-s04
+level: school
+format: mark
+title: 2次不等式の基本
+stem: |
+  2次不等式 $x^2-x-6<0$ の解は $\boxed{\text{アイ}}<x<\boxed{\text{ウ}}$ である。
+blanks:
+  - { label: アイ, answer: "-2" }
+  - { label: ウ, answer: "3" }
+solution: |
+  $x^2-x-6=(x+2)(x-3)<0$。グラフ $y=(x+2)(x-3)$ が $x$ 軸より下にあるのは2つの交点の間なので
+  $$-2<x<3$$
+concepts: [qf-inequality]
+misconceptions: [mc-inequality-direction]
+targetSeconds: 75
+irt: { expectedCorrectRate: 0.75, discrimination: 1.0 }
+author:
+  intent: |
+    因数分解できる2次不等式を、グラフの位置関係で解けるかをみる。解答欄を「$\square<x<\square$」の形に固定し、範囲の向きの取り違えは符号・大小の誤りとして現れるようにしている。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学I (3) ア(イ) 2次不等式の解とグラフ]
+  variations:
+    - 不等号を $\geqq$ にして、解が「外側」になる場合を問う。
+    - 因数分解できない係数にして、解の公式との接続をみる。

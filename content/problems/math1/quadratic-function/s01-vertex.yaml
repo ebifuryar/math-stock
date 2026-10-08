@@ -1,0 +1,43 @@
+id: m1-qf-s01
+level: school
+format: choice
+title: 平方完成と頂点
+stem: |
+  2次関数 $y=2x^2-8x+5$ のグラフの頂点の座標として正しいものを、次の①〜④のうちから一つ選べ。
+choices:
+  - id: "1"
+    text: $(2,\ -3)$
+    rationale: |
+      正解。$2x^2-8x+5=2(x^2-4x)+5=2\{(x-2)^2-4\}+5=2(x-2)^2-3$。
+  - id: "2"
+    text: $(-2,\ -3)$
+    misconception: mc-vertex-sign
+    rationale: |
+      $(x-2)^2$ の「$-2$」をそのまま座標にしている。頂点の $x$ 座標は $(x-2)^2=0$ となる $x=2$。
+  - id: "3"
+    text: $(2,\ 1)$
+    misconception: mc-completing-square-coef
+    rationale: |
+      $2\{(x-2)^2-4\}$ の $-4$ に係数 $2$ を掛け忘れて $2(x-2)^2-4+5$ としている。
+  - id: "4"
+    text: $(4,\ 5)$
+    misconception: mc-axis-formula
+    rationale: |
+      軸を $x=-\dfrac{b}{a}=4$ としている。正しくは $x=-\dfrac{b}{2a}=2$。
+answer: "1"
+solution: |
+  $x^2$ の係数 $2$ で $x$ を含む項をくくってから平方完成する。
+  $$y=2(x^2-4x)+5=2\{(x-2)^2-4\}+5=2(x-2)^2-3$$
+  よって頂点は $(2,\ -3)$。
+concepts: [qf-vertex-form]
+misconceptions: [mc-vertex-sign, mc-completing-square-coef, mc-axis-formula]
+targetSeconds: 90
+irt: { expectedCorrectRate: 0.75, discrimination: 1.0 }
+author:
+  intent: |
+    $x^2$ の係数が $1$ でない平方完成を正確に行えるかをみる。誤答選択肢はそれぞれ典型的なミス（符号・係数の補正・軸の公式）に1対1で対応させ、どの段階でつまずいたかを特定できるように設計している。
+  assessedAbilities: [知識・技能]
+  curriculumRefs: [数学I (3) ア(ア) 2次関数の値の変化やグラフの特徴]
+  variations:
+    - $x^2$ の係数を負にして、上に凸のグラフで同じ判定をさせる。
+    - "頂点の座標から係数を逆算させる（例として、頂点が $(2,-3)$ で点 $(0,5)$ を通る2次関数を求める）。"
